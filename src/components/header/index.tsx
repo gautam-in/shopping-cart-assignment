@@ -45,8 +45,8 @@ const Header = () => {
                     </nav>
                     <button className="btn-cart" onClick={toggleCart}>
                         <img src="static/images/cart.svg" alt="cart icon" className="icon" id="outside" />
-                        <span className="text" id="cart-items">
-                            {cartCount} Items
+                        <span className="cart-text" id="cart-items">
+                            <span className="cart-count">{cartCount}</span> Items
                         </span>
                     </button>
                     <div id="desktop-cart" className="cart-main-cont" style={{ display: openCart ? 'block' : 'none' }}>

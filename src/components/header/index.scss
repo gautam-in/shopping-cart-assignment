@@ -44,7 +44,7 @@ header {
 .btn-cart {
   border: none;
   background: $primary_bg_color;
-  width: 10vw;
+  width: 8vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,10 +52,13 @@ header {
   cursor: pointer;
   .icon {
     width: 21px;
-    margin: auto;
   }
-  .text {
+  .cart-text {
     font-size: small;
+    margin: auto;
+    .cart-count {
+      font-weight: 500;
+    }
   }
 }
 .cart-login-container {

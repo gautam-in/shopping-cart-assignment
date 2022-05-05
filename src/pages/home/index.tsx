@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { PRODUCTS } from '../../constants/routes';
+import { Banner, Category, getBanners, getCategories } from '../../services/AppService';
 import Banners from '../../components/banner';
 import Categories from '../../components/category';
 import AppContext from '../../contexts/appContext/app-context';
 import './index.scss';
-import { Banner, Category, getBanners, getCategories } from '../../services/AppService';
 
 const Home = () => {
     const { setSelectedCategory } = useContext(AppContext);
@@ -29,11 +29,11 @@ const Home = () => {
 
     return (
         <div className="home">
-            <Banners sliderData={banners} />
+            <Banners banners={banners} />
             {categories
-                .filter((item) => item.enabled)
-                .map((item) => (
-                    <Categories category={item} key={item.key} openCategory={openCategory} />
+                .filter((category) => category.enabled)
+                .map((category) => (
+                    <Categories category={category} key={category.key} openCategory={openCategory} />
                 ))}
         </div>
     );

@@ -1,3 +1,4 @@
+// TODO: Buy Now change
 import React, { FC, useCallback, useContext } from 'react';
 import AppContext from '../../contexts/appContext/app-context';
 import { Product } from '../../services/AppService';
