@@ -24,32 +24,24 @@ header {
   }
   nav {
     display: inline-block;
-    li {
-      list-style: none;
-    }
-    button {
-      border: none;
-      background: #fff;
-      font-size: small;
-      cursor: pointer;
-    }
     .list-h {
       padding: 0px;
-      li {
-        list-style: none;
-      }
-      button {
-        border: none;
-        background: #fff;
-        font-size: small;
-        cursor: pointer;
-      }
+    }
+    .navLink {
+      text-decoration: none;
+      font-size: small;
+      color: black;
+      padding-right: 7px;
+    }
+    .active {
+      color: #d00256;
+      font-weight: 500;
     }
   }
 }
 .btn-cart {
   border: none;
-  background: #f3f3f3;
+  background: #eeeeee;
   width: 10vw;
   display: flex;
   justify-content: center;

@@ -1,7 +1,5 @@
-// FIXME: FIX
-import React, { useContext } from 'react';
-import { useCallback, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useContext, useCallback, useState } from 'react';
+import { NavLink, useHistory } from 'react-router-dom';
 import { HOME, PRODUCTS, LOGIN, REGISTER } from '../../constants/routes';
 import AppContext from '../../contexts/appContext/app-context';
 import Cart from '../cart';
@@ -15,8 +13,8 @@ const Header = () => {
     const history = useHistory();
 
     const handleRedirect = useCallback((route) => () => history.push(route), [history]);
-
     const toggleCart = useCallback(() => setOpenCart(!openCart), [openCart]);
+    const isActiveLink = ({ isActive }) => (isActive ? 'active' : '');
 
     return (
         <header>
@@ -26,23 +24,23 @@ const Header = () => {
                 </div>
                 <nav>
                     <ul className="d-flex">
-                        <li>
-                            <button onClick={handleRedirect(HOME)}>Home</button>
-                        </li>
-                        <li>
-                            <button onClick={handleRedirect(PRODUCTS)}>Products</button>
-                        </li>
+                        <NavLink exact={true} className={`navLink ${isActiveLink}`} to={HOME}>
+                            Home
+                        </NavLink>
+                        <NavLink className={`navLink ${isActiveLink}`} to={PRODUCTS}>
+                            Products
+                        </NavLink>
                     </ul>
                 </nav>
                 <div className="cart-login-container">
                     <nav>
                         <ul className="list-h d-flex">
-                            <li className="link">
-                                <button onClick={handleRedirect(LOGIN)}>Sign In</button>
-                            </li>
-                            <li className="link">
-                                <button onClick={handleRedirect(REGISTER)}>Register</button>
-                            </li>
+                            <NavLink className={`navLink ${isActiveLink}`} to={LOGIN}>
+                                Sign In
+                            </NavLink>
+                            <NavLink className={`navLink ${isActiveLink}`} to={REGISTER}>
+                                Register
+                            </NavLink>
                         </ul>
                     </nav>
                     <button className="btn-cart" onClick={toggleCart}>

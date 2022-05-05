@@ -17,14 +17,14 @@ const Cart = ({ closeCart }) => {
         (item) => () => {
             updateCart(item);
         },
-        [],
+        [updateCart],
     );
 
     const handleCartRemove = useCallback(
         (item) => () => {
             removeCart(item);
         },
-        [],
+        [removeCart],
     );
 
     return (
