@@ -1,7 +1,13 @@
-import React, { useCallback } from 'react';
+import React, { FC, useCallback } from 'react';
+import { Category } from '../../services/AppService';
 import './index.scss';
 
-const Category = ({ category, openCategory }) => {
+interface CategoryProps {
+    category: Category;
+    openCategory: (id: string) => void;
+}
+
+const Categories: FC<CategoryProps> = ({ category, openCategory }) => {
     const handleCategory = useCallback(
         (id) => () => {
             openCategory(id);
@@ -24,4 +30,4 @@ const Category = ({ category, openCategory }) => {
     );
 };
 
-export default Category;
+export default Categories;

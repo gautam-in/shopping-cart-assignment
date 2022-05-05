@@ -1,13 +1,28 @@
-import React, { useCallback, useContext } from 'react';
+// TODO: Buy Now change
+import React, { FC, useCallback, useContext } from 'react';
+import get from 'lodash/get';
+import { useHistory } from 'react-router-dom';
 import AppContext from '../../contexts/appContext/app-context';
+import { Product } from '../../services/AppService';
+import { CART } from '../../constants/routes';
 import './index.scss';
 
-const ProductCard = ({ product }) => {
-    const { updateCart } = useContext(AppContext);
+interface ProductCardProps {
+    product: Product;
+}
+
+const ProductCard: FC<ProductCardProps> = ({ product }) => {
+    const history = useHistory();
+    const {
+        appState: { cartItems },
+        updateCart,
+    } = useContext(AppContext);
+
+    const isItemInCart = Boolean(cartItems.find((item) => item.id === get(product, 'id')));
 
     const handleClick = useCallback(() => {
-        updateCart(product);
-    }, [product, updateCart]);
+        isItemInCart ? history.push(CART) : updateCart(product);
+    }, [product, isItemInCart, updateCart, history]);
 
     return (
         <li className="product-cards" id={product.category}>
@@ -20,7 +35,7 @@ const ProductCard = ({ product }) => {
             <div className="product-cta-container">
                 <span className="product-price">MRP Rs. {product.price}</span>
                 <button onClick={handleClick} className="btn-cta">
-                    Buy Now
+                    {isItemInCart ? 'Go To Cart' : 'Add To Cart'}
                 </button>
             </div>
         </li>

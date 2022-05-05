@@ -1,3 +1,5 @@
+@import '../../Colors.scss';
+
 .login-section,
 .signup-section {
     display: flex;
@@ -45,11 +47,11 @@
 .login-section_formGroup input:focus,
 .signup-section_formGroup input:focus {
     outline: 0;
-    border-bottom: 1px solid #00ffe7;
+    border-bottom: 1px solid $secondary_color;
 }
 .login-section_formGroup input:focus + label,
 .signup-section_formGroup input:focus + label {
-    color: #00ffe7;
+    color: $secondary_color;
 }
 .login-section_formGroup label,
 .signup-section_formGroup label {
@@ -98,7 +100,7 @@
 }
 .btn--login,
 .btn--signup {
-    background-color: #d00256;
+    background-color: $primary_color;
     border: none;
     width: 100%;
     padding: 0.5rem !important;

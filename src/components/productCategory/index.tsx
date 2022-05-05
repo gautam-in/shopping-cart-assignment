@@ -1,8 +1,13 @@
-import React, { useContext } from 'react';
+import React, { FC, useContext } from 'react';
 import AppContext from '../../contexts/appContext/app-context';
+import { Category } from '../../services/AppService';
 import './index.scss';
 
-const ProductCategory = ({ category }) => {
+interface ProductCategoryProps {
+    categories: Category[];
+}
+
+const ProductCategory: FC<ProductCategoryProps> = ({ categories }) => {
     const {
         appState: { selectedCategory },
         setSelectedCategory,
@@ -11,23 +16,26 @@ const ProductCategory = ({ category }) => {
     const handleFilter = (categoryId) => () => {
         if (categoryId !== selectedCategory) {
             setSelectedCategory(categoryId);
-        } else {
-            setSelectedCategory(null);
         }
     };
 
     return (
         <aside className="product-category">
             <ul>
-                {category.length
-                    ? category.map(
-                          (item) =>
-                              item.enabled && (
+                <li
+                    style={{ color: selectedCategory === null ? '#d00256' : 'black' }}
+                    onClick={() => setSelectedCategory(null)}>
+                    All
+                </li>
+                {categories.length
+                    ? categories.map(
+                          (category) =>
+                              category.enabled && (
                                   <li
-                                      key={item.id}
-                                      style={{ color: item.id === selectedCategory ? 'red' : 'black' }}
-                                      onClick={handleFilter(item.id)}>
-                                      {item.name}
+                                      key={category.id}
+                                      style={{ color: category.id === selectedCategory ? '#d00256' : 'black' }}
+                                      onClick={handleFilter(category.id)}>
+                                      {category.name}
                                   </li>
                               ),
                       )

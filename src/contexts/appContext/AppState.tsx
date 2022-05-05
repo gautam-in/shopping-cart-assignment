@@ -1,19 +1,20 @@
 import React, { useReducer } from 'react';
 import { initialState, REMOVE_CART_ITEM, SET_SELECTED_CATEGORY, UPDATE_CART_ITEM } from '../../constants/actions';
-import AppContext, { CartItem, SelectedCategory } from './app-context';
+import { Product } from '../../services/AppService';
+import AppContext, { SelectedCategory } from './app-context';
 import appReducer from './app-reducer';
 
 const AppState = ({ children }) => {
     const [appState, dispatch] = useReducer(appReducer, initialState);
 
-    const updateCart = (item: CartItem) => {
+    const updateCart = (item: Product) => {
         dispatch({
             type: UPDATE_CART_ITEM,
             payload: item,
         });
     };
 
-    const removeCart = (item: CartItem) =>
+    const removeCart = (item: Product) =>
         dispatch({
             type: REMOVE_CART_ITEM,
             payload: item,
