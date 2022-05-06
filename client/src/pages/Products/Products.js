@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { isEmpty } from "lodash";
 import axios from 'axios';
 import Styled from "styled-components";
@@ -6,6 +6,8 @@ import H1 from "../../components/Typography/H1";
 import Layout from "../../layout/Layout";
 import Sidebar from "../../containers/Sidebar/Sidebar";
 import Products from "../../containers/Products/Products";
+import CategoriesContext from "../../store/Categories/Context";
+import { filteredProductsData } from "../../utils"
 
 const SectionContainer = Styled.section`
     display: flex;
@@ -43,6 +45,9 @@ const NoProductsContainer = Styled.div`
 
 function ProductsPage() {
 
+  const categoriesContext = useContext(CategoriesContext)
+  const { categories,getCategoriesData,categoryId,setCategoryId } = categoriesContext;
+
   const [ categoriesData, setCategoriesData ] = useState([])
   const [ productsData, setProductsData ] = useState([])
   const [ selectedCategoryId, setSelectedCategoryId] = useState('')
@@ -50,15 +55,15 @@ function ProductsPage() {
 
 
   useEffect (() => {
-    const getCategoriesData = async () => {
-     let res = await axios.get('/categories')
-      if(res.data){
-        setCategoriesData(res.data)
-        setSelectedCategoryId(res.data[0].id)
-      }
-    }
     getCategoriesData()
 },[])
+
+  useEffect(() => {
+    if(!isEmpty(categories) && !isEmpty(categoryId)){
+      setCategoriesData(categories)
+      setSelectedCategoryId(categoryId)
+    }
+  },[categories,categoryId])
 
 useEffect (() => {
   const getProductsData = async () => {
@@ -71,22 +76,19 @@ useEffect (() => {
 },[])
 
 useEffect(() => {
-
   if(!isEmpty(productsData) && !isEmpty(selectedCategoryId)){
-    function filteredProductsData (data,id) {
-      let result = data.filter((value) => value.category === id)
-      setFilterProductsData(result)
-    }
-    filteredProductsData(productsData,selectedCategoryId)
+      let filteredProducts = filteredProductsData(productsData,selectedCategoryId)
+      setFilterProductsData(filteredProducts)
   }
-
-},[selectedCategoryId,productsData])
+},[productsData,selectedCategoryId])
 
 const handleCategoryClick = (category) => {
 
   if(category.id === selectedCategoryId){
+    setCategoryId(categoriesData[0].id)
     setSelectedCategoryId(categoriesData[0].id)
   }else{
+    setCategoryId(category.id)
     setSelectedCategoryId(category.id)
   }
 }
