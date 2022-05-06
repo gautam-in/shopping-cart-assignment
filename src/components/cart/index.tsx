@@ -89,9 +89,7 @@ const Cart = () => {
             <div className="checkout">
                 {cartCount > 0 ? (
                     <div>
-                        <p className="checkout-heading" style={{ fontSize: 'small' }}>
-                            Promo code can be applied on the checkout page.
-                        </p>
+                        <p className="checkout-heading">Promo code can be applied on the checkout page.</p>
                         <button className="checkout-button" onClick={handleCartCheckout()}>
                             <span className="checkout-text">Proceed to checkout</span>
                             <span className="checkout-price">
