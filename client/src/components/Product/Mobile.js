@@ -52,7 +52,7 @@ const CTAContainer = Styled.div`
   justify-content: space-between;
 `;
 
-const Product = ({ data, key, handleClick}) => {
+const Product = ({ data, key, handleProductClick}) => {
   return (
     <Fragment>
       <Card key={key}>
@@ -67,7 +67,7 @@ const Product = ({ data, key, handleClick}) => {
             <Description>
               <P>{data?.description}</P>
             </Description>
-            <Button onClick={() => handleClick(data)}>Buy Now</Button>
+            <Button onClick={() => handleProductClick(data)}>Buy Now</Button>
           </CTAContainer>
         </ContentContainer>
       </Card>

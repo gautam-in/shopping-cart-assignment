@@ -58,7 +58,7 @@ function test(data,id){
 }
 
 
-const DropdownComponent = ({ data,selectedCategoryId,setSelectedCategoryId }) => {
+const DropdownComponent = ({ data,selectedCategoryId,handleCategoryClick }) => {
   const [isDropDownVisible, setIsDropDownVisible] = useState(false);
 
   return (
@@ -80,7 +80,7 @@ const DropdownComponent = ({ data,selectedCategoryId,setSelectedCategoryId }) =>
               <DropdownItem
                 key={item.value}
                 onClick={(e) => {
-                  setSelectedCategoryId(item.id);
+                  handleCategoryClick(item);
                   setIsDropDownVisible(false);
                 }}
               >

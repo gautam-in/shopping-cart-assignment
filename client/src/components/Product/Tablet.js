@@ -47,7 +47,7 @@ const DescriptionContainer = Styled.div`
   height: auto;
 `;
 
-const Tablet = ({ data, key, handleClick }) => {
+const Tablet = ({ data, key, handleProductClick }) => {
   return (
     <Fragment>
       <Card key={key}>
@@ -64,7 +64,7 @@ const Tablet = ({ data, key, handleClick }) => {
             </Description>
           </DescriptionContainer>
         </ContentContainer>
-        <Button onClick={() => handleClick(data)}>Buy Now</Button>
+        <Button onClick={() => handleProductClick(data)}>Buy Now</Button>
       </Card>
     </Fragment>
   );

@@ -56,7 +56,7 @@ const CTAContainer = Styled.div`
   font-size: 14px;
 `;
 
-const Desktop = ({ data, key, handleClick}) => {
+const Desktop = ({ data, key, handleProductClick}) => {
   return (
     <Fragment>
       <Card key={key}>
@@ -71,7 +71,7 @@ const Desktop = ({ data, key, handleClick}) => {
         </Description>
         <CTAContainer>
           <P>{`MRP Rs.${data.price}`}</P>
-          <Button onClick={() => handleClick(data)}>Buy Now</Button>
+          <Button onClick={() => handleProductClick(data)}>Buy Now</Button>
         </CTAContainer>
       </Card>
     </Fragment>

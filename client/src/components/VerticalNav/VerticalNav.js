@@ -11,19 +11,20 @@ const VerticalNavList = Styled.ul`
   width: 100%;
 `;
 
-const VerticalNavItem = Styled.li`
-  color: #615f5f;
+const VerticalBarNavItem = Styled.li`
+  color: ${ props => props.active ? "#ffffff" : "#615f5f"};
   height: 60px;
   list-style-type: none;
   display: flex;
   align-items: center;
+  background-color: ${ props => props.active ? "#bf2957" : "none"} ;
   padding-left: 0.5rem;
   border-bottom: 1px solid #d2d0d0;
   &:hover {
     cursor: pointer;
-    background-color: #bf2957;
-    color: #fff;
-    width: 100%;
+    background-color: ${props => props.active ? "" : "#dfdfdf"};
+    /* color: #fff;
+    width: 100%; */
   }
 `;
 
@@ -39,17 +40,17 @@ const VerticalNavTitle = Styled.div`
 //   color: #fff;
 // }
 
-const VerticalNav = ({data,setSelectedCategoryId}) => {
+const VerticalNav = ({data,handleCategoryClick,selectedCategoryId}) => {
   return (
     <>
       <VerticalNavContainer>
         <VerticalNavList>
           {data.map((val, i) => (
-            <VerticalNavItem key={i} onClick={() => setSelectedCategoryId(val.id)}>
+            <VerticalBarNavItem active={selectedCategoryId === val.id } key={i} onClick={() => handleCategoryClick(val)}>
               <VerticalNavTitle>
-                <P> {val.name} </P>
+                  <P>{val.name}</P>
               </VerticalNavTitle>
-            </VerticalNavItem>
+            </VerticalBarNavItem>
           ))}
         </VerticalNavList>
       </VerticalNavContainer>

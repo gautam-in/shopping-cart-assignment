@@ -31,9 +31,9 @@ const RightSection = Styled.div`
 
 function ProductsPage() {
 
-  const [ sidebarData, setSideBarData ] = useState([])
+  const [ categoriesData, setCategoriesData ] = useState([])
   const [ productsData, setProductsData ] = useState([])
-  const [ sidebarDataId, setSideBarDataId] = useState('')
+  const [ selectedCategoryId, setSelectedCategoryId] = useState('')
   const [filterProductsData, setFilterProductsData] = useState([])
 
 
@@ -41,8 +41,8 @@ function ProductsPage() {
     const getCategoriesData = async () => {
      let res = await axios.get('/categories')
       if(res.data){
-        setSideBarData(res.data)
-        setSideBarDataId(res.data[0].id)
+        setCategoriesData(res.data)
+        setSelectedCategoryId(res.data[0].id)
       }
     }
     getCategoriesData()
@@ -60,24 +60,37 @@ useEffect (() => {
 
 useEffect(() => {
 
-  if(!isEmpty(productsData) && !isEmpty(sidebarDataId)){
+  if(!isEmpty(productsData) && !isEmpty(selectedCategoryId)){
     function filteredProductsData (data,id) {
       let result = data.filter((value) => value.category === id)
       setFilterProductsData(result)
     }
-    filteredProductsData(productsData,sidebarDataId)
+    filteredProductsData(productsData,selectedCategoryId)
   }
 
-},[sidebarDataId,productsData])
+},[selectedCategoryId,productsData])
+
+const handleCategoryClick = (category) => {
+
+  if(category.id === selectedCategoryId){
+    setSelectedCategoryId(categoriesData[0].id)
+  }else{
+    setSelectedCategoryId(category.id)
+  }
+}
+
+const handleProductClick = (product) => {
+  console.log(product)
+}
 
   return (
     <Layout>
       <SectionContainer>
         <LeftSection>
-            {!isEmpty(sidebarData) && <Sidebar data={sidebarData} setSelectedCategoryId={setSideBarDataId} selectedCategoryId={sidebarDataId}/> }
+            {!isEmpty(categoriesData) && <Sidebar data={categoriesData} handleCategoryClick={handleCategoryClick} selectedCategoryId={selectedCategoryId}/> }
         </LeftSection>
         <RightSection>
-            {!isEmpty(filterProductsData) && <Products data={filterProductsData}/> }
+            {!isEmpty(filterProductsData) && <Products data={filterProductsData}  handleProductClick={handleProductClick}/> }
         </RightSection>
       </SectionContainer>
     </Layout>
