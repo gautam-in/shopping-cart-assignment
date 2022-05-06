@@ -1,8 +1,10 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 import { Row, Col, Modal, ModalBody, ModalHeader, ModalFooter } from 'reactstrap';
 import { cartItemUpdaterTypes } from '../../utils/constants';
 import { toggleCartModalView, updateCartQuanityByProduct } from '../../store/actions';
+import {cartSelector, cartModalViewSelector} from '../../store/selectors';
 
 class Cart extends Component {
     toggleModal = () => {
@@ -10,13 +12,8 @@ class Cart extends Component {
     };
 
     render() {
-        const { cart, showCartModalView, dispatch } = this.props;
-
-        const { quantity: totalItemsCount, price: totalItemsPrice } = cart.reduce((acc, curr) => ({
-            quantity: acc.quantity + curr.quantity,
-            price: acc.price + (curr.quantity * curr.price)
-        }), { quantity: 0, price: 0 });
-
+        const { cart, cartCountAndPrice, showCartModalView, dispatch } = this.props;
+        const { quantity: totalItemsCount, price: totalItemsPrice } = cartCountAndPrice;
         const isEmptyCart = totalItemsCount === 0;
 
         return (
@@ -85,8 +82,15 @@ class Cart extends Component {
     };
 };
 
-const mapStateToProps = ({ cart, showCartModalView }) => ({
-    showCartModalView,
-    cart
-});
+const mapStateToProps = createSelector(
+    [cartModalViewSelector, cartSelector],
+    (showCartModalView, cart) => ({
+        showCartModalView,
+        cart,
+        cartCountAndPrice: cart.reduce((acc, curr) => ({
+            quantity: acc.quantity + curr.quantity,
+            price: acc.price + (curr.quantity * curr.price)
+        }), { quantity: 0, price: 0 })
+    })
+);
 export default connect(mapStateToProps)(Cart);

@@ -3,9 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Row, Col } from 'reactstrap';
 import { setCategoryFilter } from '../../store/actions';
+import {categoriesSelector} from '../../store/selectors';
 
 function Categories() {
-    const categories = useSelector(state => state.categories);
+    const categories = useSelector(categoriesSelector);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 

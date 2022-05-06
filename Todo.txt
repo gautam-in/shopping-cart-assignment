@@ -1,3 +1,5 @@
+change mapStateToProps to createSelector
+
 responsive cart (only content should scroll)
 
 style hr tag for home page

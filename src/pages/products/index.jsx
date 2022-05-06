@@ -1,11 +1,13 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
+import {createSelector} from 'reselect';
 import CategoryFilter from './CategoryFilter';
 import ProductsList from './ProductsList';
 import UnAuthorizedPage from '../../components/UnAuthorizedPage';
 import withLayout from '../../hocs/withLayout';
 import { getProductsRequest } from '../../store/actions';
+import {userLoginStatusSelector} from '../../store/selectors';
 
 class Products extends Component {
     componentDidMount() {
@@ -13,11 +15,9 @@ class Products extends Component {
     };
 
     render() {
-        const { isUserLoggedIn } = this.props;
-
         return (
             <Container>
-                {isUserLoggedIn ? (
+                {this.props.isUserLoggedIn ? (
                     <Row>
                         <Col xs={2} className="m-hide">
                             <CategoryFilter />
@@ -32,7 +32,10 @@ class Products extends Component {
     };
 };
 
-const mapStateToProps = (state) => ({
-    isUserLoggedIn: state.isUserLoggedIn
-});
+const mapStateToProps = createSelector(
+    [userLoginStatusSelector],
+    (isUserLoggedIn) => ({
+        isUserLoggedIn
+    })
+);
 export default connect(mapStateToProps)(withLayout(Products));

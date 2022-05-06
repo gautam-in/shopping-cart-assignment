@@ -1,6 +1,8 @@
 import { Component, Fragment } from "react";
 import { connect } from "react-redux";
+import { createSelector } from 'reselect';
 import { setCategoryFilter } from '../../store/actions';
+import { categoriesSelector, categoryFilterSelector } from '../../store/selectors';
 
 class CategoryFilter extends Component {
     render() {
@@ -24,8 +26,11 @@ class CategoryFilter extends Component {
     };
 };
 
-const mapStateToProps = ({ categories, categoryFilter }) => ({
-    categories,
-    categoryFilter
-});
+const mapStateToProps = createSelector(
+    [categoriesSelector, categoryFilterSelector],
+    (categories, categoryFilter) => ({
+        categories,
+        categoryFilter
+    })
+);
 export default connect(mapStateToProps)(CategoryFilter);

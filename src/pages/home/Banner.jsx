@@ -1,7 +1,9 @@
 import { Component } from "react";
 import { connect } from 'react-redux';
+import {createSelector} from 'reselect';
 import { Carousel } from 'react-responsive-carousel';
 import { carouselBtnStyles, indicatorStyles } from '../../utils/constants';
+import {bannersSelector} from '../../store/selectors';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 class Banner extends Component {
@@ -61,7 +63,10 @@ class Banner extends Component {
     };
 };
 
-const mapStateToProps = ({ banners }) => ({
-    banners
-});
+const mapStateToProps = createSelector(
+    [bannersSelector],
+    (banners) => ({
+        banners
+    })
+);
 export default connect(mapStateToProps)(Banner);

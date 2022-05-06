@@ -1,11 +1,13 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Row, Col } from 'reactstrap';
-import {toggleCartModalView} from '../../store/actions';
+import { createSelector } from 'reselect';
+import { cartSelector } from '../../store/selectors';
+import { toggleCartModalView } from '../../store/actions';
 
 class CartCount extends Component {
     render() {
-        const {cartItemsCount, dispatch} = this.props;
+        const { cartItemsCount, dispatch } = this.props;
 
         return (
             <section id='cart-count' onClick={() => dispatch(toggleCartModalView())}>
@@ -23,7 +25,10 @@ class CartCount extends Component {
     };
 };
 
-const mapStateToProps = (state) => ({
-    cartItemsCount: state.cart.reduce((acc, curr) => acc + curr.quantity, 0)
-});
+const mapStateToProps = createSelector(
+    [cartSelector],
+    (cart) => ({
+        cartItemsCount: cart.reduce((acc, curr) => acc + curr.quantity, 0)
+    })
+);
 export default connect(mapStateToProps)(CartCount);

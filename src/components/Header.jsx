@@ -1,11 +1,13 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
+import {createSelector} from 'reselect';
 import { Container, Row, Col } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import Navbar from './Navbar';
 import CartCount from './cart/CartCount';
 import Cart from './cart';
 import { handleActiveLinkStatus } from '../utils';
+import {userLoginStatusSelector} from '../store/selectors';
 
 class Header extends Component {
     render() {
@@ -45,7 +47,10 @@ class Header extends Component {
     };
 };
 
-const mapStateToProps = (state) => ({
-    isUserLoggedIn: state.isUserLoggedIn
-});
+const mapStateToProps = createSelector(
+    [userLoginStatusSelector],
+    (isUserLoggedIn) => ({
+        isUserLoggedIn
+    })
+);
 export default connect(mapStateToProps)(Header);

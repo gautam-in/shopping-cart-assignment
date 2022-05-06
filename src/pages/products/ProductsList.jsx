@@ -1,18 +1,15 @@
 import { Component } from "react";
 import { connect } from "react-redux";
 import { Row, Col } from 'reactstrap';
+import { createSelector } from 'reselect';
 import { addItemToCartRequest } from '../../store/actions';
+import { productsSelector, categoryFilterSelector } from '../../store/selectors';
 
 class ProductsList extends Component {
-    getProductsByFilter = () => {
-        const { products, categoryFilter } = this.props;
-        return categoryFilter ? products.filter(product => product.category === categoryFilter) : products;
-    };
-
     render() {
         return (
             <Row className="mt-4">
-                {this.getProductsByFilter().map(product => {
+                {this.props.filteredProducts.map(product => {
                     return (
                         <Col xs={12} md={3} key={product.id} className="product-item text-center">
                             <h6 className="product-name">{product.name}</h6>
@@ -40,8 +37,10 @@ class ProductsList extends Component {
     };
 };
 
-const mapStateToProps = ({ products, categoryFilter }) => ({
-    products,
-    categoryFilter
-});
+const mapStateToProps = createSelector(
+    [productsSelector, categoryFilterSelector],
+    (products, categoryFilter) => ({
+        filteredProducts: categoryFilter ? products.filter(product => product.category === categoryFilter) : products
+    })
+);
 export default connect(mapStateToProps)(ProductsList);
