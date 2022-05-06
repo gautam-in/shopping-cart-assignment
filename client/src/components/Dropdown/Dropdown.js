@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Styled from "styled-components";
+import { filterDropDownData } from "../../utils";
 
 const Dropdown = Styled.div`
   padding-bottom: 6px;
@@ -52,11 +53,6 @@ const DropdownItem = Styled.div`
   }
 `;
 
-function test(data,id){
-  let result = data.find((val,i) => val.id === id)
-  return result.name
-}
-
 
 const DropdownComponent = ({ data,selectedCategoryId,handleCategoryClick }) => {
   const [isDropDownVisible, setIsDropDownVisible] = useState(false);
@@ -71,15 +67,15 @@ const DropdownComponent = ({ data,selectedCategoryId,handleCategoryClick }) => {
           }}
         >
           {selectedCategoryId !== null
-            ? test(data,selectedCategoryId)
+            ? filterDropDownData(data,selectedCategoryId)
             : "Please select an item"}
         </DropdownSelection>
-        {isDropDownVisible ? (
+        {isDropDownVisible && (
           <DropdownItems>
             { data && data.map((item, index) => (
               <DropdownItem
                 key={item.value}
-                onClick={(e) => {
+                onClick={() => {
                   handleCategoryClick(item);
                   setIsDropDownVisible(false);
                 }}
@@ -88,8 +84,6 @@ const DropdownComponent = ({ data,selectedCategoryId,handleCategoryClick }) => {
               </DropdownItem>
             ))}
           </DropdownItems>
-        ) : (
-          <></>
         )}
       </Dropdown>
     </>

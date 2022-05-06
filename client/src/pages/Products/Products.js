@@ -43,23 +43,22 @@ const NoProductsContainer = Styled.div`
 `;
 
 function ProductsPage() {
-  
   /* using context to get global store values */
   const categoriesContext = useContext(CategoriesContext);
   const productsContext = useContext(ProductsContext);
 
   /* getting the store values */
-const { categories, getCategoriesData, categoryId, setCategoryId } =
-    categoriesContext;  
+  const { categories, getCategoriesData, categoryId, setCategoryId } =
+    categoriesContext;
   const { products, getProductsData } = productsContext;
 
   /* dispatching actions to fetch categories and products data from API */
   useEffect(() => {
-    if(isEmpty(categories)){
+    if (isEmpty(categories)) {
       getCategoriesData();
     }
 
-    if(isEmpty(products)){
+    if (isEmpty(products)) {
       getProductsData();
     }
   }, []);
@@ -88,7 +87,6 @@ const { categories, getCategoriesData, categoryId, setCategoryId } =
     }
   };
 
-
   /* products functionalities */
   useEffect(() => {
     if (!isEmpty(products)) {
@@ -105,7 +103,6 @@ const { categories, getCategoriesData, categoryId, setCategoryId } =
       setFilterProductsData(filteredProducts);
     }
   }, [productsData, selectedCategoryId]);
-
 
   const handleProductClick = (product) => {
     console.log(product);

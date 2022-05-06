@@ -58,7 +58,7 @@ const ButtonContainer = Styled.div`
 
 const Category = ({
   data: { imageUrl, name, description, id, key },
-  handleClick,
+  handleCategoryClick,
 }) => {
   return (
     <Fragment>
@@ -75,7 +75,7 @@ const Category = ({
           </CategoryHeaderContainer>
           <P>{description}</P>
           <ButtonContainer>
-            <Button onClick={() => handleClick()}>{`Explore ${key}`}</Button>
+            <Button onClick={() => handleCategoryClick(id)}>{`Explore ${key}`}</Button>
           </ButtonContainer>
         </CategoryDescription>
       </CategoryContainer>

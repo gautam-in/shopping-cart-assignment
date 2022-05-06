@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import { isEmpty } from "lodash";
 import CarouselComponent from "../../components/Carousel/Carousel";
 import Categories from "../../containers/Categories/Categories";
@@ -7,9 +8,12 @@ import CarouselContext from "../../store/Carousel/Context";
 import Layout from "../../layout/Layout";
 
 function Home() {
+  const history = useHistory()
+
   const categoriesContext = useContext(CategoriesContext);
   const carouselContext = useContext(CarouselContext);
-  const { categories, getCategoriesData } = categoriesContext;
+
+  const { categories, getCategoriesData,setCategoryId } = categoriesContext;
   const { carousel, getCarouselData } = carouselContext;
 
   const [carouselData, setCarouselData] = useState([]);
@@ -33,11 +37,15 @@ function Home() {
     }
   }, [categories,carousel]);
 
+  const handleCategoryClick = (id) => {
+      setCategoryId(id)
+      history.push('/products')
+  }
   return (
     <Layout>
       <div>
-        {!isEmpty(carouselData) && <CarouselComponent data={carouselData} />}
-        {!isEmpty(categoriesData) && <Categories data={categoriesData} />}
+        {!isEmpty(carouselData) && <CarouselComponent data={carouselData}/>}
+        {!isEmpty(categoriesData) && <Categories data={categoriesData}  handleCategoryClick={handleCategoryClick}/>}
       </div>
     </Layout>
   );

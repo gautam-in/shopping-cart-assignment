@@ -27,7 +27,8 @@ const Card = Styled.div`
 const Title = Styled.div`
     margin: 10px 0 20px 0;
     height: 50px;
-    max-height: 80px;
+    max-height: 100px;
+    overflow: auto;
 `;
 
 const Description = Styled.div`
