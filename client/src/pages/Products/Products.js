@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { isEmpty } from "lodash";
 import axios from 'axios';
 import Styled from "styled-components";
+import H1 from "../../components/Typography/H1";
 import Layout from "../../layout/Layout";
 import Sidebar from "../../containers/Sidebar/Sidebar";
 import Products from "../../containers/Products/Products";
@@ -23,18 +24,29 @@ const LeftSection = Styled.div`
 `
 
 const RightSection = Styled.div`
+    display: ${props => props.alignCenter ? "flex" : ""};
+    justify-content: ${props => props.alignCenter ? "center" : ""};
+    align-items: ${props => props.alignCenter ? "center" : ""};
+    
     width: 80%;
     @media(max-width: 766px){
        width: 100%;
     }
 `
 
+const NoProductsContainer = Styled.div`
+    @media(max-width: 766px){
+        margin-top: 60px;
+    }
+`
+
+
 function ProductsPage() {
 
   const [ categoriesData, setCategoriesData ] = useState([])
   const [ productsData, setProductsData ] = useState([])
   const [ selectedCategoryId, setSelectedCategoryId] = useState('')
-  const [filterProductsData, setFilterProductsData] = useState([])
+  const [ filterProductsData, setFilterProductsData] = useState([])
 
 
   useEffect (() => {
@@ -89,8 +101,8 @@ const handleProductClick = (product) => {
         <LeftSection>
             {!isEmpty(categoriesData) && <Sidebar data={categoriesData} handleCategoryClick={handleCategoryClick} selectedCategoryId={selectedCategoryId}/> }
         </LeftSection>
-        <RightSection>
-            {!isEmpty(filterProductsData) && <Products data={filterProductsData}  handleProductClick={handleProductClick}/> }
+        <RightSection alignCenter={isEmpty(filterProductsData)}>
+            {!isEmpty(filterProductsData) ? <Products data={filterProductsData}  handleProductClick={handleProductClick}/>  : <NoProductsContainer><H1>No Products To Show</H1></NoProductsContainer>}
         </RightSection>
       </SectionContainer>
     </Layout>

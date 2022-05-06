@@ -4,12 +4,13 @@ import Mobile from "./Mobile";
 import Desktop from "./Desktop";
 
 
-const Product = ({...rest}) => {
+const Product = ({data,...rest}) => {
+
   return (
     <Fragment>
-      <Desktop {...rest} />
-      <Tablet {...rest} />
-      <Mobile {...rest} />
+        <Desktop data={data} {...rest} />
+        <Tablet data={data} {...rest} />
+        <Mobile data={data} {...rest} />
     </Fragment>
   );
 };

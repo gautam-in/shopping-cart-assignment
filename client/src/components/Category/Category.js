@@ -1,9 +1,9 @@
-import { Fragment} from "react";
+import { Fragment } from "react";
 import Styled from "styled-components";
 import { isUndefined } from "lodash";
-import FallbackImage from "../../fallbackImage/fallback_image.jpg"
+import FallbackImage from "../../fallbackImage/fallback_image.jpg";
 import Button from "../Button/Button";
-import H2 from "../Typography/H2";
+import H1 from "../Typography/H1";
 
 const CategoryContainer = Styled.section`
   display: flex;
@@ -30,6 +30,10 @@ const CategoryImage = Styled.img`
       height: auto;
 `;
 
+const CategoryHeaderContainer = Styled.div`
+  padding: 20px 0;
+`;
+
 const CategoryDescription = Styled.div`
     display: flex;
     justify-content: center;
@@ -52,18 +56,26 @@ const ButtonContainer = Styled.div`
   max-width: 100%;
 `;
 
-const Category = ({ data: {imageUrl, name, description, id, key },handleClick}) => {
+const Category = ({
+  data: { imageUrl, name, description, id, key },
+  handleClick,
+}) => {
   return (
     <Fragment>
       <CategoryContainer key={id}>
         <CategoryImageContainer>
-          <CategoryImage src={!isUndefined(imageUrl) ? imageUrl : FallbackImage} alt={name} />
+          <CategoryImage
+            src={!isUndefined(imageUrl) ? imageUrl : FallbackImage}
+            alt={name}
+          />
         </CategoryImageContainer>
         <CategoryDescription>
-          <H2 alignCenter>{name}</H2>
+          <CategoryHeaderContainer>
+            <H1 alignCenter>{name}</H1>
+          </CategoryHeaderContainer>
           <P>{description}</P>
           <ButtonContainer>
-            <Button onClick={() => handleClick()} >{`Explore ${key}`}</Button>
+            <Button onClick={() => handleClick()}>{`Explore ${key}`}</Button>
           </ButtonContainer>
         </CategoryDescription>
       </CategoryContainer>

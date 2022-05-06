@@ -59,7 +59,7 @@ const CTAContainer = Styled.div`
 const Desktop = ({ data, key, handleProductClick}) => {
   return (
     <Fragment>
-      <Card key={key}>
+        <Card key={key}>
         <Title>
           <H3>{data.name}</H3>
         </Title>
