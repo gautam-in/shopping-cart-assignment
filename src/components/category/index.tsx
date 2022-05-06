@@ -17,7 +17,7 @@ const Categories: FC<CategoryProps> = ({ category, openCategory }) => {
     return (
         <div className="banner-component d-flex justify-content-between">
             <div className="image-container">
-                <img src={category.imageUrl} alt={category.name} className="banner-image" />
+                <img src={category.imageUrl} alt={category.name} className="banner-image" height="175px" />
             </div>
             <div className="content">
                 <h2 className="heading">{category.name}</h2>

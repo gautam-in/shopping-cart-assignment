@@ -17,8 +17,14 @@ header {
       cursor: pointer;
     }
     > nav {
-      margin-top: 20px;
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      ul {
+        margin: 0;
+      }
     }
     .cart-login-container {
       position: relative;

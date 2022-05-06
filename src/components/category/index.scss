@@ -8,6 +8,12 @@
         flex-direction: row-reverse;
     }
     .content {
+        width: 70%;
+        margin: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         p {
             font-size: x-small;
             text-align: center;
@@ -34,14 +40,11 @@
             border-radius: 3px;
             font-weight: 500;
             color: #fff;
-            margin: 15px auto;
             display: block;
             cursor: pointer;
             text-transform: capitalize;
             text-align: center;
         }
-        width: 70%;
-        margin: 15px;
     }
     .image-container {
         img {
