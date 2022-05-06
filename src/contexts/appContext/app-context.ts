@@ -17,6 +17,7 @@ export interface AppContextProps {
     appState: AppState;
     updateCart: (item: Product) => void;
     removeCart: (item: Product) => void;
+    resetCart: () => void;
     setSelectedCategory: (selectedCategory: SelectedCategory) => void;
 }
 
