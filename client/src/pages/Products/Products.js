@@ -1,12 +1,12 @@
 import { useState, useEffect, useContext } from "react";
 import { isEmpty } from "lodash";
-import axios from 'axios';
 import Styled from "styled-components";
 import H1 from "../../components/Typography/H1";
 import Layout from "../../layout/Layout";
 import Sidebar from "../../containers/Sidebar/Sidebar";
 import Products from "../../containers/Products/Products";
 import CategoriesContext from "../../store/Categories/Context";
+import ProductsContext from "../../store/Products/Context";
 import { filteredProductsData } from "../../utils"
 
 const SectionContainer = Styled.section`
@@ -46,7 +46,10 @@ const NoProductsContainer = Styled.div`
 function ProductsPage() {
 
   const categoriesContext = useContext(CategoriesContext)
+  const productsContext = useContext(ProductsContext)
+
   const { categories,getCategoriesData,categoryId,setCategoryId } = categoriesContext;
+  const { products,getProductsData } = productsContext;
 
   const [ categoriesData, setCategoriesData ] = useState([])
   const [ productsData, setProductsData ] = useState([])
@@ -56,6 +59,7 @@ function ProductsPage() {
 
   useEffect (() => {
     getCategoriesData()
+    getProductsData()
 },[])
 
   useEffect(() => {
@@ -66,14 +70,10 @@ function ProductsPage() {
   },[categories,categoryId])
 
 useEffect (() => {
-  const getProductsData = async () => {
-   let res = await axios.get('/products')
-    if(res.data){
-      setProductsData(res.data)
-    }
+  if(!isEmpty(products)){
+    setProductsData(products)
   }
-  getProductsData()
-},[])
+},[products])
 
 useEffect(() => {
   if(!isEmpty(productsData) && !isEmpty(selectedCategoryId)){

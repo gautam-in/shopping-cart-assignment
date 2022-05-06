@@ -1,0 +1,2 @@
+export const GET_PRODUCTS_DATA = 'GET_PRODUCTS_DATA';
+// export const SET_CATEGORY_ID = 'SET_CATEGORY_ID';
