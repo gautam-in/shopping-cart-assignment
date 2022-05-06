@@ -1,15 +1,17 @@
 import React, { useCallback, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { PRODUCTS } from '../../constants/routes';
+import { HOME, PRODUCTS } from '../../constants/routes';
 import AppContext from '../../contexts/appContext/app-context';
 import './index.scss';
 
 const Cart = () => {
     const history = useHistory();
+    const handleRedirect = useCallback((route) => history.push(route), [history]);
     const {
         appState: { cartCount, cartItems },
         updateCart,
         removeCart,
+        resetCart,
     } = useContext(AppContext);
 
     const handleCartUpdate = useCallback(
@@ -24,6 +26,15 @@ const Cart = () => {
             removeCart(item);
         },
         [removeCart],
+    );
+
+    const handleCartCheckout = useCallback(
+        () => () => {
+            alert('Order Placed Successfully');
+            handleRedirect(HOME);
+            resetCart();
+        },
+        [resetCart, handleRedirect],
     );
 
     return (
@@ -81,7 +92,7 @@ const Cart = () => {
                         <p className="checkout-heading" style={{ fontSize: 'small' }}>
                             Promo code can be applied on the checkout page.
                         </p>
-                        <button className="checkout-button" onClick={() => alert('Order Placed Successfully')}>
+                        <button className="checkout-button" onClick={handleCartCheckout()}>
                             <span className="checkout-text">Proceed to checkout</span>
                             <span className="checkout-price">
                                 {`₹ ${cartItems.reduce((total, item) => {
@@ -91,7 +102,7 @@ const Cart = () => {
                         </button>
                     </div>
                 ) : (
-                    <button className="start_shopping-button" onClick={() => history.push(PRODUCTS)}>
+                    <button className="start_shopping-button" onClick={() => handleRedirect(PRODUCTS)}>
                         <span className="checkout-text">Start Shopping</span>
                     </button>
                 )}

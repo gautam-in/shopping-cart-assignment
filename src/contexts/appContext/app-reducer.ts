@@ -1,11 +1,11 @@
 import get from 'lodash/get';
-import { REMOVE_CART_ITEM, SET_SELECTED_CATEGORY, UPDATE_CART_ITEM } from '../../constants/actions';
+import { REMOVE_CART_ITEM, RESET_CART_ITEM, SET_SELECTED_CATEGORY, UPDATE_CART_ITEM } from '../../constants/actions';
 import { AppState, SelectedCategory } from './app-context';
 import { Product } from '../../services/AppService';
 
 interface Action {
     type: string;
-    payload: Product | SelectedCategory;
+    payload?: Product | SelectedCategory;
 }
 
 const appReducer = (state: AppState, action: Action): AppState => {
@@ -57,6 +57,9 @@ const appReducer = (state: AppState, action: Action): AppState => {
             } else {
                 return { ...state };
             }
+        }
+        case RESET_CART_ITEM: {
+            return { ...state, cartCount: 0, cartItems: [] };
         }
         case SET_SELECTED_CATEGORY: {
             const selectedCategory = payload as SelectedCategory;
