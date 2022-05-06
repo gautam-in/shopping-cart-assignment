@@ -52,32 +52,35 @@ const DropdownItem = Styled.div`
   }
 `;
 
-const DropdownComponent = ({ data }) => {
+function test(data,id){
+  let result = data.find((val,i) => val.id === id)
+  return result.name
+}
+
+
+const DropdownComponent = ({ data,selectedCategoryId,setSelectedCategoryId }) => {
   const [isDropDownVisible, setIsDropDownVisible] = useState(false);
 
-  const [itemsList, setItemsList] = useState(data);
-
-  const [selectedItemIndex, setSelectedItemIndex] = useState(null);
   return (
     <>
       <Dropdown>
         <DropdownSelection
           visible={isDropDownVisible}
-          onClick={(e) => {
+          onClick={() => {
             setIsDropDownVisible(!isDropDownVisible);
           }}
         >
-          {selectedItemIndex !== null
-            ? itemsList[selectedItemIndex].name
+          {selectedCategoryId !== null
+            ? test(data,selectedCategoryId)
             : "Please select an item"}
         </DropdownSelection>
         {isDropDownVisible ? (
           <DropdownItems>
-            { itemsList && itemsList.map((item, index) => (
+            { data && data.map((item, index) => (
               <DropdownItem
                 key={item.value}
                 onClick={(e) => {
-                  setSelectedItemIndex(index);
+                  setSelectedCategoryId(item.id);
                   setIsDropDownVisible(false);
                 }}
               >

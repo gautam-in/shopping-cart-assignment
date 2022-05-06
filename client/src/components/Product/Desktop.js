@@ -6,10 +6,10 @@ import H3 from "../Typography/H3";
 
 const Card = Styled.div`
     width: 25%;
-    padding: 10px;
+    padding: 20px;
     box-shadow: 10px 0 20px -15px rgba(0, 0, 0, 0.15);
     display: none;
-    min-height: 600px;
+    min-height: 540px;
    @media (min-width: 1026px){
       display: inline-block;
     }
