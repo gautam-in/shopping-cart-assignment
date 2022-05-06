@@ -7,14 +7,14 @@ import Sidebar from "../../containers/Sidebar/Sidebar";
 import Products from "../../containers/Products/Products";
 import CategoriesContext from "../../store/Categories/Context";
 import ProductsContext from "../../store/Products/Context";
-import { filteredProductsData } from "../../utils"
+import { filteredProductsData } from "../../utils";
 
 const SectionContainer = Styled.section`
     display: flex;
     @media(max-width: 766px){
        flex-direction: column;
     }
-`
+`;
 
 const LeftSection = Styled.div`
     width: 20%;
@@ -23,92 +23,121 @@ const LeftSection = Styled.div`
        width: 100%;
        background: none;
     }
-`
+`;
 
 const RightSection = Styled.div`
-    display: ${props => props.alignCenter ? "flex" : ""};
-    justify-content: ${props => props.alignCenter ? "center" : ""};
-    align-items: ${props => props.alignCenter ? "center" : ""};
+    display: ${(props) => (props.alignCenter ? "flex" : "")};
+    justify-content: ${(props) => (props.alignCenter ? "center" : "")};
+    align-items: ${(props) => (props.alignCenter ? "center" : "")};
     
     width: 80%;
     @media(max-width: 766px){
        width: 100%;
     }
-`
+`;
 
 const NoProductsContainer = Styled.div`
     @media(max-width: 766px){
         margin-top: 60px;
     }
-`
-
+`;
 
 function ProductsPage() {
+  
+  /* using context to get global store values */
+  const categoriesContext = useContext(CategoriesContext);
+  const productsContext = useContext(ProductsContext);
 
-  const categoriesContext = useContext(CategoriesContext)
-  const productsContext = useContext(ProductsContext)
+  /* getting the store values */
+const { categories, getCategoriesData, categoryId, setCategoryId } =
+    categoriesContext;  
+  const { products, getProductsData } = productsContext;
 
-  const { categories,getCategoriesData,categoryId,setCategoryId } = categoriesContext;
-  const { products,getProductsData } = productsContext;
+  /* dispatching actions to fetch categories and products data from API */
+  useEffect(() => {
+    if(isEmpty(categories)){
+      getCategoriesData();
+    }
 
-  const [ categoriesData, setCategoriesData ] = useState([])
-  const [ productsData, setProductsData ] = useState([])
-  const [ selectedCategoryId, setSelectedCategoryId] = useState('')
-  const [ filterProductsData, setFilterProductsData] = useState([])
+    if(isEmpty(products)){
+      getProductsData();
+    }
+  }, []);
+
+  /* maintaining the local store values */
+  const [categoriesData, setCategoriesData] = useState([]);
+  const [productsData, setProductsData] = useState([]);
+  const [selectedCategoryId, setSelectedCategoryId] = useState("");
+  const [filterProductsData, setFilterProductsData] = useState([]);
+
+  /* categories functionalities */
+  useEffect(() => {
+    if (!isEmpty(categories) && !isEmpty(categoryId)) {
+      setCategoriesData(categories);
+      setSelectedCategoryId(categoryId);
+    }
+  }, [categories, categoryId]);
+
+  const handleCategoryClick = (category) => {
+    if (category.id === selectedCategoryId) {
+      setCategoryId(categoriesData[0].id);
+      setSelectedCategoryId(categoriesData[0].id);
+    } else {
+      setCategoryId(category.id);
+      setSelectedCategoryId(category.id);
+    }
+  };
 
 
-  useEffect (() => {
-    getCategoriesData()
-    getProductsData()
-},[])
+  /* products functionalities */
+  useEffect(() => {
+    if (!isEmpty(products)) {
+      setProductsData(products);
+    }
+  }, [products]);
 
   useEffect(() => {
-    if(!isEmpty(categories) && !isEmpty(categoryId)){
-      setCategoriesData(categories)
-      setSelectedCategoryId(categoryId)
+    if (!isEmpty(productsData) && !isEmpty(selectedCategoryId)) {
+      let filteredProducts = filteredProductsData(
+        productsData,
+        selectedCategoryId
+      );
+      setFilterProductsData(filteredProducts);
     }
-  },[categories,categoryId])
+  }, [productsData, selectedCategoryId]);
 
-useEffect (() => {
-  if(!isEmpty(products)){
-    setProductsData(products)
-  }
-},[products])
 
-useEffect(() => {
-  if(!isEmpty(productsData) && !isEmpty(selectedCategoryId)){
-      let filteredProducts = filteredProductsData(productsData,selectedCategoryId)
-      setFilterProductsData(filteredProducts)
-  }
-},[productsData,selectedCategoryId])
-
-const handleCategoryClick = (category) => {
-
-  if(category.id === selectedCategoryId){
-    setCategoryId(categoriesData[0].id)
-    setSelectedCategoryId(categoriesData[0].id)
-  }else{
-    setCategoryId(category.id)
-    setSelectedCategoryId(category.id)
-  }
-}
-
-const handleProductClick = (product) => {
-  console.log(product)
-}
+  const handleProductClick = (product) => {
+    console.log(product);
+  };
 
   return (
     <Layout>
       <SectionContainer>
         <LeftSection>
-            {!isEmpty(categoriesData) && <Sidebar data={categoriesData} handleCategoryClick={handleCategoryClick} selectedCategoryId={selectedCategoryId}/> }
+          {!isEmpty(categoriesData) && (
+            <Sidebar
+              data={categoriesData}
+              handleCategoryClick={handleCategoryClick}
+              selectedCategoryId={selectedCategoryId}
+            />
+          )}
         </LeftSection>
         <RightSection alignCenter={isEmpty(filterProductsData)}>
-            {!isEmpty(filterProductsData) ? <Products data={filterProductsData}  handleProductClick={handleProductClick}/>  : <NoProductsContainer><H1>No Products To Show</H1></NoProductsContainer>}
+          {!isEmpty(filterProductsData) ? (
+            <Products
+              data={filterProductsData}
+              handleProductClick={handleProductClick}
+            />
+          ) : (
+            <NoProductsContainer>
+              <H1>No Products To Show</H1>
+            </NoProductsContainer>
+          )}
         </RightSection>
       </SectionContainer>
     </Layout>
-  )
+  );
 }
 
 export default ProductsPage;

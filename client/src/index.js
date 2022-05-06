@@ -4,6 +4,7 @@ import {
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import AuthState from "./store/Auth/State";
+import CarouselState from "./store/Carousel/State";
 import CategoriesState from "./store/Categories/State";
 import ProductsState from "./store/Products/State";
 import "./styles.css";
@@ -13,12 +14,14 @@ const root = createRoot(rootElement);
 
 root.render(
   <AuthState>
-    <CategoriesState>
-      <ProductsState>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </ProductsState>
-    </CategoriesState>
+    <CarouselState>
+      <CategoriesState>
+        <ProductsState>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </ProductsState>
+      </CategoriesState>
+    </CarouselState>
   </AuthState>
 );
