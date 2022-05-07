@@ -7,6 +7,7 @@ import Sidebar from "../../containers/Sidebar/Sidebar";
 import Products from "../../containers/Products/Products";
 import CategoriesContext from "../../store/Categories/Context";
 import ProductsContext from "../../store/Products/Context";
+import CartContext from "../../store/Cart/Context";
 import { filteredProductsData } from "../../utils";
 
 const SectionContainer = Styled.section`
@@ -46,11 +47,15 @@ function ProductsPage() {
   /* using context to get global store values */
   const categoriesContext = useContext(CategoriesContext);
   const productsContext = useContext(ProductsContext);
+  const cartContext = useContext(CartContext);
+
 
   /* getting the store values */
   const { categories, getCategoriesData, categoryId, setCategoryId } =
     categoriesContext;
   const { products, getProductsData } = productsContext;
+  const { addCartItem } = cartContext;
+
 
   /* dispatching actions to fetch categories and products data from API */
   useEffect(() => {
@@ -105,7 +110,7 @@ function ProductsPage() {
   }, [productsData, selectedCategoryId]);
 
   const handleProductClick = (product) => {
-    console.log(product);
+    addCartItem(product);
   };
 
   return (

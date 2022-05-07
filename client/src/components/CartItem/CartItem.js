@@ -100,30 +100,30 @@ const CrossIcon = Styled.span``;
 
 const QuantityStyle = Styled.span``;
 
-const CartItemComponent = ({data: {name,imageURL,quantity=1,price},key}) => {
+const CartItemComponent = ({ data, key ,handleAddCartItem, handleRemoveCartItem }) => {
 
   return (
     <>
-        <CartItemContainer key={key}>
-          <CartItem >
-            <CartItemImage src={imageURL} alt={name} />
-            <CartItemInfo>
-              <CartItemNameContainer>
-                <H4>{name}</H4>
-              </CartItemNameContainer>
-              <CartPriceContainer>
-                <CartQuantityActionContainer>
-                  <CircleButtonMinusSymbol></CircleButtonMinusSymbol>
-                  <QuantityStyle>{quantity}</QuantityStyle>
-                  <CircleButtonPlusSymbol></CircleButtonPlusSymbol>
-                  <CrossIcon>&times;</CrossIcon>
-                  <CartItemPrice>{`Rs. ${price}`}</CartItemPrice>
-                </CartQuantityActionContainer>
-                <CartTotalPrice>{`Rs.${quantity * price}`}</CartTotalPrice>
-              </CartPriceContainer>
-            </CartItemInfo>
-          </CartItem>
-        </CartItemContainer>
+      <CartItemContainer key={key}>
+        <CartItem >
+          <CartItemImage src={data.imageURL} alt={data.name} />
+          <CartItemInfo>
+            <CartItemNameContainer>
+              <H4>{data.name}</H4>
+            </CartItemNameContainer>
+            <CartPriceContainer>
+              <CartQuantityActionContainer>
+                <CircleButtonMinusSymbol onClick={() => handleRemoveCartItem(data)}></CircleButtonMinusSymbol>
+                  <QuantityStyle>{data.quantity}</QuantityStyle>
+                <CircleButtonPlusSymbol onClick={() => handleAddCartItem(data)}></CircleButtonPlusSymbol>
+                <CrossIcon>&times;</CrossIcon>
+                <CartItemPrice>{`Rs. ${data.price}`}</CartItemPrice>
+              </CartQuantityActionContainer>
+              <CartTotalPrice>{`Rs.${data.quantity * data.price}`}</CartTotalPrice>
+            </CartPriceContainer>
+          </CartItemInfo>
+        </CartItem>
+      </CartItemContainer>
     </>
   );
 };

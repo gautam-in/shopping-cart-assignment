@@ -1,4 +1,5 @@
 import Styled from "styled-components";
+import { useHistory } from "react-router-dom";
 import H4 from "../Typography/H4";
 import Button from "../Button/Button";
 import HelpText from "../Typography/HelpText";
@@ -86,15 +87,18 @@ const ModalFooter = Styled.div`
 const ModalFooterDefault = Styled.div`
     padding: 1rem;
 `;
-const ModalComponent = ({ shouldShow, onRequestClose, children, noItems }) => {
-  return shouldShow ? (
+const ModalComponent = ({ modalState, handleModalClose, children, noItems }) => {
+
+  const history = useHistory();
+
+  return modalState ? (
     <Modal>
       <ModalContainer>
         <ModalHeaderContainer>
           <ModalTitle>
             <H4 color="#ffff">My Cart</H4>
           </ModalTitle>
-          <ModalCloseButton onClick={onRequestClose}>&times;</ModalCloseButton>
+          <ModalCloseButton onClick={handleModalClose}>&times;</ModalCloseButton>
         </ModalHeaderContainer>
         {noItems ? (
           <ModalBodyCenterAlignment>{children}</ModalBodyCenterAlignment>
@@ -104,14 +108,20 @@ const ModalComponent = ({ shouldShow, onRequestClose, children, noItems }) => {
 
         {noItems ? (
           <ModalFooterDefault>
-            <Button>Start Shopping</Button>
+            <Button onClick={() => {
+              history.push('/')
+              handleModalClose()
+            }}>Start Shopping</Button>
           </ModalFooterDefault>
         ) : (
           <ModalFooter>
             <HelpTextContainer>
               <HelpText>Promo code can be applied on payment page</HelpText>
             </HelpTextContainer>
-            <Button>
+            <Button onClick={() => {
+              history.push('/')
+              handleModalClose()
+            }}>
               <ButtonCartContainer>
                 <span>Proceed to Checkout</span>
                 <span>{`Rs.${187} ${" "} >`}</span>

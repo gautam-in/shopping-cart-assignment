@@ -8,10 +8,10 @@ const CartIconContainer = Styled.div`
   align-items: center;
   cursor: pointer;
 `;
-const CartIcon = () => {
+const CartIcon = ({handleModalOpen}) => {
   return (
     <>
-      <CartIconContainer>
+      <CartIconContainer onClick={handleModalOpen}>
         <CartImage
           style={{
             width: "30px",

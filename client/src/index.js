@@ -7,6 +7,8 @@ import AuthState from "./store/Auth/State";
 import CarouselState from "./store/Carousel/State";
 import CategoriesState from "./store/Categories/State";
 import ProductsState from "./store/Products/State";
+import CartState from "./store/Cart/State";
+
 import "./styles.css";
 
 const rootElement = document.getElementById("root");
@@ -17,9 +19,11 @@ root.render(
     <CarouselState>
       <CategoriesState>
         <ProductsState>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
+          <CartState>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </CartState>
         </ProductsState>
       </CategoriesState>
     </CarouselState>

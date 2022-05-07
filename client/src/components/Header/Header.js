@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Logo from "./Images/logo.png";
 import CartIcon from "./CartIcon/CartIcon";
 import AuthContext from "../../store/Auth/Context";
+import CartContext from "../../store/Cart/Context";
 
 const Brand = Styled.div`
   font-weight: bold;
@@ -143,8 +144,10 @@ const HeaderComponent = () => {
   const [ showSignOut, setShowSignOut ] = useState(false)
 
   const authContext = useContext(AuthContext);
+  const cartContext = useContext(CartContext);
 
   const { logout, isAuthenticated } = authContext;
+  const { openCartModal } = cartContext;
 
   useEffect(() => {
       if(isAuthenticated){
@@ -161,7 +164,12 @@ const HeaderComponent = () => {
     logout()
   }
 
+  const handleModalOpen = () => {
+    openCartModal()
+  }
+ 
   return (
+    <>
     <Header>
       <Brand>
         <HamburgerIcon onClick={(e) => toggleMobileMenu(e)}>
@@ -205,9 +213,10 @@ const HeaderComponent = () => {
               </SignOutLink>
           )}
         </RightHeaderLinks>
-        <CartIcon />
+            <CartIcon handleModalOpen={handleModalOpen}/>
       </RightHeaderSection>
     </Header>
+    </>
   );
 };
 
