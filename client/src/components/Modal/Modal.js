@@ -113,7 +113,7 @@ const ModalComponent = ({ modalState, handleModalClose, children, noItems,cartPr
           ) : (
             <ModalTitleWithItems>
               <H4 color="#ffff">{`My Cart`}{' '}</H4>
-              <P color="#ffff">{` (${cartQuantity} item)`}</P>
+              <P color="#ffff">{` (${cartQuantity} ${cartQuantity > 1 ? 'items': 'item'})`}</P>
             </ModalTitleWithItems>
           )}
           <ModalCloseButton onClick={handleModalClose}>&times;</ModalCloseButton>

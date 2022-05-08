@@ -52,3 +52,4 @@ export function getCartQuantityAndTotalPrice(cartItems) {
     total
   }
 }
+
