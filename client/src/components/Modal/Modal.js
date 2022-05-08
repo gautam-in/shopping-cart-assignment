@@ -1,6 +1,7 @@
 import Styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import H4 from "../Typography/H4";
+import P from "../Typography/P";
 import Button from "../Button/Button";
 import HelpText from "../Typography/HelpText";
 
@@ -52,6 +53,16 @@ const ModalTitle = Styled.div`
   border-bottom: 1px solid #ccc;
 `;
 
+const ModalTitleWithItems = Styled.div`
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+
+  & p{
+    margin-left:5px;
+  }
+`;
+
 const ModalBody = Styled.div`
   flex: 1;
   padding: 1rem;
@@ -87,7 +98,7 @@ const ModalFooter = Styled.div`
 const ModalFooterDefault = Styled.div`
     padding: 1rem;
 `;
-const ModalComponent = ({ modalState, handleModalClose, children, noItems }) => {
+const ModalComponent = ({ modalState, handleModalClose, children, noItems,cartPrice,cartQuantity }) => {
 
   const history = useHistory();
 
@@ -95,9 +106,16 @@ const ModalComponent = ({ modalState, handleModalClose, children, noItems }) => 
     <Modal>
       <ModalContainer>
         <ModalHeaderContainer>
-          <ModalTitle>
-            <H4 color="#ffff">My Cart</H4>
-          </ModalTitle>
+          {noItems ? (
+            <ModalTitle>
+              <H4 color="#ffff">My Cart</H4>
+            </ModalTitle>
+          ) : (
+            <ModalTitleWithItems>
+              <H4 color="#ffff">{`My Cart`}{' '}</H4>
+              <P color="#ffff">{` (${cartQuantity} item)`}</P>
+            </ModalTitleWithItems>
+          )}
           <ModalCloseButton onClick={handleModalClose}>&times;</ModalCloseButton>
         </ModalHeaderContainer>
         {noItems ? (
@@ -124,7 +142,7 @@ const ModalComponent = ({ modalState, handleModalClose, children, noItems }) => 
             }}>
               <ButtonCartContainer>
                 <span>Proceed to Checkout</span>
-                <span>{`Rs.${187} ${" "} >`}</span>
+                <span>{`Rs.${cartPrice} ${" "} >`}</span>
               </ButtonCartContainer>
             </Button>
           </ModalFooter>

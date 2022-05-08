@@ -15,21 +15,27 @@ import CartItems from "./containers/CartItems/CartItems";
 import LowestPriceTag from "./components/LowestPriceTag/LowestPriceTag";
 import H3 from "./components/Typography/H3";
 import P from "./components/Typography/P";
+import { getCartQuantityAndTotalPrice } from './utils';
 
 function App() {
 
   const cartContext = useContext(CartContext);
 
-  const { cartModalState, closeCartModal, cartItems, addCartItem, removeCartItem } = cartContext;
+  const { cartModalState, closeCartModal, cartItems, addCartItem, removeCartItem, updateCartQuantityAndTotal } = cartContext;
   const [modalState, setModalState] = useState(false)
   const [cartData, setCartData] = useState([])
+  const [cartQuantity, setCartQuantity] = useState(null)
+  const [cartPrice, setCartPrice] = useState(null)
 
   useEffect(() => {
     setModalState(cartModalState)
   }, [cartModalState])
 
   useEffect(() => {
-      console.log(JSON.stringify(cartItems))
+      let { quantity, total } = getCartQuantityAndTotalPrice(cartItems)
+      updateCartQuantityAndTotal({quantity,total})
+      setCartQuantity(quantity)
+      setCartPrice(total)
       setCartData(cartItems)
   }, [cartItems])
 
@@ -67,8 +73,10 @@ function App() {
             modalState={modalState}
             handleModalClose={handleModalClose}
             noItems={isEmpty(cartData)}
+            cartPrice={cartPrice}
+            cartQuantity={cartQuantity}
           >
-            <CartItems data={cartData} handleAddCartItem={handleAddCartItem} handleRemoveCartItem={handleRemoveCartItem}/>
+            <CartItems data={cartData} handleAddCartItem={handleAddCartItem} handleRemoveCartItem={handleRemoveCartItem} />
             <LowestPriceTag />
           </ModalComponent>
         )}

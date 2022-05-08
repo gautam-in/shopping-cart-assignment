@@ -30,7 +30,7 @@ export const removeItemsFromCart = (cartItems, itemToRemove) => {
 
 };
 
-export function getTotals(cartItems) {
+export function getCartQuantityAndTotalPrice(cartItems) {
   let { total, quantity } = cartItems.reduce(
     (cartTotal, cartItem) => {
       const { price, quantity } = cartItem;
@@ -47,6 +47,8 @@ export function getTotals(cartItems) {
     }
   );
   total = parseFloat(total.toFixed(2));
-  console.log(quantity,total)
+  return {
+    quantity,
+    total
+  }
 }
-

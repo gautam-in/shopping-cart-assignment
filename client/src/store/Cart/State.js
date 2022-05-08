@@ -5,13 +5,16 @@ import {
     OPEN_CART_MODAL,
     CLOSE_CART_MODAL,
     ADD_CART_ITEM,
-    REMOVE_CART_ITEM
+    REMOVE_CART_ITEM,
+    UPDATE_CART_QUANTITY_AND_TOTAL
 } from './Types';
 
 const State = props => {
   const initialState = {
     cartItems: [],
     cartModalState: false,
+    cartTotalAmount: null,
+    cartTotalQuantity: null
   };
 
   const [state, dispatch] = useReducer(Reducer, initialState);
@@ -42,15 +45,25 @@ const State = props => {
     });
   }
 
+  const updateCartQuantityAndTotal = (data) => {
+    dispatch({
+      type: UPDATE_CART_QUANTITY_AND_TOTAL,
+      payload: data,
+    });
+  }
+  
   return (
     <Context.Provider
       value={{
         cartItems: state.cartItems,
         cartModalState: state.cartModalState,
+        cartTotalAmount: state.cartTotalAmount,
+        cartTotalQuantity: state.cartTotalQuantity,
         openCartModal,
         closeCartModal,
         addCartItem,
-        removeCartItem
+        removeCartItem,
+        updateCartQuantityAndTotal
       }}
     >
       {props.children}

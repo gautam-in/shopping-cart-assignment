@@ -2,7 +2,8 @@ import {
     OPEN_CART_MODAL,
     CLOSE_CART_MODAL,
     ADD_CART_ITEM,
-    REMOVE_CART_ITEM
+    REMOVE_CART_ITEM,
+    UPDATE_CART_QUANTITY_AND_TOTAL
   } from './Types';
 
 import { addItemsToCart, removeItemsFromCart } from '../../utils'
@@ -29,6 +30,14 @@ import { addItemsToCart, removeItemsFromCart } from '../../utils'
           ...state,
           cartItems: removeItemsFromCart(state.cartItems, action.payload)
         }
+      case UPDATE_CART_QUANTITY_AND_TOTAL: {
+        console.log(action.payload)
+        return {
+          ...state,
+          cartTotalAmount: action.payload.total,
+          cartTotalQuantity: action.payload.quantity
+        }
+      }
       default:
         return state;
     }

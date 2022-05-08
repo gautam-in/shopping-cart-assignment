@@ -142,18 +142,23 @@ const HeaderComponent = () => {
 
   const [toggle, setToggle] = useState(false);
   const [ showSignOut, setShowSignOut ] = useState(false)
+  const [cartQuantiy, setCartQuantity ] = useState(0)
 
   const authContext = useContext(AuthContext);
   const cartContext = useContext(CartContext);
 
   const { logout, isAuthenticated } = authContext;
-  const { openCartModal } = cartContext;
+  const { openCartModal,cartTotalQuantity } = cartContext;
 
   useEffect(() => {
       if(isAuthenticated){
         setShowSignOut(isAuthenticated)
       }
   },[isAuthenticated])
+
+  useEffect(() => {
+    setCartQuantity(cartTotalQuantity)
+  },[cartTotalQuantity])
 
 
   const toggleMobileMenu = (e) => {
@@ -213,7 +218,7 @@ const HeaderComponent = () => {
               </SignOutLink>
           )}
         </RightHeaderLinks>
-            <CartIcon handleModalOpen={handleModalOpen}/>
+            <CartIcon handleModalOpen={handleModalOpen} cartTotalQuantity={cartQuantiy}/>
       </RightHeaderSection>
     </Header>
     </>

@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Styled from "styled-components";
 import { ReactComponent as CartImage } from "./cart.svg";
 
@@ -8,9 +9,9 @@ const CartIconContainer = Styled.div`
   align-items: center;
   cursor: pointer;
 `;
-const CartIcon = ({handleModalOpen}) => {
+const CartIcon = ({handleModalOpen,cartTotalQuantity}) => {
   return (
-    <>
+    <Fragment>
       <CartIconContainer onClick={handleModalOpen}>
         <CartImage
           style={{
@@ -20,9 +21,9 @@ const CartIcon = ({handleModalOpen}) => {
             paddingRight: "10px"
           }}
         />
-        <span>0 items</span>
+        <span>{`${cartTotalQuantity} items`}</span>
       </CartIconContainer>
-    </>
+    </Fragment>
   );
 };
 
