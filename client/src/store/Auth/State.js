@@ -26,15 +26,6 @@ const State = props => {
       });
   };
 
-//   const loginError = (err) => {
-
-//     console.log("i am called")
-//     dispatch({
-//       type: LOGIN_FAIL,
-//       payload: true
-//     });
-//   }
-
   // Logout
   const logout = () => dispatch({ type: LOGOUT });
 
@@ -54,7 +45,6 @@ const State = props => {
         user: state.user,
         error: state.error,
         authenticationSucess,
-        // loginError,
         logout,
         showLoader,
       }}

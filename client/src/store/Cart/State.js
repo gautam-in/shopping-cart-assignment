@@ -6,12 +6,13 @@ import {
     CLOSE_CART_MODAL,
     ADD_CART_ITEM,
     REMOVE_CART_ITEM,
-    UPDATE_CART_QUANTITY_AND_TOTAL
+    UPDATE_CART_QUANTITY_AND_TOTAL,
+    CLEAR_CART
 } from './Types';
 
 const State = props => {
   const initialState = {
-    cartItems: [],
+    cartItems: JSON.parse(sessionStorage.getItem('cart')) || [],
     cartModalState: false,
     cartTotalAmount: null,
     cartTotalQuantity: null
@@ -51,6 +52,12 @@ const State = props => {
       payload: data,
     });
   }
+
+  const clearCart = (data) => {
+    dispatch({
+      type: CLEAR_CART,
+    });
+  }
   
   return (
     <Context.Provider
@@ -63,7 +70,8 @@ const State = props => {
         closeCartModal,
         addCartItem,
         removeCartItem,
-        updateCartQuantityAndTotal
+        updateCartQuantityAndTotal,
+        clearCart
       }}
     >
       {props.children}
