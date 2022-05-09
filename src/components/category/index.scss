@@ -1,0 +1,55 @@
+@import '../../Colors.scss';
+
+.banner-component {
+    position: relative;
+    box-shadow: 0 25px 31px -20px rgba(0, 0, 0, 0.22);
+    padding: 18px 0px;
+    &:nth-child(odd) {
+        flex-direction: row-reverse;
+    }
+    .content {
+        width: 70%;
+        margin: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        p {
+            font-size: x-small;
+            text-align: center;
+        }
+        span {
+            font-size: x-small;
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+        }
+        .heading {
+            font-size: small;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            margin: 15px 0px 0px 0px;
+        }
+        .link-button {
+            background: $primary_color;
+            padding: 8px 15px;
+            border: none;
+            font-size: x-small;
+            border-radius: 3px;
+            font-weight: 500;
+            color: #fff;
+            display: block;
+            cursor: pointer;
+            text-transform: capitalize;
+            text-align: center;
+        }
+    }
+    .image-container {
+        img {
+            width: 100%;
+        }
+        width: 30%;
+    }
+}
