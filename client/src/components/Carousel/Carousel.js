@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import PropTypes from 'prop-types';
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation, Autoplay } from "swiper";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -16,8 +16,12 @@ export default function Carousel({data}) {
         pagination={{
           clickable: true
         }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         navigation={true}
-        modules={[Navigation, Pagination]}
+        modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
         {data.map((val,i) => (

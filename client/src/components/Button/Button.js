@@ -9,6 +9,7 @@ const Button = styled.button`
   color: #ffffff;
   line-height: 35px;
   padding: ${(props) => (props.padding ? props.padding : `0 16px`)};
+  margin: ${(props) => (props.margin ? props.margin : `none`)};
   font-size: 16px;
   font-weight: 400;
   font-family: "Dosis", sans-serif;

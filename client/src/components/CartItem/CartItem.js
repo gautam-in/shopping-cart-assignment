@@ -16,6 +16,7 @@ const CartItem = Styled.div`
 const CartItemImage = Styled.img`
   width: 20%;
   margin-right: 15px;
+  height: 100;
 `;
 
 const CartItemInfo = Styled.div`

@@ -16,12 +16,16 @@ const State = props => {
   const [state, dispatch] = useReducer(Reducer, initialState);
 
   const getCategoriesData = async() => {
-    let res = await axios.get('/categories')
-    if(res.data){
-        dispatch({
-            type: GET_CATEGORIES_DATA,
-            payload: res.data
-        });
+    try{
+      let res = await axios.get('/categories')
+      if(res.data){
+          dispatch({
+              type: GET_CATEGORIES_DATA,
+              payload: res.data
+          });
+      }
+    }catch(error){
+      console.log(error)
     }
   };
 

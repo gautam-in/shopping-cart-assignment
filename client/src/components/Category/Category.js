@@ -67,6 +67,8 @@ const Category = ({
           <CategoryImage
             src={!isUndefined(imageUrl) ? imageUrl : FallbackImage}
             alt={name}
+            width={100}
+            height={100}
           />
         </CategoryImageContainer>
         <CategoryDescription>

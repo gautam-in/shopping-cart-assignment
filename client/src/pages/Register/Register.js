@@ -2,6 +2,7 @@ import { useEffect, useContext, Fragment } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import Styled from "styled-components";
+import SEO from "../../seo/SEO";
 import RegisterComponent from "../../containers/Register/Register";
 import H1 from "../../components/Typography/H1";
 import H5 from "../../components/Typography/H5";
@@ -59,6 +60,7 @@ function Register() {
 
   return (
     <Fragment>
+    <SEO title="Register | Sabka Bazaar" content="Sabka Bazaar is a online grocery platform, where you can buy in a affordable rate" link="/register"/>
       <RegisterStyle>
         <RegisterContentSection>
           <H1 fontSize="2em">Signup</H1>

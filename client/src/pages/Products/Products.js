@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext, Fragment } from "react";
 import { isEmpty } from "lodash";
 import Styled from "styled-components";
+import SEO from "../../seo/SEO";
 import H1 from "../../components/Typography/H1";
 import Sidebar from "../../containers/Sidebar/Sidebar";
 import Products from "../../containers/Products/Products";
@@ -114,6 +115,7 @@ function ProductsPage() {
 
   return (
     <Fragment>
+     <SEO title="Products | Sabka Bazaar" content="Sabka Bazaar is a online grocery platform, where you can buy in a affordable rate" link="/products"/>
       <SectionContainer>
         <LeftSection>
           {!isEmpty(categoriesData) && (

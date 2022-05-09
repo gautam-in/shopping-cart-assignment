@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext, Fragment } from "react";
 import { useHistory } from "react-router-dom";
 import { isEmpty } from "lodash";
+import SEO from "../../seo/SEO";
 import CarouselComponent from "../../components/Carousel/Carousel";
 import Categories from "../../containers/Categories/Categories";
 import CategoriesContext from "../../store/Categories/Context";
@@ -42,6 +43,7 @@ function Home() {
   }
   return (
     <Fragment>
+      <SEO title="Sabka Bazaar" content="Sabka Bazaar is a online grocery platform, where you can buy in a affordable rate" link="/"/>
       <div>
         {!isEmpty(carouselData) && <CarouselComponent data={carouselData}/>}
         {!isEmpty(categoriesData) && <Categories data={categoriesData}  handleCategoryClick={handleCategoryClick}/>}

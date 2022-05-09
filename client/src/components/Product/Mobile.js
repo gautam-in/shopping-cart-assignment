@@ -52,7 +52,7 @@ const CTAContainer = Styled.div`
   justify-content: space-between;
 `;
 
-const Product = ({ data, key, handleProductClick}) => {
+const Product = ({ data, key, handleProductClick }) => {
   return (
     <Fragment>
       <Card key={key}>
@@ -61,7 +61,12 @@ const Product = ({ data, key, handleProductClick}) => {
         </Title>
         <ContentContainer>
           <ImageContainer>
-            <Image src={data?.imageURL} alt={data?.name} />
+            <Image
+              src={data?.imageURL}
+              alt={data?.name}
+              width={100}
+              height={100}
+            />
           </ImageContainer>
           <CTAContainer>
             <Description>

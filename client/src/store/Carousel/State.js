@@ -14,13 +14,18 @@ const State = props => {
   const [state, dispatch] = useReducer(Reducer, initialState);
 
   const getCarouselData = async() => {
-    let res = await axios.get('/banners')
-    if(res.data){
-        dispatch({
-            type: GET_CAROUSEL_DATA,
-            payload: res.data
-        });
+    try{
+      let res = await axios.get('/banners')
+      if(res.data){
+          dispatch({
+              type: GET_CAROUSEL_DATA,
+              payload: res.data
+          });
+      }
+    }catch(error){
+      console.log(error)
     }
+
   };
 
   return (

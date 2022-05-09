@@ -1,4 +1,4 @@
-import {Fragment} from "react";
+import { Fragment } from "react";
 import Styled from "styled-components";
 import Button from "../Button/Button";
 import P from "../Typography/P";
@@ -57,15 +57,15 @@ const CTAContainer = Styled.div`
   font-size: 14px;
 `;
 
-const Desktop = ({ data, key, handleProductClick}) => {
+const Desktop = ({ data, key, handleProductClick }) => {
   return (
     <Fragment>
-        <Card key={key}>
+      <Card key={key}>
         <Title>
           <H3>{data.name}</H3>
         </Title>
         <ImageContainer>
-          <Image src={data.imageURL} alt={data.name} />
+          <Image src={data.imageURL} alt={data.name} width={100} height={100} />
         </ImageContainer>
         <Description>
           <P>{data.description}</P>

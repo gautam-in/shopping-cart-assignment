@@ -28,6 +28,8 @@ const Nav = Styled.nav`
 
 const BrandLogo = Styled.img`
   max-width: 150px;
+  width: 100;
+  height: 100;
   @media only screen and (max-width: 600px) {
     max-width: 120px;
 }
