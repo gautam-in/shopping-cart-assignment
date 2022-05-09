@@ -3,7 +3,6 @@ class Header extends HTMLElement {
     super();
 
     this.heading = "";
-    this.subheading = "";
   }
 
   connectedCallback() {
