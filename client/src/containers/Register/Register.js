@@ -6,6 +6,13 @@ import HelpText from "../../components/Typography/HelpText";
 
 const Form = Styled.form`
   width: 500px;
+  @media(max-width: 560px){
+    width: 360px;
+  }
+
+  @media(max-width: 380px){
+    width: 320px;
+  }
 `;
 
 const SubmitButtonContainer = Styled.div`

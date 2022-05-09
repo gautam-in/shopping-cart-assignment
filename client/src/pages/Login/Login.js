@@ -10,11 +10,21 @@ import AuthContext from "../../store/Auth/Context";
 const LoginStyle = Styled.div`
     display: flex;
     justify-content: space-evenly;
+    margin-top:60px;
+    @media(max-width: 992px){
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
 `;
 const LoginContentSection = Styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @media(max-width: 992px){
+      width: 100%;
+      text-align: center;
+    }
 `;
 
 function LoginPage() {

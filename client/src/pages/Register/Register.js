@@ -10,11 +10,22 @@ import AuthContext from "../../store/Auth/Context";
 const RegisterStyle = Styled.div`
     display: flex;
     justify-content: space-evenly;
+    margin-top:30px;
+    @media(max-width: 992px){
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
 `;
 const RegisterContentSection = Styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 60px;
+    justify-content: center;
+    @media(max-width: 992px){
+      width: 100%;
+      text-align: center;
+      margin-top:60px;
+    }
 `;
 
 function Register() {
