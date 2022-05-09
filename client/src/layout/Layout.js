@@ -15,14 +15,14 @@ const Container = Styled.div`
     @media (min-width:992px){
       max-width: none;
     }
-`
+`;
 
-function Layout({children}) {
+function Layout({ children }) {
   return (
     <Container>
-        {children}
+      {children}
     </Container>
-  )
+  );
 }
 
 export default Layout;
