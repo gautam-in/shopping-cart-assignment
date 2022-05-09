@@ -1,15 +1,15 @@
-import SidebarComponent  from '../Sidebar';
-import { data } from "../Data";
+// import SidebarComponent  from '../Sidebar';
+// import { data } from "../Data";
 
-export default {
-  title: 'Sabka Bazar/Organisms/Sidebar',
-  component: SidebarComponent,
-};
+// export default {
+//   title: 'Sabka Bazar/Organisms/Sidebar',
+//   component: SidebarComponent,
+// };
 
-const SidebarStory = (args) => <SidebarComponent {...args}/>;
+// const SidebarStory = (args) => <SidebarComponent {...args}/>;
 
-export const Sidebar = SidebarStory.bind({});
+// export const Sidebar = SidebarStory.bind({});
 
-Sidebar.args = {
-    data
-};
+// Sidebar.args = {
+//     data
+// };

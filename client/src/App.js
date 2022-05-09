@@ -12,7 +12,7 @@ import P from "./components/Typography/P";
 import { getCartQuantityAndTotalPrice } from "./utils";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-
+import Spinner from "./components/LoadingSpinner/LoadingSpinner";
 
 const Login = React.lazy(() => import("./pages/Login/Login"));
 const Register = React.lazy(() => import("./pages/Register/Register"));
@@ -61,7 +61,7 @@ function App() {
   };
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Spinner/>}>
         <Header />
         <Switch>
           <Route exact path="/login" component={Login} />
