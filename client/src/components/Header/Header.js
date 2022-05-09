@@ -5,7 +5,6 @@ import Logo from "./Images/logo.png";
 import CartIcon from "./CartIcon/CartIcon";
 import AuthContext from "../../store/Auth/Context";
 import CartContext from "../../store/Cart/Context";
-import Container from "../../layout/Container";
 
 const Brand = Styled.div`
   font-weight: bold;
@@ -149,12 +148,10 @@ const HeaderComponent = () => {
   const cartContext = useContext(CartContext);
 
   const { logout, isAuthenticated } = authContext;
-  const { openCartModal,cartTotalQuantity } = cartContext;
+  const { openCartModal,cartTotalQuantity, clearCartData} = cartContext;
 
   useEffect(() => {
-      if(isAuthenticated && !showSignOut){
         setShowSignOut(isAuthenticated)
-      }
   },[isAuthenticated])
 
   useEffect(() => {
@@ -167,6 +164,7 @@ const HeaderComponent = () => {
   };
 
   const handleSignOut = () => {
+    clearCartData()
     logout()
   }
 

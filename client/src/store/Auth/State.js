@@ -26,15 +26,6 @@ const State = props => {
       });
   };
 
-//   const loginError = (err) => {
-
-//     console.log("i am called")
-//     dispatch({
-//       type: LOGIN_FAIL,
-//       payload: true
-//     });
-//   }
-
   // Logout
   const logout = () => dispatch({ type: LOGOUT });
 
