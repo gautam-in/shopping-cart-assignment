@@ -21,7 +21,7 @@ const CartIcon = ({handleModalOpen,cartTotalQuantity}) => {
             paddingRight: "10px"
           }}
         />
-        <span>{`${cartTotalQuantity} ${cartTotalQuantity > 1 ? 'items': 'item'}`}</span>
+        <span>{`${cartTotalQuantity} items`}</span>
       </CartIconContainer>
     </Fragment>
   );

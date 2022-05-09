@@ -10,13 +10,28 @@ import {
   PRIMARY_STORY,
 } from '@storybook/addon-docs/blocks';
 import { addDecorator } from '@storybook/react';
+import AuthState from "../src/store/Auth/State";
+import CarouselState from "../src/store/Carousel/State";
+import CategoriesState from "../src/store/Categories/State";
+import ProductsState from "../src/store/Products/State";
+import CartState from "../src/store/Cart/State";
 
-import '../src/styles.css'
+import '../src/index.css'
 
 
 addDecorator(Story => (
     <Router>
-      <Story />
+      <AuthState>
+        <CarouselState>
+          <CategoriesState>
+            <ProductsState>
+              <CartState>
+                <Story />
+              </CartState>
+            </ProductsState>
+          </CategoriesState>
+        </CarouselState>
+      </AuthState>
   </Router>
 ));
 

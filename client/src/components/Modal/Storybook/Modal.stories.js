@@ -22,8 +22,8 @@ const ModalStoryWithNoItems = (args) => {
 export const ModalWithNoItemsInCart = ModalStoryWithNoItems.bind({});
 
 ModalWithNoItemsInCart.args = {
-    shouldShow: true,
-    onRequestClose: () => {},
+    modalState: true,
+    handleModalClose: () => {},
     noItems: true
 };
 
@@ -40,7 +40,9 @@ const ModalStoryWithItems = (args) => {
 export const ModalStoryWithItemsInCart = ModalStoryWithItems.bind({});
 
 ModalStoryWithItemsInCart.args = {
-    shouldShow: true,
-    onRequestClose: () => {},
-    noItems: false
+    modalState: true,
+    handleModalClose: () => {},
+    noItems: false,
+    cartPrice: 348,
+    cartQuantity: 2,
 };

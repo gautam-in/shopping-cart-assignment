@@ -38,7 +38,6 @@ function App() {
       updateCartQuantityAndTotal({quantity,total})
       setCartQuantity(quantity)
       setCartPrice(total)
-      sessionStorage.setItem('cartItems',JSON.stringify(cartItems))
       setCartData(cartItems)
   }, [cartItems])
 

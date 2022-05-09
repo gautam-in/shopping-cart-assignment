@@ -12,6 +12,7 @@ import {
         sessionStorage.setItem('user',JSON.stringify(action.payload.email))
         return {
           ...state,
+          ...action.payload,
           isAuthenticated: true,
           loading: false,
           user: action.payload

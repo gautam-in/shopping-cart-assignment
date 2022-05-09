@@ -3,10 +3,8 @@ import {
     CLOSE_CART_MODAL,
     ADD_CART_ITEM,
     REMOVE_CART_ITEM,
-    UPDATE_CART_QUANTITY_AND_TOTAL,
-    CLEAR_CART_DATA
+    UPDATE_CART_QUANTITY_AND_TOTAL
   } from './Types';
-
 
 import { addItemsToCart, removeItemsFromCart } from '../../utils'
   
@@ -37,16 +35,6 @@ import { addItemsToCart, removeItemsFromCart } from '../../utils'
           ...state,
           cartTotalAmount: action.payload.total,
           cartTotalQuantity: action.payload.quantity
-        }
-      }
-
-      case CLEAR_CART_DATA: {
-        return {
-          ...state,
-          cartItems: [],
-          cartModalState: false,
-          cartTotalAmount: null,
-          cartTotalQuantity: null
         }
       }
       default:

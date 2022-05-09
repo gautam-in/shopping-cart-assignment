@@ -1,11 +1,11 @@
 import { Fragment } from 'react';
-import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import PropTypes from 'prop-types';
 import { Pagination, Navigation } from "swiper";
-import "swiper/swiper.min.css";
-import "swiper/modules/navigation/navigation.min.css";
-import "swiper/modules/pagination/pagination.min.css";
-import "swiper/swiper-bundle.min.css";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import "swiper/css/bundle";
 import "./Carousel.css";
 
 export default function Carousel({data}) {

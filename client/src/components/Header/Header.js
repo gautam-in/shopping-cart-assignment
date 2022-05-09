@@ -148,7 +148,7 @@ const HeaderComponent = () => {
   const cartContext = useContext(CartContext);
 
   const { logout, isAuthenticated } = authContext;
-  const { openCartModal,cartTotalQuantity, clearCartData} = cartContext;
+  const { openCartModal,cartTotalQuantity } = cartContext;
 
   useEffect(() => {
         setShowSignOut(isAuthenticated)
@@ -164,7 +164,6 @@ const HeaderComponent = () => {
   };
 
   const handleSignOut = () => {
-    clearCartData()
     logout()
   }
 
