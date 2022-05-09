@@ -29,7 +29,9 @@ const Description = Styled.div`
   height: 100%;
   background-color: #f0f0f0;
   padding: 10px;
-  overflow: hidden;
+  overflow: auto;
+  min-height: 160px;
+  max-height: 160px;
 `;
 
 const ContentContainer = Styled.div`
