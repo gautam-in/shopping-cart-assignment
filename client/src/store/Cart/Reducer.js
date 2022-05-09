@@ -31,7 +31,6 @@ import { addItemsToCart, removeItemsFromCart } from '../../utils'
           cartItems: removeItemsFromCart(state.cartItems, action.payload)
         }
       case UPDATE_CART_QUANTITY_AND_TOTAL: {
-        console.log(action.payload)
         return {
           ...state,
           cartTotalAmount: action.payload.total,

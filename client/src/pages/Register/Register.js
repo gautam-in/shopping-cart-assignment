@@ -1,8 +1,7 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, Fragment } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import Styled from "styled-components";
-import Layout from "../../layout/Layout";
 import RegisterComponent from "../../containers/Register/Register";
 import H1 from "../../components/Typography/H1";
 import H5 from "../../components/Typography/H5";
@@ -48,7 +47,7 @@ function Register() {
   };
 
   return (
-    <Layout>
+    <Fragment>
       <RegisterStyle>
         <RegisterContentSection>
           <H1 fontSize="2em">Signup</H1>
@@ -58,7 +57,7 @@ function Register() {
         </RegisterContentSection>
         <RegisterComponent register={register} handleSubmit={handleSubmit} onSubmit={onSubmit} errors={errors} watch={watch}/>
       </RegisterStyle>
-    </Layout>
+    </Fragment>
   );
 }
 

@@ -1,8 +1,7 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, Fragment } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import Styled from "styled-components";
-import Layout from "../../layout/Layout";
 import LoginComponent from "../../containers/Login/Login";
 import H1 from "../../components/Typography/H1";
 import P from "../../components/Typography/P";
@@ -50,7 +49,7 @@ function LoginPage() {
   };
 
   return (
-    <Layout>
+    <Fragment>
       <LoginStyle>
         <LoginContentSection>
           <H1 fontSize="2em">Login</H1>
@@ -65,7 +64,7 @@ function LoginPage() {
           errors={errors}
         />
       </LoginStyle>
-    </Layout>
+    </Fragment>
   );
 }
 

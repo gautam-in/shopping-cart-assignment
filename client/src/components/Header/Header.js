@@ -5,6 +5,7 @@ import Logo from "./Images/logo.png";
 import CartIcon from "./CartIcon/CartIcon";
 import AuthContext from "../../store/Auth/Context";
 import CartContext from "../../store/Cart/Context";
+import Container from "../../layout/Container";
 
 const Brand = Styled.div`
   font-weight: bold;
@@ -151,7 +152,7 @@ const HeaderComponent = () => {
   const { openCartModal,cartTotalQuantity } = cartContext;
 
   useEffect(() => {
-      if(isAuthenticated){
+      if(isAuthenticated && !showSignOut){
         setShowSignOut(isAuthenticated)
       }
   },[isAuthenticated])

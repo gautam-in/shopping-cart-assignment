@@ -1,8 +1,7 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, Fragment } from "react";
 import { isEmpty } from "lodash";
 import Styled from "styled-components";
 import H1 from "../../components/Typography/H1";
-import Layout from "../../layout/Layout";
 import Sidebar from "../../containers/Sidebar/Sidebar";
 import Products from "../../containers/Products/Products";
 import CategoriesContext from "../../store/Categories/Context";
@@ -114,7 +113,7 @@ function ProductsPage() {
   };
 
   return (
-    <Layout>
+    <Fragment>
       <SectionContainer>
         <LeftSection>
           {!isEmpty(categoriesData) && (
@@ -138,7 +137,7 @@ function ProductsPage() {
           )}
         </RightSection>
       </SectionContainer>
-    </Layout>
+    </Fragment>
   );
 }
 

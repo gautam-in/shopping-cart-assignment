@@ -16,6 +16,8 @@ import LowestPriceTag from "./components/LowestPriceTag/LowestPriceTag";
 import H3 from "./components/Typography/H3";
 import P from "./components/Typography/P";
 import { getCartQuantityAndTotalPrice } from './utils';
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 function App() {
 
@@ -52,6 +54,7 @@ function App() {
   }
   return (
     <>
+      <Header/>
       <Switch>
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
@@ -80,6 +83,7 @@ function App() {
             <LowestPriceTag />
           </ModalComponent>
         )}
+      <Footer/>
     </>
   );
 }

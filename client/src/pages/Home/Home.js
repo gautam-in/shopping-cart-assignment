@@ -1,11 +1,10 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, Fragment } from "react";
 import { useHistory } from "react-router-dom";
 import { isEmpty } from "lodash";
 import CarouselComponent from "../../components/Carousel/Carousel";
 import Categories from "../../containers/Categories/Categories";
 import CategoriesContext from "../../store/Categories/Context";
 import CarouselContext from "../../store/Carousel/Context";
-import Layout from "../../layout/Layout";
 
 function Home() {
   const history = useHistory()
@@ -42,12 +41,12 @@ function Home() {
       history.push('/products')
   }
   return (
-    <Layout>
+    <Fragment>
       <div>
         {!isEmpty(carouselData) && <CarouselComponent data={carouselData}/>}
         {!isEmpty(categoriesData) && <Categories data={categoriesData}  handleCategoryClick={handleCategoryClick}/>}
       </div>
-    </Layout>
+    </Fragment>
   );
 }
 
