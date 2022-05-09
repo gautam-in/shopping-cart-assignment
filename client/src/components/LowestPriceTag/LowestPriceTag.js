@@ -1,5 +1,6 @@
 import Styled from "styled-components";
 import LowestPriceImage from "./Images/lowest-price.png";
+import { TRANSLATIONS } from '../../constants';
 
 const LowestPriceContainer = Styled.div`
   padding: 10px;
@@ -21,7 +22,7 @@ const LowestPriceTag = () => {
       <LowestPriceContainer>
         <LowestPriceImageTag src={LowestPriceImage} alt="lowest-price-tag" />
         <span style={{ fontSize: "16px" }}>
-          You won't find it cheaper anywhere
+            {TRANSLATIONS.CART.LOWEST_PRICE_TAG}
         </span>
       </LowestPriceContainer>
     </>

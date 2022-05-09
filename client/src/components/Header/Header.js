@@ -1,10 +1,11 @@
 import { Fragment,useState,useEffect,useContext } from "react";
 import Styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import Logo from "./Images/logo.png";
 import CartIcon from "./CartIcon/CartIcon";
 import AuthContext from "../../store/Auth/Context";
 import CartContext from "../../store/Cart/Context";
+import { TRANSLATIONS,ROUTES } from "../../constants";
 
 const Brand = Styled.div`
   font-weight: bold;
@@ -184,24 +185,24 @@ const HeaderComponent = () => {
           <Bar3 open={toggle}></Bar3>
           <MobileMenu open={toggle}>
             <MobileMenuLi>
-              <Link to="/">Home</Link>
+              <Link to={ROUTES.HOME}>{TRANSLATIONS.HEADER.HOME}</Link>
             </MobileMenuLi>
             <MobileMenuLi>
-              <Link to="/products">Products</Link>
+              <Link to={ROUTES.PRODUCTS}>{TRANSLATIONS.HEADER.PRODUCTS}</Link>
             </MobileMenuLi>
           </MobileMenu>
         </HamburgerIcon>
-        <Link to="/">
+        <Link to={ROUTES.HOME}>
           <BrandLogo src={Logo} alt="brandlogo" />
         </Link>
       </Brand>
       <Nav>
         <MenuItem>
           <MenuItemLink>
-            <Link to="/">Home</Link>
+            <Link to={ROUTES.HOME}>{TRANSLATIONS.HEADER.HOME}</Link>
           </MenuItemLink>
           <MenuItemLink>
-            <Link to="/products">Products</Link>
+            <Link to={ROUTES.PRODUCTS}>{TRANSLATIONS.HEADER.PRODUCTS}</Link>
           </MenuItemLink>
         </MenuItem>
       </Nav>
@@ -210,12 +211,12 @@ const HeaderComponent = () => {
           {!showSignOut ? 
              (
               <Fragment>
-                <Link to="/login">SignIn</Link>
-                <Link to="/register">Register</Link>
+                <Link to={ROUTES.LOGIN}>{TRANSLATIONS.HEADER.SIGNIN}</Link>
+                <Link to={ROUTES.REGISTER}>{TRANSLATIONS.HEADER.REGISTER}</Link>
               </Fragment>
               ) : (
               <SignOutLink onClick={handleSignOut}>
-                  <Link to="/">Sign Out</Link>
+                  <Link to={ROUTES.LOGIN}>{TRANSLATIONS.HEADER.SIGNOUT}</Link>
               </SignOutLink>
           )}
         </RightHeaderLinks>

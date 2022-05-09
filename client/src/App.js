@@ -13,6 +13,7 @@ import { getCartQuantityAndTotalPrice } from "./utils";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Spinner from "./components/LoadingSpinner/LoadingSpinner";
+import { ROUTES,TRANSLATIONS } from './constants'
 
 const Login = React.lazy(() => import("./pages/Login/Login"));
 const Register = React.lazy(() => import("./pages/Register/Register"));
@@ -65,11 +66,11 @@ function App() {
       <Suspense fallback={<Spinner/>}>
         <Header />
         <Switch>
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} />
-          <PrivateRoute exact path="/" component={Home} />
-          <PrivateRoute exact path="/products" component={Products} />
-          <Route path="*" component={NotFound} />
+          <Route exact path={ROUTES.LOGIN} component={Login} />
+          <Route exact path={ROUTES.REGISTER} component={Register} />
+          <PrivateRoute exact path={ROUTES.HOME} component={Home} />
+          <PrivateRoute exact path={ROUTES.PRODUCTS} component={Products} />
+          <Route path={ROUTES.NOT_FOUND} component={NotFound} />
 
         </Switch>
         {isEmpty(cartData) ? (
@@ -78,8 +79,8 @@ function App() {
             handleModalClose={handleModalClose}
             noItems={isEmpty(cartData)}
           >
-            <H3>No Items in your cart</H3>
-            <P>Your favourite items are just a click away</P>
+            <H3>{TRANSLATIONS.CART.NO_ITEMS.TITLE}</H3>
+            <P>{TRANSLATIONS.CART.NO_ITEMS.DESC}</P>
           </ModalComponent>
         ) : (
           <ModalComponent

@@ -6,6 +6,7 @@ import CarouselComponent from "../../components/Carousel/Carousel";
 import Categories from "../../containers/Categories/Categories";
 import CategoriesContext from "../../store/Categories/Context";
 import CarouselContext from "../../store/Carousel/Context";
+import { ROUTES } from "../../constants";
 
 function Home() {
   const history = useHistory()
@@ -39,7 +40,7 @@ function Home() {
 
   const handleCategoryClick = (id) => {
       setCategoryId(id)
-      history.push('/products')
+      history.push(ROUTES.PRODUCTS)
   }
   return (
     <Fragment>

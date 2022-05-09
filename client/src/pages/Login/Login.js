@@ -7,6 +7,7 @@ import LoginComponent from "../../containers/Login/Login";
 import H1 from "../../components/Typography/H1";
 import P from "../../components/Typography/P";
 import AuthContext from "../../store/Auth/Context";
+import { ROUTES,TRANSLATIONS } from '../../constants';
 
 const LoginStyle = Styled.div`
     display: flex;
@@ -50,7 +51,7 @@ function LoginPage() {
 
   useEffect(() => {
     if (isAuthenticated) {
-      history.push("/");
+      history.push(ROUTES.HOME);
     }
   }, [isAuthenticated]);
 
@@ -61,12 +62,12 @@ function LoginPage() {
 
   return (
     <Fragment>
-      <SEO title="Login | Sabka Bazaar" content="Sabka Bazaar is a online grocery platform, where you can buy in a affordable rate" link="/login"/>
+      <SEO title="Login | Sabka Bazaar" content="Sabka Bazaar is a online grocery platform, where you can buy in a affordable rate" link={ROUTES.LOGIN}/>
       <LoginStyle>
         <LoginContentSection>
-          <H1 fontSize="2em">Login</H1>
+          <H1 fontSize="2em">{TRANSLATIONS.LOGIN.LOGIN}</H1>
           <P bold="400" margin="20px 0 0 0">
-            Get acess to your Orders,Wishlist and Recommendations
+            {TRANSLATIONS.LOGIN.DESC}
           </P>
         </LoginContentSection>
         <LoginComponent

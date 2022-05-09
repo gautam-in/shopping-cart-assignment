@@ -4,6 +4,7 @@ import H4 from "../Typography/H4";
 import P from "../Typography/P";
 import Button from "../Button/Button";
 import HelpText from "../Typography/HelpText";
+import { ROUTES,TRANSLATIONS } from '../../constants';
 
 const HelpTextContainer = Styled.div`
     padding-bottom: 8px;
@@ -109,11 +110,11 @@ const ModalComponent = ({ modalState, handleModalClose, children, noItems,cartPr
         <ModalHeaderContainer>
           {noItems ? (
             <ModalTitle>
-              <H4 color="#ffff">My Cart</H4>
+              <H4 color="#ffff">{TRANSLATIONS.CART.HEADER}</H4>
             </ModalTitle>
           ) : (
             <ModalTitleWithItems>
-              <H4 color="#ffff">{`My Cart`}{' '}</H4>
+              <H4 color="#ffff">{TRANSLATIONS.CART.HEADER}{' '}</H4>
               <P color="#ffff">{` (${cartQuantity} item)`}</P>
             </ModalTitleWithItems>
           )}
@@ -128,21 +129,21 @@ const ModalComponent = ({ modalState, handleModalClose, children, noItems,cartPr
         {noItems ? (
           <ModalFooterDefault>
             <Button onClick={() => {
-              history.push('/')
+              history.push(ROUTES.HOME)
               handleModalClose()
-            }}>Start Shopping</Button>
+            }}>{TRANSLATIONS.CART.NO_ITEMS.CTA}</Button>
           </ModalFooterDefault>
         ) : (
           <ModalFooter>
             <HelpTextContainer>
-              <HelpText>Promo code can be applied on payment page</HelpText>
+              <HelpText>{TRANSLATIONS.CART.WITH_ITEMS.PROMO}</HelpText>
             </HelpTextContainer>
             <Button onClick={() => {
-              history.push('/')
+              history.push(ROUTES.HOME)
               handleModalClose()
             }}>
               <ButtonCartContainer>
-                <span>Proceed to Checkout</span>
+                <span>{TRANSLATIONS.CART.WITH_ITEMS.CTA}</span>
                 <span>{`Rs.${cartPrice} ${" "} >`}</span>
               </ButtonCartContainer>
             </Button>

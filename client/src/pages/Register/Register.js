@@ -7,6 +7,7 @@ import RegisterComponent from "../../containers/Register/Register";
 import H1 from "../../components/Typography/H1";
 import H5 from "../../components/Typography/H5";
 import AuthContext from "../../store/Auth/Context";
+import { ROUTES,TRANSLATIONS } from '../../constants';
 
 const RegisterStyle = Styled.div`
     display: flex;
@@ -49,7 +50,7 @@ function Register() {
 
   useEffect(() => {
     if(isAuthenticated){
-      history.push('/')
+      history.push(ROUTES.HOME)
     }
   },[isAuthenticated])
 
@@ -60,12 +61,12 @@ function Register() {
 
   return (
     <Fragment>
-    <SEO title="Register | Sabka Bazaar" content="Sabka Bazaar is a online grocery platform, where you can buy in a affordable rate" link="/register"/>
+    <SEO title="Register | Sabka Bazaar" content="Sabka Bazaar is a online grocery platform, where you can buy in a affordable rate" link={ROUTES.REGISTER}/>
       <RegisterStyle>
         <RegisterContentSection>
-          <H1 fontSize="2em">Signup</H1>
+          <H1 fontSize="2em">{TRANSLATIONS.REGISTER.SIGNUP}</H1>
           <H5 bold="400" margin="20px 0 0 0">
-            We do not share your personal details with anyone
+          {TRANSLATIONS.REGISTER.DESC}
           </H5>
         </RegisterContentSection>
         <RegisterComponent register={register} handleSubmit={handleSubmit} onSubmit={onSubmit} errors={errors} watch={watch}/>
