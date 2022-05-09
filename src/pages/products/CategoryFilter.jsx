@@ -1,6 +1,7 @@
 import { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { createSelector } from 'reselect';
+import CategoryFilterStyled from './CategoryFilter.styled';
 import { setCategoryFilter } from '../../store/actions';
 import { categoriesSelector, categoryFilterSelector } from '../../store/selectors';
 
@@ -9,7 +10,7 @@ class CategoryFilter extends Component {
         const { categories, dispatch, categoryFilter } = this.props;
 
         return (
-            <section className="categories-filter">
+            <CategoryFilterStyled>
                 {categories.map(({ id, name }) => (
                     <Fragment key={id}>
                         <p
@@ -21,7 +22,7 @@ class CategoryFilter extends Component {
                         <hr />
                     </Fragment>
                 ))}
-            </section>
+            </CategoryFilterStyled>
         );
     };
 };

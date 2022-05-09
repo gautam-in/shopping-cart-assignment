@@ -25,7 +25,7 @@ class Cart extends Component {
                     {cart.map(cartItem => (
                         <Row key={cartItem.id} className="mb-5">
                             <Col xs={2}>
-                                <img src={cartItem.imageURL} alt="cart image" height={60} width={60} />
+                                <img src={cartItem.imageURL} alt={cartItem.name} height={60} width={60} />
                             </Col>
                             <Col xs={8}>
                                 <h6 className='cart-product-name'>{cartItem.name}</h6>

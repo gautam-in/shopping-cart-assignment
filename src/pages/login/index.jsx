@@ -7,6 +7,7 @@ import withLayout from '../../hocs/withLayout';
 import CustomField from '../../components/CustomField';
 import {loginUserRequest, setUserLoggedInStatus} from '../../store/actions';
 import { loginInitialValues, loginSchema } from '../../utils/validationsHelper';
+import '../../css/form.styles.css';
 
 function Login() {
     const dispatch = useDispatch();

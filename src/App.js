@@ -2,6 +2,7 @@ import { Component, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Alert from './components/Alert';
 import './App.css';
+import './css/responsive.css';
 
 const Home = lazy(() => import('./pages/home'));
 const Products = lazy(() => import('./pages/products'));

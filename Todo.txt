@@ -1,19 +1,9 @@
-change mapStateToProps to createSelector
-
-responsive cart (only content should scroll)
-
-style hr tag for home page
-
-responsiveness
+On mobile resolution category list will convert into a dropdown.
 
 On mobile viewport user should be able to drag between slides instead of clicks.
 
-On mobile resolution category list will convert into a dropdown.
+style hr tag for home page
 
 color for cart svg
 
 find a way to use navigate() in react class components
-
-dynamic importing components when needed
-
-profiling

@@ -14,7 +14,7 @@ class ProductsList extends Component {
                         <Col xs={12} md={3} key={product.id} className="product-item text-center">
                             <h6 className="product-name">{product.name}</h6>
                             <div className="product-item-mflex">
-                                <img src={product.imageURL} alt="product-image" className="product-image" />
+                                <img src={product.imageURL} alt={product.name} className="product-image" />
                                 <p className="product-description">{product.description}</p>
                             </div>
 

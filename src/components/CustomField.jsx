@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { Field } from 'formik';
+import ErrorMessageStyled from './styled/ErrorMessage.styled';
 
 class CustomField extends Component {
     render() {
@@ -10,7 +11,9 @@ class CustomField extends Component {
                 <Field type={type} name={name} required autoComplete="off" />
                 <label className="control-label">{label || name}</label><i className="bar"></i>
 
-                <div className='error-message'>{error}</div>
+                <ErrorMessageStyled>
+                    {error}
+                </ErrorMessageStyled>
             </div>
         );
     };

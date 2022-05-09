@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {createSelector} from 'reselect';
 import { Container, Row, Col } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import HeaderStyled from './styled/Header.styled';
 import Navbar from './Navbar';
 import CartCount from './cart/CartCount';
 import Cart from './cart';
@@ -14,7 +15,7 @@ class Header extends Component {
         const {isUserLoggedIn} = this.props;
 
         return (
-            <header>
+            <HeaderStyled>
                 <Container>
                     <Row>
                         <Col xs="3">
@@ -42,7 +43,7 @@ class Header extends Component {
                         </Col>
                     </Row>
                 </Container>
-            </header>
+            </HeaderStyled>
         );
     };
 };

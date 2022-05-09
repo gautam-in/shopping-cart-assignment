@@ -7,6 +7,7 @@ import CustomField from '../../components/CustomField';
 import withLayout from '../../hocs/withLayout';
 import { setUserLoggedInStatus, registerUserRequest } from '../../store/actions';
 import { signUpInitialValues, signUpSchema } from '../../utils/validationsHelper';
+import '../../css/form.styles.css';
 
 function Register() {
     const dispatch = useDispatch();
