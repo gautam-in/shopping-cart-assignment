@@ -1,0 +1,20 @@
+.startShoppingButton{
+    display: flex;
+    width: 95%;
+    align-self: center;
+    justify-content: center;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    background-color: #d00256;
+    padding: 12px;
+}
+
+.emptyCart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 0%;
+    padding:16%
+}

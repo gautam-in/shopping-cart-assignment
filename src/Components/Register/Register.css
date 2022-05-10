@@ -1,0 +1,45 @@
+.signBlock{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+margin: 0 32px;
+align-items: center;
+padding-block: 64px;
+}
+
+.loginLetter{
+display: flex;
+flex-direction: column;
+}
+
+.registerForm{
+display: flex;
+flex-direction: column;
+}
+
+.inputItems{
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid black;
+    outline: none;
+    background: none;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    padding: 8px 0px;
+    display: block;
+  
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid grey;
+    margin: 16px 0;
+}
+
+.submitButton{
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    background-color: #d00256;
+    padding: 12px;
+    margin-top: 30px;
+}

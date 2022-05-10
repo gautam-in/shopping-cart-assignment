@@ -1,0 +1,25 @@
+.shadowLine{
+    /* border-bottom: 4px solid gray; */
+    /* height: 12px; */
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px #888;
+    box-shadow: 0 0 5px #888;
+}
+
+
+.exploreButton{
+    border: none;
+  color: #fff;
+  font-weight: 700;
+  background-color: #d00256;
+  padding: 12px;
+}
+
+.exploreButton:hover{
+    background-color: #d93578;
+    cursor: pointer;
+}
+
+.exploreButton:active{
+    transform: translateY(2px);
+}

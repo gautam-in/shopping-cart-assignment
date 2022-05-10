@@ -1,0 +1,60 @@
+.homeButton{
+background-color: white;
+border: transparent;
+cursor: pointer;
+font-family: 'Dosis';
+font-weight: 700;
+}
+
+.topNav{
+    
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.signIn{
+    background-color: white;
+border: transparent;
+cursor: pointer;
+font-family: 'Dosis';
+font-weight: 700;
+}
+
+.productButton{
+background-color: white;
+border: transparent;
+font-family: 'Dosis';
+font-weight: 700;
+cursor: pointer;
+}
+
+.cartImg{
+    width: 100px;
+    height: 50px;
+}
+
+.cartButton{
+    width: 116px;
+    height:55px;
+    border: transparent;
+    font-family: 'Dosis';
+    font-weight: 700;
+    font-size:10vw;
+    float: right;
+    background-color: lightgrey;
+    margin-right: 26px;
+}
+
+@media (max-width: 800px) {
+.header{
+    padding-inline: 0;
+}
+}
+
+.header{
+    display: flex;
+    box-shadow: 0 20px 30px -30px rgb(0 0 0 / 70%);
+    justify-content: space-between;
+    flex-direction: row;
+}
