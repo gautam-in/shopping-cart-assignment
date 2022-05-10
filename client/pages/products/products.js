@@ -1,5 +1,13 @@
 let categoryId = null;
 
+function getCategoryFromURL() {
+  let searchParams = new URLSearchParams(window.location.search);
+  let value = searchParams.get("category");
+  if (value) {
+    setCategory(value);
+  }
+}
+
 async function fetchCategories() {
   try {
     let response = await fetch("http://localhost:5000/categories");
@@ -9,6 +17,7 @@ async function fetchCategories() {
     return new Error("Error while fetching categories");
   }
 }
+
 async function fetchProducts() {
   try {
     let response = await fetch("http://localhost:5000/products");
@@ -28,6 +37,13 @@ async function renderCategories() {
   let categories = await fetchCategories();
   if (categories.length) {
     let categoriesDOMElement = document.getElementById("categories");
+
+    // add category all products to reset category filter
+    categories = [
+      ...categories,
+      { name: "All Products", id: null, enabled: true },
+    ];
+
     categories
       .filter((category) => category.enabled)
       .forEach((category) => {
@@ -87,5 +103,7 @@ async function renderProduct() {
     });
   }
 }
+
+getCategoryFromURL();
 renderCategories();
 renderProduct();
