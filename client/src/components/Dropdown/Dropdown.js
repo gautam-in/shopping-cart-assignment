@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
+import PropTypes from 'prop-types';
 import Styled from "styled-components";
 import { filterDropDownData } from "../../utils";
 
@@ -58,7 +59,7 @@ const DropdownComponent = ({ data,selectedCategoryId,handleCategoryClick }) => {
   const [isDropDownVisible, setIsDropDownVisible] = useState(false);
 
   return (
-    <>
+    <Fragment>
       <Dropdown>
         <DropdownSelection
           visible={isDropDownVisible}
@@ -86,8 +87,20 @@ const DropdownComponent = ({ data,selectedCategoryId,handleCategoryClick }) => {
           </DropdownItems>
         )}
       </Dropdown>
-    </>
+    </Fragment>
   );
 };
 
+
+DropdownComponent.propTypes = {
+  data: PropTypes.object,
+  handleCategoryClick: PropTypes.func,
+  selectedCategoryId: PropTypes.func,
+}
+
+DropdownComponent.defaultProps = {
+  data: {},
+  handleCategoryClick: () => {},
+  selectedCategoryId: () => {},
+}
 export default DropdownComponent;

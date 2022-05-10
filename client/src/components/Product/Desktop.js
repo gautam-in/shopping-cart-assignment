@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Styled from "styled-components";
+import PropTypes from 'prop-types';
 import Button from "../Button/Button";
 import P from "../Typography/P";
 import H3 from "../Typography/H3";
@@ -78,5 +79,17 @@ const Desktop = ({ data, key, handleProductClick }) => {
     </Fragment>
   );
 };
+
+Desktop.propTypes = {
+  data: PropTypes.object,
+  handleProductClick: PropTypes.func,
+  key: PropTypes.oneOfType([PropTypes.string,PropTypes.number])
+}
+
+Desktop.defaultProps = {
+  data: {},
+  handleProductClick: () => {},
+  key: 0
+}
 
 export default Desktop;

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+import { Fragment } from 'react';
 import Styled from "styled-components";
 import H4 from "../Typography/H4";
 
@@ -104,7 +106,7 @@ const QuantityStyle = Styled.span``;
 const CartItemComponent = ({ data, key ,handleAddCartItem, handleRemoveCartItem }) => {
 
   return (
-    <>
+    <Fragment>
       <CartItemContainer key={key}>
         <CartItem >
           <CartItemImage src={data.imageURL} alt={data.name} />
@@ -125,8 +127,22 @@ const CartItemComponent = ({ data, key ,handleAddCartItem, handleRemoveCartItem 
           </CartItemInfo>
         </CartItem>
       </CartItemContainer>
-    </>
+    </Fragment>
   );
 };
+
+CartItemComponent.propTypes = {
+  data: PropTypes.object,
+  key: PropTypes.oneOfType[PropTypes.string,PropTypes.number],
+  handleAddCartItem: PropTypes.func,
+  handleRemoveCartItem: PropTypes.func
+}
+
+CartItemComponent.defaultProps = {
+  data: {},
+  key: 0,
+  handleAddCartItem: () => {},
+  handleRemoveCartItem: () => {}
+}
 
 export default CartItemComponent;

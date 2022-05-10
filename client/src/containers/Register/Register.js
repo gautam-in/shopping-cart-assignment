@@ -1,4 +1,6 @@
+import { Fragment } from "react";
 import Styled from "styled-components";
+import PropTypes from 'prop-types';
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
 import HelpText from "../../components/Typography/HelpText";
@@ -22,7 +24,7 @@ const SubmitButtonContainer = Styled.div`
 const Register = ({register, handleSubmit, onSubmit, errors, watch}) => {
   
   return (
-    <>
+    <Fragment>
       <div>
           <Form onSubmit={handleSubmit(onSubmit)} noValidate>
             <Input
@@ -122,14 +124,24 @@ const Register = ({register, handleSubmit, onSubmit, errors, watch}) => {
             </SubmitButtonContainer>
           </Form>
         </div>
-    </>
+    </Fragment>
   );
 };
 
+Register.propTypes = {
+  register: PropTypes.func,
+  handleSubmit: PropTypes.func,
+  onSubmit: PropTypes.func,
+  watch: PropTypes.func,
+  errors: PropTypes.object
+}
+
+Register.defaultProps = {
+  register: () => {},
+  handleSubmit: () => {},
+  onSubmit: () => {},
+  watch: () => {},
+  errors: {}
+}
+
 export default Register;
-
-// /^(?=.[A-Z])(?=.[a-z])(?=.[0-9])(?=.[!@$*\-\(\\)])[^[\]^%?~`<>{}=+_|"':;\.,#&\/\\\s]{8,20}$/
-
-// /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,15}$/
-
-//

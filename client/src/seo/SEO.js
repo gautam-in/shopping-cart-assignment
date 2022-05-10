@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import PropTypes from 'prop-types';
 import { Helmet } from "react-helmet-async";
 
 const SEO = ({title,content,link}) => {
@@ -15,5 +16,18 @@ const SEO = ({title,content,link}) => {
     </Fragment>
   );
 };
+
+SEO.propTypes = {
+  title: PropTypes.string,
+  content: PropTypes.string,
+  link: PropTypes.string,
+}
+
+SEO.defaultProps = {
+  title: 'SEO Title',
+  content: 'SEO Content',
+  link: 'SEO Link',
+}
+
 
 export default SEO;

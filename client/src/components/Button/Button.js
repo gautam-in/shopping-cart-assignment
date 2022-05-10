@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from 'prop-types';
 
 const Button = styled.button`
   width: 100%;
@@ -44,5 +45,19 @@ const ButtonComponent = ({
     </div>
   );
 };
+
+ButtonComponent.propTypes = {
+  disabled: PropTypes.bool,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+    PropTypes.func
+  ])
+}
+
+ButtonComponent.defaultProps = {
+  disabled: false,
+  children: "Styled Button"
+}
 
 export default ButtonComponent;

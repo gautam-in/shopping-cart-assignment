@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import PropTypes from 'prop-types';
 import Styled from "styled-components";
 import { isUndefined } from "lodash";
 import FallbackImage from "../../fallbackImage/fallback_image.jpg";
@@ -84,5 +85,15 @@ const Category = ({
     </Fragment>
   );
 };
+
+Category.propTypes = {
+  data: PropTypes.object,
+  handleCategoryClick: PropTypes.func
+}
+
+Category.defaultProps = {
+  data: {},
+  handleCategoryClick: () => {}
+}
 
 export default Category;

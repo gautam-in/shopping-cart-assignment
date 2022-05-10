@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import PropTypes from 'prop-types';
+import { Fragment } from "react";
+
 
 const Hightlight = styled.div`
   position: absolute;
@@ -59,19 +62,33 @@ const Bar = styled.span`
   width: 50%;
 `;
 
-export default function InputComponent({
+function InputComponent({
   name,
   type,
   validation
 }) {
   return (
-    <>
+    <Fragment>
       <Group>
         <Input id={name} type={type} name={name} {...validation} required />
         <Hightlight></Hightlight>
         <Bar></Bar>
         <Label htmlFor={name}>{name}</Label>
       </Group>
-    </>
+    </Fragment>
   );
 }
+
+InputComponent.propTypes = {
+  name: PropTypes.string,
+  type: PropTypes.string,
+  validation: PropTypes.object,
+}
+
+InputComponent.defaultProps = {
+  name: 'Name',
+  type: 'name',
+  validation: {},
+}
+
+export default InputComponent;

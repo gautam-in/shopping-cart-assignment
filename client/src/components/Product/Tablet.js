@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Styled from "styled-components";
+import PropTypes from 'prop-types';
 import Button from "../Button/Button";
 import H3 from "../Typography/H3";
 import P from "../Typography/P";
@@ -76,5 +77,17 @@ const Tablet = ({ data, key, handleProductClick }) => {
     </Fragment>
   );
 };
+
+Tablet.propTypes = {
+  data: PropTypes.object,
+  handleProductClick: PropTypes.func,
+  key: PropTypes.oneOfType([PropTypes.string,PropTypes.number])
+}
+
+Tablet.defaultProps = {
+  data: {},
+  handleProductClick: () => {},
+  key: 0
+}
 
 export default Tablet;

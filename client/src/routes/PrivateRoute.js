@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import AuthContext from '../store/Auth/Context';
@@ -17,6 +18,14 @@ function PrivateRoute({ component: Component, ...rest }) {
       ))}
     />
   );
+}
+
+PrivateRoute.propTypes = {
+  rest: PropTypes.object,
+}
+
+PrivateRoute.defaultProps = {
+  rest: {},
 }
 
 export default PrivateRoute;

@@ -1,7 +1,8 @@
+import { Fragment } from "react";
 import Styled from "styled-components";
+import PropTypes from 'prop-types';
 import P from "../Typography/P";
 const VerticalNavContainer = Styled.aside`
-  /* height: 100vh; */
   width: 100%;
   background-color: #eee;
 `;
@@ -23,8 +24,6 @@ const VerticalBarNavItem = Styled.li`
   &:hover {
     cursor: pointer;
     background-color: ${props => props.active ? "" : "#dfdfdf"};
-    /* color: #fff;
-    width: 100%; */
   }
 `;
 
@@ -34,15 +33,9 @@ const VerticalNavTitle = Styled.div`
   padding-left: 20px;
 `;
 
-// .sidebar-container .active {
-//   cursor: pointer;
-//   background-color: #bf2957;
-//   color: #fff;
-// }
-
 const VerticalNav = ({data,handleCategoryClick,selectedCategoryId}) => {
   return (
-    <>
+    <Fragment>
       <VerticalNavContainer>
         <VerticalNavList>
           {data.map((val, i) => (
@@ -54,8 +47,21 @@ const VerticalNav = ({data,handleCategoryClick,selectedCategoryId}) => {
           ))}
         </VerticalNavList>
       </VerticalNavContainer>
-    </>
+    </Fragment>
   );
 };
+
+VerticalNav.propTypes = {
+  data: PropTypes.object,
+  handleCategoryClick: PropTypes.func,
+  selectedCategoryId: PropTypes.string
+}
+
+VerticalNav.defaultProps = {
+  data: {},
+  handleCategoryClick: () => {},
+  selectedCategoryId: ''
+}
+
 
 export default VerticalNav;

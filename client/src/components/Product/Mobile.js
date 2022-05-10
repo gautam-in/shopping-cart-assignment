@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import PropTypes from 'prop-types';
 import Styled from "styled-components";
 import Button from "../Button/Button";
 import H3 from "../Typography/H3";
@@ -79,5 +80,17 @@ const Product = ({ data, key, handleProductClick }) => {
     </Fragment>
   );
 };
+
+Product.propTypes = {
+  data: PropTypes.object,
+  handleProductClick: PropTypes.func,
+  key: PropTypes.oneOfType([PropTypes.string,PropTypes.number])
+}
+
+Product.defaultProps = {
+  data: {},
+  handleProductClick: () => {},
+  key: 0
+}
 
 export default Product;

@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+import PropTypes from 'prop-types';
 import Styled from "styled-components";
 import VerticalNav from "../../components/VerticalNav/VerticalNav";
 import Dropdown from "../../components/Dropdown/Dropdown";
@@ -22,15 +24,24 @@ const DropdownContainer = Styled.div`
 
 const SidebarContainerComponent = ({...rest}) => {
   return (
-    <>
+    <Fragment>
       <SidebarContainer>
         <VerticalNav {...rest}/>
       </SidebarContainer>
      <DropdownContainer>
         <Dropdown {...rest}/>
       </DropdownContainer> 
-    </>
+    </Fragment>
   );
 };
+
+SidebarContainerComponent.propTypes = {
+  rest: PropTypes.object
+}
+
+SidebarContainerComponent.defaultProps = {
+  rest: {}
+}
+
 
 export default SidebarContainerComponent;

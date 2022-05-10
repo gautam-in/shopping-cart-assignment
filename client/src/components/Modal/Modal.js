@@ -1,4 +1,5 @@
 import Styled from "styled-components";
+import PropTypes from 'prop-types';
 import { useHistory } from "react-router-dom";
 import H4 from "../Typography/H4";
 import P from "../Typography/P";
@@ -153,5 +154,27 @@ const ModalComponent = ({ modalState, handleModalClose, children, noItems,cartPr
     </Modal>
   ) : null;
 };
+
+ModalComponent.propTypes = {
+  modalState: PropTypes.bool,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+    PropTypes.func
+  ]),
+  handleModalClose: PropTypes.func,
+  noItems: PropTypes.bool,
+  cartPrice: PropTypes.number,
+  cartQuantity: PropTypes.number
+}
+
+ModalComponent.defaultProps = {
+  modalState: false,
+  children: "Modal",
+  handleModalClose: () => {},
+  noItems: false,
+  cartPrice: 0,
+  cartQuantity: 0
+}
 
 export default ModalComponent;

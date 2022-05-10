@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import PropTypes from 'prop-types';
 import Styled from "styled-components";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
@@ -74,6 +75,20 @@ const Login = ({register, handleSubmit, onSubmit, errors}) => {
     </Fragment>
   );
 };
+
+Login.propTypes = {
+  register: PropTypes.func,
+  handleSubmit: PropTypes.func,
+  onSubmit: PropTypes.func,
+  errors: PropTypes.object
+}
+
+Login.defaultProps = {
+  register: () => {},
+  handleSubmit: () => {},
+  onSubmit: () => {},
+  errors: {}
+}
 
 export default Login;
 
