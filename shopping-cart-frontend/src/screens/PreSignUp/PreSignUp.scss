@@ -1,0 +1,29 @@
+.mainContainer {
+  padding: 80px 20px;
+  min-height: calc(100vh - 80px);
+}
+
+@media (min-width: 480px) {
+  .mainContainer {
+    display: flex;
+
+    div {
+      width: calc(50vw - 20px);
+
+      p {
+        width: calc(80%);
+      }
+    }
+  }
+}
+
+@media (min-width: 780px) {
+  .mainContainer {
+    padding: 80px 15vw;
+
+    div {
+      width: calc(35vw);
+      display: inline-block;
+    }
+  }
+}

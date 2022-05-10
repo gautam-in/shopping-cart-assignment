@@ -1,0 +1,18 @@
+.footerContainer {
+  bottom: 0px;
+  width: 100%;
+  z-index: 100;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  position: sticky;
+  text-align: center;
+  background-color: lightgray;
+}
+
+@media (min-width: 780px) {
+  .footerContainer {
+    text-align: left;
+    padding: 10px 10vw;
+  }
+}
