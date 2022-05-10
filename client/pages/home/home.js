@@ -79,8 +79,7 @@ async function renderCategories() {
         // category image
         let cImage = document.createElement("img");
         cImage.src = `../../..${category.imageUrl}`;
-        cImage.style.height = "200px";
-        cImage.style.width = "300px";
+
         cImage.alt = category.key;
         // category data
         let cArticle = document.createElement("article");

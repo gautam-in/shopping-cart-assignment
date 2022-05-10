@@ -64,6 +64,24 @@ class Header extends HTMLElement {
       padding: 10px;
       cursor: pointer;
     }
+    @media screen and (max-width: 480px){
+      nav{
+          width: 100%
+      }
+      #nav__logo{
+          height: 50px;
+          // margin: 0 15px 0 0;
+      }
+      .nav__leftcontainer, .nav__rightcontainer{
+        gap:5px;
+      }
+      .nav__links{
+          padding: 0 10px 0 0;
+      }
+      .nav__auth__links{
+        display:flex;
+      }
+  }
   </style>
   <header>
   <a id="skipLink" href="#mainContent">Skip to Content</a>
@@ -78,7 +96,7 @@ class Header extends HTMLElement {
       <a class="nav__links" href="../products/products.html">Products</a>
     </div>
     <div class="nav__rightcontainer">
-      <div>
+      <div class="nav__auth__links">
         <a class="nav__links" href="../login/login.html">Login</a>
         <a class="nav__links" href="../register/register.html">Register</a>
       </div>

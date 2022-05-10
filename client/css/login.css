@@ -1,0 +1,73 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+.login__container {
+  min-height: 73vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.login__form__container {
+  display: flex;
+  flex-direction: column;
+}
+.login__form__container div {
+  position: relative;
+  margin-top: 10px;
+}
+.login__form__container input {
+  width: 30vw;
+  height: 35px;
+  border: none;
+  border-bottom: solid 1px #34BDC7;
+  margin: 5px 0;
+  transition: all 0.2s;
+  outline: none;
+}
+.login__form__container button {
+  width: 30vw;
+  height: 35px;
+  background-color: #D10157;
+  color: white;
+  border-style: none;
+  cursor: pointer;
+  margin: 10px 0;
+}
+.login__form__container label {
+  position: absolute;
+  transition: all 0.2s;
+  top: 7px;
+  font-size: 14px;
+  left: 0px;
+}
+.login__form__container input:focus + label {
+  left: 0px;
+  top: -7px;
+  font-size: 11px;
+}
+
+#error__block {
+  padding: 10px;
+  background-color: #ffeaea;
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .login__container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  section {
+    width: 100%;
+  }
+
+  .login__form__container input {
+    width: 90vw;
+  }
+}
+
+/*# sourceMappingURL=login.css.map */

@@ -9,6 +9,11 @@ class Footer extends HTMLElement {
               background-color: #eaeaea;
               padding: 3px 0px;
           }
+          @media screen and (max-width: 480px){
+            footer{
+              font-size:12px
+            }
+          }
       </style>
       <footer>
           <p>Copyright &copy; ${new Date().getFullYear()} Sabka Bazaar Grocery Suppliers Limited</p>

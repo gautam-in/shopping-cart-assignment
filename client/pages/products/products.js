@@ -1,4 +1,6 @@
 let categoryId = null;
+let products;
+let cart;
 
 function getCategoryFromURL() {
   let searchParams = new URLSearchParams(window.location.search);
@@ -37,7 +39,6 @@ async function renderCategories() {
   let categories = await fetchCategories();
   if (categories.length) {
     let categoriesDOMElement = document.getElementById("categories");
-
     // add category all products to reset category filter
     categories = [
       ...categories,
@@ -58,6 +59,31 @@ async function renderCategories() {
   }
 }
 
+async function renderMobileCategories() {
+  let categories = await fetchCategories();
+  if (categories.length) {
+    let mobCategoriesDOMElement = document.getElementsByTagName("select");
+    mobCategoriesDOMElement[0].addEventListener("change", (e) => {
+      setCategory(e.target.value);
+    });
+
+    // add category all products to reset category filter
+    categories = [
+      ...categories,
+      { name: "All Products", id: null, enabled: true },
+    ];
+
+    categories
+      .filter((category) => category.enabled)
+      .forEach((category) => {
+        let categoryOption = document.createElement("option");
+        categoryOption.innerText = category.name;
+        categoryOption.value = category.id;
+        mobCategoriesDOMElement[0].appendChild(categoryOption);
+      });
+  }
+}
+
 function createProduct(product) {
   let productCard = document.createElement("section");
   productCard.className = "product__card";
@@ -67,30 +93,47 @@ function createProduct(product) {
   productHeading.innerText = product.name;
   cardHeader.appendChild(productHeading);
 
+  let main = document.createElement("main");
+
   let pImage = document.createElement("img");
   pImage.src = `../../../${product.imageURL}`;
   pImage.style.height = "150px";
   pImage.style.width = "250px";
   pImage.alt = product.sku;
 
+  let pdes = document.createElement("div");
+  let para = document.createElement("p");
+  para.innerText = product.description;
+  pdes.appendChild(para);
+
+  main.appendChild(pImage);
+  main.appendChild(pdes);
+
   let cardFooter = document.createElement("footer");
   let price = document.createElement("h4");
+  price.id = "price";
   price.innerText = `Rs. ${product.price}`;
 
   let buyButton = document.createElement("button");
+  let span = document.createElement("span");
+  span.innerText = ` @ Rs.${product.price}`;
   buyButton.innerText = "Buy Now";
+  buyButton.appendChild(span);
+  buyButton.addEventListener("click", () => {
+    buyProduct(product);
+  });
   cardFooter.appendChild(price);
   cardFooter.appendChild(buyButton);
 
   productCard.appendChild(cardHeader);
-  productCard.appendChild(pImage);
+  productCard.appendChild(main);
   productCard.appendChild(cardFooter);
 
   return productCard;
 }
 
 async function renderProduct() {
-  let products = await fetchProducts();
+  products = await fetchProducts();
   if (categoryId) {
     products = products.filter((p) => p.category === categoryId);
   }
@@ -104,6 +147,29 @@ async function renderProduct() {
   }
 }
 
+function buyProduct(p) {
+  let product = products.filter((d) => {
+    if (p.id === d.id) return d;
+  });
+  if (!cart) {
+    cart = new Cart([], 1);
+    cart.render();
+    cart.showCart();
+    cart.addCartItem(product);
+  } else {
+    cart.addCartItem(product);
+  }
+}
+
+function openCart() {
+  if (cart) cart.showCart();
+  else {
+    cart = new Cart([], 0);
+    cart.render();
+    cart.showCart();
+  }
+}
 getCategoryFromURL();
 renderCategories();
+renderMobileCategories();
 renderProduct();

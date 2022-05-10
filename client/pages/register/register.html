@@ -20,6 +20,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="../../css/register.css" />
     <script src="register.js" defer></script>
     <script src="../../components/header/header.js" defer></script>
     <script src="../../components/footer/footer.js" defer></script>
@@ -27,17 +28,11 @@
       body {
         font-family: "Poppins", sans-serif;
       }
-      .login__container {
-        min-height: 73vh;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-      }
     </style>
   </head>
   <body>
     <my-header></my-header>
-    <main id="mainContent" class="login__container">
+    <main id="mainContent" class="register__container">
       <section>
         <h2>Register</h2>
         <article>
@@ -47,29 +42,29 @@
       <section>
         <form class="register__form__container" onsubmit="register(event)">
           <div>
-            <label for="firstname">First Name</label>
             <input type="text" id="firstname" required />
+            <label for="firstname">First Name</label>
           </div>
           <div>
-            <label for="lastname">Last Name</label>
             <input type="text" id="lastname" required />
+            <label for="lastname">Last Name</label>
           </div>
           <div>
-            <label for="email">Email</label>
             <input type="email" name="email" required />
+            <label for="email">Email</label>
           </div>
           <div>
-            <label for="password">Password</label>
             <input type="password" name="password" minlength="6" required />
+            <label for="password">Password</label>
           </div>
           <div>
-            <label for="confirmPassword">Confirm Password</label>
             <input
               type="password"
               name="confirmPassword"
               minlength="6"
               required
             />
+            <label for="confirmPassword">Confirm Password</label>
           </div>
           <div id="error-block"></div>
           <button type="submit">Register</button>
