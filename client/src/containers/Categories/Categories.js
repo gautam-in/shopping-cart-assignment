@@ -5,8 +5,8 @@ import Category from "../../components/Category/Category";
 
 const Categories = ({data,...rest}) => {
   
-  return data.map((val) => (
-    <Fragment>
+  return data.map((val,i) => (
+    <Fragment key={i}>
         <Category data={val} {...rest}/>
     </Fragment>
   ));

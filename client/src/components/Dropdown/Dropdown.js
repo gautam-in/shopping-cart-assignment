@@ -75,7 +75,7 @@ const DropdownComponent = ({ data,selectedCategoryId,handleCategoryClick }) => {
           <DropdownItems>
             { data && data.map((item, index) => (
               <DropdownItem
-                key={item.value}
+                key={`${item.value}-${index}`}
                 onClick={() => {
                   handleCategoryClick(item);
                   setIsDropDownVisible(false);
@@ -93,14 +93,14 @@ const DropdownComponent = ({ data,selectedCategoryId,handleCategoryClick }) => {
 
 
 DropdownComponent.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.array,
   handleCategoryClick: PropTypes.func,
-  selectedCategoryId: PropTypes.func,
+  selectedCategoryId: PropTypes.string,
 }
 
 DropdownComponent.defaultProps = {
   data: {},
   handleCategoryClick: () => {},
-  selectedCategoryId: () => {},
+  selectedCategoryId: '',
 }
 export default DropdownComponent;

@@ -7,7 +7,7 @@ const CartItems = ({data,...rest}) => {
         <Fragment>
          <div>
                 {data.map((val,i) => (
-                    <Fragment>
+                    <Fragment key={i}>
                         <CartItem data={val} key={i} {...rest}/>
                     </Fragment>
                 ))}

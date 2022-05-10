@@ -39,8 +39,8 @@ const VerticalNav = ({data,handleCategoryClick,selectedCategoryId}) => {
       <VerticalNavContainer>
         <VerticalNavList>
           {data.map((val, i) => (
-            <VerticalBarNavItem active={selectedCategoryId === val.id } key={i} onClick={() => handleCategoryClick(val)}>
-              <VerticalNavTitle>
+            <VerticalBarNavItem active={selectedCategoryId === val.id } key={`${val.name}-${i}`} onClick={() => handleCategoryClick(val)}>
+              <VerticalNavTitle key={`${val.name}-${i}`}>
                   <P>{val.name}</P>
               </VerticalNavTitle>
             </VerticalBarNavItem>
@@ -52,7 +52,7 @@ const VerticalNav = ({data,handleCategoryClick,selectedCategoryId}) => {
 };
 
 VerticalNav.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.array,
   handleCategoryClick: PropTypes.func,
   selectedCategoryId: PropTypes.string
 }

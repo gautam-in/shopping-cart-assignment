@@ -25,8 +25,8 @@ export default function Carousel({data}) {
         className="mySwiper"
       >
         {data.map((val,i) => (
-          <Fragment>
-            <SwiperSlide key={i}>
+          <Fragment key={`${val.bannerImageUrl}-${i}`}>
+            <SwiperSlide key={`${val.bannerImageUrl}-${i}`}>
               <img src={val.bannerImageUrl} alt={val.bannerImageAlt}/>
             </SwiperSlide>
           </Fragment>
