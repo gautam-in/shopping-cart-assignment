@@ -6,12 +6,16 @@ import CategoryFilter from './CategoryFilter';
 import ProductsList from './ProductsList';
 import UnAuthorizedPage from '../../components/UnAuthorizedPage';
 import withLayout from '../../hocs/withLayout';
-import { getProductsRequest } from '../../store/actions';
+import { getProductsRequest, setCategoryFilter } from '../../store/actions';
 import {userLoginStatusSelector} from '../../store/selectors';
 
 class Products extends Component {
     componentDidMount() {
         this.props.dispatch(getProductsRequest());
+    };
+    componentWillUnmount() {
+        // clear the selected category filter (if any)
+        this.props.dispatch(setCategoryFilter(''));
     };
 
     render() {
@@ -19,10 +23,10 @@ class Products extends Component {
             <Container>
                 {this.props.isUserLoggedIn ? (
                     <Row className='products_list'>
-                        <Col xs={2}>
+                        <Col md={3} xl={2}>
                             <CategoryFilter />
                         </Col>
-                        <Col xs={12} md={10}>
+                        <Col xs={12} md={9} xl={10}>
                             <ProductsList />
                         </Col>
                     </Row>

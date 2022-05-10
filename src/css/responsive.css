@@ -41,6 +41,13 @@
   }
 }
 
+/* tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+  #category-filter-styled {
+    max-width: 170px;
+  }
+}
+
 /* mobile & tablet */
 @media (min-width: 320px) and (max-width: 768px) {
   .m-show {

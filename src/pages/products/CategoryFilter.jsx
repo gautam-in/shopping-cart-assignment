@@ -39,8 +39,8 @@ class CategoryFilter extends Component {
         return (
             <>
                 {this.state.isMobileView ? (
-                    <select 
-                        id="categories-filter-dropdown" 
+                    <select
+                        id="categories-filter-dropdown"
                         value={categoryFilter}
                         onChange={this.handleFilterSelection}
                     >
@@ -50,7 +50,7 @@ class CategoryFilter extends Component {
                         ))}
                     </select>
                 ) : (
-                    <CategoryFilterStyled>
+                    <CategoryFilterStyled id="category-filter-styled">
                         {categories.map(({ id, name }) => (
                             <Fragment key={id}>
                                 <p

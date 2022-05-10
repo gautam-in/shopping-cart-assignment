@@ -1,6 +1,0 @@
-
-category active filter is not working sometimes
-
-style hr tags
-
-tab device responsiveness
