@@ -14,12 +14,42 @@
       content="Sabka Bazaar, Sabka, shopping, bazaar, bazar, e commerce, products"
     />
     <title>Login</title>
+    <script src="login.js" defer></script>
     <script src="../../components/header/header.js" defer></script>
+    <script src="../../components/footer/footer.js" defer></script>
+    <style>
+      .login__container {
+        min-height: 73vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+    </style>
   </head>
   <body>
     <my-header></my-header>
-    <div id="mainContent"></div>
+    <main id="mainContent" class="login__container">
+      <section>
+        <h2>Login</h2>
+        <article>
+          Get Access to your Orders, Wishlist and Recommendations
+        </article>
+      </section>
+      <section>
+        <form class="login__form__container" onsubmit="login(event)">
+          <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="">
+            <label for="password">Password</label>
+            <input type="password" name="password" minlength="6" required />
+          </div>
+          <div id="error-block"></div>
+          <button type="submit">Login</button>
+        </form>
+      </section>
+    </main>
     <my-footer></my-footer>
-    <script src="../../components/footer/footer.js" defer></script>
   </body>
 </html>
