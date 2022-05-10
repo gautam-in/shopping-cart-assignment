@@ -1,0 +1,9 @@
+.productSidebar{
+    background-color: rgb(234, 234, 234);
+    display: flex;
+    /* border: 1px solid black; */
+    flex-direction: column;
+    width: 200px;
+    height: 100%;
+    
+}

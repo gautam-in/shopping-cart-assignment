@@ -1,0 +1,42 @@
+.cartModal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    
+}
+
+.cart{
+    position: fixed;
+    bottom: 0;
+    right: 10%;
+    background-color: #ececec;
+    height: 85%;
+    width: 35%;
+    z-index: 100;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.cartTop{
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+}
+
+.cartItem{
+    display: flex;
+    flex-direction: row; 
+    padding: 8px;
+    background-color: white;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
