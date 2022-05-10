@@ -54,6 +54,8 @@ const fetchBanners = async () => {
     fetchBanners()
     categories()
 
+    // new comment added
+
 
 
 
