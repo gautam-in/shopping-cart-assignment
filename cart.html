@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page Sabka Bazaar</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./static/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./static/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./static/favicon-16x16.png"
+    />
+    <!-- Favicon -->
+  </head>
+
+  <body>
+    <!-- Navbar Starting -->
+    <div class="navbar navbar-cart-tablet">
+      <div class="logo">
+        <a href="index.html">
+          <img
+            class="site-logo"
+            src="./static/images/logo.png"
+            alt="website logo sabka bazaar"
+        /></a>
+      </div>
+      <nav class="navbar-cart-mobile">
+        <ul class="MenuItems">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+
+          <li><a href="">Register</a></li>
+          <li><a href="login.html">SignIn</a></li>
+          <!-- TODo: 22:20 -->
+        </ul>
+      </nav>
+
+      <a class="shopping-cart" href="cart.html"
+        ><i id="shopping-cart-image" class="fas fa-shopping-cart fa-lg"></i
+        ><span class="cart-items">0 items</span></a
+      >
+      <img
+        src="./static/images/menu.png"
+        alt=""
+        class="menu-icon"
+      />
+    </div>
+    <!-- Navbar Ending -->
+    <!-- Cart Items Details starting -->
+    <div class="small-container cart-page">
+      <table>
+        <tbody class="content">
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="total-price">
+        <button type="button" class="final-checkout-plan">
+          Proceed to Checkout<i class="fa fa-chevron-right"></i>
+        </button>
+      </div>
+      <button type="button" class="clear-cart">Clear Cart</button>
+    </div>
+    <!-- Cart Items Details Ending -->
+
+    <!-- Script files -->
+    <script src="./js/app.js"></script>
+    <script src="./js/cart.js"></script>
+  </body>
+</html>

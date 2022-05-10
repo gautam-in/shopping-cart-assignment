@@ -1,0 +1,6 @@
+@mixin categoriesSpacing($flexPerc, $min-width, $margin-top) {
+  flex: 1 1 $flexPerc;
+  justify-content: space-between;
+  min-width: $min-width;
+  margin-top: $margin-top;
+}
