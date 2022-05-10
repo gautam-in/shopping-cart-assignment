@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Sabka Bazaar" />
+    <meta
+      name="description"
+      content="E commerce site for day to day products"
+    />
+    <meta
+      name="keywords"
+      content="Sabka Bazaar, Sabka, shopping, bazaar, bazar, e commerce, products"
+    />
+    <title>Register</title>
+    <script src="register.js" defer></script>
+    <script src="../../components/header/header.js" defer></script>
+    <script src="../../components/footer/footer.js" defer></script>
+    <style>
+      .login__container {
+        min-height: 73vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+    </style>
+  </head>
+  <body>
+    <my-header></my-header>
+    <main id="mainContent" class="login__container">
+      <section>
+        <h2>Register</h2>
+        <article>
+          Get Access to your Orders, Wishlist and Recommendations
+        </article>
+      </section>
+      <section>
+        <form class="register__form__container" onsubmit="register(event)">
+          <div>
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" required />
+          </div>
+          <div>
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" required />
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" minlength="6" required />
+          </div>
+          <div>
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              minlength="6"
+              required
+            />
+          </div>
+          <div id="error-block"></div>
+          <button type="submit">Register</button>
+        </form>
+      </section>
+    </main>
+    <my-footer></my-footer>
+  </body>
+</html>
