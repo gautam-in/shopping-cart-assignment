@@ -30,5 +30,5 @@ function register(event) {
   let errorBlock = document.getElementById("error-block");
   errorBlock.style.display = "none";
   localStorage.setItem("IsAuth", true);
-  // todo: redirect to home page
+  // TODO: redirect to home page
 }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Sabka Bazaar" />
+    <meta
+      name="description"
+      content="E commerce site for day to day products"
+    />
+    <meta
+      name="keywords"
+      content="Sabka Bazaar, Sabka, shopping, bazaar, bazar, e commerce, products"
+    />
+    <title>Home</title>
+    <script src="home.js" defer></script>
+    <script src="../../components/header/header.js" defer></script>
+    <script src="../../components/footer/footer.js" defer></script>
+    <style>
+      #categories {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        margin: 50px 0;
+      }
+      .home__category {
+        display: flex;
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        gap: 100px;
+        justify-content: center;
+        border: 1px solid #eee;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+      }
+      .home__category:nth-child(2n) {
+        flex-direction: row-reverse;
+      }
+      .home__category__data {
+        max-width: 500px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .home__category__data > button {
+        padding: 10px 20px;
+        background-color: #d10157;
+        color: white;
+        border-style: none;
+        cursor: pointer;
+        transition-duration: 250ms;
+      }
+      .home__category__data > button:hover {
+        padding: 10px 20px;
+        background-color: #95003e;
+        color: white;
+        border-style: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <my-header></my-header>
+    <main id="mainContent" class="login__container">
+      <section id="categories"></section>
+    </main>
+    <my-footer></my-footer>
+  </body>
+</html>
