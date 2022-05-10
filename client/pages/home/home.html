@@ -73,11 +73,65 @@
         border-style: none;
         cursor: pointer;
       }
+      #banners {
+        width: 100%;
+        /* max-width: 800px; */
+        height: 350px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .slide {
+        width: 100%;
+        height: 350px;
+        position: absolute;
+        transition: all 0.5s;
+      }
+
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .btn {
+        position: absolute;
+        z-index: 2;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        border: none;
+        border-radius: 50%;
+        z-index: 10px;
+        cursor: pointer;
+        background-color: #fff;
+        font-size: 18px;
+      }
+
+      .btn:hover {
+        transform: scale(1.1) translate(0, -50%);
+      }
+
+      .home__btn__prev {
+        top: 50%;
+        left: 2%;
+        transform: translate(0, -50%);
+      }
+
+      .home__btn__next {
+        top: 50%;
+        right: 2%;
+        transform: translate(0, -50%);
+      }
     </style>
   </head>
   <body>
     <my-header></my-header>
     <main id="mainContent" class="login__container">
+      <section id="banners">
+        <button class="btn home__btn__next">&gt;</button>
+        <button class="btn home__btn__prev">&lt;</button>
+      </section>
       <section id="categories"></section>
     </main>
     <my-footer></my-footer>
