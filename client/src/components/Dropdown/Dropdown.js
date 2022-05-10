@@ -67,7 +67,7 @@ const DropdownComponent = ({ data,selectedCategoryId,handleCategoryClick }) => {
             setIsDropDownVisible(!isDropDownVisible);
           }}
         >
-          {selectedCategoryId !== null
+          {selectedCategoryId !== ''
             ? filterDropDownData(data,selectedCategoryId)
             : "Please select an item"}
         </DropdownSelection>

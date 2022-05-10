@@ -10,7 +10,6 @@ import {
           ...state,
           ...action.payload,
           categories: action.payload,
-          categoryId: action.payload[0].id
         };
       case SET_CATEGORY_ID:
         return {

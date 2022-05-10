@@ -27,10 +27,6 @@ const LeftSection = Styled.div`
 `;
 
 const RightSection = Styled.div`
-    display: ${(props) => (props.alignCenter ? "flex" : "")};
-    justify-content: ${(props) => (props.alignCenter ? "center" : "")};
-    align-items: ${(props) => (props.alignCenter ? "center" : "")};
-    
     width: 80%;
     @media(max-width: 766px){
        width: 100%;
@@ -38,8 +34,15 @@ const RightSection = Styled.div`
 `;
 
 const NoProductsContainer = Styled.div`
+
+    margin-top: 30px;
     @media(max-width: 766px){
         margin-top: 60px;
+    }
+    ${RightSection} &{
+       display: flex;
+       justify-content: center;
+       align-items: center;
     }
 `;
 
@@ -49,13 +52,11 @@ function ProductsPage() {
   const productsContext = useContext(ProductsContext);
   const cartContext = useContext(CartContext);
 
-
   /* getting the store values */
   const { categories, getCategoriesData, categoryId, setCategoryId } =
     categoriesContext;
   const { products, getProductsData } = productsContext;
   const { addCartItem } = cartContext;
-
 
   /* dispatching actions to fetch categories and products data from API */
   useEffect(() => {
@@ -76,16 +77,15 @@ function ProductsPage() {
 
   /* categories functionalities */
   useEffect(() => {
-    if (!isEmpty(categories) && !isEmpty(categoryId)) {
+    if (!isEmpty(categories)) {
       setCategoriesData(categories);
-      setSelectedCategoryId(categoryId);
     }
-  }, [categories, categoryId]);
+  }, [categories]);
 
   const handleCategoryClick = (category) => {
     if (category.id === selectedCategoryId) {
-      setCategoryId(categoriesData[0].id);
-      setSelectedCategoryId(categoriesData[0].id);
+      setCategoryId("");
+      setSelectedCategoryId("");
     } else {
       setCategoryId(category.id);
       setSelectedCategoryId(category.id);
@@ -100,14 +100,12 @@ function ProductsPage() {
   }, [products]);
 
   useEffect(() => {
-    if (!isEmpty(productsData) && !isEmpty(selectedCategoryId)) {
-      let filteredProducts = filteredProductsData(
-        productsData,
-        selectedCategoryId
-      );
-      setFilterProductsData(filteredProducts);
-    }
-  }, [productsData, selectedCategoryId]);
+    let filteredProducts = filteredProductsData(
+      productsData,
+      selectedCategoryId
+    );
+    setFilterProductsData(filteredProducts);
+  }, [selectedCategoryId]);
 
   const handleProductClick = (product) => {
     addCartItem(product);
@@ -115,7 +113,11 @@ function ProductsPage() {
 
   return (
     <Fragment>
-     <SEO title="Products | Sabka Bazaar" content="Sabka Bazaar is a online grocery platform, where you can buy in a affordable rate" link="/products"/>
+      <SEO
+        title="Products | Sabka Bazaar"
+        content="Sabka Bazaar is a online grocery platform, where you can buy in a affordable rate"
+        link="/products"
+      />
       <SectionContainer>
         <LeftSection>
           {!isEmpty(categoriesData) && (
@@ -126,10 +128,19 @@ function ProductsPage() {
             />
           )}
         </LeftSection>
-        <RightSection alignCenter={isEmpty(filterProductsData)}>
+        <RightSection >
           {!isEmpty(filterProductsData) ? (
             <Products
               data={filterProductsData}
+              handleProductClick={handleProductClick}
+            />
+          ) : isEmpty(filterProductsData) && !isEmpty(selectedCategoryId) ? (
+            <NoProductsContainer>
+              <H1>No Products To Show</H1>
+            </NoProductsContainer>
+          ) : !isEmpty(productsData) ? (
+            <Products
+              data={productsData}
               handleProductClick={handleProductClick}
             />
           ) : (
