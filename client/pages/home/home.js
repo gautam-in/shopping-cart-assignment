@@ -47,7 +47,9 @@ async function renderCategories() {
 
         let cButton = document.createElement("button");
         cButton.innerText = `Explore ${category.name}`;
-        // TODO: add cButton on click to check url
+        cButton.addEventListener("click", () => {
+          window.location.href = `../products/products.html?category=${category.id}`;
+        });
 
         cArticle.appendChild(cHeading);
         cArticle.appendChild(cpara);
