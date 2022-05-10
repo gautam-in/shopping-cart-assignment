@@ -8,7 +8,7 @@ class CustomField extends Component {
 
         return (
             <div className="custom-form-group">
-                <Field type={type} name={name} required autoComplete="off" />
+                <Field type={type} name={name} required autoComplete="off" aria-label={label || name} />
                 <label className="control-label">{label || name}</label><i className="bar"></i>
 
                 <ErrorMessageStyled>
