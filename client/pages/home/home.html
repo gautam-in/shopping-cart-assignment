@@ -14,10 +14,19 @@
       content="Sabka Bazaar, Sabka, shopping, bazaar, bazar, e commerce, products"
     />
     <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <script src="home.js" defer></script>
     <script src="../../components/header/header.js" defer></script>
     <script src="../../components/footer/footer.js" defer></script>
     <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
       #categories {
         display: flex;
         flex-direction: column;
@@ -42,7 +51,12 @@
         flex: 1;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         align-items: center;
+      }
+      .home__category__data > h1,
+      p {
+        margin: 2px 0;
       }
       .home__category__data > button {
         padding: 10px 20px;
