@@ -1,0 +1,84 @@
+/* form inputs */
+.custom-form-group {
+    position: relative;
+    margin: 1.25rem 0;
+}
+
+.custom-form-group input {
+    height: 1.9rem;
+}
+
+.custom-form-group .control-label {
+    position: absolute;
+    top: 0.25rem;
+    pointer-events: none;
+    padding-left: 0.125rem;
+    z-index: 1;
+    color: #b3b3b3;
+    font-size: 1rem;
+    font-weight: normal;
+    -webkit-transition: all 0.28s ease;
+    transition: all 0.28s ease;
+}
+
+.custom-form-group .bar {
+    position: relative;
+    border-bottom: 0.0625rem solid #999;
+    display: block;
+}
+
+.custom-form-group .bar::before {
+    content: '';
+    height: 0.125rem;
+    width: 0;
+    left: 50%;
+    bottom: -0.0625rem;
+    position: absolute;
+    background: var(--bar-color);
+    -webkit-transition: left 0.28s ease, width 0.28s ease;
+    transition: left 0.28s ease, width 0.28s ease;
+    z-index: 2;
+}
+
+.custom-form-group input {
+    display: block;
+    background: none;
+    padding: 0.125rem 0.125rem 0.0625rem;
+    font-size: 1rem;
+    border-width: 0;
+    border-color: transparent;
+    line-height: 1.9;
+    width: 100%;
+    color: transparent;
+    -webkit-transition: all 0.28s ease;
+    transition: all 0.28s ease;
+    box-shadow: none;
+}
+
+.custom-form-group input:focus,
+.custom-form-group input:valid,
+.custom-form-group input.has-value {
+    color: #333;
+}
+
+.custom-form-group input:focus~.control-label,
+.custom-form-group input:valid~.control-label,
+.custom-form-group input.has-value~.control-label {
+    font-size: 0.8rem;
+    color: gray;
+    top: -1rem;
+    left: 0;
+}
+
+.custom-form-group input:focus {
+    outline: none;
+}
+
+.custom-form-group input:focus~.control-label {
+    color: var(--bar-color);
+}
+
+.custom-form-group input:focus~.bar::before {
+    width: 100%;
+    left: 0;
+}
