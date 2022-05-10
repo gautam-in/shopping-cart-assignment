@@ -1,0 +1,15 @@
+.carouselImg {
+  height: calc(20%);
+  width: calc(100%);
+  padding: 20px 40px;
+}
+
+.shadow {
+  box-shadow: 0 25px 31px -20px rgba(0, 0, 0, 0.22);
+}
+
+@media (min-width: 780px) {
+  #homeContainer {
+    padding: 0 10%;
+  }
+}

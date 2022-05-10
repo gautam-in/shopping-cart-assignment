@@ -1,0 +1,158 @@
+#container {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  flex: 1;
+  min-height: calc(100vh - 80px);
+}
+
+.category {
+  display: flex;
+  padding: 10px;
+  color: white;
+  font-size: 16px;
+  border-width: 0;
+  justify-content: space-between;
+  background-color: rgb(205, 34, 85);
+}
+
+.productContainer {
+  padding: 10px;
+  text-align: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.filteredProductBlock {
+  display: block;
+}
+
+.productBlock,
+.hideProductBlock {
+  display: none;
+}
+
+.productTitle {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  overflow: hidden;
+}
+
+.productDetails {
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+.productImage {
+  width: calc(50%);
+  height: calc(50%);
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.productDescription {
+  padding: 5px;
+  height: 70px;
+  font-size: 10px;
+  margin: 10px 0;
+  overflow-y: scroll;
+  text-align: left;
+  background-color: lightgrey;
+}
+
+.productDescription::-webkit-scrollbar {
+  display: none;
+}
+
+.priceBlock {
+  display: none;
+}
+
+.link-button {
+  border: none;
+  padding: 15px;
+  display: block;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 3px;
+  text-align: center;
+  width: fit-content;
+  background-color: rgb(205, 34, 85);
+}
+
+.arrow {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media (min-width: 480px) {
+  #container {
+    width: 100%;
+  }
+
+  #categoryContainer {
+    background-color: lightgrey;
+  }
+
+  .productsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .category {
+    color: rgb(69, 68, 68);
+    padding: 10px 20px;
+    background-color: lightgrey;
+    border-bottom: 1px solid gray;
+  }
+
+  .arrow,
+  .buyNowBlock,
+  .filteredProductBlock {
+    display: none;
+  }
+
+  .productBlock {
+    display: inline-block;
+    width: 70%;
+  }
+
+  .productDetails {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .productTitle {
+    height: 60px;
+    text-align: center;
+  }
+
+  .productImage {
+    width: calc(100% - 20px);
+    margin-right: 0;
+  }
+
+  .priceBlock {
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 780px) {
+  #container {
+    padding: 0px 10%;
+  }
+
+  .productBlock {
+    width: 80%;
+  }
+
+  .productsContainer {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

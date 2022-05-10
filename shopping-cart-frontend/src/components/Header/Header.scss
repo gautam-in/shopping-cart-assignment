@@ -1,0 +1,132 @@
+.topContainer {
+    top: 0px;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    position: sticky;
+    background-color: white;
+    justify-content: space-between;
+    box-shadow: 0 5px 1px -5px #615f5f;
+
+    .logoContainer {
+        width: 30%;
+
+        img {
+            height: 30px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+    }
+
+    .navContainer,
+    .rightContainer {
+        display: none;
+    }
+
+    .cartContainer {
+        display: flex;
+        padding: 0 10px;
+        height: calc(100%);
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(206, 204, 204, 0.5);
+
+        img {
+            height: 20px;
+            width: 30px;
+            margin-right: 5px;
+        }
+
+        span {
+            font-size: 10px;
+        }
+    }
+}
+
+.modal {
+    display: flex;
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.leftDrawer {
+    height: calc(100%);
+    background-color: white;
+
+    .close {
+        text-align: right;
+        padding: 10px;
+    }
+
+    .drawerTitle {
+        color: gray;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 10px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+}
+
+@media (min-width: 481px) {
+    .topContainer {
+        box-shadow: 0 5px 6px -5px #615f5f;
+
+        .logoContainer {
+            img {
+                height: 40px;
+            }
+        }
+
+        .navContainer {
+            flex: 1;
+            display: flex;
+            padding: 15px 0px;
+            align-items: flex-end;
+
+            .navTitle {
+                padding: 0 10px;
+                font-size: 10px;
+                font-weight: bold;
+                cursor: pointer;
+                color: rgb(62, 61, 61);
+            }
+        }
+
+        .rightContainer {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+
+            .title {
+                color: black;
+                font-size: 10px;
+                font-weight: 600;
+                margin-left: 10px;
+            }
+        }
+
+        .cartContainer {
+            margin-top: 5px;
+            height: calc(100% - 20px);
+        }
+    }
+
+    .leftDrawer {
+        display: none;
+    }
+}
+
+@media (min-width: 781px) {
+    .topContainer {
+        padding: 0 10vw;
+
+        .logoContainer {
+            width: calc(20%);
+
+            img {
+                height: 50px;
+                width: calc(100% - 20px);
+            }
+        }
+    }
+}
