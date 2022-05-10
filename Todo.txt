@@ -1,9 +1,6 @@
-On mobile resolution category list will convert into a dropdown.
 
-On mobile viewport user should be able to drag between slides instead of clicks.
+category active filter is not working sometimes
 
-style hr tag for home page
+style hr tags
 
-color for cart svg
-
-find a way to use navigate() in react class components
+tab device responsiveness

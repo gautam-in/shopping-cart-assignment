@@ -164,4 +164,14 @@ hr {
 
 .cart-icon {
   height: 2rem;
+  filter: invert(13%) sepia(98%) saturate(5315%) hue-rotate(328deg) brightness(81%) contrast(105%);
+}
+
+#categories-filter-dropdown {
+  width: 93vw;
+  background-color: var(--btn-color);
+  padding: 0.4rem;
+  margin: 1rem auto 0 auto;
+  color: #fff;
+  outline: none;
 }

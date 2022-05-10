@@ -18,8 +18,8 @@ class Products extends Component {
         return (
             <Container>
                 {this.props.isUserLoggedIn ? (
-                    <Row>
-                        <Col xs={2} className="m-hide">
+                    <Row className='products_list'>
+                        <Col xs={2}>
                             <CategoryFilter />
                         </Col>
                         <Col xs={12} md={10}>

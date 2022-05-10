@@ -24,18 +24,18 @@ class Header extends Component {
 
                         <Col xs="9">
                             <Row className='mb-3'>
-                                <Col xs="10"></Col>
-                                <Col xs="2" className={isUserLoggedIn ? '' : 'mt-5'}>
+                                <Col xs="8" md="10"></Col>
+                                <Col xs="2" className={isUserLoggedIn ? 'ml-xs-20' : 'mt-5'}>
                                     <NavLink style={handleActiveLinkStatus} className='link-item mx-1' to="/">SignIn</NavLink>
                                     <NavLink style={handleActiveLinkStatus} className='link-item mx-1' to="/register">Register</NavLink>
                                 </Col>
                             </Row>
 
                             {isUserLoggedIn && <Row>
-                                <Col xs="10">
+                                <Col xs="8" md="10">
                                     <Navbar />
                                 </Col>
-                                <Col xs="2">
+                                <Col xs="2" className='ml-xs-20'>
                                     <CartCount />
                                 </Col>
                                 <Cart />

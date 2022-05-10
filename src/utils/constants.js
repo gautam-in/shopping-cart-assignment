@@ -1,3 +1,7 @@
+export const enableReduxPersist = true;
+
+export const mobileMediaQuery = '(min-width: 320px) and (max-width: 480px)';
+
 export const alertDismissTime = 5000;
 
 export const minLengthForPassword = 6;

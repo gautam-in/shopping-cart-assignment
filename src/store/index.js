@@ -1,27 +1,39 @@
-import {legacy_createStore as createStore, applyMiddleware, compose} from 'redux';
+import { legacy_createStore as createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import {composeWithDevTools} from 'redux-devtools-extension';
 import { persistStore, persistReducer } from 'redux-persist';
+import { PersistGate } from 'redux-persist/integration/react';
 import storage from 'redux-persist/lib/storage';
 import rootReducer from './reducer';
 import rootSaga from './saga';
+import { enableReduxPersist } from '../utils/constants';
 
-const persistedReducer = persistReducer({
+const reducer = enableReduxPersist ? persistReducer({
     key: 'shoppingCart',
     storage
-}, rootReducer);
+}, rootReducer) : rootReducer;
+
 const sagaMiddleware = createSagaMiddleware();
 
-const enhancers = compose(
-    applyMiddleware(sagaMiddleware),
-    composeWithDevTools()
-);
-
-const store = createStore(persistedReducer, enhancers);
-const persistor = persistStore(store);
+const store = createStore(reducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(rootSaga);
+
+const ReduxPersistProvider = ({ children }) => {
+    return (
+        <>
+            {enableReduxPersist ? (
+                <PersistGate loading={null} persistor={persistStore(store)}>
+                    {children}
+                </PersistGate>
+            ) : (
+                <>
+                    {children}
+                </>
+            )}
+        </>
+    )
+};
 
 export {
     store,
-    persistor
+    ReduxPersistProvider
 };
