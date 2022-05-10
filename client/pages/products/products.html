@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Sabka Bazaar" />
+    <meta
+      name="description"
+      content="E commerce site for day to day products"
+    />
+    <meta
+      name="keywords"
+      content="Sabka Bazaar, Sabka, shopping, bazaar, bazar, e commerce, products"
+    />
+    <title>Products</title>
+    <script src="products.js" defer></script>
+    <script src="../../components/header/header.js" defer></script>
+    <script src="../../components/footer/footer.js" defer></script>
+    <style>
+      #mainContent {
+        display: flex;
+        gap: 20px;
+      }
+      #categories {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background-color: #eee;
+      }
+      #categories > button {
+        border: none;
+        border-bottom: 1px solid rgb(172, 171, 171);
+        padding: 20px 50px;
+        cursor: pointer;
+      }
+      #products {
+        flex: 1;
+        display: flex;
+        gap: 10px;
+        flex-flow: row wrap;
+        margin: 20px 0;
+      }
+      .product__card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 300px;
+        border: 1px solid #eee;
+        gap: 20px;
+        padding: 20px;
+        box-sizing: border-box;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+      }
+      .product__card > header > h1 {
+        margin: 2px 0;
+      }
+      .product__card > img {
+        height: 300px;
+        object-fit: contain;
+      }
+      .product__card > footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .product__card > footer > button {
+        padding: 10px 20px;
+        background-color: #d10157;
+        color: white;
+        border-style: none;
+        cursor: pointer;
+        transition-duration: 250ms;
+      }
+      .product__card > footer > button:hover {
+        padding: 10px 20px;
+        background-color: #95003e;
+        color: white;
+        border-style: none;
+        cursor: pointer;
+      }
+      .product__card > footer > h4 {
+        margin: 2px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <my-header></my-header>
+    <main id="mainContent" class="login__container">
+      <aside>
+        <section id="categories"></section>
+      </aside>
+      <section id="products"></section>
+    </main>
+    <my-footer></my-footer>
+  </body>
+</html>
