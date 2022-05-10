@@ -74,13 +74,13 @@ class Header extends HTMLElement {
         id="nav__logo"
         alt="Sabka Bazaar Logo"
       />
-      <a class="nav__links" href="#">Home</a>
-      <a class="nav__links" href="#">Products</a>
+      <a class="nav__links" href="../home/home.html">Home</a>
+      <a class="nav__links" href="../products/products.html">Products</a>
     </div>
     <div class="nav__rightcontainer">
       <div>
-        <a class="nav__links" href="#">Login</a>
-        <a class="nav__links" href="#">Register</a>
+        <a class="nav__links" href="../login/login.html">Login</a>
+        <a class="nav__links" href="../register/register.html">Register</a>
       </div>
       <div class="nav__cart__container">
         <img
