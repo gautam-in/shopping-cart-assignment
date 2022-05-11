@@ -1,6 +1,7 @@
 import { Fragment } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import Styled from "styled-components";
+import ImageComponent from "./ImageComponent";
 import Button from "../Button/Button";
 import H3 from "../Typography/H3";
 import P from "../Typography/P";
@@ -20,10 +21,6 @@ const Title = Styled.div`
     margin: 10px 0 20px 0;
 `;
 
-const Image = Styled.img`
-  width: 100%;
-  height: auto;
-`;
 
 const Description = Styled.div`
   display: flex;
@@ -42,10 +39,6 @@ const ContentContainer = Styled.div`
   border-bottom: 1px dashed #ccc;
 `;
 
-const ImageContainer = Styled.div`
-  width: 100%;
-`;
-
 const CTAContainer = Styled.div`
   width: 100%;
   display: flex;
@@ -58,20 +51,19 @@ const Product = ({ data, key, handleProductClick }) => {
     <Fragment>
       <Card key={key}>
         <Title>
-          <H3>{data?.name}</H3>
+          <H3>{data.name}</H3>
         </Title>
         <ContentContainer>
-          <ImageContainer>
-            <Image
-              src={data?.imageURL}
-              alt={data?.name}
-              width={100}
-              height={100}
-            />
-          </ImageContainer>
+              <ImageComponent
+                src={data.imageURL}
+                alt={data.name}
+                width={100}
+                height={100}
+                containerWidth={'100%'}
+              />
           <CTAContainer>
             <Description>
-              <P>{data?.description}</P>
+              <P>{data.description}</P>
             </Description>
             <Button onClick={() => handleProductClick(data)}>Buy Now</Button>
           </CTAContainer>
@@ -84,13 +76,13 @@ const Product = ({ data, key, handleProductClick }) => {
 Product.propTypes = {
   data: PropTypes.object,
   handleProductClick: PropTypes.func,
-  key: PropTypes.oneOfType([PropTypes.string,PropTypes.number])
-}
+  key: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+};
 
 Product.defaultProps = {
   data: {},
   handleProductClick: () => {},
-  key: 0
-}
+  key: 0,
+};
 
 export default Product;

@@ -92,6 +92,12 @@ function ProductsPage() {
     }
   };
 
+  useEffect(() => {
+    if(!isEmpty(categoryId)){
+      setSelectedCategoryId(categoryId)
+    }
+  },[categoryId])
+
   /* products functionalities */
   useEffect(() => {
     if (!isEmpty(products)) {

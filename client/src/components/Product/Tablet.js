@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Styled from "styled-components";
 import PropTypes from 'prop-types';
+import ImageComponent from "./ImageComponent";
 import Button from "../Button/Button";
 import H3 from "../Typography/H3";
 import P from "../Typography/P";
@@ -21,11 +22,6 @@ const Title = Styled.div`
     margin: 10px 0 20px 0;
 `;
 
-const Image = Styled.img`
-  width: 100%;
-  height: auto;
-`;
-
 const Description = Styled.div`
   height: 100%;
   background-color: #f0f0f0;
@@ -41,10 +37,6 @@ const ContentContainer = Styled.div`
   padding-bottom: 10px;
 `;
 
-const ImageContainer = Styled.div`
-  width: 100%;
-`;
-
 const DescriptionContainer = Styled.div`
   width: 100%;
   height: auto;
@@ -55,20 +47,19 @@ const Tablet = ({ data, key, handleProductClick }) => {
     <Fragment>
       <Card key={key}>
         <Title>
-          <H3>{data?.name}</H3>
+          <H3>{data.name}</H3>
         </Title>
         <ContentContainer>
-          <ImageContainer>
-            <Image
-              src={data?.imageURL}
-              alt={data?.name}
+            <ImageComponent
+              src={data.imageURL}
+              alt={data.name}
               width={100}
               height={100}
+              containerWidth={'100%'}
             />
-          </ImageContainer>
           <DescriptionContainer>
             <Description>
-              <P>{data?.description}</P>
+              <P>{data.description}</P>
             </Description>
           </DescriptionContainer>
         </ContentContainer>

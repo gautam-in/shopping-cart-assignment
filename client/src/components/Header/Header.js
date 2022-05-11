@@ -1,6 +1,7 @@
 import { Fragment,useState,useEffect,useContext } from "react";
 import Styled from "styled-components";
-import { Link, Route } from "react-router-dom";
+import LazyLoad from 'react-lazyload';
+import { Link } from "react-router-dom";
 import Logo from "./Images/logo.png";
 import CartIcon from "./CartIcon/CartIcon";
 import AuthContext from "../../store/Auth/Context";
@@ -192,9 +193,11 @@ const HeaderComponent = () => {
             </MobileMenuLi>
           </MobileMenu>
         </HamburgerIcon>
+        <LazyLoad>
         <Link to={ROUTES.HOME}>
           <BrandLogo src={Logo} alt="brandlogo" />
         </Link>
+        </LazyLoad>
       </Brand>
       <Nav>
         <MenuItem>

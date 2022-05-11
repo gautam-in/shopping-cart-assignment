@@ -10,10 +10,12 @@
     "axios": "^0.27.2",
     "lodash": "^4.17.21",
     "node-sass": "^7.0.1",
+    "postcss": "^8.4.13",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-hook-form": "^7.30.0",
+    "react-lazyload": "^3.2.0",
     "react-router-dom": "^5.3.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
@@ -27,7 +29,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "browserslist": {
     "production": [
@@ -53,6 +56,7 @@
     "@storybook/react": "^6.4.22",
     "@storybook/testing-library": "0.0.11",
     "@welldone-software/why-did-you-render": "^7.0.1",
+    "source-map-explorer": "^2.5.2",
     "webpack": "^5.72.0"
   }
 }

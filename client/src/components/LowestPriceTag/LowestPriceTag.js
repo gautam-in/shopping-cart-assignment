@@ -20,7 +20,7 @@ const LowestPriceTag = () => {
   return (
     <>
       <LowestPriceContainer>
-        <LowestPriceImageTag src={LowestPriceImage} alt="lowest-price-tag" />
+          <LowestPriceImageTag src={LowestPriceImage} alt="lowest-price-tag" />
         <span style={{ fontSize: "16px" }}>
             {TRANSLATIONS.CART.LOWEST_PRICE_TAG}
         </span>

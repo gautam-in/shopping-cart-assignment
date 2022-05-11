@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import LazyLoad from 'react-lazyload';
 import PropTypes from 'prop-types';
 import Styled from "styled-components";
 import { isUndefined } from "lodash";
@@ -64,14 +65,16 @@ const Category = ({
   return (
     <Fragment>
       <CategoryContainer key={id}>
-        <CategoryImageContainer>
-          <CategoryImage
-            src={!isUndefined(imageUrl) ? imageUrl : FallbackImage}
-            alt={name}
-            width={100}
-            height={100}
-          />
-        </CategoryImageContainer>
+          <CategoryImageContainer>
+          <LazyLoad>
+            <CategoryImage
+              src={!isUndefined(imageUrl) ? imageUrl : FallbackImage}
+              alt={name}
+              width={100}
+              height={100}
+            />
+        </LazyLoad>
+          </CategoryImageContainer>
         <CategoryDescription>
           <CategoryHeaderContainer>
             <H1 alignCenter>{name}</H1>

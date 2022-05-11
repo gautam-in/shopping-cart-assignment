@@ -1,15 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700&display=swap");
+@font-face {
+  font-family: "Dosis", sans-serif;
+  font-display: swap;
+}
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-@font-face {
-  font-family: 'Pacifico';
-  font-display: swap;
-  /* src:url("fonts/OpenSans-Regular.woff2") */
 }
 
 body {

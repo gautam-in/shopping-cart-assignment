@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Styled from "styled-components";
 import PropTypes from 'prop-types';
+import ImageComponent from "./ImageComponent";
 import Button from "../Button/Button";
 import P from "../Typography/P";
 import H3 from "../Typography/H3";
@@ -42,12 +43,7 @@ const Description = Styled.div`
 
 `;
 
-const ImageContainer = Styled.div``;
 
-const Image = Styled.img`
-  width: 100%;
-  height: auto;
-`;
 
 const CTAContainer = Styled.div`
   display: flex;
@@ -65,9 +61,7 @@ const Desktop = ({ data, key, handleProductClick }) => {
         <Title>
           <H3>{data.name}</H3>
         </Title>
-        <ImageContainer>
-          <Image src={data.imageURL} alt={data.name} width={100} height={100} />
-        </ImageContainer>
+          <ImageComponent src={data.imageURL} alt={data.name} width={100} height={100} />
         <Description>
           <P>{data.description}</P>
         </Description>

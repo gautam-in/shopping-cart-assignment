@@ -109,7 +109,7 @@ const CartItemComponent = ({ data, key ,handleAddCartItem, handleRemoveCartItem 
     <Fragment>
       <CartItemContainer key={key}>
         <CartItem >
-          <CartItemImage src={data.imageURL} alt={data.name} />
+            <CartItemImage src={data.imageURL} alt={data.name} />
           <CartItemInfo>
             <CartItemNameContainer>
               <H4>{data.name}</H4>
