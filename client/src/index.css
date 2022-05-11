@@ -1,0 +1,14 @@
+html,body {
+  margin: 0;
+  font-family: 'Dosis';
+  @media screen and (max-width: 600px){
+    font-size: 20px;
+  }
+
+  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
