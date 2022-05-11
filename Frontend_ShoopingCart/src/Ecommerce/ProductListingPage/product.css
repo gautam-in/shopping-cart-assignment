@@ -1,0 +1,118 @@
+.product{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column-reverse;
+}
+ 
+  
+  
+
+.sidebar{
+    width: 20%;
+    height: 91%;
+    background-color: rgb(236 241 241);
+    position: fixed;
+    z-index: 1;
+    top: 84px;
+    left: 0;
+}
+
+.card_design{
+    width: 13rem;
+    margin:12px
+
+}
+
+.productDisplay{
+    margin-left: 20%; 
+    display: flex;   
+    flex-wrap: wrap;    
+}
+.card_title{
+    padding: 0.2rem;
+    height: 4rem;
+}
+
+
+
+.description{
+    margin-bottom: 1rem;
+    overflow: hidden;
+    height: 7.5rem;
+    word-wrap: break-word;
+    font-size: small;
+    background-color: #ebebeb;
+}
+
+.productList{
+    margin: 5px 0px 0px 15px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.dropdown-toggle {
+    width: 90%;
+    white-space: nowrap;
+    text-align: left !important;
+}
+
+.dropdown_Button{
+    display: flex;
+    justify-content: center;
+    margin-top: 0.3rem; 
+}
+@media (max-width: 770px) {
+    .card_body{
+        display:flex;
+    
+    }
+    .card_image{
+        height: 100% !important;
+        width: 50% !important;
+    }
+
+    .description{
+        margin-bottom: 1rem;
+        overflow: hidden;
+        height: 8.7rem;
+        word-wrap: break-word;
+        font-size: small;
+        background-color: #ebebeb;
+        padding: 0.2rem;
+    }
+}
+
+@media only screen and (min-width: 514px) and (max-width: 768px) {
+    .card_design{
+        width: 44%
+    }
+}
+
+@media (max-width: 514px) {
+     
+    .sidebar{       
+        display: none;
+    }
+    .productDisplay {
+        margin: 1%; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }    
+    .card_design {      
+        width: 100%;
+    }
+}
+
+    @media (min-width: 514px) {
+        .dropdown_Button{
+            display: none;
+        }
+       
+    
+    }
+
+ 
+
+ 
+  
