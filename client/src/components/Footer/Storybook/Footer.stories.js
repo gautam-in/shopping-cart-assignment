@@ -1,7 +1,7 @@
 import FooterComponent  from '../Footer';
 
 export default {
-  title: 'Sabka Bazar/Organisms/Footer',
+  title: 'Sabka Bazar/Organisms/Footer/Desktop',
   component: FooterComponent,
 };
 

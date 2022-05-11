@@ -1,7 +1,7 @@
 import HeaderComponent  from '../Header';
 
 export default {
-  title: 'Sabka Bazar/Organisms/Header',
+  title: 'Sabka Bazar/Organisms/Header/Desktop',
   component: HeaderComponent,
 };
 

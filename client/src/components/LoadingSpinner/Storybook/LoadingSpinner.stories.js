@@ -1,7 +1,7 @@
 import SpinnerComponent  from '../LoadingSpinner';
 
 export default {
-  title: 'Sabka Bazar/Molecules/Spinner',
+  title: 'Sabka Bazar/Molecules/Spinner/Desktop',
   component: SpinnerComponent,
 };
 

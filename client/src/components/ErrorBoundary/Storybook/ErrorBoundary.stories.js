@@ -1,7 +1,7 @@
 import ErrorBoundaryComponent  from '../ErrorBoundary';
 
 export default {
-  title: 'Sabka Bazar/Molecules/ErrorBoundary',
+  title: 'Sabka Bazar/Molecules/ErrorBoundary/Desktop',
   component: ErrorBoundaryComponent,
 };
 

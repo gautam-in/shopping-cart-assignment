@@ -1,13 +1,23 @@
 import ModalComponent  from '../Modal';
 import H3 from "../../Typography/H3";
 import P from "../../Typography/P";
+import { customViewports } from "../../../../.storybook/preview"
 import LowestPriceTagStories from '../../LowestPriceTag/LowestPriceTag';
 import CartItems from '../../../containers/CartItems/CartItems';
 import { data } from '../../../containers/CartItems/Data';
 
 export default {
-  title: 'Sabka Bazar/Organisms/Cart/Desktop',
+  title: 'Sabka Bazar/Organisms/Cart/Tablet',
   component: ModalComponent,
+  parameters: {
+    viewport: {
+      defaultViewport: 'ipad',
+    },
+    chromatic: {
+      viewports: customViewports.ipadLarge.viewports,
+    },
+  },
+
 };
 
 const ModalStoryWithNoItems = (args) => {

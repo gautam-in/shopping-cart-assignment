@@ -1,7 +1,7 @@
 import InputComponent  from '../Input';
 
 export default {
-  title: 'Sabka Bazar/Atoms/Input',
+  title: 'Sabka Bazar/Atoms/Input/Desktop',
   component: InputComponent,
 };
 

@@ -1,8 +1,18 @@
 import Button  from '../Button';
+import { customViewports } from "../../../../.storybook/preview"
+
 
 export default {
-  title: 'Sabka Bazar/Atoms/Button/Desktop',
+  title: 'Sabka Bazar/Atoms/Button/Tablet',
   component: Button,
+  parameters: {
+    viewport: {
+      defaultViewport: 'ipad',
+    },
+    chromatic: {
+      viewports: customViewports.ipadLarge.viewports,
+    },
+  },
 };
 
 const PrimaryLg = (args) => <Button {...args}>Primary Button</Button>;
