@@ -1,0 +1,14 @@
+.card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    // width: '18rem';
+    // justify-content: space-between;
+}
+
+.description{
+    padding:10px;
+    background-color: rgb(238, 230, 230);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+}

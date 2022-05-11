@@ -1,0 +1,17 @@
+.sign-up-container {
+    display: flex;
+    flex-direction: column;
+    // height: 200px;
+    margin-top: 0px;
+    
+  }
+  .main{
+    margin-top: 120px;
+    padding: 20px;
+    
+    width:70%;
+    // border: 1px solid red;
+}
+.errMsg{
+  color: red;
+}

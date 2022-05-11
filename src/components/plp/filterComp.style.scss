@@ -1,0 +1,18 @@
+.sidebar {
+    display: flex;
+    flex-direction:column ;
+    // margin-top: 120px;
+    padding: 20px;
+    width: 220px;
+    background-color: #cac4c4;
+    position: fixed;
+    height: 100vh;
+    overflow: auto;
+    font-weight: bold;
+    
+  }
+  .txtcenter{
+    display: flex;
+    // justify-content: center;
+    flex-wrap: wrap;
+  }

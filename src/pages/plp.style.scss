@@ -1,0 +1,21 @@
+.main{
+    margin-top: 120px;
+}
+.btn{
+    cursor: pointer;
+    // border: 1px solid gray;
+    padding: 5px;
+    margin: 5px;
+}
+.highlight{
+    background-color: lightyellow;
+}
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #c8c8c8;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
