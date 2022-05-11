@@ -13,7 +13,9 @@ export const iconBox: SxProps = {
   mt: 1,
 }
 
-export const iconBtn: SxProps = { bgcolor: "#ba2955", width: "25px", height: "25px" }
+export const iconBtn: SxProps = { bgcolor: "#ba2955", width: "25px", height: "25px",   "&:hover": {
+  background: "#ba2955",
+}, }
 
 export const qtyText: SxProps = {
   fontSize: ".9rem",

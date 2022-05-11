@@ -35,6 +35,7 @@ const Register = () => {
   const [emailhelperText, setEmailhelperText] = React.useState('')
   const [passwordhelperText, setPasswordhelperText] = React.useState('')
   const [confirmPasswordhelperText, setconfirmPasswordhelperText] = React.useState('')
+
   const onSubmit = () => {
     let flag = true;
     if (!name) {
@@ -83,6 +84,7 @@ const Register = () => {
       navigate(`/home`);
     }
   }
+  
   const onChange = (id: any, value: any) => {
     switch (id) {
       case 'name':

@@ -1,5 +1,4 @@
 import { createTheme } from "@mui/material/styles";
-// import { Typography } from "@material-ui/core";
 
 export const theme = createTheme({
   typography: {

@@ -1,12 +1,15 @@
-import { SxProps, TextField } from "@mui/material";
+import {  SxProps, TextField } from "@mui/material";
 import React from "react";
+
 
 const TextFieldComponent = ({ label, type, onChange, helperText,id,...rest }: any) => {
   const [value, setValue] = React.useState('');
+  
   const onDataChange = (e: any, id: String) => {
     setValue(e.target.value)
     onChange(id, e.target.value)
   }
+
   return <TextField required
   aria-live={helperText && helperText}
     label={label}

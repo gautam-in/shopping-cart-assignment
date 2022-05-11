@@ -1,5 +1,5 @@
+import { StoreStateProps } from "../type";
 export default class StateLoader {
-
     loadState() {
         try {
             let serializedState = localStorage.getItem(window.location.host + ":state");
@@ -15,7 +15,7 @@ export default class StateLoader {
         }
     }
 
-    saveState(state: any) {
+    saveState(state: StoreStateProps) {
         try {
             let serializedState = JSON.stringify(state);
             localStorage.setItem(window.location.host + ":state", serializedState);

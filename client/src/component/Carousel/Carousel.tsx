@@ -1,9 +1,13 @@
 import { Carousel } from "react-responsive-carousel";
+import { BannerType } from "../../type";
 
-const CarouselComponent = ({ image }:any) => {
+export interface ImageProps{
+  image?: BannerType[]
+}
+const CarouselComponent = ({ image }:ImageProps) => {
   return (
     <Carousel autoPlay showThumbs={false} infiniteLoop={true}>
-        {image.map((img : any,index:any)=>{
+        {image && image.map((img : BannerType,index:any)=>{
            return( <div key={index}>
             <img alt="" src={img.bannerImageUrl} />
           </div>)

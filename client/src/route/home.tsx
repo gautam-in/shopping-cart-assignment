@@ -6,6 +6,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../store/hook";
 import { selectCategory } from "../store/action/action";
+import { BannerCategoryProps } from "../type";
 import {
   MainBox,
   ImageBox,
@@ -15,28 +16,30 @@ import {
   btnText,
 } from "./home.style";
 import { Dispatch } from "redux";
-const Home = ({ bannersImage, category }: any) => {
+const Home = ({ bannersImage, category }: BannerCategoryProps) => {
   let navigate = useNavigate();
   const dispatch: Dispatch<any> = useAppDispatch();
-  const MainBoxStyle: SxProps = (index:any) => {
+  const MainBoxStyle: SxProps = (index: any) => {
     let bool = false;
     if (index % 2 === 0) {
       bool = true;
     }
+
     const style = MainBox(bool);
     return { ...style };
   };
 
-  const categoryBtnClick =(order: any)=>{
-    console.log(order)
+  const categoryBtnClick = (order: any) => {
     dispatch(selectCategory(order))
     navigate(`/products`);
   }
+
   return (
     <>
       <AdCoantiner>
         <CarouselComponent image={bannersImage} />
       </AdCoantiner>
+      
       {category &&
         category.map((cate: any) => {
           return (
@@ -50,15 +53,15 @@ const Home = ({ bannersImage, category }: any) => {
                     alt={cate.name}
                   />
                   <Box sx={ADBox}>
-                    <Typography variant="caption"  sx={ADTitle}>{cate.name}</Typography>
+                    <Typography variant="caption" sx={ADTitle}>{cate.name}</Typography>
                     <Typography sx={ADDescription}>
                       {cate.description}
                     </Typography>
                     <Button
                       id={cate.order}
                       sx={btnText}
-                      onClick={()=>categoryBtnClick(cate.order)}
-                      title= {`Explore ${cate.key}`}
+                      onClick={() => categoryBtnClick(cate.order)}
+                      title={`Explore ${cate.key}`}
                     >
                     </Button>
                   </Box>

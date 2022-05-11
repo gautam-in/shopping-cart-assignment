@@ -12,10 +12,10 @@ import {
   gridStyle
 } from './login.style'
 import { useNavigate } from "react-router-dom";
-
 import { useAppDispatch } from '../store/hook'
 import { Dispatch } from 'redux'
 import { login } from '../store/action/action'
+
 const SingIn = () => {
   let navigate = useNavigate();
   const dispatch: Dispatch<any> = useAppDispatch()

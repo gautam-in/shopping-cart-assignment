@@ -17,11 +17,19 @@ import {
 import { useAppDispatch } from '../../store/hook'
 import { Dispatch } from 'redux'
 import { addToCart } from '../../store/action/action'
-const ItemComponent = (props: any) => {
-  const dispatch: Dispatch<any> = useAppDispatch()
-  const { title, image, description, price,id } = props;
 
+export type ItemType = {
+  title: string;
+  image: string;
+  description: string;
+  price: number;
+  id: string
+}
+const ItemComponent = (props: ItemType) => {
+  const dispatch: Dispatch<any> = useAppDispatch()
+  const { title, image, description, price, id } = props;
   const Mobile = useMediaQuery("(max-width:640px)");
+  
   return (
     <Box>
       <header>
@@ -65,7 +73,7 @@ const ItemComponent = (props: any) => {
                 <Button
                   title={`Buy Now @ MRP ${price}`}
                   sx={buyNowBtn}
-                  onClick={()=>dispatch(addToCart(id))}
+                  onClick={() => dispatch(addToCart(id))}
                 ></Button>
               ) : (
                 <>
@@ -76,7 +84,7 @@ const ItemComponent = (props: any) => {
                   <Button
                     title={"Buy Now"}
                     sx={buyNowBtn}
-                    onClick={()=>dispatch(addToCart(id))}
+                    onClick={() => dispatch(addToCart(id))}
                   ></Button>{" "}
                 </>
               )}

@@ -16,20 +16,28 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useAppSelector, useAppDispatch } from '../store/hook'
 import { Dispatch } from 'redux'
 import { selectCategory } from '../store/action/action'
+import { CategoryType, ProductType } from "../type";
+export interface ProductProps{
+  category:CategoryType,
+  products:ProductType,
+  order: number
+}
 const Product = () => {
   const dispatch: Dispatch<any> = useAppDispatch()
   const { category, products, order } = useAppSelector((state: any) => state.user)
   const [productUI, setProduct] = React.useState(products);
   const Mobile = useMediaQuery("(max-width:640px)");
-  const updateProductPage = (order: any) => {
+
+  const updateProductPage = (order: number) => {
     if (order !== 0) {
-      const index = category.findIndex((d: any) => d.order === parseInt(order));
+      const index = category.findIndex((d: any) => d.order ===order);
       const id = category[index].id;
       setProduct(products.filter((data: any) => data.category === id));
     } else {
       setProduct(products)
     }
   };
+
   const handleChange = (event: any) => {
     const orderNo = parseInt((event.target.value) ? event.target.value : event.target.id)
     if (orderNo === order) {
@@ -48,6 +56,7 @@ const Product = () => {
   useEffect(() => {
     updateProductPage(parseInt(order));
   }, []);
+
   useEffect(() => {
     if (order || order === 0) {
       updateProductPage(parseInt(order));
@@ -62,6 +71,7 @@ const Product = () => {
       <Box
         sx={mainBox}
       >
+
         <>
           {!Mobile &&
             category.map((data: any, index: any) => {
@@ -80,7 +90,9 @@ const Product = () => {
               );
             })}
         </>
+
       </Box>
+
       <Grid container spacing={1} >
         {Mobile && (
           <FormControl fullWidth>
@@ -93,14 +105,14 @@ const Product = () => {
               onChange={handleChange}
               sx={selectStyle}
             >
-              {category.map((data: any, index: any) => {
+              {category.map((data: CategoryType, index: any) => {
                 return <MenuItem key={index} value={data.order}>{data.name}</MenuItem>;
               })}
             </Select>
           </FormControl>
         )}
 
-        {productUI.map((data: any, index: any) => {
+        {productUI.map((data: ProductType, index: any) => {
           return (
             <Grid
               item
@@ -123,6 +135,7 @@ const Product = () => {
           );
         })}
       </Grid>
+      
     </Container>
   );
 };

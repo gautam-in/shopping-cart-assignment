@@ -1,9 +1,15 @@
-import { Button as MUIButton, SxProps, Typography } from "@mui/material";
+import { Button as MUIButton, SxProps, Typography, ButtonProps } from "@mui/material";
 import { SystemStyleObject, Theme } from "@mui/system";
 import { btnStyle } from "./Button.style";
 import clsx from "clsx";
-const Button = (props: any) => {
-  const { title, icon,type } = props;
+
+export interface ButtonType extends ButtonProps {
+  title?: string;
+  icon?: string;
+}
+
+const Button = (props: ButtonType) => {
+  const { title, icon, type } = props;
   const ButtonStyles: SxProps<Theme> = (theme) => {
     const style = btnStyle;
 

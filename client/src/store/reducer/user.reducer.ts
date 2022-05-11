@@ -25,6 +25,7 @@ const user = (state = initialState, action: { type: String; payload: any; }) => 
 
         case LOGOUT:
             return { ...state, loggedIn: false };
+
         case GET_BANNER:
             let sortCategory = action.payload.category.sort(
                 (a: { order: number }, b: { order: number }) =>
@@ -37,6 +38,7 @@ const user = (state = initialState, action: { type: String; payload: any; }) => 
                 products: action.payload.products,
                 loading: false
             }
+
         case ADDTOCART:
             var productCart: any = []
             const index = state.shoppingCart.findIndex((pid: any) => pid.id === action.payload)
@@ -63,6 +65,7 @@ const user = (state = initialState, action: { type: String; payload: any; }) => 
 
                 }
             }
+
         case REMOVE_QTY:
             var decreaseProduct: any = [];
             let indexItem = state.shoppingCart.findIndex((pid: any) => pid.id === action.payload);
@@ -82,11 +85,13 @@ const user = (state = initialState, action: { type: String; payload: any; }) => 
                     ...state
                 }
             }
+
         case SELECT_CATEGORY:
             return {
                 ...state,
                 order: action.payload
             }
+
         case ADD_QTY:
             var increaseProduct: any = [];
             const ind = state.shoppingCart.findIndex((pid: any) => pid.id === action.payload);
@@ -103,11 +108,13 @@ const user = (state = initialState, action: { type: String; payload: any; }) => 
                     ...state
                 }
             }
+
         case USERS_ERROR:
             console.log(action.payload)
             return {
                 ...state
             }
+            
         default:
             return {
                 ...state

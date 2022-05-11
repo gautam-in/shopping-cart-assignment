@@ -30,15 +30,17 @@ import {
 import { useAppSelector, useAppDispatch } from '../store/hook'
 import { Dispatch } from 'redux'
 import { selectCategory, logout } from '../store/action/action'
+import { ProductType, StoreStateProps } from "../type";
 const Header = (props: any) => {
   const dispatch: Dispatch<any> = useAppDispatch()
-  const { shoppingCart, loggedIn } = useAppSelector((state: any) => state.user)
+  const { shoppingCart, loggedIn } = useAppSelector((state: StoreStateProps) => state.user)
   const [anchorEl, setAnchorEl] = React.useState(null);
   const theme = useTheme();
   const Mobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const totalQTYofItem = shoppingCart.map((data: any) => data.qty).reduce((prev: any, curr: any) => prev + curr, 0);
+  const totalQTYofItem = (shoppingCart) ? shoppingCart.map((data: ProductType) => data.qty).reduce((prev: any, curr: any) => prev + curr, 0): 0;
 
   const handleClick = (event: any) => {
+
     setAnchorEl(anchorEl ? null : event.currentTarget);
     if (!Mobile) {
       if (anchorEl) {
@@ -54,9 +56,11 @@ const Header = (props: any) => {
       }
     }
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
+
   useEffect(() => {
     $(".App").css("opacity", "1");
     $(".content").css("display", "block");
@@ -69,10 +73,12 @@ const Header = (props: any) => {
 
   return (
     <Fragment>
+      
       <div className="fade">
         <Paper elevation={2}>
           <header style={headerStyle}>
             <Box sx={BoxContainer}>
+
               <Box sx={LinkContainer}>
                 <Link to="/">
                   <Box
@@ -93,6 +99,7 @@ const Header = (props: any) => {
                   </Box>
                 )}
               </Box>
+
               <Box sx={UserBox}>
                 {!Mobile && (
                    <Box sx={UserRegisterBox}>
@@ -132,12 +139,14 @@ const Header = (props: any) => {
                   </div>{" "}
                 </>
               </Box>
+
             </Box>
           </header>
         </Paper>
       </div>
       {props.children}
       <Footer />
+
     </Fragment>
   );
 };

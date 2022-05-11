@@ -15,8 +15,9 @@ import { getBanner } from './store/action/action'
 import { useAppSelector, useAppDispatch } from './store/hook'
 import { Dispatch } from 'redux'
 import Loading from "./component/Loading/Loading";
+import {StoreStateProps} from './type'
 function App() {
-  const state = useAppSelector((state: any) => state.user)
+  const state = useAppSelector((state: StoreStateProps) => state.user)
   const { loading, category, banner } = state;
   const dispatch: Dispatch<any> = useAppDispatch()
 

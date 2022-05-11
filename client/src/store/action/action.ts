@@ -52,7 +52,7 @@ export const getBanner = () => async (dispatch: any) => {
 
 }
 
-export const addToCart = (id: Number) => async (dispatch: Dispatch<any>) => {
+export const addToCart = (id: string) => async (dispatch: Dispatch<any>) => {
     try {
         var config = {
             method: 'post',
@@ -77,21 +77,21 @@ export const addToCart = (id: Number) => async (dispatch: Dispatch<any>) => {
 
 }
 
-export const removeQty = (id: Number) => {
+export const removeQty = (id: string) => {
     return {
         type: REMOVE_QTY,
         payload: id
     }
 }
 
-export const addQty = (id: Number) => {
+export const addQty = (id: string) => {
     return {
         type: ADD_QTY,
         payload: id
     }
 }
 
-export const selectCategory = (order: Number) => {
+export const selectCategory = (order: number) => {
     return {
         type: SELECT_CATEGORY,
         payload: order
