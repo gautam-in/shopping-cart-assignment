@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis");
+* {
+  box-sizing: border-box;
+  margin: auto;
+}
+
+button {
+  font-family: "Dosis" !important;
+}
+
+body {
+  width: 90%;
+  font-family: "Dosis" !important;
+  height: 95%;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid #bdc2ce;
+}
+
+nav.homeNav {
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 2;
+}
+
+ul.homeNavUl {
+  margin: 0;
+}
+ul.homeNavUl li.homeNavLi {
+  float: left;
+  list-style: none;
+  padding-right: 10px;
+}
+
+.loginButton, .cartButton {
+  background-color: inherit;
+  font-size: large;
+  padding: 5px;
+  margin: 5px;
+}
+
+.loginButton {
+  border: none;
+}
+
+.cartButton {
+  background-color: #eaeaea !important;
+}
+
+svg {
+  /* Place the icon on the text baseline. */
+  position: relative;
+  top: 0.125em;
+  flex-shrink: 0;
+  /* Scale the icon to match the font-size of the parent element. */
+  height: 2em;
+  width: 2em;
+  fill: #d10157;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.loginClass {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+}
+
+footer {
+  background-color: #eaeaea;
+  height: 50px;
+  text-align: left;
+  padding: 10px 0 10px 0;
+}
+
+div.products {
+  position: relative;
+}
+
+nav#navProducts.navProducts {
+  background-color: green;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+nav.navProducts ul {
+  padding-inline-start: 0px;
+  display: flex;
+  flex-direction: column;
+  background-color: #eaeaea;
+  flex: 1;
+}
+nav.navProducts ul li {
+  text-decoration: none;
+  padding: 5px;
+  margin: 5px;
+  height: 30px;
+}
+nav.navProducts ul li:hover {
+  background-color: #bdc2ce;
+}
+
+aside {
+  margin-left: 15%;
+}
+
+.navProductsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 600px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border-bottom: 2px dotted #bdc2ce;
+}
+
+.productPriceDiv {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding: auto;
+}
+
+.productPriceDiv h5 {
+  width: 120px;
+}
+
+section h3 {
+  min-height: 50px;
+}
+
+section img {
+  min-height: 300px;
+  min-width: 300px;
+}
+
+section > h5 {
+  min-height: 40px;
+  max-height: 120px;
+  background-color: #eaeaea;
+}
+
+section div {
+  min-height: 50px;
+}
+
+section button {
+  background-color: #d10157;
+  color: white;
+  border: none;
+}
+
+/*# sourceMappingURL=products.css.map */

@@ -1,0 +1,85 @@
+@import 'style';
+
+div.products {
+    position: relative;
+}
+
+nav#navProducts.navProducts {
+    background-color: green;
+    position:absolute;
+    top:0;
+    left:0;
+    height: 100%;
+}
+nav.navProducts ul{
+    padding-inline-start: 0px;
+    display: flex;
+    flex-direction: column;
+    background-color: $buttonFooterbgColor;
+    flex:1;
+    li {
+        text-decoration: none;
+        padding: 5px;
+        margin: 5px;
+        height: 30px;
+    }
+    li:hover {
+        background-color: $grayColor;
+    }
+}
+aside {
+   // background-color: pink;
+    margin-left:15%;
+}
+.navProductsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    width:300px;
+    height:600px;
+    margin-bottom: 5px;
+    margin-top:5px;
+    border-bottom: 2px dotted $grayColor;
+}
+
+.productPriceDiv {
+    display: flex;
+    justify-content: space-between;
+    margin:auto;
+    padding: auto;
+}
+
+.productPriceDiv {
+    h5 {
+        width:120px;
+    }
+}
+
+section h3 {
+    min-height: 50px;
+}
+
+section img {
+    min-height: 300px;
+    min-width: 300px;
+}
+
+section > h5 {
+    min-height: 40px;
+    max-height: 120px;
+    background-color: $buttonFooterbgColor;
+}
+
+section div {
+    min-height: 50px;
+}
+
+section button {
+    background-color: $logoColor;
+    color: white;
+    border:none;
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/style.css" rel="stylesheet"/>
+    <link href="./css/signup.css" rel="stylesheet"/>
+    <link href="./css/products.css" rel="stylesheet"/>
+    <link href="./css/home.css" rel="stylesheet"/>
+    <link href="./css/cart.css" rel="stylesheet"/>
+    <script type="text/javascript" src="./jsLib/purify.min.js"></script>
+
+    <script src="js/carousel.js"></script>
+    <script src="js/ajaxCalls.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/signup.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/cart.js"></script>
+
+    <title>Sapka Bazaar</title>
+    <script>
+        function changeTab(event,id) {
+            let htmlCollection = document.getElementsByClassName("mainClass")
+            for(let index=0;index<htmlCollection.length;index++ ) {
+                let tabId = htmlCollection[index].id;
+                if( id !== tabId )
+                    htmlCollection[index].hidden = true;
+                else
+                    htmlCollection[index].hidden = false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="./static/images/logo.png" alt="logo image" class="flex-start"/>
+        <nav class="flex-start homeNav">
+            <ul class="homeNavUl">
+                <li class="homeNavLi"><a onclick="changeTab(event,'home')"> Home </a></li>
+                <li class="homeNavLi"><a onclick="changeTab(event,'products');loadProducts();addEvents()"> Products </a></li>
+            </ul>
+        </nav>
+        <div class="loginClass">
+            <div class="row1">
+                <button class="loginButton" onclick="changeTab(event,'signin')">SignIn</button>
+                <button class="loginButton" onclick="changeTab(event,'signup')">Register</button>
+            </div>
+            <div class="row2">
+                <button id="cartButton" onclick="cartWindow()">
+                <svg version="1.1" id="Layer_1" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+                                <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                </svg>
+                <div id="itemCount">0 </div>
+                <h3> &nbsp;items </h3>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>            
+        <div class="mainClass" id="signup" hidden>
+            <div class="signup">
+                <div class= "signupClass1">
+                    <h1> Sign Up</h1>
+                    <br/>
+                    <p> We dont share your personal details.</p>
+                </div>
+                <div class="signupClass2">
+                    
+                   <form id="signupForm" onsubmit="validateData(event)">
+                        <div class="inputBox">
+                            <input type="text" id="fname" tabIndex="0" required onkeyup="this.setAttribute('value', this.value);"  value="">
+                            <label for="fname">First name</label>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" id="lname" required onkeyup="this.setAttribute('value', this.value);"  value="">
+                            <label for="lname">Last name</label>
+                        </div>
+                        <div class="inputBox">
+                            <input type="email" id="email1" required onkeyup="this.setAttribute('value', this.value);"  value="">
+                            <label for="email1">Email</label>
+                        </div>
+                        <div class="inputBox">
+                            <input type="password" id="pwd1" required onkeyup="this.setAttribute('value', this.value);"  value="">
+                            <label for="pwd1">Password</label>
+                        </div>
+                        <div class="inputBox">
+                            <input type="password" id="cpwd1" required onkeyup="this.setAttribute('value', this.value);"  value="">
+                            <label for="cpwd1">Confirm Password</label>
+                        </div>
+                        <button class="signButton"> Sign Up </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="mainClass" id="home">
+            <div class="home">
+                <div class="slideshow-container">
+                    <!-- Back and forward buttons -->
+                    <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="forward" onclick="plusSlides(1)">&#10095;</a>
+                    <br>
+                    <div class="dotsParent"></div>
+                </div>
+                <div class="card-container">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="mainClass" id="products" hidden>
+            <div class="products">
+                <nav class="navProducts" id="navProducts">
+                    <ul id="navProductsUl" class="navProductsUl"></ul>
+                </nav>
+                <aside>
+                    <div class="navProductsContainer">
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <div class="mainClass" id="signin" hidden>
+            <div class="signin">
+                <div class= "signupClass1">
+                    <h1> Login</h1>
+                    <br/>
+                    <p> Get access to your Orders, Wishlists and Recommendations.</p>
+                </div>
+                <div class="signupClass2">
+                    
+                    <form id="signinForm" onsubmit="validateSignInData(event)">
+                        
+                        <div class="inputBox">
+                            <input type="email" id="email0" required onkeyup="this.setAttribute('value', this.value);"  value="">
+                            <label for="email0">Email</label>
+                        </div>
+                        <div class="inputBox">
+                            <input type="password" id="pwd0" required onkeyup="this.setAttribute('value', this.value);"  value="">
+                            <label for="pwd0">Password</label>
+                        </div>
+                        <button class="signButton"> Login </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modalClass" id="modalWindow" hidden>
+            <!-- Modal content -->
+            <div class="modal-content emptyCart">
+                <header> 
+                    <div> My cart </div>
+                    <div>  <span class="close">&times;</span> </div>
+                </header>
+                <main> 
+                </main>
+                <aside hidden>
+                    <img src="./static/images/lowest-price.png">
+                    <h3> You won't find it cheaper anywhere</h3>
+                </aside>
+                <footer>
+                    <h5> Promo code can be applied during payment... </h5> 
+                    <button class="modalCartButton"> 
+                        <h3 id="cartButtonText"></h3>
+                        <h3 id="finalPrice"></h3>
+                    </button> </footer>
+            </div>
+        </div>
+    </main>
+</body>
+<footer>
+    Copyright &copy; 2011-2022 Sapka Bazaar Grocery Supplies Pvt Ltd
+</footer>
+<script>
+    //cartItems
+    var items = [];
+
+    var cartInstance = new AddtoCart();
+    //home page - slideshow
+    var slidePosition = 1;
+    LoadCarousels();
+    function addEvents() {
+        const lis = document.querySelectorAll('.navProductsLi');
+        for (let index = 0; index < lis.length; index++) {
+            lis[index].addEventListener('click',function(e) {
+                e.stopPropagation();
+                filterProductsShow(lis[index].id);
+            })  
+        }
+
+        const ulEle = document.getElementById('navProductsUl');
+        ulEle.addEventListener('click',function(e) {
+                filterProductsShow('all'); 
+        }) 
+    }
+</script>
+</html>
