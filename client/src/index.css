@@ -1,7 +1,4 @@
-@font-face {
-  font-family: "Dosis", sans-serif;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap');
 
 * {
   box-sizing: border-box;

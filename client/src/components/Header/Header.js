@@ -145,7 +145,7 @@ const SignOutLink = Styled.span`
 const HeaderComponent = () => {
 
   const [toggle, setToggle] = useState(false);
-  const [ showSignOut, setShowSignOut ] = useState(false)
+  const [showSignOut, setShowSignOut ] = useState(false)
   const [cartQuantiy, setCartQuantity ] = useState(0)
 
   const authContext = useContext(AuthContext);
