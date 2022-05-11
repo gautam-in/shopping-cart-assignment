@@ -5,7 +5,7 @@ import Styled from "styled-components";
 import SEO from "../../seo/SEO";
 import RegisterComponent from "../../containers/Register/Register";
 import H1 from "../../components/Typography/H1";
-import H5 from "../../components/Typography/H5";
+import P from "../../components/Typography/P";
 import AuthContext from "../../store/Auth/Context";
 import { ROUTES,TRANSLATIONS } from '../../constants';
 
@@ -65,9 +65,9 @@ function Register() {
       <RegisterStyle>
         <RegisterContentSection>
           <H1 fontSize="2em">{TRANSLATIONS.REGISTER.SIGNUP}</H1>
-          <H5 bold="400" margin="20px 0 0 0">
+          <P bold="400" margin="20px 0 0 0">
           {TRANSLATIONS.REGISTER.DESC}
-          </H5>
+          </P>
         </RegisterContentSection>
         <RegisterComponent register={register} handleSubmit={handleSubmit} onSubmit={onSubmit} errors={errors} watch={watch}/>
       </RegisterStyle>

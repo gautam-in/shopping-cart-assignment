@@ -42,7 +42,7 @@ const Input = styled.input`
   &:active,
   &:valid {
     outline: none;
-    border-bottom: 2px solid #469f97;
+    border-bottom: 2px solid #1e716a;
   }
 
   &:focus ${Hightlight} {
@@ -54,7 +54,7 @@ const Input = styled.input`
   &:focus ~ ${Label},&:valid ~ ${Label} {
     top: -20px;
     font-size: 14px;
-    color: #469f97;
+    color: #1e716a;
   }
 `;
 
