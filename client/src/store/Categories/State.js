@@ -15,7 +15,7 @@ const State = props => {
 
   const [state, dispatch] = useReducer(Reducer, initialState);
 
-  const getCategoriesData = async() => {
+  const getCategories = async() => {
     try{
       let res = await axios.get('/categories')
       if(res.data){
@@ -41,7 +41,7 @@ const State = props => {
       value={{
         categories: state.categories,
         categoryId: state.categoryId,
-        getCategoriesData,
+        getCategories,
         setCategoryId
       }}
     >

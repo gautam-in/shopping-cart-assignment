@@ -1,5 +1,6 @@
 import {
     GET_PRODUCTS_DATA,
+    SET_FILTER_PRODUCTS_DATA
   } from './Types';
   
   export default (state, action) => {
@@ -7,8 +8,12 @@ import {
       case GET_PRODUCTS_DATA:
         return {
           ...state,
-          ...action.payload,
           products: action.payload,
+        };
+      case SET_FILTER_PRODUCTS_DATA:
+        return {
+          ...state,
+          filterProducts: action.payload,
         };
       default:
         return state;

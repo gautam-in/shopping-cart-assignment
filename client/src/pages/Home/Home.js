@@ -14,29 +14,29 @@ function Home() {
   const categoriesContext = useContext(CategoriesContext);
   const carouselContext = useContext(CarouselContext);
 
-  const { categories, getCategoriesData,setCategoryId } = categoriesContext;
+  const { categories, getCategories,setCategoryId } = categoriesContext;
   const { carousel, getCarouselData } = carouselContext;
 
-  const [carouselData, setCarouselData] = useState([]);
-  const [categoriesData, setCategoriesData] = useState([]);
+  // const [carouselData, setCarouselData] = useState([]);
+  // const [categoriesData, setCategoriesData] = useState([]);
 
   useEffect(() => {
     if(isEmpty(categories)){
-      getCategoriesData();
+      getCategories();
     }
     if(isEmpty(carousel)){
       getCarouselData()
     }
   }, []);
 
-  useEffect(() => {
-    if (!isEmpty(categories)) {
-      setCategoriesData(categories);
-    }
-    if(!isEmpty(carousel)){
-      setCarouselData(carousel)
-    }
-  }, [categories,carousel]);
+  // useEffect(() => {
+  //   if (!isEmpty(categories)) {
+  //     setCategoriesData(categories);
+  //   }
+  //   if(!isEmpty(carousel)){
+  //     setCarouselData(carousel)
+  //   }
+  // }, [categories,carousel]);
 
   const handleCategoryClick = (id) => {
       setCategoryId(id)
@@ -46,8 +46,8 @@ function Home() {
     <Fragment>
       <SEO title="Sabka Bazaar" content="Sabka Bazaar is a online grocery platform, where you can buy in a affordable rate" link="/"/>
       <div>
-        {!isEmpty(carouselData) && <CarouselComponent data={carouselData}/>}
-        {!isEmpty(categoriesData) && <Categories data={categoriesData}  handleCategoryClick={handleCategoryClick}/>}
+        {!isEmpty(carousel) && <CarouselComponent data={carousel}/>}
+        {!isEmpty(categories) && <Categories data={categories}  handleCategoryClick={handleCategoryClick}/>}
       </div>
     </Fragment>
   );

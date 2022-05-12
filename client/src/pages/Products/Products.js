@@ -53,65 +53,43 @@ function ProductsPage() {
   const cartContext = useContext(CartContext);
 
   /* getting the store values */
-  const { categories, getCategoriesData, categoryId, setCategoryId } =
+  const { categories, getCategories, categoryId, setCategoryId } =
     categoriesContext;
-  const { products, getProductsData } = productsContext;
+  const { products, getProducts,filterProducts,setFilterProducts } = productsContext;
   const { addCartItem } = cartContext;
 
   /* dispatching actions to fetch categories and products data from API */
   useEffect(() => {
     if (isEmpty(categories)) {
-      getCategoriesData();
+      getCategories();
     }
 
     if (isEmpty(products)) {
-      getProductsData();
+      getProducts();
+    }
+
+    return () => {
+      setCategoryId("");
     }
   }, []);
 
-  /* maintaining the local store values */
-  const [categoriesData, setCategoriesData] = useState([]);
-  const [productsData, setProductsData] = useState([]);
-  const [selectedCategoryId, setSelectedCategoryId] = useState("");
-  const [filterProductsData, setFilterProductsData] = useState([]);
-
   /* categories functionalities */
-  useEffect(() => {
-    if (!isEmpty(categories)) {
-      setCategoriesData(categories);
-    }
-  }, [categories]);
-
   const handleCategoryClick = (category) => {
-    if (category.id === selectedCategoryId) {
+    if (category.id === categoryId) {
       setCategoryId("");
-      setSelectedCategoryId("");
     } else {
       setCategoryId(category.id);
-      setSelectedCategoryId(category.id);
     }
   };
 
-  useEffect(() => {
-    if(!isEmpty(categoryId)){
-      setSelectedCategoryId(categoryId)
-    }
-  },[categoryId])
-
   /* products functionalities */
   useEffect(() => {
-    if (!isEmpty(products)) {
-      setProductsData(products);
-    }
-  }, [products]);
-
-  useEffect(() => {
     let filteredProducts = filteredProductsData(
-      productsData,
-      selectedCategoryId
+      products,
+      categoryId
     );
-    setFilterProductsData(filteredProducts);
-  }, [selectedCategoryId]);
+    setFilterProducts(filteredProducts);
+  }, [categoryId]);
 
   const handleProductClick = (product) => {
     addCartItem(product);
@@ -126,27 +104,27 @@ function ProductsPage() {
       />
       <SectionContainer>
         <LeftSection>
-          {!isEmpty(categoriesData) && (
+          {!isEmpty(categories) && (
             <Sidebar
-              data={categoriesData}
+              data={categories}
               handleCategoryClick={handleCategoryClick}
-              selectedCategoryId={selectedCategoryId}
+              selectedCategoryId={categoryId}
             />
           )}
         </LeftSection>
         <RightSection >
-          {!isEmpty(filterProductsData) ? (
+          {!isEmpty(filterProducts) ? (
             <Products
-              data={filterProductsData}
+              data={filterProducts}
               handleProductClick={handleProductClick}
             />
-          ) : isEmpty(filterProductsData) && !isEmpty(selectedCategoryId) ? (
+          ) : isEmpty(filterProducts) && !isEmpty(categoryId) ? (
             <NoProductsContainer>
               <H1>No Products To Show</H1>
             </NoProductsContainer>
-          ) : !isEmpty(productsData) ? (
+          ) : !isEmpty(products) ? (
             <Products
-              data={productsData}
+              data={products}
               handleProductClick={handleProductClick}
             />
           ) : (
