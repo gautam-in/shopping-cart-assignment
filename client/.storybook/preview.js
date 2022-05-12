@@ -96,7 +96,7 @@ export const customViewports = {
     name: 'iPhone 6/7/8',
     viewports: [375],
     styles: {
-      height: '667px',
+      height: '700px',
       width: '375px',
     },
   },

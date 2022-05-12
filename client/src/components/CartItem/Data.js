@@ -5,6 +5,7 @@ export const data =   {
     imageURL: AppleImage,
     description:
       "Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny, edible black seeds.",
+    quantity: 1,
     price: 87,
     stock: 50,
     category: "5b6899953d1a866534f516e2",
