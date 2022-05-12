@@ -103,11 +103,10 @@ const CrossIcon = Styled.span``;
 
 const QuantityStyle = Styled.span``;
 
-const CartItemComponent = ({ data, key ,handleAddCartItem, handleRemoveCartItem }) => {
+const CartItemComponent = ({ data, uniqueId, handleAddCartItem, handleRemoveCartItem }) => {
 
   return (
-    <Fragment>
-      <CartItemContainer key={key}>
+      <CartItemContainer key={uniqueId}>
         <CartItem >
             <CartItemImage src={data.imageURL} alt={data.name} />
           <CartItemInfo>
@@ -127,20 +126,19 @@ const CartItemComponent = ({ data, key ,handleAddCartItem, handleRemoveCartItem 
           </CartItemInfo>
         </CartItem>
       </CartItemContainer>
-    </Fragment>
   );
 };
 
 CartItemComponent.propTypes = {
   data: PropTypes.object,
-  key: PropTypes.oneOfType[PropTypes.string,PropTypes.number],
+  uniqueId: PropTypes.string,
   handleAddCartItem: PropTypes.func,
   handleRemoveCartItem: PropTypes.func
 }
 
 CartItemComponent.defaultProps = {
   data: {},
-  key: 0,
+  uniqueId: '',
   handleAddCartItem: () => {},
   handleRemoveCartItem: () => {}
 }

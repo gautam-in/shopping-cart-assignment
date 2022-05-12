@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, Fragment } from "react";
+import {  useEffect, useContext, Fragment } from "react";
 import { isEmpty } from "lodash";
 import Styled from "styled-components";
 import SEO from "../../seo/SEO";

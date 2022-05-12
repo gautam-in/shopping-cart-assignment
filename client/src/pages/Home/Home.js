@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext, Fragment } from "react";
+import { useEffect, useContext, Fragment } from "react";
 import { useHistory } from "react-router-dom";
 import { isEmpty } from "lodash";
 import SEO from "../../seo/SEO";
@@ -17,9 +17,6 @@ function Home() {
   const { categories, getCategories,setCategoryId } = categoriesContext;
   const { carousel, getCarouselData } = carouselContext;
 
-  // const [carouselData, setCarouselData] = useState([]);
-  // const [categoriesData, setCategoriesData] = useState([]);
-
   useEffect(() => {
     if(isEmpty(categories)){
       getCategories();
@@ -28,15 +25,6 @@ function Home() {
       getCarouselData()
     }
   }, []);
-
-  // useEffect(() => {
-  //   if (!isEmpty(categories)) {
-  //     setCategoriesData(categories);
-  //   }
-  //   if(!isEmpty(carousel)){
-  //     setCarouselData(carousel)
-  //   }
-  // }, [categories,carousel]);
 
   const handleCategoryClick = (id) => {
       setCategoryId(id)

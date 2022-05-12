@@ -32,6 +32,12 @@ const Modal = Styled.div`
   align-items: center;
   padding-right: 20px;
   z-index: 1000;
+
+  @media(max-width: 770px){
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
 `;
 
 const ModalContainer = Styled.div`
@@ -43,26 +49,52 @@ const ModalContainer = Styled.div`
   min-height: 700px;
   display: flex;
   flex-direction: column;
+  @media(max-width: 770px){
+    max-width: none;
+  }
 `;
 
 const ModalHeaderContainer = Styled.div`
       position: relative;
       background-color: black;
       color: #fff;
+  @media(max-width: 770px){
+      background-color: #fff;
+  }
 `;
 
 const ModalTitle = Styled.div`
   padding: 1rem;
   border-bottom: 1px solid #ccc;
+  & h4 {
+  color: white;
+  }
+  @media(max-width: 770px){
+     & h4,p {
+       color: black !important;
+     }
+  }
 `;
 
 const ModalTitleWithItems = Styled.div`
   padding: 1rem;
   border-bottom: 1px solid #ccc;
   display: flex;
-
-  & p{
+  & h4 {
+  color: white;
+  }
+  & p {
     margin-left:5px;
+  }
+  @media(max-width: 770px){
+     & h4,p {
+       color: black !important;
+     }
+  }
+  @media(max-width: 480px){
+    & p {
+       line-height: 2em;
+     }
   }
 `;
 
@@ -90,6 +122,9 @@ const ModalCloseButton = Styled.div`
   top: 0.2rem;
   right: 1rem;
   cursor: pointer;
+  @media(max-width: 770px){
+    color: black !important;
+  }
 `;
 
 const ModalFooter = Styled.div`
@@ -111,12 +146,12 @@ const ModalComponent = ({ modalState, handleModalClose, children, noItems,cartPr
         <ModalHeaderContainer>
           {noItems ? (
             <ModalTitle>
-              <H4 color="#ffff">{TRANSLATIONS.CART.HEADER}</H4>
+              <H4>{TRANSLATIONS.CART.HEADER}</H4>
             </ModalTitle>
           ) : (
             <ModalTitleWithItems>
-              <H4 color="#ffff">{TRANSLATIONS.CART.HEADER}{' '}</H4>
-              <P color="#ffff">{` (${cartQuantity} item)`}</P>
+              <H4 >{TRANSLATIONS.CART.HEADER}{' '}</H4>
+              <P >{` (${cartQuantity} item)`}</P>
             </ModalTitleWithItems>
           )}
           <ModalCloseButton onClick={handleModalClose}>&times;</ModalCloseButton>

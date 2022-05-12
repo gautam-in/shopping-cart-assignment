@@ -7,8 +7,8 @@ const CartItems = ({data,...rest}) => {
         <Fragment>
          <div>
                 {data.map((val,i) => (
-                    <Fragment key={i}>
-                        <CartItem data={val} key={i} {...rest}/>
+                    <Fragment key={`${val.name}-${i}`}>
+                        <CartItem data={val} uniqueId={`${val.name}-${i}`} {...rest}/>
                     </Fragment>
                 ))}
           </div>
