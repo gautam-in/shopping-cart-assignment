@@ -1,0 +1,21 @@
+.btn.btn-primary {
+    width: 20%;
+    padding: 15px;
+    border: none;
+    background-color: #c91e46;
+    cursor: pointer;
+    color: white;
+    margin-top: 1rem;
+  }
+  .btn.btn-primary:hover {
+    background-color: #d81f4a !important;
+    opacity: 0.9;
+  }
+  .btn.btn-primary:active {
+    background-color: #c91e46 !important;
+    border: none !important;
+  }
+  .btn.btn-primary:focus {
+    background-color: #c91e46 !important;
+    border: none !important;
+  }

@@ -1,0 +1,15 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+$primary: #d61e49;
+$theme-colors: (
+  primary: $primary,
+);
+
+.btn-primary {
+  color: white;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  border-radius: 0px;
+}
+@import "../node_modules/bootstrap/scss/bootstrap";
