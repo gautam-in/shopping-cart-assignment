@@ -1,0 +1,26 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 0 1rem;
+    font-family: "Dosis", sans-serif;
+  }
+  .form .button {
+    padding-top: 1rem;
+    width: 40%;
+  }
+  
+  .login__container__form {
+    flex: 5;
+    width: 50%;
+  }
+  
+  .signup__container__form {
+    flex: 5;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .form .button {
+      width: 40%;
+    }
+  }
