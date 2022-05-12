@@ -1,5 +1,4 @@
 import { useEffect, useContext, Fragment } from "react";
-import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import SEO from "../../seo/SEO";
 import Styled from "styled-components";
@@ -35,30 +34,11 @@ function LoginPage() {
 
   const { authenticationSucess, isAuthenticated } = authContext;
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm({
-    reValidateMode: "onChange",
-    mode: "onBlur",
-    defaultValues: {
-      email: "user@gmail.com",
-      password: "Pass@123",
-    },
-  });
-
   useEffect(() => {
     if (isAuthenticated) {
       history.push(ROUTES.HOME);
     }
   }, [isAuthenticated]);
-
-  const onSubmit = (data) => {
-    authenticationSucess(data);
-    reset();
-  };
 
   return (
     <Fragment>
@@ -71,10 +51,7 @@ function LoginPage() {
           </P>
         </LoginContentSection>
         <LoginComponent
-          register={register}
-          handleSubmit={handleSubmit}
-          onSubmit={onSubmit}
-          errors={errors}
+          authenticationSucess={authenticationSucess}
         />
       </LoginStyle>
     </Fragment>

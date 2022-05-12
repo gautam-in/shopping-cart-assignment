@@ -65,12 +65,13 @@ const Bar = styled.span`
 function InputComponent({
   name,
   type,
-  validation
+  validation,
+  datatestId
 }) {
   return (
     <Fragment>
       <Group>
-        <Input id={name} type={type} name={name} {...validation} required />
+        <Input id={name} data-testid={datatestId} type={type} name={name} {...validation} required />
         <Hightlight></Hightlight>
         <Bar></Bar>
         <Label htmlFor={name}>{name}</Label>

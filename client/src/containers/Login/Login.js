@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { useForm } from "react-hook-form";
 import PropTypes from 'prop-types';
 import Styled from "styled-components";
 import Input from "../../components/Input/Input";
@@ -21,7 +22,26 @@ const SubmitButtonContainer = Styled.div`
   margin-top: 30px;
 `;
 
-const Login = ({register, handleSubmit, onSubmit, errors}) => {
+const Login = ({authenticationSucess}) => {
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    reValidateMode: "onChange",
+    mode: "onBlur",
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+
+  const onSubmit = (data) => {
+    authenticationSucess(data);
+    reset();
+  };
 
   return (
     <Fragment>
@@ -40,14 +60,15 @@ const Login = ({register, handleSubmit, onSubmit, errors}) => {
                 })
               }}
             />
-            {errors.email && errors.email.message && (
-              <HelpText color="red" paddingTop="5px">
+            {errors.email && errors.email.message ? (
+              <HelpText role="alert" color="red" paddingTop="5px">
                 {errors.email.message}
               </HelpText>
-            )}
+            ): null}
             <Input
               type="password"
               name="Password"
+              datatestId={"password"}
               validation={{
                 ...register("password", {
                   required: "Password is required",
@@ -59,13 +80,13 @@ const Login = ({register, handleSubmit, onSubmit, errors}) => {
                 })
               }}
             />
-            {errors.password && errors.password.message && (
-              <HelpText color="red" paddingTop="5px">
+            {errors.password && errors.password.message ? (
+              <HelpText role="alert" color="red" paddingTop="5px">
                 {errors.password.message}
               </HelpText>
-            )}
+            ) : null}
             <SubmitButtonContainer>
-              <Button onSubmit={onSubmit} padding="4px 30px">
+              <Button data-testid="submit" onSubmit={onSubmit} padding="4px 30px">
                 {" "}
                 Login{" "}
               </Button>
