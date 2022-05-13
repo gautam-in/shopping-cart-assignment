@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import PropTypes from 'prop-types';
 import Styled from "styled-components";
 import H4 from "../Typography/H4";
@@ -143,4 +144,4 @@ CartItemComponent.defaultProps = {
   handleRemoveCartItem: () => {}
 }
 
-export default CartItemComponent;
+export default memo(CartItemComponent);

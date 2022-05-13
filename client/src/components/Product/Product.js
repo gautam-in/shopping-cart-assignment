@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment,memo } from "react";
 import Tablet from "./Tablet";
 import Mobile from "./Mobile";
 import Desktop from "./Desktop";
@@ -15,4 +15,4 @@ const Product = ({data,...rest}) => {
   );
 };
 
-export default Product;
+export default memo(Product);

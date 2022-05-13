@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import Styled from "styled-components";
 import PropTypes from 'prop-types';
 import H4 from "../Typography/H4";
@@ -207,4 +208,4 @@ ModalComponent.defaultProps = {
   cartQuantity: 0
 }
 
-export default ModalComponent;
+export default memo(ModalComponent);

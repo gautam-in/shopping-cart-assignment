@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, Suspense,lazy } from "react";
+import React, { useEffect, useContext, Suspense,lazy, Fragment } from "react";
 import { Switch, Route } from "react-router-dom";
 import { isEmpty } from "lodash";
 
@@ -14,7 +14,6 @@ import { getCartQuantityAndTotalPrice } from "./utils";
 import Spinner from "./components/LoadingSpinner/LoadingSpinner";
 import GlobalSpinner from "./components/LoadingSpinner/Spinner";
 import { ROUTES,TRANSLATIONS } from './constants'
-
 const Header = lazy(() => import("./components/Header/Header"));
 const Footer = lazy(() => import("./components/Footer/Footer"));
 const Login = lazy(() => import("./pages/Login/Login"));
@@ -34,27 +33,18 @@ function App() {
     addCartItem,
     removeCartItem,
     updateCartQuantityAndTotal,
+    cartTotalAmount,
+    cartTotalQuantity
   } = cartContext;
 
   const {
     loading
   } = globalContext;
-  const [modalState, setModalState] = useState(false);
-  const [cartData, setCartData] = useState([]);
-  const [cartQuantity, setCartQuantity] = useState(null);
-  const [cartPrice, setCartPrice] = useState(null);
-
-  useEffect(() => {
-    setModalState(cartModalState);
-  }, [cartModalState]);
 
   useEffect(() => {
     let { quantity, total } = getCartQuantityAndTotalPrice(cartItems);
     updateCartQuantityAndTotal({ quantity, total });
-    setCartQuantity(quantity);
-    setCartPrice(total);
     sessionStorage.setItem('cart',JSON.stringify(cartItems))
-    setCartData(cartItems);
   }, [cartItems]);
 
   const handleModalClose = () => {
@@ -70,7 +60,7 @@ function App() {
   };
 
   return (
-    <>
+    <Fragment>
       <Suspense fallback={<Spinner/>}>
         <Header />
         <GlobalSpinner showLoader={loading}/>
@@ -82,25 +72,25 @@ function App() {
           <Route path={ROUTES.NOT_FOUND} component={NotFound} />
 
         </Switch>
-        {isEmpty(cartData) ? (
+        {isEmpty(cartItems) ? (
           <ModalComponent
-            modalState={modalState}
+            modalState={cartModalState}
             handleModalClose={handleModalClose}
-            noItems={isEmpty(cartData)}
+            noItems={isEmpty(cartItems)}
           >
             <H3>{TRANSLATIONS.CART.NO_ITEMS.TITLE}</H3>
             <P>{TRANSLATIONS.CART.NO_ITEMS.DESC}</P>
           </ModalComponent>
         ) : (
           <ModalComponent
-            modalState={modalState}
+            modalState={cartModalState}
             handleModalClose={handleModalClose}
-            noItems={isEmpty(cartData)}
-            cartPrice={cartPrice}
-            cartQuantity={cartQuantity}
+            noItems={isEmpty(cartItems)}
+            cartPrice={cartTotalAmount}
+            cartQuantity={cartTotalQuantity}
           >
             <CartItems
-              data={cartData}
+              data={cartItems}
               handleAddCartItem={handleAddCartItem}
               handleRemoveCartItem={handleRemoveCartItem}
             />
@@ -109,7 +99,7 @@ function App() {
         )}
         <Footer />
       </Suspense>
-    </>
+    </Fragment>
   );
 }
 

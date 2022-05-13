@@ -1,4 +1,4 @@
-import {  useEffect, useContext, Fragment } from "react";
+import { useEffect, useContext, Fragment, useMemo } from "react";
 import { isEmpty } from "lodash";
 import Styled from "styled-components";
 import SEO from "../../seo/SEO";
@@ -55,7 +55,8 @@ function ProductsPage() {
   /* getting the store values */
   const { categories, getCategories, categoryId, setCategoryId } =
     categoriesContext;
-  const { products, getProducts,filterProducts,setFilterProducts } = productsContext;
+  const { products, getProducts, filterProducts, setFilterProducts } =
+    productsContext;
   const { addCartItem } = cartContext;
 
   /* dispatching actions to fetch categories and products data from API */
@@ -70,7 +71,7 @@ function ProductsPage() {
 
     return () => {
       setCategoryId("");
-    }
+    };
   }, []);
 
   /* categories functionalities */
@@ -84,15 +85,24 @@ function ProductsPage() {
 
   /* products functionalities */
   useEffect(() => {
-    let filteredProducts = filteredProductsData(
-      products,
-      categoryId
-    );
+    let filteredProducts = filteredProductsData(products, categoryId);
     setFilterProducts(filteredProducts);
-  }, [categoryId]);
+  }, [categoryId, products]);
 
   const handleProductClick = (product) => {
     addCartItem(product);
+  };
+
+  const noProductsSection = () => {
+    return (
+      <NoProductsContainer>
+        <H1>No Products To Show</H1>
+      </NoProductsContainer>
+    );
+  };
+
+  const productsSection = (data) => {
+    return <Products data={data} handleProductClick={handleProductClick} />;
   };
 
   return (
@@ -112,26 +122,14 @@ function ProductsPage() {
             />
           )}
         </LeftSection>
-        <RightSection >
-          {!isEmpty(filterProducts) ? (
-            <Products
-              data={filterProducts}
-              handleProductClick={handleProductClick}
-            />
-          ) : isEmpty(filterProducts) && !isEmpty(categoryId) ? (
-            <NoProductsContainer>
-              <H1>No Products To Show</H1>
-            </NoProductsContainer>
-          ) : !isEmpty(products) ? (
-            <Products
-              data={products}
-              handleProductClick={handleProductClick}
-            />
-          ) : (
-            <NoProductsContainer>
-              <H1>No Products To Show</H1>
-            </NoProductsContainer>
-          )}
+        <RightSection>
+          {!isEmpty(filterProducts)
+            ? productsSection(filterProducts)
+            : isEmpty(filterProducts) && !isEmpty(categoryId)
+            ? noProductsSection()
+            : !isEmpty(products)
+            ? productsSection(products)
+            : noProductsSection()}
         </RightSection>
       </SectionContainer>
     </Fragment>

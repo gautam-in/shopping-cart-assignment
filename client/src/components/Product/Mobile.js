@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment,memo } from "react";
 import PropTypes from "prop-types";
 import Styled from "styled-components";
 import ImageComponent from "./ImageComponent";
@@ -85,4 +85,4 @@ Product.defaultProps = {
   key: 0,
 };
 
-export default Product;
+export default memo(Product);

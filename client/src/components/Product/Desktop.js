@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment,memo } from "react";
 import Styled from "styled-components";
 import PropTypes from 'prop-types';
 import ImageComponent from "./ImageComponent";
@@ -86,4 +86,4 @@ Desktop.defaultProps = {
   key: 0
 }
 
-export default Desktop;
+export default memo(Desktop);

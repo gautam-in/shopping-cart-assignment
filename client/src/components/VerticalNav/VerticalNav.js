@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment,memo } from "react";
 import Styled from "styled-components";
 import PropTypes from 'prop-types';
 import P from "../Typography/P";
@@ -65,4 +65,4 @@ VerticalNav.defaultProps = {
 }
 
 
-export default VerticalNav;
+export default memo(VerticalNav);
