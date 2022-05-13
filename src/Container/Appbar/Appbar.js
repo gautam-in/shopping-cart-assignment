@@ -2,19 +2,15 @@ import React, { useEffect, useContext, useState } from "react";
 import Main from "../../Component/Header/Index";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Toolbar from "@material-ui/core/Toolbar";
-import { MainUrl } from "../Constant/index";
 import List from "@material-ui/core/List";
 import Cart from "../Cart/Cart";
 import Footer from "../../Component/Footer/index";
-import { Routes, Route, Link, Outlet, useNavigate } from "react-router-dom";
-import { routeConfigList, routes } from "../../Routes";
-import { CartContext, DrawerContext, ProductDataContext } from "../../App";
-
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import { routeConfigList } from "../../Routes";
+import { DrawerContext } from "../../App";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
@@ -72,7 +68,7 @@ export default function ClippedDrawer(props) {
     setopen(false);
   };
   const handleChange = (e) => {
-    console.log(props);
+    
 
     navigate("/Product/" + e.target.value);
   };

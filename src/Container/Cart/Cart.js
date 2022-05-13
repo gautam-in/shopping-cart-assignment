@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useState } from "react";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Toolbar from "@material-ui/core/Toolbar";
-import { Divider, Button } from "@material-ui/core";
+import { Divider } from "@material-ui/core";
 import List from "@material-ui/core/List";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
@@ -100,7 +100,10 @@ export default function Cart() {
               Cart.map((cartItem, index) => (
                 <div className="ProductCart" key={index}>
                   <div className="CartImg">
-                    <img src={require("../ServerImg" + cartItem.imageURL)} />
+                    <img
+                      src={require("../ServerImg" + cartItem.imageURL)}
+                      alt={cartItem.name}
+                    />
                   </div>
                   <div className="CartDetails">
                     <div className="CartName">{cartItem.name} </div>

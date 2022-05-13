@@ -11,7 +11,7 @@
   background-color: #eeeeee;
 }
 .CartDrawer .MuiList-padding {
-  height: max-content;
+ min-height: 73vh;
 }
 
 /************Cart Details*****************************/

@@ -1,16 +1,13 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import "./App.css";
 import Login from "./Container/Login/login";
 import Appbar from "./Container/Appbar/Appbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Container/Home/Home";
 import SignUp from "./Container/SignUp/SignUp";
-import BCDPage from "./Container/BCDPage/BCDPage";
-import BCPage from "./Container/BCPage/BCPage";
-import BevPage from "./Container/BevPage/BevPage";
-import BHPage from "./Container/BHPage/BHPage";
-import FVPage from "./Container/FVPage/FVPage";
-import NotFoundPage from "./Container/NotFoundPage/index"
+import { MainUrl } from "./Container/Constant/index";
+import MasterProduct from "./Container/MasterProduct/MasterProduct";
+import NotFoundPage from "./Container/NotFoundPage/index";
 export const UserContext = createContext();
 export const CartContext = createContext();
 export const DrawerContext = createContext();
@@ -18,8 +15,20 @@ export const ProductDataContext = createContext();
 function App() {
   const [Page, setPage] = useState("");
   const [Show, setShow] = useState(false);
+  const [categoryData, setcategoryData] = useState(null);
   const [cartData, setCartData] = useState([]);
   const [TotalCount, SetTotalCount] = useState(0);
+  useEffect(() => {
+    const url = MainUrl + "categories";
+    const data = async () => {
+      const categories = await fetch(url);
+      const categoriesJson = await categories.json();
+
+      setcategoryData(categoriesJson);
+    };
+    data();
+  }, []);
+
   return (
     <UserContext.Provider value={[Page, setPage]}>
       <DrawerContext.Provider value={[Show, setShow]}>
@@ -32,11 +41,13 @@ function App() {
                   <Route path="/Login" element={<Login />} />
                   <Route path="/Register" element={<SignUp />} />
                   <Route path="Product" element={<Appbar Page={Page} />}>
-                    <Route path="fruit-and-veg" element={<FVPage />} />
-                    <Route path="bakery-cakes-dairy" element={<BCDPage />} />
-                    <Route path="beverages" element={<BevPage />} />
-                    <Route path="beauty-hygiene" element={<BHPage />} />
-                    <Route path="baby" element={<BCPage />} />
+                    {categoryData &&
+                      categoryData.map((product, index) => (
+                        <Route
+                          path={product.key}
+                          element={<MasterProduct product={categoryData} />}
+                        />
+                      ))}
                   </Route>
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
