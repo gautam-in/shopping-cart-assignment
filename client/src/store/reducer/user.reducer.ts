@@ -9,14 +9,15 @@ import {
     SELECT_CATEGORY,
 } from "../action.type";
 
-export type StateType ={
- readonly   loading: true,
- readonly  loggedIn: false,
- readonly  shoppingCart: [],
- readonly  products: [],
- readonly  category: [],
- readonly  banner: [],
- readonly  order: 0,
+import { BannerType, ProductType, CategoryType } from "../../type";
+export type StateType = {
+    readonly loading: boolean,
+    readonly loggedIn: boolean,
+    readonly shoppingCart: ProductType[],
+    readonly products: ProductType[],
+    readonly category: CategoryType[],
+    readonly banner: BannerType[],
+    readonly order: number,
 }
 
 const initialState: StateType = {
@@ -29,7 +30,7 @@ const initialState: StateType = {
     order: 0,
 }
 
-const user = (state = initialState, action: { type: string; payload: any; }) => {
+const user = (state = initialState, action: { type: string; payload: any; }): StateType => {
     switch (action.type) {
         case LOGIN:
             return { ...state, loggedIn: true };
@@ -51,38 +52,32 @@ const user = (state = initialState, action: { type: string; payload: any; }) => 
             }
 
         case ADDTOCART:
-            var productCart: any = []
+            var productCart: ProductType[] = []
             const index = state.shoppingCart.findIndex((pid: any) => pid.id === action.payload)
             if (state.shoppingCart && index !== -1) {
-                productCart = state.shoppingCart.map(value => Object.assign({}, value));
-                productCart[index]['qty'] = productCart[index]['qty'] + 1
+                productCart = state.shoppingCart.map((d) => d.id === action.payload ? { ...d, qty: d.qty + 1 } : { ...d })
                 return {
                     ...state,
                     shoppingCart: [...productCart]
-
                 }
             } else {
-
-                var shoppingCart: any = state.products.map(value => Object.assign({}, value));
-                productCart = [...shoppingCart.filter((pid: any) => pid.id === action.payload)];
-                var len: number = productCart.length;
-                // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-                if (len > 0) {
-                    productCart[0]['qty'] = 1
+                let product  = state.products.find(d => d.id === action.payload);
+                if (product) {
+                    return {
+                        ...state,
+                        shoppingCart: [...state.shoppingCart, { ...product, qty: 1 }]
+                    }
                 }
                 return {
                     ...state,
-                    shoppingCart: [...state.shoppingCart, ...productCart]
-
                 }
             }
 
         case REMOVE_QTY:
-            var decreaseProduct: any = [];
+            var decreaseProduct: ProductType[] = [];
             let indexItem = state.shoppingCart.findIndex((pid: any) => pid.id === action.payload);
             if (state.shoppingCart && indexItem !== -1) {
-                decreaseProduct = state.shoppingCart.map(value => Object.assign({}, value));
-                decreaseProduct[indexItem]['qty'] = decreaseProduct[indexItem]['qty'] - 1
+                decreaseProduct = state.shoppingCart.map(d => d.id===action.payload?{...d, qty: d.qty -1 }: {...d} );
                 if (decreaseProduct[indexItem]['qty'] === 0) {
                     decreaseProduct = state.shoppingCart.filter((pid: any) => pid.id !== action.payload)
                 }
@@ -104,15 +99,13 @@ const user = (state = initialState, action: { type: string; payload: any; }) => 
             }
 
         case ADD_QTY:
-            var increaseProduct: any = [];
+            var increaseProduct: ProductType[] = [];
             const ind = state.shoppingCart.findIndex((pid: any) => pid.id === action.payload);
             if (state.shoppingCart && ind !== -1) {
-                increaseProduct = state.shoppingCart.map(value => Object.assign({}, value));
-                increaseProduct[ind]['qty'] = increaseProduct[ind]['qty'] + 1
+                increaseProduct = state.shoppingCart.map((d) => d.id === action.payload ? { ...d, qty: d.qty + 1 } : { ...d })
                 return {
                     ...state,
                     shoppingCart: [...increaseProduct]
-
                 }
             } else {
                 return {
@@ -125,7 +118,7 @@ const user = (state = initialState, action: { type: string; payload: any; }) => 
             return {
                 ...state
             }
-            
+
         default:
             return {
                 ...state
