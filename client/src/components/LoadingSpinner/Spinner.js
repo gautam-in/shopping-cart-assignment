@@ -11,6 +11,7 @@ const LoaderContainer = Styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 `;
 
 const Loader = Styled.div`
@@ -32,10 +33,10 @@ const Loader = Styled.div`
 
 `;
 
-const Spinner = () => (
+const Spinner = ({showLoader}) =>showLoader ? (
   <LoaderContainer>
     <Loader></Loader>
   </LoaderContainer>
-);
+) : null;
 
 export default Spinner;

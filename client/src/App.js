@@ -5,12 +5,14 @@ import { isEmpty } from "lodash";
 import PrivateRoute from "./routes/PrivateRoute";
 import ModalComponent from "./components/Modal/Modal";
 import CartContext from "./store/Cart/Context";
+import GlobalContext from "./store/Global/Context";
 import CartItems from "./containers/CartItems/CartItems";
 import LowestPriceTag from "./components/LowestPriceTag/LowestPriceTag";
 import H3 from "./components/Typography/H3";
 import P from "./components/Typography/P";
 import { getCartQuantityAndTotalPrice } from "./utils";
 import Spinner from "./components/LoadingSpinner/LoadingSpinner";
+import GlobalSpinner from "./components/LoadingSpinner/Spinner";
 import { ROUTES,TRANSLATIONS } from './constants'
 
 const Header = lazy(() => import("./components/Header/Header"));
@@ -23,6 +25,7 @@ const NotFound = lazy(()=> import("./pages/404/404"));
 
 function App() {
   const cartContext = useContext(CartContext);
+  const globalContext = useContext(GlobalContext);
 
   const {
     cartModalState,
@@ -32,6 +35,10 @@ function App() {
     removeCartItem,
     updateCartQuantityAndTotal,
   } = cartContext;
+
+  const {
+    loading
+  } = globalContext;
   const [modalState, setModalState] = useState(false);
   const [cartData, setCartData] = useState([]);
   const [cartQuantity, setCartQuantity] = useState(null);
@@ -61,10 +68,12 @@ function App() {
   const handleRemoveCartItem = (data) => {
     removeCartItem(data);
   };
+
   return (
     <>
       <Suspense fallback={<Spinner/>}>
         <Header />
+        <GlobalSpinner showLoader={loading}/>
         <Switch>
           <Route exact path={ROUTES.LOGIN} component={Login} />
           <Route exact path={ROUTES.REGISTER} component={Register} />

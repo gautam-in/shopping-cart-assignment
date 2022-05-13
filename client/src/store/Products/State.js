@@ -1,7 +1,8 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useContext } from 'react';
 import axios from "axios";
 import Context from './Context';
 import Reducer from './Reducer';
+import GlobalContext from "../Global/Context";
 import {
     GET_PRODUCTS_DATA,
     SET_FILTER_PRODUCTS_DATA
@@ -14,9 +15,12 @@ const State = props => {
   };
 
   const [state, dispatch] = useReducer(Reducer, initialState);
+  const globalContext = useContext(GlobalContext);
+  const { initializeLoading } = globalContext;
 
   const getProducts = async() => {
     try{
+      initializeLoading(true)
       let res = await axios.get('/products')
       if(res.data){
           dispatch({
@@ -26,6 +30,8 @@ const State = props => {
       }
     }catch(error){
       console.log(error)
+    } finally {
+      initializeLoading(false)
     }
   };
 

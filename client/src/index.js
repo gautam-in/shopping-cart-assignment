@@ -7,6 +7,7 @@ import { HelmetProvider } from "react-helmet-async";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+import GlobalState from "./store/Global/State";
 import AuthState from "./store/Auth/State";
 import CarouselState from "./store/Carousel/State";
 import CategoriesState from "./store/Categories/State";
@@ -24,17 +25,19 @@ root.render(
   <ErrorBoundary FallbackComponent={ErrorBoundaryComponent} onReset={() => {}}>
     <HelmetProvider>
       <BrowserRouter>
-        <AuthState>
-          <CarouselState>
-            <CategoriesState>
-              <ProductsState>
-                <CartState>
-                  <App />
-                </CartState>
-              </ProductsState>
-            </CategoriesState>
-          </CarouselState>
-        </AuthState>
+        <GlobalState>
+          <AuthState>
+            <CarouselState>
+              <CategoriesState>
+                <ProductsState>
+                  <CartState>
+                    <App />
+                  </CartState>
+                </ProductsState>
+              </CategoriesState>
+            </CarouselState>
+          </AuthState>
+        </GlobalState>
       </BrowserRouter>
     </HelmetProvider>
   </ErrorBoundary>

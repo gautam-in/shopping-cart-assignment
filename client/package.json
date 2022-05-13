@@ -24,8 +24,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-rewired start",
+   "build": "react-app-rewired build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
@@ -57,7 +57,10 @@
     "@storybook/react": "^6.4.22",
     "@storybook/testing-library": "0.0.11",
     "@welldone-software/why-did-you-render": "^7.0.1",
+    "babel-plugin-transform-imports": "^2.0.0",
     "chromatic": "^6.5.4",
+    "customize-cra": "^1.0.0",
+    "react-app-rewired": "^2.2.1",
     "source-map-explorer": "^2.5.2",
     "webpack": "^5.72.0"
   }

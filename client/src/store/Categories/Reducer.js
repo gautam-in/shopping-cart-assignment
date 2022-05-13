@@ -8,13 +8,11 @@ import {
       case GET_CATEGORIES_DATA:
         return {
           ...state,
-          ...action.payload,
           categories: action.payload,
         };
       case SET_CATEGORY_ID:
         return {
           ...state,
-          ...action.payload,
           categoryId: action.payload
         };
       default:

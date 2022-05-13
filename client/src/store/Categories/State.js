@@ -1,40 +1,45 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useContext } from "react";
 import axios from "axios";
-import Context from './Context';
-import Reducer from './Reducer';
-import {
-    GET_CATEGORIES_DATA,
-    SET_CATEGORY_ID
-} from './Types';
+import Context from "./Context";
+import Reducer from "./Reducer";
+import GlobalContext from "../Global/Context";
+import { GET_CATEGORIES_DATA, SET_CATEGORY_ID } from "./Types";
 
-const State = props => {
+const State = (props) => {
   const initialState = {
     categories: [],
-    categoryId: ''
+    categoryId: "",
   };
 
   const [state, dispatch] = useReducer(Reducer, initialState);
 
-  const getCategories = async() => {
-    try{
-      let res = await axios.get('/categories')
-      if(res.data){
-          dispatch({
-              type: GET_CATEGORIES_DATA,
-              payload: res.data
-          });
+  const globalContext = useContext(GlobalContext);
+
+  const { initializeLoading } = globalContext;
+
+  const getCategories = async () => {
+    try {
+      initializeLoading(true);
+      let res = await axios.get("/categories");
+      if (res.data) {
+        dispatch({
+          type: GET_CATEGORIES_DATA,
+          payload: res.data,
+        });
       }
-    }catch(error){
-      console.log(error)
+    } catch (error) {
+      console.log(error);
+    } finally {
+      initializeLoading(false)
     }
   };
 
-  const setCategoryId = async(data) => {
+  const setCategoryId = async (data) => {
     dispatch({
-        type: SET_CATEGORY_ID,
-        payload: data
+      type: SET_CATEGORY_ID,
+      payload: data,
     });
-  }
+  };
 
   return (
     <Context.Provider
@@ -42,7 +47,7 @@ const State = props => {
         categories: state.categories,
         categoryId: state.categoryId,
         getCategories,
-        setCategoryId
+        setCategoryId,
       }}
     >
       {props.children}
