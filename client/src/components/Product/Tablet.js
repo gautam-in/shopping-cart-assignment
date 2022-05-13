@@ -45,8 +45,8 @@ const DescriptionContainer = Styled.div`
 const Tablet = ({ data, key, handleProductClick }) => {
   return (
     <Fragment>
-      <Card key={key}>
-        <Title>
+      <Card data-testid="product-card" key={key}>
+        <Title >
           <H3>{data.name}</H3>
         </Title>
         <ContentContainer>

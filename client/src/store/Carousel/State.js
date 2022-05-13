@@ -5,7 +5,8 @@ import Reducer from './Reducer';
 import GlobalContext from "../Global/Context";
 
 import {
-    GET_CAROUSEL_DATA
+    GET_CAROUSEL_DATA,
+    CLEAR_CAROUSEL_DATA
 } from './Types';
 
 const State = props => {
@@ -33,7 +34,12 @@ const State = props => {
     } finally {
       initializeLoading(false)
     }
+  };
 
+  const clearCarouselData = () => {
+    dispatch({
+      type: CLEAR_CAROUSEL_DATA,
+  });
   };
 
   return (
@@ -41,6 +47,7 @@ const State = props => {
       value={{
         carousel: state.carousel,
         getCarouselData,
+        clearCarouselData
       }}
     >
       {props.children}

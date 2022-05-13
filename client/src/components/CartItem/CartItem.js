@@ -107,7 +107,7 @@ const QuantityStyle = Styled.span``;
 const CartItemComponent = ({ data, uniqueId, handleAddCartItem, handleRemoveCartItem }) => {
 
   return (
-      <CartItemContainer key={uniqueId}>
+      <CartItemContainer data-testid="cart-item-card" key={uniqueId}>
         <CartItem >
             <CartItemImage src={data.imageURL} alt={data.name} />
           <CartItemInfo>

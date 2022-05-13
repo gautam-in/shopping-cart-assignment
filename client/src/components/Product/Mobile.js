@@ -49,7 +49,7 @@ const CTAContainer = Styled.div`
 const Product = ({ data, key, handleProductClick }) => {
   return (
     <Fragment>
-      <Card key={key}>
+      <Card data-testid="product-card" key={key}>
         <Title>
           <H3>{data.name}</H3>
         </Title>

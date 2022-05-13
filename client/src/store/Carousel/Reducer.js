@@ -1,4 +1,5 @@
 import {
+  CLEAR_CAROUSEL_DATA,
     GET_CAROUSEL_DATA,
   } from './Types';
   
@@ -7,9 +8,13 @@ import {
       case GET_CAROUSEL_DATA:
         return {
           ...state,
-          ...action.payload,
           carousel: action.payload,
         };
+      case CLEAR_CAROUSEL_DATA:
+        return {
+          ...state,
+          carousel: []
+        }
       default:
         return state;
     }

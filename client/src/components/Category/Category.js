@@ -64,7 +64,7 @@ const Category = ({
 }) => {
   return (
     <Fragment>
-      <CategoryContainer key={id}>
+      <CategoryContainer  data-testid="category-card" key={id}>
           <CategoryImageContainer>
           <LazyLoad>
             <CategoryImage
