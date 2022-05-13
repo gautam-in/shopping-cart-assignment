@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { useForm } from "react-hook-form";
 import Styled from "styled-components";
 import PropTypes from 'prop-types';
 import Input from "../../components/Input/Input";
@@ -21,7 +22,23 @@ const SubmitButtonContainer = Styled.div`
   margin-top: 30px;
 `;
 
-const Register = ({register, handleSubmit, onSubmit, errors, watch}) => {
+const Register = ({authenticationSucess}) => {
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    watch
+  } = useForm({
+    reValidateMode: "onChange",
+    mode: "onBlur"
+  });
+
+  const onSubmit = (data) => {
+    authenticationSucess(data)
+    reset();
+  };
   
   return (
     <Fragment>
@@ -30,6 +47,7 @@ const Register = ({register, handleSubmit, onSubmit, errors, watch}) => {
             <Input
               type="name"
               name="First Name"
+              datatestId={"name1"}
               validation={{
                 ...register("firstName", {
                   required: "First name is required",
@@ -40,25 +58,26 @@ const Register = ({register, handleSubmit, onSubmit, errors, watch}) => {
                 })
               }}
             />
-            {errors.firstName && errors.firstName.message && (
-              <HelpText color="red" paddingTop="5px">
+            {errors.firstName && errors.firstName.message ? (
+              <HelpText role="alert" color="red" paddingTop="5px">
                 {errors.firstName.message}
               </HelpText>
-            )}
+            ) : null}
             <Input
               type="name"
               name="Last Name"
+              datatestId={"name2"}
               validation={{
                 ...register("lastName", {
                   required: "Last name is required"
                 })
               }}
             />
-            {errors.lastName && errors.lastName.message && (
-              <HelpText color="red" paddingTop="5px">
+            {errors.lastName && errors.lastName.message ? (
+              <HelpText role="alert" color="red" paddingTop="5px">
                 {errors.lastName.message}
               </HelpText>
-            )}
+            ): null}
             <Input
               type="email"
               name="Email"
@@ -72,14 +91,15 @@ const Register = ({register, handleSubmit, onSubmit, errors, watch}) => {
                 })
               }}
             />
-            {errors.email && errors.email.message && (
-              <HelpText color="red" paddingTop="5px">
+            {errors.email && errors.email.message ? (
+              <HelpText role="alert" color="red" paddingTop="5px">
                 {errors.email.message}
               </HelpText>
-            )}
+            ): null}
             <Input
               type="password"
               name="Password"
+              datatestId={"password1"}
               validation={{
                 ...register("password1", {
                   required: "Password is required",
@@ -91,15 +111,16 @@ const Register = ({register, handleSubmit, onSubmit, errors, watch}) => {
                 })
               }}
             />
-            {errors.password1 && errors.password1.message && (
-              <HelpText color="red" paddingTop="5px">
+            {errors.password1 && errors.password1.message ? (
+              <HelpText role="alert" color="red" paddingTop="5px">
                 {errors.password1.message}
               </HelpText>
-            )}
+            ): null}
 
             <Input
               type="password"
               name="Confirm Password"
+              datatestId={"password2"}
               validation={{
                 ...register("password2", {
                   required: "Confirm Password is required",
@@ -111,13 +132,13 @@ const Register = ({register, handleSubmit, onSubmit, errors, watch}) => {
                 })
               }}
             />
-            {errors.password2 && errors.password2.message && (
-              <HelpText color="red" paddingTop="5px">
+            {errors.password2 && errors.password2.message ? (
+              <HelpText role="alert" color="red" paddingTop="5px">
                 {errors.password2.message}
               </HelpText>
-            )}
+            ) : null}
             <SubmitButtonContainer>
-              <Button onSubmit={onSubmit} padding="4px 30px">
+              <Button data-testid="submit" onSubmit={onSubmit} padding="4px 30px">
                 {" "}
                 Signup{" "}
               </Button>
@@ -129,19 +150,11 @@ const Register = ({register, handleSubmit, onSubmit, errors, watch}) => {
 };
 
 Register.propTypes = {
-  register: PropTypes.func,
-  handleSubmit: PropTypes.func,
-  onSubmit: PropTypes.func,
-  watch: PropTypes.func,
-  errors: PropTypes.object
+  authenticationSucess: PropTypes.func,
 }
 
 Register.defaultProps = {
-  register: () => {},
-  handleSubmit: () => {},
-  onSubmit: () => {},
-  watch: () => {},
-  errors: {}
+  authenticationSucess: () => {},
 }
 
 export default Register;

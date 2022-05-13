@@ -1,5 +1,4 @@
 import { useEffect, useContext, Fragment } from "react";
-import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import Styled from "styled-components";
 import SEO from "../../seo/SEO";
@@ -37,27 +36,11 @@ function Register() {
 
   const { authenticationSucess, isAuthenticated } = authContext;
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-    watch
-  } = useForm({
-    reValidateMode: "onChange",
-    mode: "onBlur"
-  });
-
   useEffect(() => {
     if(isAuthenticated){
       history.push(ROUTES.HOME)
     }
   },[isAuthenticated])
-
-  const onSubmit = (data) => {
-    authenticationSucess(data)
-    reset();
-  };
 
   return (
     <Fragment>
@@ -69,7 +52,7 @@ function Register() {
           {TRANSLATIONS.REGISTER.DESC}
           </P>
         </RegisterContentSection>
-        <RegisterComponent register={register} handleSubmit={handleSubmit} onSubmit={onSubmit} errors={errors} watch={watch}/>
+        <RegisterComponent authenticationSucess={authenticationSucess}/>
       </RegisterStyle>
     </Fragment>
   );

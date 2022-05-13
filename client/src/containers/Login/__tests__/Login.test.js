@@ -4,14 +4,14 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Login from '../Login';
 
 
-const mockauthenticationSucess = jest.fn((email, password) => {
+const mockAuthenticationSucess = jest.fn(({email, password}) => {
   return Promise.resolve({ email, password });
 });
 
 describe('Login Form', () => {
 
     beforeEach(() => {
-        render(<Login authenticationSucess={mockauthenticationSucess} />);
+        render(<Login authenticationSucess={mockAuthenticationSucess} />);
       });
     
 
@@ -20,7 +20,7 @@ describe('Login Form', () => {
     fireEvent.click(button)
     expect(button).toBeInTheDocument()
     expect(await screen.findAllByRole('alert')).toHaveLength(2);
-    expect(mockauthenticationSucess).not.toBeCalled();
+    expect(mockAuthenticationSucess).not.toBeCalled();
   });
 
   it('should_throw_email_validation_error_when_invalid_email_is_entered', async () => {
@@ -36,7 +36,7 @@ describe('Login Form', () => {
           }, 
     })
     fireEvent.click(screen.getByTestId('submit'));
-    expect(mockauthenticationSucess).not.toBeCalled();
+    expect(mockAuthenticationSucess).not.toBeCalled();
     expect(await screen.findAllByRole('alert')).toHaveLength(1);
     expect(screen.getByRole('textbox', { name: /email/i }).value).toBe('test@');
     expect(screen.getByTestId('password').value).toBe('pass@123');
@@ -56,7 +56,7 @@ describe('Login Form', () => {
     })
 
     fireEvent.click(screen.getByTestId('submit'));
-    expect(mockauthenticationSucess).not.toBeCalled();
+    expect(mockAuthenticationSucess).not.toBeCalled();
     expect(await screen.findAllByRole('alert')).toHaveLength(1);
     expect(screen.getByRole('textbox', { name: /email/i }).value).toBe('test@gmail.com');
     expect(screen.getByTestId('password').value).toBe('prd');
@@ -74,13 +74,11 @@ describe('Login Form', () => {
           }, 
     })
 
-    // fireEvent.click(screen.getByTestId('submit'));
-    // await waitFor(() => expect(screen.findAllByRole('alert')).toHaveLength(0));
-
-    // fireEvent.click(screen.getByTestId('submit'));
-    // await waitFor(() => expect(screen.findAllByTestId('alert')).toHaveLength(0));
-    // expect(mockauthenticationSucess).toBeCalledWith('test@gmail.com', 'pass@123');
-    // expect(screen.getByRole('textbox', { name: /email/i }).value).toBe('');
-    // expect(screen.getByTestId('password').value).toBe('');
+    fireEvent.click(screen.getByTestId('submit'));
+    await waitFor(() => expect(mockAuthenticationSucess).toHaveBeenCalledTimes(1));
+    expect(mockAuthenticationSucess).toBeCalledWith({email: 'test@gmail.com', password:'pass@123'});
+    waitFor(() => expect(screen.findAllByTestId('alert')).toHaveLength(0));
+    expect(screen.getByRole('textbox', { name: /email/i }).value).toBe('');
+    expect(screen.getByTestId('password').value).toBe('');
   });
 });

@@ -98,17 +98,11 @@ const Login = ({authenticationSucess}) => {
 };
 
 Login.propTypes = {
-  register: PropTypes.func,
-  handleSubmit: PropTypes.func,
-  onSubmit: PropTypes.func,
-  errors: PropTypes.object
+  authenticationSucess: PropTypes.func,
 }
 
 Login.defaultProps = {
-  register: () => {},
-  handleSubmit: () => {},
-  onSubmit: () => {},
-  errors: {}
+  authenticationSucess: () => {},
 }
 
 export default Login;
