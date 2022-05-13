@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Register from '../Register';
 
 
-const mockauthenticationSucess = jest.fn((email, password) => {
+const mockAuthenticationSucess = jest.fn((email, password) => {
   return Promise.resolve({ email, password });
 });
 
 describe('Register Form', () => {
 
     beforeEach(() => {
-        render(<Register authenticationSucess={mockauthenticationSucess} />);
+        render(<Register authenticationSucess={mockAuthenticationSucess} />);
       });
     
 
@@ -20,7 +20,7 @@ describe('Register Form', () => {
     fireEvent.click(button)
     expect(button).toBeInTheDocument()
     expect(await screen.findAllByRole('alert')).toHaveLength(5);
-    expect(mockauthenticationSucess).not.toBeCalled();
+    expect(mockAuthenticationSucess).not.toBeCalled();
   });
 
   it('should_throw_first_name_validation_error_when_invalid_first_name_is_entered', async () => {
@@ -54,7 +54,7 @@ describe('Register Form', () => {
           }, 
     })
     fireEvent.click(screen.getByTestId('submit'));
-    expect(mockauthenticationSucess).not.toBeCalled();
+    expect(mockAuthenticationSucess).not.toBeCalled();
     expect(await screen.findAllByRole('alert')).toHaveLength(1);
     expect(screen.getByRole('textbox', { name: /email/i }).value).toBe('test@gmail.com');
     expect(screen.getByTestId('password1').value).toBe('pass@123');
@@ -93,7 +93,7 @@ describe('Register Form', () => {
     })
 
     fireEvent.click(screen.getByTestId('submit'));
-    expect(mockauthenticationSucess).not.toBeCalled();
+    expect(mockAuthenticationSucess).not.toBeCalled();
     expect(await screen.findAllByRole('alert')).toHaveLength(2);
     expect(screen.getByRole('textbox', { name: /email/i }).value).toBe('test@');
     expect(screen.getByTestId('password1').value).toBe('pas');
@@ -131,30 +131,45 @@ describe('Register Form', () => {
     })
 
     fireEvent.click(screen.getByTestId('submit'));
-    expect(mockauthenticationSucess).not.toBeCalled();
+    expect(mockAuthenticationSucess).not.toBeCalled();
     expect(await screen.findAllByRole('alert')).toHaveLength(1);
     expect(screen.getByTestId('password2').value).toBe('pas123');
   });
 
-//   it('should_submit_the_login_form_when_values_are_entered_correctly', async () => {
-//     fireEvent.input(screen.getByRole('textbox', { name: /email/i }), {
-//         target: {
-//           value: 'test@gmail.com',
-//         },
-//       });
-//       fireEvent.input(screen.getByTestId('password'),{
-//         target: {
-//             value: 'pass@123',
-//           }, 
-//     })
+  it('should_submit_the_regis_form_when_values_are_entered_correctly', async () => {
+    fireEvent.input(screen.getByTestId('name1'),{
+        target: {
+            value: 'dhanush',
+          }, 
+    })
 
-    // fireEvent.click(screen.getByTestId('submit'));
-    // await waitFor(() => expect(screen.findAllByRole('alert')).toHaveLength(0));
+    fireEvent.input(screen.getByTestId('name2'),{
+        target: {
+            value: 'kumar',
+          }, 
+    })
 
-    // fireEvent.click(screen.getByTestId('submit'));
-    // await waitFor(() => expect(screen.findAllByTestId('alert')).toHaveLength(0));
-    // expect(mockauthenticationSucess).toBeCalledWith('test@gmail.com', 'pass@123');
-    // expect(screen.getByRole('textbox', { name: /email/i }).value).toBe('');
-    // expect(screen.getByTestId('password').value).toBe('');
-//   });
+    fireEvent.input(screen.getByRole('textbox', { name: /email/i }), {
+        target: {
+          value: 'test@gmail.com',
+        },
+      });
+
+    fireEvent.input(screen.getByTestId('password1'),{
+        target: {
+            value: 'pass@123',
+          }, 
+    })
+
+    fireEvent.input(screen.getByTestId('password2'),{
+        target: {
+            value: 'pass@123',
+          }, 
+    })
+    fireEvent.click(screen.getByTestId('submit'));
+    await waitFor(() => expect(mockAuthenticationSucess).toHaveBeenCalledTimes(1));
+    waitFor(() => expect(screen.findAllByRole('alert')).toHaveLength(0));
+    expect(screen.getByRole('textbox', { name: /email/i }).value).toBe('');
+    expect(screen.getByTestId('password1').value).toBe('');
+  });
 });
