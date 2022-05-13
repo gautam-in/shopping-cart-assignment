@@ -13,3 +13,13 @@ npm run start
 yarn install
 yarn start
 ```
+## To run the application please go to the client
+In the project directory, rename the file .env.example to .env then you can run:
+
+```
+npm install
+npm run start
+# or
+yarn install
+yarn start
+```

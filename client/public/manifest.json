@@ -1,0 +1,26 @@
+{
+  "short_name": "Sabka Bazzar",
+  "name": "Sabka Bazzar",
+  "icons": [
+    {
+      "src": "/static/images/logo.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/static/images/logo_2x.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/static/images/logo_2x.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "prefer_related_applications" :true
+}

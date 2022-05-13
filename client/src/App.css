@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+  margin: "2%";
+  display: flex;
+  flex-direction: column;
+  height: "100%";
+  justify-content: space-between;
+}
+
+.fullscreen-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(90, 90, 90, 0.5);
+  z-index: 9999;
+}
+.link{
+  text-decoration: none;
+}
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiMenu-paper.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+  left: 0px !important;
+}
