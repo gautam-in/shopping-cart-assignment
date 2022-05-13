@@ -37,6 +37,7 @@
     font-size: medium;
     border-radius: 0.25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    width: auto !important;
 }
 
   @media (max-width: 600px) {
