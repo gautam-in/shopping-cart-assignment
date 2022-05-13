@@ -9,7 +9,17 @@ import {
     SELECT_CATEGORY,
 } from "../action.type";
 
-const initialState = {
+export type StateType ={
+ readonly   loading: true,
+ readonly  loggedIn: false,
+ readonly  shoppingCart: [],
+ readonly  products: [],
+ readonly  category: [],
+ readonly  banner: [],
+ readonly  order: 0,
+}
+
+const initialState: StateType = {
     loading: true,
     loggedIn: false,
     shoppingCart: [],
@@ -18,7 +28,8 @@ const initialState = {
     banner: [],
     order: 0,
 }
-const user = (state = initialState, action: { type: String; payload: any; }) => {
+
+const user = (state = initialState, action: { type: string; payload: any; }) => {
     switch (action.type) {
         case LOGIN:
             return { ...state, loggedIn: true };
