@@ -36,3 +36,7 @@ export const ROUTES = {
     REGISTER: '/register',
     NOT_FOUND: '*'
 }
+
+export const COLORS = {
+    PINK:'#bf2957'
+}

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import { Fragment } from 'react';
 import Styled from "styled-components";
 import H4 from "../Typography/H4";
+import { COLORS } from "../../constants";
 
 
 const CartItemContainer = Styled.div`
@@ -51,7 +51,7 @@ const CircleButtonContainer = Styled.button`
   margin: 4px;
   display: inline-block;
   vertical-align: middle;
-  background: #bf2957;
+  background: ${COLORS.PINK};
   cursor: pointer;
   outline: none;
   &:hover {

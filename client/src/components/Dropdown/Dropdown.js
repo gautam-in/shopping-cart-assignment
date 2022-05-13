@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import PropTypes from 'prop-types';
 import Styled from "styled-components";
 import { filterDropDownData } from "../../utils";
+import { COLORS } from '../../constants';
 
 const Dropdown = Styled.div`
   padding-bottom: 6px;
@@ -10,7 +11,7 @@ const Dropdown = Styled.div`
 `;
 
 const DropdownSelection = Styled.div`
-  background-color: #bf2957;
+  background-color: ${COLORS.PINK};
   border-radius: 2px;
   padding: 16px 16px;
   cursor: pointer;

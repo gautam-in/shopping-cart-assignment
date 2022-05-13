@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import PropTypes from 'prop-types';
+import { COLORS } from '../../constants';
 
 const Button = styled.button`
   width: 100%;
   cursor: pointer;
   border-radius: 2px;
-  border: 1px solid #bf2957;
-  background-color: #bf2957;
+  border: ${`1px solid ${COLORS.PINK}`};
+  background-color: ${COLORS.PINK};
   color: #ffffff;
   line-height: 35px;
   padding: ${(props) => (props.padding ? props.padding : `0 16px`)};
@@ -17,7 +18,7 @@ const Button = styled.button`
 
   &:hover {
     background-color: #ffffff;
-    color: #bf2957;
+    color: ${COLORS.PINK};
     transition: 0.2s ease;
   }
 
@@ -27,7 +28,7 @@ const Button = styled.button`
 
   &:disabled {
     opacity: 0.6;
-    background-color: #bf2957;
+    background-color:${COLORS.PINK};
     color: #ffffff;
     cursor: not-allowed;
   }

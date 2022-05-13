@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import Styled from "styled-components";
 import PropTypes from 'prop-types';
 import P from "../Typography/P";
+import { COLORS } from "../../constants";
 const VerticalNavContainer = Styled.aside`
   width: 100%;
   background-color: #eee;
@@ -18,7 +19,7 @@ const VerticalBarNavItem = Styled.li`
   list-style-type: none;
   display: flex;
   align-items: center;
-  background-color: ${ props => props.active ? "#bf2957" : "none"} ;
+  background-color: ${ props => props.active ? COLORS.PINK : "none"} ;
   padding-left: 0.5rem;
   border-bottom: 1px solid #d2d0d0;
   &:hover {

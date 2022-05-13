@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, Suspense } from "react";
+import React, { useState, useEffect, useContext, Suspense,lazy } from "react";
 import { Switch, Route } from "react-router-dom";
 import { isEmpty } from "lodash";
 
@@ -10,16 +10,16 @@ import LowestPriceTag from "./components/LowestPriceTag/LowestPriceTag";
 import H3 from "./components/Typography/H3";
 import P from "./components/Typography/P";
 import { getCartQuantityAndTotalPrice } from "./utils";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
 import Spinner from "./components/LoadingSpinner/LoadingSpinner";
 import { ROUTES,TRANSLATIONS } from './constants'
 
-const Login = React.lazy(() => import("./pages/Login/Login"));
-const Register = React.lazy(() => import("./pages/Register/Register"));
-const Home = React.lazy(() => import("./pages/Home/Home"));
-const Products = React.lazy(() => import("./pages/Products/Products"));
-const NotFound = React.lazy(()=> import("./pages/404/404"));
+const Header = lazy(() => import("./components/Header/Header"));
+const Footer = lazy(() => import("./components/Footer/Footer"));
+const Login = lazy(() => import("./pages/Login/Login"));
+const Register = lazy(() => import("./pages/Register/Register"));
+const Home = lazy(() => import("./pages/Home/Home"));
+const Products = lazy(() => import("./pages/Products/Products"));
+const NotFound = lazy(()=> import("./pages/404/404"));
 
 function App() {
   const cartContext = useContext(CartContext);

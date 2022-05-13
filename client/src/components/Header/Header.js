@@ -6,7 +6,7 @@ import Logo from "./Images/logo.png";
 import CartIcon from "./CartIcon/CartIcon";
 import AuthContext from "../../store/Auth/Context";
 import CartContext from "../../store/Cart/Context";
-import { TRANSLATIONS,ROUTES } from "../../constants";
+import { TRANSLATIONS,ROUTES,COLORS } from "../../constants";
 
 const Brand = Styled.div`
   font-weight: bold;
@@ -98,7 +98,7 @@ const MobileMenuLi = Styled.li`
       }
 
       & a:hover {
-        color: #bf2957;
+        color:${COLORS.PINK};
       }
 `;
 
@@ -117,7 +117,7 @@ const MenuItemLink = Styled.li`
     color: black;
   }
   & a:hover {
-  color: #bf2957;
+  color:${COLORS.PINK};
   }
 
 `;
@@ -135,7 +135,7 @@ const RightHeaderLinks = Styled.div`
       padding: 10px 4px 2px 2px;
     }
     & a:hover{
-      color: #bf2957;
+      color:${COLORS.PINK};
     }
 `;
 

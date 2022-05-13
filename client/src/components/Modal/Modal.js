@@ -1,11 +1,10 @@
 import Styled from "styled-components";
 import PropTypes from 'prop-types';
-import { useHistory } from "react-router-dom";
 import H4 from "../Typography/H4";
 import P from "../Typography/P";
 import Button from "../Button/Button";
 import HelpText from "../Typography/HelpText";
-import { ROUTES,TRANSLATIONS } from '../../constants';
+import { TRANSLATIONS,COLORS } from '../../constants';
 
 const HelpTextContainer = Styled.div`
     padding-bottom: 8px;
@@ -16,7 +15,7 @@ const ButtonCartContainer = Styled.div`
     justify-content: space-between;
     padding: 5px;        
     &:hover {
-    color: #bf2957;
+    color:${COLORS.PINK};
   }
 `;
 
@@ -138,8 +137,6 @@ const ModalFooterDefault = Styled.div`
 `;
 const ModalComponent = ({ modalState, handleModalClose, children, noItems,cartPrice,cartQuantity }) => {
 
-  const history = useHistory();
-
   return modalState ? (
     <Modal>
       <ModalContainer>
@@ -165,7 +162,6 @@ const ModalComponent = ({ modalState, handleModalClose, children, noItems,cartPr
         {noItems ? (
           <ModalFooterDefault>
             <Button onClick={() => {
-              history.push(ROUTES.HOME)
               handleModalClose()
             }}>{TRANSLATIONS.CART.NO_ITEMS.CTA}</Button>
           </ModalFooterDefault>
@@ -175,7 +171,6 @@ const ModalComponent = ({ modalState, handleModalClose, children, noItems,cartPr
               <HelpText>{TRANSLATIONS.CART.WITH_ITEMS.PROMO}</HelpText>
             </HelpTextContainer>
             <Button onClick={() => {
-              history.push(ROUTES.HOME)
               handleModalClose()
             }}>
               <ButtonCartContainer>

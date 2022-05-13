@@ -33,8 +33,8 @@ const Login = ({authenticationSucess}) => {
     reValidateMode: "onChange",
     mode: "onBlur",
     defaultValues: {
-      email: "",
-      password: "",
+      email: "user@test.com",
+      password: "pass@123",
     },
   });
 
