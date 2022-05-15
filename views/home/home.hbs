@@ -1,0 +1,75 @@
+{{> header another= 'attribute'}}
+<main class="container d-flex flex-column">
+    <div class="banner slideshow-container">
+        {{#each banners}}
+        <div class="bannerSlide fade">
+            <img src="{{bannerImageUrl}}" alt="{{bannerImageAlt}}" class="fluid-image bannerImage">
+        </div>
+        {{/each}}
+        <div style="text-align:center">
+            {{#each banners}}<span class="dot" onclick="currentSlide({{@index}})"></span>{{/each}}
+        </div>
+    </div>
+    {{#each categories}}
+    <div class="categoryList d-flex align-items-center catgoryItemsHome">
+        {{#if (evenodd @index)}}
+        {{#if imageUrl}}
+        <div class="w-50"><img class="fluid-image" src={{imageUrl}} alt=""></div>
+        {{/if}}
+        <div class="text-center flex-autoheight">
+            <h3 style="margin-bottom: 3px;">{{name}}</h3>
+            <div style="padding-bottom: 10px;">{{description}}</div>
+            <a class="btn btn-red" href="/products/{{key}}">Explore {{name}}</a>
+        </div>
+        {{else}}
+        <div class="text-center flex-autoheight">
+            <h3 style="margin-bottom: 3px;">{{name}}</h3>
+            <div style="padding-bottom: 10px;">{{description}}</div>
+            <a class="btn btn-red" href="/products/{{key}}">Explore {{name}}</a>
+        </div>
+        {{#if imageUrl}}
+        <div class="w-50"><img class="fluid-image" src={{imageUrl}} alt=""></div>
+        {{/if}}
+        {{/if}}
+    </div>
+    {{/each}}
+</main>
+<script>
+
+    var slideIndex = 0;
+    showSlides(slideIndex);
+    var timer = setInterval(() => {
+        console.log(slideIndex);
+        showSlides(slideIndex);
+    }, 5000)
+
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("bannerSlide");
+        var dots = document.getElementsByClassName("dot");
+        //{ { !--console.log(slides.length, slides); --} }
+        if (n > slides.length) { slideIndex = 0; }
+        if (n < 0) { slideIndex = slides.length - 1 }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex].style.display = "block";
+        dots[slideIndex].className += " active";
+        slideIndex++;
+        if (slideIndex > slides.length - 1) { slideIndex = 0 }
+    }
+</script>
+<script id="template" type="text/x-handlebars-template">
+      <!-- Insert here the data which you want to print with an Ajax  -->
+<h1> {{name}} </h1>
+<p> {{description}} </p>
+</script>

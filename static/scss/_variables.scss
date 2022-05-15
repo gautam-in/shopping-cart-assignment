@@ -1,0 +1,86 @@
+$greybg : #eaeaea;
+$darkGrey:#828282;
+$buttonRed: #c02957;
+$buttonRedDark: #7c0a2c;
+$headingBlack : #1c2123;
+$formGrey:#605e5e;
+$formFocus: #34ccdd;
+
+/*Mobile, tablet, desktop media queries Use by just saying @include and adding its styles inside*/
+$tablet-width: 768px;
+$desktop-width: 992px;
+$lgdesktop-width: 1200px;
+
+@mixin not-mobile {
+  @media screen and (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media screen and (min-width: #{$tablet-width}) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tablet-mobile {
+  @media screen and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop-tablet {
+  @media screen and (min-width: #{$tablet-width}) and (max-width: #{$lgdesktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: #{$desktop-width}) and (max-width: #{$lgdesktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop-lgdesktop {
+  @media screen and (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin lgdesktop {
+  @media screen and (min-width: #{$lgdesktop-width}) {
+    @content;
+  }
+}
+
+@mixin tablet-portrait {
+  @media screen and (min-width: #{$tablet-width}) and (max-width: 1024px) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape {
+  @media screen and (min-width: #{$tablet-width}) and (max-width: 1024px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+/* To use media queries we just have to say @include tablet{font-size:14px} */

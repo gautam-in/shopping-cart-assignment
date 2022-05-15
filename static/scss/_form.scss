@@ -1,0 +1,95 @@
+.floating-label{
+    .form-control{
+        padding-bottom: 15px;
+      input{
+        padding: 1.8rem 1rem 0.6rem 0;
+        font-size: 1rem;
+        
+        transition: border-color 0.2s ease;
+        background: none;
+        border-width: 0;
+        border-bottom: 1px solid $formGrey;
+        display: block;
+        width: 100%;
+        line-height: 1.15;
+        margin: 0;
+        &::-webkit-input-placeholder{
+          color: rgba(0, 0, 0, 0);
+        }
+        &::-moz-placeholder{
+          color: rgba(0, 0, 0, 0);
+        }
+        &:-ms-input-placeholder{
+          color: rgba(0, 0, 0, 0);
+        }
+        &::-ms-input-placeholder{
+          color: rgba(0, 0, 0, 0);
+        }
+        &::placeholder{
+          color: rgba(0, 0, 0, 0);
+        }
+        &:placeholder-shown {
+          + label::before {
+            transform: translate3d(0,-1.9rem,0) scaleX(1);
+          }
+        }
+        &:focus{
+          outline: none;
+          border-bottom-color: $formFocus;
+          + label::before {
+            color: $formFocus;
+            transform: translate3d(0, -3.12rem, 0) scale3d(0.82, 0.82, 1);
+          }
+        }
+        
+
+      }
+      label{
+        display: block;
+        position: relative;
+        max-height: 0;
+        font-weight: 500;
+        pointer-events: none;
+        span{
+          border: 0;
+          clip: rect(1px 1px 1px 1px);
+          clip: rect(1px, 1px, 1px, 1px);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          width: 1px;
+
+        }
+        &::before{
+          color: $formGrey;
+          content: attr(data-content);
+          display: inline-block;
+          -webkit-filter: blur(0);
+                  filter: blur(0);
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          transform-origin: left top;
+          transition: transform 0.2s ease;
+          left: 0;
+          position: relative;
+          transform: translate3d(0, -3.12rem, 0) scale3d(0.82, 0.82, 1);
+        }
+      }
+    }
+  }
+.form-right{  
+    width: 100%;
+    @include desktop-lgdesktop{
+        width: 50%;
+    }  
+    
+}
+.form-left{
+    width: 100%;
+    @include desktop-lgdesktop{
+    width:30%;
+    padding-left: 20px;
+    }
+}

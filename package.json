@@ -5,11 +5,48 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "start": "canned -p 5000 ./server",
+    "dev": "node_modules/.bin/npm-run-all -p watch:server watch:build",
+    "watch:server": "nodemon index.js",
+    "server": "node app.js",
+    "watch:build": "node_modules/.bin/webpack --watch",
+    "build": "node_modules/.bin/webpack --progress",
+    "e2etest": "./node_modules/.bin/cypress open"
   },
-  "author": "",
+  "author": "Nabaraj",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "canned": "^0.3.12",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "express-hbs": "^2.4.0",
+    "hbs": "^4.2.0",
+    "normalize.css": "^8.0.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 1 version",
+    "not dead"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.16.12",
+    "autoprefixer": "^10.4.2",
+    "babel-loader": "^8.2.3",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "css-loader": "^6.5.1",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "cypress": "^9.4.1",
+    "extract-loader": "^5.1.0",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.5.3",
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.15",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.6",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.3.0",
+    "sass-loader": "^12.4.0",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
   }
 }
