@@ -26,8 +26,9 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-scripts test --coverage",
+    "test:watch": "react-scripts test",
     "test:coverage": "react-scripts test --coverage --watchAll=false",
+    "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",

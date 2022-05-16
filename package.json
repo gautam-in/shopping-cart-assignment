@@ -4,12 +4,13 @@
   "description": "This is a shopping cart coding exercise",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "canned -p 8080 ./server",
     "server": "npm run start",
     "client": "npm start --prefix client",
     "storybook": "npm run storybook --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "test":"npm run test --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "MIT",
@@ -19,6 +20,7 @@
     "react-helmet-async": "^1.3.0"
   },
   "devDependencies": {
-    "concurrently": "^7.1.0"
+    "concurrently": "^7.1.0",
+    "husky": "^8.0.1"
   }
 }
