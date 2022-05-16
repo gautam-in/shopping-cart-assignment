@@ -1,0 +1,72 @@
+.navigateLink {
+  text-decoration: none;
+  color: black;
+}
+.actionCenter {
+  margin-left: auto !important;
+}
+/* show underline on hover */
+.navigateLink:hover {
+  text-decoration: underline;
+  text-decoration-color: red;
+  -webkit-text-decoration-color: red;
+}
+
+.makeStyles-content-6 {
+  padding: 0px !important;
+  flex-grow: 1;
+}
+.MuiSvgIcon-root {
+  color: #be1f4f !important;
+}
+.cartClas {
+  background: #eee !important;
+  width: 80%;
+}
+.mainPage {
+  display: flex;
+  margin-left: 100px;
+}
+.mainPage > nav {
+  margin-right: 50px;
+}
+
+@media only screen and (max-width: 672px) {
+  .mainPage {
+    margin-left: 20px !important;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .mainPage {
+    margin-left: 20px !important;
+  }
+  .actionCenter {
+    margin-left: -35px !important;
+  }
+  .actionFirst {
+    display: flex;
+  }
+  .actionFirst button {
+    font-size: 10px;
+  }
+  .actionSecond button {
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 484px) {
+  .Home {
+    display: none;
+  }
+  .ProductPage {
+    display: none;
+  }
+  .SignInPage {
+    display: none;
+  }
+  .RegisterPage {
+    display: none;
+  }
+  .actionCenter {
+    margin-left: auto !important;
+  }
+}

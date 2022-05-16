@@ -1,0 +1,10 @@
+.App footer {
+  height: 20px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #eaeaea;
+  color: black;
+  text-align: center;
+}

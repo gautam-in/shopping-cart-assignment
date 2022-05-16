@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.mlogin {
+  display: flex;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  flex-wrap: wrap;
+  width: 70%;
+}
+.firstPart {
+  margin-right: 10%;
+  margin-top: 2%;
+}
+.secondPart label + .MuiInput-formControl {
+  width: 181%;
+}
+.mimg {
+  display: inline-flex;
+}
+.login-btn {
+  width: 181%;
+}

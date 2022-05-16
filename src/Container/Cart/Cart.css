@@ -1,0 +1,141 @@
+.cartHeading {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.CartDrawer {
+  position: relative;
+}
+.CartDrawer .MuiDrawer-paperAnchorDockedRight {
+  width: 480px;
+  background-color: #eeeeee;
+}
+.CartDrawer .MuiList-padding {
+ min-height: 73vh;
+}
+
+/************Cart Details*****************************/
+.ProductCart {
+  display: flex;
+  background-color: white;
+  margin-top: 8px;
+  justify-content: space-around;
+}
+
+.CartImg {
+  flex-basis: 8vw;
+  height: 90px;
+  margin-top: 8px;
+  margin-left: 8px;
+  margin-right: 4px;
+  min-width: 100px;
+}
+.CartImg img:nth-of-type(1) {
+  width: 100%;
+  height: 80%;
+  vertical-align: middle;
+}
+.CartDetails {
+  flex-grow: 3;
+}
+.CartDetails .CartName {
+  font-weight: 600;
+  min-width: 150px;
+  margin: 9px;
+  /* margin-bottom: 5px; */
+}
+.CartDetails .cartIcon {
+  display: flex;
+  height: 10vh;
+  margin: 9px;
+  font-size: 18px;
+}
+.CartAmount {
+  flex-grow: 1;
+  margin-top: 45px;
+  min-width: 100px;
+}
+.CartBanner {
+  display: flex;
+  background-color: white;
+  margin: 8px;
+  border-radius: 4px;
+  padding: 15px;
+  justify-content: space-around;
+}
+.CartBanner .bannerText {
+  margin-top: 18px;
+}
+.cartPay {
+  background-color: white;
+  padding-bottom: 6px;
+}
+.cartPay .promoText {
+  text-align: center;
+  font-size: 15px;
+  padding-top: 5px;
+}
+.checkoutButton {
+  margin: 14px !important;
+  border-radius: 4px;
+  justify-content: space-between;
+  display: flex;
+  background-color: #be2957;
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  text-align: center;
+  text-decoration: none;
+  width: 440px;
+  font-size: 16px;
+  margin: 4px 0px;
+  cursor: pointer;
+}
+/* .drawerdiv {
+  position: absolute;
+} */
+/*********************NO Item Cart**********/
+.NoItemDrawer {
+  position: relative;
+}
+.noItemInfo {
+  padding-top: 200px;
+  padding-left: 30px;
+  padding-right: 20px;
+}
+.NoItemDrawer .MuiList-padding {
+  height: 100vh;
+}
+
+.startShop {
+  position: relative;
+  /* margin-top: 223px; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.startShop .shopCont {
+  background-color: #be2957;
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  font-size: 16px;
+  margin: 4px 0px;
+  cursor: pointer;
+}
+/****************************************/
+@media only screen and (max-width: 484px) {
+  .CartDrawer .MuiDrawer-paperAnchorDockedRight {
+    width: 100vw;
+  }
+  .cartPay {
+    width: 100vw;
+  }
+  .checkoutButton {
+    width: 90vw;
+  }
+}

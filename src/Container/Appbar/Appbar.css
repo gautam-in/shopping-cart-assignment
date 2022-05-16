@@ -1,0 +1,91 @@
+.navigateLink {
+  text-decoration: none;
+  color: black;
+}
+#DropdownBar {
+  display: none;
+}
+/* show underline on hover */
+.navigateLink:hover {
+  text-decoration: none;
+  text-decoration-color: red;
+  -webkit-text-decoration-color: red;
+}
+/* .App .MuiAppBar-root .MuiAppBar-positionFixed.MuiAppBar-colorPrimary {
+  
+  background-color: white !important;
+} */
+.makeStyles-content-6 {
+  padding: 0px !important;
+  flex-grow: 1;
+}
+.MuiSvgIcon-root {
+  color: #be1f4f !important;
+}
+.cartClas {
+  background: #eee !important;
+  width: 80%;
+}
+
+.active .MuiListItemText-root {
+  color: white;
+  background-color: #be1f4f;
+}
+.cartHeading {
+  background-color: black;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+}
+.MuiList-padding {
+  padding-top: 19px !important;
+}
+/********** Footercss**********************/
+/* .App footer {
+  height: 20px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #eaeaea;
+  color: black;
+  text-align: center;
+} */
+
+@media only screen and (max-width: 484px) {
+  /* .makeStyles-drawer-3 {
+    display: none;
+  } */
+  #MainSection {
+    padding: 0px !important;
+    margin-top: 80px;
+  }
+  #leftDrawer {
+    display: none;
+  }
+  #DropdownBar {
+    display: block;
+    background-color: #be1f4f;
+    color: white;
+  }
+  /* .DropdownBar {
+    display: block;
+    background-color: #be1f4f;
+    color: white;
+  } */
+  .makeStyles-content-6 {
+    margin-top: 80px;
+  }
+  .MobileSelect {
+    display: flex !important;
+  }
+  .MobileSelect .MuiSelect-select.MuiSelect-select {
+    color: white;
+    padding-left: 20px;
+  }
+  .MobileSelect > svg {
+    color: white !important;
+  }
+}
