@@ -209,6 +209,7 @@ function showAllProducts() {
 
 
 
+
 //******************************************** ADD TO CART  ************************************************//
 function addToCart(product) {
   productsInCart = [...productsInCart, product];
@@ -236,9 +237,13 @@ function removeItemFromCart(id) {
   }
 
   let subTotal = 0;
-  Array.from($('.all-product-price')).forEach(item => {
-    subTotal = subTotal + parseInt(item.innerText.substr(3));
-  })
+  if (Array.from($('.all-product-price')).length == 0) {
+    subTotal = subTotal + parseInt($('.all-product-price').innerText.substr(3));
+  } else {
+    Array.from($('.all-product-price')).forEach(item => {
+      subTotal = subTotal + parseInt(item.innerText.substr(3));
+    })
+  }
 
   // Final Price
   totalPriceCheckout.innerText = subTotal;
@@ -250,7 +255,7 @@ function removeItemFromCart(id) {
 function incrementCartItems(e) {
   let pNode = e.target.parentNode;
   let countNode = pNode.children[1];
-  let price = parseInt(pNode.children[3].innerText)
+  let price = parseInt(pNode.children[3].innerText);
   let count = parseInt(pNode.children[1].innerText);
 
   let result = pNode.parentNode.children[1];
@@ -261,12 +266,18 @@ function incrementCartItems(e) {
   result.children[0].innerText = `Rs. ${parseInt(countNode.innerText) * price}`;
 
   let subTotal = 0;
-  Array.from($('.all-product-price')).forEach(item => {
-    subTotal = subTotal + parseInt(item.innerText.substr(3));
-  })
+  let allProductPriceArray = $('.all-product-price');
+  if (Array.from(allProductPriceArray).length == 0) {
+    subTotal = subTotal + parseInt($('.all-product-price').innerText.substr(3));
+  } else {
+    Array.from($('.all-product-price')).forEach(item => {
+      subTotal = subTotal + parseInt(item.innerText.substr(3));
+    })
+  }
 
   // Final Price
   totalPriceCheckout.innerText = subTotal;
+
 }
 
 
@@ -289,9 +300,14 @@ function decrementCartItems(e) {
     result.children[0].innerText = `Rs. ${initialPrice - price}`;
 
     let subTotal = 0;
-    Array.from($('.all-product-price')).forEach(item => {
-      subTotal = subTotal + parseInt(item.innerText.substr(3));
-    })
+    let allProductPriceArray = $('.all-product-price');
+    if (Array.from(allProductPriceArray).length == 0) {
+      subTotal = subTotal + parseInt($('.all-product-price').innerText.substr(3));
+    } else {
+      Array.from($('.all-product-price')).forEach(item => {
+        subTotal = subTotal + parseInt(item.innerText.substr(3));
+      })
+    }
 
     // Final Price
     totalPriceCheckout.innerText = subTotal;
@@ -324,7 +340,6 @@ Array.from($(".product-item")).forEach((item, index) => {
     selectedProduct = allProducts.filter(
       (product) => product.category == e.target.id
     );
-    console.log(selectedProduct);
 
     categorySection.innerHTML = "";
     printOnScreen(selectedProduct);

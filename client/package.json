@@ -1,0 +1,12 @@
+{
+  "name": "shoping-cart",
+  "version": "1.0.0",
+  "description": "This is a shopping cart exercise",
+  "main": "index.html",
+  "scripts": {
+    "build:css": "sass styles/styles.scss build/styles.css  && sass styles/signin.scss build/signin.css"
+  },
+  "devDependencies": {
+    "sass": "^1.51.0"
+  }
+}
