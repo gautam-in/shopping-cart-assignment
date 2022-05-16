@@ -1,0 +1,7 @@
+eslint & prettier
+husky
+cypress
+RTL
+WDYR
+profiling
+docker

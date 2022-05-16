@@ -1,0 +1,13 @@
+{
+    "plugins": [
+      [
+        "babel-plugin-transform-imports",
+        {
+          "lodash": {
+            "transform": "lodash/${member}",
+            "preventFullImport": true
+          }
+        }
+      ]
+    ]
+  }
