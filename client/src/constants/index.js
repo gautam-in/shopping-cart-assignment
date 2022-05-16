@@ -26,6 +26,19 @@ export const TRANSLATIONS = {
             PROMO: 'Promo code can be applied on payment page',
             CTA: 'Proceed To Checkout'
         }
+    },
+    NOT_FOUND: {
+        HEADER: '404',
+        SUB_HEADER: "Sorry, this page isn't available.",
+        DESC: "The link you followed may be broken, or the page may have been removed. Go back to "
+    },
+    ERROR_BOUNDARY: {
+        HEADER: 'Something went wrong',
+        SUB_HEADER:'Please close the browser and try again',
+        RETRY:'RETRY'
+    },
+    FOOTER: {
+        DESC:'Sabka Bazaar Grocery Supplies Pvt Ltd'
     }
 }
 

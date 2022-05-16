@@ -1,7 +1,7 @@
 import { Fragment,useState,useEffect,useContext } from "react";
 import Styled from "styled-components";
 import LazyLoad from 'react-lazyload';
-import { Link } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 import Logo from "./Images/logo.png";
 import CartIcon from "./CartIcon/CartIcon";
 import AuthContext from "../../store/Auth/Context";
@@ -97,6 +97,10 @@ const MobileMenuLi = Styled.li`
         font-size: 18px;
       }
 
+      & a.active {
+      color: ${COLORS.PINK};
+      } 
+
       & a:hover {
         color:${COLORS.PINK};
       }
@@ -113,9 +117,13 @@ const MenuItem = Styled.ul`
 
 const MenuItemLink = Styled.li`
   padding: 14px;
-  & a{
+  & a {
     color: black;
   }
+
+  & a.active {
+    color: ${COLORS.PINK};
+  } 
   & a:hover {
   color:${COLORS.PINK};
   }
@@ -134,6 +142,11 @@ const RightHeaderLinks = Styled.div`
       color: black;
       padding: 10px 4px 2px 2px;
     }
+
+    & a.active {
+    color: ${COLORS.PINK};
+  } 
+
     & a:hover{
       color:${COLORS.PINK};
     }
@@ -186,10 +199,10 @@ const HeaderComponent = () => {
           <Bar3 open={toggle}></Bar3>
           <MobileMenu open={toggle}>
             <MobileMenuLi>
-              <Link to={ROUTES.HOME}>{TRANSLATIONS.HEADER.HOME}</Link>
+              <NavLink exact to={ROUTES.HOME}>{TRANSLATIONS.HEADER.HOME}</NavLink>
             </MobileMenuLi>
             <MobileMenuLi>
-              <Link to={ROUTES.PRODUCTS}>{TRANSLATIONS.HEADER.PRODUCTS}</Link>
+              <NavLink exact to={ROUTES.PRODUCTS}>{TRANSLATIONS.HEADER.PRODUCTS}</NavLink>
             </MobileMenuLi>
           </MobileMenu>
         </HamburgerIcon>
@@ -202,10 +215,10 @@ const HeaderComponent = () => {
       <Nav>
         <MenuItem>
           <MenuItemLink>
-            <Link to={ROUTES.HOME}>{TRANSLATIONS.HEADER.HOME}</Link>
+            <NavLink exact to={ROUTES.HOME}>{TRANSLATIONS.HEADER.HOME}</NavLink>
           </MenuItemLink>
           <MenuItemLink>
-            <Link to={ROUTES.PRODUCTS}>{TRANSLATIONS.HEADER.PRODUCTS}</Link>
+            <NavLink exact to={ROUTES.PRODUCTS}>{TRANSLATIONS.HEADER.PRODUCTS}</NavLink>
           </MenuItemLink>
         </MenuItem>
       </Nav>
@@ -214,8 +227,8 @@ const HeaderComponent = () => {
           {!showSignOut ? 
              (
               <Fragment>
-                <Link to={ROUTES.LOGIN}>{TRANSLATIONS.HEADER.SIGNIN}</Link>
-                <Link to={ROUTES.REGISTER}>{TRANSLATIONS.HEADER.REGISTER}</Link>
+                <NavLink exact to={ROUTES.LOGIN}>{TRANSLATIONS.HEADER.SIGNIN}</NavLink>
+                <NavLink exact to={ROUTES.REGISTER}>{TRANSLATIONS.HEADER.REGISTER}</NavLink>
               </Fragment>
               ) : (
               <SignOutLink onClick={handleSignOut}>

@@ -3,6 +3,7 @@ import Styled from "styled-components";
 import Button from "../Button/Button";
 import H1 from "../Typography/H1";
 import H3 from "../Typography/H3";
+import { TRANSLATIONS } from "../../constants"
 
 const ErrorBoundaryContainer = Styled.div`
     display: flex;
@@ -31,11 +32,11 @@ function ErrorBoundary() {
   return (
     <div>
       <ErrorBoundaryContainer>
-        <H1 fontSize="3em">Something went wrong</H1>
-        <H3>Please close the browser and try again</H3>
+        <H1 fontSize="3em">{TRANSLATIONS.ERROR_BOUNDARY.HEADER}</H1>
+        <H3>{TRANSLATIONS.ERROR_BOUNDARY.SUB_HEADER}</H3>
         <Button margin="16px 0px" onClick={onClick}>
           {" "}
-          RETRY{" "}
+          {TRANSLATIONS.ERROR_BOUNDARY.RETRY}{" "}
         </Button>
       </ErrorBoundaryContainer>
     </div>

@@ -70,7 +70,6 @@ function App() {
           <PrivateRoute exact path={ROUTES.HOME} component={Home} />
           <PrivateRoute exact path={ROUTES.PRODUCTS} component={Products} />
           <Route path={ROUTES.NOT_FOUND} component={NotFound} />
-
         </Switch>
         {isEmpty(cartItems) ? (
           <ModalComponent
@@ -102,5 +101,5 @@ function App() {
     </Fragment>
   );
 }
-
+App.whyDidYouRender= true;
 export default App;

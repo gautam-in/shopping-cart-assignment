@@ -1,6 +1,6 @@
 import { Fragment } from "react";
-import LazyLoad from 'react-lazyload';
-import PropTypes from 'prop-types';
+import LazyLoad from "react-lazyload";
+import PropTypes from "prop-types";
 import Styled from "styled-components";
 import { isUndefined } from "lodash";
 import FallbackImage from "../../fallbackImage/fallback_image.jpg";
@@ -34,6 +34,7 @@ const CategoryImage = Styled.img`
 
 const CategoryHeaderContainer = Styled.div`
   padding: 20px 0;
+  text-align: center;
 `;
 
 const CategoryDescription = Styled.div`
@@ -64,8 +65,8 @@ const Category = ({
 }) => {
   return (
     <Fragment>
-      <CategoryContainer  data-testid="category-card" key={id}>
-          <CategoryImageContainer>
+      <CategoryContainer data-testid="category-card" key={id}>
+        <CategoryImageContainer>
           <LazyLoad>
             <CategoryImage
               src={!isUndefined(imageUrl) ? imageUrl : FallbackImage}
@@ -73,15 +74,17 @@ const Category = ({
               width={100}
               height={100}
             />
-        </LazyLoad>
-          </CategoryImageContainer>
+          </LazyLoad>
+        </CategoryImageContainer>
         <CategoryDescription>
           <CategoryHeaderContainer>
             <H1 alignCenter>{name}</H1>
           </CategoryHeaderContainer>
           <P>{description}</P>
           <ButtonContainer>
-            <Button onClick={() => handleCategoryClick(id)}>{`Explore ${key}`}</Button>
+            <Button
+              onClick={() => handleCategoryClick(id)}
+            >{`Explore ${key}`}</Button>
           </ButtonContainer>
         </CategoryDescription>
       </CategoryContainer>
@@ -91,12 +94,12 @@ const Category = ({
 
 Category.propTypes = {
   data: PropTypes.object,
-  handleCategoryClick: PropTypes.func
-}
+  handleCategoryClick: PropTypes.func,
+};
 
 Category.defaultProps = {
   data: {},
-  handleCategoryClick: () => {}
-}
+  handleCategoryClick: () => {},
+};
 
 export default Category;

@@ -1,4 +1,4 @@
-import { useEffect, useContext, Fragment, useMemo } from "react";
+import { useEffect, useContext, Fragment, memo } from "react";
 import { isEmpty } from "lodash";
 import Styled from "styled-components";
 import SEO from "../../seo/SEO";
@@ -136,4 +136,6 @@ function ProductsPage() {
   );
 }
 
-export default ProductsPage;
+ProductsPage.whyDidYouRender= true;
+
+export default memo(ProductsPage);

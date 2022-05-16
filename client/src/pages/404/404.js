@@ -4,6 +4,7 @@ import Styled from "styled-components";
 import H1 from "../../components/Typography/H1";
 import H3 from "../../components/Typography/H3";
 import P from "../../components/Typography/P";
+import { TRANSLATIONS } from "../../constants";
 
 const NotFoundContainer = Styled.div`
     display: flex;
@@ -27,11 +28,10 @@ export default function NotFound() {
   return (
     <Fragment>
       <NotFoundContainer>
-        <H1 fontSize="5em">404</H1>
-        <H3>Sorry, this page isn't available.</H3>
+        <H1 fontSize="5em">{TRANSLATIONS.NOT_FOUND.HEADER}</H1>
+        <H3>{TRANSLATIONS.NOT_FOUND.SUB_HEADER}</H3>
         <P>
-          The link you followed may be broken, or the page may have been
-          removed. Go back to <Link to="/"> Sabka Bazaar</Link>
+          {TRANSLATIONS.NOT_FOUND.DESC}<Link to="/"> Sabka Bazaar</Link>
         </P>
       </NotFoundContainer>
     </Fragment>

@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
+import LazyLoad from 'react-lazyload';
 import PropTypes from 'prop-types';
 import { Pagination, Navigation, Autoplay } from "swiper";
 import 'swiper/css';
@@ -11,6 +12,7 @@ import "./Carousel.css";
 export default function Carousel({data}) {
   return (
     <Fragment>
+    <LazyLoad>
       <Swiper
         spaceBetween={30}
         pagination={{
@@ -32,6 +34,7 @@ export default function Carousel({data}) {
           </Fragment>
         ))}
       </Swiper>
+      </LazyLoad>
     </Fragment>
   );
 }

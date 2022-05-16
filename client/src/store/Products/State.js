@@ -29,7 +29,7 @@ const State = props => {
           });
       }
     }catch(error){
-      console.log(error)
+      console.log("getProducts",error)
     } finally {
       initializeLoading(false)
     }

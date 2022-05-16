@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import axios from 'axios';
 import Context from './Context';
 import Reducer from './Reducer';
 import {
@@ -9,6 +10,8 @@ import {
     UPDATE_CART_QUANTITY_AND_TOTAL,
     CLEAR_CART
 } from './Types';
+
+const SUCCESS_RESPONSE = 'Success'
 
 const State = props => {
   const initialState = {
@@ -33,10 +36,20 @@ const State = props => {
   };
 
   const addCartItem = async (data) => {
-    dispatch({
-      type: ADD_CART_ITEM,
-      payload: data
-    });
+    try{
+      let res = await axios.post('/addToCart',{
+        product: data.id
+      })
+      if(res.data && res.data.response === SUCCESS_RESPONSE){
+        dispatch({
+          type: ADD_CART_ITEM,
+          payload: data
+        });
+      }
+    }catch(error){
+      console.log("addCartItem",error)
+    }
+
   }
 
   const removeCartItem = async (data) => {

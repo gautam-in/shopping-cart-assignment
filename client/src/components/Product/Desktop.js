@@ -67,7 +67,7 @@ const Desktop = ({ data, key, handleProductClick }) => {
         </Description>
         <CTAContainer>
           <P>{`MRP Rs.${data.price}`}</P>
-          <Button onClick={() => handleProductClick(data)}>Buy Now</Button>
+          <Button aria-label={`Click to buy ${data.name}`} onClick={() => handleProductClick(data)}>Buy Now</Button>
         </CTAContainer>
       </Card>
     </Fragment>

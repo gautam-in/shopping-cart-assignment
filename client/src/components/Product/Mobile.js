@@ -65,7 +65,7 @@ const Product = ({ data, key, handleProductClick }) => {
             <Description>
               <P>{data.description}</P>
             </Description>
-            <Button onClick={() => handleProductClick(data)}>Buy Now</Button>
+            <Button aria-label={`Click to buy ${data.name}`} onClick={() => handleProductClick(data)}>Buy Now</Button>
           </CTAContainer>
         </ContentContainer>
       </Card>

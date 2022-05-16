@@ -1,3 +1,5 @@
+
+import { memo } from 'react';
 import Styled from "styled-components";
 import { COLORS } from "../../constants";
 
@@ -39,4 +41,4 @@ const Spinner = ({showLoader}) =>showLoader ? (
   </LoaderContainer>
 ) : null;
 
-export default Spinner;
+export default memo(Spinner);

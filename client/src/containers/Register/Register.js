@@ -69,7 +69,11 @@ const Register = ({authenticationSucess}) => {
               datatestId={"name2"}
               validation={{
                 ...register("lastName", {
-                  required: "Last name is required"
+                  required: "Last name is required",
+                  pattern: {
+                    value: /^[a-zA-Z]+(?:-[a-zA-Z]+)*$/,
+                    message: "Please enter a valid name"
+                  }
                 })
               }}
             />

@@ -30,7 +30,7 @@ const State = props => {
           });
       }
     }catch(error){
-      console.log(error)
+      console.log("getCarouselData",error)
     } finally {
       initializeLoading(false)
     }

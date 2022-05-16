@@ -63,7 +63,7 @@ const Tablet = ({ data, key, handleProductClick }) => {
             </Description>
           </DescriptionContainer>
         </ContentContainer>
-        <Button onClick={() => handleProductClick(data)}>Buy Now</Button>
+        <Button aria-label={`Click to buy ${data.name}`} onClick={() => handleProductClick(data)}>Buy Now</Button>
       </Card>
     </Fragment>
   );

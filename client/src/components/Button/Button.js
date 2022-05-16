@@ -26,6 +26,11 @@ const Button = styled.button`
     outline: 0;
   }
 
+  &:focus-visible {
+    outline: 2px solid #96c4f5 ;
+    box-shadow: 1px 1px 5px rgba(1, 1, 0, .7);
+  }
+
   &:disabled {
     opacity: 0.6;
     background-color:${COLORS.PINK};

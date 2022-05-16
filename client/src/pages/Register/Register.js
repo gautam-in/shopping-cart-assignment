@@ -1,4 +1,4 @@
-import { useEffect, useContext, Fragment } from "react";
+import { useEffect, useContext, Fragment,memo } from "react";
 import { useHistory } from "react-router-dom";
 import Styled from "styled-components";
 import SEO from "../../seo/SEO";

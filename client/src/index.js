@@ -2,6 +2,7 @@ import "./wdyr";
 import React from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from 'styled-components'
 import axios from "axios";
 import { HelmetProvider } from "react-helmet-async";
 import ReactDOM from "react-dom/client";
@@ -16,12 +17,15 @@ import CartState from "./store/Cart/State";
 import ErrorBoundaryComponent from "./components/ErrorBoundary/ErrorBoundary";
 import reportWebVitals from "./reportWebVitals";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
-import "./index.css";
+import GlobalStyles from "./styles/GlobalStyles";
+
 
 axios.defaults.baseURL = process.env.REACI_APP_API_URL;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  <ThemeProvider theme={{}}>
+  <GlobalStyles />
   <ErrorBoundary FallbackComponent={ErrorBoundaryComponent} onReset={() => {}}>
     <HelmetProvider>
       <BrowserRouter>
@@ -41,6 +45,7 @@ root.render(
       </BrowserRouter>
     </HelmetProvider>
   </ErrorBoundary>
+  </ThemeProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -28,7 +28,7 @@ const State = (props) => {
         });
       }
     } catch (error) {
-      console.log(error);
+      console.log("getCategories",error);
     } finally {
       initializeLoading(false)
     }
