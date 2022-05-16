@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link rel="stylesheet" href="./build/styles.css" />
+    <link rel="stylesheet" href="./build/signin.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!------------------ Navbar Start -------------------------->
+    <header>
+      <nav>
+        <div class="nav-first-portion">
+          <img
+            class="logo"
+            id="logo"
+            src="static/images/logo.png"
+            alt="Sabka bazar logo"
+          />
+        </div>
+        <div class="nav-second-portion">
+          <div class="auth" id="auth">
+            <ul>
+              <li><a href="signin.html">SignIn</a></li>
+              <li><a href="register.html">Register</a></li>
+            </ul>
+          </div>
+          <div class="nav-links">
+            <div class="links">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+              </ul>
+            </div>
+            <div class="cart-box">
+              <button id="cart-btn" class="cart-btn" style="cursor: not-allowed;" disabled>
+                <i class="fa-solid fa-cart-shopping cart-icon" style="cursor: not-allowed;"></i
+                >&nbsp;&nbsp;<span id="no-of-cart-items"></span> Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!------------------ Navbar End --------------------------------->
+
+    <main>
+      <div class="login-content">
+        <h2>Login</h2>
+        <p>Get access to your Orders. Wishlist and recommendations</p>
+      </div>
+      <div class="login-form">
+        <form>
+          <label for="email"></label
+          ><input type="email" id="email" placeholder="Eamil" />
+          <br />
+          <label for="password"></label
+          ><input type="password" id="password" placeholder="Password" />
+          <br />
+          <button>Login</button>
+        </form>
+      </div>
+    </main>
+
+
+    <footer>
+      <p>Copyright &copy; 2022-2023 Sabka Bazar Grocery Supplies Pvt Ltd</p>
+    </footer>
+  </body>
+</html>

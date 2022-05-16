@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabka Bazar</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./build/styles.css" />
+  </head>
+  <body>
+    <!------------------ Navbar Start -------------------------->
+    <header>
+      <nav>
+        <div class="nav-first-portion">
+          <img
+            class="logo"
+            id="logo"
+            src="static/images/logo.png"
+            alt="Sabka bazar logo"
+          />
+        </div>
+        <div class="nav-second-portion">
+          <div class="auth" id="auth">
+            <ul>
+              <li><a href="signin.html">SignIn</a></li>
+              <li><a href="register.html">Register</a></li>
+            </ul>
+          </div>
+          <div class="nav-links">
+            <div class="links">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+              </ul>
+            </div>
+            <div class="cart-box">
+              <button id="cart-btn" class="cart-btn"><i class="fa-solid fa-cart-shopping cart-icon"></i> Cart</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!------------------ Navbar End --------------------------------->
+
+    <!------------------ Banner Section Start ----------------------->
+ 
+      <!-- loader -->
+      <div class="load">
+        <div class="loader"></div>
+      </div>
+
+      <section class="banner-section" id="banners-box" data-bs-ride="carousel">
+        <!-- <div class="prev-btn arrow-icon" id="prev-btn">
+          <i class="fa-solid fa-caret-left"></i>
+        </div>
+        <div class="next-btn arrow-icon" id="next-btn">
+          <i class="fa-solid fa-caret-right"></i>
+        </div> -->
+      </section>
+      <!------------------ Banner Section End --------------------------->
+
+      <!------------------ Categories Section End --------------------------->
+      <section id="categories-section" class="categories-section"></section>
+      <!------------------ Categories Section End --------------------------->
+   
+    <!-- Footer -->
+    <footer>
+      <p>Copyright &copy; 2022-2023 Sabka Bazar Grocery Supplies Pvt Ltd</p>
+    </footer>
+
+    <!-- Custom Script  -->
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>

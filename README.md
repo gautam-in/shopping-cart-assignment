@@ -1,15 +1,5 @@
-# XT Shopping Cart Assignment
+# shopping-cart-assignment-gaurav-anthwal
 
-This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.
+## [Live domo link](https://sabka-bazar-shoping-cart.netlify.app)
 
-## Getting Started
-
-Clone this repo and run following command for starting the mock server:
-
-```
-npm install
-npm run start
-# or
-yarn install
-yarn start
-```
+## [Api (Hosted ) link](https://sabka-bazar-sapient.herokuapp.com)

@@ -1,0 +1,47 @@
+/* *********************** Variable *************************** */
+:root {
+    --primary-color: #D10157;
+    --secondary-color: #EEEEEE;
+
+    --primary-text: #3a3a3a;
+
+    --link-color: #165fa8;
+
+    --standard-max-width: 1200px;
+}
+
+main{
+    display: flex;
+    max-width: 900px;
+    padding: 0 1rem;
+}
+.login-content{
+    
+    flex: 1;
+}
+.login-form{
+    margin-top: 20px;
+    flex: 1;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+form input{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #aaa;
+    padding: .5rem;
+}
+form input:focus{
+    border-bottom: 2px solid #0cbdbd;
+}
+form button{
+    background: var(--primary-color);
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: .7rem 1rem;
+    margin-top: 20px;
+    cursor: pointer;
+}

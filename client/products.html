@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <!-- <link rel="stylesheet" href="./styles/styles.css" /> -->
+    <link rel="stylesheet" href="./build/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!------------------ Navbar Start -------------------------->
+    <header>
+      <nav>
+        <div class="nav-first-portion">
+          <img
+            class="logo"
+            id="logo"
+            src="static/images/logo.png"
+            alt="Sabka bazar logo"
+          />
+        </div>
+        <div class="nav-second-portion">
+          <div class="auth" id="auth">
+            <ul>
+              <li><a href="signin.html">SignIn</a></li>
+              <li><a href="register.html">Register</a></li>
+            </ul>
+          </div>
+          <div class="nav-links">
+            <div class="links">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+              </ul>
+            </div>
+            <div class="cart-box">
+              <button id="cart-btn" class="cart-btn">
+                <i class="fa-solid fa-cart-shopping cart-icon"></i
+                >&nbsp;&nbsp;<span id="no-of-items-in-cart">0</span> Item
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!------------------ Navbar End --------------------------------->
+
+    <!------------------ Products Section --------------------------------->
+    
+    <!-- loader -->
+    <div class="load">
+      <div class="loader"></div>
+    </div>
+    
+    <main>
+      <section class="sidebar-category" id="sidebar-category">
+        <div class="custom-select" id="dropdown">
+          <span id="category-name">Categories</span>
+          <i class="fa-solid fa-angle-down" id="show-dropdown"></i>
+          <!-- <i class="fa-solid fa-angle-up"></i> -->
+        </div>
+
+        <ul id="dropdown-items">
+          <li class="all-producs" onclick="showAllProducts()">All Products</li>
+          <li class="product-item"></li>
+          <li class="product-item"></li>
+          <li class="product-item"></li>
+          <li class="product-item"></li>
+          <li class="product-item"></li>
+          <li class="product-item"></li>
+        </ul>
+      </section>
+      <section class="main-category" id="main-category"></section>
+
+      <!------------------ Products Section End --------------------------------->
+
+      <!------------------ Cart Section --------------------------------->
+      <div class="cart d-none" id="cart">
+        <div class="inner-cart">
+
+        <!-- Cart Header -->
+        <div class="cart-header" id="cart-header">
+          <div>
+            <h2 class="d-inline">My Cart</h2>
+            <span>(<span id="no-of-items-in-cart2">0</span> item)</span>
+          </div>
+          <i class="fa-solid fa-xmark" onclick="closeCart()"></i>
+        </div>
+
+        <!-- Cart Body -->
+        <div class="cart-body" id="cart-body">
+
+        </div>
+
+        <!-- Cart Footer -->
+        <div class="cart-footer" id="cart-footer">
+          <p>Promo Code can be applied on payment page</p>
+          <div class="checkout" id="checkout">
+            <i >Proceed to Checkout</i>
+            <span>Rs.<span class="totol-price-proceed-to-checkout">0</span> <i class="fa-solid fa-angle-right"></i></i></span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </main>
+
+    <!-- Backdrop -->
+    <div class="backdrop d-none" id="backdrop">
+
+    </div>
+    <!-- Alert Box -->
+    <div class="alert-box alert-box-hide" id="alert-box">
+      fdsfsf
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>Copyright &copy; 2022-2023 Sabka Bazar Grocery Supplies Pvt Ltd</p>
+    </footer>
+
+    <!-- Script  -->
+    <script src="./scripts/products.js"></script>
+  </body>
+</html>
