@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "email": "m@gmail.com",
+      "password": "$2a$10$yNiMN5ETyZ1lvTf1QJqlzuKn9x.3y2.wBOvabxmF4C6OnL3DHe.IG",
+      "firstname": "Mehul",
+      "lastname": "Jariwala",
+      "id": 1
+    }
+  ]
+}

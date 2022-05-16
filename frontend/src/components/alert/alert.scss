@@ -1,0 +1,44 @@
+.alert-container {
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    box-shadow: none;
+    margin: 0px;
+    display: none;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+    background-color: rgb(237, 247, 237);
+    padding: 6px 16px;
+    color: rgb(30, 70, 32);
+    margin-bottom: 16px;
+
+    &__icon {
+        margin-right: 12px;
+        padding: 7px 0;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        font-size: 22px;
+        opacity: 0.9;
+    }
+
+    &__msg {
+        margin: 8px;
+    }
+
+    svg {
+        user-select: none;
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        fill: currentColor;
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        font-size: inherit;
+    }
+}

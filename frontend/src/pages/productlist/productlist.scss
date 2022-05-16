@@ -1,0 +1,235 @@
+@import "../../styles/_mixins.scss";
+
+
+.product-list-container {
+    display: flex;
+
+
+    @include bp('sm') {
+        flex-direction: column;
+    }
+
+    .product-list-aside {
+
+        .list {
+            @include bp('sm') {
+                display: none;
+            }
+
+            height: 100%;
+
+            .item {
+                padding: 18px;
+                border-bottom: 1px solid grey;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: all 0.5s;
+
+                &:hover {
+                    background-color: gainsboro;
+                    transition: all 0.5s;
+                }
+            }
+        }
+
+        .dropdown-list {
+            display: none;
+
+
+            @include bp('sm') {
+                display: block;
+                background-color: #D10157;
+                width: 100vw;
+                height: 50px;
+                font-size: 20px;
+                color: white;
+                border: none;
+                padding: 0 10px;
+                outline: none;
+            }
+
+
+        }
+    }
+
+    .product-category {
+        min-width: 300px;
+        background-color: #d3d3d387;
+        padding-top: 12px;
+
+
+        @include bp('md') {
+            min-width: 170px;
+        }
+    }
+
+    .product-card {
+        width: 200px;
+        min-height: 220px;
+        margin: 4px 12px;
+        box-shadow: 0 -2px 6px -1px #0000001a,
+            0px 0px 0px 0px #0000001a;
+        padding: 8px;
+        border-radius: 4px;
+        padding-bottom: 0px;
+        margin-bottom: 32px;
+        border-bottom: 2px dashed lightgray;
+
+
+        @include bp('lg') {
+            width: 290px;
+        }
+
+        @include bp('md') {
+            width: 225px;
+        }
+
+        @include bp('sm') {
+            width: 100%;
+            margin-bottom: 16px;
+            box-shadow: none;
+        }
+
+
+        img {
+            width: 100%;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            padding-bottom: 24px;
+        }
+
+        .product-desc {
+            font-size: 0.85rem;
+            background: #d3d3d387;
+            border-radius: 4px;
+            padding: 6px;
+            margin: 8px 0px;
+
+
+            @include bp('md') {
+                margin: 0px;
+                height: 90%;
+            }
+
+
+            @include bp('sm') {
+                margin: 0px;
+                height: auto;
+            }
+        }
+
+        .product-footer {
+            display: flex;
+            align-items: center;
+            padding-top: 8px;
+            justify-content: space-between;
+
+
+
+            @include bp('md') {
+                display: none;
+            }
+
+            @include bp('sm') {
+                display: block;
+                margin-bottom: 12px;
+            }
+        }
+
+        .product-price {
+            color: #625a5a;
+            font-weight: 600;
+            font-size: 0.85rem;
+
+
+
+            @include bp('md') {
+                display: none;
+            }
+
+            @include bp('sm') {
+                display: none;
+            }
+        }
+
+        .product-md-button {
+            display: none;
+
+            @include bp('md') {
+                display: block;
+
+                button {
+                    width: 100%;
+                    height: 40px;
+                }
+            }
+        }
+
+        .buy-now-btn {
+            width: 100px;
+            height: 30px;
+            border-radius: 0px;
+            font-size: 12px;
+            display: block;
+
+            @include bp('sm') {
+                display: none;
+            }
+
+        }
+
+        .mobile-buy-now-btn {
+            display: none;
+
+            @include bp('sm') {
+                display: block;
+                width: 100%;
+                height: 40px;
+                font-size: 14px;
+            }
+
+        }
+
+        .product-content {
+            @include bp('sm') {
+                display: flex;
+            }
+
+            @include bp('md') {
+                display: flex;
+            }
+        }
+
+        .product-image,
+        .product-details {
+            @include bp('md') {
+                width: 300px;
+            }
+
+
+            @include bp('sm') {
+                width: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+
+        }
+
+
+    }
+
+    .product-card-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 24px 12px;
+
+        @include bp('sm') {
+            padding: 0px;
+        }
+
+    }
+}
