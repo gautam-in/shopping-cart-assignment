@@ -19,14 +19,14 @@ export const ProductList = (listData) => {
       ele.push(`<li id='${id}' class='item' tabindex=0>${name}</li>`);
     });
     return `
-    <aside class="product-list-aside">
+      <aside class="product-list-aside">
           <select id="dropdown__list" class='dropdown-list' >
            ${eleMobile.join("")}
           </select>
           <ul id='sidebar-list-container' class="list" tabindex="0">
              ${ele.join("")}
          </ul>
-    </aside>
+      </aside>
     `;
   };
 
@@ -139,12 +139,17 @@ class ProductPage extends APIConfig {
     await this.reRender();
   };
 
-  onBuyNowClick = (e) => {
+  onBuyNowClick = async (e) => {
     const selectedProductId = e.target.getAttribute("data-label");
     const addItem = this.eProducts.find(
       (product) => product.id === selectedProductId
     );
     CartModal.addItemInCart(addItem);
+    const reponse = await this.addToCartAsync();
+    if (reponse.data) {
+      console.log("___ITEM ADDED IN CART___", reponse.data.responseMessage);
+    }
+
     renderHeader();
   };
 

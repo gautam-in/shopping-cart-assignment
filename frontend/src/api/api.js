@@ -21,6 +21,7 @@ class APIConfig {
       Banners: "/banners",
       Categories: "/categories",
       Products: "/products",
+      AddCart: "/addToCart",
     };
   }
 
@@ -123,6 +124,19 @@ class APIConfig {
       });
     } catch (err) {
       return this.onErrorHandler("PRODUCTS", err);
+    }
+  }
+
+  async addToCartAsync() {
+    try {
+      return await axiosInstance({
+        ...this.getDbHeaders({
+          method: this.methods.POST,
+          url: this.urls.AddCart,
+        }),
+      });
+    } catch (err) {
+      return this.onErrorHandler("ADD CART", err);
     }
   }
 }

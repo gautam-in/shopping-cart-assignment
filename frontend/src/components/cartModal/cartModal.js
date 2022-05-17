@@ -1,7 +1,7 @@
 import "./cartModal.scss";
 import Button from "../button/button";
 import lowPrice from "../../../static/images/lowest-price.png";
-import { iconAdd, iconRemove, iconClear } from "../../icons/icons";
+import { iconAdd, iconRemove, iconClear, iconForward } from "../../icons/icons";
 import { formatPrice } from "../../../helpers";
 import Header from "../header";
 import { renderHeader } from "../../public";
@@ -12,13 +12,7 @@ class CartModal {
     this.cartTotalItems = 0;
   }
 
-  openCartModal = () => {
-    const cartModal = document.getElementById("cart__modal");
-    console.log(cartModal);
-  };
-
   addItemInCart = (item) => {
-    console.log("s", item);
     if (item.id && this.cartItemsLits[item.id]) {
       let cartItem = this.cartItemsLits[item.id];
       cartItem.qty++;
@@ -47,16 +41,26 @@ class CartModal {
       (p, c) => (p += c.totalPrice),
       0.0
     );
+
     return `       
         <div class="modal-footer">
-            <div><p>Promo code can be applied on payment page</p></div>
+            ${
+              this.cartTotalItems
+                ? "<div><p>Promo code can be applied on payment page</p></div>"
+                : ""
+            }
             ${Button.render({
               type: "button",
+              id: "checkout-btn",
               label: `
             <div class="btn-container">
-              <div>Proceed to Checkout</div>
-              <div>${formatPrice(tPrice)}</div>
-            </div>
+              ${
+                this.cartTotalItems
+                  ? `<div>Proceed to Checkout</div> <div class='checkout-container'>${formatPrice(
+                      tPrice
+                    )}  ${iconForward()}</div></div>`
+                  : "<div class='start-shopping'>Start Shopping</div>"
+              }
             `,
               className: "procced-btn",
             })}
@@ -101,7 +105,17 @@ class CartModal {
   renderContent = () => {
     let cartItems = Object.values(this.cartItemsLits);
     let ele = [];
-    cartItems.forEach((list) => ele.push(this.renderProduct(list)));
+    if (cartItems.length) {
+      cartItems.forEach((list) => ele.push(this.renderProduct(list)));
+    } else {
+      ele.push(
+        `<div class='no-cart-container'>
+          <h1>No items in your cart</h1>
+          <p>Your favorite items are just a click away</p>
+        </div>`
+      );
+    }
+
     return ele.join("");
   };
 
@@ -109,12 +123,28 @@ class CartModal {
     let headerCount = document.getElementById("cart-btn");
     headerCount.innerHTML = `${this.cartTotalItems} items`;
 
+    const count = this.cartTotalItems;
+    let ele = "";
+
+    if (count) {
+      ele = `(${this.cartTotalItems > 99 ? "99+" : this.cartTotalItems} items)`;
+    }
+
+    const itemDiscount = () => {
+      if (count) {
+        return `<div class="item-discount">
+                  <div class="item-discount-img">
+                    <img src="${lowPrice}" width="100%" alt="lowest price guaranteed" />
+                  </div>
+                  <div>You won't find it cheaper anywhere</div>
+                </div>`;
+      }
+      return "";
+    };
+
     return `<div class="modal-header">
                 <h1>
-                  My Cart (${
-                    this.cartTotalItems > 99 ? "99+" : this.cartTotalItems
-                  }
-                  item)
+                  My Cart ${ele}
                 </h1>
                 <span id="modal__close" class="modal-close">
                   ${iconClear({ size: "24" })}
@@ -122,12 +152,7 @@ class CartModal {
               </div>
               <div class="modal-body">
                 ${this.renderContent()}
-                <div class="item-discount">
-                  <div class="item-discount-img">
-                    <img src="${lowPrice}" width="100%" alt="lowest price guaranteed" />
-                  </div>
-                  <div>You won't find it cheaper anywhere</div>
-                </div>
+                ${itemDiscount()}
               </div>
               ${this.renderFooter()}`;
   };
@@ -150,17 +175,22 @@ class CartModal {
 
     const modalClose = document.getElementById("modal__close");
     const cModal = document.getElementById("cart__modal");
+    const checkOutBtn = document.getElementById("checkout-btn");
 
     const addCartBtnList = document.querySelectorAll("#add_cart_btn");
     const removeCartBtnList = document.querySelectorAll("#remove_cart_btn");
 
+    const modalToggle = async () => {
+      if (cModal.style.display === "block") {
+        cModal.style.display = "none";
+      }
+    };
     if (modalClose) {
-      const modalToggle = async () => {
-        if (cModal.style.display === "block") {
-          cModal.style.display = "none";
-        }
-      };
       modalClose.addEventListener("click", modalToggle);
+    }
+
+    if (checkOutBtn) {
+      checkOutBtn.addEventListener("click", modalToggle);
     }
 
     if (addCartBtnList && addCartBtnList.length) {

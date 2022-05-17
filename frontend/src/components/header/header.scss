@@ -92,10 +92,15 @@
       margin-top: 8px;
       min-height: 60px;
       min-width: 150px;
-      display: grid;
       font-weight: 600;
       place-content: center;
       position: relative;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      cursor: pointer;
+
+
 
       &:hover {
         ~.content {
@@ -107,6 +112,13 @@
         min-width: 80px;
         min-height: 30px;
         margin-top: 0px;
+        padding: 8px;
+      }
+    }
+
+    &--cart-icon {
+      svg {
+        fill: #d10157;
       }
     }
 

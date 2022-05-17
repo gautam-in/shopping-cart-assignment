@@ -105,6 +105,18 @@
             display: flex;
             justify-content: space-between;
             font-size: 1rem;
+
+            .checkout-container {
+                display: flex;
+            }
+
+            .start-shopping {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+
+
+            }
         }
     }
 
@@ -156,6 +168,9 @@
             align-items: center;
             gap: 16px;
             font-weight: normal;
+
+
+
         }
 
         .item-price-row {
@@ -180,6 +195,21 @@
 
 
 
+    }
+
+    .no-cart-container {
+        display: flex;
+        justify-content: center;
+        height: 90%;
+        align-items: center;
+        flex-direction: gap;
+        flex-direction: column;
+        gap: 10px;
+
+        h1 {
+            font-size: 20px;
+            padding-bottom: 8px;
+        }
     }
 
     .item-discount {

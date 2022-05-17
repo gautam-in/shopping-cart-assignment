@@ -92,13 +92,14 @@ export class RegisterState {
           iePassword.style.opacity = 1;
           iePassword.innerText = "Password required*";
           this.err.pass = true;
-        } else if (/^(?=.*\d)(?=.*[a-zA-Z]).{6,20}$/i.test(value)) {
+        } else if (/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/i.test(value)) {
           iePassword.style.opacity = 0;
           iePassword.innerText = "";
           this.err.pass = false;
         } else {
           iePassword.style.opacity = 1;
-          iePassword.innerText = "Please enter valid password";
+          iePassword.innerText =
+            "Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters";
           this.err.pass = true;
         }
         break;

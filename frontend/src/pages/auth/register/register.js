@@ -7,8 +7,8 @@ const Register = () => {
   return `
          <div class="auth-container">
           <div class="auth-container__details_content">
-            <h1  tabindex=0>Signup</h1>
-            <p  tabindex=0>We do not share your personal details with anyone.</p>
+            <h1 tabindex=0>Signup</h1>
+            <p tabindex=0>We do not share your personal details with anyone.</p>
           </div>
           <div>
             ${Alert("Register Successful!")}
