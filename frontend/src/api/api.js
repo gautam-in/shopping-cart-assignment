@@ -48,11 +48,19 @@ class APIConfig {
   };
 
   onErrorHandler = (key, err) => {
-    console.log(`${key} ----> error`, err);
-    return {
-      error: err.response.data.message || err.message,
-      errMsg: JSON.parse(err.request.response),
-    };
+    console.log(`${key} ----> error`);
+    let errors = {};
+    if (err && err.response && err.response.data && err.response.data.message) {
+      errors.err = err.response.dataerr.response.data.message;
+    } else if (err.message) {
+      errors.err = err.message;
+    }
+
+    if (err && err.request && err.request.response) {
+      errors.errMsg = JSON.parse(err.request.response);
+    }
+
+    return errors;
   };
 
   async userLoginAsync({ email, password }) {

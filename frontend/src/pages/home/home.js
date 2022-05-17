@@ -1,12 +1,8 @@
-import "./home.scss";
-import fruits from "../../../static/images/category/fruits.png";
-import bakery from "../../../static/images/category/bakery.png";
-import beverages from "../../../static/images/category/beverages.png";
-import beauty from "../../../static/images/category/beauty.png";
-import baby from "../../../static/images/category/baby.png";
 import Button from "../../components/button/button";
 import APIConfig from "../../api/api";
 import { useCategoriesParsed } from "../../../helpers";
+import HomeState from "./homeState";
+import "./home.scss";
 
 const Home = () => {
   const api = new APIConfig();
@@ -57,7 +53,7 @@ const Home = () => {
     }
   };
 
-  const renderRow = ({ imageUrl, name, description, direction, key }) => {
+  const renderRow = ({ imageUrl, id, name, description, direction, key }) => {
     return `
       <div class='product-row-wrapper' style='flex-direction:${direction}'>
         <div class='product-image'>
@@ -67,9 +63,10 @@ const Home = () => {
           <h4>${name}</h4>
           <p>${description}</p>
           ${Button.render({
-            id: `${name}-product-btn`,
+            id: `explore-product-btn`,
             label: `Explore ${key}`,
             className: "product-btn",
+            dataAtt: id,
           })}
         </div>
       </div>
@@ -97,6 +94,10 @@ const Home = () => {
 const HomePage = {
   privateRoute: true,
   render: async () => Home(),
+  reRender: async () => {
+    const hState = new HomeState();
+    return hState.reRender();
+  },
 };
 
 export default HomePage;

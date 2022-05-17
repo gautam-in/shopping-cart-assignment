@@ -121,12 +121,20 @@ export class LoginState {
     e.preventDefault();
     const formProps = this.getFormValues(e);
     const auth = new APIConfig();
+    const formErr = this.domElements.formError;
     const response = await auth.userLoginAsync(formProps);
-    const data = response.data;
-    let err = this.onFormError(response);
-    if (data && !err) {
-      await this.setToken(data);
-      window.location.href = "#/home";
+    if (response.err) {
+      formErr.style.opacity = 1;
+      formErr.innerText = response.err;
+      formErr.focus();
+    } else {
+      const data = response.data;
+
+      let err = this.onFormError(response);
+      if (data && !err) {
+        await this.setToken(data);
+        window.location.href = "#/home";
+      }
     }
   };
 

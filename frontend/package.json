@@ -5,9 +5,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server  --config webpack.dev.js",
-    "start:server": "json-server db.json -m ./node_modules/json-server-auth",
-    "build": "webpack --config webpack.prod.js"
+    "webpack-start": "webpack-dev-server  --config webpack.dev.js",
+    "start": "concurrently \"npm run webpack-start\" \"npm run auth-server-start\" \"npm run db-server-start\"",
+    "auth-server-start": "json-server db.json -m ./node_modules/json-server-auth",
+    "build": "webpack --config webpack.prod.js",
+    "db-server-start": "canned -p 5001 ../backend/server"
   },
   "keywords": [],
   "author": "",
@@ -37,7 +39,9 @@
   "dependencies": {
     "@babel/core": "^7.17.10",
     "axios": "^0.27.2",
+    "canned": "^0.3.13",
     "clean-webpack-plugin": "^2.0.0",
+    "concurrently": "^7.2.0",
     "copy-webpack-plugin": "^10.2.4"
   }
 }
