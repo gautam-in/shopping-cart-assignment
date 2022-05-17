@@ -1,12 +1,22 @@
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import Category from '../Category/Category.component';
 
 const Categories = (props) => {
+    const [cat,setCat] = useState([]);
+
+    useEffect(()=>{
+        axios.get('http://localhost:5000/categories')
+            .then(res => setCat(res.data))
+    },[]);
+
     return (
         <div>
-            <Category>1</Category>
-            <Category>2</Category>
-            <Category>3</Category>
-            <Category>4</Category>
+            {
+                cat && cat.map(cat => (
+                    <Category key={cat.key} data={cat}/>
+                ))
+            }
 
         </div>
     );

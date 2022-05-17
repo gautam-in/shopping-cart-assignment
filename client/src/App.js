@@ -22,6 +22,10 @@ function App() {
     <AppRoutes />
     
     </BrowserRouter>
+
+    <footer>
+      Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+    </footer>
     </>
   );
 }
