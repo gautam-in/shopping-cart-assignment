@@ -4,7 +4,7 @@ const Category = props => {
         <div>
             Category 
             {props.data.name}
-            <img src={`../..${props.data.imageUrl}`} alt="" />
+            <img src={props.data.imageUrl} alt="" />
             {props.data.description}
         </div>
     )
