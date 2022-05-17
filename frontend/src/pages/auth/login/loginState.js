@@ -98,7 +98,7 @@ export class LoginState {
   onFormError = (data) => {
     let isError = false;
     const formErr = this.domElements.formError;
-    if (data.errMsg) {
+    if (data && data.errMsg) {
       formErr.style.opacity = 1;
       formErr.innerText = data.errMsg;
       formErr.focus();
@@ -118,13 +118,12 @@ export class LoginState {
   };
 
   onSubmit = async (e) => {
-    console.log("__", e);
     e.preventDefault();
     const formProps = this.getFormValues(e);
     const auth = new APIConfig();
-    const data = await auth.userLogin(formProps);
-    let err = this.onFormError(data);
-    console.log("e", data, err);
+    const response = await auth.userLoginAsync(formProps);
+    const data = response.data;
+    let err = this.onFormError(response);
     if (data && !err) {
       await this.setToken(data);
       window.location.href = "#/home";

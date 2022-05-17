@@ -30,6 +30,12 @@
                     transition: all 0.5s;
                 }
             }
+
+            .selected {
+                background: #494440;
+                color: white;
+                font-weight: 600;
+            }
         }
 
         .dropdown-list {
@@ -40,12 +46,14 @@
                 display: block;
                 background-color: #D10157;
                 width: 100vw;
-                height: 50px;
+                height: 40px;
                 font-size: 20px;
                 color: white;
                 border: none;
                 padding: 0 10px;
                 outline: none;
+                margin-bottom: 16px;
+
             }
 
 
@@ -60,28 +68,27 @@
 
         @include bp('md') {
             min-width: 170px;
+            background-color: white;
         }
     }
 
     .product-card {
-        width: 200px;
-        min-height: 220px;
-        margin: 4px 12px;
-        box-shadow: 0 -2px 6px -1px #0000001a,
-            0px 0px 0px 0px #0000001a;
-        padding: 8px;
+        width: 225px;
+        margin: 4px 8px;
         border-radius: 4px;
-        padding-bottom: 0px;
         margin-bottom: 32px;
         border-bottom: 2px dashed lightgray;
-
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        justify-content: space-between;
 
         @include bp('lg') {
             width: 290px;
         }
 
         @include bp('md') {
-            width: 225px;
+            width: 270px;
         }
 
         @include bp('sm') {
@@ -97,7 +104,13 @@
 
         .product-title {
             font-size: 1.2rem;
-            padding-bottom: 24px;
+        }
+
+        .product-card-content {
+            padding: 14px;
+            // padding-top: 24px;
+            box-shadow: 0px 4px 6px -1px #0000001a,
+                0px 0px 0px 0px #0000001a;
         }
 
         .product-desc {
@@ -105,7 +118,21 @@
             background: #d3d3d387;
             border-radius: 4px;
             padding: 6px;
-            margin: 8px 0px;
+
+            p {
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 1.2;
+                letter-spacing: 0.3px;
+
+                @include bp('sm') {
+                    -webkit-line-clamp: 6;
+                }
+
+            }
 
 
             @include bp('md') {
@@ -186,7 +213,7 @@
             @include bp('sm') {
                 display: block;
                 width: 100%;
-                height: 40px;
+                height: 30px;
                 font-size: 14px;
             }
 
@@ -219,6 +246,18 @@
 
         }
 
+        .product-image {
+            min-height: 215px;
+
+            @include bp('md') {
+                min-height: auto;
+            }
+
+
+            @include bp('sm') {
+                min-height: auto;
+            }
+        }
 
     }
 

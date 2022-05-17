@@ -16,12 +16,18 @@ const routes = {
   "/": Login,
   "/register": Register,
   "/home": Home,
+  "/productlist/:id": ProductList,
   "/productlist": ProductList,
 };
 
 const router = async () => {
   const request = parseRequestUrl();
-  const parseUrl = request.resource ? `/${request.resource}` : "/";
+  const parseUrl =
+    (request.resource ? `/${request.resource}` : "/") +
+    (request.id ? "/:id" : "") +
+    (request.verb ? `/${request.verb}` : "");
+
+  console.log("re", request, parseUrl);
 
   const screen = routes[parseUrl] ? routes[parseUrl] : Error404;
 
@@ -70,3 +76,4 @@ const router = async () => {
 
 window.addEventListener("load", router);
 window.addEventListener("hashchange", router);
+window.addEventListener("locationchange", router);

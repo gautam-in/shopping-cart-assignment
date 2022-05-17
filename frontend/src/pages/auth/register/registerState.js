@@ -151,8 +151,8 @@ export class RegisterState {
   onSubmit = async (e) => {
     const formProps = this.getFormValues(e);
     const auth = new APIConfig();
-    const data = await auth.userRegister(formProps);
-    if (data && !this.onFormError(data)) {
+    const response = await auth.userRegisterAsync(formProps);
+    if (response && response.data && !this.onFormError(response.data)) {
       document.getElementById("alert-container").style.display = "flex";
       window.localStorage.setItem(TOKEN_KEY, JSON.stringify(data));
     }

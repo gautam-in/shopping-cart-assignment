@@ -20,7 +20,7 @@ export const replaceHtml = (el, html) => {
   let oldEl = typeof el === "string" ? document.getElementById(el) : el;
   let newEl = oldEl.cloneNode(false);
   newEl.innerHTML = html;
-  oldEl.parentNode.replaceChild(newEl, oldEl);
+  if (oldEl && oldEl.parentNode) oldEl.parentNode.replaceChild(newEl, oldEl);
   /* Since we just removed the old element from the DOM, return a reference
 	to the new element, which can be used to restore variable references. */
   return newEl;

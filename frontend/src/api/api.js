@@ -20,6 +20,7 @@ class APIConfig {
       Register: "/register",
       Banners: "/banners",
       Categories: "/categories",
+      Products: "/products",
     };
   }
 
@@ -45,31 +46,31 @@ class APIConfig {
     };
   };
 
-  async userLogin({ email, password }) {
+  onErrorHandler = (key, err) => {
+    console.log(`${key} ----> error`, err);
+    return {
+      error: err.response.data.message || err.message,
+      errMsg: JSON.parse(err.request.response),
+    };
+  };
+
+  async userLoginAsync({ email, password }) {
     try {
-      const response = await axiosInstance({
+      return await axiosInstance({
         ...this.getAuthHeaders({
           method: this.methods.POST,
           url: this.urls.Login,
           data: { email: email, password: password },
         }),
       });
-      if (response.statusText !== "OK") {
-        throw new Error(response.data.message);
-      }
-      return response.data;
     } catch (err) {
-      console.log("userLogin ERROR", err);
-      return {
-        error: err.response.data.message || err.message,
-        errMsg: JSON.parse(err.request.response),
-      };
+      return this.onErrorHandler("LOGIN", err);
     }
   }
 
-  async userRegister({ email, password, fname, lname }) {
+  async userRegisterAsync({ email, password, fname, lname }) {
     try {
-      const response = await axiosInstance({
+      return await axiosInstance({
         ...this.getAuthHeaders({
           method: this.methods.POST,
           url: this.urls.Register,
@@ -81,49 +82,47 @@ class APIConfig {
           },
         }),
       });
-      return response.data;
     } catch (err) {
-      console.log("userRegister ERROR", err);
-      return {
-        error: err.response.data.message || err.message,
-        errMsg: JSON.parse(err.request.response),
-      };
+      return this.onErrorHandler("REGISTER", err);
     }
   }
 
-  async loadBanners() {
+  async loadBannersAsync() {
     try {
-      const response = await axiosInstance({
+      return await axiosInstance({
         ...this.getDbHeaders({
           method: this.methods.GET,
           url: this.urls.Banners,
         }),
       });
-      return response;
     } catch (err) {
-      console.log("loadBanners ERROR", err);
-      return {
-        error: err.response.data.message || err.message,
-        errMsg: JSON.parse(err.request.response),
-      };
+      return this.onErrorHandler("BANNERS", err);
     }
   }
 
-  async loadCategories() {
+  async loadCategoriesAsync() {
     try {
-      const response = await axiosInstance({
+      return await axiosInstance({
         ...this.getDbHeaders({
           method: this.methods.GET,
           url: this.urls.Categories,
         }),
       });
-      return response;
     } catch (err) {
-      console.log("loadCategories ERROR", err);
-      return {
-        error: err.response.data.message || err.message,
-        errMsg: JSON.parse(err.request.response),
-      };
+      return this.onErrorHandler("CATEGORIES", err);
+    }
+  }
+
+  async loadProductsAsync() {
+    try {
+      return await axiosInstance({
+        ...this.getDbHeaders({
+          method: this.methods.GET,
+          url: this.urls.Products,
+        }),
+      });
+    } catch (err) {
+      return this.onErrorHandler("PRODUCTS", err);
     }
   }
 }

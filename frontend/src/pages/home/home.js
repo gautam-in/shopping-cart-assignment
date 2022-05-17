@@ -6,13 +6,14 @@ import beauty from "../../../static/images/category/beauty.png";
 import baby from "../../../static/images/category/baby.png";
 import Button from "../../components/button/button";
 import APIConfig from "../../api/api";
+import { useCategoriesParsed } from "../../../helpers";
 
 const Home = () => {
   const api = new APIConfig();
 
   const renderCarousel = async () => {
     let banners = [];
-    const res = await api.loadBanners();
+    const res = await api.loadBannersAsync();
     if (res.data) {
       banners = res.data;
 
@@ -77,26 +78,14 @@ const Home = () => {
 
   const render = async () => {
     try {
-      let categories = [];
-      const res = await api.loadCategories();
-      if (res.data) {
-        categories = res.data;
-      }
-
-      let eCategories = categories.filter((cat) => cat.enabled);
-      eCategories.sort((a, b) => {
-        if (a.order > b.order) return 1;
-        else if (a.order < b.order) return -1;
-        return 0;
-      });
-
-      let ele = [];
+      let element = [];
+      let eCategories = useCategoriesParsed(await api.loadCategoriesAsync());
       eCategories.forEach((list, index) =>
-        ele.push(
+        element.push(
           renderRow({ ...list, direction: index % 2 ? "row-reverse" : "row" })
         )
       );
-      return `${await renderCarousel()} ${ele.join("")}`;
+      return `${await renderCarousel()} ${element.join("")}`;
     } catch (e) {
       console.log("__error in banners", e);
     }

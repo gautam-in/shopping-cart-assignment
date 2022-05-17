@@ -2,9 +2,9 @@
   "users": [
     {
       "email": "m@gmail.com",
-      "password": "$2a$10$yNiMN5ETyZ1lvTf1QJqlzuKn9x.3y2.wBOvabxmF4C6OnL3DHe.IG",
+      "password": "$2a$10$Jq8lDMSJJSghGC8LQAnGFOTXo/CCz8nEAlltXzoPq6C51AS3y1Pai",
       "firstname": "Mehul",
-      "lastname": "Jariwala",
+      "lastname": "",
       "id": 1
     }
   ]
