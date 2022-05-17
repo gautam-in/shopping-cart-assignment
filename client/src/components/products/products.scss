@@ -1,0 +1,143 @@
+.product-inner-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buynow-button {
+  background-color: #b92d56;
+  color: #fff;
+  border: none;
+  height: 2rem;
+}
+
+.product-description {
+  background-color: #d1cece;
+  padding: 0.4rem;
+  height: 6.5rem;
+  width: 13rem;
+  overflow: hidden;
+  font-size: 0.8rem;
+}
+
+.product-name {
+  height: 2rem;
+  font-weight: bold;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #d1cece;
+}
+
+.sidebar .sidebar-element {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  width: 15rem;
+}
+
+.sidebar .sidebar-element:hover {
+  cursor: pointer;
+}
+
+.sidebar .active {
+  background-color: #676770;
+  color: white;
+  width: 12.5rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  overflow: auto;
+}
+
+.grid-items {
+  margin: 0.5rem;
+  box-shadow: 0px 1px 3px grey;
+  padding: 0.5rem;
+  height: 23.5rem;
+  width: 14rem;
+}
+
+.product-img {
+  height: 10rem;
+  width: 12rem;
+  margin-bottom: 0.4rem;
+}
+
+.product-container {
+  display: flex;
+  margin: 0rem 3.5rem;
+}
+
+.product-list-mobile {
+  display: none;
+}
+
+.category-dropdown {
+  display: none;
+  background: #b92d56;
+  width: 100%;
+  color: #fff;
+  margin: 1rem 0rem;
+}
+
+.product-main-div {
+  display: block;
+  margin: 0.5rem 0.4rem;
+  box-shadow: 0px 2px 3px lightgrey;
+}
+
+@media screen and (max-width:480px) {
+  .product-container {
+    display: block;
+    margin: 0rem;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .grid-container {
+    display: none;
+  }
+
+  .product-list-mobile {
+    display: block;
+  }
+
+  .category-dropdown {
+    display: block;
+  }
+
+  .product-description {
+    width: 11rem;
+    margin-right: 0.2rem;
+  }
+
+  .product-img {
+    height: 8rem;
+    margin: 0.8rem;
+  }
+
+  .buynow-button {
+    width: 11rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .grid-container {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width:1024px) {
+  .grid-container {
+    grid-template-columns: auto auto auto;
+  }
+}

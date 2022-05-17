@@ -1,0 +1,29 @@
+.login-button {
+    background-color: #b92d56;
+    color: #fff;
+    border: none;
+    width: 17rem;
+    margin: 1.5rem 0rem;
+    height: 2rem;
+}
+
+.signIn-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.signIn-inner-container {
+    margin: 1rem;
+}
+
+.signIn-form-input {
+    border: none;
+    border-bottom: 1.5px solid gray;
+    height: 1.5rem;
+    width: 17rem;
+}
+
+.login-heading {
+    margin-top: 3rem;
+}
