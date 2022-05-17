@@ -20,6 +20,14 @@ const routes = {
   "/productlist": ProductList,
 };
 
+export const renderHeader = async () => {
+  let header = document.getElementById("header-container");
+  header = replaceHtml(header, await Header.render());
+  if (Header.reRender) {
+    await Header.reRender();
+  }
+};
+
 const router = async () => {
   const request = parseRequestUrl();
   const parseUrl =
@@ -27,17 +35,7 @@ const router = async () => {
     (request.id ? "/:id" : "") +
     (request.verb ? `/${request.verb}` : "");
 
-  console.log("re", request, parseUrl);
-
   const screen = routes[parseUrl] ? routes[parseUrl] : Error404;
-
-  const renderHeader = async () => {
-    let header = document.getElementById("header-container");
-    header = replaceHtml(header, await Header.render());
-    if (Header.reRender) {
-      await Header.reRender();
-    }
-  };
 
   const isUserAuthorized = () => {
     const token = window.localStorage.getItem(TOKEN_KEY);

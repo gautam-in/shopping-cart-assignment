@@ -1,8 +1,10 @@
 import Button from "../../components/button/button";
 import APIConfig from "../../api/api";
-import { useCategoriesParsed } from "../../../helpers";
+import { formatPrice, useCategoriesParsed } from "../../../helpers";
 import "./productlist.scss";
 import { forceComponentRender, parseRequestUrl } from "../../components/util";
+import CartModal from "../../components/cartModal/cartModal";
+import { renderHeader } from "../../public";
 
 export const ProductList = (listData) => {
   const { eCategories = [], eProducts = [] } = listData;
@@ -21,9 +23,9 @@ export const ProductList = (listData) => {
           <select id="dropdown__list" class='dropdown-list' >
            ${eleMobile.join("")}
           </select>
-        <ul id='sidebar-list-container' class="list" tabindex="0">
-            ${ele.join("")}
-        </ul>
+          <ul id='sidebar-list-container' class="list" tabindex="0">
+             ${ele.join("")}
+         </ul>
     </aside>
     `;
   };
@@ -34,16 +36,7 @@ export const ProductList = (listData) => {
     return ele.join("");
   };
 
-  const renderProduct = (product) => {
-    const { price, description, name, imageURL } = product;
-
-    const getPrice = () => {
-      return new Intl.NumberFormat("en-IN", {
-        style: "currency",
-        currency: "INR",
-      }).format(price);
-    };
-
+  const renderProduct = ({ price, description, name, id, imageURL }) => {
     return `
         <li class="product-card" tabindex="0">
           <h1 class="product-title" tabindex="0">${name}</h1>
@@ -57,19 +50,19 @@ export const ProductList = (listData) => {
               </div>
               <div class="product-footer" id='product-footer'>
                 <span class="product-price" tabindex="0">
-                  MRP ${getPrice()}
+                  MRP ${formatPrice(price)}
                 </span>
                 ${Button.render({
                   type: "button",
                   label: "Buy Now",
                   className: "buy-now-btn",
-                  dataAtt: price,
+                  dataAtt: id,
                 })}
                  ${Button.render({
                    type: "button",
-                   label: `Buy Now @ MRP ${getPrice()}`,
+                   label: `Buy Now @ MRP ${formatPrice(price)}`,
                    className: "buy-now-btn mobile-buy-now-btn",
-                   dataAtt: price,
+                   dataAtt: id,
                  })}
               </div>
             </div>
@@ -77,9 +70,9 @@ export const ProductList = (listData) => {
           <div class='product-md-button'>
            ${Button.render({
              type: "button",
-             label: `Buy Now @ ${getPrice()}`,
+             label: `Buy Now @ ${formatPrice(price)}`,
              className: "buy-now-btn",
-             dataAtt: price,
+             dataAtt: id,
            })}</div>
            </div>
         </li>
@@ -147,7 +140,12 @@ class ProductPage extends APIConfig {
   };
 
   onBuyNowClick = (e) => {
-    console.log("onBuyNowClick", e.target.getAttribute("data-label"));
+    const selectedProductId = e.target.getAttribute("data-label");
+    const addItem = this.eProducts.find(
+      (product) => product.id === selectedProductId
+    );
+    CartModal.addItemInCart(addItem);
+    renderHeader();
   };
 
   reRender = async () => {
@@ -161,15 +159,15 @@ class ProductPage extends APIConfig {
     const onSelectItem = async (e) => {
       const selectedId = self.BROWSER_URL.id;
       const allPath = window.location.hash.split("/");
-      const [, PATH] = allPath;
+      const [, path] = allPath;
       self.BROWSER_URL = parseRequestUrl();
       let URL = null;
       if (selectedId === e.target.id) {
         await self.handleFilteredCategories(null);
-        URL = `${window.location.origin}/#/${PATH}`;
+        URL = `${window.location.origin}/#/${path}`;
       } else {
         await self.handleFilteredCategories(e.target.id);
-        URL = `${window.location.origin}/#/${PATH}/${e.target.id}`;
+        URL = `${window.location.origin}/#/${path}/${e.target.id}`;
       }
       window.history.pushState({}, "", URL);
     };

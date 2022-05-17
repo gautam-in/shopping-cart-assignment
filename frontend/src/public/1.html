@@ -1,0 +1,25 @@
+<div id="cart__modal" class="cart-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1>
+          My Cart (${ this.cartTotalItems > 99 ? "99+" : this.cartTotalItems }
+          item)
+        </h1>
+        <span id="modal__close" class="modal-close">
+          ${iconClear({ size: "24" })}
+        </span>
+      </div>
+      <div class="modal-body">
+        ${this.renderContent()}
+        <div class="item-discount">
+          <div class="item-discount-img">
+            <img src="${lowPrice}" width="100%" alt="lowest price guaranteed" />
+          </div>
+          <div>You won't find it cheaper anywhere</div>
+        </div>
+      </div>
+      ${this.renderFooter()}
+    </div>
+  </div>
+</div>
