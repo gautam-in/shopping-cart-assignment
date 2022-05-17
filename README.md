@@ -12,4 +12,8 @@ npm run start
 # or
 yarn install
 yarn start
+
 ```
+
+To run client, use npm run build and then npm run dev
+

@@ -1,0 +1,53 @@
+@import "./colors.scss";
+
+.container {
+    padding: 5px 0px 20px 0px;
+    margin: 0px 15px;
+    border-bottom: $footer-background 2px dashed;
+    @media screen and (min-width: 720px) {
+        flex-direction: column;
+        height: 100%;
+        & > h3 {
+            height: 50px;
+        }
+    }
+}
+
+.content {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    @media screen and (min-width: 720px) {
+        flex-direction: column;
+        height: 100%;
+    }
+}
+
+.desc {
+    font-size: 14px;
+    background-color: $footer-background;
+    padding: 5px 7.5px;
+    margin-top: 0;
+    font-weight: 600;
+    @media screen and (min-width: 720px) {
+        height: 120px;
+        margin: 10px 0;
+    }
+}
+
+.details {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media screen and (min-width: 720px) {
+        width: 100%;
+    }
+}
+
+.buyNow {
+    background-color: $button-primary;
+    color: #fff;
+    padding: 10px;
+    border: none;
+}
