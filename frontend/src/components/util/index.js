@@ -1,5 +1,4 @@
 import { replaceHtml } from "../../helpers";
-import { getCartItems } from "./localStorage";
 
 export const parseRequestUrl = () => {
   const address = document.location.hash.slice(1).split("?")[0];
@@ -24,21 +23,4 @@ export const parseRequestUrl = () => {
 export const forceComponentRender = async (component) => {
   let main = document.getElementById("main-container");
   main = replaceHtml(main, await component);
-};
-
-export const showLoading = () => {
-  document.getElementById("loading-overlay").classList.add("active");
-};
-
-export const hideLoading = () => {
-  document.getElementById("loading-overlay").classList.remove("active");
-};
-
-export const redirectUser = () => {
-  console.log(getCartItems().length);
-  if (getCartItems().length !== 0) {
-    document.location.hash = "/shipping";
-  } else {
-    document.location.hash = "/";
-  }
 };
