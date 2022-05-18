@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sabka Bazaar Grocery Supplies - Online grocery store"
+    />
+    <meta
+      name="keywords"
+      content="Sabka, Bazaar, Sabka Bazaar, Sabka Bazaar Grocery Supplies, Grocery, Online Grocery, Supplies, Products"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Sabka Bazaar - Products Page</title>
+  </head>
+  <body onload="onLoad()">
+    <header class="shadow">
+      <a class="visually-hidden-focusable" href="#mainWrapper">
+        Skip to main content
+      </a>
+      <nav class="navbar navbar-expand-md navbar-light py-0">
+        <div class="container-xl main-navbar-container">
+          <a href="./index.html" class="navbar-brand">
+            <img src="./static/images/logo.png" alt="Navigate to Home page" />
+          </a>
+          <ul class="navbar-nav custom-navbar-nav d-none d-md-flex">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="./products.html"
+                >Products</a
+              >
+            </li>
+          </ul>
+          <div class="right-nav">
+            <ul class="navbar-nav d-none d-md-flex">
+              <li class="nav-item">
+                <a class="nav-link" href="./sign-in.html">Sign In</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./register.html">Register</a>
+              </li>
+            </ul>
+            <a
+              class="cart-inventory-wrapper"
+              href="#"
+              onclick="openShoppingCart(event)"
+            >
+              <img
+                class="cart-image"
+                src="./static/images/cart.svg"
+                alt="Cart"
+                width="32"
+                height="32"
+              />
+              <span class="cart-inventory" id="cartInventory"></span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div
+      class="shopping-cart-dropdown-backdrop"
+      id="shoppingCartDropdownBackdrop"
+    ></div>
+    <main class="main-wrapper" id="mainWrapper">
+      <section class="shopping-cart-dropdown" id="shoppingCartDropdown">
+        <header>
+          <h5 class="m-0 cart-heading" id="cartHeading"></h5>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            aria-label="Close"
+            onclick="closeShoppingCart()"
+          ></button>
+        </header>
+        <div class="empty-body">
+          <h3 class="">No items in your cart</h3>
+          <p class="">Your favorite items are just a click away.</p>
+        </div>
+        <div class="body d-none">
+          <div class="cart-list"></div>
+          <div class="lowest-price-tag-section">
+            <div class="card">
+              <div class="card-body">
+                <img
+                  src="./static/images/lowest-price.png"
+                  alt="Lowest price guaranteed"
+                />
+                <span>You won't find it cheaper anywhere</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="card empty-cart-footer">
+          <div class="card-body">
+            <button
+              type="button"
+              class="btn btn-lg btn-danger w-100 start-shopping-btn"
+            >
+              Start Shopping
+            </button>
+          </div>
+        </footer>
+        <footer class="card cart-footer d-none">
+          <div class="card-body">
+            <p class="text-center">Promo code can be applied on payment page</p>
+            <button
+              type="button"
+              class="btn btn-lg btn-danger w-100 proceed-to-checkout-btn"
+            >
+              <span class="button-text">Proceed to Checkout</span>
+              <div class="button-content">
+                <span class="total-amount">Rs. 187</span>
+                <i class="fa-solid fa-chevron-right"></i>
+              </div>
+            </button>
+          </div>
+        </footer>
+      </section>
+      <div class="container-xl product-container">
+        <div class="dropdown shopping-category-dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="shoppingCategoryDropdownMenu"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Filter by Shopping Category
+          </button>
+          <ul
+            class="dropdown-menu"
+            aria-labelledby="shoppingCategoryDropdownMenu"
+          ></ul>
+        </div>
+        <nav class="sidebar d-none d-md-flex" id="sidebarNav">
+          <ul class="nav w-100 flex-column"></ul>
+        </nav>
+        <section class="products-section" id="productsSection"></section>
+      </div>
+    </main>
+    <footer class="footer py-3">
+      <div class="container">
+        <span class="text-muted">
+          Copyright &#169; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+        </span>
+      </div>
+    </footer>
+    <script
+      defer
+      src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <script defer src="./node_modules/lodash/lodash.min.js"></script>
+    <script src="./products.js"></script>
+  </body>
+</html>
