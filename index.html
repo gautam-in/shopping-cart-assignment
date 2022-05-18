@@ -29,6 +29,10 @@
                     htmlCollection[index].hidden = false;
             }
         }
+        async function clickProductsTab(){
+            let t1 = await loadProducts();
+            addEvents();
+        }
     </script>
 </head>
 <body>
@@ -36,8 +40,8 @@
         <img src="./static/images/logo.png" alt="logo image" class="flex-start"/>
         <nav class="flex-start homeNav">
             <ul class="homeNavUl">
-                <li class="homeNavLi"><a onclick="changeTab(event,'home')"> Home </a></li>
-                <li class="homeNavLi"><a onclick="changeTab(event,'products');loadProducts();addEvents()"> Products </a></li>
+                <li class="homeNavLi"><a onclick="changeTab(event,'home');"> Home </a></li>
+                <li class="homeNavLi"><a onclick="changeTab(event,'products');clickProductsTab();"> Products </a></li>
             </ul>
         </nav>
         <div class="loginClass">
@@ -113,6 +117,9 @@
             <div class="products">
                 <nav class="navProducts" id="navProducts">
                     <ul id="navProductsUl" class="navProductsUl"></ul>
+                    <select id="navProductsSelect" class="navProductsSelect">
+                        <option value="all" selected> --All-- </option>
+                    </select>
                 </nav>
                 <aside>
                     <div class="navProductsContainer">
@@ -179,8 +186,10 @@
     var cartInstance = new AddtoCart();
     //home page - slideshow
     var slidePosition = 1;
-    LoadCarousels();
+    
+    homePageCateEvents();
     function addEvents() {
+        //listeners to the list
         const lis = document.querySelectorAll('.navProductsLi');
         for (let index = 0; index < lis.length; index++) {
             lis[index].addEventListener('click',function(e) {
@@ -193,6 +202,28 @@
         ulEle.addEventListener('click',function(e) {
                 filterProductsShow('all'); 
         }) 
+
+        //listeners to the dropdown
+        const opt1 = document.getElementsByClassName("navProductsSelect")[0];
+        opt1.addEventListener("change",function(){
+            if(this.value !== "all")
+                filterProductsShow(this.selectedOptions[0].id);
+            else
+                filterProductsShow('all'); 
+        })
+    }
+    async function homePageCateEvents() {
+        let i = await LoadCarousels();
+
+        //listeners to homepage categories
+        const catButtons = document.querySelectorAll(".categoryButton");
+        for (let index = 0; index < catButtons.length; index++) {
+            catButtons[index].addEventListener("click", function(e){
+                changeTab(event,'products');
+                clickProductsTab();
+                filterProductsShow(catButtons[index].id);
+            })
+        }
     }
 </script>
 </html>

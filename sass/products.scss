@@ -1,27 +1,43 @@
 @import 'style';
 
 div.products {
-    position: relative;
+    //position: relative;
+    display: flex;
 }
 
+.navProductsSelect {
+    display: none !important; //needed for mobile view only
+    background-color: $logoColor;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    margin:0px;
+    margin-top: 5px;
+    height: 30px;
+    font-size: medium;
+    option {
+        background-color: green;
+    }
+}
 nav#navProducts.navProducts {
-    background-color: green;
-    position:absolute;
-    top:0;
-    left:0;
-    height: 100%;
+   // background-color: green;
+    margin:0px;
+    flex:1;
+   // position:absolute;
+   // top:0;
+   // left:0;
+   // height: 100%;
 }
 nav.navProducts ul{
+    white-space: nowrap;
     padding-inline-start: 0px;
     display: flex;
     flex-direction: column;
     background-color: $buttonFooterbgColor;
-    flex:1;
     li {
         text-decoration: none;
         padding: 5px;
         margin: 5px;
-        height: 30px;
     }
     li:hover {
         background-color: $grayColor;
@@ -29,7 +45,8 @@ nav.navProducts ul{
 }
 aside {
    // background-color: pink;
-    margin-left:15%;
+   // margin-left:15%;
+   // border: 1px blue solid;
 }
 .navProductsContainer {
     display: flex;
@@ -49,8 +66,8 @@ section {
 .productPriceDiv {
     display: flex;
     justify-content: space-between;
-    margin:auto;
     padding: auto;
+    margin: 0px;
 }
 
 .productPriceDiv {
@@ -68,12 +85,15 @@ section img {
     min-width: 300px;
 }
 
-section > h5 {
-    min-height: 40px;
-    max-height: 120px;
+section div.cardImgDescWrap {
+  //  border: 2px green solid;
+}
+section div.cardImgDescWrap h5 {
+    height: 80px;
+    //min-height: 40px;
+    //max-height: 120px;
     background-color: $buttonFooterbgColor;
 }
-
 section div {
     min-height: 50px;
 }
@@ -82,4 +102,56 @@ section button {
     background-color: $logoColor;
     color: white;
     border:none;
+}
+section > div.productPriceDiv > button::before {
+    content: "Buy Now"
+}
+
+@media screen and (max-width: 768px) { //tablet
+    section div.cardImgDescWrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        //border: 2px red solid;
+        img {
+            min-width: 100px;
+            min-height: 100px;
+            max-width: 100px;
+            max-height: 100px;
+        }
+        h5 {
+            overflow: hidden;
+            padding: 0px;
+            width:100px;
+            height: 100px;
+            text-overflow: ellipsis; //no use
+        }
+    }
+    section {
+        height: 250px;
+        width: 200px;
+    }
+    section h5 {
+        margin-bottom: 0px;
+    }
+    section > div.productPriceDiv > h5 {
+        display: none;
+    }
+    section > div.productPriceDiv > button::before {
+        display: none;
+    }
+    section > div.productPriceDiv > button::after {
+        content: "Buy Now at Rs."  attr(data-content);
+    }
+}
+@media  screen and (max-width:375px) {
+    div.products {
+        flex-direction: column;
+    }
+    .navProductsSelect {
+        display: flex !important;
+    }
+    .navProductsUl {
+        display: none !important;
+    }
 }

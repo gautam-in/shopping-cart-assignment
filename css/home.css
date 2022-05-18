@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis");
 * {
   box-sizing: border-box;
+  margin: auto;
 }
 
 button {
@@ -25,6 +26,11 @@ nav.homeNav {
   flex-grow: 2;
 }
 
+@media screen and (max-width: 480px) {
+  header > nav.homeNav {
+    display: none;
+  }
+}
 ul.homeNavUl {
   margin: 0;
 }
@@ -45,8 +51,20 @@ ul.homeNavUl li.homeNavLi {
   border: none;
 }
 
-.cartButton {
+.row2 {
+  display: flex;
+  flex-direction: column;
+}
+
+#cartButton {
+  flex: 1;
   background-color: #eaeaea !important;
+  display: flex;
+  justify-content: space-around;
+  border: none;
+}
+#cartButton div {
+  flex: 1;
 }
 
 svg {
@@ -66,8 +84,6 @@ svg {
 
 .loginClass {
   display: flex;
-  flex-direction: column;
-  align-content: stretch;
 }
 
 footer {
@@ -172,6 +188,11 @@ footer {
   width: 50%;
 }
 
+@media screen and (max-width: 600px) {
+  .cardImageDetails {
+    padding-bottom: 10px;
+  }
+}
 .cardClass:nth-child(even) .cardImageDetails > img {
   order: 3;
 }

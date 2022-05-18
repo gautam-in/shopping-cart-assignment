@@ -4,7 +4,7 @@
   margin: auto;
 }
 
-button {
+* {
   font-family: "Dosis" !important;
 }
 
@@ -26,6 +26,11 @@ nav.homeNav {
   flex-grow: 2;
 }
 
+@media screen and (max-width: 480px) {
+  header > nav.homeNav {
+    display: none;
+  }
+}
 ul.homeNavUl {
   margin: 0;
 }
@@ -46,8 +51,20 @@ ul.homeNavUl li.homeNavLi {
   border: none;
 }
 
-.cartButton {
+.row2 {
+  display: flex;
+  flex-direction: column;
+}
+
+#cartButton {
+  flex: 1;
   background-color: #eaeaea !important;
+  display: flex;
+  justify-content: space-around;
+  border: none;
+}
+#cartButton div {
+  flex: 1;
 }
 
 svg {
@@ -67,8 +84,6 @@ svg {
 
 .loginClass {
   display: flex;
-  flex-direction: column;
-  align-content: stretch;
 }
 
 footer {
@@ -79,36 +94,43 @@ footer {
 }
 
 div.products {
-  position: relative;
+  display: flex;
+}
+
+.navProductsSelect {
+  display: none !important;
+  background-color: #d10157;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  margin-top: 5px;
+  height: 30px;
+  font-size: medium;
+}
+.navProductsSelect option {
+  background-color: green;
 }
 
 nav#navProducts.navProducts {
-  background-color: green;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
+  margin: 0px;
+  flex: 1;
 }
 
 nav.navProducts ul {
+  white-space: nowrap;
   padding-inline-start: 0px;
   display: flex;
   flex-direction: column;
   background-color: #eaeaea;
-  flex: 1;
 }
 nav.navProducts ul li {
   text-decoration: none;
   padding: 5px;
   margin: 5px;
-  height: 30px;
 }
 nav.navProducts ul li:hover {
   background-color: #bdc2ce;
-}
-
-aside {
-  margin-left: 15%;
 }
 
 .navProductsContainer {
@@ -130,8 +152,8 @@ section {
 .productPriceDiv {
   display: flex;
   justify-content: space-between;
-  margin: auto;
   padding: auto;
+  margin: 0px;
 }
 
 .productPriceDiv h5 {
@@ -147,9 +169,8 @@ section img {
   min-width: 300px;
 }
 
-section > h5 {
-  min-height: 40px;
-  max-height: 120px;
+section div.cardImgDescWrap h5 {
+  height: 80px;
   background-color: #eaeaea;
 }
 
@@ -161,6 +182,65 @@ section button {
   background-color: #d10157;
   color: white;
   border: none;
+}
+
+section > div.productPriceDiv > button::before {
+  content: "Buy Now";
+}
+
+@media screen and (max-width: 768px) {
+  section div.cardImgDescWrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  section div.cardImgDescWrap img {
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+  }
+  section div.cardImgDescWrap h5 {
+    overflow: hidden;
+    padding: 0px;
+    width: 100px;
+    height: 100px;
+    text-overflow: ellipsis;
+  }
+
+  section {
+    height: 250px;
+    width: 200px;
+  }
+
+  section h5 {
+    margin-bottom: 0px;
+  }
+
+  section > div.productPriceDiv > h5 {
+    display: none;
+  }
+
+  section > div.productPriceDiv > button::before {
+    display: none;
+  }
+
+  section > div.productPriceDiv > button::after {
+    content: "Buy Now at Rs." attr(data-content);
+  }
+}
+@media screen and (max-width: 375px) {
+  div.products {
+    flex-direction: column;
+  }
+
+  .navProductsSelect {
+    display: flex !important;
+  }
+
+  .navProductsUl {
+    display: none !important;
+  }
 }
 
 /*# sourceMappingURL=products.css.map */

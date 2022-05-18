@@ -13,7 +13,7 @@ $buttonFooterbgColor:#eaeaea;
   margin:auto;
 }
 
-button {
+* {
   font-family: "Dosis" !important;
 }
 body {
@@ -30,13 +30,18 @@ header {
    // background-color: lightblue;
 }
 
+
 nav.homeNav {
     display: flex;
     justify-content: flex-start;
-   // background-color: green;
     flex-grow: 2;
-
 }
+@media screen and (max-width: 480px) {
+    header > nav.homeNav {
+        display: none;
+    }
+}
+
 ul.homeNavUl {
     margin:0;
     li.homeNavLi {

@@ -4,7 +4,8 @@ var result;
 
 async function loadProducts() {
     try {
-        var navProducts = document.querySelector('.navProductsUl');
+        let navProducts = document.querySelector('.navProductsUl');
+        let navProductsSelect = document.querySelector('.navProductsSelect');
         //run this if loop only once
         if(localStorage['category'] && navProducts.childElementCount == 0) {
             let liData = JSON.parse(localStorage['category']);
@@ -14,11 +15,17 @@ async function loadProducts() {
                 liEle.className = "navProductsLi";
                 liEle.id = liData[index].id;
                 navProducts.appendChild(liEle);
+
+                let option = document.createElement("option")
+                option.innerText = liData[index].name;
+                option.className = "navProductsOption";
+                option.id = liData[index].id;
+                navProductsSelect.appendChild(option);
             }
         }
         result = await GetProducts();
         result = JSON.parse(result);
-        formUi(result);
+        let t1 = await formUi(result);
     } catch (error) {
         console.log(error + " products page error");
     }
@@ -26,7 +33,7 @@ async function loadProducts() {
 
 
 //formUI Products page 
-function formUi(result) {
+async function formUi(result) {
     var prodContainer = document.querySelector('.navProductsContainer');
     //remove all children
     //optimise here, instead of removing filter the children if possible
@@ -50,11 +57,15 @@ function formUi(result) {
 
         let imgEle = document.createElement("img");
         imgEle.src = prodItem.url = result[index].imageURL;
-        sectionEle.appendChild(imgEle);
+       // sectionEle.appendChild(imgEle);
 
         let h5Ele = document.createElement("h5");
         h5Ele.innerText = result[index].description;
-        sectionEle.appendChild(h5Ele);
+       // sectionEle.appendChild(h5Ele);
+
+        sectionEle.innerHTML += `<div class="cardImgDescWrap"></div>`;
+        sectionEle.querySelector(".cardImgDescWrap").append(imgEle);
+        sectionEle.querySelector(".cardImgDescWrap").append(h5Ele);
 
         let priceDiv = document.createElement("div");
         priceDiv.className = "productPriceDiv";
@@ -65,7 +76,8 @@ function formUi(result) {
         prodItem.quantity = result[index].stock;
         
         let butEle = document.createElement("button");
-        butEle.innerText = "Buy Now";
+        butEle.setAttribute("data-content",result[index].price);
+        butEle.innerText = "";
         butEle.addEventListener('click',() =>  {
             sendRequest(result[index].id)
         })
@@ -79,7 +91,7 @@ function formUi(result) {
     }
     localStorage['products'] = JSON.stringify(prodStorage);
 }
-//filter products
+//filter products based on
 function filterProductsShow(categoryId) {
 
     let sections = document.querySelectorAll('.navProductsContainer > section');
@@ -104,6 +116,5 @@ function sendRequest(id) {
 
     cartInstance.addItems(id);
 
-    //Dhivya, put a post and send true response
     return true;
 }

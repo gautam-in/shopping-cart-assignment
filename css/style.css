@@ -26,6 +26,11 @@ nav.homeNav {
   flex-grow: 2;
 }
 
+@media screen and (max-width: 480px) {
+  header > nav.homeNav {
+    display: none;
+  }
+}
 ul.homeNavUl {
   margin: 0;
 }

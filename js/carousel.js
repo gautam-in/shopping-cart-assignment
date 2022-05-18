@@ -33,7 +33,10 @@ async function LoadCarousels() {
         
         slideContainer.appendChild(divDotsEle);
         SlideShowAuto();
-        LoadCategories();
+        let r1 = await LoadCategories();
+        return new Promise((resolve,reject) => {
+            resolve("success");
+        });
 
     } catch (err) {
             console.log(err + "carousel not loaded");
@@ -112,8 +115,11 @@ async function LoadCategories() {
             h3Ele.innerText = result[index].name;
             let h5Ele = document.createElement("h5");
             h5Ele.innerText = result[index].description;
+
             let buttonEle = document.createElement("button");
             buttonEle.textContent = "Explore " + result[index].name;
+            buttonEle.className = "categoryButton";
+            buttonEle.id = result[index].id;
 
             textDiv.appendChild(h3Ele);
             textDiv.appendChild(h5Ele);
