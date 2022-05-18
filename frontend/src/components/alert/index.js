@@ -8,7 +8,6 @@ const Alert = (text = "") => {
     >
       <div class="alert-container__icon">
         <svg
-          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
           focusable="false"
           aria-hidden="true"
           viewBox="0 0 24 24"
