@@ -52,7 +52,6 @@
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  overflow: auto;
 }
 
 .grid-items {
@@ -130,7 +129,7 @@
   }
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:768px) {
   .grid-container {
     grid-template-columns: auto auto;
   }

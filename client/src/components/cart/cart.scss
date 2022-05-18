@@ -25,10 +25,10 @@
     text-align: center;
     width: 25rem;
     height: 27rem;
-    margin-left: 21.2rem;
+     margin-left: 51.5rem;
 
     .heading {
-        padding: 1rem 0rem 0rem 1rem;
+        padding: 0.8rem 0rem 0rem 1rem;
         margin-bottom: 2.5rem solid #ece9e9;
         text-align: start;
         background-color: #000;
@@ -46,7 +46,7 @@
         height: 2rem;
         position: fixed;
         bottom: 3rem;
-        right: 3.4rem;
+        right: 3.5rem;
     }
 
     .checkout-text {
@@ -55,7 +55,7 @@
 
     .icon {
         float: right;
-        margin: 0.5rem 1rem;
+        margin: 0.4rem 1rem;
     }
 
     .cart-item-container {
@@ -136,12 +136,12 @@
 
 @media screen and (max-width:480px) {
     .cart {
-        margin: 0rem 0.4rem;
+        margin: 0rem 0rem;
         background-color: #fff;
-        width: 25.4rem;
+        width: 25.6rem;
 
         .shopping-button {
-            right: 0.4rem;
+            right: 0rem;
         }
 
         .checkout-button {
@@ -151,5 +151,12 @@
         .cart-footer{
             bottom: 1.4rem;
         }
+    }
+}
+
+@media screen and (min-width:480px) and (max-width:768px) {
+    .cart {
+        margin-left: 19.5rem;
+        height: 56rem;
     }
 }
