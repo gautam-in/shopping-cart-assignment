@@ -19,6 +19,8 @@ const defaultFormFields = {
 };
 
 const SignIn = () => {
+
+    // const { setCurrentUser} = useContext(UserContext);
     // useEffect(() => {
     //     async function fetchData() {
     //         // You can await here
@@ -46,11 +48,9 @@ const SignIn = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await signInUserWithEmailAndPassword(email, password);
-            console.log(response);
+            await signInUserWithEmailAndPassword(email, password);
             resetFormFields();
         } catch (error) {
-            console.log(error);
             switch (error.code) {
                 case 'auth/wrong-password':
                     alert('Please enter valid email and password');
@@ -69,9 +69,7 @@ const SignIn = () => {
     }
 
     const logGoogleUser = async () => {
-        const {user} = await signInWithGooglePopup();
-        const userDocRef = await createUserDocumentFromAuth(user);
-        console.log(user);
+         await signInWithGooglePopup();
     }
     return (
         <div className="authentication">
