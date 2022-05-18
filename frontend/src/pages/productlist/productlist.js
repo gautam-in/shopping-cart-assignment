@@ -97,6 +97,7 @@ class ProductPage extends APIConfig {
     this.eProducts = [];
     this.filteredProducts = [];
     this.BROWSER_URL = parseRequestUrl();
+    this.selected = null;
   }
 
   render = async () => {
@@ -118,7 +119,9 @@ class ProductPage extends APIConfig {
     for (const i of liList) {
       i.classList.remove("selected");
     }
-    if (liId) document.getElementById(liId).classList.add("selected");
+    if (liId) {
+      document.getElementById(liId).classList.add("selected");
+    }
   };
 
   handleFilteredCategories = async (selectedId) => {
@@ -162,16 +165,18 @@ class ProductPage extends APIConfig {
     }
 
     const onSelectItem = async (e) => {
-      const selectedId = self.BROWSER_URL.id;
       const allPath = window.location.hash.split("/");
       const [, path] = allPath;
       self.BROWSER_URL = parseRequestUrl();
       let URL = null;
-      if (selectedId === e.target.id) {
+
+      if (self.selected === e.target.id) {
         await self.handleFilteredCategories(null);
         URL = `${window.location.origin}/#/${path}`;
+        self.selected = null;
       } else {
         await self.handleFilteredCategories(e.target.id);
+        self.selected = e.target.id;
         URL = `${window.location.origin}/#/${path}/${e.target.id}`;
       }
       window.history.pushState({}, "", URL);

@@ -146,6 +146,30 @@ export class LoginState {
       this.validForm("email", e.target.value);
     });
 
+    emailInput.addEventListener("blur", (e) => {
+      const inputEle = document.getElementById("input-email");
+      const inputLabel = document.getElementById("label-email");
+      if (inputEle.value) {
+        inputLabel.style.top = "-7px";
+        inputLabel.style.fontSize = "11px";
+      } else {
+        inputLabel.style.top = "-2px";
+        inputLabel.style.fontSize = "14px";
+      }
+    });
+
+    passInput.addEventListener("blur", (e) => {
+      const inputEle = document.getElementById("input-password");
+      const inputLabel = document.getElementById("label-password");
+      if (inputEle.value) {
+        inputLabel.style.top = "-7px";
+        inputLabel.style.fontSize = "11px";
+      } else {
+        inputLabel.style.top = "-2px";
+        inputLabel.style.fontSize = "14px";
+      }
+    });
+
     passInput.addEventListener("input", (e) => {
       this.validForm("pass", e.target.value);
     });

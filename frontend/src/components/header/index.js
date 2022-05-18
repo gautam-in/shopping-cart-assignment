@@ -17,7 +17,7 @@ const Header = {
             <div class="header-container__items">
               <div class="header-container__links">
                 <h6><a href="/">SignIn</a></h6>
-                <h6><a href="#/register">Resgister</a></h6>
+                <h6><a href="#/register">Register</a></h6>
               </div>
               <div class="header-container__items--menu">
                 <ul class="header-container__items--links">
@@ -26,10 +26,10 @@ const Header = {
                   </li>
                   <li><a href="#/productlist">Products</a></li>
                 </ul>
-                <div class="header-container__items--cart">
-                <div class='header-container__items--cart-icon' id='cart-icon' role='button' aria-label='view cart details'>${iconCart()}</div>
-                <div id="cart-btn">
-                    <div tabindex='0' class="header-container__items--cart-count">${cartTotal} items</div>
+                <div class="header-container__items--cart" role='button' tabindex='0'  >
+                <div class='header-container__items--cart-icon' id='cart-icon'  role='button' aria-label='view cart details'>${iconCart()}</div>
+                <div id="cart-btn" class="header-container__items--cart-btn">
+                    <div  class="header-container__items--cart-count">${cartTotal} items</div>
                   </div>
                   ${await cartModal.render()}
                 </div>

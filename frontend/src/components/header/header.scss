@@ -87,11 +87,23 @@
       }
     }
 
+    &--cart-btn {
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      padding-right: 28px;
+
+      @include bp("sm") {
+        padding-right: 16px;
+      }
+
+    }
+
     &--cart {
       background: #d3d3d378;
       margin-top: 8px;
       min-height: 60px;
-      min-width: 150px;
       font-weight: 600;
       place-content: center;
       position: relative;
@@ -117,6 +129,16 @@
     }
 
     &--cart-icon {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 24px;
+
+      @include bp("sm") {
+        padding-left: 0px;
+      }
+
       svg {
         fill: #d10157;
       }

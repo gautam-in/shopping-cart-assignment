@@ -20,7 +20,7 @@ const Login = () => {
       <form id="form-container" class="auth-container__action">
           <div>
             <input name="email" type="email" id="input-email" required />
-            <label for="input-email">Email*</label>
+            <label id="label-email" for="input-email">Email*</label>
             <span
               id="email-error"
               class="auth-container__action--error"
@@ -34,7 +34,7 @@ const Login = () => {
               minlength="6"
               required
             />
-            <label for="input-password">Password*</label>
+            <label id="label-password" for="input-password">Password*</label>
             <span
               id="password-error"
               class="auth-container__action--error"

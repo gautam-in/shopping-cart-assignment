@@ -15,9 +15,9 @@ const Home = () => {
 
       const row = async () => {
         let ele = [];
-        banners.map((banner) =>
+        banners.map((banner, key) =>
           ele.push(`
-        <article> <img src=${banner.bannerImageUrl} style='width:100%' alt=${banner.bannerImageAlt} /> </article>
+        <article> <img  tabindex=0 src=${banner.bannerImageUrl} style='width:100%' alt="${banner.bannerImageAlt}" /> </article>
           `)
         );
 
@@ -25,29 +25,29 @@ const Home = () => {
       };
 
       return `<div class="carousel-wrapper" id='carousel-wrapper'>
-              <input checked type="radio" name="slider" id="slide1" />
-              <input type="radio" name="slider" id="slide2" />
-              <input type="radio" name="slider" id="slide3" />
-              <input type="radio" name="slider" id="slide4" />
-              <input type="radio" name="slider" id="slide5" />
+              <input checked  aria-hidden='true' type="radio" name="slider" id="slide1" />
+              <input type="radio" aria-hidden='true' name="slider" id="slide2" />
+              <input type="radio" aria-hidden='true' name="slider" id="slide3" />
+              <input type="radio" aria-hidden='true' name="slider" id="slide4" />
+              <input type="radio" aria-hidden='true' name="slider" id="slide5" />
                 <div class="slider-wrapper">
-                  <div class="inner" tabindex='0'>
+                  <div class="inner" >
                   ${await row()}
                   </div>
                 </div>
                 <div class="slider-prev-next-control">
-                  <label for="slide1" tabindex='0' ></label>
-                  <label for="slide2" tabindex='0' ></label>
-                  <label for="slide3" tabindex='0' ></label>
-                  <label for="slide4" tabindex='0' ></label>
-                  <label for="slide5" tabindex='0' ></label>
+                  <label  for="slide1" tabindex='0' ></label>
+                  <label  for="slide2" tabindex='0' ></label>
+                  <label  for="slide3" tabindex='0' ></label>
+                  <label  for="slide4" tabindex='0' ></label>
+                  <label  for="slide5" tabindex='0' ></label>
                 </div>
                 <div class="slider-dot-control">
-                  <label for="slide1" tabindex='0' ></label>
-                  <label for="slide2" tabindex='0' ></label>
-                  <label for="slide3" tabindex='0' ></label>
-                  <label for="slide4" tabindex='0' ></label>
-                  <label for="slide5" tabindex='0' ></label>
+                 <label  for="slide1" tabindex='0' ></label>
+                  <label  for="slide2" tabindex='0' ></label>
+                  <label  for="slide3" tabindex='0' ></label>
+                  <label  for="slide4" tabindex='0' ></label>
+                  <label  for="slide5" tabindex='0' ></label>
                 </div>
             </div>`;
     }
