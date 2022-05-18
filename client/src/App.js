@@ -2,6 +2,7 @@ import {useEffect} from 'react';
 import {BrowserRouter} from 'react-router-dom';
 import axios from 'axios';
 
+import Header from './Components/Header/Header.component';
 import AppRoutes from './AppRoutes/AppRoutes';
 
 function App() {
@@ -14,9 +15,7 @@ function App() {
     <>
     <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        Header
-      </header>
+      <Header />
     </div>
 
     <AppRoutes />

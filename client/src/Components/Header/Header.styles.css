@@ -1,0 +1,40 @@
+
+.App-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    border-bottom: 1px solid;
+    padding: 0 10rem;
+  }
+  
+  .header__links--container {
+    flex-basis: 50%;
+    display: flex;
+    gap: 3rem;
+  }
+  
+  .header__auth--section {
+    display: flex;
+    gap: 1.2rem;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header__auth--container {
+    display: flex;
+    gap: 0.6rem;
+  }
+  .header__link, .header__link:active, .header__link:focus, .header__link:hover {
+    text-decoration: none;
+  }
+  .header__auth--cartcontainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #ccc;
+    padding: 0.2rem;
+  }
+  
+  img.header__auth--cart-img {
+    width: 2.5rem;
+  }
