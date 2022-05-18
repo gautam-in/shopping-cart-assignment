@@ -23,7 +23,7 @@ const Header = (props) => {
                         <li key="register"><Link className="link-text" to="signUp">Register</Link></li>
                     </ul>
                 </nav>
-                <Link className="cart-button" to="/cart"> <img className="cart-img" src="static/images/cart.svg" /> <div className="cart-items">{props.cartItemCount.length} items</div></Link>
+                <Link className="cart-button" to="/cart"> <img className="cart-img" src="static/images/cart.svg" alt="cart-img"/> <div className="cart-items">{props.cartItemCount.length} items</div></Link>
             </div>
             <Outlet />
         </header>

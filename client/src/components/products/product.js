@@ -49,7 +49,7 @@ const Product = (props) => {
     const renderProductList = () => {
         return (<>
             {productList.map((product) => {
-                return <section className="grid-items">
+                return <section className="grid-items" key={product.id}>
                     <h6 className="product-name">{product.name}</h6>
                     <img className="product-img" src={product.imageURL} alt={product.name} />
                     <p className="product-description">{product.description}</p>
@@ -66,7 +66,7 @@ const Product = (props) => {
     const renderProductListMobile = () => {
         return (<>
             {productList.map((product) => {
-                return <section className="product-main-div">
+                return <section className="product-main-div" key={product.id}>
                     <h6 className="product-name">{product.name}</h6>
                     <div className="product-inner-div">
                         <img className="product-img" src={product.imageURL} alt={product.name} />
@@ -99,7 +99,6 @@ const Product = (props) => {
             <select name="products" id="productList" className="category-dropdown" onChange={(e) => onCategorySelect(e)}>
                 {props.category.map((category) => {
                     if (category.order != -1)
-                        <option value="volvo">Volvo</option>
                     return <option className={categoryId !== undefined && categoryId == category.id ? "sidebar-element active" : "sidebar-element"} value={category.id}>{category.name}</option>
                 })}
             </select>

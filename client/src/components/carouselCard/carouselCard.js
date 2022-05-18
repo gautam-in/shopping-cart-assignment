@@ -8,11 +8,11 @@ const CarouselCard = (props) => {
     <Carousel className="carousel-container">
       {props.bannerData && props.bannerData.map((banner) => {
         return (
-          <Carousel.Item key={banner.id} interval={1000}>
+          <Carousel.Item key={banner.id} interval={1000} active={banner.isActive}>
             <img
               className="d-block w-100 banner-img"
               src={banner.bannerImageUrl}
-              alt="First slide"
+              alt={banner.bannerImageAlt}
             />
           </Carousel.Item>
         );

@@ -16,7 +16,7 @@ const Category = (props) => {
             var order = category.order % 2 == 0 ? true : false;
             if (category.order != -1)
                 return (<section key={index} className="category-container" id={category.id} style={{ flexDirection: order ? "row-reverse" : "row" }}>
-                    <img className="category-img" src={category.imageUrl} />
+                    <img className="category-img" src={category.imageUrl} alt={category.name} />
                     <div className="category-inner-container">
                         <h5>{category.name}</h5>
                         <p>{category.description}</p>
