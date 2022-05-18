@@ -1,0 +1,3 @@
+export const BANNER_ACTION_TYPES = {
+    SET_BANNER_DATA : 'banner/SET_BANNER_DATA'
+}

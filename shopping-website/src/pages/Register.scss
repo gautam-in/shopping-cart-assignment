@@ -1,0 +1,40 @@
+
+
+.registerContainer {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    flex-grow: 1;
+
+    @media screen and (min-width:768px){
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.registerHeading {
+    white-space: nowrap;
+}
+
+.registerDesc {
+    padding-left: 10px;
+}
+
+.registerForm {
+    align-self: stretch;
+    padding: 0 40px;
+    padding-top: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.submitButton {
+        background-color: rgb(234, 70, 124);
+        color: white;
+        width: 90%;
+        padding-top: 15px;
+        padding-bottom: 1px;
+        border-radius: 5px;
+        border: none;
+}

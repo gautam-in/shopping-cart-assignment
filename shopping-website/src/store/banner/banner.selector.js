@@ -1,0 +1,1 @@
+export const selectBannerData = (state) => state.banner.bannerItems;

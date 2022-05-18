@@ -1,0 +1,44 @@
+
+.categoryCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 8px 6px -8px gray;
+    margin-bottom: 20px;
+}
+
+.categoryCard:nth-child(2n) {
+    flex-direction: row-reverse;
+}
+
+.categoryCardImage {
+    width: 150px;
+    height: 100px;
+
+    @media screen and (min-width:768px) {
+        width: 200px;
+        height: 150px;
+    }
+
+    @media screen and (min-width:1024px) {
+        width: 250px;
+        height: 200px;
+    }
+}
+
+.categoryCardInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categoryCardName {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.categoryCardDescription {
+    text-align: center;
+}
