@@ -1,0 +1,215 @@
+*:focus,
+*:-moz-focusring {
+  outline: 0;
+}
+
+/*
+ * I like leading to be opt-in rather than opt-out so I can easily see what I
+ * have or have not already assigned a leading utility. Otherwise there may be
+ * places where you unintentionally have 1.5 leading where you meant to have
+ * 1.375 or 1.625, for example, and you may not catch it.
+ */
+html {
+  line-height: 1;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*
+ * Otherwise if a <li> element appears outside of an <ol> or <ul> parent, for
+ * whatever reason, browsers will automatically add a bullet to it.
+ */
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0px;
+}
+
+ol li,
+ul li {
+  list-style-type: inherit;
+  margin: 0;
+  padding: 0px;
+}
+
+ul.reset,
+ul.reset li,
+ul.reset ul li {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  list-style-type: 0;
+}
+
+/*
+ * Otherwise browsers will automatically set the font family to monospace, which
+ * might not be a part of your brand’s style guide.
+ */
+code,
+pre,
+kbd,
+samp {
+  font-family: inherit;
+}
+
+/*
+ * Otherwise browsers will automatically set the font weight to bold, which
+ * might not be a part of your brand’s style guide. For example, you might use
+ * medium (500) or semibold (600) instead of bold (700) in your brand style
+ * guide and without this you may not catch it.
+ */
+b,
+strong {
+  font-weight: inherit;
+}
+
+/*
+ * Otherwise browsers will automatically make these italic.
+ */
+address,
+cite,
+dfn,
+em,
+i,
+var {
+  font-style: inherit;
+}
+
+/*
+ * Otherwise browers will automatically add a line through or underline.
+ */
+del,
+ins,
+s,
+u {
+  text-decoration: none;
+}
+
+/*
+ * Otherwise browsers will automatically reset the text color to stark black and
+ * add a yellow background.
+ */
+mark {
+  background-color: transparent;
+  color: inherit;
+}
+
+
+
+q::before {
+  content: open-quote;
+}
+
+q::after {
+  content: close-quote;
+}
+
+/*
+ * Otherwise browsers will automatically reduce the font-size to 80-85%, which
+ * might not be a part of your brand’s type scale.
+ */
+small,
+sub,
+sup {
+  font-size: inherit;
+}
+
+/*
+ * Otherwise SVGs without a fill specified will just show up as stark black,
+ * which might not be a part of your brand’s color palette.
+ */
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+/*
+ * Otherwise browsers will automatically center the text.
+ */
+caption,
+th {
+  text-align: inherit;
+}
+
+/*
+ * Otherwise browsers will automatically set the font weight to bold, which
+ * might not be a part of your brand’s font weight scale.
+ */
+th {
+  font-weight: inherit;
+}
+
+/*
+ * Otherwise browsers will automatically add 2px of spacing between table
+ * elements, which may break your spacing scale.
+ */
+table {
+  border-spacing: 0;
+}
+
+/*
+ * Otherwise browsers will automatically round corners and center the text.
+ */
+button {
+  border-radius: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+}
+
+select {
+  text-transform: inherit;
+}
+
+/*
+ * Otherwise browsers will automatically center the text, but forget to add a
+ * pointer on hover.
+ */
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  text-align: inherit;
+  cursor: pointer;
+}
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+  outline: 0;
+}
+
+/*
+ * Otherwise the color will be set by a previous declaration in preflight, which
+ * might not be a part of your brand’s color palette, and the opacity will be
+ * reduced too much for readability.
+ */
+input::placeholder,
+textarea::placeholder {
+  color: inherit;
+  opacity: 0.75;
+}
+
+script,
+[hidden] {
+  display: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}

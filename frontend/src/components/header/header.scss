@@ -1,0 +1,162 @@
+@import "../../styles/_mixins.scss";
+
+.header-container {
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  box-shadow: 4px 3px 5px 0px #e4dbdbbf;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  position: static;
+  background-color: #ffff;
+  color: rgb(255, 255, 255);
+  position: sticky;
+  top: 0px;
+
+  &__logo {
+    padding-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 200px;
+
+      @include bp("md") {
+        width: 170px;
+      }
+
+      @include bp("sm") {
+        width: 100px;
+      }
+    }
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    color: black;
+    max-width: 1280px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  &__links {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+    font-size: 1.3rem;
+    gap: 16px;
+    margin-bottom: 8px;
+
+    @include bp("sm") {
+      display: none;
+    }
+
+    h6 {
+      font-weight: 600;
+    }
+  }
+
+  &__items {
+    width: 100%;
+    margin-right: 16px;
+
+    @include bp('sm') {
+      margin-right: 0px;
+    }
+
+    &--menu {
+      display: flex;
+    }
+
+    &--links {
+      display: flex;
+      margin-top: 25px;
+      gap: 30px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      position: relative;
+      left: 100px;
+      flex: 1 1 auto;
+
+      @include bp("sm") {
+        left: 0px;
+      }
+    }
+
+    &--cart-btn {
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      padding-right: 28px;
+
+      @include bp("sm") {
+        padding-right: 16px;
+      }
+
+    }
+
+    &--cart {
+      background: #d3d3d378;
+      margin-top: 8px;
+      min-height: 60px;
+      font-weight: 600;
+      place-content: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      cursor: pointer;
+
+
+
+      &:hover {
+        ~.content {
+          visibility: visible;
+        }
+      }
+
+      @include bp("sm") {
+        min-width: 80px;
+        min-height: 30px;
+        margin-top: 0px;
+        padding: 8px;
+      }
+    }
+
+    &--cart-icon {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 24px;
+
+      @include bp("sm") {
+        padding-left: 0px;
+      }
+
+      svg {
+        fill: #d10157;
+      }
+    }
+
+    &--cart-count {
+      min-height: 60px;
+      min-width: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+
+      @include bp("sm") {
+
+        min-width: auto;
+      }
+    }
+  }
+}

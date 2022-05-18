@@ -1,0 +1,241 @@
+@import "../../styles/_mixins.scss";
+
+.cart-modal {
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    display: none;
+    animation: fadein .5s;
+
+    @include bp('md') {
+        right: -15px;
+    }
+
+    @include bp('sm') {
+        right: 0px;
+    }
+
+    .modal-dialog {
+        box-shadow: 0 2px 10px 0 #0000001a;
+        border: 0;
+        left: 0;
+        height: 85vh;
+        border-radius: 0;
+        background: #eeeeee;
+        width: 600px;
+
+
+        @include bp('md') {
+            width: 100vw;
+            height: calc(100vh - 100px);
+        }
+
+        @include bp('sm') {
+            height: calc(100vh - 60px);
+        }
+    }
+
+    .modal-body {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    .modal-header {
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        color: white;
+        padding: 8px 16px;
+        background: #1d2124;
+        justify-content: space-between;
+
+
+        @include bp('md') {
+            background: white;
+            color: #1d2124;
+        }
+
+        @include bp('sm') {
+            background: white;
+            color: #1d2124;
+        }
+
+        .modal-close {
+            cursor: pointer;
+
+
+            @include bp('md') {
+                display: none;
+            }
+
+            @include bp('sm') {
+                display: none;
+            }
+
+        }
+
+        h1 {
+            font-size: 1.2rem;
+        }
+    }
+
+    .modal-footer {
+        position: absolute;
+        bottom: 0;
+        min-height: 120px;
+        background: white;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-top: 2px solid lightgray;
+
+        p {
+            color: #3d3d3d
+        }
+    }
+
+    .procced-btn {
+        width: 95%;
+        height: 50px;
+        padding: 16px;
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1rem;
+
+            .checkout-container {
+                display: flex;
+            }
+
+            .start-shopping {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+
+
+            }
+        }
+    }
+
+    .item-container {
+        background: white;
+        display: flex;
+        background: white;
+        display: flex;
+        gap: 10px;
+        padding: 24px 8px;
+        margin-top: 16px;
+
+
+        .item-name {
+            font-weight: 700;
+            padding-bottom: 4px;
+        }
+
+        .item-image {
+            width: 60px;
+        }
+
+        .item-content {
+            flex: 1 1 auto;
+        }
+
+        .item-action {
+            display: flex;
+            align-items: center;
+            padding-top: 8px;
+
+            svg {
+                background: #d10157;
+                color: white;
+                border-radius: 16px;
+                padding: 2px;
+                cursor: pointer;
+            }
+
+            .item-add-btn,
+            .item-remove-btn {
+                border: none;
+                background: transparent;
+            }
+        }
+
+        .item-footer {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-weight: normal;
+
+
+
+        }
+
+        .item-price-row {
+            position: relative;
+            top: 3px;
+        }
+
+        .item-total-price {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            font-weight: 100;
+            padding-right: 8px;
+        }
+
+        .item-qty {
+            font-size: 1rem;
+            margin: 0px 16px;
+            position: relative;
+            bottom: 2px;
+        }
+
+
+
+    }
+
+    .no-cart-container {
+        display: flex;
+        justify-content: center;
+        height: 90%;
+        align-items: center;
+        flex-direction: gap;
+        flex-direction: column;
+        gap: 10px;
+
+        h1 {
+            font-size: 20px;
+            padding-bottom: 8px;
+        }
+    }
+
+    .item-discount {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-weight: 100;
+        background: white;
+        margin: 8px;
+        padding: 8px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+
+        .item-discount-img {
+            width: 80px;
+        }
+    }
+
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,17 @@
+.button-wrapper {
+    width: 100%;
+    height: 40px;
+    background-color: #d10157;
+    color: white;
+    border-style: none;
+    cursor: pointer;
+    margin: 10px 0;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 18px;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}

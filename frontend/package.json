@@ -1,0 +1,47 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "webpack-start": "webpack-dev-server  --config webpack.dev.js",
+    "start": "concurrently \"npm run webpack-start\" \"npm run auth-server-start\" \"npm run db-server-start\"",
+    "auth-server-start": "json-server db.json -m ./node_modules/json-server-auth",
+    "build": "webpack --config webpack.prod.js",
+    "db-server-start": "canned -p 5001 ../backend/server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-loader": "^8.2.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "bootstrap": "^4.3.1",
+    "css-loader": "^2.1.0",
+    "file-loader": "^3.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.3.1",
+    "json-server": "^0.17.0",
+    "json-server-auth": "^2.1.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "popper.js": "^1.14.7",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.17.10",
+    "axios": "^0.27.2",
+    "canned": "^0.3.13",
+    "clean-webpack-plugin": "^2.0.0",
+    "concurrently": "^7.2.0",
+    "copy-webpack-plugin": "^10.2.4"
+  }
+}
