@@ -1,0 +1,36 @@
+
+.productCategoryMobile {
+    background-color: rgb(234, 70, 124);
+    color: white;
+}
+
+.productCategory {
+
+    @media screen and (min-width:768px){
+        background-color: rgb(230, 223, 223);
+        text-align: center;
+        color: black;
+        padding-top: 10px;
+    }
+    p {
+        white-space: nowrap;
+    }
+    div:hover {
+        cursor: pointer;
+    }
+
+}
+
+.productCategoryItemDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+.dropdown {
+    width:100%;
+     background-color: rgb(234, 70, 124);
+      padding: 10px 20px;
+       color: white;
+}

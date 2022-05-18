@@ -1,0 +1,12 @@
+
+.loginForm {
+   // align-self: stretch;
+    padding: 0 40px;
+    padding-top: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+
+    @media screen and (min-width:768px){
+        width: 60%;
+    }
+}

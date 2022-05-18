@@ -1,0 +1,16 @@
+
+
+.footerContainer {
+    width: 100%;
+    background-color: #d3d3d3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 0;
+    align-self: flex-end;
+}
+
+.footerText {
+    text-align: center;
+    font-weight: bold;
+}
