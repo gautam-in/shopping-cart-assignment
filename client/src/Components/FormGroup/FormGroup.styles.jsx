@@ -36,6 +36,7 @@ export const FormInput = styled.input`
     background: #fff;
     padding: 0.8rem 0;
     font-size: 1rem;
+    width:100%;
     transition: 0.3s ease all;
 
     &:focus{

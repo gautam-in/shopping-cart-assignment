@@ -16,11 +16,11 @@ function App() {
     <>
     <BrowserRouter>
     <div className="App">
-      <Header />
-  
-    <AppRoutes />
+        <Header />
     
-    <Footer />
+      <AppRoutes />
+      
+      <Footer />
     </div>
     </BrowserRouter>
     </>

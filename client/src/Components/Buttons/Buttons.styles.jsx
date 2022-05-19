@@ -7,6 +7,10 @@ const basicCommon = css`
     font-size: .9rem;
 `;
 
+const colorTexture = css`
+    background: rgba(191,41,87,255);
+    color: #fff;
+`;
 export const Button = styled.button`
     ${basicCommon}
     outline:none;
@@ -22,6 +26,9 @@ export const NormalLink = styled(Link)`
 `;
 
 export const AppLink = styled(NormalLink)`
-    background: rgba(191,41,87,255);
-    color: #fff;
+    ${colorTexture}
+`;
+
+export const AppButton = styled(Button)`
+    ${colorTexture}
 `;
