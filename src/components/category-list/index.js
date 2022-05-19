@@ -1,5 +1,10 @@
+import { useContext } from "react";
 import CategoryItem from "../category-item";
-const CategoryList = ({categories}) => {
+import { CategoriesContext } from '../../contexts/categories.context';
+const CategoryList = () => {
+
+    const {categories} = useContext(CategoriesContext);
+
     return (
         <div className="categories-container">
             {categories.map((category) => (

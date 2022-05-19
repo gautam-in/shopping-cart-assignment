@@ -1,0 +1,40 @@
+.product-card {
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+
+    &:nth-of-type(3n+1) {
+        margin-left: 0;
+    }
+
+    &:nth-of-type(3n) {
+        margin-right: 0;
+    }
+
+    &__footer {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &-img {
+        width: 100%;
+    }
+
+    &-desc {
+        flex-grow: 1;
+    }
+
+    &-title {
+        min-height: 50px;
+        margin-bottom: 0;
+    }
+
+    &__details {
+        flex-grow: 1;
+    }
+}

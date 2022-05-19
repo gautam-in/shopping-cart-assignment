@@ -1,0 +1,26 @@
+.category-nav{
+    padding: 0;
+    margin: 0;
+
+    &__container {
+        width: 30%;
+        background-color: lightgray;
+    }
+
+    &__item {
+        list-style-type: none;
+        padding: 10px;
+        border-bottom: 1px solid gray;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(179, 177, 177);
+            color: white;
+        }
+
+        &--active {
+            background: gray;
+            color: white;
+        }
+    }
+}

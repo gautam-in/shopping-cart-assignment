@@ -5,13 +5,22 @@ import reportWebVitals from './reportWebVitals';
 import App from './App';
 import {UserProvider} from './contexts/user-context';
 import './index.scss';
+import { CategoriesProvider } from './contexts/categories.context';
+import { BannersProvider } from './contexts/banners.context';
+import { CartProvider } from './contexts/banners.context copy';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <BrowserRouter>
             <UserProvider>
-                <App />
+                <BannersProvider>
+                    <CategoriesProvider>
+                        <CartProvider>
+                            <App />
+                        </CartProvider>
+                    </CategoriesProvider>
+                </BannersProvider>
             </UserProvider>
         </BrowserRouter>
     </React.StrictMode>

@@ -6,7 +6,6 @@ import FormInput from "../../../components/form-input";
 import {
     // auth,
     signInWithGooglePopup,
-    createUserDocumentFromAuth,
     signInUserWithEmailAndPassword
     // signInWithGoogleRedirect
 } from "../../../utils/firebase";

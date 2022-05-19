@@ -1,9 +1,44 @@
 .category {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 30px 0;
+
+    &:nth-of-type(2n) {
+        flex-direction: row-reverse;
+
+        .category__info {
+            padding-left: 0;
+            padding-right: 50px;
+        }
+    }
+
+    &:after {
+        content: '\00a0';
+        background-image:
+          radial-gradient(at 50% 0, grey 0%, lightgray 50%, transparent 75%);
+        background-size: 100% 5px;
+        background-repeat: no-repeat;
+        float:left;
+        width:100%;
+        margin-top: 40px;
+    }
+
     &__image {
-        background-color: red;
+        width: 40%;
+
+        & img {
+            width: 100%;
+        }
     }
 
     &__info {
-        background-color: yellow;
+        width: 60%;
+        padding-left: 50px;
+        text-align: center;
+
+        & .category__info-button {
+            width: 50%;
+        }
     }
 }
