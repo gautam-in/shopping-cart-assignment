@@ -1,0 +1,16 @@
+//  Globals
+@import "./globals/fonts";
+@import "./globals/variables";
+@import "./globals/mixin";
+@import "./globals/reset";
+@import "./globals/utils";
+
+// Components
+@import "./components/header";
+@import "./components/footer";
+
+// Pages
+@import "./pages/login-register";
+@import "./pages/home";
+@import "./pages/product";
+@import "./pages/cart";

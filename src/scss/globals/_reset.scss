@@ -1,0 +1,74 @@
+// This file contains all the Browser Resets
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    font-size: 100%;
+    vertical-align: baseline;
+    word-wrap: break-word;
+}
+
+body {
+    width: 100%;
+    font-family: $font_family;
+    font-weight: $font_medium;
+    font-size: $body_font;
+    line-height: 22px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+
+h1, h2, h3, h4, h5, h6{
+    // font-weight: $font_regular;
+}
+
+
+a{
+    outline: none;
+    @include transition(all 400ms linear);
+    text-decoration: none;
+}
+
+
+p {
+    font-weight: $font_medium;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: $body_font;
+}
+
+ol, ul {
+	list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+span {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    max-width: 100%;
+    display: block;
+}
