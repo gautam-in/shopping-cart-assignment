@@ -1,0 +1,33 @@
+.cart-list {
+  min-height: 100vh;
+  background-color: rgb(0 0 0 / 0.1);
+  max-width: 906px;
+  margin: 0 auto;
+  margin-top: -10px;
+  &__container {
+    background-color: white;
+    font-size: 10px;
+  }
+  &__wrapper {
+    display: flex;
+    margin: 10px;
+    background-color: white;
+  }
+  &__image {
+    background-color: white;
+    margin: 10px;
+  }
+
+  &__checkout {
+    position: fixed;
+    bottom: 0;
+    width: 71.6%;
+    appearance: none;
+    border: 0;
+    background-color: #c2193b;
+    padding: 0.5rem 0;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: #fff;
+  }
+}

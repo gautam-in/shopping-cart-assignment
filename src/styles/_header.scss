@@ -1,0 +1,45 @@
+@use "common";
+header {
+  padding-top: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  & > .wrapper {
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto;
+    @extend .container;
+    .logoImg {
+      height: 4rem;
+    }
+    @mixin navlist($navpadding, $gap) {
+      display: flex;
+      gap: $gap;
+      list-style-type: none;
+      padding: $navpadding;
+    }
+    nav {
+      flex: 1;
+      > ul {
+        @include navlist(2.5rem 0 1rem 5rem, 2rem);
+        font-size: 13px;
+      }
+    }
+    ul {
+      @include navlist(0, 1rem);
+      font-size: 10px;
+      margin: 0;
+    }
+    .icon {
+      background-color: rgb(0 0 0 / 0.1);
+      margin-top: 15px;
+      padding: 11px;
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+
+      .fa-shopping-cart {
+        font-size: 22px;
+        color: #f54260;
+      }
+    }
+  }
+}

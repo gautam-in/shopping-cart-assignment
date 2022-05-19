@@ -5,11 +5,30 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "start": "webpack serve",
+    "build": "webpack",
+    "start:server": "json-server db.json -m ./node_modules/json-server-auth --port 3000"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "canned": "^0.3.12"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "axios": "^0.27.2",
+    "css-loader": "^6.7.1",
+    "html-loader": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "json-server": "^0.17.0",
+    "json-server-auth": "^2.1.0",
+    "postcss-loader": "^6.2.1",
+    "sass": "^1.51.0",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0",
+    "yup": "^0.32.11"
   }
 }

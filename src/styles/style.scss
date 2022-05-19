@@ -1,0 +1,20 @@
+@use "common";
+@use "theme";
+@use "form";
+@use "swiper";
+@use "header";
+@use "footer";
+@use "category";
+@use "products";
+@use "mycart";
+
+main {
+  section#sign_up {
+    display: flex;
+    padding: 2rem 0;
+
+    div {
+      flex: 1;
+    }
+  }
+}

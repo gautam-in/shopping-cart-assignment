@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sabka Bazaar" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&family=Work+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Sabka Bazaar</title>
+  </head>
+  <body>
+    <!-- Header part of the page -->
+    <header>
+      <div class="wrapper">
+        <div class="logo">
+          <picture>
+            <source
+              media="(min-width:650px)"
+              srcset="../static/images/logo_2x.png"
+            />
+            <img src="../static/images/logo.png" alt="logo" class="logoImg" />
+          </picture>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+          </ul>
+        </nav>
+        <div>
+          <ul>
+            <li><a href="login.html">SignIn</a></li>
+            <li><a href="register.html">Register</a></li>
+          </ul>
+          <div class="icon" onclick="location.href='mycart.html'">
+            <i class="fa fa-shopping-cart"></i>
+            <span>0 Items</span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Product list -->
+    <main id="list-category"></main>
+    <!-- Footer of the page -->
+    <footer>
+      <p>Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd</p>
+    </footer>
+  </body>
+</html>

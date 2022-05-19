@@ -1,0 +1,59 @@
+main {
+  max-width: 902px;
+  margin: 0 auto;
+}
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#banner {
+  height: 400px;
+}
+.swiper {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  // safari and chrome
+  position: relative;
+  margin-top: 0.75rem;
+
+  -ms-overflow-style: none; //ie
+  scrollbar-width: none; //firefox
+
+  // saari and chrome
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__item {
+    flex-shrink: 0;
+    width: 100%;
+    scroll-snap-align: center;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.swiper-btn {
+  display: flex;
+  max-width: 320px;
+  justify-content: space-between;
+  margin: 0 auto;
+
+  a {
+    padding: 2rem;
+
+    &::after {
+      content: " ";
+      position: absolute;
+      height: 12px;
+      width: 12px;
+      border-radius: 6px;
+      background-color: #9a9a9a;
+    }
+  }
+}
