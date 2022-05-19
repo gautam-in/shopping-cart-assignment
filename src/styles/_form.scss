@@ -1,0 +1,98 @@
+@use "theme";
+
+@mixin label-active() {
+  font-size: 0.75rem;
+  transform: translateY(-1rem);
+}
+
+@mixin label-inactive() {
+  font-size: 0.8rem;
+  transform: translateY(0);
+}
+
+.form-field {
+  display: block;
+  margin-bottom: 1rem;
+
+  &__control {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__label {
+    @include label-active();
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 1.125rem 0 0;
+    transition: all theme.$animation-duration;
+  }
+
+  &__bar {
+    border-bottom: 2px solid theme.$primary-color;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    width: 1%;
+    content: "";
+    margin: 0 auto;
+    transform: scaleX(0);
+    transition: all theme.$animation-duration;
+  }
+  .errorMsg &__error {
+    visibility: visible;
+  }
+  &__error {
+    color: theme.$error-color;
+    font-size: 0.75rem;
+    padding: 0.325rem;
+    visibility: hidden;
+  }
+
+  &__input {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    display: block;
+    font-size: 1.2rem;
+    outline: 0;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0 0.75rem 0.625rem 0;
+    border-bottom: 1px solid #999;
+
+    &:placeholder-shown {
+      ~ .form-field__label {
+        @include label-inactive();
+      }
+    }
+
+    &:focus {
+      ~ .form-field__label {
+        color: theme.$primary-color;
+        @include label-active();
+      }
+      ~ .form-field__bar {
+        border-bottom: 2px solid theme.$primary-color;
+        transform: scaleX(150);
+      }
+    }
+  }
+}
+
+.button {
+  width: 100%;
+  appearance: none;
+  border: 0;
+  background-color: #c2193b;
+  padding: 0.5rem 0;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  color: #fff;
+}
