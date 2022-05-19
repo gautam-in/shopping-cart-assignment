@@ -1,0 +1,35 @@
+@use '../../styles/theme.scss';
+@use '../../styles/layout.scss';
+.carousel{
+    @extend .container;
+    margin-top: 20px;
+    &__list{
+        width: 100%;
+        position: relative;
+        margin: auto;
+        &__slide{
+            display: none;
+            &__image{
+                width: 100%;
+            }
+        }
+    }
+    &__control{
+        margin: auto;
+        width: 100%;
+        text-align: center;
+        &__bottomlinks{
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        &__bottomlinks:hover, .active{
+            background-color: #717171;
+        }
+    }
+}
