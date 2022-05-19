@@ -1,0 +1,54 @@
+
+main{
+    display: flex;
+    max-width: 1100px;
+    padding: 0 2rem;
+}
+
+.login{
+    flex: 1
+}
+
+.applying{
+    margin: 24px 0px;
+    flex: 1
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+form input{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgb(141, 140, 140);
+}
+
+ form label{
+        order: -1;
+        padding-left: 5px;
+        transition: all 0.3s ease-in;
+        transform: translateY(20px);
+        pointer-events: none;
+        /* color:rgb(79, 177, 216); */
+}
+
+form input:focus{
+    border: none;
+    transform: translateY(-2px);
+    border-bottom: 2px solid rgb(79, 177, 216);
+}
+
+form button{
+    background-color: #af1d5a;
+    color:aliceblue;
+    outline: none;
+    border: none;
+    margin: 2px 0px;
+    padding: 13px 3px;
+}
+
+#alert{
+    color: red;
+}

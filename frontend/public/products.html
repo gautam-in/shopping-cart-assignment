@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Products</title>
+    <link rel="stylesheet" href="../src/pages/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../src/pages/styles/products.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="navbar-first">
+                <img class="logo" id="logo" src="../src/assets/static/images/logo_2x.png" alt="Sabka bazar logo" />
+            </div>
+            <div class="navbar-second">
+                <div class="authentication" id="authentication">
+                    <ul>
+                        <li><a href="signin.html">SignIn</a></li>
+                        <li><a href="register.html">Register</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-links">
+                    <div class="links">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="products.html">Products</a></li>
+                        </ul>
+                    </div>
+                    <div class="cart-part">
+                        <button id="cart-button" class="cart-button"><i class="fa-solid fa fa-shopping-cart cart-icon"
+                                style="font-size: 27px;"></i>
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="category-section-sidebar" id="category-section-sidebar">
+            <!-- <div class="custom" id="custom"></div> -->
+
+            <ul class="product-items">
+                <li class="product-item"></li>
+                <li class="product-item"></li>
+                <li class="product-item"></li>
+                <li class="product-item"></li>
+                <li class="product-item"></li>
+                <li class="product-item"></li>
+            </ul>
+        </section>
+
+        <section class="main-category-items" id="main-category-items"></section>
+
+        <div class="cart d-none" id="cart">
+            <div class="inner-cart">
+
+                <!-- Cart Header -->
+                <div class="cart-header" id="cart-header">
+                    <div>
+                        <h2 class="d-inline">My Cart</h2>
+                        <span>(<span id="no-of-items-in-cart2">0</span> item)</span>
+                    </div>
+                    <i class="fa-solid fa-xmark" onclick="closeCart()"></i>
+                </div>
+
+                <!-- Cart Body -->
+                <div class="cart-body" id="cart-body"></div>
+
+                <!-- Cart Footer -->
+                <div class="cart-footer" id="cart-footer">
+                    <p>Promo Code can be applied on payment page</p>
+                    <div class="checkout" id="checkout">
+                        <i>Proceed to Checkout</i>
+                        <span>Rs.<span class="totol-price-proceed-to-checkout" id="totol-price-proceed-to-checkout">0</span> <i
+                                class="fa-solid fa-angle-right"></i></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="backdrop d-none" id="backdrop"></div>
+
+    <footer>
+        <p>Copyright &copy; 2011-2018 Sabka Bazar Grocery Supplies Pvt Ltd</p>
+    </footer>
+
+</body>
+<script src="../src/pages/products.js"></script>
+
+</html>

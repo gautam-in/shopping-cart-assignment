@@ -1,0 +1,3 @@
+#alert-first-name, #alert-last-name, #alert-email, #alert-password, #alert-confirm{
+    color: red;
+}

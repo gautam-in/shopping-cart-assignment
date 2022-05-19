@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Signin</title>
+    <link rel="stylesheet" href="../src/pages/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../src/pages/styles/sigin.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navbar-first">
+                <img class="logo" id="logo" src="../src/assets/static/images/logo_2x.png" alt="Sabka bazar logo" />
+            </div>
+            <div class="navbar-second">
+                <div class="authentication" id="authentication">
+                    <ul>
+                        <li><a href="signin.html">SignIn</a></li>
+                        <li><a href="register.html">Register</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-links">
+                    <div class="links">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="products.html">Products</a></li>
+                        </ul>
+                    </div>
+                    <div class="cart-part">
+                        <button id="cart-button" class="cart-button"><i class="fa-solid fa fa-shopping-cart cart-icon" style="font-size: 27px;"></i>
+                            Cart</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="login">
+            <h2>Login</h2>
+            <p>Get access to your Orders. Wishlist and recommendations</p>
+        </div>
+        <div class="applying" onsubmit="validateUser(event)">
+            <form>
+                <div id="alert"></div>
+              <label for="email"></label>
+              <input type="email" id="email" placeholder="Email" />
+              <br />
+              <label for="password"></label>
+              <input type="password" id="password" placeholder="Password" />
+              <br />
+              <button>Login</button>
+            </form>
+          </div>
+    </main>
+    <footer>
+        <p>Copyright &copy; 2011-2018 Sabka Bazar Grocery Supplies Pvt Ltd</p>
+      </footer>
+</body>
+
+<script src="../src/pages/sigin.js"></script>
+</html>
