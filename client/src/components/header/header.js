@@ -7,15 +7,15 @@ const Header = (props) => {
     // Render app header.
     return (<>
         <header className="app-header">
-            <div className="header-inner-container">
-                <img className="app-logo" onClick={() => navigate("/home")} src={window.screenwidth <= "480px" ? "static/images/logo.png" : "static/images/logo_2x.png"} alt="logo" />
+            <section className="header-inner-container">
+                <img className="app-logo" onClick={() => navigate("/home")} src={window.screenwidth <= "480px" ? "static/images/logo.png" : "static/images/logo_2x.png"} alt="app-logo" />
                 <nav className="header-nav">
                     <ul>
                         <li key="home"><Link className="link-text" to="home">Home</Link></li>
                         <li key="product"><Link className="link-text" to="products">Products</Link></li>
                     </ul>
                 </nav>
-            </div>
+            </section>
             <div className="cart-signin-div">
                 <nav className="signin-nav">
                     <ul>

@@ -24,6 +24,15 @@
     width: 17rem;
 }
 
+input:focus{
+    outline: none;
+    border-bottom:2px solid #81d4fa;
+}
+
+label:focus{
+    color:#81d4fa;
+}
 .login-heading {
     margin-top: 3rem;
+    font-weight: 700;
 }

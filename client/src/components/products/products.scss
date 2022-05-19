@@ -27,16 +27,18 @@
 .sidebar {
   margin: 0;
   padding: 0;
-  width: 200px;
+  width: 13rem;
   background-color: #d1cece;
 }
 
 .sidebar .sidebar-element {
   display: block;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-  width: 15rem;
+    color: black;
+    padding: 1rem;
+    text-decoration: none;
+    width: 13rem;
+    margin-bottom: 0rem;
+    border-bottom: 1px solid gray
 }
 
 .sidebar .sidebar-element:hover {
@@ -46,7 +48,7 @@
 .sidebar .active {
   background-color: #676770;
   color: white;
-  width: 12.5rem;
+  width: 13rem;
 }
 
 .grid-container {
