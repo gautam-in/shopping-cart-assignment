@@ -3,6 +3,7 @@ import {BrowserRouter} from 'react-router-dom';
 import axios from 'axios';
 
 import Header from './Components/Header/Header.component';
+import Footer from './Components/Footer/Footer.component';
 import AppRoutes from './AppRoutes/AppRoutes';
 
 function App() {
@@ -19,9 +20,7 @@ function App() {
   
     <AppRoutes />
     
-    <footer>
-      Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
-    </footer>
+    <Footer />
     </div>
     </BrowserRouter>
     </>
