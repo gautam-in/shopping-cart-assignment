@@ -1,28 +1,26 @@
-import { useEffect,useState } from "react";
-import axios from "axios";
+
+import {ProductPageContainer,ProductPageSidebar,
+    ProductPageProductsContainer,SideBar,SideBarItem} from './ProductListing.styles';
+import Product from "../../Components/Product/Product.component";
 
 const ProductsListing = props => {
-    const [products,setProducts] = useState([]);
-    useEffect(()=>{
-        axios.get('http://localhost:5000/products').then(res=>setProducts(res.data))
-      },[]);
-
     return (
         <>
-        Products Listing
-        <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)'}}>
-            
-            {
-                products && products.map(prod => (
-                    <div key={prod.id}>
-                        <h5>{prod.name}</h5>
-                        <img src={prod.imageURL} alt="" />
-                        <p>MRP: Rs {prod.price}</p>
-                        <button>Buy Now</button>
-                    </div>
-                ))
-            }
-        </div>
+        <ProductPageContainer>
+            <ProductPageSidebar>
+                <SideBar>
+                    <SideBarItem>Fruits & Vegetables</SideBarItem>
+                    <SideBarItem>Fruits & Vegetables</SideBarItem>
+                    <SideBarItem>Fruits & Vegetables</SideBarItem>
+                    <SideBarItem>Fruits & Vegetables</SideBarItem>
+                </SideBar>
+            </ProductPageSidebar>
+
+            <ProductPageProductsContainer>
+                    <Product />
+            </ProductPageProductsContainer>
+        </ProductPageContainer>
+        
         </>
     );
 }
