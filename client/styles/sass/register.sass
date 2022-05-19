@@ -1,0 +1,54 @@
+.register__container
+    display: flex
+    justify-content: space-evenly
+    align-items: center
+    width: 100%
+    flex-wrap: wrap
+    margin: 5% 0
+
+.register__form
+    display: flex
+    flex-direction: column
+    div
+        position: relative
+        margin-top: 10px
+    input
+        width: 30vw
+        height: 35px
+        border: none
+        border-bottom: solid 1px #34BDC7
+        margin: 5px 0
+        transition: all 0.2s
+        outline: none
+    button
+        width: 30vw
+        height: 35px
+        background-color: #D10157
+        color: white
+        border-style: none
+        cursor: pointer
+        margin: 10px 0
+    label
+        position: absolute
+        transition: all 0.2s
+        top: 7px
+        font-size: 14px
+        left: 0px
+    input:focus + label
+        left: 0px
+        top: -7px
+        font-size: 11px
+
+#error__block
+    padding: 10px
+    background-color: #ffeaea
+    display: none
+
+
+
+@media screen and (max-width: 480px)
+    .register__form
+        label
+            font-size: 14px
+        input, button
+            width: 60vw 
