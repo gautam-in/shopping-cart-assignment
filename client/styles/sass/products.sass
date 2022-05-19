@@ -1,0 +1,122 @@
+main
+    display: flex
+    width: 100%
+
+#category__list
+    width: 20%
+    background-color: #eaeaea
+    padding: 10px 0 0 0
+
+.category
+    margin: 5px 0 0 5px
+    padding: 15px 0 10px 15px
+    border-bottom: solid 1px #d6d6d6
+    cursor: pointer
+    span
+        text-decoration: none
+
+#products__container
+    width: 80%
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    padding: 1rem
+
+.product__card
+    width: 270px
+    margin: 10px
+    display: flex
+    flex-direction: column
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19)
+    border-bottom: dotted 1px lightgrey
+    h3
+        padding: 0 10px
+
+.product__heading
+    height: 100px
+
+.product__subcard
+    display: flex
+    flex-direction: column
+
+.product__detail 
+    border-radius: 5px
+    margin: 5px
+    background-color: #f0f0f0
+    padding: 2px 10px
+    p
+        font-size: 14px
+        height: 70px
+        overflow: hidden
+        text-overflow: ellipsis
+
+
+.product__price
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 10px 20px
+    button
+        background-color: #D10157
+        color: white
+        height: 40px
+        width: 50%
+        border-style: none
+        cursor: pointer
+        margin: 10px 0
+
+#atsymbol
+    display: none
+
+#dropdown__list
+    display: none
+
+@media screen and (max-width: 848px)
+    #products__container
+        padding: 0
+        justify-content: flex-start
+    .product__subcard
+        flex-direction: row
+        img
+            width: 150px
+            height: 200px
+    .product__card
+        margin: 10px
+        width: 290px
+
+@media screen and (max-width: 480px)
+    main
+        flex-direction: column
+    #category__list, #products__container, .product__card
+        width: 100%
+    #products__container
+        padding: 0
+    .product__subcard
+        flex-direction: row
+        img
+            width: 150px
+            height: 150px
+    .product__card
+        margin: 10px 0
+    .product__price
+        flex-direction: row-reverse
+        justify-content: flex-end
+        #price
+            color: white
+            background-color: #D10157
+            padding: 9.5px 10px 9.5px 1.5px
+            margin: 0
+    #atsymbol
+        display: inline
+    #dropdown__list
+        background-color: #D10157
+        display: block
+        width: 100vw
+        height: 50px
+        font-size: 20px
+        color: white
+        border: none
+        padding: 0 10px
+        outline: none
+    .category
+        display: none 
