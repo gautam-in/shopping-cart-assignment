@@ -1,0 +1,112 @@
+#login_section, #register_section {
+    padding: 80px 0 20px;
+    width: 70%;
+    margin: 0 auto;
+
+    @media(max-width: 767px) {
+        width: 80%;
+        padding: 60px 0 20px;
+    }
+
+    .login_wrapper {
+
+        .left_col {
+            width: 40%;
+
+            @media(max-width: 767px) {
+                width: 100%;
+                margin-bottom: 40px;
+            }
+
+            .page_title {
+                font-size: 35px;
+                margin-bottom: 25px;
+            }
+        }
+
+        .right_col {
+            width: 40%;
+
+            @media(max-width: 767px) {
+                width: 100%;
+            }
+
+            .login_form, .register_form {
+
+                .form_group {
+                    margin-bottom: 30px;
+
+                    .input_group {
+                        position: relative;
+                    }
+
+                    input {
+                        border: none;
+                        border-bottom: 1px solid $black;
+                        width: 100%;
+                        display: block;
+                        padding: 12px 0px;
+                        outline: none;
+                        font-size: 16px;
+                        @include transition(200ms all ease);
+                    }                    
+
+                    label {
+                        display: block;
+                        font-size: 12px;
+                        position: absolute;
+                        top: 50%;
+                        @include transition(200ms all ease);
+                        @include transform(translateY(-50%));
+                        color: $gray_3;
+                    }
+
+                    input.highlight {
+                        border-color: $cyan;
+                        
+                        & + label {
+                            top: -4px;
+                            color: $cyan;
+                        }
+                    }
+
+                    input:focus {
+                        border-color: $cyan;
+
+                        & + label {
+                            top: -4px;
+                            color: $cyan;
+                            // font-size: 14px;
+                        }
+                    } 
+
+                    .error_msg {
+                        margin-top: 5px;
+
+                        p {
+                            font-size: 15px;
+                            color: $red;
+                            margin-bottom: 12px;
+                            position: relative;
+
+                            &::before {
+                                content: '';
+                                display: inline-block;
+                                width: 12px;
+                                height: 15px;
+                                background: url('../error_svg.svg')no-repeat;
+                                background-size: 100%;
+                                vertical-align: middle;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+
+                }
+                .btn_group {
+                    margin-top: 50px;
+                }
+            }
+        }
+    }
+}

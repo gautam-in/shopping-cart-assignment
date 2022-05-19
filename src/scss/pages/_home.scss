@@ -1,0 +1,154 @@
+#home-page {
+    #hero_section {
+        position: relative;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -1rem;
+            background: radial-gradient(farthest-corner at 50% 0px, $gray_3 0%, transparent 50%);
+            width: 100%;
+            height: 1rem;
+        }
+
+        #slider {
+            .slick-arrow {
+                text-transform: uppercase;
+                text-transform: uppercase;
+                background: rgba(0,0,0,0.5);
+                color: $white;
+                font-size: 18px;
+                border: none;
+                padding: 8px 12px;
+                font-family: $font_family;
+                font-weight: $font_semibold;
+                position: absolute;
+                top: 50%;
+                @include transform(translateY(-50%));
+                z-index: 2;
+                cursor: pointer;
+
+                &.slick-prev {
+                    left: 0;
+                }
+
+                &.slick-next {
+                    right: 0;
+                }
+            }
+            
+            .slick-dots {
+                display: inline-block;
+                width: auto;
+                position: absolute;
+                left: 50%;
+                @include transform(translateX(-50%));
+                bottom: 30px;
+                
+                @media(max-width: 767px){
+                    bottom: 2px;
+                }
+
+                li {
+                    border: 1px solid $black;
+                    display: inline-block;
+                    padding: 2px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    margin: 0 4px;
+                    background: $gray_3;
+                    border: 1px solid $gray_3;
+
+                    button {
+                        display: none;
+                    }
+
+                    &.slick-active {
+                        background: $dark;
+                        border: 1px solid $dark;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    #category_section {
+        position: relative;
+
+        .category_item {
+            padding: 50px 0;
+            position: relative;
+            
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: -1rem;
+                background: radial-gradient(farthest-corner at 50% 0px, $gray_3 0%, transparent 50%);
+                width: 100%;
+                height: 1rem;
+            }
+
+            .category_img {
+                width: 30%;
+
+            }
+
+            .category_detail {
+                width: 70%;
+                text-align: center;
+                padding: 0 100px;
+                
+                @media(max-width: 767px){
+                    padding: 0;
+                }
+
+                .descr {
+                    margin: 25px 0;
+
+                    @media(max-width: 767px){
+                        font-size: 14px;
+                    }
+                }
+
+                .category_title {
+                    font-size: 28px;
+
+                    @media(max-width: 767px){
+                        font-size: 24px;
+                    }
+                }
+
+                .explore_btn {
+                    font-size: 18px;
+                    display: inline-block;
+
+                    @media(max-width: 767px){
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            &.even {
+                @include flex-direction(row-reverse);
+                .category_detail {
+                    @media(max-width: 767px){
+                        padding-right: 30px;
+                    }
+                }
+            }
+
+            &.odd {
+
+                .category_detail {
+                    @media(max-width: 767px){
+                        padding-left: 30px;
+                    }
+                }
+            }
+        }
+
+    }
+}
