@@ -26,6 +26,7 @@ async function loadProducts() {
         result = await GetProducts();
         result = JSON.parse(result);
         let t1 = await formUi(result);
+        return true;
     } catch (error) {
         console.log(error + " products page error");
     }
@@ -44,7 +45,7 @@ async function formUi(result) {
 
     localStorage['products'] = [];
     let prodStorage = [];
-    for (let index = 0; index < result.length; index++) {
+    for (let index = 0; index < result.length; index++) { //25 items now
         //let prodItem = { name:"", url:"", quantity:"", price:""}
         let prodItem = {};
         let sectionEle = document.createElement("section");
@@ -57,6 +58,7 @@ async function formUi(result) {
 
         let imgEle = document.createElement("img");
         imgEle.src = prodItem.url = result[index].imageURL;
+        imgEle.alt = "Graphic for "+ result[index].name;
        // sectionEle.appendChild(imgEle);
 
         let h5Ele = document.createElement("h5");
@@ -77,7 +79,7 @@ async function formUi(result) {
         
         let butEle = document.createElement("button");
         butEle.setAttribute("data-content",result[index].price);
-        butEle.innerText = "";
+        butEle.ariaLabel = "Buy Now";
         butEle.addEventListener('click',() =>  {
             sendRequest(result[index].id)
         })
@@ -90,6 +92,7 @@ async function formUi(result) {
         prodStorage[prodStorage.length] = prodItem;
     }
     localStorage['products'] = JSON.stringify(prodStorage);
+    return true;
 }
 //filter products based on
 function filterProductsShow(categoryId) {

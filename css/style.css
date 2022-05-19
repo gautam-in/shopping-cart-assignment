@@ -4,7 +4,7 @@
   margin: auto;
 }
 
-button {
+* {
   font-family: "Dosis" !important;
 }
 
@@ -91,6 +91,26 @@ footer {
   height: 50px;
   text-align: left;
   padding: 10px 0 10px 0;
+}
+
+.skip a {
+  position: absolute;
+  left: -1000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  display: block;
+  padding: 5px;
+}
+
+.skip a:focus {
+  position: static;
+  width: 200px;
+  height: auto;
+  background-color: orange;
+  color: white;
+  border-radius: 35px;
+  border: 2px double gray;
 }
 
 /*# sourceMappingURL=style.css.map */

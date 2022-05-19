@@ -18,13 +18,15 @@ class AddtoCart {
 
         let promoh5 = document.querySelector( ".modal-content > footer > h5")
         let buttonContent = document.getElementById("cartButtonText")
+        let price = document.getElementById("finalPrice");
         let cheapAside = document.querySelector(".modal-content > aside")
         if(itemLength == 0) {
             modelContent.innerHTML = `<h3><strong> No items in the cart. </strong></h3> <br> 
                                         <h5> Your favourite items are just a click away </h5>`;
             promoh5.style.display = "none";
             cheapAside.style.display = "none";
-            buttonContent.innerHTML = "Start Shopping";    
+            buttonContent.innerHTML = "Start Shopping";  
+            price.style.display = "none";  
         }
         else {
             promoh5.style.display = "block";
@@ -32,6 +34,7 @@ class AddtoCart {
             modelContent.innerHTML = "";
             this.formCartUI(modelContent);
             buttonContent.innerHTML = "Proceed to checkout";
+            price.style.display = "block";
         }
     }
     minusCounter(clickedItem) {
@@ -105,7 +108,7 @@ class AddtoCart {
             let prodDetail = this.getProductDetails(this.items[index].itemId)[0];
             console.log(prodDetail);
             let imgEl = document.createElement("img");
-            imgEl.src = prodDetail.url;
+            imgEl.src = imgEl.alt = prodDetail.url;
             
             let nameCounter = document.createElement("div");
             nameCounter.className = "nameCounter"

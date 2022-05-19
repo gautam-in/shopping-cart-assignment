@@ -105,7 +105,9 @@ async function LoadCategories() {
 
             let imgEle = document.createElement("img");
             imgEle.src = result[index].imageUrl;
-            imgEle.alt = result[index].name;
+            imgEle.alt = "Image " + result[index].name;
+            //since alt text is same as h3 description, 
+            //accessibility fails, alt text should not be same as 15 chars next to image
             imgDetEle.appendChild(imgEle);
 
             let textDiv = document.createElement("div");

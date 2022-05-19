@@ -30,28 +30,31 @@
             }
         }
         async function clickProductsTab(){
-            let t1 = await loadProducts();
+            loadProducts();
             addEvents();
         }
     </script>
 </head>
 <body>
+    <div class="skip"> 
+        <a href="#">Skip to main content</a>
+    </div>
     <header>
-        <img src="./static/images/logo.png" alt="logo image" class="flex-start"/>
+        <img src="./static/images/logo.png" alt="Graphic for logo" class="flex-start"/>
         <nav class="flex-start homeNav">
             <ul class="homeNavUl">
-                <li class="homeNavLi"><a onclick="changeTab(event,'home');"> Home </a></li>
-                <li class="homeNavLi"><a onclick="changeTab(event,'products');clickProductsTab();"> Products </a></li>
+                <li class="homeNavLi" aria-label="Home"><a onclick="changeTab(event,'home');"> Home </a></li>
+                <li class="homeNavLi" aria-label="Products"><a onclick="changeTab(event,'products');clickProductsTab();"> Products </a></li>
             </ul>
         </nav>
         <div class="loginClass">
             <div class="row1">
-                <button class="loginButton" onclick="changeTab(event,'signin')">SignIn</button>
-                <button class="loginButton" onclick="changeTab(event,'signup')">Register</button>
+                <button class="loginButton" aria-label="SignIn" onclick="changeTab(event,'signin')">SignIn</button>
+                <button class="loginButton" aria-label="Register" onclick="changeTab(event,'signup')">Register</button>
             </div>
             <div class="row2">
-                <button id="cartButton" onclick="cartWindow()">
-                <svg version="1.1" id="Layer_1" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                <button id="cartButton" aria-label="Add to Cart" onclick="cartWindow()">
+                <svg  aria-hidden="true" version="1.1" id="Layer_1" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
                                 <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
                 </svg>
@@ -100,14 +103,14 @@
 
         <div class="mainClass" id="home">
             <div class="home">
-                <div class="slideshow-container">
+                <div class="slideshow-container" aria-hidden="true">
                     <!-- Back and forward buttons -->
                     <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
                     <a class="forward" onclick="plusSlides(1)">&#10095;</a>
                     <br>
                     <div class="dotsParent"></div>
                 </div>
-                <div class="card-container">
+                <div class="card-container" aria-label="Product categories">
                     
                 </div>
             </div>
@@ -117,7 +120,7 @@
             <div class="products">
                 <nav class="navProducts" id="navProducts">
                     <ul id="navProductsUl" class="navProductsUl"></ul>
-                    <select id="navProductsSelect" class="navProductsSelect">
+                    <select aria-label="Select Product" id="navProductsSelect" class="navProductsSelect">
                         <option value="all" selected> --All-- </option>
                     </select>
                 </nav>
@@ -157,20 +160,20 @@
             <!-- Modal content -->
             <div class="modal-content emptyCart">
                 <header> 
-                    <div> My cart </div>
-                    <div>  <span class="close">&times;</span> </div>
+                    <div aria-label="My cart"> My cart </div>
+                    <div aria-label="Close">  <span class="close">&times;</span> </div>
                 </header>
                 <main> 
                 </main>
                 <aside hidden>
-                    <img src="./static/images/lowest-price.png">
-                    <h3> You won't find it cheaper anywhere</h3>
+                    <img src="./static/images/lowest-price.png" alt="lowest price guaranteed">
+                    <h3 aria-label="Cheap price here"> You won't find it cheaper anywhere</h3>
                 </aside>
                 <footer>
-                    <h5> Promo code can be applied during payment... </h5> 
-                    <button class="modalCartButton"> 
-                        <h3 id="cartButtonText"></h3>
-                        <h3 id="finalPrice"></h3>
+                    <h5 aria-label="promo code can be applied during payment"> Promo code can be applied during payment... </h5> 
+                    <button aria-label="Proceed to Payment" class="modalCartButton"> 
+                        <h3 aria-label="Modal Button to Close or Payment" id="cartButtonText">Close Button</h3>
+                        <h3 aria-label="Price" id="finalPrice">Price</h3>
                     </button> </footer>
             </div>
         </div>
@@ -220,8 +223,10 @@
         for (let index = 0; index < catButtons.length; index++) {
             catButtons[index].addEventListener("click", function(e){
                 changeTab(event,'products');
-                clickProductsTab();
-                filterProductsShow(catButtons[index].id);
+                let checkSection = document.querySelectorAll('.navProductsContainer > section')
+                if(checkSection.length == 0)
+                    clickProductsTab(); 
+                filterProductsShow(catButtons[index].id)
             })
         }
     }
