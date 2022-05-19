@@ -1,0 +1,14 @@
+const { RESTDataSource } = require("apollo-datasource-rest");
+
+class ProductAPI extends RESTDataSource {
+  constructor() {
+    super();
+    this.baseURL = "http://localhost:5000/";
+  }
+
+  getProductsForHome() {
+    return this.get("products");
+  }
+}
+
+module.exports = ProductAPI;
