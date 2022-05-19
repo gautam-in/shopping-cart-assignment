@@ -1,0 +1,6 @@
+@use '../../styles/theme.scss';
+
+.footer{
+    background-color: theme.$background;
+    padding: 5px;
+}

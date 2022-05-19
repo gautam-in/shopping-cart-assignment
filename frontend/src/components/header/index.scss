@@ -1,0 +1,105 @@
+@use '../../styles/theme.scss';
+@use '../../styles/layout.scss';
+
+.navbutton{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: theme.$navlink;
+    text-decoration: none;
+}
+
+.header {
+    @extend .bottomshadoow;
+    width: 100%;
+    height: 100px;
+    background-color: theme.$white;
+    display: flex;
+    position: relative;
+    &__skip{
+        position: absolute;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-decoration: none;
+        color: theme.$white;
+        background-color: theme.$primary;
+        border-radius: 20px;
+        opacity: 0;
+    }
+    &__skip:focus{
+        opacity: 1;
+    }
+    &__navbar {
+        @extend .container;
+        &__topbar {
+            @extend .max-hide-sm !optional;
+            &__list{
+                @extend .row;
+                list-style-type: none;
+                &__item{
+                    @extend .col-xs-1 !optional;
+                    margin-top: auto;
+                    &:nth-child(1){
+                        margin-left: auto;
+                    }
+                    &__link{
+                        @extend .navbutton;
+                        &:hover{
+                            color: theme.$primary;
+                        }
+                    }
+                }
+            }
+        }
+        &__mainnav {
+            &__list{
+                @extend .row;
+                list-style-type: none;
+                &__item{
+                    @extend .max-hide-sm !optional;
+                    @extend .col-xs-1 !optional;
+                    text-decoration: none;
+                    &__link{
+                        @extend .navbutton;
+                        &:hover{
+                            color: theme.$primary;
+                        }
+                    }
+                }
+                &__cart{
+                    @extend .max-show-sm !optional;
+                    margin-left: auto;
+                    margin-bottom: -8px;
+                    padding-bottom: 0px;
+                    background-color: theme.$background;
+                    
+                }
+                &__cart svg{
+                    fill: theme.$primary;
+                    
+                }
+                &__brand{
+                    @extend .max-show-sm !optional;
+                    @extend .col-xs-3 !optional;
+                    margin-top: -50px;
+                    &__link{
+                        margin: 0px;
+                        padding: 0px;
+                        &__logo{
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}

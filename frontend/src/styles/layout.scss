@@ -1,0 +1,52 @@
+@use 'sass:math';
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+// columns
+
+$breakpoints: (
+    "xs" : 0px,
+    "sm" : 640px,
+    "md" : 768px,
+    "lg" : 1024px,
+    "xl" : 1280px,
+    "xxl" : 1536px,
+);
+$grid-columns: 12;
+
+@each $breakpoint, $screen in $breakpoints{
+    @media (min-width: $screen) {
+        @for $i from 1 to $grid-columns {
+            .col-#{$breakpoint}-#{$i}{
+                box-sizing: border-box;
+                flex-grow: 0;
+                width: math.div($i * 100%, $grid-columns);
+            }
+        }
+        .min-hide-#{$breakpoint}{
+            display: none;
+        }
+        .min-show-#{$breakpoint}{
+            display: inherit;
+        }
+    }
+    @media (max-width: $screen) {
+        .max-hide-#{$breakpoint}{
+            display: none;
+        }
+        .max-show-#{$breakpoint}{
+            display: inherit;
+        }
+    }
+}
