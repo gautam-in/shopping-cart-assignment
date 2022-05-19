@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis");
+* {
+  box-sizing: border-box;
+  margin: auto;
+}
+
+* {
+  font-family: "Dosis" !important;
+}
+
+body {
+  width: 90%;
+  font-family: "Dosis" !important;
+  height: 95%;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid #bdc2ce;
+}
+
+nav.homeNav {
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 2;
+}
+
+@media screen and (max-width: 480px) {
+  header > nav.homeNav {
+    display: none;
+  }
+}
+ul.homeNavUl {
+  margin: 0;
+}
+ul.homeNavUl li.homeNavLi {
+  float: left;
+  list-style: none;
+  padding-right: 10px;
+}
+
+.loginButton, .cartButton {
+  background-color: inherit;
+  font-size: large;
+  padding: 5px;
+  margin: 5px;
+}
+
+.loginButton {
+  border: none;
+}
+
+.row2 {
+  display: flex;
+  flex-direction: column;
+}
+
+#cartButton {
+  flex: 1;
+  background-color: #eaeaea !important;
+  display: flex;
+  justify-content: space-around;
+  border: none;
+}
+#cartButton div {
+  flex: 1;
+}
+
+svg {
+  /* Place the icon on the text baseline. */
+  position: relative;
+  top: 0.125em;
+  flex-shrink: 0;
+  /* Scale the icon to match the font-size of the parent element. */
+  height: 2em;
+  width: 2em;
+  fill: #d10157;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.loginClass {
+  display: flex;
+}
+
+footer {
+  background-color: #eaeaea;
+  height: 50px;
+  text-align: left;
+  padding: 10px 0 10px 0;
+}
+
+skip a {
+  position: absolute;
+  left: -1000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  display: block;
+  padding: 5px;
+}
+
+skip a:focus {
+  position: static;
+  width: 200px;
+  height: auto;
+  background-color: blue;
+  color: white;
+  border-radius: 35px;
+  border: 2px double gray;
+}
+
+div.products {
+  display: flex;
+}
+
+.navProductsSelect {
+  display: none !important;
+  background-color: #d10157;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  margin-top: 5px;
+  height: 30px;
+  font-size: medium;
+}
+.navProductsSelect option {
+  background-color: green;
+}
+
+nav#navProducts.navProducts {
+  margin: 0px;
+  flex: 1;
+}
+
+nav.navProducts ul {
+  white-space: nowrap;
+  padding-inline-start: 0px;
+  display: flex;
+  flex-direction: column;
+  background-color: #eaeaea;
+}
+nav.navProducts ul li {
+  text-decoration: none;
+  padding: 5px;
+  margin: 5px;
+}
+nav.navProducts ul li:hover {
+  background-color: #bdc2ce;
+}
+
+.navProductsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 600px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border-bottom: 2px dotted #bdc2ce;
+}
+
+.productPriceDiv {
+  display: flex;
+  justify-content: space-between;
+  padding: auto;
+  margin: 0px;
+}
+
+.productPriceDiv h5 {
+  width: 120px;
+}
+
+section h3 {
+  min-height: 50px;
+}
+
+section img {
+  min-height: 300px;
+  min-width: 300px;
+}
+
+section div.cardImgDescWrap h5 {
+  height: 80px;
+  background-color: #eaeaea;
+}
+
+section div {
+  min-height: 50px;
+}
+
+section button {
+  background-color: #d10157;
+  color: white;
+  border: none;
+}
+
+section > div.productPriceDiv > button::before {
+  content: "Buy Now";
+}
+
+@media screen and (max-width: 768px) {
+  section div.cardImgDescWrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  section div.cardImgDescWrap img {
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+  }
+  section div.cardImgDescWrap h5 {
+    overflow: hidden;
+    padding: 0px;
+    width: 100px;
+    height: 100px;
+    text-overflow: ellipsis;
+  }
+
+  section {
+    height: 250px;
+    width: 200px;
+  }
+
+  section h5 {
+    margin-bottom: 0px;
+  }
+
+  section > div.productPriceDiv > h5 {
+    display: none;
+  }
+
+  section > div.productPriceDiv > button::before {
+    display: none;
+  }
+
+  section > div.productPriceDiv > button::after {
+    content: "Buy Now at Rs." attr(data-content);
+  }
+}
+@media screen and (max-width: 375px) {
+  div.products {
+    flex-direction: column;
+  }
+
+  .navProductsSelect {
+    display: flex !important;
+  }
+
+  .navProductsUl {
+    display: none !important;
+  }
+}
+
+/*# sourceMappingURL=products.css.map */

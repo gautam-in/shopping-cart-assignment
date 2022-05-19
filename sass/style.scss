@@ -1,0 +1,124 @@
+$backgroundColor: white;
+$logoColor:#d10157;
+$textColor: black;
+$grayColor: #bdc2ce;
+$highlightColor:#50dae4;
+
+$buttonFooterbgColor:#eaeaea;
+
+
+@import url("https://fonts.googleapis.com/css?family=Dosis");
+* {
+  box-sizing: border-box;
+  margin:auto;
+}
+
+* {
+  font-family: "Dosis" !important;
+}
+body {
+  width: 90%;
+  font-family: "Dosis" !important;
+  height: 95%;
+
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid $grayColor;
+   // background-color: lightblue;
+}
+
+
+nav.homeNav {
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 2;
+}
+@media screen and (max-width: 480px) {
+    header > nav.homeNav {
+        display: none;
+    }
+}
+
+ul.homeNavUl {
+    margin:0;
+    li.homeNavLi {
+        float: left;
+        list-style: none;
+        padding-right: 10px;
+    }
+}
+
+.loginButton, .cartButton {
+    background-color: inherit;
+    font-size: large;
+    padding: 5px;
+    margin:5px;
+}
+
+.loginButton {
+    border: none;
+}
+
+.row2 {
+    display: flex;
+    flex-direction: column;
+
+}
+#cartButton {
+    flex:1;
+    background-color: $buttonFooterbgColor !important;
+    display: flex;
+    justify-content: space-around;
+    border:none;
+    div {
+        flex:1
+    }
+}
+svg {
+    /* Place the icon on the text baseline. */
+    position: relative;
+    top: 0.125em;
+    flex-shrink: 0;
+    /* Scale the icon to match the font-size of the parent element. */
+    height: 2em;
+    width: 2em;
+    fill: $logoColor;
+}
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+.loginClass {
+    display: flex;
+}
+
+footer {
+    background-color: $buttonFooterbgColor;
+    height: 50px;
+    text-align: left;
+    padding: 10px 0 10px 0;
+}
+
+.skip a {
+    position: absolute;
+    left:-1000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    display: block;
+    padding: 5px;
+}
+.skip a:focus{
+    position: static;
+    width: 200px;
+    height: auto;
+    background-color: orange;
+    color: white;
+    border-radius: 35px;
+    border: 2px double gray;
+
+}

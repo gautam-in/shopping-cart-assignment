@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis");
+* {
+  box-sizing: border-box;
+  margin: auto;
+}
+
+button {
+  font-family: "Dosis" !important;
+}
+
+body {
+  width: 90%;
+  font-family: "Dosis" !important;
+  height: 95%;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid #bdc2ce;
+}
+
+nav.homeNav {
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 2;
+}
+
+ul.homeNavUl {
+  margin: 0;
+}
+ul.homeNavUl li.homeNavLi {
+  float: left;
+  list-style: none;
+  padding-right: 10px;
+}
+
+.loginButton, .cartButton {
+  background-color: inherit;
+  font-size: large;
+  padding: 5px;
+  margin: 5px;
+}
+
+.loginButton {
+  border: none;
+}
+
+.row2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.cartButton {
+  flex: 1;
+  background-color: #eaeaea !important;
+  display: flex;
+  flex-direction: column;
+}
+
+svg {
+  /* Place the icon on the text baseline. */
+  position: relative;
+  top: 0.125em;
+  flex-shrink: 0;
+  /* Scale the icon to match the font-size of the parent element. */
+  height: 2em;
+  width: 2em;
+  fill: #d10157;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.loginClass {
+  display: flex;
+}
+
+footer {
+  background-color: #eaeaea;
+  height: 50px;
+  text-align: left;
+  padding: 10px 0 10px 0;
+}
+
+.modal-content * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 5px;
+}
+
+/* The Modal (background) */
+.modalClass {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #eaeaea;
+  margin: auto;
+  border: 1px solid #888;
+  width: 30%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  margin-right: 5px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-content > header {
+  background-color: #000;
+  color: #fefefe;
+  text-transform: capitalize;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-content > main {
+  background-color: #eaeaea;
+  flex: 8;
+  width: 100%;
+  overflow: scroll;
+}
+
+.modal-content > main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.modal-content > footer {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal-content > footer > button {
+  margin: 10px;
+  background-color: #d10157;
+  color: white;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.modal-content > aside {
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* cart card items */
+.cartCard {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  margin-bottom: 5px;
+}
+
+.cartCard img {
+  width: 100px;
+  height: 100px;
+}
+
+.nameCounter {
+  flex: 1;
+}
+
+.counterCartItem {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.counterCartItem button {
+  width: 40px;
+  flex: 0;
+  height: 40px;
+  background-color: #d10157;
+  color: white;
+  border-radius: 50%;
+  font-size: larger;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+/*# sourceMappingURL=cart.css.map */

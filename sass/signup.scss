@@ -1,0 +1,71 @@
+@import 'style';
+
+.signup, .signin {
+    display: flex;
+    width:90%;
+    flex-direction: row;
+    padding-top:20px;
+    padding-bottom: 20px;
+
+}
+
+.signupClass1{
+    flex:1;
+    width:50%;
+    text-align: start;
+}
+
+.signupClass2 {
+    flex:1;
+    width:50%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+form > div {
+    height:70px;
+    width: 70%;
+}
+.inputBox {
+    position: relative;
+}
+ 
+.inputBox input {
+   border:none;
+   height:30px;
+   width: 100%;
+   border-bottom: 1px solid $grayColor;
+}
+ 
+.inputBox label {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    color: $grayColor;
+    transition: 0.5s;
+}
+.inputBox input:focus ~ label,
+.inputBox input:valid ~ label,
+.inputBox input:not([value=""]) ~ label {
+    top: -1.125rem;
+    left: 0px;
+    color: $highlightColor;
+    background-color: #fff;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+ 
+.inputBox input:focus {
+    outline: none;
+    border-bottom: 1px solid $highlightColor;
+}
+
+.signButton {
+    background-color: $logoColor;
+    font-size: medium;
+    color: white;
+    width:70%;
+}

@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis");
+* {
+  box-sizing: border-box;
+}
+
+button {
+  font-family: "Dosis" !important;
+}
+
+body {
+  width: 90%;
+  font-family: "Dosis" !important;
+  height: 95%;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid #bdc2ce;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 2;
+}
+
+ul {
+  margin: 0;
+}
+ul li {
+  float: left;
+  list-style: none;
+  padding-right: 10px;
+}
+
+.loginButton, .cartButton {
+  background-color: inherit;
+  font-size: large;
+  padding: 5px;
+  margin: 5px;
+}
+
+.loginButton {
+  border: none;
+}
+
+svg {
+  /* Place the icon on the text baseline. */
+  position: relative;
+  top: 0.125em;
+  flex-shrink: 0;
+  /* Scale the icon to match the font-size of the parent element. */
+  height: 2em;
+  width: 2em;
+  fill: #d10157;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.loginClass {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+}
+
+footer {
+  background-color: #eaeaea;
+  height: 50px;
+  text-align: left;
+  padding: 10px 0 10px 0;
+}
+
+.signup, .signin {
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.signupClass1 {
+  flex: 1;
+  width: 50%;
+  text-align: start;
+}
+
+.signupClass2 {
+  flex: 1;
+  width: 50%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+form > div {
+  height: 70px;
+  width: 70%;
+}
+
+.inputBox {
+  position: relative;
+}
+
+.inputBox input {
+  border: none;
+  height: 30px;
+  width: 100%;
+  border-bottom: 1px solid #bdc2ce;
+}
+
+.inputBox label {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  color: #bdc2ce;
+  transition: 0.5s;
+}
+
+.inputBox input:focus ~ label,
+.inputBox input:valid ~ label,
+.inputBox input:not([value=""]) ~ label {
+  top: -1.125rem;
+  left: 0px;
+  color: #50dae4;
+  background-color: #fff;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.inputBox input:focus {
+  outline: none;
+  border-bottom: 1px solid #50dae4;
+}
+
+.signButton {
+  background-color: #d10157;
+  font-size: medium;
+  color: white;
+  width: 70%;
+}
+
+/*# sourceMappingURL=signup.css.map */

@@ -1,0 +1,119 @@
+@import 'style';
+
+/* Slideshow container */
+.slideshow-container {
+    width: 90%;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Make the images invisible by default */
+  .Containers {
+    display: none;
+    img {
+        width: 100%;
+    }
+  }
+  
+
+  /* forward & Back buttons */
+  .Back, .forward {
+    cursor: pointer;
+    position: absolute;
+    top: 48%;
+    width: auto;
+    margin-top: -23px;
+    padding: 17px;
+    color: grey;
+    font-weight: bold;
+    font-size: 19px;
+    transition: 0.4s ease;
+    border-radius: 0 5px 5px 0;
+    user-select: none;
+  }
+  
+  /* Place the "forward button" to the right */
+  .forward {
+    right: 0;
+    border-radius: 4px 0 0 4px;
+  }
+/*when the user hovers,add a black background with some little opacity */
+.Back:hover, .forward:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+.dotsParent {
+    align-items: center;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+}
+  /* The circles or bullets and indicators */
+  .dots {
+    cursor: pointer;
+    height: 9px;
+    width: 9px;
+    margin: 5px;
+    padding: 5px;
+    background-color: black;
+    border-radius: 50%;
+    float: left;
+  }
+  
+  .enable, .dots:hover {
+    background-color: #717161;
+  }
+
+  /* Card */
+  .cardClass {
+    display: flex;
+    flex-direction: column;
+  }
+  .separator {
+    flex-grow: 1;
+    height: 3px;
+    width: 100%;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
+    box-shadow: inset 0 2 2px white;
+  }
+
+  .cardImageDetails {
+      display: flex;
+      justify-content: space-between;
+      img {
+          order:1;
+          flex:1;
+          height: 90%;
+          width: 50%;
+      }
+      .cardTextClass {
+          flex:1;
+          order:2;
+          width: 50%;
+      }
+  }
+  @media screen and (max-width:600px) {
+    .cardImageDetails {
+      padding-bottom: 10px;
+    }
+  }
+
+  .cardClass:nth-child(even) {
+      .cardImageDetails > img {
+          order:3;
+      }
+  }
+
+  .cardTextClass {
+    display: flex;
+    flex-direction: column;
+    button {    
+        background-color: $logoColor;
+        color: white;
+    }
+  }
+
+  .cardTextClass h3,h5,button {
+      flex: 1;
+      padding: 15px;
+  }
