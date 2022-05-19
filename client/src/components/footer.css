@@ -1,0 +1,13 @@
+
+.footer {
+    background-color: rgb(226, 225, 225);
+    height: 2rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer h5 {
+    margin: auto 0;
+    margin-left: 10%;
+    font-size: 0.8rem;
+  }

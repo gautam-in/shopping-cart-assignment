@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  .header-container {
+    box-shadow: 0 1px 5px #aaaaaa89;
+  }
+  
+  .header {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    /* background-color: red; */
+    height: 5rem;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 0.5rem;
+    margin-left: 8rem;
+  }
+  .nav a {
+    padding-right: 0.938rem;
+  }
+  
+  .cart-header {
+    display: inline-block;
+    position: absolute;
+    right: 3rem;
+    bottom: 1rem;
+  }
+  
+  .log-reg {
+    top: 1rem;
+    position: absolute;
+    right: 0.625rem;
+  }
+  
+  .logo {
+    width: 8.75rem;
+    height: 4.375rem;
+    display: inline-block;
+    margin: auto 0;
+  }
+  
+  .cart-img {
+    position: absolute;
+  
+    background-color: red;
+    top: 3rem;
+  }
+  
