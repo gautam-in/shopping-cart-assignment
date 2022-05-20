@@ -1,7 +1,11 @@
+import { useState } from 'react';
+import Cart from '../Cart/Cart.component';
 import {Link} from 'react-router-dom';
 import './Header.styles.css';
 
 const Header = () =>{
+    const [cartClicked,setCartClicked] = useState(false);
+    const handleClick = () => setCartClicked(state => !state);
     return(
         <header className="App-header">
         <div className="header__logo-container">
@@ -25,7 +29,7 @@ const Header = () =>{
             <Link className="header__link" to='/register'>Register</Link>
           </div>
 
-          <div className="header__auth--cartcontainer">
+          <div className="header__auth--cartcontainer" onClick={handleClick}>
             <div className="header__auth--cart">
             <img src="/static/images/cart.svg" alt="App__logo" className="header__auth--cart-img" />
             </div>
@@ -34,7 +38,7 @@ const Header = () =>{
             </div>
           </div>
         </div>
-
+          {cartClicked && <Cart clickHandler={handleClick}/>}
       </header>
     )
 }

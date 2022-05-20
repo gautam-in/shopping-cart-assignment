@@ -37,4 +37,5 @@
   
   img.header__auth--cart-img {
     width: 2.5rem;
+    filter: invert(21%) sepia(40%) saturate(5294%) hue-rotate(325deg) brightness(85%) contrast(84%);
   }
