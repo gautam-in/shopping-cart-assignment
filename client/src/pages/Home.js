@@ -21,9 +21,9 @@ useEffect(()=>{
 
   let AllCategories = categoriesData.map((cat)=>{
     if(cat.enabled)
-     return  <Category  categoryname={cat.name}  description={cat.description} imageUrl={cat.imageUrl} key={cat.key} />
+     return  <Category  categoryname={cat.name}  description={cat.description} imageUrl={cat.imageUrl} keyname={cat.key} key={cat.id} />
 });
-console.log(categoriesData);
+
 
   return (
     <article className="homepage-container">
