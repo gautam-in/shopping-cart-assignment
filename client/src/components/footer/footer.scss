@@ -1,0 +1,17 @@
+.footer-container {
+    text-align: start;
+    padding: 0.5rem 4rem;
+    background-color: rgb(216, 216, 216);
+    width: 100%;
+   // position: fixed;
+    bottom: 0rem;
+    margin-right: 4rem;
+}
+
+@media screen and (max-width:480px) {
+    .footer-container {
+        padding: 0.5rem 0.5rem;
+        font-size: 12px;
+        position: fixed;
+    }
+}
