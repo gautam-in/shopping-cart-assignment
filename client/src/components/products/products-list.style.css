@@ -23,6 +23,6 @@ p {
 }
 .productPrice {
   height: 100px;
-  display: flex;
-  justify-content: flex-around;
+  display: inline-flex;
+  justify-content: flex-start;
 }
