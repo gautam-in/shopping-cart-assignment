@@ -1,0 +1,26 @@
+.anchor-tag {
+  text-decoration: none;
+  background-color: rgb(171, 68, 123);
+  color: white;
+  padding: 10px;
+  margin-left: 50px;
+}
+img {
+  width: 20%;
+}
+.Fruits-vegetables {
+  display: flex;
+  /* background-color: red; */
+  width: 100%;
+  justify-content: space-around;
+  border: 1px solid rgb(218, 211, 211);
+  /* margin-top: 10px; */
+  margin: 10px 10px;
+}
+.container {
+  display: flex;
+  width: 50%;
+  /* background-color: green; */
+  flex-direction: column;
+  align-items: flex-start;
+}
