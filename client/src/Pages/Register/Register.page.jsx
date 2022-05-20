@@ -19,8 +19,6 @@ const Register = props =>{
     }
 
     return (
-        // <div>
-
         <RegisterContainer>
                     <RegisterMetaContainer>
                         <RegisterHeading>Signup</RegisterHeading>
@@ -51,7 +49,6 @@ const Register = props =>{
                     </RegisterFormContainer>
                     
                 </RegisterContainer>
-        // </div>
     )
 };
 

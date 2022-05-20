@@ -1,17 +1,19 @@
-import { useEffect,useState } from "react";
-import axios from "axios";
+import {useSelector} from 'react-redux';
+
 import {ProductContainer,ProductHeaderContainer,ProductHeader,ProductImgContainer,ProductImg,ProductDescContainer,
     ProductDesc,ProductMetaContainer,ProductPrice,ProductCTA} from './Product.styles';
 
-const Product = props => {
-    const [products,setProducts] = useState([]);
-    useEffect(()=>{
-        axios.get('http://localhost:5000/products').then(res=>setProducts(res.data))
-      },[]);
-
+const Product = ({category}) => {
+    const products = useSelector(state => state.data.products);
+    let finalProductList;
+    if(category !== ''){
+        finalProductList = products.data.filter(prod => prod.category === category);
+    } else {
+        finalProductList = products.data;
+    }
     return(
         <>
-         {products && products.map(prod => (
+         {finalProductList && finalProductList.map(prod => (
             <ProductContainer key={prod.key}>
             <ProductHeaderContainer>
                 <ProductHeader>

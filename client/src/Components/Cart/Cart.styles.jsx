@@ -86,5 +86,6 @@ export const CartCheckoutButtonText = styled.h4`
 
 `;
 export const CartCheckoutButtonPrice = styled.p`
-    
+    display: flex;
+    gap: 1rem;
 `;

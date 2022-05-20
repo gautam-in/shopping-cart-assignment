@@ -1,9 +1,10 @@
-import axios from 'axios';
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Category from '../Category/Category.component';
 
 import { CategoryContainer } from '../Category/Category.styles';
+import {useSelector,useDispatch} from 'react-redux';
+import {getCategories} from '../../redux/actionCreators/dataActionCreators';
 
 const CategoriesContainer = styled.div`
     padding:0 20rem;
@@ -13,21 +14,19 @@ const CategoriesContainer = styled.div`
 `;
 
 const Categories = (props) => {
-    const [cat,setCat] = useState([]);
+    const dispatch = useDispatch();
+    const data = useSelector(state => state.data.categories);
+    // const [cat,setCat] = useState([]);
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/categories')
-            .then(res => {
-                res.data.sort((a,b) => a.order>b.order ? 1:-1);
-                setCat(res.data)
-            })
-    },[]);
+        dispatch(getCategories());
+    },[dispatch]);
 
     return (
         <CategoriesContainer>
             {
-                cat && cat.map(cat => (
-                    cat.imageUrl && <Category key={cat.key} data={cat}/>
+                data && data.data.map(data => (
+                    data.imageUrl && <Category key={data.key} data={data}/>
                 ))
             }
 

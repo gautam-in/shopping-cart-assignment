@@ -43,7 +43,7 @@ const Cart = ({clickHandler,...props}) =>{
                     <CartCheckoutText>Promo code can be applied on payment page</CartCheckoutText>
                     <CartCheckoutButton>
                         <CartCheckoutButtonText>Proceed to Checkout</CartCheckoutButtonText>
-                        <CartCheckoutButtonPrice>Rs187 {'>'}</CartCheckoutButtonPrice>
+                        <CartCheckoutButtonPrice>Rs187 <span>{'>'}</span></CartCheckoutButtonPrice>
                     </CartCheckoutButton>
                 </CartCheckoutContainer>
             </CartComponent>
