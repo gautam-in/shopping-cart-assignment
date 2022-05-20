@@ -1,33 +1,51 @@
+import { useSelector,useDispatch } from 'react-redux';
+import { cartActions } from '../../redux/slice/cartSlice';
+
 import {CartItemContainer,CartItemImgContainer,CartItemImg,
     CartItemMetaDataContainer,CartItemTitle,CartItemQtyContainer,CartItemQtyUpdater,CartItemMetaData,
     CartItemQty,CartItemPriceContainer,CartItemPrice,CartItemTotalPrice} from './CartItem.styles';
 
 const CartItem = props => {
+    const dispatch = useDispatch();
+    const cartItems = useSelector(state => state.cart);
+
+    const addItem = (id) => {
+        dispatch(cartActions.addCartItemCount(id));
+    }
+
+    const removeItem = (id) => {
+        dispatch(cartActions.subtractCartItemCount(id));
+    }
+
     return(
-        <CartItemContainer>
+        <>
+        {cartItems && cartItems.map(item =>
+
+        (<CartItemContainer key={item.id}>
             <CartItemImgContainer>
-                <CartItemImg src='\static\images\products\fruit-n-veg\apple.jpg'/>
+                <CartItemImg src={item.imageURL}/>
             </CartItemImgContainer>
 
             <CartItemMetaDataContainer>
-                <CartItemTitle>Apple - Washington,Regular, 4 pcs </CartItemTitle>
+                <CartItemTitle>{item.name} </CartItemTitle>
                 <CartItemMetaData>
                     <CartItemQtyContainer>
-                        <CartItemQtyUpdater>-</CartItemQtyUpdater>
-                        <CartItemQty>1</CartItemQty>
-                        <CartItemQtyUpdater>+</CartItemQtyUpdater>
+                        <CartItemQtyUpdater onClick={()=>removeItem(item.id)}>-</CartItemQtyUpdater>
+                        <CartItemQty>{item.qty}</CartItemQty>
+                        <CartItemQtyUpdater onClick={()=>addItem(item.id)}>+</CartItemQtyUpdater>
                     </CartItemQtyContainer>
 
                     <CartItemPriceContainer>
                     &#10006;
-                    <CartItemPrice>Rs. 187</CartItemPrice>
+                    <CartItemPrice>Rs. {item.price}</CartItemPrice>
                     </CartItemPriceContainer>
 
-                    <CartItemTotalPrice>Rs. 187</CartItemTotalPrice>
+                    <CartItemTotalPrice>Rs. {item.price * item.qty}</CartItemTotalPrice>
 
                 </CartItemMetaData>
             </CartItemMetaDataContainer>
-        </CartItemContainer>
+        </CartItemContainer>))}
+        </>
     )
 }
 

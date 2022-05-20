@@ -1,15 +1,20 @@
-import {useSelector} from 'react-redux';
-
+import {useSelector,useDispatch} from 'react-redux';
+import { cartActions } from '../../redux/slice/cartSlice';
 import {ProductContainer,ProductHeaderContainer,ProductHeader,ProductImgContainer,ProductImg,ProductDescContainer,
     ProductDesc,ProductMetaContainer,ProductPrice,ProductCTA} from './Product.styles';
 
 const Product = ({category}) => {
+    const dispatch = useDispatch();
     const products = useSelector(state => state.data.products);
     let finalProductList;
     if(category !== ''){
         finalProductList = products.data.filter(prod => prod.category === category);
     } else {
         finalProductList = products.data;
+    }
+
+    const addtoCart = (item) => {
+        dispatch(cartActions.addtoCart(item))
     }
     return(
         <>
@@ -36,7 +41,7 @@ const Product = ({category}) => {
                        MRP Rs.{prod.price}
                 </ProductPrice>
 
-                <ProductCTA>
+                <ProductCTA onClick={()=>addtoCart(prod)}>
                         Buy Now
                 </ProductCTA>
             </ProductMetaContainer>
