@@ -1,0 +1,17 @@
+
+.homepage-container {
+    width: 80%;
+    margin: 2rem auto;
+  }
+  
+  .banners {
+    height: 14rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 8px 6px -6px #aaaaaa89;
+  }
+  
+  .banners img {
+    width: 100%;
+    height: 100%;
+  }
+  

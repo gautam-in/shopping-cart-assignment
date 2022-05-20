@@ -1,0 +1,46 @@
+
+  .categories {
+    margin-top: 1rem;
+    height: 14rem;
+    display: flex;
+    padding: 1rem;
+    box-shadow: 0 8px 6px -6px #aaaaaa89;
+  }
+  .cat-last {
+    box-shadow: none;
+  }
+  
+  .categories img {
+    width: 40%;
+    height: 100%;
+  }
+  
+  .cat-info {
+    width: 60%;
+  }
+  
+  .cat-info-contents {
+    margin-left: 12rem;
+  }
+  
+  .cat-info h3 {
+    margin-top: 3rem;
+    margin-left: 0.7rem;
+  
+    font-size: 1.6rem;
+  }
+  
+  .cat-info p {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+  
+  .cat-info button {
+    margin-top: 1rem;
+    color: #fff;
+    border: none;
+    height: 2rem;
+    padding: 0.6rem;
+    background-color: #d00255;
+    margin-left: 2.7rem;
+  }

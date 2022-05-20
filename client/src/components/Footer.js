@@ -4,7 +4,7 @@ import './footer.css'
 
 function Footer() {
   return (
-    <footer class="footer">
+    <footer className="footer">
       <h5>Copyright &copy; 2011-2022 Sabka Bazar Grocery Supplies Pvt Ltd</h5>
     </footer>
   )
