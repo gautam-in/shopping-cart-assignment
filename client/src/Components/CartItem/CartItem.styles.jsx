@@ -24,17 +24,19 @@ export const CartItemQtyContainer = styled.div`
     display:flex;
     gap: 0.8rem;
 `;
-export const CartItemQtyUpdater = styled.div`
+export const CartItemQtyUpdater = styled.button`
     font-size: 1.5rem;
     background: #bf2957;
     color: #fff;
     border-radius: 50%;
     width: 1.5rem;
+    outline:none;
+    border:none;
     height: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.1rem;
 `;
 export const CartItemMetaData = styled.div`
     display: flex;
