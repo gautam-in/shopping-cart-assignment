@@ -2,11 +2,10 @@
 import CategoryList from '../../components/category-list';
 import HomeCarousel from '../../components/home-carousel';
 
-
 const Home = () => {
 
   return (
-    <div>
+    <div className='home-container'>
         <HomeCarousel/>
         <CategoryList />
     </div>
