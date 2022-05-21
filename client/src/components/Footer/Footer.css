@@ -1,0 +1,12 @@
+.footerMain{
+    width: 100%;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #d6d6d6;
+    background-color: rgba(0, 0, 0, 0.12);
+    padding: 0.6em 1.8em;
+    z-index: 9999;
+}

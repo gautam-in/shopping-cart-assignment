@@ -1,30 +1,51 @@
-.appbar{
-background: #fff !important;
-color:grey!important
-/* padding-left: 200px; */
+.appbar {
+    background: #fff !important;
+    color: grey !important
+        /* padding-left: 200px; */
 }
-.toolbar{
-    padding-left: 200px!important;  
+
+.toolbar {
+    padding-left: 200px !important;
 }
-.pages{
-    display:flex;
+
+.pages {
+    display: flex;
     justify-content: space-between;
     margin-left: 120px;
-    width:17%;
-    margin-right:70px;
+    width: 17%;
+    margin-right: 70px;
 }
-.rightText{
-    display:flex;
+
+.rightText {
+    display: flex;
     /* width:80%; */
     flex-direction: column;
     text-align: center;
 }
-.sbkabazarimg{
+
+.sbkabazarimg {
     justify-content: flex-end;
 }
-.middletext{
+
+.middletext {
     justify-content: space-around;
 }
-.lastText{
+
+.lastText {
     flex-direction: column;
+}
+
+.lastTextFirstChild {
+    text-align: center;
+    padding: 8px 0px 8px 0px;
+}
+
+.cartMainFirstChild{
+    display: flex;
+    justify-content: center;
+}
+
+.cartMain {
+    text-align: center;
+    padding: 5px 0px 5px 0px;
 }
