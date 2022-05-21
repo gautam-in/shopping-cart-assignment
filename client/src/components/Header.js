@@ -13,7 +13,9 @@ function Header() {
           <NavLink to="/Products">Products</NavLink>
         </nav>
 
-        <NavLink to="/Cart" className="cart-header">0 items</NavLink>
+        <NavLink to="/Cart" className="cart-header">  
+        <img src = "cart.svg" alt="cart svg"/>        
+         <h4>  0 items </h4> </NavLink>
 
         <div className="log-reg">
           <NavLink to="/Login">Login</NavLink>

@@ -1,0 +1,30 @@
+.productpage-container {
+  width: 80%;
+  margin: 2rem auto;
+  display: flex;
+}
+
+.menu-section {
+  width: 20%;
+  background-color: #eaeaea;
+}
+
+.menu-section nav {
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-section nav a {
+  text-align: start;
+  display: inline-block;
+  padding: 5px;
+  padding-left: 0.5rem;
+  height: 2.4rem;
+  border-bottom: 1px solid #a4a4a4;
+  font-size: 1.2rem;
+}
+
+.porduct-listing {
+  width: 80%;
+}

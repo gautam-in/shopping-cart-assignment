@@ -1,5 +1,7 @@
 
 .footer {
+  position: sticky;
+  bottom: 0px;
     background-color: rgb(226, 225, 225);
     height: 2rem;
     display: flex;
