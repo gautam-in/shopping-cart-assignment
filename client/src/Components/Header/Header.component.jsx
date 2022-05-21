@@ -2,8 +2,10 @@ import { useState } from 'react';
 import Cart from '../Cart/Cart.component';
 import {Link} from 'react-router-dom';
 import './Header.styles.css';
+import useGetCartDetails from '../../Hooks/useGetCartDetails';
 
 const Header = () =>{
+    const {totalQty} = useGetCartDetails();
     const [cartClicked,setCartClicked] = useState(false);
     const handleClick = () => setCartClicked(state => !state);
     return(
@@ -34,7 +36,7 @@ const Header = () =>{
             <img src="/static/images/cart.svg" alt="App__logo" className="header__auth--cart-img" />
             </div>
             <div className="header__auth--cart-qty">
-                0 items
+                {totalQty} items
             </div>
           </div>
         </div>

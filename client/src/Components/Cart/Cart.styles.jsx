@@ -77,7 +77,7 @@ export const CartCheckoutButton = styled(AppButton)`
     width:100%;
     border-radius:5px;
     display: flex;
-    justify-content: space-between;
+    justify-content: ${props => props.justifyCenter ? 'center' : 'space-between'};
     padding: 1rem;
     font-family:inherit;
     font-size:1.1rem;
@@ -88,4 +88,21 @@ export const CartCheckoutButtonText = styled.h4`
 export const CartCheckoutButtonPrice = styled.p`
     display: flex;
     gap: 1rem;
+`;
+
+export const CartEmptyContainer = styled.div`
+    display: flex;
+    place-items: center;
+    height:100%;
+    justify-content: center;
+`;
+export const CartEmptyPlaceholder = styled.div`
+    text-align:center;
+`;
+export const CartEmptyTitle = styled.h3`
+    font-size:1.3rem;
+    font-weight:600;
+`;
+export const CartEmptySubtitle = styled.p`
+    font-weight:500;
 `;
