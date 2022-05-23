@@ -17,12 +17,15 @@
 
 .menu-section nav a {
   text-align: start;
+
   display: inline-block;
-  padding: 5px;
-  padding-left: 0.5rem;
-  height: 2.4rem;
+  padding: 1.25rem;
+  padding-left: 0.8rem;
+  height: 4rem;
   border-bottom: 1px solid #a4a4a4;
   font-size: 1.2rem;
+  color: #a2a2a2;
+  cursor: pointer;
 }
 
 .porduct-listing {

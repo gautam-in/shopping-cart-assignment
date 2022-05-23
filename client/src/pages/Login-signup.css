@@ -1,69 +1,69 @@
-
+body {
+  background-color: white;
+}
 
 .main-container {
-    position: relative;
-    width: 80%;
-    margin: 2rem auto;
-    display: flex;
-  }
-  
-.container {
-    height: 12rem;
-    width: 24rem;
-  }
-  
-  .aside {
-    margin-left: 4.3rem;
-  }
-  
-  .aside h1 {
-    margin-top: 1rem;
-  
-    font-size: 1.6rem;
-  }
-  
-  .aside p {
-    margin-top: 1rem;
-  
-    font-size: 1rem;
-  }
-  
-  .login-form {
-    margin-left: 2.5rem;
-    /* background-color: yellow; */
-  }
-  
-  .login-form label {
-    font-size: 1.2rem;
-  }
-  
-  .input {
-    width: 100%;
-    margin-bottom: 1.5rem;
-    height: 2rem;
-  }
-  
-  .signup-container {
-    height: 20rem;
-    width: 24rem;
-  }
-  
-  input{
-    border: none;
-    border-bottom: 1px solid #7575a1;
+  position: relative;
+  width: 80%;
+  margin: 2rem auto;
+  display: flex;
+}
 
-  }
-  
-  input[type="email"],
-  input[type="text"],
-  input[type="password"]:focus {
-    outline: none;
-    border-bottom: 2px solid #50dae2;
-  }
-  
-  input[type="submit"] {
-    color: #fff;
-    border: none;
-    background-color: #d00255;
-  }
-  
+.container {
+  height: 12rem;
+  width: 24rem;
+}
+
+.aside {
+  margin-left: 4.3rem;
+}
+
+.aside h1 {
+  margin-top: 1rem;
+
+  font-size: 1.6rem;
+}
+
+.aside p {
+  margin-top: 1rem;
+
+  font-size: 1rem;
+}
+
+.login-form {
+  margin-left: 2.5rem;
+  /* background-color: yellow; */
+}
+
+.login-form label {
+  font-size: 1.2rem;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  height: 2rem;
+}
+
+.signup-container {
+  height: 20rem;
+  width: 24rem;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #7575a1;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"]:focus {
+  outline: none;
+  border-bottom: 2px solid #50dae2;
+}
+
+input[type="submit"] {
+  color: #fff;
+  border: none;
+  background-color: #d00255;
+}

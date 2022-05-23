@@ -1,17 +1,14 @@
 import React from "react";
 import "./product.css";
-function Product() {
+function Product({ pname, imageURL, description, price }) {
+  imageURL = "http://localhost:8080" + imageURL;
   return (
     <section className="product">
-      <h3>product name</h3>
-      <img src="apple.jpg"></img>
-      <p>
-        In publishing and graphic designcddd, Lorem ipsum is a placeholder text
-        commonly used to demonstrate the visual form of a document or a typeface
-        without
-      </p>
+      <h3>{pname}</h3>
+      <img src={imageURL}></img>
+      <p>{description}</p>
       <div className="mrp-button">
-        <h5>MRP RS. 123</h5>
+        <h5>MRP Rs {price} </h5>
         <button> Buy Now</button>
       </div>
     </section>

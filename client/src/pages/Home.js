@@ -33,6 +33,7 @@ function Home() {
           description={cat.description}
           imageUrl={cat.imageUrl}
           keyname={cat.key}
+          id={cat.id}
           key={cat.id}
         />
       );
