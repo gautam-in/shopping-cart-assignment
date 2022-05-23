@@ -1,6 +1,6 @@
 
 .homepage-container {
-    width: 80%;
+    width: 100%;
     margin: 2rem auto;
   }
   
@@ -13,5 +13,17 @@
   .banners img {
     width: 100%;
     height: 100%;
+  }
+
+  @media screen and (max-width:768px){
+
+  }
+  
+  @media screen and (max-width:566px){
+  
+  }
+  
+  @media screen and (max-width:992px){
+  
   }
   

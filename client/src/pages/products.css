@@ -21,7 +21,7 @@
   display: inline-block;
   padding: 1.25rem;
   padding-left: 0.8rem;
-  height: 4rem;
+  height: 5rem;
   border-bottom: 1px solid #a4a4a4;
   font-size: 1.2rem;
   color: #a2a2a2;
@@ -30,4 +30,17 @@
 
 .porduct-listing {
   width: 80%;
+}
+
+
+@media screen and (max-width:768px){
+
+}
+
+@media screen and (max-width:566px){
+
+}
+
+@media screen and (max-width:992px){
+
 }

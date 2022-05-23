@@ -1,7 +1,7 @@
 import React from "react";
 import "./product.css";
 function Product({ pname, imageURL, description, price }) {
-  imageURL = "http://localhost:8080" + imageURL;
+  imageURL = "logo.png";
   return (
     <section className="product">
       <h3>{pname}</h3>

@@ -12,7 +12,6 @@ function Products() {
   let [categoriesData, setCategoriesData] = useState([]);
 
   let params = useParams();
-
   useEffect(() => {
     fetch("http://localhost:5000/products")
       .then((data) => data.json())

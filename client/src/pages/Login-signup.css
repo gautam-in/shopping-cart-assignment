@@ -67,3 +67,20 @@ input[type="submit"] {
   border: none;
   background-color: #d00255;
 }
+
+
+@media (min-width:40rem){
+
+}
+
+@media screen and (max-width:992px){
+
+}
+
+@media screen and (max-width:768px){
+
+}
+
+@media screen and (max-width:566px){
+
+}
