@@ -40,6 +40,7 @@ function Products() {
         description={data.description}
         price={data.price}
         key={data.id}
+        id={data.id}
       />
     );
   });

@@ -1,4 +1,7 @@
 import { Route, Switch, Redirect } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import { CartActions } from "./store/cart-slice";
 
 import Home from "./pages/Home";
 import Products from "./pages/Products";
@@ -10,8 +13,19 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import "./App.css";
+import { useEffect } from "react";
 
 function App() {
+  let dispatch = useDispatch();
+
+  useEffect(() => {
+    fetch("http://localhost:5000/userCart/")
+      .then((data) => data.json())
+      .then((json) => {
+        dispatch(CartActions.replaceCart(json));
+      });
+  }, []);
+
   return (
     <>
       <Header />

@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "./cart.css";
 
 function Cart() {
+  let [cartData, setCartData] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/userCart/")
+      .then((data) => data.json())
+      .then((cartdata) => {
+        setCartData(cartdata);
+      });
+  }, []);
+
   return (
     <section className="cart-container">
       <div className="header-cart">
         <h3>My Cart</h3>
-        <p>(0 items)</p>
+        <p>({cartData.length} items)</p>
       </div>
 
       <div className="cart-contents">
