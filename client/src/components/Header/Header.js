@@ -11,8 +11,13 @@ import CartImage from '../../images/cart.svg';
 import './Header.css';
 import { Grid } from "@material-ui/core";
 import { Link} from 'react-router-dom';
+import { useSelector } from "react-redux";
 
 const Header = () => {
+    // const countSelector = useSelector((state) => {
+    //     return state.CartReducers.countOfItems
+    // });
+    // console.log("countSelector",countSelector);
     return (
         <React.Fragment>
             <AppBar className="appbar" position="static">
@@ -32,7 +37,8 @@ const Header = () => {
                                 <Link to="/" style={{textDecoration:'none'}}>Home</Link>
                             </Typography>
                             <Typography variant="h6">
-                                Products
+                                {/* Products */}
+                                <Link to="/productListPage" style={{textDecoration:'none'}}>Products</Link>
                             </Typography>
                         </Grid>
                     </Grid>

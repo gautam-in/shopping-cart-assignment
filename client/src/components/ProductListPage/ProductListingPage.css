@@ -1,0 +1,14 @@
+.headerText{
+    font-weight: 700;
+}
+.descriptionText{
+    background: lightgray;
+}
+.bottomText{
+display:flex;
+justify-content: space-between;
+align-items: center;
+}
+.productDesc{
+    font-size: 13px;   
+}
