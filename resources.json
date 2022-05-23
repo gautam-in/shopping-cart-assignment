@@ -431,6 +431,14 @@
       "totalPrice": 98,
       "imageURL": "http://localhost:8080/static/images/products/bakery-cakes-dairy/paneer.jpg",
       "id": "5b6c6d6201a7c38429530889"
+    },
+    {
+      "productName": "Fresho Pomegrante Peeled, 500 gm ",
+      "productPrice": 88,
+      "quantity": 1,
+      "totalPrice": 88,
+      "imageURL": "http://localhost:8080/static/images/products/fruit-n-veg/pomegrante.jpg",
+      "id": "5b6c6b7001a7c38429530885"
     }
   ]
 }
