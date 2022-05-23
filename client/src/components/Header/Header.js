@@ -10,6 +10,8 @@ import LogoPng from '../../images/logo.png';
 import CartImage from '../../images/cart.svg';
 import './Header.css';
 import { Grid } from "@material-ui/core";
+import { Link} from 'react-router-dom';
+
 const Header = () => {
     return (
         <React.Fragment>
@@ -26,7 +28,8 @@ const Header = () => {
                     <Grid item xs={2}>
                         <Grid container className="middletext">
                             <Typography variant="h6">
-                                Home
+                                
+                                <Link to="/" style={{textDecoration:'none'}}>Home</Link>
                             </Typography>
                             <Typography variant="h6">
                                 Products
@@ -36,8 +39,9 @@ const Header = () => {
                     <Grid item xs={6}>
                         <Grid container className="lastText">
                             <div className="lastTextFirstChild">
-                                <span>Sign In</span>
-                                <span style={{ marginLeft: '10px' }}>Register</span>
+                            <Link to="/login" style={{textDecoration:'none'}}>Sign In</Link>
+                                {/* <span>Sign In</span> */}
+                                <Link to="/signUp" style={{ marginLeft: '10px',textDecoration:'none' }}>Register</Link>
                             </div>
                             <div className="cartMain">
                                 <div className="cartMainFirstChild">
