@@ -10,7 +10,6 @@ let cartSlice = createSlice({
   reducers: {
     addProduct(state, action) {
       let newProduct = action.payload;
-
       let existingProduct = state.cartItems.find(
         (prd) => prd.id === newProduct.id
       );
@@ -19,7 +18,8 @@ let cartSlice = createSlice({
         state.cartItems.push(newProduct);
       } else {
         existingProduct.quantity++;
-        existingProduct.totalPrice += existingProduct.price;
+        existingProduct.totalPrice =
+          existingProduct.totalPrice + existingProduct.productPrice;
       }
     },
 
@@ -30,7 +30,8 @@ let cartSlice = createSlice({
 
       if (existingProduct.quantity > 1) {
         existingProduct.quantity--;
-        existingProduct.totalPrice -= existingProduct.price;
+        existingProduct.totalPrice =
+          existingProduct.totalPrice - existingProduct.productPrice;
       } else {
         state.cartItems = state.cartItems.filter((prd) => prd.id !== pId);
       }

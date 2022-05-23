@@ -52,6 +52,7 @@ function Products() {
           onClick={() => filterProducts(data.id)}
           id={data.id}
           to={"/Products/" + data.id}
+          key={data.id}
         >
           {data.name}
         </NavLink>

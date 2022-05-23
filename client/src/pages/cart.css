@@ -42,6 +42,7 @@
 }
 
 .cart-product-details {
+  width: 60%;
   margin-top: 1rem;
   display: inline-block;
 }
@@ -74,16 +75,11 @@
   padding-right: 1rem;
 }
 
-@media screen and (max-width:768px){
-
+@media screen and (max-width: 768px) {
 }
 
-@media screen and (max-width:566px){
-
+@media screen and (max-width: 566px) {
 }
 
-@media screen and (max-width:992px){
-
+@media screen and (max-width: 992px) {
 }
-
-

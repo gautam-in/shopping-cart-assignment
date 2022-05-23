@@ -345,100 +345,28 @@
   ],
   "userCart": [
     {
-      "productName": "Tata Tea Gold Leaf Tea, 500 gm",
-      "productPrice": 165,
+      "productName": "Capsicum - Green, 1 kg",
+      "productPrice": 137,
+      "quantity": 1,
+      "totalPrice": 137,
+      "imageURL": "http://localhost:8080/static/images/products/fruit-n-veg/capsicum-green.jpg",
+      "id": "5b6c6bdc01a7c38429530886"
+    },
+    {
+      "productName": "Apple - Washington, Regular, 4 pcs",
+      "productPrice": 187,
+      "quantity": 1,
+      "totalPrice": 187,
+      "imageURL": "http://localhost:8080/static/images/products/fruit-n-veg/apple.jpg",
+      "id": "5b6c6aeb01a7c38429530884"
+    },
+    {
+      "productName": "Pampers Diapers Pants - Large Size, Monthly Box Pack, New, 128's pack",
+      "productPrice": 1999,
       "quantity": 2,
-      "totalPrice": 330,
-      "imageURL": "http://localhost:8080/static/images/products/beverages/tata-tea.jpg",
-      "id": "5b6c6f4a01a7c3842953088c"
-    },
-    {
-      "productName": "Red Label Tea, 500 gm Carton",
-      "productPrice": 205,
-      "quantity": 3,
-      "totalPrice": 615,
-      "imageURL": "http://localhost:8080/static/images/products/beverages/red-label.jpg",
-      "id": "5b6c6f8301a7c3842953088d"
-    },
-    {
-      "productName": "Bournvita Pro-Health Drink - Chocolate, 2x750 gm",
-      "productPrice": 572,
-      "quantity": 2,
-      "totalPrice": 1144,
-      "imageURL": "http://localhost:8080/static/images/products/beverages/bournvita.jpg",
-      "id": "5b6c6fbf01a7c3842953088e"
-    },
-    {
-      "productName": "TRESemme Shampoo - Keratin Smooth With Argan Oil, 580 ml ",
-      "productPrice": 410,
-      "quantity": 1,
-      "totalPrice": 410,
-      "imageURL": "http://localhost:8080/static/images/products/beauty-hygiene/shampoo.jpg",
-      "id": "5b6c71a101a7c38429530891"
-    },
-    {
-      "productName": "Coca Cola Soft Drink, 2x1.75 L",
-      "productPrice": 150,
-      "quantity": 1,
-      "totalPrice": 150,
-      "imageURL": "http://localhost:8080/static/images/products/beverages/bournvita.jpg",
-      "id": "5b6c6fed01a7c3842953088f"
-    },
-    {
-      "productName": "Mamypoko Pants Style Diapers - Large, 62 pcs",
-      "productPrice": 930,
-      "quantity": 2,
-      "totalPrice": 1860,
-      "imageURL": "http://localhost:8080/static/images/products/baby/mamy.jpg",
-      "id": "5b6c74d101a7c38429530896"
-    },
-    {
-      "productName": "Johnson & Johnson Baby skincare wipes, 20 pcs",
-      "productPrice": 70,
-      "quantity": 2,
-      "totalPrice": 140,
-      "imageURL": "http://localhost:8080/static/images/products/baby/wipes.jpg",
-      "id": "5b6c750701a7c38429530897"
-    },
-    {
-      "productName": "Johnson's Active Kids Shampoo - Shiny Drops With Argan Oil, 100 ml",
-      "productPrice": 95,
-      "quantity": 1,
-      "totalPrice": 95,
-      "imageURL": "http://localhost:8080/static/images/products/baby/shampoo.jpg",
-      "id": "5b6c75e101a7c3842953089a"
-    },
-    {
-      "productName": "Epigamia Greek Yogurt - Blueberry, 90 gm Cup",
-      "productPrice": 40,
-      "quantity": 1,
-      "totalPrice": 40,
-      "imageURL": "http://localhost:8080/static/images/products/bakery-cakes-dairy/yogurt-blue.jpg",
-      "id": "5b6c6d9e01a7c3842953088a"
-    },
-    {
-      "productName": "Epigamia Greek Yogurt - Strawberry, 90 gm",
-      "productPrice": 40,
-      "quantity": 1,
-      "totalPrice": 40,
-      "imageURL": "http://localhost:8080/static/images/products/bakery-cakes-dairy/yogurt-red.jpg",
-      "id": "5b6c6dd701a7c3842953088b"
-    },
-    {
-      "productName": "Organic Fresh Paneer, 200 gm ",
-      "productPrice": 98,
-      "quantity": 1,
-      "totalPrice": 98,
-      "imageURL": "http://localhost:8080/static/images/products/bakery-cakes-dairy/paneer.jpg",
-      "id": "5b6c6d6201a7c38429530889"
-    },
-    {
-      "productName": "Fresho Pomegrante Peeled, 500 gm ",
-      "productPrice": 88,
-      "quantity": 1,
-      "totalPrice": 88,
-      "imageURL": "http://localhost:8080/static/images/products/fruit-n-veg/pomegrante.jpg",
-      "id": "5b6c6b7001a7c38429530885"
+      "totalPrice": 3998,
+      "imageURL": "http://localhost:8080/static/images/products/baby/pampers.jpg",
+      "id": "5b6c746801a7c38429530895"
     }
   ]
 }
