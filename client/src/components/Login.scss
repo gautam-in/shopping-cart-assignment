@@ -1,0 +1,43 @@
+.sec {
+    position: relative;
+  }
+
+  input {
+    border: 0;
+    font-size: 12px;
+    border-bottom: 1.5px solid #ccc;
+    font-family: inherit;
+    -webkit-appearance: none;
+    border-radius: 0;
+    padding: 0;
+    width: 100%;
+    cursor: text;
+    font-weight: 500;
+  
+  }
+    
+  input:focus {
+    outline: 0;
+    border-bottom: 1.5px solid rgb(47, 193, 234);
+    padding: 8px 0;
+  }
+  
+  input:focus~.floating-label,
+  input:not(:focus):valid~.floating-label {
+    top: -10px;
+    bottom: 10px;
+    left: 0px;
+    font-size: 11px;
+    opacity: 1;
+    color: rgb(47, 193, 234);
+  }
+  
+  
+  .floating-label {
+    position: absolute;
+    pointer-events: none;
+    left: 0px;
+    top: 0px;
+    transition: 0.2s ease all;
+    font-size: 12px;
+  }

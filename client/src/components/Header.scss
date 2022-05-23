@@ -1,0 +1,59 @@
+.navbar {
+    z-index: 1;
+    box-shadow: rgba(174, 171, 171, 0.45) 0px 25px 20px -20px;
+ 
+    .logo {
+        height: 60px;
+    }
+
+
+    .navbar-cart{
+        background-color: #eceef0;
+        padding: 10px;
+        margin-right: 0;
+      }
+        .navbar-brand {
+          img {
+            height: 62px;
+          }
+        }
+      
+        .navbar-cart {
+          img {
+            height: 30px;
+          }
+        }
+}
+
+.cart {
+    position: absolute;
+    right: 15px;
+    top: 11px;
+}
+
+#myModal{
+    top: 60px;
+    left: 31%;
+
+    .cart-header{
+      display: none;
+    }
+    .cart-content{
+      margin-top: 0;
+      margin-bottom: 100px;
+      overflow-y: scroll;
+      height: 54vh !important;
+    }
+    
+   
+  }
+
+.checkout-footer .text-light {
+    cursor: pointer;
+}
+
+  @media screen and (max-width: 768px) {
+    .navbar-toggler  {
+        display: none;
+    }  
+  }

@@ -1,0 +1,19 @@
+.sidebar {
+    background-color: #eceef0;
+    height: 100%;
+  
+    ul {
+      list-style: none;
+      padding: 0px 10px;
+      color: #6c757d;
+      font-weight: 500;
+  
+      li {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+      li:hover {
+        cursor: pointer;
+      }
+    }
+  }

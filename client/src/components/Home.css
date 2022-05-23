@@ -1,0 +1,44 @@
+.carousel-indicators li {
+  width: 10px !important;
+  height: 10px !important;
+  background-color: #000000 !important;
+  border-radius: 50%;
+}
+
+section {
+  -webkit-box-shadow: rgba(174, 171, 171, 0.45) 0px 25px 20px -20px;
+          box-shadow: rgba(174, 171, 171, 0.45) 0px 25px 20px -20px;
+}
+
+section .row {
+  -webkit-box-shadow: rgba(174, 171, 171, 0.45) 0px 25px 20px -20px;
+          box-shadow: rgba(174, 171, 171, 0.45) 0px 25px 20px -20px;
+}
+
+section .row .col-lg-6.col-sm-12 img {
+  height: 280px;
+  margin-top: 10%;
+}
+
+section .row .category-details .details {
+  margin: auto;
+  padding-top: 15%;
+  text-align: center;
+  width: 80%;
+}
+
+@media screen and (max-width: 425px) {
+  section .row .col-lg-6 {
+    padding-bottom: 15px;
+  }
+  section .details h3 {
+    font-size: 1rem;
+  }
+  section .details p {
+    font-size: 0.75rem;
+  }
+  section .details .explore-btn {
+    font-size: 1rem;
+  }
+}
+/*# sourceMappingURL=Home.css.map */
