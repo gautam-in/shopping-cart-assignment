@@ -16,11 +16,11 @@ const CategoriesContainer = styled.div`
 const Categories = (props) => {
     const dispatch = useDispatch();
     const data = useSelector(state => state.data.categories);
-    // const [cat,setCat] = useState([]);
 
     useEffect(()=>{
+        if(!data.data.length)
         dispatch(getCategories());
-    },[dispatch]);
+    },[data.data.length, dispatch]);
 
     return (
         <CategoriesContainer>

@@ -23,12 +23,13 @@ const Register = props =>{
         confirmPassword:''
     }); 
 
-    const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    const emailRegex = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
     const passwordRegex=/(?=.*\d)(?=.*[a-z])(?=.[A-Z]).{6,}/;
 
     useEffect(()=>{
         if(auth.status !== null && auth.error !== null)
         dispatch(authActions.resetError());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[dispatch]);
     
     
@@ -69,7 +70,7 @@ const Register = props =>{
            fields.password.match(passwordRegex) &&
            fields.password === fields.confirmPassword)
            {
-            const credentials = {firstName:fields.firstName, lastName:fields.lastName,email:fields.email,password:fields.password};
+            const credentials = {firstName:fields.firstName, lastName:fields.lastName,email:fields.email};
             setFields(state => ({...state , firstNameError:null, lastNameError:null, emailError:null, passwordError:null}));
             dispatch(authActions.registerUser(credentials)); 
         }

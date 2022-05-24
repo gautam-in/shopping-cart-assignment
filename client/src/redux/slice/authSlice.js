@@ -42,6 +42,11 @@ const authSlice = createSlice({
                 state.users.push(action.payload);
             }
         },
+        logoutUser:state =>{
+            state.status = null;
+            state.loggedInUser = {};
+            state.error = null;
+        },
         resetError: state =>{
             state.error = null;
             state.status=null;
