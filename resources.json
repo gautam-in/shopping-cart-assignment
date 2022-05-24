@@ -359,22 +359,6 @@
       "totalPrice": 196,
       "imageURL": "http://localhost:8080/static/images/products/bakery-cakes-dairy/paneer.jpg",
       "id": "5b6c6d6201a7c38429530889"
-    },
-    {
-      "productName": "Fresho Kiwi - Green, 3 pcs",
-      "productPrice": 87,
-      "quantity": 1,
-      "totalPrice": 87,
-      "imageURL": "http://localhost:8080/static/images/products/fruit-n-veg/kiwi-green.jpg",
-      "id": "5b6c6a7f01a7c38429530883"
-    },
-    {
-      "productName": "Tata Tea Gold Leaf Tea, 500 gm",
-      "productPrice": 165,
-      "quantity": 1,
-      "totalPrice": 165,
-      "imageURL": "http://localhost:8080/static/images/products/beverages/tata-tea.jpg",
-      "id": "5b6c6f4a01a7c3842953088c"
     }
   ]
 }
