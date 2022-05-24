@@ -12,13 +12,15 @@ const ProductsListing = props => {
     
     const handleClick = (id) => setCategory(id);
 
-    const categories = useSelector(state => state.data.categories);
+    const data = useSelector(state => state.data);
     useEffect(()=>{
+        if(data?.products?.status !== 'success')
         dispatch(getProducts());
 
-        if(categories.status !== 'success'){
+        if(data?.categories?.status !== 'success'){
             dispatch(getCategories());
         }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       },[dispatch]);
 
     return (
@@ -27,7 +29,7 @@ const ProductsListing = props => {
             <ProductPageSidebar>
                 <SideBar>
                     <SideBarItem onClick={()=>handleClick('')}>All</SideBarItem>
-                    {categories.data && categories.data.map(cat => (
+                    {data.categories.data && data.categories.data.map(cat => (
                         <SideBarItem onClick={()=>handleClick(cat.id)} key={cat.key}>{cat.name}</SideBarItem>
                     ))}
                     

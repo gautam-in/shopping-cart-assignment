@@ -5,7 +5,7 @@ import axios from 'axios';
 export const getBanners = createAsyncThunk(
     'data/getBanners',
     async () =>{
-        const res = await axios.get('http://localhost:5000/banner');
+        const res = await axios.get('http://localhost:5000/banners');
         return res.data;
     }
 );
