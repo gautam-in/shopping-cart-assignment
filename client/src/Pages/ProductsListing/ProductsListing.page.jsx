@@ -28,9 +28,11 @@ const ProductsListing = props => {
         <ProductPageContainer>
             <ProductPageSidebar>
                 <SideBar>
-                    <SideBarItem onClick={()=>handleClick('')}>All</SideBarItem>
+                    <SideBarItem onClick={()=>handleClick('')} className={category === '' ? 'active' :''}>All</SideBarItem>
                     {data.categories.data && data.categories.data.map(cat => (
-                        <SideBarItem onClick={()=>handleClick(cat.id)} key={cat.key}>{cat.name}</SideBarItem>
+                        <SideBarItem onClick={()=>handleClick(cat.id)} key={cat.key} className={cat.id === category ? 'active' :''}>
+                        {cat.name}
+                        </SideBarItem>
                     ))}
                     
                 </SideBar>

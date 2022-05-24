@@ -14,14 +14,19 @@ const colorTexture = css`
 export const Button = styled.button`
     ${basicCommon}
     outline:none;
-    border :none
+    border :none;
+
+    &:hover{
+        background: rgb(136 0 42);
+    }
 `;
 
 export const NormalLink = styled(Link)`
     ${basicCommon}
 
     &:active,&:hover,&:focus{
-        color:#111;
+        background: rgb(136 0 42);
+        color:#fff;
     }
 `;
 
