@@ -19,19 +19,50 @@
 }
 .nav a {
   padding-right: 0.938rem;
+  color: #a2a2a2;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.nav a.activelink,
+.nav a:hover {
+  color: black;
 }
 
 .cart-header {
-  display: inline-block;
   position: absolute;
   right: 3rem;
-  bottom: 1rem;
+  bottom: 0rem;
+  display: flex;
+  background-color: #eaeaea;
+  padding: 0.6rem;
+}
+
+.cart-header h4 {
+  color: black;
+  font-weight: bold;
+}
+
+.cart-header img {
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 3rem;
 }
 
 .log-reg {
-  top: 1rem;
+  top: 0.2rem;
   position: absolute;
   right: 0.625rem;
+}
+
+.log-reg a {
+  color: #a2a2a2;
+  font-weight: bold;
+  padding-left: 1rem;
+}
+
+.log-reg a.activelink,
+.log-reg a:hover {
+  color: black;
 }
 
 .logo {
@@ -39,11 +70,4 @@
   height: 4.375rem;
   display: inline-block;
   margin: auto 0;
-}
-
-.cart-img {
-  position: absolute;
-
-  background-color: red;
-  top: 3rem;
 }

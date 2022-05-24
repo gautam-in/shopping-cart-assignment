@@ -10,10 +10,16 @@ function Header() {
   return (
     <div className="header-container">
       <header className="header">
-        <img className="logo" src="logo.png" alt="Sabka Bazar" />
+        <NavLink to="/Home">
+          <img className="logo" src="logo.png" alt="Sabka Bazar" />
+        </NavLink>
         <nav className="nav">
-          <NavLink to="/Home">Home</NavLink>
-          <NavLink to="/Products">Products</NavLink>
+          <NavLink activeClassName="activelink" to="/Home">
+            Home
+          </NavLink>
+          <NavLink activeClassName="activelink" to="/Products">
+            Products
+          </NavLink>
         </nav>
 
         <NavLink to="/Cart" className="cart-header">
@@ -22,8 +28,10 @@ function Header() {
         </NavLink>
 
         <div className="log-reg">
-          <NavLink to="/Login">Login</NavLink>
-          <NavLink to="/Signup" className="test">
+          <NavLink activeClassName="activelink" to="/Login">
+            Login
+          </NavLink>
+          <NavLink activeClassName="activelink" to="/Signup" className="test">
             Register
           </NavLink>
         </div>

@@ -53,6 +53,7 @@ function Products() {
           id={data.id}
           to={"/Products/" + data.id}
           key={data.id}
+          activeClassName="activelink"
         >
           {data.name}
         </NavLink>

@@ -28,6 +28,11 @@
   cursor: pointer;
 }
 
+.menu-section nav a.activelink,
+.menu-section nav a:hover {
+  color: black;
+}
+
 .porduct-listing {
   width: 80%;
 }

@@ -4,6 +4,7 @@ import "./Home.css";
 
 import Category from "../components/Category";
 import Carousel from "../components/Carousel";
+let counter = 1;
 
 function Home() {
   let [bannerData, setBannerData] = useState([]);
@@ -34,6 +35,7 @@ function Home() {
           imageUrl={cat.imageUrl}
           keyname={cat.key}
           id={cat.id}
+          counter={++counter}
           key={cat.id}
         />
       );

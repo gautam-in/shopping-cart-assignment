@@ -5,6 +5,11 @@
   padding: 1rem;
   box-shadow: 0 8px 6px -6px #aaaaaa89;
 }
+
+.categories-reverse {
+  flex-direction: row-reverse;
+}
+
 .cat-last {
   box-shadow: none;
 }
@@ -20,6 +25,10 @@
 
 .cat-info-contents {
   margin-left: 12rem;
+}
+
+.categories-contents-reverse {
+  margin-left: 1rem;
 }
 
 .cat-info h3 {

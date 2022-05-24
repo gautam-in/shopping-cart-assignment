@@ -4,13 +4,32 @@ import { NavLink } from "react-router-dom";
 
 import "./categories.css";
 
-function Category({ categoryname, description, imageUrl, keyname, id }) {
+function Category({
+  categoryname,
+  description,
+  imageUrl,
+  keyname,
+  id,
+  counter,
+}) {
+  console.log(counter);
+
   return (
-    <section className="categories">
+    <section
+      className={
+        counter % 2 === 0 ? "categories" : "categories categories-reverse"
+      }
+    >
       <img src={imageUrl} alt="offers" />
 
       <div className="cat-info">
-        <div className="cat-info-contents">
+        <div
+          className={
+            counter % 2 === 0
+              ? "cat-info-contents"
+              : "categories-contents-reverse "
+          }
+        >
           <h3>{categoryname}</h3>
           <p>{description}</p>
           <NavLink to={"/Products/" + id}> {"Explore " + keyname}</NavLink>

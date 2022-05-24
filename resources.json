@@ -367,6 +367,22 @@
       "totalPrice": 3998,
       "imageURL": "http://localhost:8080/static/images/products/baby/pampers.jpg",
       "id": "5b6c746801a7c38429530895"
+    },
+    {
+      "productName": "Bournvita Pro-Health Drink - Chocolate, 2x750 gm",
+      "productPrice": 572,
+      "quantity": 1,
+      "totalPrice": 572,
+      "imageURL": "http://localhost:8080/static/images/products/beverages/bournvita.jpg",
+      "id": "5b6c6fbf01a7c3842953088e"
+    },
+    {
+      "productName": "Coca Cola Soft Drink, 2x1.75 L",
+      "productPrice": 150,
+      "quantity": 1,
+      "totalPrice": 150,
+      "imageURL": "http://localhost:8080/static/images/products/beverages/bournvita.jpg",
+      "id": "5b6c6fed01a7c3842953088f"
     }
   ]
 }
