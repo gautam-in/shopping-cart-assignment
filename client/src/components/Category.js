@@ -12,8 +12,6 @@ function Category({
   id,
   counter,
 }) {
-  console.log(counter);
-
   return (
     <section
       className={

@@ -347,8 +347,8 @@
     {
       "productName": "Bournvita Pro-Health Drink - Chocolate, 2x750 gm",
       "productPrice": 572,
-      "quantity": 2,
-      "totalPrice": 1144,
+      "quantity": 1,
+      "totalPrice": 572,
       "imageURL": "http://localhost:8080/static/images/products/beverages/bournvita.jpg",
       "id": "5b6c6fbf01a7c3842953088e"
     },
@@ -367,6 +367,14 @@
       "totalPrice": 87,
       "imageURL": "http://localhost:8080/static/images/products/fruit-n-veg/kiwi-green.jpg",
       "id": "5b6c6a7f01a7c38429530883"
+    },
+    {
+      "productName": "Tata Tea Gold Leaf Tea, 500 gm",
+      "productPrice": 165,
+      "quantity": 1,
+      "totalPrice": 165,
+      "imageURL": "http://localhost:8080/static/images/products/beverages/tata-tea.jpg",
+      "id": "5b6c6f4a01a7c3842953088c"
     }
   ]
 }
