@@ -2,11 +2,6 @@ import {createAsyncThunk} from '@reduxjs/toolkit';
 
 import axios from 'axios';
 
-// const getBannersAPI = new Promise((resolve,reject)=>{
-//     const resp = axios.get('http://localhost:5000/categories')
-
-// })
-
 export const getBanners = createAsyncThunk(
     'data/getBanners',
     async () =>{

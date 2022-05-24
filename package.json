@@ -7,7 +7,7 @@
     "client": "cd client && npm start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "canned -p 5000 ./server",
-    "dev":"concurrently --kill-others-on-fail \"npm run start\" \"npm run client\""
+    "dev": "concurrently --kill-others-on-fail \"npm run start\" \"npm run client\""
   },
   "author": "",
   "license": "MIT",

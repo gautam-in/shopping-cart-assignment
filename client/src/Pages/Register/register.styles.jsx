@@ -35,3 +35,8 @@ flex-direction: column;
     margin-top:1rem;
 }
 `;
+
+export const RegisterError = styled.p`
+    color:red;
+    margin-top:1rem;
+`

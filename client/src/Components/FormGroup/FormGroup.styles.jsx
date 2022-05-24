@@ -47,3 +47,9 @@ export const FormInput = styled.input`
     ${shrink}
     }
 `;
+
+
+export const FormError = styled.p`
+    color:red;
+    margin-top:1rem;
+`

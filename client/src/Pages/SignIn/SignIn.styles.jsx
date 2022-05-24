@@ -35,3 +35,8 @@ export const SignInForm = styled.form`
         margin-top:1rem;
     }
 `;
+
+export const SignInError = styled.p`
+    color:red;
+    margin-top: 1rem;
+`
