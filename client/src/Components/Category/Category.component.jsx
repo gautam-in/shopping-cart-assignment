@@ -14,7 +14,7 @@ const Category = props => {
             <CategoryMetaData>
                 <CategoryMetaHeading>{props.data.name}</CategoryMetaHeading>
                 <CategoryMetaDesc>{props.data.description}</CategoryMetaDesc>
-                <AppLink to='/'>Explore {props.data.key}</AppLink>
+                <AppLink to={`/Products/categoryId/${props.data.id}`}>Explore {props.data.key}</AppLink>
             </CategoryMetaData>
             </CategoryMetaDataContainer>
         </CategoryContainer>

@@ -21,8 +21,9 @@ export default function AppRoutes(){
             exact/>
 
             <Route path="/Cart" element={<Cart/>} exact/>
-            
-            <Route path="/Products" element={<ProductsListing/>} exact/>
+
+            <Route path="/Products" element={<ProductsListing/>} exact />
+            <Route path="/Products/categoryId/:categoryId" element={<ProductsListing/>} />
     </Routes>
     )
 };

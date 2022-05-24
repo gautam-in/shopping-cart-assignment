@@ -1,25 +1,30 @@
 import {useSelector,useDispatch} from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { cartActions } from '../../redux/slice/cartSlice';
+
 import {ProductContainer,ProductHeaderContainer,ProductHeader,ProductImgContainer,ProductImg,ProductDescContainer,
     ProductDesc,ProductMetaContainer,ProductPrice,ProductCTA} from './Product.styles';
 
 const Product = ({category}) => {
+    const {categoryId} = useParams();
     const dispatch = useDispatch();
     const products = useSelector(state => state.data.products);
+
+
     let finalProductList;
     if(category !== ''){
         finalProductList = products.data.filter(prod => prod.category === category);
-    } else {
-        finalProductList = products.data;
+    } else if(categoryId){
+        finalProductList = products.data.filter(prod => prod.category === categoryId);
     }
+    else finalProductList = products.data;
 
-    const addtoCart = (item) => {
-        dispatch(cartActions.addtoCart(item))
-    }
+    const addtoCart = (item) => dispatch(cartActions.addtoCart(item));
+    
     return(
         <>
          {finalProductList && finalProductList.map(prod => (
-            <ProductContainer key={prod.key}>
+            <ProductContainer key={prod.id}>
             <ProductHeaderContainer>
                 <ProductHeader>
                         {prod.name}
