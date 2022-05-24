@@ -1,0 +1,21 @@
+.sidebar {
+  width: 20%;
+  background-color: #ccc;
+}
+
+.sidebar ul {
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  list-style: none;
+}
+
+.sidebar li div {
+  cursor: pointer;
+  border-bottom: 1px solid #9e9898;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+}
