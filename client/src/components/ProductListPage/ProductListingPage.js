@@ -145,7 +145,7 @@ axios.post('http://localhost:3000/addToCart ',{productID:items.id})
                                                 <div className='bottomText'>
                                                     <div><span>MRP</span>&nbsp;<span>Rs</span>&nbsp;<span>{items.price}</span></div>
                                                     <div>
-                                                        <Button size="small" variant="contained" color="secondary" onClick={(ev,)=>handleBuyNow(ev,items)}>
+                                                        <Button size="small" variant="contained" color="secondary" onClick={(ev)=>handleBuyNow(ev,items)}>
                                                             Buy now
                                                         </Button>
                                                     </div>

@@ -12,12 +12,21 @@ import './Header.css';
 import { Grid } from "@material-ui/core";
 import { Link} from 'react-router-dom';
 import { useSelector } from "react-redux";
-
+import { useDispatch } from 'react-redux';
+import Cart from '../Cart/Cart'
 const Header = () => {
-    // const countSelector = useSelector((state) => {
-    //     return state.CartReducers.countOfItems
+
+    const countOfItems= useSelector((state) => {
+        return state.CartReducer.countOfItems
+    });
+    const dispatch = useDispatch();
+    // const arrayOfProducts = useSelector((state) => {
+    //     return state.CartReducer.addedProductItems
     // });
-    // console.log("countSelector",countSelector);
+    console.log("countSelector",countOfItems);
+    const clickToOpenCart = ()=>{
+        dispatch({type:'OPEN_MODAL_FOR_CART'})
+    }
     return (
         <React.Fragment>
             <AppBar className="appbar" position="static">
@@ -51,15 +60,15 @@ const Header = () => {
                             </div>
                             <div className="cartMain">
                                 <div className="cartMainFirstChild">
-                                    <div><img src={CartImage} width="40" height="40" /></div>
-                                    <div style={{ paddingTop: '10px' }}><span>0</span>&nbsp;<span>items</span></div>
+                                    <div onClick={clickToOpenCart}><img src={CartImage} width="40" height="40" /></div>
+                                    <div style={{ paddingTop: '10px' }}><span>{countOfItems}</span>&nbsp;<span>items</span></div>
                                 </div>
                             </div>
                         </Grid>
 
                     </Grid>
                     {/* </Grid> */}
-
+                    <Cart/>
 
                 </Toolbar>
             </AppBar>

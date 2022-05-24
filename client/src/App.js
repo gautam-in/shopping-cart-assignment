@@ -7,12 +7,13 @@ import Home from './components/Home/Home';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import ProductListingPage from './components/ProductListPage/ProductListingPage';
+import Cart from './components/Cart/Cart';
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
       <Header/>
-
+      {/* <Cart/> */}
         <Switch>
         <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
