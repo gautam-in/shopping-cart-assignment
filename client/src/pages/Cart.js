@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import Cartproduct from "../components/Cartproduct";
+import Notification from "../components/Notification";
 
 import "./cart.css";
 
@@ -30,24 +31,12 @@ function Cart() {
         <p>({myCart.length} items)</p>
       </div>
 
-      {/* <div className="cart-contents">
-        <img src="./apple.jpg"></img>
-        <div className="cart-product-details">
-          <h3>Apple</h3>
-          <div className="cart-count-buttons">
-            <button> + </button>
-            <p>2</p>
-            <button> - </button>
-            <p>X 187</p>
-          </div>
-        </div>
-        <p className="total-price">Rs. 187</p>
-      </div> */}
       {cartProducts}
       <div className="lowprice-tag">
         <img src="./lowest-price.png"></img>
         <p>You won't find it cheaper anywhere</p>
       </div>
+      <Notification></Notification>
     </section>
   );
 }

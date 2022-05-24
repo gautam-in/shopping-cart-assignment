@@ -13,6 +13,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
+
 import { useEffect } from "react";
 
 function App() {

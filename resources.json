@@ -345,44 +345,28 @@
   ],
   "userCart": [
     {
-      "productName": "Capsicum - Green, 1 kg",
-      "productPrice": 137,
-      "quantity": 1,
-      "totalPrice": 137,
-      "imageURL": "http://localhost:8080/static/images/products/fruit-n-veg/capsicum-green.jpg",
-      "id": "5b6c6bdc01a7c38429530886"
-    },
-    {
-      "productName": "Apple - Washington, Regular, 4 pcs",
-      "productPrice": 187,
-      "quantity": 1,
-      "totalPrice": 187,
-      "imageURL": "http://localhost:8080/static/images/products/fruit-n-veg/apple.jpg",
-      "id": "5b6c6aeb01a7c38429530884"
-    },
-    {
-      "productName": "Pampers Diapers Pants - Large Size, Monthly Box Pack, New, 128's pack",
-      "productPrice": 1999,
-      "quantity": 2,
-      "totalPrice": 3998,
-      "imageURL": "http://localhost:8080/static/images/products/baby/pampers.jpg",
-      "id": "5b6c746801a7c38429530895"
-    },
-    {
       "productName": "Bournvita Pro-Health Drink - Chocolate, 2x750 gm",
       "productPrice": 572,
-      "quantity": 1,
-      "totalPrice": 572,
+      "quantity": 2,
+      "totalPrice": 1144,
       "imageURL": "http://localhost:8080/static/images/products/beverages/bournvita.jpg",
       "id": "5b6c6fbf01a7c3842953088e"
     },
     {
-      "productName": "Coca Cola Soft Drink, 2x1.75 L",
-      "productPrice": 150,
+      "productName": "Organic Fresh Paneer, 200 gm ",
+      "productPrice": 98,
+      "quantity": 2,
+      "totalPrice": 196,
+      "imageURL": "http://localhost:8080/static/images/products/bakery-cakes-dairy/paneer.jpg",
+      "id": "5b6c6d6201a7c38429530889"
+    },
+    {
+      "productName": "Fresho Kiwi - Green, 3 pcs",
+      "productPrice": 87,
       "quantity": 1,
-      "totalPrice": 150,
-      "imageURL": "http://localhost:8080/static/images/products/beverages/bournvita.jpg",
-      "id": "5b6c6fed01a7c3842953088f"
+      "totalPrice": 87,
+      "imageURL": "http://localhost:8080/static/images/products/fruit-n-veg/kiwi-green.jpg",
+      "id": "5b6c6a7f01a7c38429530883"
     }
   ]
 }

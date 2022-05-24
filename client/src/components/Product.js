@@ -1,8 +1,11 @@
 import React from "react";
+
 import "./product.css";
 
 import { useDispatch } from "react-redux";
 import { CartActions } from "../store/cart-slice";
+
+import Notification from "./Notification";
 
 function Product({ pname, imageURL, description, price, id }) {
   let dispatch = useDispatch();
@@ -88,6 +91,7 @@ function Product({ pname, imageURL, description, price, id }) {
           Buy Now
         </button>
       </div>
+      <Notification></Notification>
     </section>
   );
 }
