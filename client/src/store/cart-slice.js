@@ -71,6 +71,17 @@ let cartSlice = createSlice({
 
     replaceCart(state, action) {
       state.cartItems = action.payload;
+
+      if (action.payload.length === 0)
+        toast.success("Order Placed Successfully!", {
+          position: "top-center",
+          autoClose: 1600,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+        });
     },
   },
 });

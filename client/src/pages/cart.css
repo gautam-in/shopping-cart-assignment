@@ -109,6 +109,12 @@
   cursor: pointer;
 }
 
+.checkout-contents button:disabled {
+  background-color: #fff;
+  color: #d00255;
+  cursor: not-allowed;
+}
+
 @media screen and (max-width: 768px) {
 }
 

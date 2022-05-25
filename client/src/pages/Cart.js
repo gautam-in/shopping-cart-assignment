@@ -12,6 +12,7 @@ import "./cart.css";
 function Cart() {
   let myCart = useSelector((state) => state.cartSlice.cartItems);
   let totalCartPrice = useSelector((state) => state.cartSlice.totalCartPrice);
+  let dispatch = useDispatch();
 
   let sum = myCart.reduce((sum, item) => sum + item.totalPrice, 0);
 
@@ -29,6 +30,25 @@ function Cart() {
     );
   });
 
+  let emptyCart = () => {
+    fetch("http://localhost:5000/userCart/", {
+      // Adding method type
+      method: "DELETE",
+
+      // Adding body or contents to send
+
+      // Adding headers to the request
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      // Converting to JSON
+      .then((response) => response.json())
+
+      // Displaying results to console
+      .then((json) => dispatch(CartActions.replaceCart([])));
+  };
+
   return (
     <section className="cart-container">
       <div className="header-cart">
@@ -43,7 +63,7 @@ function Cart() {
           Promo code can be applied at payment page.
         </div>
         <div className="checkout-buttons">
-          <button>
+          <button disabled={myCart.length === 0} onClick={() => emptyCart()}>
             <span>Proceed to Checkout</span>
             <span className="totalCartPrice">
               {totalCartPrice || sum} &nbsp; &nbsp; &gt;

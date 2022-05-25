@@ -11,11 +11,13 @@ import Cart from "./pages/Cart";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
 
 import { useEffect } from "react";
+import NotFound from "./pages/NotFound";
 
 function App() {
   let dispatch = useDispatch();
@@ -29,22 +31,23 @@ function App() {
   }, []);
 
   return (
-    <>
+    <ErrorBoundary>
       <Header />
+
       <Switch>
         <Route path="/" exact>
           <Redirect to="/Login"></Redirect>
         </Route>
 
-        <Route path="/Login">
+        <Route path="/Login" exact>
           <Login></Login>
         </Route>
 
-        <Route path="/Signup">
+        <Route path="/Signup" exact>
           <Signup></Signup>
         </Route>
 
-        <Route path="/Home">
+        <Route path="/Home" exact>
           <Home></Home>
         </Route>
 
@@ -56,12 +59,16 @@ function App() {
           <Products></Products>
         </Route>
 
-        <Route path="/Cart">
+        <Route path="/Cart" exact>
           <Cart></Cart>
+        </Route>
+
+        <Route path="*">
+          <NotFound></NotFound>
         </Route>
       </Switch>
       <Footer />
-    </>
+    </ErrorBoundary>
   );
 }
 
