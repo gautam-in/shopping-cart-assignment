@@ -91,6 +91,7 @@
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 2;
   }
+
   .empty-cart-items {
     background-color: white;
     display: flex;
@@ -99,4 +100,16 @@
     justify-content: center;
     height: 76vh;
   }
+}
+
+.cart-dropdown-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
 }
