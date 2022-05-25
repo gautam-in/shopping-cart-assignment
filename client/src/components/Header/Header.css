@@ -8,13 +8,14 @@
 
 .header {
     box-shadow: 1px -2px 10px 0px #646464;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .image-container {
     width: 20%;
     display: flex;
     justify-content: flex-start;
+    cursor: pointer;
 }
 
 .nav-container {
@@ -59,6 +60,7 @@
     display: flex;
     align-items: center;
     margin-left: auto;
+    cursor: pointer;
 }
 
 .cart-image-container img {
@@ -70,4 +72,29 @@
 
 .cart-text-container {
     justify-content: center;
+}
+
+.cart-popup {
+    display: none;
+    position: absolute;
+    top: 87px;
+    right: 5%;
+    width: 34%;
+    height: 90%;
+    z-index: 1;
+}
+
+.show {
+    display: block;
+}
+
+.show::before {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(100,100,100,0.5);
+    content: '';
+    z-index: -1;
 }

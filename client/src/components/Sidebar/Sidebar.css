@@ -1,6 +1,6 @@
 .sidebar {
   width: 20%;
-  background-color: #ccc;
+  background-color: #eaeaea;
 }
 
 .sidebar ul {
@@ -10,6 +10,11 @@
 
 .sidebar li {
   list-style: none;
+}
+
+.sidebar li:hover {
+  color: rgb(21, 21, 21);
+  font-size: 400;
 }
 
 .sidebar li div {

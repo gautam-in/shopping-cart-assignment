@@ -1,0 +1,36 @@
+.signup .container {
+    width: 90%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.signup-text {
+    width: 30%;
+    margin-top: 30px;
+}
+
+.signup-text div {
+    font-weight: 600;
+}
+
+.signup-form-container {
+    width: 30%;
+}
+
+.signup-form-container button {
+    background-color: #B03758;
+    outline: none;
+    border: 1px solid #B03758;
+    color: #fff;
+    height: 38px;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+}
+
+.signup-form-container button:hover {
+    background-color: #9a2a49;
+}

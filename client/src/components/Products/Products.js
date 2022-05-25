@@ -14,11 +14,18 @@ function Products() {
     <div className='products'>
       {products && products.map((product, index) => {
         return (
-          <div key={index} className=''>
-            <div>{product.name}</div>
-            <img src={product.imageURL}></img>
-            <div>{product.description}</div>
-            <div>{product.price}</div>
+          <div key={index} className='product'>
+            <div className='name'>{product.name}</div>
+            <div className='image'>
+              <img src={product.imageURL}></img>
+            </div>
+            <div className='description' >{product.description}</div>
+            <div className='price-container'>
+              <div className='price'>MRP Rs.{product.price}</div>
+              <button className='button'>
+                Buy Now
+              </button>
+            </div>
           </div>
         )
       })}
