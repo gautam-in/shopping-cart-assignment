@@ -10,11 +10,11 @@ export const CategoriesContainer = styled.div`
     @media only screen and (min-width: 600px) {
         padding:0 6rem;
     }
-    /* Medium devices (landscape tablets, 768px and up) */
+    
     @media only screen and (min-width: 768px) {
         padding:0 10rem;
     }
-    /* Large devices (laptops/desktops, 992px and up) */
+    
     @media only screen and (min-width: 992px) {
         padding:0 13rem;
     }

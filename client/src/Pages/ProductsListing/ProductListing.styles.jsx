@@ -36,19 +36,14 @@ export const ProductPageProductsContainer = styled.div`
     grid-template-Columns:repeat(4,1fr);
     flex:1;
 
-    @media only screen and (max-width: 600px) {
-        grid-template-Columns:repeat(1,1fr);
-    }
-
-    @media only screen and (min-width00px) {
-        grid-template-Columns:repeat(2,1fr);
-    }
-    @media only screen and (min-width: 992px) {
+    @media only screen  and (max-width: 1200px) {
         grid-template-Columns:repeat(3,1fr);
     }
-
-    @media only screen and (min-width: 1200px) {
-        grid-template-Columns:repeat(4,1fr);
+    @media only screen and (max-width: 890px){
+        grid-template-Columns:repeat(2,1fr);
+    }
+    @media only screen and (max-width: 600px){
+        grid-template-Columns:repeat(1,1fr);
     }
 `;
 
