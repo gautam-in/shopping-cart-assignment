@@ -86,7 +86,6 @@ const ProductListingPage = () => {
     const handleDropdown = (e)=>{
         setCategoryId(e.target.value);
     }
-    console.log("categories==>", categoriesData, productsData, categoryId)
     return (
         <div className={classes.root}>
             <Hidden smUp>
@@ -119,10 +118,7 @@ const ProductListingPage = () => {
             </Hidden>
 
             <main className={classes.content}>
-                <div className={classes.toolbar} />
                 <Grid container spacing={2}>
-
-
                     {
                         productsData.map((items) => {
                             if (items.category === categoryId) {
