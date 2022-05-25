@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import Cart from '../Cart/Cart.component';
 import {Link,useNavigate} from 'react-router-dom';
-import './Header.styles.css';
+import Dropdown from '../Dropdown/Dropdown.component';
 import useGetCartDetails from '../../Hooks/useGetCartDetails';
 import { useSelector,useDispatch } from 'react-redux';
 import { authActions } from '../../redux/slice/authSlice';
+
+import './Header.styles.css';
 
 const Header = () =>{
     const dispatch = useDispatch();
@@ -64,6 +66,8 @@ const Header = () =>{
           </div>
         </div>
           {cartClicked && <Cart clickHandler={handleClick}/>}
+
+          {/* <Dropdown /> */}
       </header>
     )
 }

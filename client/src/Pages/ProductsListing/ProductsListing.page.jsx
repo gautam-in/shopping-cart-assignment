@@ -1,6 +1,7 @@
 import { useState,useEffect } from "react";
 import {useSelector,useDispatch} from 'react-redux';
 import {getCategories, getProducts} from '../../redux/actionCreators/dataActionCreators';
+import Dropdown from "../../Components/Dropdown/Dropdown.component";
 
 import {ProductPageContainer,ProductPageSidebar,
     ProductPageProductsContainer,SideBar,SideBarItem} from './ProductListing.styles';
@@ -25,6 +26,8 @@ const ProductsListing = props => {
 
     return (
         <>
+        <Dropdown value={category} onChange={(val)=>handleClick(val)}/>
+        
         <ProductPageContainer>
             <ProductPageSidebar>
                 <SideBar>

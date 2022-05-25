@@ -11,7 +11,6 @@ import "swiper/css/pagination";
 
 import "./styles.css";
 
-// import required modules
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 
 export default function Slideshow() {

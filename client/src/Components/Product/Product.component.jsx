@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { cartActions } from '../../redux/slice/cartSlice';
 
 import {ProductContainer,ProductHeaderContainer,ProductHeader,ProductImgContainer,ProductImg,ProductDescContainer,
-    ProductDesc,ProductMetaContainer,ProductPrice,ProductCTA} from './Product.styles';
+    ProductDesc,ProductMetaContainer,ProductPrice,ProductCTA,ProductMetaDataContainer,ProductMobilePrice} from './Product.styles';
 
 const Product = ({category}) => {
     const {categoryId} = useParams();
@@ -31,25 +31,29 @@ const Product = ({category}) => {
                 </ProductHeader>
             </ProductHeaderContainer>
             
-            <ProductImgContainer>
-                    <ProductImg src={prod.imageURL}/>
-            </ProductImgContainer>
+            <ProductMetaDataContainer>
+                <ProductImgContainer>
+                        <ProductImg src={prod.imageURL}/>
+                </ProductImgContainer>
 
-            <ProductDescContainer>
-                    <ProductDesc>
-                        {prod.description}
-                    </ProductDesc>
-            </ProductDescContainer>
+                <ProductDescContainer>
+                        <ProductDesc>
+                            {prod.description}
+                        </ProductDesc>
+                </ProductDescContainer>
 
-            <ProductMetaContainer>
-                <ProductPrice>
-                       MRP Rs.{prod.price}
-                </ProductPrice>
+                <ProductMetaContainer>
+                    <ProductPrice>
+                        MRP Rs.{prod.price}
+                    </ProductPrice>
 
-                <ProductCTA onClick={()=>addtoCart(prod)}>
-                        Buy Now
-                </ProductCTA>
-            </ProductMetaContainer>
+                    <ProductCTA onClick={()=>addtoCart(prod)}>
+                            Buy Now
+                            <ProductMobilePrice>@ Rs {prod.price}</ProductMobilePrice>
+                    </ProductCTA>
+                </ProductMetaContainer>
+            </ProductMetaDataContainer>
+
 
         </ProductContainer>)) }
         </>

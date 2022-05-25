@@ -19,6 +19,11 @@ export const CartItemMetaDataContainer = styled.div`
 export const CartItemTitle = styled.h4`
     font-size: 1.2rem;
     font-weight: 800;
+
+    @media only screen and (max-width: 600px) {
+        font-size: .9rem;
+        font-weight: 600;
+    }
 `;
 export const CartItemQtyContainer = styled.div`
     display:flex;
@@ -37,18 +42,39 @@ export const CartItemQtyUpdater = styled.button`
     justify-content: center;
     align-items: center;
     padding-bottom: 0.1rem;
+
+    @media only screen and (max-width: 600px) {
+        font-size: 1rem;
+        width:1rem;
+        height:1rem;
+    }
 `;
 export const CartItemMetaData = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
 `;
-export const CartItemQty = styled.h4``;
+export const CartItemQty = styled.h4`
+    font-size:1.3rem;
+    @media only screen and (max-width: 600px) {
+            font-size: .9rem;
+        }
+`;
 export const CartItemPriceContainer = styled.div`
     display: flex;
     flex-basis: 8rem;
     gap: 0.8rem;
     align-items: center;
 `;
-export const CartItemPrice = styled.h4``;
-export const CartItemTotalPrice  = styled.h4``;
+export const CartItemPrice = styled.h4`
+    font-size:1.3rem;
+    @media only screen and (max-width: 600px) {
+            font-size: .9rem;
+        }
+`;
+export const CartItemTotalPrice  = styled.h4`
+    font-size:1.3rem;
+    @media only screen and (max-width: 600px) {
+            font-size: .9rem;
+        }
+`;

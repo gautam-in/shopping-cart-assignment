@@ -21,7 +21,7 @@ const SignIn = props =>{
         password:'',
         passwordError:null
     }); 
-    const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    const emailRegex = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
     const passwordRegex=/(?=.*\d)(?=.*[a-z])(?=.[A-Z]).{6,}/;
 
     const handleChange = (event) => {
