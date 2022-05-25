@@ -7,6 +7,7 @@
   display: flex;
   background-color: #eaeaea;
   padding: 1rem;
+  margin-bottom: 2rem;
 }
 
 .header-cart h3 {
@@ -30,7 +31,7 @@
 
 .cart-contents {
   display: flex;
-  margin-top: 2rem;
+  border-bottom: 1px solid #dadada;
   background-color: #eaeaea;
   height: 6rem;
 }
@@ -73,6 +74,39 @@
   padding-top: 3.5rem;
   width: 80%;
   padding-right: 1rem;
+}
+
+.checkout-contents {
+  border-top: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  background-color: #eaeaea;
+  height: 6rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.promo-message {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.totalCartPrice {
+  padding-left: 5rem;
+}
+
+.checkout-contents button {
+  width: fit-content;
+  display: block;
+  margin-top: 1rem;
+  color: #fff;
+  border: none;
+  height: 2.2rem;
+  padding: 0.6rem;
+  padding-bottom: 2rem;
+  background-color: #d00255;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {

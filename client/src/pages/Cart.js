@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 
+import { CartActions } from "../store/cart-slice";
+
 import Cartproduct from "../components/Cartproduct";
 import Notification from "../components/Notification";
 
@@ -9,6 +11,9 @@ import "./cart.css";
 
 function Cart() {
   let myCart = useSelector((state) => state.cartSlice.cartItems);
+  let totalCartPrice = useSelector((state) => state.cartSlice.totalCartPrice);
+
+  let sum = myCart.reduce((sum, item) => sum + item.totalPrice, 0);
 
   let cartProducts = myCart.map((prd) => {
     return (
@@ -32,6 +37,21 @@ function Cart() {
       </div>
 
       {cartProducts}
+
+      <div className="checkout-contents">
+        <div className="promo-message">
+          Promo code can be applied at payment page.
+        </div>
+        <div className="checkout-buttons">
+          <button>
+            <span>Proceed to Checkout</span>
+            <span className="totalCartPrice">
+              {totalCartPrice || sum} &nbsp; &nbsp; &gt;
+            </span>
+          </button>
+        </div>
+      </div>
+
       <div className="lowprice-tag">
         <img src="./lowest-price.png"></img>
         <p>You won't find it cheaper anywhere</p>

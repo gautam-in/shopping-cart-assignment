@@ -345,20 +345,36 @@
   ],
   "userCart": [
     {
-      "productName": "Bournvita Pro-Health Drink - Chocolate, 2x750 gm",
-      "productPrice": 572,
-      "quantity": 1,
-      "totalPrice": 572,
-      "imageURL": "http://localhost:8080/static/images/products/beverages/bournvita.jpg",
-      "id": "5b6c6fbf01a7c3842953088e"
+      "productName": "Capsicum - Green, 1 kg",
+      "productPrice": 137,
+      "quantity": 2,
+      "totalPrice": 274,
+      "imageURL": "http://localhost:8080/static/images/products/fruit-n-veg/capsicum-green.jpg",
+      "id": "5b6c6bdc01a7c38429530886"
     },
     {
-      "productName": "Organic Fresh Paneer, 200 gm ",
-      "productPrice": 98,
-      "quantity": 2,
-      "totalPrice": 196,
-      "imageURL": "http://localhost:8080/static/images/products/bakery-cakes-dairy/paneer.jpg",
-      "id": "5b6c6d6201a7c38429530889"
+      "productName": "Apple - Washington, Regular, 4 pcs",
+      "productPrice": 187,
+      "quantity": 1,
+      "totalPrice": 187,
+      "imageURL": "http://localhost:8080/static/images/products/fruit-n-veg/apple.jpg",
+      "id": "5b6c6aeb01a7c38429530884"
+    },
+    {
+      "productName": "Sandwich Bread - White, Chemical Free, 400 gm",
+      "productPrice": 32,
+      "quantity": 1,
+      "totalPrice": 32,
+      "imageURL": "http://localhost:8080/static/images/products/bakery-cakes-dairy/bread.jpg",
+      "id": "5b6c6d3201a7c38429530888"
+    },
+    {
+      "productName": "Fresho Pomegrante Peeled, 500 gm ",
+      "productPrice": 88,
+      "quantity": 1,
+      "totalPrice": 88,
+      "imageURL": "http://localhost:8080/static/images/products/fruit-n-veg/pomegrante.jpg",
+      "id": "5b6c6b7001a7c38429530885"
     }
   ]
 }

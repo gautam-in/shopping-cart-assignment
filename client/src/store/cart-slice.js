@@ -6,6 +6,7 @@ let cartSlice = createSlice({
 
   initialState: {
     cartItems: [],
+    totalCartPrice: 0,
   },
 
   reducers: {
@@ -22,6 +23,11 @@ let cartSlice = createSlice({
         existingProduct.totalPrice =
           existingProduct.totalPrice + existingProduct.productPrice;
       }
+
+      state.totalCartPrice = state.cartItems.reduce(
+        (sum, item) => sum + item.totalPrice,
+        0
+      );
 
       toast.success(newProduct.productName + " added to Cart!", {
         position: "bottom-right",
@@ -47,6 +53,11 @@ let cartSlice = createSlice({
         state.cartItems = state.cartItems.filter((prd) => prd.id !== pId);
       }
 
+      state.totalCartPrice = state.cartItems.reduce(
+        (sum, item) => sum + item.totalPrice,
+        0
+      );
+
       toast.info(existingProduct.productName + " removed from Cart!", {
         position: "bottom-right",
         autoClose: 1600,
@@ -57,6 +68,7 @@ let cartSlice = createSlice({
         progress: undefined,
       });
     },
+
     replaceCart(state, action) {
       state.cartItems = action.payload;
     },
