@@ -40,8 +40,18 @@ export const updateDocumentTitle = (location) => {
     let brandName = 'Sabka Bazar'
     let title = (root == '' && route == '') ? `${brandName} - Home` : route ? `${brandName} - ${route}` : ''
     document.title = `${title}`;
+    if(id) {
+        scrollToTop()
+    }
     return `/${route}`
 }
+
+export const  scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
 
 export const FocusToErrorField = (elementsRef, errors) => {
     if(Object.keys(errors).length > 0) {
