@@ -10,20 +10,28 @@ export const NavigationWrapper = styled.nav`
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
-    margin: 0 15%;
+    @media (min-width: 992px) {
+        margin: 0 15%;
+    }
 `;
 
 export const LogoContainer = styled(Link)`
-    width: 20%;
+    @media (min-width: 600px) {
+        width: 20%;
+    }
+
     & img {
         width: 60%;
     }
 `;
 
 export const NavLinks = styled.div`
-    width: 70%;
+    width: 60%;
     display: flex;
     align-items: flex-end;
+    @media (min-width: 992px) {
+        width: 70%;
+    }
 `;
 
 export const NavLink = styled(Link)`
@@ -36,7 +44,10 @@ export const NavLink = styled(Link)`
 `;
 
 export const UserContainer = styled.div`
-    width: 10%;
+    width: 20%;
+    @media (min-width: 1200px) {
+        width: 10%;
+    }
 `;
 export const UserAuthentication = styled.div`
     display: flex;

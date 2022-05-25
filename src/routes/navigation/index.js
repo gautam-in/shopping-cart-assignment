@@ -1,9 +1,7 @@
 import { Fragment, useContext } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { UserContext } from "../../contexts/user-context";
 import {signOutUser} from "../../utils/firebase";
-import logoImgTab from "../../static/images/logo_2x.png";
-import logoImgMobile from "../../static/images/logo.png";
 import {
     NavigationContainer,
     NavigationWrapper,
@@ -27,8 +25,8 @@ const Navigation = () => {
             <NavigationWrapper>
                 <LogoContainer to='/'>
                     <picture>
-                        <source media="(min-width:650px)" srcSet={logoImgTab}/>
-                        <img src={logoImgMobile} alt="Sabka Bazaar"/>
+                        <source media="(min-width:650px)" srcSet={require(`../../../src/static/images/logo_2x.png`)}/>
+                        <img src={require(`../../../src/static/images/logo.png`)} alt="Sabka Bazaar"/>
                     </picture>
                 </LogoContainer>
                 <NavLinks>

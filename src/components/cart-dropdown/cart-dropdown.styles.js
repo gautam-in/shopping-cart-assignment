@@ -89,6 +89,25 @@ export const CartDropDownClose = styled.span`
     cursor: pointer;
 `
 
+export const PriceBannerContainer = styled.div`
+    padding: 10px 0;
+    margin: 0 10px;
+    border-radius: 3px;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+`;
+
+export const PriceBannerImageContainer = styled.div`
+    width: 30%;
+    text-align: center;
+
+    img {
+        width: 80%;
+    }
+`;
+
 
 
 // .cart-dropdown {

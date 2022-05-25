@@ -13,7 +13,9 @@ import {
     CartDropDownHeaderTitle,
     CartDropDownItems,
     CartDropDownPriceLabel,
-    CartDropDownClose
+    CartDropDownClose,
+    PriceBannerContainer,
+    PriceBannerImageContainer
 } from './cart-dropdown.styles'
 
 const CartDropDown = () => {
@@ -27,16 +29,25 @@ const CartDropDown = () => {
                <CartDropDownClose onClick={closeCartHandler}>&#88;</CartDropDownClose>
             </CartDropDownHeader>
             <CartDropDownItems empty={cartItems.length}>
-            {cartItems.length ?
-                cartItems.map((item) => <CartItem key={item.id} cartItem={item}/>)
-                :
-                <Fragment>
-                    <h3>No Items in your cart</h3>
-                    <p>Your favourite items are just a click away.</p>
-                </Fragment>
+                {cartItems.length ?
+                    (
+                        <Fragment>
+                            {cartItems.map((item) => <CartItem key={item.id} cartItem={item}/>)}
+                            <PriceBannerContainer>
+                                <PriceBannerImageContainer>
+                                    <img src={require('../../../src/static/images/lowest-price.png')} alt="lowest price"/>
+                                </PriceBannerImageContainer>
+                                <p>You won't find it cheaper anywhere</p>
+                            </PriceBannerContainer>
+                        </Fragment>
+                    )
+                    :
+                    <Fragment>
+                        <h3>No Items in your cart</h3>
+                        <p>Your favourite items are just a click away.</p>
+                    </Fragment>
                 }
-                </CartDropDownItems>
-            
+            </CartDropDownItems>
             <div className='cart-dropdown__footer'>
                 <CartDropDownDisclaimer>Promo code can be applied on payment page</CartDropDownDisclaimer>
                 <Button onClick ={closeCartHandler} btnClass='cart-dropdown-btn'>

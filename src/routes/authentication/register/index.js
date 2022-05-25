@@ -41,12 +41,10 @@ const Register = () => {
                 await createUserDocumentFromAuth(user, {displayName: `${firstName} ${lastName}`});
                 resetFormFields();
             }
-            console.log(user);
         } catch (error) {
             if(error.code === 'auth/email-already-in-use') {
                 alert('cannot create user, email already in use');
             }
-            console.log('Error :: user creation', error);
         }
     }
 

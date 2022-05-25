@@ -1,25 +1,34 @@
-import { createContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 
 import { createAction } from "../utils/reducer";
+import {addCollectionAndDocuments, getAllDocuments, removeDocumentFromCollection} from '../utils/firebase';
+import { UserContext } from "./user-context";
 
-const addCartItem = (cartItems, productToAdd) => {
+const addCartItem = (currentUser, cartItems, productToAdd) => {
     const existingCartItem = cartItems.find((cartItem) => cartItem.id === productToAdd.id);
-
+    let newCart = [];
     if(existingCartItem) {
-        return cartItems.map((cartItem) =>
+        newCart = cartItems.map((cartItem) =>
         cartItem.id === productToAdd.id ?
         {...cartItem, quantity: cartItem.quantity+1} : cartItem);
-    };
-
-    return [...cartItems, {...productToAdd, quantity: 1}];
+    } else {
+        newCart = [...cartItems, {...productToAdd, quantity: 1}];
+    }
+    if(currentUser) {
+        addCollectionAndDocuments('cart', newCart);
+    }
+    return newCart;
 }
 
-const removeCartItem = (cartItems, productToRemove) => {
+const removeCartItem = (currentUser, cartItems, productToRemove) => {
     const existingCartItem = cartItems.find((cartItem) => cartItem.id === productToRemove.id);
     if(existingCartItem.quantity === 1) {
+        if(currentUser) {
+            removeDocumentFromCollection('cart', existingCartItem.id);
+        }
         return cartItems.filter((cartItem) => cartItem.id !== productToRemove.id);
     }
-    return cartItems.map((cartItem) => {
+    const newCart = cartItems.map((cartItem) => {
         if(cartItem.id === productToRemove.id) {
             if(cartItem.quantity !== 0) {
                 return  {...cartItem, quantity: cartItem.quantity-1}
@@ -27,6 +36,10 @@ const removeCartItem = (cartItems, productToRemove) => {
         }
         return cartItem;
     })
+    if(currentUser) {
+        addCollectionAndDocuments('cart', newCart);
+    }
+    return newCart;
 }
 
 export const CartContext = createContext({
@@ -72,6 +85,19 @@ export const cartReducer = (state, action) => {
 export const CartProvider = ({children}) => {
     const [state, dispatch] = useReducer(cartReducer, INITIAL_STATE);
     const {cartItems, cartCount, cartTotal, isCartOpen} = state;
+    const {currentUser} = useContext(UserContext);
+
+    useEffect(() => {
+        if(currentUser) {
+            const getAllDocs = async () => {
+                const cartItems = await getAllDocuments('cart');
+                console.log('Cart Items ::', cartItems);
+                updateCartItemReducer(cartItems);
+            }
+            getAllDocs();
+        }
+
+    },[currentUser]);
 
     const updateCartItemReducer = (newCartItems) => {
         const newCartCount = newCartItems.reduce((total, cartItem) => total+cartItem.quantity, 0);
@@ -92,12 +118,30 @@ export const CartProvider = ({children}) => {
     }
 
     const addItemToCart = (productToAdd) => {
-        const newCartItems = addCartItem(cartItems, productToAdd);
-        updateCartItemReducer(newCartItems);
+
+        fetch('/addToCart',
+        {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({product: productToAdd})
+          })
+        .then(response => response.json())
+        .then((data) => {
+            console.log('Data', data);
+            if(data.response.toLowerCase() === 'success') {
+                const newCartItems = addCartItem(currentUser, cartItems, productToAdd);
+                updateCartItemReducer(newCartItems);
+            } else {
+                alert('Not able to add product to cart');
+            }
+        })
     }
 
     const removeItemFromCart = (productToRemove) => {
-        const newCartItems = removeCartItem(cartItems, productToRemove);
+        const newCartItems = removeCartItem(currentUser, cartItems, productToRemove);
         updateCartItemReducer(newCartItems);
     }
 

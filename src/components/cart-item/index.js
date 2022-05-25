@@ -1,11 +1,10 @@
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/cart.context';
-import sampleImg from '../../static/images/products/bakery-cakes-dairy/bread.jpg';
 
 import './cart-item.scss';
 
 const CartItem = ({cartItem}) => {
-    const {name, price, quantity} = cartItem;
+    const {name, price, quantity, imageURL} = cartItem;
     const { addItemToCart, removeItemFromCart} = useContext(CartContext);
 
     const addItemHandler = () => {addItemToCart(cartItem)};
@@ -15,7 +14,7 @@ const CartItem = ({cartItem}) => {
     return(
         <div className="cart-item">
             <div className='cart-item__img-container'>
-                <img className='cart-item__img' src={sampleImg} alt={`${cartItem.name}`}/>
+                <img className='cart-item__img' src={require(`../../../src${imageURL}`)} alt={`${cartItem.name}`}/>
             </div>
             <div className='cart-item__details'>
                 <h3 className='cart-item__details-name'>{name}</h3>

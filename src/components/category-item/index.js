@@ -1,12 +1,11 @@
 import './category-item.scss';
-import demoImg from '../../static/images/category/bakery.png'
 import Button from '../button';
 import { Link } from 'react-router-dom';
 const CategoryItem = ({category}) => {
     return (
         <div className="category">
             <div className="category__image">
-                <img src={demoImg} alt='Alt Text'/>
+                <img src={require(`../../../src${category.imageUrl}`)} alt='Alt Text'/>
             </div>
             <div className="category__info">
                 <h1 className='category__info-name'>{category.name}</h1>

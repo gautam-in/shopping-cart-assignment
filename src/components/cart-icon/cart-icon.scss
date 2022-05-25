@@ -1,13 +1,21 @@
+@import '../../mixin.scss';
 .user-cart {
     display: flex;
     justify-content: center;
     background-color: lightgray;
     padding: 10px 0;
     cursor: pointer;
+    float: right;
+    width: 60%;
+
+    @include for-desktop-up {
+        width: 80%;
+    }
 
     & svg {
         width: 20%;
         margin-right: 5px;
+        fill: rgb(164, 53, 71);
     }
 
     & span {

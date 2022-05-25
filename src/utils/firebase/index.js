@@ -7,13 +7,17 @@ import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     signOut,
-    onAuthStateChanged
+    onAuthStateChanged,
 } from 'firebase/auth';
 import {
     getFirestore,
     doc,
     getDoc,
-    setDoc
+    setDoc,
+    collection,
+    writeBatch,
+    getDocs,
+    deleteDoc
 } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -40,12 +44,37 @@ export const signInWithGoogleRedirect = () => signInWithRedirect(auth, provider)
 
 export const db = getFirestore();
 
+export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+    const collectionRef = collection(db, collectionKey);
+    const batch = writeBatch(db);
+
+    objectsToAdd.forEach((object) => {
+        const docRef = doc(collectionRef, object.id);
+        batch.set(docRef, object);
+    });
+
+    await batch.commit();
+}
+
+export const getAllDocuments = async(collectionKey) => {
+    const querySnapshot = await getDocs(collection(db, collectionKey));
+    const data = [];
+    await querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    data.push(doc.data());
+    console.log(doc.id, " => ", doc.data());
+});
+return data;
+}
+
+export const removeDocumentFromCollection = async (collectionKey, documentId) => {
+    await deleteDoc(doc(db, collectionKey, documentId));
+}
+
 export const createUserDocumentFromAuth = async (userAuth, additionalInformation) => {
     const userDocRef = doc(db, 'users', userAuth.uid);
-    console.log(userDocRef);
 
     const userSnapshot = await getDoc(userDocRef);
-    console.log(userSnapshot, userSnapshot.exists());
 
     if(!userSnapshot.exists()) {
         const {displayName, email} = userAuth;

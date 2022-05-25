@@ -8,7 +8,7 @@ export const BannersContext = createContext({
 export const BannersProvider = ({children}) => {
     const [banners, setBanners] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/banners')
+        fetch('/banners')
         .then((response) => response.json())
         .then((data) => {
             setBanners(data)});

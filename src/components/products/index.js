@@ -13,7 +13,6 @@ const Products = () => {
 
     useEffect(() => {
         if(category && categories.length) {
-            console.log('Category :', category, categories);
             const activeCategory = categories.find((item) => item.name.toLowerCase() === category);
             setActiveCategory(activeCategory.id);
         }
