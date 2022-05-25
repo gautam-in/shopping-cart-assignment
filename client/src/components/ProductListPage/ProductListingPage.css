@@ -1,5 +1,6 @@
 .headerText{
     font-weight: 700;
+    /* height:10%; */
 }
 .descriptionText{
     background: lightgray;
@@ -8,7 +9,13 @@
 display:flex;
 justify-content: space-between;
 align-items: center;
+/* height:30%; */
 }
 .productDesc{
-    font-size: 13px;   
+    font-size: 13px; 
+    text-align: left;  
+    /* height: 25%; */
+}
+.plpImg{
+    /* height:45%; */
 }

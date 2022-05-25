@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import { Grid } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core/styles';
 import './Login.css';
 const data = [{
     id: 'email',
@@ -19,8 +21,49 @@ const data = [{
     helperText: "please enter valid password"
 }
 ];
+
+// import Button from '@material-ui/core/Button';
+const useStyles = makeStyles((theme) => ({
+    leftAlign: {
+        display: 'flex',
+        justifyContent: 'flex-end',
+        [theme.breakpoints.down('xs')]: {
+            justifyContent: 'center',
+        },
+        [theme.breakpoints.down('sm')]: {
+            justifyContent: 'center'
+        },
+
+    },
+    rightText: {
+        width: '50%',
+        [theme.breakpoints.down('xs')]: {
+            justifyContent: 'center',
+            width: '100%',
+            paddingLeft: '5px'
+        },
+        [theme.breakpoints.down('sm')]: {
+            textAlign: 'center'
+        },
+    },
+    loginBtn: {
+        width: '50%',
+        [theme.breakpoints.down('xs')]: {
+            justifyContent: 'center',
+            width: '100%',
+        },
+    },
+    parentLoginContainer: {
+        marginTop: '10px',
+        [theme.breakpoints.down('xs')]: {
+            padding: '8px'
+        },
+    }
+
+}));
 const Login = (props) => {
     const [loginData, setLoginData] = useState(data);
+    const classes = useStyles();
     const handleChange = (index, event) => {
         setLoginData([...loginData.slice(0, index),
         {
@@ -29,40 +72,53 @@ const Login = (props) => {
         ...loginData.slice(index + 1)
         ]);
     }
-    const handleLogin = ()=>{
+    const handleLogin = () => {
         props.history.push('/');
     }
     const isLoginBtnDisabled = loginData.some((data) => data.error);
     const filedNotEmpty = loginData.some((data) => data.value === "");
-    console.log("jjj", loginData, isLoginBtnDisabled, filedNotEmpty)
     return (
         <React.Fragment>
-            <div>
-                {
-                    loginData.map((items, index) => {
-                        return (
-                            <div>
-                                <TextField
-                                    className="textfield"
-                                    onChange={(event) => handleChange(index, event)}
-                                    required
-                                    id="standard-required"
-                                    label={items.label}
-                                    value={items.value}
-                                    error={items.error}
-                                    helperText={items.error ? items.helperText : ""}
-                                />
-                            </div>
+            <Grid container spacing={8} className={classes.parentLoginContainer}>
+                <Grid item xs={12} md={6} sm={12}>
+                    <div className={classes.leftAlign}>
+                        <div>
+                            <h2>Login</h2>
+                            <p>Get access to your Orders, Wishlist and Recommendations</p>
+                        </div>
+                    </div>
 
-                        )
-                    })
-                }
-            </div>
-            <div className='btn'>
-                <Button onClick={handleLogin} className="textfield" variant="contained" color="secondary" disabled={filedNotEmpty || isLoginBtnDisabled}>
-                    Login
-                </Button>
-            </div>
+                </Grid>
+                <Grid item xs={12} md={6} sm={12} className={classes.rightText}>
+                    <div>
+                        {
+                            loginData.map((items, index) => {
+                                return (
+                                    <div style={{ paddingBottom: '18px' }}>
+                                        <TextField
+                                            className={classes.rightText}
+                                            // className="textfield"
+                                            onChange={(event) => handleChange(index, event)}
+                                            required
+                                            id="standard-required"
+                                            label={items.label}
+                                            value={items.value}
+                                            error={items.error}
+                                            helperText={items.error ? items.helperText : ""}
+                                        />
+                                    </div>
+
+                                )
+                            })
+                        }
+                    </div>
+                    <div className='btn'>
+                        <Button onClick={handleLogin} className={classes.loginBtn} variant="contained" color="secondary" disabled={filedNotEmpty || isLoginBtnDisabled}>
+                            Login
+                        </Button>
+                    </div>
+                </Grid>
+            </Grid>
         </React.Fragment>
     )
 }

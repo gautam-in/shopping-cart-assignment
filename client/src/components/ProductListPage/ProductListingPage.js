@@ -60,24 +60,24 @@ const ProductListingPage = () => {
 
     }, [])
     const handleSidebarCategory = (ev, text) => {
-        if(text.id===categoryId){
+        if (text.id === categoryId) {
             setCategoryId('');
         }
-        else{
+        else {
             setCategoryId(text.id);
         }
     }
-    const handleBuyNow = (ev,items)=>{
-console.log("999=>",items);
-axios.post('http://localhost:3000/addToCart ',{productID:items.id})
-    .then((response )=> {
-        if(response.statusText==="Created"){
-            dispatch({type:'PRODUCT_ADDED_IN_CART',payload:items})
-        }
-    })
-    .catch(error => {
-        console.error('There was an error!', error);
-    });
+    const handleBuyNow = (ev, items) => {
+        console.log("999=>", items);
+        axios.post('http://localhost:3000/addToCart ', { productID: items.id })
+            .then((response) => {
+                if (response.statusText === "Created") {
+                    dispatch({ type: 'PRODUCT_ADDED_IN_CART', payload: items })
+                }
+            })
+            .catch(error => {
+                console.error('There was an error!', error);
+            });
     }
     console.log("categories==>", categoriesData, productsData, categoryId)
     return (
@@ -94,7 +94,7 @@ axios.post('http://localhost:3000/addToCart ',{productID:items.id})
                 <Divider />
                 <List>
                     {categoriesData.map((text, index) => (
-                        <ListItem button key={text.name}>
+                        <ListItem button key={text.name} style={{background:text.id===categoryId?'rgba(0, 0, 0, 0.04)':'none'}}>
                             <ListItemText primary={text.name} onClick={(ev) => handleSidebarCategory(ev, text)} />
                         </ListItem>
                     ))}
@@ -111,22 +111,18 @@ axios.post('http://localhost:3000/addToCart ',{productID:items.id})
                                 return (
                                     <React.Fragment>
 
-                                        <Grid item xs={12} sm={6} md={3}>
-                                            {/* <Card>
-                                                        <CardContent> */}
+                                        <Grid item xs={12} sm={6} md={3} style={{textAlign:'center'}}>
                                             <p className='headerText'>{items.name}</p>
                                             <img src={items.imageURL} width="160" />
                                             <p className='productDesc'>{items.description}</p>
                                             <div className='bottomText'>
                                                 <div><span>MRP</span>&nbsp;<span>Rs</span>&nbsp;<span>{items.price}</span></div>
                                                 <div>
-                                                    <Button size="small" variant="contained" color="secondary" onClick={(ev)=>handleBuyNow(ev,items)}>
+                                                    <Button size="small" variant="contained" color="secondary" onClick={(ev) => handleBuyNow(ev, items)}>
                                                         Buy Now
                                                     </Button>
                                                 </div>
                                             </div>
-                                            {/* </CardContent>
-                                                        </Card> */}
 
                                         </Grid>
                                     </React.Fragment>
@@ -136,24 +132,19 @@ axios.post('http://localhost:3000/addToCart ',{productID:items.id})
                                 if (categoryId === "") {
                                     return (
                                         <React.Fragment>
-                                            <Grid item xs={12} sm={6} md={3}>
-                                                {/* <Card>
-                                                        <CardContent> */}
+                                            <Grid item xs={12} sm={6} md={3} style={{textAlign:'center'}}>
+                                              
                                                 <p className='headerText'>{items.name}</p>
-                                                <img src={items.imageURL} width="160" />
+                                                <img src={items.imageURL} width="160" className='plpImg' />
                                                 <p className='productDesc'>{items.description}</p>
                                                 <div className='bottomText'>
                                                     <div><span>MRP</span>&nbsp;<span>Rs</span>&nbsp;<span>{items.price}</span></div>
                                                     <div>
-                                                        <Button size="small" variant="contained" color="secondary" onClick={(ev)=>handleBuyNow(ev,items)}>
+                                                        <Button size="small" variant="contained" color="secondary" onClick={(ev) => handleBuyNow(ev, items)}>
                                                             Buy now
                                                         </Button>
                                                     </div>
                                                 </div>
-
-                                                {/* </CardContent>
-                                                        </Card> */}
-
                                             </Grid>
 
                                         </React.Fragment>

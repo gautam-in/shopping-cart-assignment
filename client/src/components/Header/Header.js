@@ -20,10 +20,6 @@ const Header = () => {
         return state.CartReducer.countOfItems
     });
     const dispatch = useDispatch();
-    // const arrayOfProducts = useSelector((state) => {
-    //     return state.CartReducer.addedProductItems
-    // });
-    console.log("countSelector",countOfItems);
     const clickToOpenCart = ()=>{
         dispatch({type:'OPEN_MODAL_FOR_CART'})
     }
@@ -46,7 +42,6 @@ const Header = () => {
                                 <Link to="/" style={{textDecoration:'none'}}>Home</Link>
                             </Typography>
                             <Typography variant="h6">
-                                {/* Products */}
                                 <Link to="/productListPage" style={{textDecoration:'none'}}>Products</Link>
                             </Typography>
                         </Grid>
@@ -55,7 +50,6 @@ const Header = () => {
                         <Grid container className="lastText">
                             <div className="lastTextFirstChild">
                             <Link to="/login" style={{textDecoration:'none'}}>Sign In</Link>
-                                {/* <span>Sign In</span> */}
                                 <Link to="/signUp" style={{ marginLeft: '10px',textDecoration:'none' }}>Register</Link>
                             </div>
                             <div className="cartMain">
@@ -67,7 +61,6 @@ const Header = () => {
                         </Grid>
 
                     </Grid>
-                    {/* </Grid> */}
                     <Cart/>
 
                 </Toolbar>

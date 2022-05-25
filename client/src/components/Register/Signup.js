@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { withRouter } from 'react-router-dom';
+import { Grid } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core/styles';
 import './Signup.css';
 const data = [{
     id: 'firstname',
@@ -43,9 +45,49 @@ const data = [{
     helperText: "please enter valid confirm password"
 }
 ];
+// import Button from '@material-ui/core/Button';
+const useStyles = makeStyles((theme) => ({
+    leftAlign: {
+        display: 'flex',
+        justifyContent: 'flex-end',
+        [theme.breakpoints.down('xs')]: {
+            justifyContent: 'center',
+        },
+        [theme.breakpoints.down('sm')]: {
+            justifyContent: 'center'
+        },
+
+    },
+    rightText: {
+        width: '50%',
+        [theme.breakpoints.down('xs')]: {
+            justifyContent: 'center',
+            width: '100%',
+            paddingLeft: '5px'
+        },
+        [theme.breakpoints.down('sm')]: {
+            textAlign: 'center'
+        },
+    },
+    registerBtn: {
+        width: '50%',
+        [theme.breakpoints.down('xs')]: {
+            justifyContent: 'center',
+            width: '100%',
+        },
+    },
+    parentRegisterContainer: {
+        marginTop: '10px',
+        [theme.breakpoints.down('xs')]: {
+            padding: '8px'
+        },
+    }
+
+}));
 const SignUp = (props) => {
     const [registerData, setRegisterData] = useState(data);
     const [confirmPassErr, setConfirmPassErr] = useState(false);
+    const classes = useStyles();
     const handleChange = (index, event) => {
         setRegisterData([...registerData.slice(0, index),
         {
@@ -65,7 +107,6 @@ const SignUp = (props) => {
             setConfirmPassErr(false);
             props.history.push('/login');
         }
-        console.log("handleRegister", findPasswordObj, findConformPasswordObj, confirmPassErr)
     }
 
     const isSignUpBtnDisabled = registerData.some((data) => data.error);
@@ -73,34 +114,46 @@ const SignUp = (props) => {
 
     return (
         <React.Fragment>
-            <div>
-                {registerData.map((items, index) => {
-                    return (
+            <Grid container spacing={8} className={classes.parentRegisterContainer}>
+                <Grid item xs={12} md={6} sm={12}>
+                    <div className={classes.leftAlign}>
                         <div>
-                            <TextField
-                                className="textfield"
-                                onChange={(event) => handleChange(index, event)}
-                                required
-                                id="standard-required"
-                                label={items.label}
-                                value={items.value}
-                                error={items.error}
-                                helperText={items.error ? items.helperText : ""}
-                            />
+                            <h1>Signup</h1>
+                            <p>We do not share your personal details with anyone</p>
                         </div>
-                    )
-                })}
-                {confirmPassErr ? <div>
-                    <span className="confirmPassErr">Confirm password should match password</span>
-                </div>
-                    : null}
-            </div>
-            <div className='btn'>
-                <Button className="textfield" onClick={handleRegister} variant="contained" color="secondary" disabled={filedNotEmpty || isSignUpBtnDisabled}>
-                    Sign Up
-                </Button>
-            </div>
-
+                    </div>
+                </Grid>
+                <Grid item xs={12} md={6} sm={12} className={classes.rightText}>
+                    <div>
+                        {registerData.map((items, index) => {
+                            return (
+                                <div style={{paddingBottom:'15px'}}>
+                                    <TextField
+                                        // className="textfield"
+                                        className={classes.rightText}
+                                        onChange={(event) => handleChange(index, event)}
+                                        required
+                                        id="standard-required"
+                                        label={items.label}
+                                        value={items.value}
+                                        error={items.error}
+                                        helperText={items.error ? items.helperText : ""}
+                                    />
+                                </div>
+                            )
+                        })}
+                        {confirmPassErr ? <div>
+                            <span className="confirmPassErr">Confirm password should match password</span>
+                        </div>
+                            : null}
+                    </div>
+                    <div className='btn'>
+                        <Button className={classes.registerBtn} onClick={handleRegister} variant="contained" color="secondary" disabled={filedNotEmpty || isSignUpBtnDisabled}>
+                            Sign Up
+                        </Button>
+                    </div>
+                </Grid>
+            </Grid>
         </React.Fragment>
     )
 }

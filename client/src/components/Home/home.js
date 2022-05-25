@@ -10,7 +10,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 const useStyles = makeStyles((theme)=>({
     root: {
-        minWidth: 275
+        minWidth: 275,
+        textAlign:'center'
     },
     imageWidth:{
         [theme.breakpoints.down('xs')]: {

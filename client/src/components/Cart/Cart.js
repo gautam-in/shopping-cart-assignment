@@ -71,112 +71,115 @@ const ResponsiveDialog = () => {
 
                 </DialogTitle>
                 {Object.values(listOfProducts).length
-                ?
-                <React.Fragment>
-                    <DialogContent className='dialogContent'>
-                        <DialogContentText>
-                            {
-                                Object.values(listOfProducts).length ?
-                                    Object.values(listOfProducts).map((items, index) => {
-                                        return (
-                                            <React.Fragment>
-                                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                                                    <div>
-                                                        <img src={items.imageURL} width="110" />
-                                                    </div>
-                                                    <div>
-                                                        <div>
-                                                            {items.name}
+                    ?
+                    <React.Fragment>
+                        <DialogContent className='dialogContent'>
+                            <DialogContentText>
+                                {
+                                    Object.values(listOfProducts).length ?
+                                        Object.values(listOfProducts).map((items, index) => {
+                                            return (
+                                                <React.Fragment>
+                                                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                                                        <div style={{ width: '30%' }}>
+                                                            <img src={items.imageURL} width="110" />
                                                         </div>
-                                                        <div>
-                                                            <div style={{ display: 'flex' }}>
-                                                                <span onClick={(e) => decrementProductItem(e, items)}>
-                                                                    <RemoveCircleSharpIcon />
-                                                                </span>
-                                                                &nbsp;
-                                                                <span>{items.count}</span>
-                                                                &nbsp;
-                                                                <span onClick={(e) => incrementProductItem(e, items)}>
-                                                                    <AddCircleSharpIcon />
-                                                                </span>
-                                                                &nbsp;&nbsp;&nbsp;
-                                                                <span>X</span>
-                                                                &nbsp;&nbsp;&nbsp;
-                                                                <span>
-                                                                    <span>Rs.</span>
-                                                                    &nbsp;
-                                                                    <span>{items.price}</span>
-                                                                </span>
+                                                        <div style={{ width: '70%' }}>
+                                                            <div>
+                                                                {items.name}
+                                                            </div>
+                                                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                                                <div>
+                                                                    <div style={{ display: 'flex' }}>
+                                                                        <span onClick={(e) => decrementProductItem(e, items)}>
+                                                                            <RemoveCircleSharpIcon />
+                                                                        </span>
+                                                                        &nbsp;
+                                                                        <span>{items.count}</span>
+                                                                        &nbsp;
+                                                                        <span onClick={(e) => incrementProductItem(e, items)}>
+                                                                            <AddCircleSharpIcon />
+                                                                        </span>
+                                                                        &nbsp;&nbsp;&nbsp;
+                                                                        <span>X</span>
+                                                                        &nbsp;&nbsp;&nbsp;
+                                                                        <span>
+                                                                            <span>Rs.</span>
+                                                                            &nbsp;
+                                                                            <span>{items.price}</span>
+                                                                        </span>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div>
+                                                                    <span>{items.count * items.price}</span>
+                                                                </div>
+
                                                             </div>
 
-
                                                         </div>
                                                     </div>
-                                                    <div>
-                                                        <span>{items.count * items.price}</span>
-                                                    </div>
-                                                </div>
-                                            </React.Fragment>
-                                        )
+                                                </React.Fragment>
+                                            )
 
-                                    })
-                                    : null
-                            }
-                        </DialogContentText>
+                                        })
+                                        : null
+                                }
+                            </DialogContentText>
+                            <DialogContentText>
+                                <Card>
+                                    <div className='lowestPrice'>
+                                        <div>
+                                            <img src={LowesetPriceImg} />
+                                        </div>
+                                        <div>
+                                            You won't find it cheaper anywhere
+                                        </div>
+                                    </div>
+                                </Card>
+                            </DialogContentText>
+                        </DialogContent>
+                    </React.Fragment>
+                    :
+                    <DialogContent className='noCartDialogContent'>
                         <DialogContentText>
-                            <Card>
-                                <div className='lowestPrice'>
-                                    <div>
-                                        <img src={LowesetPriceImg} />
-                                    </div>
-                                    <div>
-                                        You won't find it cheaper anywhere
-                                    </div>
-                                </div>
-                            </Card>
+                            <div style={{ display: 'flex', justifyContent: 'center', fontWeight: 700 }}>No items in your cart</div>
+                            <div style={{ display: 'flex', justifyContent: 'center' }}>Your favorite items are just a click away</div>
                         </DialogContentText>
                     </DialogContent>
-                </React.Fragment>
-            :
-            <DialogContent className='noCartDialogContent'>
-            <DialogContentText>
-                <div style={{display:'flex',justifyContent:'center',fontWeight:700}}>No items in your cart</div>
-                <div style={{display:'flex',justifyContent:'center'}}>Your favorite items are just a click away</div>
-                </DialogContentText>
-            </DialogContent>
-            }
-                
+                }
+
 
                 <DialogContentText>
                     <div className='footerContentText'>
                         {
                             Object.values(listOfProducts).length
-                            ?
-                            <React.Fragment>
-                            <div className='promoText'>Promo code can be applied on payment page</div>
-                            <div className='cartFooter'>
-                                <div>Proceed to Checkout</div>
-                                <div style={{ display: 'flex' }}>
-                                    <div>
-                                        <span>
-                                            Rs.
-                                        </span>
-                                        &nbsp;
-                                        <span>
-                                            {totalPriceProduct}
-                                        </span>
+                                ?
+                                <React.Fragment>
+                                    <div className='promoText'>Promo code can be applied on payment page</div>
+                                    <div className='cartFooter'>
+                                        <div>Proceed to Checkout</div>
+                                        <div style={{ display: 'flex' }}>
+                                            <div>
+                                                <span>
+                                                    Rs.
+                                                </span>
+                                                &nbsp;
+                                                <span>
+                                                    {totalPriceProduct}
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <ChevronRightIcon />
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <ChevronRightIcon />
-                                    </div>
+                                </React.Fragment>
+                                :
+                                <div className='emptyCartFooter'>
+                                    <div>Start Shopping</div>
+
                                 </div>
-                            </div>
-                            </React.Fragment>
-                            :
-                            <div className='emptyCartFooter'>
-                            <div>Start Shopping</div>
-                        
-                        </div>
                         }
 
                     </div>

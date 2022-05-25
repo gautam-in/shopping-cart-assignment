@@ -16,14 +16,12 @@ const CartReducers = (state = initialState, action) => {
             }
 
             const formatedObj = { ...state.listOfProducts, [action.payload.id]: productObj };
-            console.log("formatedObj", formatedObj)
             return {
                 ...state,
                 listOfProducts: formatedObj,
                 countOfItems: state.countOfItems + 1
             }
         case 'OPEN_MODAL_FOR_CART':
-            console.log("OPEN_MODAL_FOR_CART");
             return {
                 ...state,
                 isCartModalOpen: true
@@ -52,7 +50,6 @@ const CartReducers = (state = initialState, action) => {
                     newDecObj = { [data]: { ...cloneListOfProducts[data], count: cloneListOfProducts[data].count - 1 } };
                 }
             })
-            console.log("kkkk===>",action.payload.id,cloneListOfProducts[action.payload.id],"lkmal==>",newDecObj)
             if (newDecObj[action.payload.id].count === 0) {
                 delete newDecObj[action.payload.id];
                 delete cloneListOfProducts[action.payload.id];
