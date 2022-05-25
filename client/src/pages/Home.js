@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 
 import "./Home.css";
 
-import Category from "../components/Category";
-import Carousel from "../components/Carousel";
+//import Category from "../components/Category";
+//import Carousel from "../components/Carousel";
+import LoadingSpinner from "../components/LoadingSpinner";
+
+const Carousel = React.lazy(() => import("../components/Carousel"));
+const Category = React.lazy(() => import("../components/Category"));
 
 let counter = 1;
 
@@ -34,11 +38,13 @@ function Home() {
   });
 
   return (
-    <article className="homepage-container">
-      <Carousel></Carousel>
+    <Suspense fallback={<LoadingSpinner />}>
+      <article className="homepage-container">
+        <Carousel></Carousel>
 
-      {AllCategories}
-    </article>
+        {AllCategories}
+      </article>
+    </Suspense>
   );
 }
 

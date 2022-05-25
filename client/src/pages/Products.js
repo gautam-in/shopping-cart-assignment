@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 
 import "./products.css";
 
-import Product from "../components/Product";
+//import Product from "../components/Product";
 import { NavLink, useParams } from "react-router-dom";
+import LoadingSpinner from "../components/LoadingSpinner";
+
+const Product = React.lazy(() => import("../components/Product"));
 
 function Products() {
   let [productData, setProductData] = useState([]);
@@ -69,12 +72,14 @@ function Products() {
   }, []);
 
   return (
-    <article className="productpage-container">
-      <section className="menu-section">
-        <nav>{categoriesList}</nav>
-      </section>
-      <section className="porduct-listing">{productList}</section>
-    </article>
+    <Suspense fallback={<LoadingSpinner />}>
+      <article className="productpage-container">
+        <section className="menu-section">
+          <nav>{categoriesList}</nav>
+        </section>
+        <section className="porduct-listing">{productList}</section>
+      </article>
+    </Suspense>
   );
 }
 

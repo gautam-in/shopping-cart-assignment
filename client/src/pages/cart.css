@@ -107,6 +107,7 @@
   background-color: #d00255;
   font-size: 1.2rem;
   cursor: pointer;
+  box-shadow: 0 0 5px 2px #aaaaaa89;
 }
 
 .checkout-contents button:disabled {
