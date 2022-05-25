@@ -23,14 +23,6 @@
     text-align: center;
 }
 
-.sbkabazarimg {
-    justify-content: flex-end;
-}
-
-.middletext {
-    justify-content: space-around;
-}
-
 .lastText {
     flex-direction: column;
 }

@@ -3,9 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import LogoPng from '../../images/logo.png';
 import CartImage from '../../images/cart.svg';
 import './Header.css';
@@ -14,8 +11,15 @@ import { Link} from 'react-router-dom';
 import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
 import Cart from '../Cart/Cart'
+const useStyles = makeStyles((theme) => ({
+    middleSec: {
+        [theme.breakpoints.down('xs')]: {
+            display: 'none'
+        }
+    }
+}));
 const Header = () => {
-
+    const classes = useStyles();
     const countOfItems= useSelector((state) => {
         return state.CartReducer.countOfItems
     });
@@ -27,26 +31,16 @@ const Header = () => {
         <React.Fragment>
             <AppBar className="appbar" position="static">
                 <Toolbar>
-                    {/* <Grid container> */}
-                    <Grid item xs={4}>
-                        <Grid container className="sbkabazarimg">
-                            <Grid item>
+                    <Grid item xs={6} sm={4} md={4}>
                                 <img src={LogoPng} />
-                            </Grid>
-                        </Grid>
                     </Grid>
-                    <Grid item xs={2}>
-                        <Grid container className="middletext">
+                    <Grid item sm={6} md={6} className={classes.middleSec}>
                             <Typography variant="h6">
-                                
-                                <Link to="/" style={{textDecoration:'none'}}>Home</Link>
+                                <Link to="/" style={{textDecoration:'none',marginRight:'15px',fontSize:'16px'}}>Home</Link>
+                                <Link to="/productListPage" style={{textDecoration:'none',fontSize:'16px'}}>Products</Link>
                             </Typography>
-                            <Typography variant="h6">
-                                <Link to="/productListPage" style={{textDecoration:'none'}}>Products</Link>
-                            </Typography>
-                        </Grid>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={6} sm={2} md={2}>
                         <Grid container className="lastText">
                             <div className="lastTextFirstChild">
                             <Link to="/login" style={{textDecoration:'none'}}>Sign In</Link>

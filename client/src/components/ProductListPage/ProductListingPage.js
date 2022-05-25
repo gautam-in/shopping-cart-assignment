@@ -14,11 +14,15 @@ import { Grid } from "@material-ui/core";
 import './ProductListingPage.css';
 import Button from '@material-ui/core/Button';
 import { useDispatch } from 'react-redux';
+import Hidden from '@material-ui/core/Hidden';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
+        [theme.breakpoints.down('xs')]: {
+            display: 'block'
+        }
     },
     appBar: {
         width: `calc(100% - ${drawerWidth}px)`,
@@ -30,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
     },
     drawerPaper: {
         width: drawerWidth,
+        top:'auto'
     },
     // necessary for content to be below app bar
     toolbar: theme.mixins.toolbar,
@@ -68,7 +73,6 @@ const ProductListingPage = () => {
         }
     }
     const handleBuyNow = (ev, items) => {
-        console.log("999=>", items);
         axios.post('http://localhost:3000/addToCart ', { productID: items.id })
             .then((response) => {
                 if (response.statusText === "Created") {
@@ -79,27 +83,41 @@ const ProductListingPage = () => {
                 console.error('There was an error!', error);
             });
     }
+    const handleDropdown = (e)=>{
+        setCategoryId(e.target.value);
+    }
     console.log("categories==>", categoriesData, productsData, categoryId)
     return (
         <div className={classes.root}>
-            <Drawer
-                className={classes.drawer}
-                variant="permanent"
-                classes={{
-                    paper: classes.drawerPaper,
-                }}
-                anchor="left"
-            >
-                <div className={classes.toolbar} />
-                <Divider />
-                <List>
-                    {categoriesData.map((text, index) => (
-                        <ListItem button key={text.name} style={{background:text.id===categoryId?'rgba(0, 0, 0, 0.04)':'none'}}>
-                            <ListItemText primary={text.name} onClick={(ev) => handleSidebarCategory(ev, text)} />
-                        </ListItem>
-                    ))}
-                </List>
-            </Drawer>
+            <Hidden smUp>
+                <div>
+                    <select className='mobileDropDown' onChange={handleDropdown}>
+                        <option value="">Please select category</option>
+                        {categoriesData.map((text, index) => (
+                            <option value={text.id} size="3">{text.name}</option>
+                        ))}
+                    </select>
+                </div>
+            </Hidden>
+            <Hidden xsDown>
+                <Drawer
+                    className={classes.drawer}
+                    variant="permanent"
+                    classes={{
+                        paper: classes.drawerPaper,
+                    }}
+                    anchor="left"
+                >
+                    <List>
+                        {categoriesData.map((text, index) => (
+                            <ListItem button key={text.name} style={{ background: text.id === categoryId ? 'rgba(0, 0, 0, 0.04)' : 'none' }}>
+                                <ListItemText primary={text.name} onClick={(ev) => handleSidebarCategory(ev, text)} />
+                            </ListItem>
+                        ))}
+                    </List>
+                </Drawer>
+            </Hidden>
+
             <main className={classes.content}>
                 <div className={classes.toolbar} />
                 <Grid container spacing={2}>
@@ -111,7 +129,7 @@ const ProductListingPage = () => {
                                 return (
                                     <React.Fragment>
 
-                                        <Grid item xs={12} sm={6} md={3} style={{textAlign:'center'}}>
+                                        <Grid item xs={12} sm={6} md={3} style={{ textAlign: 'center' }}>
                                             <p className='headerText'>{items.name}</p>
                                             <img src={items.imageURL} width="160" />
                                             <p className='productDesc'>{items.description}</p>
@@ -132,8 +150,8 @@ const ProductListingPage = () => {
                                 if (categoryId === "") {
                                     return (
                                         <React.Fragment>
-                                            <Grid item xs={12} sm={6} md={3} style={{textAlign:'center'}}>
-                                              
+                                            <Grid item xs={12} sm={6} md={3} style={{ textAlign: 'center' }}>
+
                                                 <p className='headerText'>{items.name}</p>
                                                 <img src={items.imageURL} width="160" className='plpImg' />
                                                 <p className='productDesc'>{items.description}</p>

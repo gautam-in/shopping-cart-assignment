@@ -16,6 +16,9 @@ align-items: center;
     text-align: left;  
     /* height: 25%; */
 }
-.plpImg{
-    /* height:45%; */
+.mobileDropDown{
+    width:100%;
+    background: #f50057;
+    color: #fff;
+    height: 40px;
 }
