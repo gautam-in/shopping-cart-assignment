@@ -1,0 +1,28 @@
+.arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    transform: translate(0px, -50%);
+    background: rgb(0 0 0 / 50%);
+    cursor: pointer;
+    color: #fff;
+}
+.next {
+    right: 0%;
+}
+.prev {
+    left: 0%
+}
+.arrow p {
+    padding:10px 15px;
+    margin: 0;
+}
+.disable{
+    opacity: .3;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+    .next,.prev{
+       display: none
+    }
+}

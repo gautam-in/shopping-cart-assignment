@@ -1,0 +1,33 @@
+.productsList_container {
+    display: flex;
+    position: relative;
+}
+.category  {
+    color: #000;
+    padding: 10px 50px;
+    border-bottom: 1px solid #ccc9c9;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    line-height: 1.5;
+}
+
+.active_category{
+    color: #BE2857;
+}
+
+.categoryList_container {
+    background: #EAEAEA;
+    min-width: 300px;
+    margin-top: -5px;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .categoryList_container {
+        min-width: 200px;
+    }
+    .category{
+        padding: 10px 30px;
+    }
+}
+

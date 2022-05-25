@@ -1,0 +1,43 @@
+.TextField {
+  position: relative;
+  line-height: 0;
+}
+
+.TextField_label {
+  font: inherit;
+  transition: transform 200ms;
+  transform-origin: top left;
+  color: #6f6e6e;
+  pointer-events: none;
+  line-height: 1;
+  display: block;
+  position: absolute;
+  font-weight: 600;
+}
+
+.TextField__isEmpty .TextField_label {
+  transform: translate(0, 1.5em) scale(1);
+}
+
+.TextField__isFilled .TextField_label {
+  transform: translate(0, 0.3em) scale(0.8);
+  color: #006e75;
+}
+
+.TextField_input {
+  margin-top: 10px;
+  height: 3em;
+  font: inherit;
+  box-sizing: content-box; /* box-sizing is set to content-box to get height of inputs to be consistent across browsers */
+  line-height: 1;
+  border: none;
+  border-bottom: 2px solid gray;
+  outline: none;
+  padding: 0;
+  width: 100%;
+  min-width: 300px;
+}
+
+.TextField_input:focus {
+  border-bottom-color: #00bac5;
+}

@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: 'Dosis', sans-serif;
+  ;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.fluid_container {
+  max-width: 80vw;
+  margin: auto
+}
+
+.floating_shadow {
+  position: relative;
+}
+
+.floating_shadow:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -1rem;
+  background: radial-gradient(farthest-corner at 50% 0px, rgb(128 128 128 / 50%) 0%, transparent 50%);
+  width: 100%;
+  height: 0.6rem;
+}
+
+.slick-dots {
+  bottom: 15px;
+}
+
+
+/* common styles */
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul,
+li {
+  padding: 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  outline: 0;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  background: inherit;
+  color: inherit;
+  font-family: 'Dosis', sans-serif;
+  font-size: inherit;
+}
+.btn_primary{
+  background-color: #BE2857;
+  color: #fff;
+}
+.no-scroll {
+  overflow: hidden;
+}
+
+
+/* form styles start */
+.form-group {
+  max-width: 300px;
+}
+
+.error_msg {
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 14px;
+  color: #db0000;
+  font-weight: 600;
+}
+.show_mobile , .show_tab{
+  display: none;
+}
+.hide_mobile, .hide_tab{
+  display: block;
+}
+
+/* form styles ends */
+/* override lib styles */
+.slick-dots li button {
+  color: #000;
+}
+
+
+/* tablet media Queries */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .fluid_container{
+    max-width: 100vw;
+  }
+  .show_tab {
+    display: initial;
+  }
+  .hide_tab{
+    display: none;
+  }
+ }
+ @media only screen and (min-device-width: 360px) and (max-device-width: 767px) {
+  .fluid_container{
+    max-width: 100vw;
+  }
+  .show_mobile {
+    display: initial;
+  }
+  .hide_mobile{
+    display: none;
+  }
+  .slick-dots{
+    bottom: -35px
+  }
+  p, button{
+    font-size: 13px !important;
+  }
+  h3{
+    font-size: 16px !important;
+  }
+ }

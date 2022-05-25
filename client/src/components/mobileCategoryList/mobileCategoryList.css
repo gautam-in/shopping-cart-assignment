@@ -1,0 +1,31 @@
+.mobile_category_list_container .categoryList_container {
+    position: absolute;
+    width: 100%;
+    top: 46px;
+   display: none;
+   transition: all 1s ease-in-out;
+}
+
+.active_category_item{
+    width: 100%;
+    background: #be2857;
+    padding: 10px;
+    color: #fff;
+    padding: 10px 50px;
+    border-bottom: 1px solid #ccc9c9;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    line-height: 1.5;
+    display: flex;
+    justify-content: space-between;
+}
+.categoryList_container.isMenuVisible{
+    display: block !important;
+    transition: all 1s ease-in-out;
+}
+.mobile_category_list_container {
+    width: 100%;
+    position: absolute;
+    top: -9px;
+}
