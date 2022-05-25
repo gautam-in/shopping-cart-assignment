@@ -1,0 +1,21 @@
+.sidebar-card {
+    margin-right: 25px;
+    max-width: fit-content;
+    align-items: center;
+    background-color: rgb(238, 235, 235);
+    justify-content: center;
+
+.sidebar {
+    cursor: pointer;
+    width: 200px;
+}
+.sidebar-category {
+    font-size: large;
+    opacity: 70%;
+    align-items:center;
+    display: flex;
+    justify-content: left;
+    border-bottom: 0.5px solid gray;
+    padding: 15px;
+}
+}
