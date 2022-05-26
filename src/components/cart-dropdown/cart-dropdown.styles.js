@@ -12,44 +12,73 @@ const cartEmpty = css`
 `;
 
 export const CartDropDownContainer = styled.div`
-    position: absolute;
-    width: 400px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    background-color: white;
-    top: 72px;
-    right: 0px;
-    z-index: 5;
-
     button {
         display: flex;
         justify-content: space-between;
-        border-radius: 3px;
-        margin: 10px auto;
-        width: 90%;
+        width: 100%;
         margin-top: auto;
+    }
+
+    @media (min-width: 992px) {
+        position: absolute;
+        width: 400px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        background-color: white;
+        top: 72px;
+        right: 15%;
+        z-index: 5;
+
+        button {
+            border-radius: 3px;
+            width: 90%;
+            margin: 10px auto;
+        }
     }
 `;
 export const CartDropDownItems = styled.div`
-    height: 500px;
     display: flex;
     flex-direction: column;
-    overflow: auto;
     background-color: rgb(230, 230, 230);
+    overflow: auto;
     ${({empty}) => !empty && cartEmpty}
+    padding-bottom: 100px;
+
+    @media(min-width: 992px) {
+        height: 500px;
+        padding-bottom: 0;
+    }
 `;
 export const CartDropDownHeader = styled.div`
-    background: black;
-    color: white;
     padding: 15px 10px;
-    text-align: center;
     font-size: 12px;
+    background-color: rgb(230, 230, 230);
+    margin-bottom: 10px;
+
+    @media(min-width: 992px) {
+        background: black;
+        color: white;
+        text-align: center;
+    }
 `;
 export const CartDropDownHeaderTitle = styled.span`
     font-weight: bold;
     font-size: 16px;
+`;
+
+export const CartDropDownFooter = styled.div`
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+
+    @media(min-width: 992px) {
+        background-color: none;
+        position: static;
+    }
 `;
 // export const CartDropDownEmpty = styled(CartDropDownItems)`
 //     display: flex;
@@ -82,11 +111,16 @@ export const CartDropDownArrow = styled.span`
 `;
 
 export const CartDropDownClose = styled.span`
-    float: right;
-    font-weight: bold;
-    font-size: 16px;
-    margin-right: 10px;
-    cursor: pointer;
+    display: none;
+
+    @media(min-width: 992px) {
+        display: inline-block;
+        float: right;
+        font-weight: bold;
+        font-size: 16px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
 `
 
 export const PriceBannerContainer = styled.div`

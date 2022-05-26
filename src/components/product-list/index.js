@@ -17,7 +17,7 @@ const ProductList = ({activeCategory}) => {
     return(
         <div className="product-list__container">
            { products.map((product) => {
-                return activeCategory === null || product.category === activeCategory ? (
+                return activeCategory === 'all' || product.category === activeCategory ? (
                         <ProductCard key={product.id} product={product}/>
                         ) : (null);
             })}

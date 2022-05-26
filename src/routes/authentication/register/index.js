@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../../../components/button";
 import FormInput from "../../../components/form-input";
 import {createAuthUserWithEmailAndPassword, createUserDocumentFromAuth} from '../../../utils/firebase';
@@ -23,6 +24,8 @@ const Register = () => {
         confirmPassword
     } = formFields;
 
+    const navigate = useNavigate();
+
     const handleChange = (event) => {
         const {name, value} = event.target;
         setFormFields({...formFields, [name]: value});
@@ -40,6 +43,7 @@ const Register = () => {
             if(user) {
                 await createUserDocumentFromAuth(user, {displayName: `${firstName} ${lastName}`});
                 resetFormFields();
+                navigate('/');
             }
         } catch (error) {
             if(error.code === 'auth/email-already-in-use') {
@@ -99,7 +103,9 @@ const Register = () => {
                     name:'password',
                     value:password,
                     required: true,
-                    type:"password"
+                    type:"password",
+                    minLength: 6,
+                    pattern: "^(?=.*[a-zA-Z])(?=.*[0-9])(?!.* ).{6,}$"
                 }}
             />
 

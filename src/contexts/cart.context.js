@@ -1,8 +1,8 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
+import {useSelector} from 'react-redux';
 
 import { createAction } from "../utils/reducer";
 import {addCollectionAndDocuments, getAllDocuments, removeDocumentFromCollection} from '../utils/firebase';
-import { UserContext } from "./user-context";
 
 const addCartItem = (currentUser, cartItems, productToAdd) => {
     const existingCartItem = cartItems.find((cartItem) => cartItem.id === productToAdd.id);
@@ -85,7 +85,7 @@ export const cartReducer = (state, action) => {
 export const CartProvider = ({children}) => {
     const [state, dispatch] = useReducer(cartReducer, INITIAL_STATE);
     const {cartItems, cartCount, cartTotal, isCartOpen} = state;
-    const {currentUser} = useContext(UserContext);
+    const currentUser = useSelector((state) => state.user.currentUser);
 
     useEffect(() => {
         if(currentUser) {

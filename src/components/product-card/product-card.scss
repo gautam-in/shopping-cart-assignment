@@ -1,67 +1,8 @@
 @import '../../mixin.scss';
-
-// .product-card {
-//     width: 100%;
-//     margin: 0 auto;
-//     text-align: center;
-//     display: flex;
-//     flex-direction: column;
-//     margin-bottom: 40px;
-
-//     @include for-tablet-portrait-up {
-//         width: 45%;
-//     }
-
-//     @include for-desktop-up {
-//         width: 30%;
-//     }
-
-//     &:nth-of-type(3n+1) {
-//         margin-left: 0;
-//     }
-
-//     &:nth-of-type(3n) {
-//         margin-right: 0;
-//     }
-
-//     &__footer {
-//         display: flex;
-//         width: 100%;
-//         justify-content: space-between;
-//         align-items: center;
-//     }
-
-//     &-img {
-//         width: 100%;
-//     }
-
-//     &-desc {
-//         flex-grow: 1;
-//         width: 50%;
-//     }
-
-//     &-title {
-//         min-height: 50px;
-//         margin-bottom: 0;
-//     }
-
-//     &__details {
-//         flex-grow: 1;
-//     }
-// }
-
 .product-card {
-    width: 95%;
-    border-bottom: 1px dotted #b62626;
-    margin: 0 auto;
-
-    @include for-tablet-portrait-up {
-        width: 45%;
-    }
-
-    @include for-desktop-up {
-        width: 30%;
-    }
+    padding-bottom: 15px;
+    border-bottom: 2px dashed lightgray;
+    margin-bottom: 20px;
 
     &__details {
         display: flex;
@@ -75,11 +16,17 @@
     }
 
     &-msrp {
-        display: block;
+        display: none;
         font-size: 12px;
-        @include for-tablet-portrait-up {
+        @include for-desktop-up {
             display: inline-block;
             width: 40%;
+        }
+
+        &--mobile {
+            @include for-desktop-up {
+                display: none;
+            }
         }
     }
 
@@ -116,11 +63,7 @@
     }
 
     &__desc-container {
-        display: block;
-
-        @include for-tablet-portrait-up {
-            display: flex;
-        }
+        display: flex;
 
         @include for-desktop-up {
             display: block;
@@ -137,7 +80,11 @@
     }
 
     &-button {
-        width: 60%;
+        width: 100%;
         font-size: 12px;
+        
+        @include for-desktop-up {
+            width: 60%;
+        }
     }
 }

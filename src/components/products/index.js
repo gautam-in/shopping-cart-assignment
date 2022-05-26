@@ -7,7 +7,7 @@ import ProductList from "../product-list";
 import './products.scss';
 
 const Products = () => {
-    const [activeCategory, setActiveCategory] = useState(null);
+    const [activeCategory, setActiveCategory] = useState('all');
     const {categories} = useContext(CategoriesContext);
     const {category} = useParams();
 
@@ -18,8 +18,8 @@ const Products = () => {
         }
     }, [categories]);
 
-    const toggleActiveCategory = (event, categoryId) => {
-        setActiveCategory(activeCategory === categoryId ? null : categoryId);
+    const toggleActiveCategory = (categoryId) => {
+        setActiveCategory(activeCategory === categoryId ? 'all' : categoryId);
     }
 
     useEffect(() => {

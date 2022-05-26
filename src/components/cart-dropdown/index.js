@@ -1,4 +1,5 @@
 import { Fragment, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../contexts/cart.context';
 import Button from '../button';
 import CartItem from '../cart-item';
@@ -15,12 +16,20 @@ import {
     CartDropDownPriceLabel,
     CartDropDownClose,
     PriceBannerContainer,
-    PriceBannerImageContainer
+    PriceBannerImageContainer,
+    CartDropDownFooter
 } from './cart-dropdown.styles'
 
 const CartDropDown = () => {
     const {cartItems, cartTotal, cartCount, setIsCartOpen} = useContext(CartContext);
-    const closeCartHandler = () => setIsCartOpen(false);
+    const navigate = useNavigate();
+    const closeCartHandler = () => {
+        if(window.screen.width >=992) {
+            setIsCartOpen(false)
+        }else {
+            navigate('/');
+        }
+    };
     return (
         <CartDropDownContainer>
             <CartDropDownHeader>
@@ -48,7 +57,7 @@ const CartDropDown = () => {
                     </Fragment>
                 }
             </CartDropDownItems>
-            <div className='cart-dropdown__footer'>
+            <CartDropDownFooter>
                 <CartDropDownDisclaimer>Promo code can be applied on payment page</CartDropDownDisclaimer>
                 <Button onClick ={closeCartHandler} btnClass='cart-dropdown-btn'>
                 {cartItems.length ?
@@ -63,7 +72,7 @@ const CartDropDown = () => {
                     <CartDropDownButtonLabelCenter>Start Shopping</CartDropDownButtonLabelCenter>
                 }
                 </Button>
-            </div>
+            </CartDropDownFooter>
         </CartDropDownContainer>
     );
 }

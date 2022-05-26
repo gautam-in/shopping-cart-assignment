@@ -1,3 +1,4 @@
+@import '../../mixin.scss';
 .category {
     display: flex;
     flex-wrap: wrap;
@@ -25,7 +26,11 @@
     }
 
     &__image {
-        width: 40%;
+        width: 30%;
+
+        @include for-tablet-portrait-up {
+            width: 40%;
+        }
 
         & img {
             width: 100%;
@@ -33,12 +38,17 @@
     }
 
     &__info {
-        width: 60%;
-        padding-left: 50px;
+        width: 70%;
         text-align: center;
 
         & .category__info-button {
-            width: 50%;
+            width: fit-content;
+            padding: 10px;
+        }
+
+        @include for-tablet-portrait-up {
+            padding-left: 50px;
+            width: 60%;
         }
     }
 }

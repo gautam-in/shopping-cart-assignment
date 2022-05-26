@@ -1,6 +1,5 @@
 import { Fragment, useContext } from "react";
-import { Outlet } from "react-router-dom";
-import { UserContext } from "../../contexts/user-context";
+import {useSelector} from 'react-redux';
 import {signOutUser} from "../../utils/firebase";
 import {
     NavigationContainer,
@@ -16,11 +15,10 @@ import CartIcon from "../../components/cart-icon";
 import CartDropDown from "../../components/cart-dropdown";
 import { CartContext } from "../../contexts/cart.context";
 const Navigation = () => {
-    const {currentUser} = useContext(UserContext);
     const {isCartOpen} = useContext(CartContext);
+    const currentUser = useSelector((state) => state.user.currentUser)
 
     return (
-        <Fragment>
         <NavigationContainer>
             <NavigationWrapper>
                 <LogoContainer to='/'>
@@ -53,10 +51,6 @@ const Navigation = () => {
                 }
             </NavigationWrapper>
         </NavigationContainer>
-        <div className="wrapper">
-            <Outlet/>
-        </div>
-        </Fragment>
     );
 }
 

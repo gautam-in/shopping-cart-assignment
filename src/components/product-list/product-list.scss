@@ -1,6 +1,22 @@
+@import '../../mixin.scss';
+
 .product-list__container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 68%;
-    margin-left: auto;
+    width: 100%;
+    display: block;
+    padding-left: 10px;
+    grid-template-columns: repeat(1, 1fr);
+
+    @include for-tablet-portrait-up {
+        width: 68%;
+        display: grid;
+        margin: 0 auto;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    @include for-desktop-up {
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0;
+        margin-left: auto;
+    }
 }

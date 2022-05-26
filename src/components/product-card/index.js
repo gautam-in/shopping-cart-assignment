@@ -20,7 +20,10 @@ const ProductCard = ({product}) => {
             </div>
             <div className='product-card__footer'>
                 <span className="product-card-msrp">MSRP Rs{price}</span>
-                <Button onClick ={addProductToCart} btnClass={'product-card-button'} type='button'>Buy Now</Button>
+                <Button onClick ={addProductToCart} btnClass={'product-card-button'} type='button'>
+                    Buy Now
+                    <span className="product-card-msrp--mobile"> @ MSRP Rs {price}</span>
+                </Button>
             </div>
         </div>
     );

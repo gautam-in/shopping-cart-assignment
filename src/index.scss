@@ -17,6 +17,8 @@ code {
 }
 
 .wrapper {
+  margin: 0;
+
   @include for-desktop-up {
     margin: 0 15%;
   }

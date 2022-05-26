@@ -6,7 +6,11 @@
     padding: 10px 0;
     cursor: pointer;
     float: right;
-    width: 60%;
+    width: 100%;
+
+    @include for-tablet-portrait-up {
+        width: 60%;
+    }
 
     @include for-desktop-up {
         width: 80%;

@@ -1,6 +1,7 @@
 // import { useEffect } from "react";
 // import { getRedirectResult } from "firebase/auth";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../../../components/button";
 import FormInput from "../../../components/form-input";
 import {
@@ -34,6 +35,7 @@ const SignIn = () => {
     //     }, []); // Or [] if effect doesn't need props or state
 
     const [formFields, setFormFields] = useState(defaultFormFields);
+    const navigate = useNavigate();
     const {
         email,
         password
@@ -49,6 +51,7 @@ const SignIn = () => {
         try {
             await signInUserWithEmailAndPassword(email, password);
             resetFormFields();
+            navigate('/');
         } catch (error) {
             switch (error.code) {
                 case 'auth/wrong-password':
@@ -96,7 +99,9 @@ const SignIn = () => {
                             name:'password',
                             value:password,
                             required: true,
-                            type:"password"
+                            type:"password",
+                            minLength: 6,
+                            pattern: "^(?=.*[a-zA-Z])(?=.*[0-9])(?!.* ).{6,}$"
                         }}
                     />
                     <Button btnClass='sign-in-btn' type='submit'>Login</Button>
