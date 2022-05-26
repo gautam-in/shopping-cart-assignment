@@ -1,14 +1,17 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import {useSelector} from 'react-redux';
 import { useParams } from "react-router-dom";
+import { selectCategories } from "../../store/categories/category.selector";
 import CategoryNav from "../category-nav";
-import { CategoriesContext } from "../../contexts/categories.context";
+// import { CategoriesContext } from "../../contexts/categories.context";
 import ProductList from "../product-list";
 
 import './products.scss';
 
 const Products = () => {
     const [activeCategory, setActiveCategory] = useState('all');
-    const {categories} = useContext(CategoriesContext);
+    // const {categories} = useContext(CategoriesContext);
+    const categories = useSelector(selectCategories);
     const {category} = useParams();
 
     useEffect(() => {

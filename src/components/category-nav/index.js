@@ -1,10 +1,12 @@
-import { useContext } from "react";
-import { CategoriesContext } from "../../contexts/categories.context";
+import { useSelector } from "react-redux";
+// import { CategoriesContext } from "../../contexts/categories.context";
+import { selectCategories } from "../../store/categories/category.selector";
 
 import './category-nav.scss';
 
 const CategoryNav = ({toggleActiveCategoryCallback, activeCategory}) => {
-    const {categories} = useContext(CategoriesContext);
+    // const {categories} = useContext(CategoriesContext);
+    const categories = useSelector(selectCategories);
     return (
         <div className="category-nav__container">
             <ul className="category-nav">

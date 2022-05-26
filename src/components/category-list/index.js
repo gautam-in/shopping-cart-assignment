@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useSelector } from "react-redux";
 import CategoryItem from "../category-item";
-import { CategoriesContext } from '../../contexts/categories.context';
+// import { CategoriesContext } from '../../contexts/categories.context';
+import { selectCategories } from "../../store/categories/category.selector";
 const CategoryList = () => {
 
-    const {categories} = useContext(CategoriesContext);
-
+    // const {categories} = useContext(CategoriesContext);
+    const categories = useSelector(selectCategories);
     return (
         <div className="categories-container">
             {categories.map((category) => (

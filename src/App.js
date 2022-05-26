@@ -9,6 +9,7 @@ import { createUserDocumentFromAuth, onAuthStateChangedListener } from './utils/
 import { setCurrentUser } from './store/user/user.action';
 import CartDropDown from './components/cart-dropdown';
 import Container from './routes/container';
+import { setCategories } from './store/categories/category.action';
 const App = () => {
   const dispatch = useDispatch();
 
@@ -21,6 +22,13 @@ const App = () => {
     });
     return unsubscribe;
 }, [dispatch]);
+
+useEffect(() => {
+  fetch('/categories')
+  .then((response) => response.json())
+  .then((data) => {
+      dispatch(setCategories(data))});
+}, [])
 
     return (
       <Routes>

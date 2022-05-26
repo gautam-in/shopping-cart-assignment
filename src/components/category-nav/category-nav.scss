@@ -38,6 +38,14 @@
 
     &-dropdown {
         display: block;
+        width: 100%;
+        padding: 10px;
+        color: white;
+        background-color: rgb(164, 53, 71);
+
+        &:focus-visible {
+            outline: none;
+        }
 
         @include for-tablet-portrait-up {
             display: none;
