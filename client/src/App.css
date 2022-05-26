@@ -1,38 +1,135 @@
+@import url(https://fonts.googleapis.com/css?family=Dosis:400,600,700);
+
 .App {
-  text-align: center;
+  font-family: "Dosis", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* ANTD MODAL FOR CART MOBILE / DESKTOP */
+
+.ant-modal {
+  width: 420px !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ant-modal_body {
+  padding: 0 !important;
+  background: #eaeaea;
+  overflow: auto !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.ant-modal-footer {
+  text-align: inherit !important;
+}
+
+.ant-modal-close {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.ant-modal-header {
+  background: #0e0e0e;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ant-modal-title {
+  color: white;
+}
+
+.cart_detail_container {
+  display: flex !important;
+  max-width: 100%;
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.cart_detail_container img {
+  width: 20%;
+  align-self: center;
+}
+
+.cart_detail {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: center;
+  padding-left: 15px;
+}
+
+.cart_calculation {
+  display: flex;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.cart_price {
+  width: 20%;
+  align-self: center;
+  text-align: center;
+}
+
+.checkout_button {
+  display: flex;
+  padding: 10px;
+  background: #be2857;
+  color: white;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.lowest_price{
+  background: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px;
+    margin: 15px;
+}
+
+.lowest_price > div {
+  font-size: 11px;
+}
+
+.lowest_price img{
+  width: 30%;
+}
+
+.no_cart_item {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+/* DRAWER FOR MENU MOBILE */
+
+.ant-drawer-content-wrapper {
+  width: 260px !important;
+}
+
+.ant-drawer-body {
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu_mobile {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.menu_mobile  a {
+  color: black;
+  font-size: 15px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.menu_login_signup{
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 40px;
 }
