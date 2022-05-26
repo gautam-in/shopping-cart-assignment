@@ -41,7 +41,7 @@ const Header = () => {
     const renderAuthButtons = () => {
         if(authToken){
             return (
-                <div>
+                <div style={{ cursor:"pointer"}}>
                     <p onClick={handlelogout}>Logout</p>
                 </div>
             )
