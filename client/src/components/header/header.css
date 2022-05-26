@@ -1,0 +1,109 @@
+.header {
+    box-shadow: 0px 0px 5px 5px rgb(0 0 0 / 20%);
+    margin-bottom: 10px;
+}
+
+.header_nav ul {
+    display: flex;
+}
+
+.header_nav ul li {
+    padding: 15px;
+}
+
+header a {
+    color: #000;
+    font-weight: 600;
+}
+
+.menu_container {
+    display: flex;
+    align-items: flex-end;
+}
+
+.header_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    max-width: 150px;
+    margin: 15px;
+    cursor: pointer;
+}
+
+.header_nav {
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+}
+
+.signin_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.signin_nav ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.signin_nav ul li {
+    padding: 15px 15px;
+}
+
+.cart_button {
+    display: flex;
+    background: #EEEEEE;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+
+.cart-img {
+    max-width: 30px;
+}
+
+.back_drop {
+    position: absolute;
+    background: #000000ab;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+}
+
+.cart_items {
+    margin: 0 10px;
+}
+
+.cart_button i {
+    font-size: 20px;
+    color: #be2857;
+}
+.link-text.active{
+    color: #be2857;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .back_drop {
+        background: transparent;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+    .cart_button {
+        height: 50px;
+    }
+    .logo{
+        height: 40px;
+        margin: 5px;
+    }
+    .back_drop {
+        background: transparent;
+    }
+}

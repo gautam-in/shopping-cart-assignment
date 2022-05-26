@@ -1,0 +1,15 @@
+.form_section {
+    display: flex;
+    margin: 20px 50px;
+}
+
+.form_info {
+    padding: 10px 5em;
+}
+.submit_btn{
+    min-width: 300px;
+    background-color: #BE2857;
+    color: #fff;
+    margin-top: 3em;
+    font-weight: 600;
+}

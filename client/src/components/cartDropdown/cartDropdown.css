@@ -1,0 +1,135 @@
+.cart_container {
+    position: absolute;
+    top: 100px;
+    background: #EEEEEE;
+    min-width: 400px;
+    right: 0;
+    height: calc(100vh - 100px);
+    z-index: 4;
+}
+
+.cart_header {
+    display: flex;
+    width: 100%;
+    background: #1D2123;
+    color: #fff;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart_title span {
+    font-size: 12px;
+}
+
+.cart_title {
+    font-weight: 600;
+}
+
+.cart_close {
+    color: #fff;
+}
+
+/* lowest price container styles starts*/
+.lowest_price_container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #fff;
+    margin: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.lowest_img {
+    max-width: 100px;
+}
+
+.lowest_price_desc {
+    padding: 0 15px;
+}
+
+/* lowest price container styles ends*/
+
+
+.cart_inner_container {
+    position: relative;
+    height: 100%;
+}
+
+.promo_checkout_container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.cart_price_container {
+    margin: 10px 0;
+    height: calc(100% - 190px);
+    margin-bottom: 90px;
+    overflow: auto;
+}
+
+.checkout_btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.empty_cart_section .checkout_btn span {
+    width: 100%;
+}
+
+.promo_checkout_container p {
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+/* ematy cart styles starts */
+
+.empty_cart_container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* empty cart styles ends */
+
+
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .cart_container {
+        width: 100vw;
+        height: calc(100vh - 115px);
+    }
+    .cart_inner_container {
+        margin-top: 15px;
+    }
+    .cart_header {
+        background: #fff;
+        color: #000;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+    .cart_container {
+        width: 100vw;
+        height: calc(100vh - 65px);
+        top:50px
+    }
+    .cart_inner_container {
+        margin-top: 15px;
+    }
+    .cart_header {
+        background: #fff;
+        color: #000;
+    }
+}
