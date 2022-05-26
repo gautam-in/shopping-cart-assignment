@@ -2,17 +2,23 @@ import React from "react";
 
 import "./product.css";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { CartActions } from "../store/cart-slice";
 
 import Notification from "./Notification";
 
 function Product({ pname, imageURL, description, price, id }) {
   let dispatch = useDispatch();
+  let isLoggedin = useSelector((state) => state.loginSlice.isLoggedin);
 
   imageURL = "http://localhost:8080" + imageURL;
 
   let updateCart = (productName, productPrice, id) => {
+    if (!isLoggedin) {
+      alert("pleae login to add products to cart!");
+      return;
+    }
+
     fetch("http://localhost:5000/userCart?id=" + id)
       .then((response) => response.json())
 

@@ -1,5 +1,5 @@
 import { Route, Switch, Redirect } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { CartActions } from "./store/cart-slice";
 
@@ -27,13 +27,15 @@ const Cart = React.lazy(() => import("./pages/Cart"));
 
 function App() {
   let dispatch = useDispatch();
+  let isLoggedin = useSelector((state) => state.loginSlice.isLoggedin);
 
   useEffect(() => {
-    fetch("http://localhost:5000/userCart/")
-      .then((data) => data.json())
-      .then((json) => {
-        dispatch(CartActions.replaceCart(json));
-      });
+    if (isLoggedin)
+      fetch("http://localhost:5000/userCart/")
+        .then((data) => data.json())
+        .then((json) => {
+          dispatch(CartActions.replaceCart(json));
+        });
   }, []);
 
   return (
@@ -64,10 +66,11 @@ function App() {
           <Route path="/Products/:productKey">
             <Products></Products>
           </Route>
-
-          <Route path="/Cart" exact>
-            <Cart></Cart>
-          </Route>
+          {isLoggedin && (
+            <Route path="/Cart" exact>
+              <Cart></Cart>
+            </Route>
+          )}
 
           <Route path="*">
             <NotFound></NotFound>

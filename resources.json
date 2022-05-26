@@ -345,28 +345,12 @@
   ],
   "userCart": [
     {
-      "productName": "Johnson's Active Kids Shampoo - Shiny Drops With Argan Oil, 100 ml",
-      "productPrice": 95,
-      "quantity": 1,
-      "totalPrice": 95,
-      "imageURL": "http://localhost:8080/static/images/products/baby/shampoo.jpg",
-      "id": "5b6c75e101a7c3842953089a"
-    },
-    {
       "productName": "Nestle Cerelac Stage - 4 Multi Grain & Fruits, 2x300 gm",
       "productPrice": 478,
-      "quantity": 1,
-      "totalPrice": 478,
+      "quantity": 3,
+      "totalPrice": 1434,
       "imageURL": "http://localhost:8080/static/images/products/baby/cerelac.jpg",
       "id": "5b6c753c01a7c38429530898"
-    },
-    {
-      "productName": "Organic Fresh Paneer, 200 gm ",
-      "productPrice": 98,
-      "quantity": 1,
-      "totalPrice": 98,
-      "imageURL": "http://localhost:8080/static/images/products/bakery-cakes-dairy/paneer.jpg",
-      "id": "5b6c6d6201a7c38429530889"
     },
     {
       "productName": "Fresho Kiwi - Green, 3 pcs",
@@ -375,6 +359,14 @@
       "totalPrice": 87,
       "imageURL": "http://localhost:8080/static/images/products/fruit-n-veg/kiwi-green.jpg",
       "id": "5b6c6a7f01a7c38429530883"
+    },
+    {
+      "productName": "Apple - Washington, Regular, 4 pcs",
+      "productPrice": 187,
+      "quantity": 1,
+      "totalPrice": 187,
+      "imageURL": "http://localhost:8080/static/images/products/fruit-n-veg/apple.jpg",
+      "id": "5b6c6aeb01a7c38429530884"
     }
   ]
 }

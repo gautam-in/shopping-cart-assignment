@@ -43,6 +43,7 @@ body {
   width: 100%;
   margin-bottom: 1.5rem;
   height: 2rem;
+  font-size: 1.2rem;
 }
 
 .signup-container {
@@ -53,6 +54,12 @@ body {
 input {
   border: none;
   border-bottom: 1px solid #7575a1;
+}
+
+.inputErrorMessage {
+  font-size: 0.9rem;
+  color: #d00255;
+  margin-bottom: 1rem;
 }
 
 input[type="email"],
@@ -66,21 +73,17 @@ input[type="submit"] {
   color: #fff;
   border: none;
   background-color: #d00255;
+  margin-top: 1.2rem;
 }
 
-
-@media (min-width:40rem){
-
+@media (min-width: 40rem) {
 }
 
-@media screen and (max-width:992px){
-
+@media screen and (max-width: 992px) {
 }
 
-@media screen and (max-width:768px){
-
+@media screen and (max-width: 768px) {
 }
 
-@media screen and (max-width:566px){
-
+@media screen and (max-width: 566px) {
 }

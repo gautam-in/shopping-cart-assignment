@@ -1,11 +1,14 @@
-import React from "react";
-import { useSelector } from "react-redux";
-
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { LoginActions } from "../store/login-slice";
 import "./Header.css";
 import { NavLink } from "react-router-dom";
 
 function Header() {
+  let dispatch = useDispatch();
+
   let cartItems = useSelector((state) => state.cartSlice.cartItems);
+  let isLoggedin = useSelector((state) => state.loginSlice.isLoggedin);
 
   return (
     <div className="header-container">
@@ -22,14 +25,22 @@ function Header() {
           </NavLink>
         </nav>
 
-        <NavLink to="/Cart" className="cart-header">
-          <img src="cart.svg" alt="cart svg" />
-          <h4> {cartItems.length} items </h4>
-        </NavLink>
+        {isLoggedin && (
+          <NavLink to="/Cart" className="cart-header">
+            <img src="cart.svg" alt="cart svg" />
+            <h4> {cartItems.length} items </h4>
+          </NavLink>
+        )}
 
         <div className="log-reg">
-          <NavLink activeClassName="activelink" to="/Login">
-            Login
+          <NavLink
+            activeClassName="activelink"
+            to="/Login"
+            onClick={() => {
+              dispatch(LoginActions.setisLoginStatus(false));
+            }}
+          >
+            {isLoggedin ? "Logout" : "login"}
           </NavLink>
           <NavLink activeClassName="activelink" to="/Signup" className="test">
             Register
