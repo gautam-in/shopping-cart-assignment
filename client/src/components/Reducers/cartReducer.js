@@ -3,7 +3,8 @@ const initialState = {
     isCartModalOpen: false,
     listOfProducts: {
 
-    }
+    },
+    productCategoryId:''
 }
 
 const CartReducers = (state = initialState, action) => {
@@ -58,6 +59,14 @@ const CartReducers = (state = initialState, action) => {
                 ...state,
                 listOfProducts: { ...cloneListOfProducts, ...newDecObj },
                 countOfItems: state.countOfItems - 1
+            }
+            case 'EXPLORE_CATEGORY':return{
+                ...state,
+                productCategoryId:action.payload
+            }
+            case 'RESET_CATEGORY_ID':return{
+                ...state,
+                productCategoryId:'' 
             }
         default: return state;
     }

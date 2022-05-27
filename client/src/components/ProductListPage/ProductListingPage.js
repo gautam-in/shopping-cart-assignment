@@ -13,7 +13,7 @@ import CardContent from '@material-ui/core/CardContent';
 import { Grid } from "@material-ui/core";
 import './ProductListingPage.css';
 import Button from '@material-ui/core/Button';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import Hidden from '@material-ui/core/Hidden';
 const drawerWidth = 240;
 
@@ -49,7 +49,11 @@ const ProductListingPage = () => {
     const classes = useStyles();
     const [categoriesData, setCategoriesData] = useState([]);
     const [productsData, setProductsData] = useState([]);
-    const [categoryId, setCategoryId] = useState('');
+    // const [categoryId, setCategoryId] = useState('');
+    
+    const categoryId = useSelector((state) => {
+        return state.CartReducer.productCategoryId
+    });
     const dispatch = useDispatch();
     useEffect(() => {
         axios.get(`http://localhost:3000/categories`)
@@ -66,10 +70,12 @@ const ProductListingPage = () => {
     }, [])
     const handleSidebarCategory = (ev, text) => {
         if (text.id === categoryId) {
-            setCategoryId('');
+            dispatch({type:'RESET_CATEGORY_ID'}) 
+            // setCategoryId('');
         }
         else {
-            setCategoryId(text.id);
+            dispatch({ type: 'EXPLORE_CATEGORY', payload: text.id });
+            // setCategoryId(text.id);
         }
     }
     const handleBuyNow = (ev, items) => {
@@ -84,7 +90,8 @@ const ProductListingPage = () => {
             });
     }
     const handleDropdown = (e)=>{
-        setCategoryId(e.target.value);
+        dispatch({ type: 'EXPLORE_CATEGORY', payload: e.target.value });
+        // setCategoryId(e.target.value);
     }
     return (
         <div className={classes.root}>

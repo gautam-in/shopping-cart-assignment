@@ -98,6 +98,7 @@ const Login = (props) => {
                                         <TextField
                                             className={classes.rightText}
                                             // className="textfield"
+                                            inputProps={{ "data-testid": items.id }}
                                             onChange={(event) => handleChange(index, event)}
                                             required
                                             id="standard-required"

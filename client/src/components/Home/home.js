@@ -8,6 +8,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 const useStyles = makeStyles((theme)=>({
     root: {
         minWidth: 275,
@@ -41,6 +43,8 @@ const Home = () => {
     const [bannerData, setBannerData] = useState([]);
     const [categoryData, setCategoryData] = useState([]);
     const classes = useStyles();
+    const dispatch = useDispatch();
+    const history = useHistory();
     useEffect(() => {
         axios.get(`http://localhost:3000/banners`)
             .then(res => {
@@ -53,7 +57,11 @@ const Home = () => {
                 setCategoryData(categories)
             })
     }, []);
-    console.log("9999==>", bannerData, categoryData);
+    /* click on exploring category */
+    const handleExplore = (ev,items)=>{
+        dispatch({ type: 'EXPLORE_CATEGORY', payload: items.id });
+        history.push('/productListPage')
+    }
     return (
         <React.Fragment>
             <div>
@@ -82,7 +90,7 @@ const Home = () => {
                                             <Grid item xs={6} sm={6} md={6}>
                                                 <p>{datas.name}</p>
                                                 <p>{datas.description}</p>
-                                                <Button className={classes.btnWidth} size="small" variant="contained" color="secondary">
+                                                <Button className={classes.btnWidth} size="small" variant="contained" color="secondary" onClick={(ev)=>handleExplore(ev,datas)}>
                                                    Explore {datas.key}
                                                 </Button>
                                             </Grid>
@@ -104,7 +112,7 @@ const Home = () => {
                                         <Grid item xs={6} sm={6} md={6}>
                                                 <p>{datas.name}</p>
                                                 <p>{datas.description}</p>
-                                                <Button className={classes.btnWidth} size="small" variant="contained" color="secondary">
+                                                <Button className={classes.btnWidth} size="small" variant="contained" color="secondary" onClick={(ev)=>handleExplore(ev,datas)}>
                                                    Explore {datas.key}
                                                 </Button>
                                             </Grid>
