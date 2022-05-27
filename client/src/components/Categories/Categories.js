@@ -27,8 +27,10 @@ function Categories() {
           let categoryClass = `category ${(index % 2 == 0)  ? 'category-reverse' : ''}`
           return (
             <div key={index} className={categoryClass}>
-              <div className='category-image'>
-                <img src={category.imageUrl}></img>
+              <div className='category-image-container'>
+                <div className='category-image'>
+                  <img src={category.imageUrl}></img>
+                </div>
               </div>
               <div className='category-content'>
                 <h4>{category.name}</h4>

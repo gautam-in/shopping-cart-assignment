@@ -8,3 +8,17 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Extra small devices (phones, 320px to 480px) */
+@media only screen and (min-width : 320px) and (max-width: 480px) {
+  .banner .container {
+    width: 100%;
+  }
+}
+
+/* Medium devices (landscape tablets, between 480px to 992px) */
+@media only screen and (min-width: 480px) and (max-width: 992px) {
+  .banner .container {
+    width: 100%;
+  }
+}

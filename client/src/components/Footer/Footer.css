@@ -10,3 +10,19 @@ footer .container {
     display: flex;
     align-items: center;
 }
+
+/* Extra small devices (phones, 320px to 480px) */
+@media only screen and (min-width : 320px) and (max-width: 480px) {
+  footer .container {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Medium devices (landscape tablets, between 480px to 992px) */
+@media only screen and (min-width: 480px) and (max-width: 992px) {
+  footer .container {
+    width: 100%;
+    justify-content: center;
+  }
+}
