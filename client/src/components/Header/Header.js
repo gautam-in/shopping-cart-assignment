@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { selectorCartTotalCount } from '../../features/cart/cartSlice'
 import Cart from '../Cart/Cart'
 import './Header.css'
 
 function Header() {
   const [showCart, setShowCart]= useState(false)
+  const cartTotalCount = useSelector(selectorCartTotalCount)
   const toggleCart = () => {
     setShowCart(!showCart)
   }
@@ -30,7 +33,7 @@ function Header() {
             <div className='cart-image-container'>
               <img src='static/images/cart.svg' alt="Sabka Bazaar logo" />
             </div>
-            <div className='cart-text-container'>0 items</div>
+            <div className='cart-text-container'>{cartTotalCount} items</div>
           </div>
         </div>
       </div>

@@ -1,5 +1,10 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import {
+  selectorCategory
+} from '../../features/category/categorySlice'
+import Product from '../Product'
 import './Products.css'
 
 function Products() {
@@ -9,25 +14,16 @@ function Products() {
       setProducts(response.data)
     })
   }, [])
+  const selectedCategory = useSelector(selectorCategory)
 
   return (
     <div className='products'>
       {products && products.map((product, index) => {
-        return (
-          <div key={index} className='product'>
-            <div className='name'>{product.name}</div>
-            <div className='image'>
-              <img src={product.imageURL}></img>
-            </div>
-            <div className='description' >{product.description}</div>
-            <div className='price-container'>
-              <div className='price'>MRP Rs.{product.price}</div>
-              <button className='button'>
-                Buy Now
-              </button>
-            </div>
-          </div>
-        )
+        if (selectedCategory === '') {
+          return <Product product={product} index={index} key={index} />
+        } else if (product.category === selectedCategory) {
+          return <Product product={product} index={index} key={index} />
+        }
       })}
     </div>
   )

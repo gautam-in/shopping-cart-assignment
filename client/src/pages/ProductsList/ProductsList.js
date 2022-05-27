@@ -7,8 +7,8 @@ function ProductList() {
   return (
     <div className='productsList'>
       <div className='container'>
-        <Sidebar>Sidebar</Sidebar>
-        <Products>main right div</Products>
+        <Sidebar />
+        <Products />
       </div>
     </div>
   )
