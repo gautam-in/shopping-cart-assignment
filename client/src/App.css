@@ -1,0 +1,135 @@
+@import url(https://fonts.googleapis.com/css?family=Dosis:400,600,700);
+
+.App {
+  font-family: "Dosis", sans-serif;
+}
+
+
+/* ANTD MODAL FOR CART MOBILE / DESKTOP */
+
+.ant-modal {
+  width: 420px !important;
+}
+
+.ant-modal_body {
+  padding: 0 !important;
+  background: #eaeaea;
+  overflow: auto !important;
+}
+
+.ant-modal-footer {
+  text-align: inherit !important;
+}
+
+.ant-modal-close {
+  color: white;
+}
+
+.ant-modal-header {
+  background: #0e0e0e;
+  color: white;
+}
+
+.ant-modal-title {
+  color: white;
+}
+
+.cart_detail_container {
+  display: flex !important;
+  max-width: 100%;
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.cart_detail_container img {
+  width: 20%;
+  align-self: center;
+}
+
+.cart_detail {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: center;
+  padding-left: 15px;
+}
+
+.cart_calculation {
+  display: flex;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.cart_price {
+  width: 20%;
+  align-self: center;
+  text-align: center;
+}
+
+.checkout_button {
+  display: flex;
+  padding: 10px;
+  background: #be2857;
+  color: white;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.lowest_price{
+  background: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px;
+    margin: 15px;
+}
+
+.lowest_price > div {
+  font-size: 11px;
+}
+
+.lowest_price img{
+  width: 30%;
+}
+
+.no_cart_item {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+/* DRAWER FOR MENU MOBILE */
+
+.ant-drawer-content-wrapper {
+  width: 260px !important;
+}
+
+.ant-drawer-body {
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu_mobile {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.menu_mobile  a {
+  color: black;
+  font-size: 15px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.menu_login_signup{
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 40px;
+}
