@@ -1,0 +1,24 @@
+.authentication {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+
+    &__info, &__form {
+        width: 50%;
+    }
+
+    &__form {
+        .line-break {
+            width: 100%; 
+            text-align: center; 
+            border-bottom: 1px solid gray; 
+            line-height: 0.1em;
+            margin: 20px 0; 
+        }
+
+        & span { 
+            background:#fff; 
+            padding:0 10px; 
+        }
+    }
+}

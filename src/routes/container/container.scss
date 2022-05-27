@@ -1,0 +1,13 @@
+@import '../../mixin.scss';
+
+.footer {
+    text-align: center;
+    font-size: 14px;
+    padding: 20px 0;
+    background-color: rgb(230, 230, 230);
+
+    @include for-desktop-up {
+        text-align: left;
+        padding: 20px 15%;
+    }
+}

@@ -1,0 +1,54 @@
+@import '../../mixin.scss';
+
+.category-nav{
+    padding: 0;
+    margin: 0;
+    display: none;
+
+    @include for-tablet-portrait-up {
+        display: block;
+    }
+
+    &__container {
+        width: 100%;
+        background-color: none;
+
+        @include for-tablet-portrait-up {
+            width: 30%;
+            background-color: lightgray;
+        }
+    }
+
+    &__item {
+        list-style-type: none;
+        padding: 10px;
+        border-bottom: 1px solid gray;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(179, 177, 177);
+            color: white;
+        }
+
+        &--active {
+            background: gray;
+            color: white;
+        }
+    }
+
+    &-dropdown {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        color: white;
+        background-color: rgb(164, 53, 71);
+
+        &:focus-visible {
+            outline: none;
+        }
+
+        @include for-tablet-portrait-up {
+            display: none;
+        }
+    }
+}
