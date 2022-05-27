@@ -4,6 +4,9 @@ export const SidebarWrapper = styled.div`
     width: 25%;
     background: #eaeaea;
     padding: 10px;
+    position: sticky;
+    top: 88px;
+    height: 100vh;
 
     .sidebar_item {
         padding: 10px;
