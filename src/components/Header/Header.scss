@@ -1,0 +1,52 @@
+@import "../../../public/index.scss";
+
+.header {
+  font-size: 1.8rem;
+  font-family: "Dosis", sans-serif;
+
+  display: flex;
+  align-items: center;
+
+  height: 8rem;
+  padding: 0 6rem;
+
+  // Logo
+  &__logo {
+    margin: 0.5rem 0 0 0;
+    padding: 1.5rem;
+
+    & > img {
+      width: 65%;
+    }
+  }
+
+  // Nav
+  &__nav {
+    width: 60%;
+
+    display: flex;
+    justify-content: space-between;
+
+    & > div {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 0 4rem;
+      align-items: center;
+    }
+
+    // Nav Left and Right
+    .nav--left,
+    .nav--right {
+      min-width: 50%;
+
+      & > div {
+        padding: 2rem 4rem;
+
+        &:hover {
+          cursor: pointer;
+          background-color: #f0e9e9;
+        }
+      }
+    }
+  }
+}
