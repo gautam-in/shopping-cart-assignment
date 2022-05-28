@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
 
-  height: 8rem;
+  height: 7rem;
   padding: 0 6rem;
 
   // Logo
@@ -16,14 +16,13 @@
     padding: 1.5rem;
 
     & > img {
-      width: 65%;
+      width: 60%;
     }
   }
 
   // Nav
   &__nav {
-    width: 60%;
-
+    width: 90%;
     display: flex;
     justify-content: space-between;
 
@@ -37,16 +36,35 @@
     // Nav Left and Right
     .nav--left,
     .nav--right {
-      min-width: 50%;
+      width: 30%;
 
       & > div {
-        padding: 2rem 4rem;
+        // padding: 2.8rem 4rem;
+        transition: all 0.2s;
 
         &:hover {
           cursor: pointer;
-          background-color: #f0e9e9;
+          color: rgb(253, 68, 99);
         }
       }
+    }
+
+    // Cart
+    .nav--cart {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 7rem;
+      transition: all 0.2s;
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgb(253, 68, 99, 0.4);
+      }
+    }
+
+    .cart {
+      width: 4rem;
     }
   }
 }

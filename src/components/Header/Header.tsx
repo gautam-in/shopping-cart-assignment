@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../static/images/logo.png";
+import cart from "../../static/images/cart.svg";
 import "./Header.scss";
 
 export const Header = () => {
@@ -7,7 +8,7 @@ export const Header = () => {
         <header className="header">
             
             <div className="header__logo">
-                <img src={logo} />
+                <img src={logo} alt="Sabka Bazaar Logo"/>
             </div>
 
             <nav className="header__nav">
@@ -22,8 +23,9 @@ export const Header = () => {
                     <div>Register</div>
                 </div>
 
-                <div className="header__cart-status">
-                    Cart
+                <div className="nav--cart">
+                    <div className="cart"><img src={cart} alt="cart"/></div>
+                    <div>0 items</div>
                 </div>
 
             </nav>
