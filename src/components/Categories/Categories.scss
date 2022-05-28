@@ -1,0 +1,60 @@
+@import "../../../public/index.scss";
+
+.categories {
+  display: flex;
+  flex-flow: column nowrap;
+
+  font-family: "Dosis", sans-serif;
+}
+
+.category {
+  display: flex;
+  box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
+
+  width: 60rem;
+  margin: 4rem auto;
+  padding: 2rem;
+
+  &__image {
+    width: 40rem;
+    margin: 0 auto;
+
+    & > img {
+      width: 100%;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 1rem 0;
+  }
+
+  &__desc {
+    font-size: 1.4rem;
+    margin: 0 0 1.5rem 0;
+  }
+
+  button {
+    border: none;
+    padding: 1.2rem 2rem;
+
+    width: 14rem;
+    margin: 0 auto;
+    border-radius: 4px;
+
+    background-color: #b3005c;
+    color: #fff;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #800042;
+    }
+  }
+}

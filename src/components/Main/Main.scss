@@ -3,7 +3,9 @@
 .banner {
   width: 60rem;
 
-  margin: 6rem auto;
+  margin: 4rem auto;
+
+  box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
 
   & > img {
     width: 100%;
