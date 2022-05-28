@@ -1,0 +1,11 @@
+@import "../../../public/index.scss";
+
+.banner {
+  width: 60rem;
+
+  margin: 6rem auto;
+
+  & > img {
+    width: 100%;
+  }
+}
