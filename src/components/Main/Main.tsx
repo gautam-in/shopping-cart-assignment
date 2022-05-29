@@ -1,16 +1,13 @@
 import React from "react";
+import { Banner } from "../Banner/Banner";
 import { Categories } from "../Categories/Categories";
-import banners from "../../server/banners/index.get.json";
 import "./Main.scss";
 
 export const Main = () => {
-  const banner = JSON.parse(JSON.stringify(banners[0]));
   
   return (
     <main>
-      <div key={banner.id} className="banner">
-        <img src={banner.bannerImageUrl} alt={banner.bannerImageAlt}/>
-      </div>
+      <Banner />
       <Categories />
     </main>
   )

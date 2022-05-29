@@ -11,12 +11,12 @@
   display: flex;
   box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
 
-  width: 60rem;
+  width: 70%;
   margin: 4rem auto;
   padding: 2rem;
 
   &__image {
-    width: 40rem;
+    width: 50%;
     margin: 0 auto;
 
     & > img {
@@ -25,36 +25,50 @@
   }
 
   &__details {
+    width: 50%;
+
     display: flex;
     flex-flow: column nowrap;
   }
 
   &__title {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
-    margin: 1rem 0;
   }
 
   &__desc {
-    font-size: 1.4rem;
-    margin: 0 0 1.5rem 0;
+    font-size: 1.6rem;
+    text-align: center;
+
+    margin: 1.6rem 0;
   }
 
   button {
     border: none;
     padding: 1.2rem 2rem;
 
-    width: 14rem;
+    min-width: 14rem;
     margin: 0 auto;
     border-radius: 4px;
 
-    background-color: #b3005c;
+    background-color: $primary-color;
     color: #fff;
 
-    &:hover {
+    box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
+
+    transition: all 0.2s;
+
+    &:hover,
+    &:active {
       cursor: pointer;
-      background-color: #800042;
+      background-color: lighten($primary-color, 5%);
+    }
+
+    &:active {
+      outline: none;
+      box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(2px);
     }
   }
 }

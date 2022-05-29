@@ -12,7 +12,7 @@ const createCategory = (category: Category, index: number) => {
           <div className="category__details">
               <div className="category__title">{category.name}</div>
               <div className="category__desc">{category.description}</div>
-              <button>Buy Now</button>
+              <button>Explore {category.name}</button>
           </div>
         </div>
     )

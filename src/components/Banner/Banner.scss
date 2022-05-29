@@ -1,0 +1,13 @@
+@import "../../../public/index.scss";
+
+.banner {
+  box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
+
+  width: 70%;
+  margin: 4rem auto;
+  padding: 2rem;
+
+  & > img {
+    width: 100%;
+  }
+}

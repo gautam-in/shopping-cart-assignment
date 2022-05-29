@@ -45,7 +45,7 @@
 
         &:hover {
           cursor: pointer;
-          color: rgb(253, 68, 99);
+          color: $primary-color;
         }
       }
     }
@@ -60,7 +60,8 @@
 
       &:hover {
         cursor: pointer;
-        background-color: rgb(253, 68, 99, 0.4);
+        background-color: $primary-color;
+        color: #fff;
       }
     }
 
