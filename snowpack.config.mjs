@@ -7,5 +7,12 @@ export default {
     plugins: [
         '@snowpack/plugin-sass',
         '@snowpack/plugin-typescript',
-    ]
+    ],
+    routes: [
+        {
+          match: 'routes',
+          src: '.*',
+          dest: '/index.html',
+        },
+      ],
 };
