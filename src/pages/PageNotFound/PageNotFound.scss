@@ -1,0 +1,18 @@
+@import "../../../public/index.scss";
+
+.page-not-found {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 50vw;
+  text-align: center;
+
+  color: lighten(grey, 2%);
+
+  & div {
+    font-size: 6rem;
+    padding: 4rem 0;
+  }
+}

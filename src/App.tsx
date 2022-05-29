@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
 import { Products } from "./pages/Products/Products";
 import { Layout } from "./components/Layout/Layout";
+import { PageNotFound } from "./pages/PageNotFound/PageNotFound";
 
 export const App = () => {
     return (
@@ -11,7 +12,8 @@ export const App = () => {
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />}/>  
             <Route path="products" element={<Products />}/>
-          </Route>   
+          </Route>
+          <Route path="*" element={<PageNotFound />}/>   
         </Routes>
     </BrowserRouter>
     )
