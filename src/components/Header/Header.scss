@@ -63,8 +63,9 @@
     // Cart
     .nav--cart {
       display: flex;
-      justify-content: center;
+      flex: 20rem 0 0;
       align-items: center;
+      justify-content: space-evenly;
       height: 7rem;
       transition: all 0.2s;
 
@@ -76,7 +77,8 @@
     }
 
     .cart {
-      width: 4rem;
+      width: 2.6rem;
+      margin: 0.4rem 0 0 0;
     }
   }
 }
