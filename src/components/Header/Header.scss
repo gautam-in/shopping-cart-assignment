@@ -87,3 +87,12 @@
     }
   }
 }
+
+// Active links
+.active {
+  color: $primary-color;
+}
+
+.inactive {
+  color: lighten(grey, 5%);
+}
