@@ -4,8 +4,8 @@ _Project on E-commerce site._
 
 ## Getting Started
 
-**Installation**  
-  
+**Installation**
+
 Clone the repository and install the dependencies:
 
 ```sh
@@ -19,6 +19,8 @@ npm i
 ```sh
 npm start
 ```
+
+Visit http://localhost:3000
 
 > **`Starting only frontend server`**
 

@@ -37,11 +37,8 @@
       cursor: pointer;
       background: #e0e0e0;
 
-      transform: scale(1);
-      transition: transform 0.2s;
       &--active {
         background: #8c8c8c;
-        transform: scale(1.2);
       }
     }
   }
