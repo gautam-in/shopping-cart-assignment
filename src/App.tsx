@@ -7,12 +7,12 @@ import { Layout } from "./components/Layout/Layout";
 export const App = () => {
     return (
       <BrowserRouter>
-        <Layout>
-          <Routes>   
+        <Routes>
+          <Route path="/" element={<Layout />}>
             <Route path="/" element={<Home />}/>  
             <Route path="products" element={<Products />}/>
-          </Routes>
-        </Layout>
-      </BrowserRouter>
+          </Route>   
+        </Routes>
+    </BrowserRouter>
     )
 }

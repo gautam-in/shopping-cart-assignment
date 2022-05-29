@@ -24,7 +24,7 @@
     margin: 0.5rem 0 0 0;
     padding: 1.5rem;
 
-    & > img {
+    & img {
       width: 60%;
       min-width: 6rem;
     }
@@ -48,10 +48,12 @@
     .nav--right {
       width: 30%;
       font-weight: 600;
-      color: lighten(grey, 5%);
 
-      & > div {
+      & > a {
         transition: all 0.2s;
+
+        text-decoration: none;
+        color: lighten(grey, 5%);
 
         &:hover {
           cursor: pointer;
@@ -61,11 +63,14 @@
     }
 
     // Cart
-    .nav--cart {
+    .nav--cart a {
       display: flex;
       flex: 20rem 0 0;
       align-items: center;
       justify-content: space-evenly;
+
+      text-decoration: none;
+      color: lighten(grey, 2%);
       height: 7rem;
       transition: all 0.2s;
 

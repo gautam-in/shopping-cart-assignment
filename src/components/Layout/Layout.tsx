@@ -1,13 +1,13 @@
 import React from "react";
-import type { JsxElement } from "typescript";
+import { Outlet } from "react-router-dom";
 import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 
-export const Layout = ({ children }: any) => {
+export const Layout = () => {
   return (
     <>
       <Header />
-        {children}
+        <Outlet />
       <Footer />
     </>
   )
