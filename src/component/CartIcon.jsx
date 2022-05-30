@@ -1,12 +1,12 @@
 import { useState, Fragment } from "react";
 import { useSelector } from "react-redux";
-import { selectCount } from "../redux/features/appSlice";
+import { selectCartCount } from "../store/slices/cart/cart.selector";
 import { ReactComponent as CartSVG } from "../Assets/svg/cart.svg";
 
 import "../styles/cart-icon.scss";
 
 const CartIcon = () => {
-  const count = useSelector(selectCount);
+  const count = useSelector(selectCartCount);
   const [cartOpen, setCartOpen] = useState(false);
 
   const handleCartClick = () => {

@@ -18,9 +18,12 @@ const Carousels = () => {
 
   return (
     <Carousel autoPlay showThumbs={false} infiniteLoop style={{ width: "60%" }}>
-      {banners.map(({ id, bannerImageUrl, name }) => (
+      {banners.map(({ id, bannerImageUrl, bannerImageAlt }) => (
         <div key={id}>
-          <img src={require(`../../src${bannerImageUrl}`)} alt={`${name}`} />
+          <img
+            src={require(`../../src${bannerImageUrl}`)}
+            alt={`${bannerImageAlt}`}
+          />
         </div>
       ))}
     </Carousel>

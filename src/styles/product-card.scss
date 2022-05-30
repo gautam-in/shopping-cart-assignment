@@ -1,0 +1,101 @@
+@import '../mixin.scss';
+
+.product-card {
+    padding-bottom: 15px;
+    border-bottom: 2px dashed lightgray;
+    margin-bottom: 20px;
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &-title {
+        height: 70px;
+        font-size: large;
+    }
+
+    &-price {
+        display: none;
+        font-size: 12px;
+
+        @include for-desktop-up {
+            display: inline-block;
+            width: 40%;
+        }
+
+        &--mobile {
+            @include for-desktop-up {
+                display: none;
+            }
+        }
+    }
+
+    &-desc {
+        font-size: small;
+        background-color:lightgray;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        max-width: 250px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 70px;
+        margin-bottom: 15px;
+        padding: 5px;
+
+        @include for-tablet-portrait-up {
+            width: 50%;
+            height: 87px;
+        }
+
+        @include for-desktop-up {
+            width: 100%;
+        }
+    }
+
+    &-img {
+        width: 90%;
+        height: 95%;
+        object-fit: cover;
+        margin-bottom: 5px;
+    }
+
+    &__img-container {
+        @include for-tablet-portrait-up {
+            width: 50%;
+        }
+
+        @include for-desktop-up {
+            width: 100%;
+        }
+    }
+
+    &__desc-container {
+        display: flex;
+
+        @include for-desktop-up {
+            display: block;
+        }
+    }
+
+    &__bottom {
+        display: block;
+
+        @include for-tablet-portrait-up {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &-button {
+        width: 100%;
+        font-size: 12px;
+
+        @include for-desktop-up {
+            width: 60%;
+        }
+    }
+}

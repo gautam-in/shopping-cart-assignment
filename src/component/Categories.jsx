@@ -5,9 +5,7 @@ const Category = ({ category }) => {
 
   return (
     <div key={id} className="sidebar">
-      <Link to={`/products/${id}`}>
-        <span className="sidebar-category">{name}</span>
-      </Link>
+      <span className="sidebar-category">{name}</span>
     </div>
   );
 };

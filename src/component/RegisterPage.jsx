@@ -57,7 +57,6 @@ const RegisterPage = () => {
           label="First Name"
           required
           onChange={handleChange}
-          pattern="[a-z A-Z]{5,10}"
         />
         <FormInput
           type="text"
@@ -83,9 +82,7 @@ const RegisterPage = () => {
           required
           onChange={handleChange}
           inputMode="numeric"
-          minLength="6"
-          pattern="^\S+$"
-          autoComplete="off"
+          pattern="^(?=.*[a-zA-Z])(?=.*[0-9])(?!.* ).{6,}$"
         />
         <FormInput
           type="password"

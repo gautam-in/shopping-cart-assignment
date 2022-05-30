@@ -1,10 +1,10 @@
 import {
-  selectCount,
-  selectBasket,
-  selectTotalPrice,
-  openCart,
+  selectCartItems,
+  selectCartTotal,
+  selectCartCount,
   selectIsCartOpen,
-} from "../redux/features/appSlice";
+} from "../store/slices/cart/cart.selector";
+import { setIsCartOpen } from "../store/slices/cart/cart.action";
 import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "./Button";
@@ -12,40 +12,50 @@ import CartItems from "./CartItems";
 import { ReactComponent as NextIcon } from "../Assets/svg/arrow_forward_ios_white_24dp.svg";
 import PriceBadge from "../static/images/lowest-price.png";
 import "../styles/cart-dropdown.scss";
+import { useNavigate } from "react-router-dom";
 
 const CartDropdown = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const basket = useSelector(selectBasket);
-  const count = useSelector(selectCount);
-  const price = useSelector(selectTotalPrice);
-  const cartOpen = useSelector(selectIsCartOpen);
+  const basket = useSelector(selectCartItems);
+  const count = useSelector(selectCartCount);
+  const price = useSelector(selectCartTotal);
+  const isCartOpen = useSelector(selectIsCartOpen);
 
   const handleClose = () => {
-    dispatch(openCart(!cartOpen));
+    if (window.screen.width >= 992) {
+      dispatch(setIsCartOpen(!isCartOpen));
+    } else {
+      navigate("/products");
+    }
   };
 
   const handleProceed = () => {
     alert("We are yet to develope payment feature, stay tuned!");
-    dispatch(openCart(!cartOpen));
+    dispatch(setIsCartOpen(!isCartOpen));
   };
+
   return (
     <Fragment>
       <div className="cart-dropdown-container">
         <div className="cart-header">
-          <h3>My cart {count > 0 ? `(${count} item)` : ""}</h3>
+          <h3 className="cart-header-title">
+            My cart {count > 0 ? `(${count} item)` : ""}
+          </h3>
           <span onClick={handleClose}>&#10005;</span>
         </div>
 
         {count > 0 ? (
-          <>
+          <Fragment>
             <div className="cart-items">
-              {basket.map((item) => (
-                <CartItems cartItem={item} key={item.id} />
-              ))}
+              {basket &&
+                basket.map((item) => (
+                  <CartItems cartItem={item} key={item.id} />
+                ))}
             </div>
 
             <div className="price-badge">
-              <img src={PriceBadge} alt="Price-badge" />
+              <img src={PriceBadge} alt={"Price-badge"} />
               <span>You won't find it cheaper anywhere</span>
             </div>
 
@@ -56,7 +66,7 @@ const CartDropdown = () => {
                 <NextIcon />
               </div>
             </Button>
-          </>
+          </Fragment>
         ) : (
           <div>
             <div className="empty-cart-items">
@@ -69,7 +79,6 @@ const CartDropdown = () => {
           </div>
         )}
       </div>
-      <div className="cart-dropdown-overlay"></div>
     </Fragment>
   );
 };

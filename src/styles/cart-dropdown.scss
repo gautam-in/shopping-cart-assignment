@@ -1,3 +1,5 @@
+@import '../mixin.scss';
+
 .cart-dropdown-container {
   position: fixed;
   width: 420px;
@@ -10,6 +12,13 @@
   right: 255px;
   z-index: 5;
 
+  @include for-phone-only {
+    height: 620px;
+    top: 116px;
+    right: 0px;
+    border: none
+  }
+
   .cart-header {
     padding: 10px;
     width: 100%;
@@ -17,11 +26,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(46, 44, 44);
     margin-bottom: 10px;
+    background-color: rgb(46, 44, 44);
+    color: white;
+    
+    @include for-phone-only {
+      background-color: white;
 
-    h3 {
-      color: white;
+      h3 {
+        color: black;
+      }
     }
 
     span {

@@ -1,21 +1,26 @@
 import { ReactComponent as Delete } from "../Assets/svg/remove_white_24dp.svg";
 import { ReactComponent as Add } from "../Assets/svg/add_white_24dp.svg";
-import { addItemToCart, removeItemFromCart } from "../redux/features/appSlice";
-import { useDispatch } from "react-redux";
+import {
+  addItemsToCart,
+  removeItemFromCart,
+} from "../store/slices/cart/cart.action";
+import { selectCartItems } from "../store/slices/cart/cart.selector";
+import { useDispatch, useSelector } from "react-redux";
 import "../styles/cart-items.scss";
 
 const CartItems = ({ cartItem }) => {
   const dispatch = useDispatch();
+  const cartItems = useSelector(selectCartItems);
   const { name, quantity, imageURL, price } = cartItem;
 
   const handleRemoveCart = () => {
     console.log("handleRemoveCart");
-    dispatch(removeItemFromCart(cartItem));
+    dispatch(removeItemFromCart(cartItems, cartItem));
   };
 
   const handleAddCart = () => {
     console.log("addItemToCart");
-    dispatch(addItemToCart(cartItem));
+    dispatch(addItemsToCart(cartItems, cartItem));
   };
   return (
     <div className="cart-item-container">

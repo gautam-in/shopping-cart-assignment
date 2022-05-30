@@ -1,42 +1,48 @@
-import React, { Fragment, useState } from "react";
-import { Outlet } from "react-router-dom";
+import React, { Fragment } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Logo from "../Assets/images/logo.png";
 import { ReactComponent as CartIcon } from "../Assets/svg/cart.svg";
 import { useSelector, useDispatch } from "react-redux";
-import { selectUser } from "../redux/features/userSlice";
+import { selectUser } from "../store/slices/user/user.selector";
+
 import {
-  selectCount,
+  selectCartCount,
   selectIsCartOpen,
-  openCart,
-} from "../redux/features/appSlice";
+} from "../store/slices/cart/cart.selector";
+import { setIsCartOpen } from "../store/slices/cart/cart.action";
 import { signOutUser } from "../utils/firebase.utils";
 import "../styles/nav.scss";
 import CartDropdown from "./CartDropdown";
 
 const Nav = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const count = useSelector(selectCount);
-  const user = useSelector(selectUser);
-  const cartOpen = useSelector(selectIsCartOpen);
+  const count = useSelector(selectCartCount);
+  const currentUser = useSelector(selectUser);
+  const isCartOpen = useSelector(selectIsCartOpen);
 
   const signOut = () => {
     signOutUser();
   };
 
   const handleCartClick = () => {
-    dispatch(openCart(!cartOpen));
+    if (window.screen.width >= 992) {
+      dispatch(setIsCartOpen(!isCartOpen));
+    } else {
+      navigate("/cart");
+    }
   };
 
   return (
     <Fragment>
       <nav className="nav">
         <Link to="/">
-          <img src={Logo} alt="logo" className="nav-logo" />
+          <img src={Logo} alt={"alt_logo"} className="nav-logo" />
         </Link>
 
         <div className="nav-options">
-          {user ? (
+          {currentUser ? (
             <div className="nav-top">
               <span className="nav-link" onClick={signOut}>
                 Sign Out
@@ -71,7 +77,7 @@ const Nav = () => {
           </div>
         </div>
       </nav>
-      {cartOpen && <CartDropdown />}
+      {isCartOpen && <CartDropdown />}
       <Outlet />
     </Fragment>
   );

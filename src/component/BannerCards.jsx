@@ -9,20 +9,22 @@ const BannerCards = ({ category }) => {
   const handleExplore = () => {
     navigate(`/products/${category.id}`);
   };
+
   return (
     <div className="banner-card">
       <img
         src={require(`../../src${imageUrl}`)}
-        alt={`${name}`}
+        alt={`alt_${name}`}
         className="banner-image"
       />
       <div className="banner-card-details">
-        <h2>{name}</h2>
+        <h1>{name}</h1>
         <span>Shop Online for {name}</span>
         <Button
           buttonType="explore"
           styles='margin: "50px"'
           onClick={handleExplore}
+          aria-label={`category ${name}`}
         >
           Explore {name}
         </Button>

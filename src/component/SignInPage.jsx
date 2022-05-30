@@ -1,15 +1,12 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { login } from "../redux/features/userSlice";
+
 import { signInWithEmailAndPasswordFunction } from "../utils/firebase.utils";
 import Button from "./Button";
 import FormInput from "./FormInput";
 import "../styles/sign-in.scss";
 
 const SignInPage = () => {
-  const dispatch = useDispatch();
-
   const navigate = useNavigate();
   const defaultFormFields = {
     email: "",
@@ -30,13 +27,10 @@ const SignInPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await signInWithEmailAndPasswordFunction(
-        email,
-        password
-      );
-      dispatch(login(response));
+      const user = await signInWithEmailAndPasswordFunction(email, password);
+      console.log(user);
       setFormFields(defaultFormFields);
-      response && navigate("/");
+      user && navigate("/");
     } catch (error) {
       console.log(error.code);
       switch (error.code) {
@@ -74,9 +68,7 @@ const SignInPage = () => {
           label="Password"
           required
           onChange={handleChange}
-          minLength="6"
-          pattern="^\S+$"
-          autoComplete="off"
+          pattern="^(?=.*[a-zA-Z])(?=.*[0-9])(?!.* ).{6,}$"
         />
         <div className="buttons-container">
           <Button type="submit" buttonType="max" onSubmit={handleSubmit}>

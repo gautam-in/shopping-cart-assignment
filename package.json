@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This is a shopping cart coding exercise",
   "main": "index.js",
+  "proxy": "http://localhost:8000",
   "scripts": {
     "serverTest": "echo \"Error: no test specified\" && exit 1",
     "serverStart": "canned -p 8000 ./server",
@@ -14,12 +15,12 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12",
     "@reduxjs/toolkit": "^1.8.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+    "canned": "^0.3.12",
     "firebase": "^9.8.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -27,6 +28,11 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "redux": "^4.2.0",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.4.1",
+    "reselect": "^4.1.5",
     "sass": "^1.51.0",
     "web-vitals": "^2.1.4"
   },
@@ -48,5 +54,4 @@
       "last 1 safari version"
     ]
   }
-
 }

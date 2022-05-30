@@ -1,13 +1,14 @@
-import SideBar from "../component/SideBar";
+import { Routes, Route } from "react-router-dom";
+import ProductsPage from "../component/ProductsPage";
+
 import "../styles/products-view.scss";
-import Products from "../component/Products";
 
 const ProductView = () => {
   return (
-    <div className="product-view-card">
-      <SideBar />
-      <Products />
-    </div>
+    <Routes>
+      <Route index element={<ProductsPage />} />
+      <Route path=":categoryId" element={<ProductsPage />} />
+    </Routes>
   );
 };
 
