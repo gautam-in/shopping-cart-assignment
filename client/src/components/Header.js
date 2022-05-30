@@ -14,7 +14,7 @@ function Header() {
     <div className="header-container">
       <header className="header">
         <NavLink to="/Home">
-          <img className="logo" src="logo.png" alt="Sabka Bazar" />
+          <img className="logo" src="logo_2x.png" alt="Sabka Bazar" />
         </NavLink>
         <nav className="nav">
           <NavLink activeClassName="activelink" to="/Home">

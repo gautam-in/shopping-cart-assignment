@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-  height: 12rem;
+  height: 15rem;
   width: 24rem;
 }
 
@@ -27,11 +27,11 @@ body {
 .aside p {
   margin-top: 1rem;
 
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .login-form {
-  margin-left: 2.5rem;
+  margin-left: 10.5rem;
   /* background-color: yellow; */
 }
 
@@ -47,7 +47,7 @@ body {
 }
 
 .signup-container {
-  height: 20rem;
+  height: 28rem;
   width: 24rem;
 }
 
@@ -74,6 +74,9 @@ input[type="submit"] {
   border: none;
   background-color: #d00255;
   margin-top: 1.2rem;
+  height: 2.5rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
 }
 
 @media (min-width: 40rem) {

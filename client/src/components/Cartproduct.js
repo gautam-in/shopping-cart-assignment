@@ -99,7 +99,7 @@ function Cartproduct({
 
   return (
     <div className="cart-contents">
-      <img src={imageURL}></img>
+      <img src={imageURL} alt={productName}></img>
       <div className="cart-product-details">
         <h3>{productName}</h3>
         <div className="cart-count-buttons">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -56,7 +56,14 @@ function Cart() {
         <p>({myCart.length} items)</p>
       </div>
 
-      {cartProducts}
+      {cartProducts.length > 0 ? (
+        cartProducts
+      ) : (
+        <div>
+          <h2>No items in your cart</h2>{" "}
+          <p>You favourite items are just a click away</p>
+        </div>
+      )}
 
       <div className="checkout-contents">
         <div className="promo-message">
@@ -73,7 +80,7 @@ function Cart() {
       </div>
 
       <div className="lowprice-tag">
-        <img src="./lowest-price.png"></img>
+        <img src="./lowest-price.png" alt="lowest price tag"></img>
         <p>You won't find it cheaper anywhere</p>
       </div>
       <Notification></Notification>

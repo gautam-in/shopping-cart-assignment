@@ -27,6 +27,7 @@
 .lowprice-tag p {
   padding: 1rem;
   margin-left: 2rem;
+  font-size: 1.2rem;
 }
 
 .cart-contents {
@@ -66,6 +67,7 @@
 
 .cart-count-buttons p {
   margin: 0 1rem;
+  font-size: 1.2rem;
 }
 
 .total-price {
@@ -73,6 +75,7 @@
   display: inline-block;
   padding-top: 3.5rem;
   width: 80%;
+  font-size: 1.2rem;
   padding-right: 1rem;
 }
 
@@ -87,8 +90,8 @@
 }
 
 .promo-message {
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .totalCartPrice {

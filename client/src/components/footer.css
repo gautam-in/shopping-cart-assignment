@@ -1,13 +1,14 @@
 .footer {
   bottom: 0px;
   background-color: rgb(226, 225, 225);
-  height: 2rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
 }
 
-.footer h5 {
+.footer p {
   margin: auto 0;
   margin-left: 10%;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 100;
 }

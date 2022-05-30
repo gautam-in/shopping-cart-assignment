@@ -85,10 +85,10 @@ function Product({ pname, imageURL, description, price, id }) {
   return (
     <section className="product">
       <h3>{pname}</h3>
-      <img src={imageURL}></img>
+      <img src={imageURL} alt={pname}></img>
       <p>{description}</p>
       <div className="mrp-button">
-        <h5>MRP Rs {price} </h5>
+        <h4>MRP Rs {price} </h4>
         <button
           onClick={() => {
             updateCart(pname, price, id);

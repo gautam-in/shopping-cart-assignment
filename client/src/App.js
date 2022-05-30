@@ -30,12 +30,11 @@ function App() {
   let isLoggedin = useSelector((state) => state.loginSlice.isLoggedin);
 
   useEffect(() => {
-    if (isLoggedin)
-      fetch("http://localhost:5000/userCart/")
-        .then((data) => data.json())
-        .then((json) => {
-          dispatch(CartActions.replaceCart(json));
-        });
+    fetch("http://localhost:5000/userCart/")
+      .then((data) => data.json())
+      .then((json) => {
+        dispatch(CartActions.replaceCart(json));
+      });
   }, []);
 
   return (
@@ -44,7 +43,7 @@ function App() {
       <Suspense fallback={<LoadingSpinner />}>
         <Switch>
           <Route path="/" exact>
-            <Redirect to="/Login"></Redirect>
+            <Redirect to="/Home"></Redirect>
           </Route>
 
           <Route path="/Login" exact>

@@ -40,58 +40,63 @@ function Signup() {
   return (
     <section className="main-container">
       <aside className="aside signup-container">
-        <h1>Signup</h1>
+        <h1>Sign-up</h1>
         <p>Get access to your Orders, Wishlist and Recommendations!</p>
       </aside>
       <main className="login-form signup-container">
         <form onSubmit={validateSignUp}>
-          {/* <label for="fname">First Name</label>  */}
+          <label htmlFor="fname">First Name</label>
           <input
             className="input"
             type="text"
             name="fname"
             id="fname"
-            placeholder="First Name"
+            //placeholder="First Name"
+            title="enter the first name here."
             required
+            autoFocus
           />
-          {/* <label for="lname">Last Name</label>  */}
+          <label htmlFor="lname">Last Name</label>
           <input
             className="input"
             type="text"
             name="lname"
             id="lname"
-            placeholder="Last Name"
+            title="enter the last name here."
+
+            //placeholder="Last Name"
           />
-          {/* <label for="email">Email</label>  */}
+          <label htmlFor="email">Email</label>
           <input
             className="input"
             type="email"
             name="email"
             id="email"
-            placeholder="email"
+            //placeholder="email"
+            title="enter the email address here."
             required
             ref={userEmail}
           />
-          {/* <label for="password">Password</label>  */}
+          <label htmlFor="password">Password</label>
           <input
             className="input"
             type="password"
             name="password"
             id="password"
-            placeholder="password"
+            //placeholder="password"
             required
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
             ref={passwordRef}
           />
 
-          {/* <label for="password">Confirm Password</label>  */}
+          <label htmlFor="cpassword">Confirm Password</label>
           <input
             className="input"
             type="password"
-            name="password"
+            name="cpassword"
             id="cpassword"
-            placeholder="confirm password"
+            //placeholder="confirm password"
             required
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
@@ -103,7 +108,7 @@ function Signup() {
               password and confirm password does not match!
             </p>
           )}
-          <input className="input" type="submit" value="Signup" />
+          <input className="input" type="submit" value="Sign-up" />
         </form>
       </main>
     </section>

@@ -2,6 +2,9 @@ import React, { useRef } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { LoginActions } from "../store/login-slice";
+import Notification from "../components/Notification";
+import { toast } from "react-toastify";
+
 import "./Login-signup.css";
 
 function Login() {
@@ -12,7 +15,7 @@ function Login() {
 
   let history = useHistory();
 
-  let validateLoginCres = (event) => {
+  let validateLoginCreds = (event) => {
     event.preventDefault();
 
     if (
@@ -22,7 +25,17 @@ function Login() {
       dispatch(LoginActions.setisLoginStatus(true));
       history.replace("/Home");
     } else {
-      alert("username or password is incorrect");
+      // alert("username or password is incorrect");
+
+      toast.error("username or password is incorrect", {
+        position: "top-center",
+        autoClose: false,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
 
@@ -33,29 +46,27 @@ function Login() {
         <p>Get access to your Orders, Wishlist and Recommendations!</p>
       </aside>
       <main className="login-form container">
-        <form onSubmit={validateLoginCres}>
-          {/* <label htmlFor="email">Email</label> */}
+        <form onSubmit={validateLoginCreds}>
+          <label htmlFor="email">Email</label>
           <input
             className="input"
             type="email"
             name="email"
             id="email"
-            placeholder="email"
+            //placeholder="email"
+            title="enter the email address here."
             required
             ref={userEmailRef}
+            autoFocus
           />
-          {/* {!isEmailValid && (
-            <p className="inputErrorMessage">
-              email can't be empty! please enter a valid name.
-            </p>
-          )} */}
-          {/* <label htmlFor="password">Password</label> */}
+
+          <label htmlFor="password">Password</label>
           <input
             className="input"
             type="password"
             name="password"
             id="password"
-            placeholder="password"
+            //placeholder="password"
             required
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
@@ -65,6 +76,7 @@ function Login() {
           <input className="input" type="submit" value="Login" />
         </form>
       </main>
+      <Notification></Notification>
     </section>
   );
 }

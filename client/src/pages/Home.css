@@ -18,18 +18,19 @@
 .banners div {
   position: absolute;
   bottom: 0rem;
-  left: 45%;
+  left: 43%;
   color: #aaaaaa89;
 }
 
-.banners div a {
+.banners div p {
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 2.5rem;
   padding: 0.2rem;
   padding-left: 0.9rem;
+  display: inline-block;
 }
 
-.banners div a:hover,
+.banners div p:hover,
 .activeCl {
   color: black;
   font-size: 2.5rem;

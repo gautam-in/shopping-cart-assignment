@@ -19,13 +19,14 @@
 }
 .nav a {
   padding-right: 0.938rem;
-  color: #a2a2a2;
-  font-weight: bold;
-  font-size: 1.2rem;
+  color: black;
+  font-weight: 600;
+  font-size: 1.4rem;
 }
 .nav a.activelink,
 .nav a:hover {
-  color: black;
+  color: #4f8822;
+  font-weight: bold;
 }
 
 .cart-header {
@@ -34,12 +35,13 @@
   bottom: 0rem;
   display: flex;
   background-color: #eaeaea;
-  padding: 0.6rem;
+  padding: 0.4rem 0.6rem;
 }
 
 .cart-header h4 {
   color: black;
   font-weight: bold;
+  font-size: 1.3rem;
 }
 
 .cart-header img {
@@ -55,14 +57,16 @@
 }
 
 .log-reg a {
-  color: #a2a2a2;
-  font-weight: bold;
+  color: black;
+  font-weight: 500;
   padding-left: 1rem;
+  font-size: 1.3rem;
 }
 
 .log-reg a.activelink,
 .log-reg a:hover {
-  color: black;
+  font-weight: bold;
+  color: #4f8822;
 }
 
 .logo {

@@ -46,7 +46,7 @@
   display: flex;
 }
 
-.mrp-button h5 {
+.mrp-button h4 {
   display: inline-block;
   padding: 0.5rem;
   width: 50%;
@@ -59,8 +59,8 @@
   margin-bottom: 0.4rem;
   color: #fff;
   border: none;
-  padding: 0.6rem;
+  padding: 0.3rem;
+  font-size: 1.1rem;
   background-color: #d00255;
   cursor: pointer;
 }
-

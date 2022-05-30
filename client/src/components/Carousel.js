@@ -42,13 +42,13 @@ function Carousel() {
 
   let imageMover = bannerData.map((ban, index) => {
     return (
-      <a
+      <p
         className={ctr % 5 == index ? "activeCl" : ""}
         onClick={() => setctr(index)}
         key={ban.id}
       >
         &#8226;
-      </a>
+      </p>
     );
   });
 
