@@ -1,8 +1,10 @@
 import React from "react";
-import "./ProductMenu";
+import "./ProductMenu.scss";
 
 export const ProductMenu = () => {
   return (
-    <div>ProductMenu</div>
+    <div className="product-menu">
+
+    </div>
   )
 }
