@@ -2,6 +2,7 @@ import React from "react";
 import type { Category } from "../../types/customTypes";
 import categories from "../../server/categories/index.get.json";
 import "./Categories.scss";
+import { NavLink } from "react-router-dom";
 
 const createCategory = (category: Category, index: number) => { 
     return (
@@ -12,7 +13,7 @@ const createCategory = (category: Category, index: number) => {
           <div className="category__details">
               <div className="category__title">{category.name}</div>
               <div className="category__desc">{category.description}</div>
-              <button>Explore {category.name}</button>
+              <NavLink to={"products/" + category.id}>Explore {category.name}</NavLink>
           </div>
         </div>
     )

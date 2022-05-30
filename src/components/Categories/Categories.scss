@@ -45,9 +45,13 @@
     margin: 1.6rem 0;
   }
 
-  button {
+  a {
     border: none;
+    display: block;
     padding: 1.2rem 2rem;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5rem;
 
     min-width: 14rem;
     margin: 0 auto;
