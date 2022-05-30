@@ -1,1 +1,11 @@
 @import "../../../public/index.scss";
+
+.product-grid {
+  display: grid;
+
+  margin: 7rem 0 0 0;
+  padding: 2rem;
+  width: 80%;
+
+  font-size: 1.5rem;
+}

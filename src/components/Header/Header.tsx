@@ -17,7 +17,7 @@ export const Header = () => {
 
                 <div className="nav--left">
                  <NavLink to={"/"} className={ ({ isActive }) => isActive ? "activeLink" : "inactiveLink" }>Home</NavLink>
-                 <NavLink to={"/products"} className={ ({ isActive }) => isActive ? "activeLink" : "inactiveLink" }>Products</NavLink>
+                 <NavLink to={"/products/5b675e5e5936635728f9fc30"} className={ ({ isActive }) => isActive ? "activeLink" : "inactiveLink" }>Products</NavLink>
                 </div>
 
                 <div className="nav--right">

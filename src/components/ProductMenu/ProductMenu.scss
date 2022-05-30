@@ -1,5 +1,35 @@
 @import "../../../public/index.scss";
 
 .product-menu {
-  margin: 12rem 0;
+  margin: 7rem 0 0rem 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20%;
+  min-width: 25rem;
+
+  background-color: rgb(236, 236, 236);
+
+  & > a {
+    font-size: 2rem;
+    text-decoration: none;
+
+    padding: 2rem;
+    width: 85%;
+
+    text-align: left;
+    transition: all 0.2s;
+
+    color: lighten(#000, 40%);
+    border-bottom: 0.5px solid lighten(#000, 75%);
+
+    &:hover {
+      cursor: pointer;
+      border-bottom: 0.5px solid $primary-color;
+      width: 80%;
+      color: $primary-color;
+    }
+  }
 }
