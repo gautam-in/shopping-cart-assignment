@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { withRouter } from 'react-router-dom';
 import { Grid } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 import './Login.css';
@@ -94,7 +93,7 @@ const Login = (props) => {
                         {
                             loginData.map((items, index) => {
                                 return (
-                                    <div style={{ paddingBottom: '18px' }}>
+                                    <div style={{ paddingBottom: '18px' }} key={index}>
                                         <TextField
                                             className={classes.rightText}
                                             // className="textfield"
@@ -123,4 +122,4 @@ const Login = (props) => {
         </React.Fragment>
     )
 }
-export default withRouter(Login);
+export default Login;

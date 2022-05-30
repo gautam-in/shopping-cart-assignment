@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import reducers from '../Reducers/index';
 const store = createStore(reducers);
 import Login from './Login';
+import {Router} from 'react-router-dom';
 
 // unmount and cleanup DOM after the test is finished.
 afterEach(cleanup);
@@ -23,7 +24,9 @@ describe("account delete form", () => {
         const setup = () => {
             const utils = render(
                 <Provider store={store}>
+                    {/* <Router> */}
                     <Login history={history} />
+                    {/* </Router> */}
                 </Provider>
             );
             const input1 = utils.getByTestId('email');
