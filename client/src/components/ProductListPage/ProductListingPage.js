@@ -10,11 +10,12 @@ import ListItemText from '@material-ui/core/ListItemText';
 import axios from 'axios';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import { Grid } from "@material-ui/core";
+import { Grid, Snackbar } from "@material-ui/core";
 import './ProductListingPage.css';
 import Button from '@material-ui/core/Button';
 import { useDispatch,useSelector } from 'react-redux';
 import Hidden from '@material-ui/core/Hidden';
+import Notifier from '../Notifier/Notifier';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -54,6 +55,12 @@ const ProductListingPage = () => {
     const categoryId = useSelector((state) => {
         return state.CartReducer.productCategoryId
     });
+    const isSnackbarOpen = useSelector((state) => {
+        return state.CartReducer.isSnackbar
+    });
+    const countOfItems= useSelector((state) => {
+        return state.CartReducer.countOfItems
+    });
     const dispatch = useDispatch();
     useEffect(() => {
         axios.get(`http://localhost:3000/categories`)
@@ -82,7 +89,8 @@ const ProductListingPage = () => {
         axios.post('http://localhost:3000/addToCart ', { productID: items.id })
             .then((response) => {
                 if (response.statusText === "Created") {
-                    dispatch({ type: 'PRODUCT_ADDED_IN_CART', payload: items })
+                    dispatch({ type: 'PRODUCT_ADDED_IN_CART', payload: items });
+                    dispatch({type:'OPEN_SNACKBAR'})
                 }
             })
             .catch(error => {
@@ -92,6 +100,9 @@ const ProductListingPage = () => {
     const handleDropdown = (e)=>{
         dispatch({ type: 'EXPLORE_CATEGORY', payload: e.target.value });
         // setCategoryId(e.target.value);
+    }
+    const snackbarClose = ()=>{
+        dispatch({type:'CLOSE_SNACKBAR'})
     }
     return (
         <div className={classes.root}>
@@ -132,7 +143,7 @@ const ProductListingPage = () => {
                                 return (
                                     <React.Fragment>
 
-                                        <Grid item xs={12} sm={6} md={3} style={{ textAlign: 'center' }}>
+                                        <Grid item xs={12} sm={6} md={3} style={{ textAlign: 'center' ,boxShadow:'0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%'}}>
                                             <p className='headerText'>{items.name}</p>
                                             <img src={items.imageURL} width="160" />
                                             <p className='productDesc'>{items.description}</p>
@@ -153,7 +164,7 @@ const ProductListingPage = () => {
                                 if (categoryId === "") {
                                     return (
                                         <React.Fragment>
-                                            <Grid item xs={12} sm={6} md={3} style={{ textAlign: 'center' }}>
+                                            <Grid item xs={12} sm={6} md={3} style={{ textAlign: 'center',boxShadow:'0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%' }}>
 
                                                 <p className='headerText'>{items.name}</p>
                                                 <img src={items.imageURL} width="160" className='plpImg' />
@@ -174,6 +185,15 @@ const ProductListingPage = () => {
                             }
                         })
                     }
+                    <Notifier
+                     open={isSnackbarOpen}
+                     anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'right',
+                      }}
+                      autoHideDuration={2000} 
+                      handleClose={snackbarClose}
+                       message={`${countOfItems} ${countOfItems===1?'item':'items'} added in cart`}/>
                 </Grid>
 
             </main>

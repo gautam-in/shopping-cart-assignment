@@ -4,7 +4,8 @@ const initialState = {
     listOfProducts: {
 
     },
-    productCategoryId:''
+    productCategoryId:'',
+    isSnackbar:false
 }
 
 const CartReducers = (state = initialState, action) => {
@@ -67,6 +68,14 @@ const CartReducers = (state = initialState, action) => {
             case 'RESET_CATEGORY_ID':return{
                 ...state,
                 productCategoryId:'' 
+            }
+            case 'OPEN_SNACKBAR':return{
+                ...state,
+                isSnackbar:true
+            }
+            case 'CLOSE_SNACKBAR':return{
+                ...state,
+                isSnackbar:false
             }
         default: return state;
     }
