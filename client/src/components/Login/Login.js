@@ -82,8 +82,8 @@ const Login = (props) => {
                 <Grid item xs={12} md={6} sm={12}>
                     <div className={classes.leftAlign}>
                         <div>
-                            <h2>Login</h2>
-                            <p>Get access to your Orders, Wishlist and Recommendations</p>
+                            <h2 data-testid="login-text">Login</h2>
+                            <p data-testid="login-wishlist">Get access to your Orders, Wishlist and Recommendations</p>
                         </div>
                     </div>
 
@@ -100,7 +100,7 @@ const Login = (props) => {
                                             inputProps={{ "data-testid": items.id }}
                                             onChange={(event) => handleChange(index, event)}
                                             required
-                                            id="standard-required"
+                                            id={items.id}
                                             label={items.label}
                                             value={items.value}
                                             error={items.error}
@@ -113,7 +113,7 @@ const Login = (props) => {
                         }
                     </div>
                     <div className='btn'>
-                        <Button onClick={handleLogin} className={classes.loginBtn} variant="contained" color="secondary" disabled={filedNotEmpty || isLoginBtnDisabled}>
+                        <Button data-testid="login-submit" onClick={handleLogin} className={classes.loginBtn} variant="contained" color="secondary" disabled={filedNotEmpty || isLoginBtnDisabled}>
                             Login
                         </Button>
                     </div>

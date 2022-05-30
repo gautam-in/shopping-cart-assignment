@@ -126,9 +126,10 @@ const SignUp = (props) => {
                     <div>
                         {registerData.map((items, index) => {
                             return (
-                                <div style={{paddingBottom:'15px'}}>
+                                <div style={{paddingBottom:'15px'}} key={index}>
                                     <TextField
                                         // className="textfield"
+                                        inputProps={{ "data-testid": items.id }}
                                         className={classes.rightText}
                                         onChange={(event) => handleChange(index, event)}
                                         required
@@ -147,7 +148,7 @@ const SignUp = (props) => {
                             : null}
                     </div>
                     <div className='btn'>
-                        <Button className={classes.registerBtn} onClick={handleRegister} variant="contained" color="secondary" disabled={filedNotEmpty || isSignUpBtnDisabled}>
+                        <Button data-testid="signup-submit" className={classes.registerBtn} onClick={handleRegister} variant="contained" color="secondary" disabled={filedNotEmpty || isSignUpBtnDisabled}>
                             Sign Up
                         </Button>
                     </div>
