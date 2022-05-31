@@ -10,24 +10,32 @@ export const ProductGrid = () => {
   const params = useParams();
   const { id } = params;
 
+  const getProductCard = (product: Product) => {
+    return (
+      <ProductCard
+      key={product.id}
+      name={product.name}
+      imageURL={product.imageURL}
+      description={product.description}
+      price={product.price}
+      stock={product.stock}
+      category={product.category}
+      sku={product.sku}
+      id={product.id}
+   />)
+  }
+
+  const getAllProducts = () => {
+    return products.map((product: Product) => getProductCard(product));
+  }
+  
   const getProductsByCategory = () => {
-    return products.filter((product: Product) => product.category === id).map((product: Product) =>
-    <ProductCard
-       key={product.id}
-       name={product.name}
-       imageURL={product.imageURL}
-       description={product.description}
-       price={product.price}
-       stock={product.stock}
-       category={product.category}
-       sku={product.sku}
-       id={product.id}
-    />)
+    return products.filter((product: Product) => product.category === id).map((product: Product) => getProductCard(product));
   }
 
   return (
     <div className="product-grid">
-      { getProductsByCategory() }
+      { id === undefined ? getAllProducts() : getProductsByCategory() }
     </div>
   )
 }

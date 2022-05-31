@@ -4,12 +4,6 @@
 $primary-color: #b3005c;
 $secondary-color: #12d8fa;
 
-// Responsive Breakpoints
-$bp-largest: 75em; // 1200px / 16 = 75
-$bp-large: 62.5em; // 1000px / 16 = 62.5
-$bp-medium: 50em; // 800px / 16 = 50
-$bp-small: 37.5em; // 600px / 16 = 37.5
-
 * {
   margin: 0;
   padding: 0;
@@ -21,19 +15,39 @@ html {
   font-family: "Dosis", sans-serif;
   box-sizing: border-box;
 
-  @media only screen and (max-width: 1200px) {
-    font-size: 62.5%; // 1rem = 10px
+  /* Mobile portrait */
+  @media only screen and (min-width: 478px) {
+    font-size: 37.5%; // 1rem = 7px
   }
 
-  @media only screen and (max-width: 1165px) {
-    font-size: 56.25%; // 1rem = 9px
-  }
-
-  @media only screen and (max-width: 800px) {
+  /* Mobile landscape */
+  @media only screen and (min-width: 768px) {
     font-size: 50%; // 1rem = 8px
   }
 
-  @media only screen and (max-width: 600px) {
-    font-size: 37.5%; // 1rem = 6px
+  /* Tablet */
+  @media only screen and (min-width: 992px) {
+    font-size: 56.25%; // 1rem = 9px
   }
+
+  /* Desktop Base */
+  @media only screen and (min-width: 1200px) {
+    font-size: 62.5%; // 1rem = 10px
+  }
+
+  /* Larger breakpoints */
+  @media only screen and (min-width: 1440px) {
+    font-size: 68.75%; // 1rem = 11px
+  }
+
+  /*
+    Responsive breakpoints
+    1920px: styles applied to screens 1920px wide and above
+    1440px: styles applied to screens 1440px wide and above
+    1280px: styles applied to screens 1280px wide and above
+    Desktop (base): styles apply to all devices unless overridden at other device breakpoints
+    Tablet: styles applied to screens 991px wide and below
+    Mobile landscape: styles applied to screens 767px wide and below
+    Mobile portrait: styles applied to screens 478px wide and below
+  */
 }
