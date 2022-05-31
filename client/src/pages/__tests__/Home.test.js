@@ -113,13 +113,29 @@ let MockHome = () => {
 };
 
 describe("Home page test cases", () => {
-  test("full app rendering/navigating", async () => {
+  test("to check if the banner image is printed", async () => {
     render(<MockHome />);
-    // verify page content for expected route
 
-    let heading = await screen.findByRole("link", {
-      name: /explore beverages/i,
+    let compo = await screen.findByRole("img", {
+      name: /independence day deal \- rs120 off on surf/i,
     });
-    expect(heading).toBeInTheDocument();
+    expect(compo).toBeInTheDocument();
+  });
+
+  test("to check if the category image is printed", async () => {
+    render(<MockHome />);
+
+    let compo = await screen.findByRole("img", {
+      name: /Beverages/i,
+    });
+    expect(compo).toBeInTheDocument();
+  });
+
+  test("to check the length of banners and categories images", async () => {
+    render(<MockHome />);
+
+    let linkCompo = await screen.findAllByRole("img");
+
+    expect(linkCompo).toHaveLength(6);
   });
 });

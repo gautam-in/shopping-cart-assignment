@@ -20,7 +20,7 @@ function Category({
     >
       <img
         data-src={imageUrl}
-        alt="offers"
+        alt={categoryname}
         className="lazyload"
         width={535}
         height={256}

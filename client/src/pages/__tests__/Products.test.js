@@ -114,13 +114,78 @@ let MockProducts = () => {
 };
 
 describe("Products page test cases", () => {
-  test("full app rendering/navigating", async () => {
+  test("to check if one of the categories is rendered", async () => {
     render(<MockProducts />);
-    // verify page content for expected route
 
     let linkCompo = await screen.findByRole("link", {
       name: /beverages/i,
     });
     expect(linkCompo).toBeInTheDocument();
   });
+
+  test("to check the length of cateegories categories", async () => {
+    render(<MockProducts />);
+
+    let linkCompo = await screen.findAllByRole("link");
+
+    expect(linkCompo).toHaveLength(5);
+  });
+
+  test("to check the length of products categories", async () => {
+    render(<MockProducts />);
+
+    let linkCompo = await screen.findAllByRole("button");
+
+    expect(linkCompo).toHaveLength(3);
+  });
+
+  test("to check if product name is printed", async () => {
+    render(<MockProducts />);
+
+    let linkCompo = await screen.findByRole("heading", {
+      name: /Fresho Kiwi - Green, 3 pcs/i,
+    });
+
+    expect(linkCompo).toBeInTheDocument();
+  });
+
+  test("to check if product image is printed", async () => {
+    render(<MockProducts />);
+
+    let linkCompo = await screen.getByRole("img", {
+      name: /Fresho Kiwi - Green, 3 pcs/i,
+    });
+
+    expect(linkCompo).toBeInTheDocument();
+  });
+
+  test("to check if product description is printed", async () => {
+    render(<MockProducts />);
+
+    let linkCompo = await screen.findByText(
+      /Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny, edible black seeds\./i
+    );
+
+    expect(linkCompo).toBeInTheDocument();
+  });
+
+  test("to check if product MRP is printed", async () => {
+    render(<MockProducts />);
+
+    let linkCompo = await screen.findByRole("heading", {
+      name: /mrp rs 87/i,
+    });
+
+    expect(linkCompo).toBeInTheDocument();
+  });
+
+  // test("to check if cart is incremented when Buy Now is clicked", async () => {
+  //   render(<MockProducts />);
+
+  //   let linkCompo = await screen.getByRole("heading", {
+  //     name: /0 items/i,
+  //   });
+
+  //   expect(linkCompo).toBeInTheDocument();
+  // });
 });

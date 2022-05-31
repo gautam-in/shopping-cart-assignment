@@ -38,21 +38,16 @@ function Cartproduct({
           });
 
     fetch("http://localhost:5000/userCart/" + id, {
-      // Adding method type
       method: metd,
 
-      // Adding body or contents to send
       body: prdBody,
 
-      // Adding headers to the request
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
     })
-      // Converting to JSON
       .then((response) => response.json())
 
-      // Displaying results to console
       .then((json) => {
         dispatch(CartActions.removeProduct(id));
       });
@@ -70,10 +65,8 @@ function Cartproduct({
     totalPrice += productPrice;
 
     fetch("http://localhost:5000/userCart/" + id, {
-      // Adding method type
       method: "PUT",
 
-      // Adding body or contents to send
       body: JSON.stringify({
         productName,
         productPrice,
@@ -83,15 +76,12 @@ function Cartproduct({
         id,
       }),
 
-      // Adding headers to the request
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
     })
-      // Converting to JSON
       .then((response) => response.json())
 
-      // Displaying results to console
       .then((json) => {
         dispatch(CartActions.addProduct(json));
       });

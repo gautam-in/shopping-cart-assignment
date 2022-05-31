@@ -4,7 +4,6 @@ let ctr = 0;
 let intervel;
 
 function Carousel({ bannerData }) {
-  //let [bannerData, setBannerData] = useState([]);
   let [bannerImage, setBannerImage] = useState([]);
 
   let setctr = (ind) => {
@@ -43,7 +42,7 @@ function Carousel({ bannerData }) {
   let imageMover = bannerData.map((ban, index) => {
     return (
       <p
-        className={ctr % 5 == index ? "activeCl" : ""}
+        className={ctr % 5 === index ? "activeCl" : ""}
         onClick={() => setctr(index)}
         key={ban.id}
       >
@@ -51,14 +50,6 @@ function Carousel({ bannerData }) {
       </p>
     );
   });
-
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/banners")
-  //     .then((data) => data.json())
-  //     .then((bannerdata) => {
-  //       setBannerData(bannerdata);
-  //     });
-  // }, []);
 
   ctr++;
 

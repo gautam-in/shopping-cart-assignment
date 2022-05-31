@@ -5,12 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { CartActions } from "./store/cart-slice";
 
-//import Home from "./pages/Home";
-
-//import Products from "./pages/Products";
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-//import Cart from "./pages/Cart";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -25,6 +20,7 @@ import LoadingSpinner from "./components/LoadingSpinner";
 const Home = React.lazy(() => import("./pages/Home"));
 const Products = React.lazy(() => import("./pages/Products"));
 const Cart = React.lazy(() => import("./pages/Cart"));
+const Signup = React.lazy(() => import("./pages/Signup"));
 
 function App() {
   let dispatch = useDispatch();
@@ -39,7 +35,7 @@ function App() {
       .then((json) => {
         dispatch(CartActions.replaceCart(json));
       });
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     fetch("http://localhost:5000/categories")

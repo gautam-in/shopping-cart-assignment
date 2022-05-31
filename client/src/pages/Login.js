@@ -25,7 +25,6 @@ function Login() {
       dispatch(LoginActions.setisLoginStatus(true));
       history.replace("/Home");
     } else {
-      // alert("username or password is incorrect");
 
       toast.error("username or password is incorrect", {
         position: "top-center",

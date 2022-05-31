@@ -2,26 +2,17 @@ import React, { useState, useEffect, Suspense } from "react";
 
 import "./products.css";
 
-//import Product from "../components/Product";
 import { NavLink, useParams } from "react-router-dom";
 import LoadingSpinner from "../components/LoadingSpinner";
 
 const Product = React.lazy(() => import("../components/Product"));
 
 function Products({ categoriesData, productData }) {
-  //  let [productData, setProductData] = useState([]);
   let [filteredProducts, setFilteredProducts] = useState([]);
-
-  //let [categoriesData, setCategoriesData] = useState([]);
 
   let params = useParams();
 
   useEffect(() => {
-    // fetch("http://localhost:5000/products")
-    //   .then((data) => data.json())
-    //   .then((productdata) => {
-    //     setProductData(productdata);
-
     if (params.productKey) {
       setFilteredProducts(
         productData.filter((data) => data.category === params.productKey)
@@ -29,8 +20,7 @@ function Products({ categoriesData, productData }) {
     } else {
       setFilteredProducts(productData);
     }
-    // });
-  }, [productData, categoriesData]);
+  }, [productData, categoriesData, params.productKey]);
 
   let filterProducts = (catId) => {
     setFilteredProducts(productData.filter((data) => data.category === catId));
@@ -63,14 +53,6 @@ function Products({ categoriesData, productData }) {
         </NavLink>
       );
   });
-
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/categories")
-  //     .then((data) => data.json())
-  //     .then((categoriesdata) => {
-  //       setCategoriesData(categoriesdata);
-  //     });
-  // }, []);
 
   return (
     <Suspense fallback={<LoadingSpinner />}>

@@ -32,20 +32,14 @@ function Cart() {
 
   let emptyCart = () => {
     fetch("http://localhost:5000/userCart/", {
-      // Adding method type
       method: "DELETE",
 
-      // Adding body or contents to send
-
-      // Adding headers to the request
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
     })
-      // Converting to JSON
       .then((response) => response.json())
 
-      // Displaying results to console
       .then((json) => dispatch(CartActions.replaceCart([])));
   };
 
