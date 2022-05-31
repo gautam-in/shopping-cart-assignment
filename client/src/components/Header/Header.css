@@ -133,11 +133,25 @@
   .cart-container {
     height: 100%;
   }
+
+  .cart-popup {
+    top: 60px;
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+  }
 }
 
 /* Medium devices (landscape tablets, between 480px to 992px) */
 @media only screen and (min-width: 480px) and (max-width: 992px) {
   .header .container {
     width: 100%;
+  }
+
+  .cart-popup {
+    top: 90px;
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 90px);
   }
 }

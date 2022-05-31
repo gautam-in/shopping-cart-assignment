@@ -16,7 +16,7 @@ function Categories() {
   }, [])
 
   const handleExploreCategory = (category) => {
-    dispatch(selectCategory(category.id))
+    dispatch(selectCategory(category))
     history.push('/products')
   }
 

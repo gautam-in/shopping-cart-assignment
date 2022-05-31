@@ -12,15 +12,33 @@ function Product({ index, product }) {
   return (
     <div key={index} className='product'>
       <div className='name'>{product.name}</div>
-      <div className='image'>
-        <img src={product.imageURL}></img>
+      <div className='image-description-container'>
+        <div className='image'>
+          <img src={product.imageURL}></img>
+        </div>
+        <div className='description' >{product.description}</div>
       </div>
-      <div className='description' >{product.description}</div>
-      <div className='price-container'>
+      <div className='price-container desktop'>
         <div className='price'>MRP Rs.{product.price}</div>
         <button className='button' onClick={() => handleBuyNow(product)}>
           Buy Now
         </button>
+      </div>
+      <div className='price-container tablet'>
+        <button className='button' onClick={() => handleBuyNow(product)}>
+          Buy Now @ Rs.{product.price}
+        </button>
+      </div>
+      <div className='mobile-image-description-container'>
+        <div className='image'>
+          <img src={product.imageURL}></img>
+        </div>
+        <div className='description-price-container'>
+          <div className='description' >{product.description}</div>
+          <button className='button' onClick={() => handleBuyNow(product)}>
+            Buy Now @ Rs.{product.price}
+          </button>
+        </div>
       </div>
     </div>
   )
