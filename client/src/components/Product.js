@@ -85,7 +85,13 @@ function Product({ pname, imageURL, description, price, id }) {
   return (
     <section className="product">
       <h3>{pname}</h3>
-      <img src={imageURL} alt={pname}></img>
+      <img
+        src={imageURL}
+        // className="lazyload"
+        alt={pname}
+        height={263}
+        width={263}
+      ></img>
       <p>{description}</p>
       <div className="mrp-button">
         <h4>MRP Rs {price} </h4>

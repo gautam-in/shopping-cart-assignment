@@ -5,11 +5,16 @@ let loginSlice = createSlice({
   name: "LoginUser",
 
   initialState: {
-    isLoggedin: false,
+    isLoggedin:
+      localStorage.getItem("userEmail") && localStorage.getItem("userPass"),
   },
 
   reducers: {
     setisLoginStatus(state, action) {
+      if (action.payload === false) {
+        localStorage.removeItem("userEmail");
+        localStorage.removeItem("userPass");
+      }
       state.isLoggedin = action.payload;
     },
   },

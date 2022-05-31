@@ -1,3 +1,5 @@
+import React, { useEffect, useState, Suspense } from "react";
+
 import { Route, Switch, Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -17,7 +19,6 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
 
-import React, { Suspense, useEffect } from "react";
 import NotFound from "./pages/NotFound";
 import LoadingSpinner from "./components/LoadingSpinner";
 
@@ -28,12 +29,39 @@ const Cart = React.lazy(() => import("./pages/Cart"));
 function App() {
   let dispatch = useDispatch();
   let isLoggedin = useSelector((state) => state.loginSlice.isLoggedin);
+  let [categoriesData, setCategoriesData] = useState([]);
+  let [bannerData, setBannerData] = useState([]);
+  let [productData, setProductData] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/userCart/")
       .then((data) => data.json())
       .then((json) => {
         dispatch(CartActions.replaceCart(json));
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/categories")
+      .then((data) => data.json())
+      .then((categoriesdata) => {
+        setCategoriesData(categoriesdata);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/banners")
+      .then((data) => data.json())
+      .then((bannerdata) => {
+        setBannerData(bannerdata);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/products")
+      .then((data) => data.json())
+      .then((productdata) => {
+        setProductData(productdata);
       });
   }, []);
 
@@ -55,16 +83,26 @@ function App() {
           </Route>
 
           <Route path="/Home" exact>
-            <Home></Home>
+            <Home
+              categoriesData={categoriesData}
+              bannerData={bannerData}
+            ></Home>
           </Route>
 
           <Route path="/Products" exact>
-            <Products></Products>
+            <Products
+              categoriesData={categoriesData}
+              productData={productData}
+            ></Products>
           </Route>
 
           <Route path="/Products/:productKey">
-            <Products></Products>
+            <Products
+              categoriesData={categoriesData}
+              productData={productData}
+            ></Products>
           </Route>
+
           {isLoggedin && (
             <Route path="/Cart" exact>
               <Cart></Cart>

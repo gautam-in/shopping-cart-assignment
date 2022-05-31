@@ -9,18 +9,18 @@ import LoadingSpinner from "../components/LoadingSpinner";
 const Carousel = React.lazy(() => import("../components/Carousel"));
 const Category = React.lazy(() => import("../components/Category"));
 
-let counter = 1;
+function Home({ categoriesData, bannerData }) {
+  // let [categoriesData, setCategoriesData] = useState([]);
 
-function Home() {
-  let [categoriesData, setCategoriesData] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:5000/categories")
-      .then((data) => data.json())
-      .then((categoriesdata) => {
-        setCategoriesData(categoriesdata);
-      });
-  }, []);
+  // useEffect(() => {
+  //   console.log("categories");
+  //   fetch("http://localhost:5000/categories")
+  //     .then((data) => data.json())
+  //     .then((categoriesdata) => {
+  //       setCategoriesData(categoriesdata);
+  //     });
+  // }, []);
+  let counter = 1;
 
   let AllCategories = categoriesData.map((cat) => {
     if (cat.enabled)
@@ -40,7 +40,7 @@ function Home() {
   return (
     <Suspense fallback={<LoadingSpinner />}>
       <article className="homepage-container">
-        <Carousel></Carousel>
+        <Carousel bannerData={bannerData}></Carousel>
 
         {AllCategories}
       </article>

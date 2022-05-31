@@ -18,7 +18,13 @@ function Category({
         counter % 2 === 0 ? "categories" : "categories categories-reverse"
       }
     >
-      <img src={imageUrl} alt="offers" />
+      <img
+        data-src={imageUrl}
+        alt="offers"
+        className="lazyload"
+        width={535}
+        height={256}
+      />
 
       <div className="cat-info">
         <div
@@ -37,4 +43,4 @@ function Category({
   );
 }
 
-export default Category;
+export default React.memo(Category);

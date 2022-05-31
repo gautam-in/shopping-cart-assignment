@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 let ctr = 0;
 let intervel;
 
-function Carousel() {
-  let [bannerData, setBannerData] = useState([]);
+function Carousel({ bannerData }) {
+  //let [bannerData, setBannerData] = useState([]);
   let [bannerImage, setBannerImage] = useState([]);
 
   let setctr = (ind) => {
@@ -52,19 +52,24 @@ function Carousel() {
     );
   });
 
-  useEffect(() => {
-    fetch("http://localhost:5000/banners")
-      .then((data) => data.json())
-      .then((bannerdata) => {
-        setBannerData(bannerdata);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/banners")
+  //     .then((data) => data.json())
+  //     .then((bannerdata) => {
+  //       setBannerData(bannerdata);
+  //     });
+  // }, []);
 
   ctr++;
 
   return (
     <section className="banners">
-      <img src={bannerImage[0]} alt={bannerImage[1]} />
+      <img
+        src={bannerImage[0]}
+        alt={bannerImage[1]}
+        height={288}
+        width={1370}
+      />
       <div>{imageMover}</div>
     </section>
   );

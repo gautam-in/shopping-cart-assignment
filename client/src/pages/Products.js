@@ -8,34 +8,35 @@ import LoadingSpinner from "../components/LoadingSpinner";
 
 const Product = React.lazy(() => import("../components/Product"));
 
-function Products() {
-  let [productData, setProductData] = useState([]);
+function Products({ categoriesData, productData }) {
+  //  let [productData, setProductData] = useState([]);
   let [filteredProducts, setFilteredProducts] = useState([]);
 
-  let [categoriesData, setCategoriesData] = useState([]);
+  //let [categoriesData, setCategoriesData] = useState([]);
 
   let params = useParams();
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
-      .then((data) => data.json())
-      .then((productdata) => {
-        setProductData(productdata);
-        if (params.productKey) {
-          setFilteredProducts(
-            productdata.filter((data) => data.category === params.productKey)
-          );
-        } else {
-          setFilteredProducts(productdata);
-        }
-      });
-  }, []);
+    // fetch("http://localhost:5000/products")
+    //   .then((data) => data.json())
+    //   .then((productdata) => {
+    //     setProductData(productdata);
+
+    if (params.productKey) {
+      setFilteredProducts(
+        productData.filter((data) => data.category === params.productKey)
+      );
+    } else {
+      setFilteredProducts(productData);
+    }
+    // });
+  }, [productData, categoriesData]);
 
   let filterProducts = (catId) => {
     setFilteredProducts(productData.filter((data) => data.category === catId));
   };
 
-  let productList = filteredProducts.map((data) => {
+  let productList = filteredProducts?.map((data) => {
     return (
       <Product
         pname={data.name}
@@ -48,7 +49,7 @@ function Products() {
     );
   });
 
-  let categoriesList = categoriesData.map((data) => {
+  let categoriesList = categoriesData?.map((data) => {
     if (data.enabled)
       return (
         <NavLink
@@ -63,13 +64,13 @@ function Products() {
       );
   });
 
-  useEffect(() => {
-    fetch("http://localhost:5000/categories")
-      .then((data) => data.json())
-      .then((categoriesdata) => {
-        setCategoriesData(categoriesdata);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/categories")
+  //     .then((data) => data.json())
+  //     .then((categoriesdata) => {
+  //       setCategoriesData(categoriesdata);
+  //     });
+  // }, []);
 
   return (
     <Suspense fallback={<LoadingSpinner />}>
