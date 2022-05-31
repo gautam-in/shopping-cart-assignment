@@ -1,10 +1,12 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Layout } from "./components/Layout/Layout";
+import { ProductGrid } from "./components/ProductGrid/ProductGrid";
 import { Home } from "./pages/Home/Home";
 import { Products } from "./pages/Products/Products";
-import { Layout } from "./components/Layout/Layout";
+import { Register } from "./pages/Register/Register";
+import { SignIn } from "./pages/SignIn/SignIn";
 import { PageNotFound } from "./pages/PageNotFound/PageNotFound";
-import { ProductGrid } from "./components/ProductGrid/ProductGrid";
 
 export const App = () => {
     return (
@@ -15,6 +17,8 @@ export const App = () => {
             <Route path="products" element={<Products />}>
               <Route path=":id" element={<ProductGrid />}/>
             </Route>
+            <Route path="signin" element={<SignIn />} />
+            <Route path="register" element={<Register />}/>
           </Route>
           <Route path="*" element={<PageNotFound />}/>   
         </Routes>

@@ -2,6 +2,7 @@
 
 // Colors
 $primary-color: #b3005c;
+$secondary-color: #12d8fa;
 
 // Responsive Breakpoints
 $bp-largest: 75em; // 1200px / 16 = 75
@@ -16,21 +17,23 @@ $bp-small: 37.5em; // 600px / 16 = 37.5
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; // 10/16 * 100 -> setting 1rem = 10px;
   font-family: "Dosis", sans-serif;
   box-sizing: border-box;
 
-  @media only screen and (max-width: 1300px) {
-    font-size: 50%;
+  @media only screen and (max-width: 1200px) {
+    font-size: 62.5%; // 1rem = 10px
   }
 
-  @media only screen and (max-width: $bp-large) {
-    font-size: 37.5%;
+  @media only screen and (max-width: 1165px) {
+    font-size: 56.25%; // 1rem = 9px
   }
 
-  @media only screen and (max-width: $bp-medium) {
+  @media only screen and (max-width: 800px) {
+    font-size: 50%; // 1rem = 8px
   }
 
-  @media only screen and (max-width: $bp-small) {
+  @media only screen and (max-width: 600px) {
+    font-size: 37.5%; // 1rem = 6px
   }
 }

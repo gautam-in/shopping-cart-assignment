@@ -27,7 +27,7 @@ export const Header = () => {
 
                 <div className="nav--cart">
                     <NavLink to={"/cart"} className={ ({ isActive }) => isActive ? "activeLink" : "inactiveLink" }>
-                      <div className="cart"><img src={cart} alt="cart"/></div>
+                      <div className="cart-image"><img src={cart} alt="cart"/></div>
                       <div>0 items</div>
                     </NavLink>
                 </div>
