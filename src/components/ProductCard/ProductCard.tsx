@@ -22,7 +22,7 @@ export const ProductCard = (product: Product) => {
         <button>Buy Now</button>
       </div>) : 
       (<button className="product-card__price-button-mobile">
-        { `Buy Now @ ${product.price}` } 
+        { `Buy Now @ Rs. ${product.price}` } 
       </button>) }
     </div>
   )
