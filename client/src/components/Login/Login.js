@@ -96,8 +96,8 @@ const Login = (props) => {
                                     <div style={{ paddingBottom: '18px' }} key={index}>
                                         <TextField
                                             className={classes.rightText}
-                                            // className="textfield"
                                             inputProps={{ "data-testid": items.id }}
+                                            // className="textfield"
                                             onChange={(event) => handleChange(index, event)}
                                             required
                                             id={items.id}
