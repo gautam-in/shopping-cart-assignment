@@ -13,3 +13,15 @@ npm run start
 yarn install
 yarn start
 ```
+## start JSON server for login
+```
+npm install
+npm run start
+npm run start-auth
+```
+
+## start react application
+```
+npm install
+npm run start
+```
