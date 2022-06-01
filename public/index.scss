@@ -3,6 +3,7 @@
 // Colors
 $primary-color: #b3005c;
 $secondary-color: #12d8fa;
+$snow-background: #f0f8ff;
 
 * {
   margin: 0;
@@ -11,7 +12,8 @@ $secondary-color: #12d8fa;
 }
 
 html {
-  font-size: 62.5%; // 10/16 * 100 -> setting 1rem = 10px;
+  // font-size: 62.5%; // 10/16 * 100 -> setting 1rem = 10px;
+  font-size: 37.5%;
   font-family: "Dosis", sans-serif;
   box-sizing: border-box;
 

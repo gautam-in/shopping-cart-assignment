@@ -3,9 +3,10 @@ import { NavLink } from "react-router-dom";
 import logo from "../../static/images/logo.png";
 import cart from "../../static/images/cart.svg";
 import "./Header.scss";
+import type { CartSize } from "../../types/customTypes";
 
-export const Header = () => {
-
+export const Header = ({ size }: CartSize) => {
+   
     return (
         <header className="header">
             
@@ -28,7 +29,7 @@ export const Header = () => {
                 <div className="nav--cart">
                     <NavLink to={"/cart"} className={ ({ isActive }) => isActive ? "activeLink" : "inactiveLink" }>
                       <div className="cart-image"><img src={cart} alt="cart"/></div>
-                      <div>0 items</div>
+                      <div>{size} items</div>
                     </NavLink>
                 </div>
 

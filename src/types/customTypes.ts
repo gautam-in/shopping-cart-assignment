@@ -26,3 +26,30 @@ export type Product = {
     sku: string;
     id: string;
 }
+
+export type ProductGridProps = {
+    cartDispatch: React.Dispatch<CartAction>;
+}
+
+export type ProductCardProps = {
+    product: Product;
+    cartDispatch: React.Dispatch<CartAction>;
+}
+
+export type CartSize = {
+    size: number;
+}
+
+export type CartProps = {
+    cartState: Product[];
+    cartDispatch: React.Dispatch<CartAction>;
+}
+
+export type CartItemProps = {
+    product: Product;
+    cartDispatch: React.Dispatch<CartAction>;
+}
+
+export type CartAction =
+ | { type: 'add-item', data: Product }
+ | { type: 'remove-item', data: Product }

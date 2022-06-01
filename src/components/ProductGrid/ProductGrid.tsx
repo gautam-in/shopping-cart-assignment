@@ -1,11 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import type { Product } from "../../types/customTypes";
+import type { Product, ProductGridProps } from "../../types/customTypes";
 import { ProductCard } from "../ProductCard/ProductCard";
 import products from "../../server/products/index.get.json";
 import "./ProductGrid.scss";
 
-export const ProductGrid = () => {
+export const ProductGrid = ({ cartDispatch }: ProductGridProps) => {
 
   const params = useParams();
   const { id } = params;
@@ -13,16 +13,10 @@ export const ProductGrid = () => {
   const getProductCard = (product: Product) => {
     return (
       <ProductCard
-      key={product.id}
-      name={product.name}
-      imageURL={product.imageURL}
-      description={product.description}
-      price={product.price}
-      stock={product.stock}
-      category={product.category}
-      sku={product.sku}
-      id={product.id}
-   />)
+        key={product.id}
+        product={product} 
+        cartDispatch={cartDispatch}
+      />)
   }
 
   const getAllProducts = () => {

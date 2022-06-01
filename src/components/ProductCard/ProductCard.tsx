@@ -1,13 +1,21 @@
 import React from "react";
 import { useViewport } from "../../hooks/useViewport";
-import type { Product } from "../../types/customTypes";
+import type { Product, ProductCardProps } from "../../types/customTypes";
 import "./ProductCard.scss";
 
-export const ProductCard = (product: Product) => {
+export const ProductCard = ({product, cartDispatch}: ProductCardProps) => {
   const windowWidth = useViewport();
   
+  const handleClick = (event: React.BaseSyntheticEvent<MouseEvent>) => {
+    console.log("Clicked on product: ", event.target.innerText.indexOf("Buy Now"));
+    console.log("Product: ", product);
+    if(event.target.innerText.indexOf("Buy Now") != -1) {
+      cartDispatch({ type: "add-item", data: product })
+    }
+  }
+
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={handleClick}>
 
       <div className="product-card__title">{product.name}</div>
       
