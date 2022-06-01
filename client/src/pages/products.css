@@ -28,6 +28,9 @@
   cursor: pointer;
   font-weight: 500;
 }
+.menu-section span {
+  display: none;
+}
 
 .menu-section nav a.activelink,
 .menu-section nav a:hover {
@@ -37,4 +40,61 @@
 
 .porduct-listing {
   width: 80%;
+}
+
+@media screen and (max-width: 768px) {
+  .productpage-container {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .menu-section {
+    width: 100%;
+    background-color: #d00255;
+    position: relative;
+  }
+  .menu-section nav a {
+    color: white;
+    display: none;
+    justify-content: space-between;
+  }
+  .menu-section nav a.activelink,
+  .menu-section nav a:hover {
+    color: white;
+    font-weight: normal;
+  }
+
+  .menu-section nav a:first-child {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu-section span {
+    font-size: 2rem;
+    align-self: flex-end;
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 0.2rem;
+    color: white;
+  }
+
+  .porduct-listing {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-section nav a.show-menu {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    order: 1;
+  }
+
+  .menu-section nav a.activeCategory {
+    order: -1;
+  }
 }

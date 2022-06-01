@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { LoginActions } from "../store/login-slice";
 import "./Header.css";
@@ -14,7 +14,7 @@ function Header() {
     <div className="header-container">
       <header className="header">
         <NavLink to="/Home">
-          <img className="logo" src="logo_2x.png" alt="Sabka Bazar" />
+          <img className="logo" src="../logo_2x.png" alt="Sabka Bazar" />
         </NavLink>
         <nav className="nav">
           <NavLink activeClassName="activelink" to="/Home">
@@ -27,8 +27,11 @@ function Header() {
 
         {isLoggedin && (
           <NavLink to="/Cart" className="cart-header">
-            <img src="cart.svg" alt="cart svg" />
-            <h4> {cartItems.length} items </h4>
+            <img src="../cart.svg" alt="cart svg" />
+            <h4>
+              {cartItems.reduce((accum, item) => accum + item.quantity, 0)}{" "}
+              items
+            </h4>
           </NavLink>
         )}
 
@@ -42,6 +45,7 @@ function Header() {
           >
             {isLoggedin ? "Logout" : "login"}
           </NavLink>
+
           <NavLink activeClassName="activelink" to="/Signup" className="test">
             Register
           </NavLink>

@@ -86,6 +86,13 @@ input[type="submit"] {
 }
 
 @media screen and (max-width: 768px) {
+  .aside {
+    display: none;
+  }
+
+  .login-form {
+    margin: auto auto;
+  }
 }
 
 @media screen and (max-width: 566px) {

@@ -9,7 +9,7 @@ const Product = React.lazy(() => import("../components/Product"));
 
 function Products({ categoriesData, productData }) {
   let [filteredProducts, setFilteredProducts] = useState([]);
-
+  let [showMenu, setShowMenu] = useState(false);
   let params = useParams();
 
   useEffect(() => {
@@ -22,8 +22,12 @@ function Products({ categoriesData, productData }) {
     }
   }, [productData, categoriesData, params.productKey]);
 
+  let activeCategory = params.productKey;
+
   let filterProducts = (catId) => {
+    activeCategory = catId;
     setFilteredProducts(productData.filter((data) => data.category === catId));
+    setShowMenu(false);
   };
 
   let productList = filteredProducts?.map((data) => {
@@ -47,7 +51,11 @@ function Products({ categoriesData, productData }) {
           id={data.id}
           to={"/Products/" + data.id}
           key={data.id}
-          activeClassName="activelink"
+          className={
+            (showMenu ? "show-menu" : "") +
+            " " +
+            (data.id === activeCategory ? "activeCategory" : "")
+          }
         >
           {data.name}
         </NavLink>
@@ -59,6 +67,13 @@ function Products({ categoriesData, productData }) {
       <article className="productpage-container">
         <section className="menu-section">
           <nav>{categoriesList}</nav>
+          <span
+            onClick={() => {
+              setShowMenu(!showMenu);
+            }}
+          >
+            &#8964;
+          </span>
         </section>
         <section className="porduct-listing">{productList}</section>
       </article>

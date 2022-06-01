@@ -345,14 +345,6 @@
   ],
   "userCart": [
     {
-      "productName": "Capsicum - Green, 1 kg",
-      "productPrice": 137,
-      "quantity": 1,
-      "totalPrice": 137,
-      "imageURL": "http://localhost:8080/static/images/products/fruit-n-veg/capsicum-green.jpg",
-      "id": "5b6c6bdc01a7c38429530886"
-    },
-    {
       "productName": "Mamypoko Pants Style Diapers - Large, 62 pcs",
       "productPrice": 930,
       "quantity": 1,
@@ -369,20 +361,12 @@
       "id": "5b6c753c01a7c38429530898"
     },
     {
-      "productName": "Tata Tea Gold Leaf Tea, 500 gm",
-      "productPrice": 165,
+      "productName": "Apple - Washington, Regular, 4 pcs",
+      "productPrice": 187,
       "quantity": 1,
-      "totalPrice": 165,
-      "imageURL": "http://localhost:8080/static/images/products/beverages/tata-tea.jpg",
-      "id": "5b6c6f4a01a7c3842953088c"
-    },
-    {
-      "productName": "Red Label Tea, 500 gm Carton",
-      "productPrice": 205,
-      "quantity": 1,
-      "totalPrice": 205,
-      "imageURL": "http://localhost:8080/static/images/products/beverages/red-label.jpg",
-      "id": "5b6c6f8301a7c3842953088d"
+      "totalPrice": 187,
+      "imageURL": "http://localhost:8080/static/images/products/fruit-n-veg/apple.jpg",
+      "id": "5b6c6aeb01a7c38429530884"
     }
   ]
 }
