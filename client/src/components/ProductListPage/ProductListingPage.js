@@ -104,6 +104,7 @@ const ProductListingPage = () => {
     const snackbarClose = ()=>{
         dispatch({type:'CLOSE_SNACKBAR'})
     }
+    console.log("plp page",categoryId,countOfItems,productsData)
     return (
         <div className={classes.root}>
             <Hidden smUp>
