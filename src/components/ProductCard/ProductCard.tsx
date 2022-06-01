@@ -1,8 +1,11 @@
 import React from "react";
+import { useViewport } from "../../hooks/useViewport";
 import type { Product } from "../../types/customTypes";
 import "./ProductCard.scss";
 
 export const ProductCard = (product: Product) => {
+  const windowWidth = useViewport();
+  
   return (
     <div className="product-card">
 
@@ -13,11 +16,14 @@ export const ProductCard = (product: Product) => {
       </div>
       <div className="product-card__description">{product.description}</div>
 
-      <div className="product-card__price-button">
+      { windowWidth > 992 ? 
+      (<div className="product-card__price-button-desktop">
         <div>MRP. Rs {product.price}</div>
         <button>Buy Now</button>
-      </div>
-
+      </div>) : 
+      (<button className="product-card__price-button-mobile">
+        { `Buy Now @ ${product.price}` } 
+      </button>) }
     </div>
   )
 }
