@@ -12,24 +12,34 @@
 
   background-color: rgb(236, 236, 236);
 
+  // Common link styles
   & > a {
     font-size: 2rem;
     text-decoration: none;
 
     padding: 2rem;
-    width: 85%;
 
     text-align: left;
     transition: all 0.2s;
 
-    color: lighten(#000, 40%);
-    border-bottom: 0.5px solid lighten(#000, 75%);
-
     &:hover {
       cursor: pointer;
-      border-bottom: 0.5px solid $primary-color;
-      width: 80%;
       color: $primary-color;
+      border-bottom: 0.5px solid currentColor;
+      width: 80%;
     }
   }
+}
+
+// Active and inactive link Styles
+.active-menu-link {
+  color: $primary-color;
+  border-bottom: 0.5px solid currentColor;
+  width: 80%;
+}
+
+.inactive-menu-link {
+  color: lighten(#000, 40%);
+  border-bottom: 0.5px solid lighten(#000, 75%);
+  width: 85%;
 }
