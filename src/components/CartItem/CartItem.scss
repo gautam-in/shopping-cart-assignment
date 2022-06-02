@@ -8,7 +8,7 @@
   font-size: 2rem;
   padding: 1rem 2.5rem;
   margin: 0.8rem 0;
-  border: 0.5px solid aqua;
+  background-color: #fff;
 
   &__image {
     width: 100%;
@@ -47,6 +47,7 @@
       font-weight: 600;
       width: 2.5em;
       height: 2.5em;
+      line-height: 0em;
       background-color: $primary-color;
       color: #fff;
       border: none;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./CartItem.scss";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import type { CartItemProps } from "../../types/customTypes";
+import "./CartItem.scss";
 
 export const CartItem = ({ product, cartDispatch }: CartItemProps) => {
   const [itemQuantity, setItemQuantity] = useState(1);
@@ -28,9 +29,9 @@ export const CartItem = ({ product, cartDispatch }: CartItemProps) => {
       </div>  
         
       <div className="cart-item__controls">
-        <button onClick={addItem}> + </button>
+        <button onClick={addItem}> <AiOutlinePlus /> </button>
         <div className="cart-item__quantity"> {itemQuantity} </div>
-        <button onClick={removeItem}> - </button>
+        <button onClick={removeItem}> <AiOutlineMinus /> </button>
         <span> X &nbsp; Rs. {product.price}</span>
       </div>
     

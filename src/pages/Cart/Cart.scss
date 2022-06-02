@@ -1,18 +1,22 @@
 @import "../../../public/index.scss";
 
 .cart {
-  margin: 12rem 0 0 0;
+  margin: 7rem 0 0 0;
   min-height: calc(100vh - 7rem);
   position: relative;
+  background-color: #f2f3f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   &__header {
     font-size: 1.8rem;
     font-weight: 600;
 
-    margin: 6em 0 1.5em 0;
+    margin: 3em 0 1.5em 0;
     padding: 1em 2em;
 
-    background-color: rgb(230, 219, 212);
+    background-color: #fff;
   }
 
   &__details {
@@ -31,31 +35,42 @@
   }
 
   &__checkout {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     text-align: center;
     box-shadow: 0 -8px 8px rgba(0, 0, 0, 0.2);
     width: 100%;
-    padding: 1.5rem 0;
-    border: 1px solid aqua;
-
-    position: absolute;
-    bottom: 0rem;
-    left: 0;
-    z-index: 1;
+    padding: 1.2rem 0;
     background-color: #fff;
 
     & > button {
       margin: 1em auto 0 auto;
       padding: 1em 1.5em;
-      min-width: 40rem;
+      width: 90%;
+
       border-radius: 4px;
       border: none;
 
       background-color: $primary-color;
       color: #fff;
+      align-items: center;
 
       display: flex;
-      justify-content: space-between;
+      & > span:nth-child(2) {
+        margin-left: auto;
+      }
+
+      & > svg {
+        width: 1.5em;
+        height: 1.5em;
+      }
+
+      & > svg > polyline {
+        stroke: #fff;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

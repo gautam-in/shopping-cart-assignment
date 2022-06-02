@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../../static/images/logo.png";
-import cart from "../../static/images/cart.svg";
-import "./Header.scss";
 import type { CartSize } from "../../types/customTypes";
+import { HiShoppingCart } from "react-icons/hi";
+import logo from "../../static/images/logo.png";
+import "./Header.scss";
 
 export const Header = ({ size }: CartSize) => {
    
@@ -27,8 +27,8 @@ export const Header = ({ size }: CartSize) => {
                 </div>
 
                 <div className="nav--cart">
-                    <NavLink to={"/cart"} className={ ({ isActive }) => isActive ? "activeLink" : "inactiveLink" }>
-                      <div className="cart-image"><img src={cart} alt="cart"/></div>
+                    <NavLink to={"/cart"} className={ ({ isActive }) => isActive ? "active-cart" : "inactive-cart" }>
+                      <HiShoppingCart className="cart-image" />
                       <div>{size} items</div>
                     </NavLink>
                 </div>
