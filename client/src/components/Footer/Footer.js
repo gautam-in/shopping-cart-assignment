@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <React.Fragment>
             <div className="footerMain">
-                <span style={{color:'#818589'}}>
+                <span style={{color:'#818589'}} data-testid="footer-text">
                     Copvright © 2011-2018 Sabka Bazaar Grocery Supplies Put Ltd
                 </span>
             </div>
