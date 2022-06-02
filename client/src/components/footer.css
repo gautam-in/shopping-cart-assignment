@@ -1,0 +1,32 @@
+.footer {
+  bottom: 0px;
+  background-color: rgb(226, 225, 225);
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.footer p {
+  margin: auto 0;
+  margin-left: 10%;
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+
+/*mobile css*/
+
+@media screen and (max-width: 768px) {
+  .footer {
+    bottom: 0;
+    background-color: rgb(226, 225, 225);
+    height: 3.5rem;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .footer p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 100;
+  }
+}

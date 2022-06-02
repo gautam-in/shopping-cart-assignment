@@ -1,0 +1,155 @@
+@media screen and (min-width: 769px) {
+  .header-container {
+    box-shadow: 0 1px 5px #aaaaaa89;
+    background-color: white;
+  }
+
+  .header {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    height: 5rem;
+  }
+
+  .nav {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 0.5rem;
+    margin-left: 8rem;
+  }
+  .nav a {
+    padding-right: 0.938rem;
+    color: black;
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+  .nav a.activelink,
+  .nav a:hover {
+    color: #4f8822;
+    font-weight: bold;
+  }
+
+  .cart-header {
+    position: absolute;
+    right: 3rem;
+    bottom: 0rem;
+    display: flex;
+    background-color: #eaeaea;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .cart-header h4 {
+    color: black;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  .cart-header img {
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 3rem;
+  }
+
+  .log-reg {
+    top: 0.2rem;
+    position: absolute;
+    right: 0.625rem;
+  }
+
+  .log-reg a {
+    color: black;
+    font-weight: 500;
+    padding-left: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .log-reg a.activelink,
+  .log-reg a:hover {
+    font-weight: bold;
+    color: #4f8822;
+  }
+
+  .logo {
+    width: 8.75rem;
+    height: 4.375rem;
+    display: inline-block;
+    margin-top: 0.3rem;
+  }
+}
+
+/* media queries */
+
+@media screen and (max-width: 768px) {
+  .header-container {
+    box-shadow: 0 1px 5px #aaaaaa89;
+    background-color: white;
+  }
+
+  .header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    height: 5rem;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .logo {
+    width: 5rem;
+    height: 2.375rem;
+  }
+
+  .log-reg {
+    align-self: flex-start;
+    padding: 0.5rem;
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  .log-reg a {
+    color: black;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .log-reg a.activelink,
+  .log-reg a:hover {
+    font-weight: bold;
+    color: #4f8822;
+  }
+
+  .cart-header {
+    position: absolute;
+    right: 2.6rem;
+    bottom: 0rem;
+    display: flex;
+    background-color: #eaeaea;
+    padding: 0.2rem 0.4rem;
+    flex-direction: row;
+  }
+
+  .cart-header h4 {
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .cart-header img {
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 3rem;
+  }
+
+  .nav {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 0rem;
+    gap: 0.8rem;
+    align-self: center;
+  }
+  .nav a {
+    color: black;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+}
