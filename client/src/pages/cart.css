@@ -8,6 +8,7 @@
   background-color: #eaeaea;
   padding: 1rem;
   margin-bottom: 2rem;
+  align-items: center;
 }
 
 .header-cart h3 {
@@ -16,6 +17,7 @@
 
 .header-cart p {
   padding-top: 0.2rem;
+  font-size: 1.2rem;
 }
 
 .lowprice-tag {
@@ -119,7 +121,70 @@
   cursor: not-allowed;
 }
 
+/*mobile css*/
+
 @media screen and (max-width: 768px) {
+  .cart-container {
+    width: 100%;
+  }
+
+  .header-cart {
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .header-cart p {
+    padding-top: 0.2rem;
+    font-size: 1.2rem;
+  }
+
+  .cart-contents {
+    display: flex;
+    border-bottom: 3px solid #dadada;
+    background-color: #eaeaea;
+    height: 6rem;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.4rem;
+  }
+
+  .cart-product-details {
+    display: flex;
+    flex-direction: column;
+    width: 180%;
+    margin-top: 0;
+  }
+
+  .cart-product-details h3 {
+    line-height: 1.2rem;
+    margin-bottom: 0.4rem;
+    font-weight: normal;
+  }
+
+  .cart-count-buttons {
+    margin-top: 0rem;
+  }
+
+  .cart-count-buttons button {
+    width: fit-content;
+    display: block;
+    color: #fff;
+    border: none;
+    height: 1.4rem;
+    width: 1.4rem;
+    cursor: pointer;
+    background-color: #d00255;
+  }
+
+  .cart-count-buttons p {
+    margin: 0 1rem;
+    font-size: 1.2rem;
+  }
+
+  .total-price {
+    font-size: 1.2rem;
+    padding: 0;
+    margin-right: 0.6rem;
+  }
 }
 
 @media screen and (max-width: 566px) {

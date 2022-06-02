@@ -68,7 +68,7 @@
     box-shadow: 0 8px 6px -6px #aaaaaa89;
     padding: 0 0.4rem;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.4rem;
   }
 
@@ -87,5 +87,13 @@
 
   .cat-info {
     width: 50%;
+  }
+
+  .cat-info h3 {
+    margin-top: 0rem;
+    /* margin-left: 0.7rem; */
+    font-weight: 900;
+
+    font-size: 1.6rem;
   }
 }

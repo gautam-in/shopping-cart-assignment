@@ -345,28 +345,36 @@
   ],
   "userCart": [
     {
-      "productName": "Mamypoko Pants Style Diapers - Large, 62 pcs",
-      "productPrice": 930,
+      "productName": "TRESemme Shampoo - Keratin Smooth With Argan Oil, 580 ml ",
+      "productPrice": 410,
       "quantity": 1,
-      "totalPrice": 930,
-      "imageURL": "http://localhost:8080/static/images/products/baby/mamy.jpg",
-      "id": "5b6c74d101a7c38429530896"
+      "totalPrice": 410,
+      "imageURL": "http://localhost:8080/static/images/products/beauty-hygiene/shampoo.jpg",
+      "id": "5b6c71a101a7c38429530891"
     },
     {
-      "productName": "Nestle Cerelac Stage - 4 Multi Grain & Fruits, 2x300 gm",
-      "productPrice": 478,
+      "productName": "Close Up Ever Fresh Red Hot Gel Toothpaste, 150 gm",
+      "productPrice": 82,
       "quantity": 1,
-      "totalPrice": 478,
-      "imageURL": "http://localhost:8080/static/images/products/baby/cerelac.jpg",
-      "id": "5b6c753c01a7c38429530898"
+      "totalPrice": 82,
+      "imageURL": "http://localhost:8080/static/images/products/beauty-hygiene/closeup.jpg",
+      "id": "5b6c727801a7c38429530894"
     },
     {
-      "productName": "Apple - Washington, Regular, 4 pcs",
-      "productPrice": 187,
+      "productName": "Sandwich Bread - White, Chemical Free, 400 gm",
+      "productPrice": 32,
       "quantity": 1,
-      "totalPrice": 187,
-      "imageURL": "http://localhost:8080/static/images/products/fruit-n-veg/apple.jpg",
-      "id": "5b6c6aeb01a7c38429530884"
+      "totalPrice": 32,
+      "imageURL": "http://localhost:8080/static/images/products/bakery-cakes-dairy/bread.jpg",
+      "id": "5b6c6d3201a7c38429530888"
+    },
+    {
+      "productName": "Pampers Diapers Pants - Large Size, Monthly Box Pack, New, 128's pack",
+      "productPrice": 1999,
+      "quantity": 1,
+      "totalPrice": 1999,
+      "imageURL": "http://localhost:8080/static/images/products/baby/pampers.jpg",
+      "id": "5b6c746801a7c38429530895"
     }
   ]
 }

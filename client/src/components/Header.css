@@ -91,25 +91,25 @@
     width: 100%;
     display: flex;
     height: 5rem;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
   .logo {
-    width: 8.75rem;
-    height: 4.375rem;
+    width: 5rem;
+    height: 2.375rem;
   }
 
   .log-reg {
-    align-self: flex-end;
-    padding: 1rem;
+    align-self: flex-start;
+    padding: 0.5rem;
     display: flex;
-    gap: 1rem;
+    gap: 0.6rem;
   }
 
   .log-reg a {
     color: black;
     font-weight: 500;
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 
   .log-reg a.activelink,
@@ -118,7 +118,38 @@
     color: #4f8822;
   }
 
+  .cart-header {
+    position: absolute;
+    right: 2.6rem;
+    bottom: 0rem;
+    display: flex;
+    background-color: #eaeaea;
+    padding: 0.2rem 0.4rem;
+    flex-direction: row;
+  }
+
+  .cart-header h4 {
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .cart-header img {
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 3rem;
+  }
+
   .nav {
-    display: none;
+    display: flex;
+    align-items: flex-end;
+    margin-left: 0rem;
+    gap: 0.8rem;
+    align-self: center;
+  }
+  .nav a {
+    color: black;
+    font-weight: 600;
+    font-size: 1rem;
   }
 }
