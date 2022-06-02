@@ -1,0 +1,79 @@
+.product {
+  width: 24%;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0px -1px 6px 2px #aaaaaa89;
+  border-bottom: 1.5px dashed #a8a7a7;
+  display: inline-block;
+  animation: 0.4s animate ease-in-out;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.product h3 {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0.4rem;
+  height: 4rem;
+}
+
+.product img {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.product p {
+  padding: 0.5rem;
+  background-color: #f0f0f0;
+  width: 100%;
+  margin: 0.5rem 0;
+  height: 5rem;
+  overflow: hidden;
+}
+.product p:hover {
+  overflow: auto;
+}
+
+.mrp-button {
+  height: 2.5rem;
+  display: flex;
+}
+
+.mrp-button h4 {
+  display: inline-block;
+  padding: 0.5rem;
+  width: 50%;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.mrp-button button {
+  width: 50%;
+  margin-bottom: 0.4rem;
+  color: #fff;
+  border: none;
+  padding: 0.3rem;
+  font-size: 1.1rem;
+  background-color: #d00255;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .product {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    box-shadow: 0px -1px 6px 2px #aaaaaa89;
+    border-bottom: 1.5px dashed #a8a7a7;
+    display: flex;
+    animation: 0.4s animate ease-in-out;
+    flex-direction: column;
+    margin: 0;
+  }
+}
