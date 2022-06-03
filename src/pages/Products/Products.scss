@@ -4,5 +4,25 @@
   display: flex;
   min-height: 100vh;
 
-  padding: 0 14rem;
+  padding: 0 2.5rem;
+
+  /* Mobile Landscape */
+  @media only screen and (min-width: 478px) {
+    padding: 0 3rem;
+  }
+
+  /* Desktop base */
+  @media only screen and (min-width: 992px) {
+    padding: 0 5rem;
+  }
+
+  /* Desktop Large */
+  @media only screen and (min-width: 1200px) {
+    padding: 0 12rem;
+  }
+
+  /* Desktop Large */
+  @media only screen and (min-width: 1440px) {
+    padding: 0 14rem;
+  }
 }

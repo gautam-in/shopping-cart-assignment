@@ -17,22 +17,22 @@ html {
   font-family: "Dosis", sans-serif;
   box-sizing: border-box;
 
-  /* Mobile portrait */
+  /* Mobile Landscape */
   @media only screen and (min-width: 478px) {
-    font-size: 37.5%; // 1rem = 7px
-  }
-
-  /* Mobile landscape */
-  @media only screen and (min-width: 768px) {
     font-size: 50%; // 1rem = 8px
   }
 
   /* Tablet */
-  @media only screen and (min-width: 992px) {
-    font-size: 56.25%; // 1rem = 9px
+  @media only screen and (min-width: 768px) {
+    font-size: 50%; // 1rem = 8px
   }
 
   /* Desktop Base */
+  @media only screen and (min-width: 992px) {
+    font-size: 56.25%;
+  }
+
+  /* Desktop Large */
   @media only screen and (min-width: 1200px) {
     font-size: 62.5%; // 1rem = 10px
   }
