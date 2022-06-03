@@ -9,9 +9,19 @@
   display: flex;
   box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
 
-  width: 70%;
+  width: 100%;
   margin: 4rem auto;
   padding: 2rem;
+
+  /* Mobile Landscape */
+  @media only screen and (min-width: 478px) {
+    width: 80%;
+  }
+
+  /* Tablet */
+  @media only screen and (min-width: 768px) {
+    width: 70%;
+  }
 
   &__image {
     width: 50%;
