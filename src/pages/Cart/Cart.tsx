@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import type { CartProps, Product } from "../../types/customTypes";
 import { CartItem } from "../../components/CartItem/CartItem";
 import { GrFormNext } from "react-icons/gr";
@@ -7,13 +7,15 @@ import "./Cart.scss";
 
 export const Cart = ({ cartState, cartDispatch }: CartProps) => {
 
+  const [totalCartValue, setTotalCartValue] = useState(0);
+
   const getCartItem = (product: Product) => {
     return <CartItem key={product.id} product={product} cartDispatch={cartDispatch}/>
   }
 
-  const getTotalCartValue = () => {
-    return cartState.reduce((accumulator, product) => accumulator + product.price, 0);
-  }
+  useEffect(() => {
+    setTotalCartValue(cartState.reduce((accumulator, product) => product.qty ? accumulator + product.price * product.qty : accumulator + product.price, 0));
+  }, [cartState])
 
   return (
     <div className="cart">
@@ -38,7 +40,7 @@ export const Cart = ({ cartState, cartDispatch }: CartProps) => {
           <p>Promo code can be applied on payment page</p>
             <button>
             <span>Proceed to checkout</span>
-            <span>Rs { getTotalCartValue() }</span>
+            <span>Rs { totalCartValue }</span>
             <GrFormNext className="proceed-icon"/>
             </button>
         </div>

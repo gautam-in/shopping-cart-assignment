@@ -22,6 +22,7 @@ export type Product = {
     description: string;
     price: number;
     stock: number;
+    qty?: number;
     category: string;
     sku: string;
     id: string;
@@ -53,3 +54,4 @@ export type CartItemProps = {
 export type CartAction =
  | { type: 'add-item', data: Product }
  | { type: 'remove-item', data: Product }
+ | { type: 'update-item-qty', data: Product }
