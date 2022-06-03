@@ -37,8 +37,8 @@ export const CartItem = ({ product, cartDispatch }: CartItemProps) => {
       </div>  
         
       <div className="cart-item__controls">
-        <button onClick={addItem}> <AiOutlinePlus /> </button>
-        <div className="cart-item__quantity"> {itemQuantity} </div>
+        <button onClick={addItem} aria-label="increase item quantity in cart"> <AiOutlinePlus /> </button>
+        <div className="cart-item__quantity" aria-label="decrease item quantity in cart"> {itemQuantity} </div>
         <button onClick={removeItem}> <AiOutlineMinus /> </button>
         <span> X &nbsp; Rs. {product.price}</span>
       </div>
