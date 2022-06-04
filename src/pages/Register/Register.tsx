@@ -13,8 +13,8 @@ export const Register = () => {
           <form onSubmit={(e) => e.preventDefault()}>
             <input name="firstname" id="firstname" type="text" placeholder="Firstname" autoFocus={true} />
             <input name="lastname" id="lastname" type="text" placeholder="Lastname" />
-            <input name="email" id="email" type="text" placeholder="Email" />
-            <input name="password" id="password" type="text" placeholder="Password" />
+            <input name="email" id="email" type="email" placeholder="Email" />
+            <input name="password" id="password" type="password" placeholder="Password" />
             <input name="confirm-password" id="confirm-password" type="password" placeholder="Confirm Password" />
             <button>Register</button>
           </form>

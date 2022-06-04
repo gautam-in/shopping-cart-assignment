@@ -4,17 +4,14 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-
-  width: 75rem;
+  align-items: baseline;
   margin: 7rem auto 0 auto;
-  padding: 8rem;
+  padding: 4rem 8rem;
   min-height: calc(100vh - 7rem);
 
   @media only screen and (min-width: 768px) {
     flex-flow: row nowrap;
-    align-items: flex-start;
     justify-content: space-between;
-    width: 100%;
   }
 
   &__header {

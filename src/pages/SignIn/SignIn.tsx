@@ -12,7 +12,7 @@ export const SignIn = () => {
       <div className="signin__form">
           <form onSubmit={(e) => e.preventDefault()}>
             <input name="email" id="email" type="text" placeholder="Email" autoFocus={true} />
-            <input name="password" id="password" type="text" placeholder="Password" />
+            <input name="password" id="password" type="password" placeholder="Password" />
             <button>Sign In</button>
           </form>
       </div>
