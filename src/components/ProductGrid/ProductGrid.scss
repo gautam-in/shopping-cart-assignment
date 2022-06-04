@@ -6,12 +6,15 @@
   grid-auto-rows: max-content;
   grid-gap: 1.5rem;
 
-  margin: 7rem auto 0 auto;
+  margin: 0 auto;
   padding: 2rem;
-  width: 80%;
+  width: 100%;
 
   font-size: 1.5rem;
 
+  @media only screen and (min-width: 478px) {
+    margin: 7rem auto 0 auto;
+  }
   /* Mobile Landscape */
   @media only screen and (min-width: 600px) {
     grid-template-columns: repeat(2, 1fr);
@@ -20,6 +23,7 @@
   /* Tablets */
   @media only screen and (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
+    width: 80%;
   }
 
   /* Desktop Base */
