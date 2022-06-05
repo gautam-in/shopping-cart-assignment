@@ -3,9 +3,10 @@
 .nav--mobile {
   height: 100%;
   transition: all 0.2s;
+
   &:hover {
     cursor: pointer;
-    background-color: $primary-color;
+    background-color: $primary-color !important;
   }
 
   &:hover .cart-icon--mobile {
@@ -39,6 +40,11 @@
     font-weight: 600;
     text-align: center;
     text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+      color: $primary-color;
+    }
   }
 }
 

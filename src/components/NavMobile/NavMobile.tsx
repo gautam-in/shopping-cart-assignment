@@ -10,6 +10,9 @@ export const NavMobile = ({ size }: CartSize) => {
 
   const navMenu = isMobileNavOpen ? "nav--mobile__links show-mobile-nav-menu" : "nav--mobile__links hide-mobile-nav-menu";
 
+  const iconStyleOpen = {backgroundColor: "#f2f3f4"}
+  const iconStyleClose = {backgroundColor: "#fff"}
+
   const handleMobileNav = () => {
     setIsMobileNavOpen(!isMobileNavOpen);
   }
@@ -20,7 +23,7 @@ export const NavMobile = ({ size }: CartSize) => {
 
   return (
     <>
-      <nav className="nav--mobile" onClick={handleMobileNav}>
+      <nav className="nav--mobile" onClick={handleMobileNav} style={isMobileNavOpen ? iconStyleOpen : iconStyleClose}>
         <HiShoppingCart className="cart-icon--mobile"/>
       </nav>
 
