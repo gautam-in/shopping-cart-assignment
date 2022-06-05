@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout";
 import { ProductGrid } from "./components/ProductGrid/ProductGrid";
 import { Home } from "./pages/Home/Home";
@@ -9,6 +9,7 @@ import { SignIn } from "./pages/SignIn/SignIn";
 import { PageNotFound } from "./pages/PageNotFound/PageNotFound";
 import { Cart } from "./pages/Cart/Cart";
 import { cartReducer } from "./utils/cartReducer";
+import { useViewport } from "./hooks/useViewport";
 import type { Product } from "./types/customTypes";
 
 const initialCartState: Product[] = [] ;
@@ -16,10 +17,8 @@ const initialCartState: Product[] = [] ;
 export const App = () => {
 
   const [cartState, cartDispatch] = useReducer(cartReducer, initialCartState);
-  console.log("Cart State: ", cartState);
 
     return (
-      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout size={cartState.length}/>}>
             <Route index element={<Home />}/>  
@@ -33,6 +32,5 @@ export const App = () => {
           </Route>
           <Route path="*" element={<PageNotFound />}/>   
         </Routes>
-    </BrowserRouter>
-    )
+      )
 }
