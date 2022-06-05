@@ -1,0 +1,36 @@
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import type { CartSize } from "../../types/customTypes";
+import { HiShoppingCart } from "react-icons/hi";
+import "./NavMobile.scss";
+
+export const NavMobile = ({ size }: CartSize) => {
+
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+
+  const navMenu = isMobileNavOpen ? "nav--mobile__links show-mobile-nav-menu" : "nav--mobile__links hide-mobile-nav-menu";
+
+  const handleMobileNav = () => {
+    setIsMobileNavOpen(!isMobileNavOpen);
+  }
+
+  const handleClick = () => {
+    setIsMobileNavOpen(false);  
+  }
+
+  return (
+    <>
+      <nav className="nav--mobile" onClick={handleMobileNav}>
+        <HiShoppingCart className="cart-icon--mobile"/>
+      </nav>
+
+      <main className={navMenu} onClick={handleClick}>
+        <NavLink to="/" className={ ({ isActive }) => isActive ? "activeLink" : "inactiveLink" }>Home</NavLink>
+        <NavLink to="/products/all" className={ ({ isActive }) => isActive ? "activeLink" : "inactiveLink" }>Products</NavLink>
+        <NavLink to="/signin" className={ ({ isActive }) => isActive ? "activeLink" : "inactiveLink" }>Sign In</NavLink>
+        <NavLink to="/register" className={ ({ isActive }) => isActive ? "activeLink" : "inactiveLink" }>Register</NavLink>
+        <NavLink to="/cart" className={ ({ isActive }) => isActive ? "activeLink" : "inactiveLink" }>Cart {size > 0 ? `(${size} items)` : null}</NavLink>
+      </main>
+    </>
+  )
+}

@@ -1,0 +1,53 @@
+@import "../../../public/index.scss";
+
+.nav--mobile {
+  height: 100%;
+  transition: all 0.2s;
+  &:hover {
+    cursor: pointer;
+    background-color: $primary-color;
+  }
+
+  &:hover .cart-icon--mobile {
+    color: #fff;
+  }
+
+  .cart-icon--mobile {
+    margin-top: 0.9em;
+    font-size: 1.5em;
+    color: $primary-color;
+
+    width: 3em;
+    height: 1.2em;
+    padding: 0.05rem;
+  }
+}
+
+.nav--mobile__links {
+  position: absolute;
+  top: 7rem;
+  left: 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  background-color: #f2f3f4;
+
+  & > a {
+    padding: 1.5rem 0;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+  }
+}
+
+.show-mobile-nav-menu {
+  transition: all 0.5s;
+  transform: translateY(0%);
+}
+
+.hide-mobile-nav-menu {
+  transition: all 0.5s;
+  transform: translateY(calc(-100% - 7rem));
+}

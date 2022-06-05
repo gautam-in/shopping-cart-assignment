@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BiChevronDown } from "react-icons/bi";
+import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 import type { Category } from "../../types/customTypes";
 import categories from "../../server/categories/index.get.json";
@@ -25,7 +25,7 @@ export const ProductMenuMobile = () => {
     <div className="product-menu-mobile">
       <header className="product-menu-mobile__head" onClick={handleProductMenu}>
         <span>{selectedCategoryName}</span>
-        <span><BiChevronDown className="down-arrow-icon"/></span>
+        <span>{menuIsOpen ? <BiChevronUp className="arrow-icon"/> : <BiChevronDown className="arrow-icon"/>}</span>
       </header>
 
       <main className={menuCategories}>

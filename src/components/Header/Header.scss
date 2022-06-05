@@ -5,6 +5,7 @@
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   height: 7rem;
   padding: 0 2rem;
@@ -29,93 +30,13 @@
     padding: 1.5rem;
 
     & img {
-      width: 60%;
+      width: 40%;
       min-width: 10rem;
-    }
-  }
 
-  // Nav
-  &__nav {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-    & > div {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      padding: 0 2rem;
-      width: 100%;
-
+      // Mobile landscape and above
       @media only screen and (min-width: 478px) {
-        width: 100%;
-        padding: 0 2.5rem;
+        width: 60%;
       }
-
-      @media only screen and (min-width: 768px) {
-        width: 100%;
-        padding: 0 4rem;
-      }
-    }
-
-    // Nav Left and Right
-    .nav--left,
-    .nav--right {
-      font-weight: 600;
-
-      & > a {
-        transition: all 0.2s;
-
-        text-decoration: none;
-
-        &:hover {
-          cursor: pointer;
-          color: $primary-color;
-        }
-      }
-    }
-
-    // Cart
-    .nav--cart > a {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      text-decoration: none;
-      height: 7rem;
-      transition: all 0.2s;
-
-      padding: 0 2rem;
-
-      &:hover {
-        cursor: pointer;
-        background-color: $primary-color;
-        color: #fff;
-      }
-    }
-
-    .cart-image {
-      margin: 0.4rem 1rem 0 0;
-      font-size: 1.5em;
     }
   }
-}
-
-// Link Styles
-.activeLink {
-  color: $primary-color;
-}
-
-.inactiveLink {
-  color: lighten(grey, 5%);
-}
-
-.active-cart {
-  color: #fff;
-  background-color: $primary-color;
-}
-
-.inactive-cart {
-  background-color: #fff;
-  color: lighten(grey, 5%);
 }
