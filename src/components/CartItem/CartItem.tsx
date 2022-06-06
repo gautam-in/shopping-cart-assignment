@@ -7,7 +7,6 @@ export const CartItem = ({ product, cartDispatch }: CartItemProps) => {
   
   const [itemQuantity, setItemQuantity] = useState(1);
 
-  console.log("Product: ", product);
   const addItem = () => {
     setItemQuantity(prevState =>  prevState + 1);
     cartDispatch({ type: "update-item-qty", data: product});

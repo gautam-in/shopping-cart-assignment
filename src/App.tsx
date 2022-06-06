@@ -9,7 +9,6 @@ import { SignIn } from "./pages/SignIn/SignIn";
 import { PageNotFound } from "./pages/PageNotFound/PageNotFound";
 import { Cart } from "./pages/Cart/Cart";
 import { cartReducer } from "./utils/cartReducer";
-import { useViewport } from "./hooks/useViewport";
 import type { Product } from "./types/customTypes";
 
 const initialCartState: Product[] = [] ;

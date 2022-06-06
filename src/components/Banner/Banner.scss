@@ -4,12 +4,28 @@
   box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
 
   width: 100%;
-
+  // min-height: 24rem;
   margin: 12rem auto 4rem auto;
-  padding: 2rem;
+  // padding: 2rem;
+
+  position: relative;
+  // border: 1px solid aqua;
 
   & > img {
     width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    &:first-child {
+      opacity: 0;
+    }
+
+    &:not(:first-child) {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
   }
 
   /* Mobile Landscape */
@@ -21,4 +37,47 @@
   @media only screen and (min-width: 768px) {
     width: 70%;
   }
+}
+
+// Dots
+.dots {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20%;
+
+  display: flex;
+  justify-content: space-between;
+
+  & > span {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+
+    &:hover {
+      cursor: pointer;
+      background-color: lighten(grey, 10%);
+    }
+  }
+}
+
+.banner-active {
+  transition: all 0.5s;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.banner-inactive {
+  transition: all 0.5s;
+  transform: scale(0.2);
+  opacity: 0;
+}
+
+.dots--active {
+  background-color: darken(#ddd9d9, 20%);
+}
+
+.dots--inactive {
+  background-color: #ddd9d9;
 }
