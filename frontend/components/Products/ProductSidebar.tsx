@@ -1,14 +1,21 @@
 import React from 'react'
 import {Category} from '../../typings'
-
+import {categoryContext} from '../../pages/products'
 interface Props {
   data: Category[]
 }
 
 const ProductSidebar = ({data}: Props) => {
-  console.log(data)
+  const {selectedCategory, setSelectedCategory} =
+    React.useContext(categoryContext)
+
+  const handleCategoryFilter = (id: string) => {
+    if (selectedCategory === id) setSelectedCategory('ALL')
+    else setSelectedCategory(id)
+  }
+
   return (
-    <aside className="bg-[#EAEAEA] sticky h-screen md:min-w-[22%] w-0 md:top-[92px] lg:top-[100px] -z-1 hidden md:block">
+    <aside className="bg-[#EAEAEA] sticky h-screen md:min-w-[22%] w-0 md:top-[92px] lg:top-[100px] hidden md:block">
       <div className="flex flex-col divide-y px-2 divide-gray-300 mt-8">
         {data
           .sort(function (a: {order: number}, b: {order: number}) {
@@ -19,7 +26,8 @@ const ProductSidebar = ({data}: Props) => {
             return (
               <a
                 key={category.id}
-                className="text-gray-500 text-normal py-3 px-6"
+                className="text-gray-500 text-normal py-3 px-6 cursor-pointer"
+                onClick={() => handleCategoryFilter(category.id)}
               >
                 {category.name}
               </a>

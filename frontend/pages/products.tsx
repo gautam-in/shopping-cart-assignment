@@ -9,7 +9,10 @@ async function fetchCategories() {
   return response.json()
 }
 
+export const categoryContext = React.createContext(null)
+
 const products = () => {
+  const [selectedCategory, setSelectedCategory] = React.useState('ALL')
   const {isLoading, isError, data, error} = useQuery(
     'categories',
     fetchCategories,
@@ -19,8 +22,12 @@ const products = () => {
   return (
     <Layout>
       <div className="flex -mt-4">
-        <ProductSidebar data={data} />
-        <ProductList />
+        <categoryContext.Provider
+          value={{selectedCategory, setSelectedCategory, categoryList: data}}
+        >
+          <ProductSidebar data={data} />
+          <ProductList />
+        </categoryContext.Provider>
       </div>
     </Layout>
   )
