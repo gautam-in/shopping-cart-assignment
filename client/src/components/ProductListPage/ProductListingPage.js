@@ -137,7 +137,7 @@ const ProductListingPage = () => {
             </Hidden>
 
             <main className={classes.content}>
-                <Grid container spacing={2}>
+                <Grid container spacing={2} data-testid="plp-main">
                     {
                         productsData.map((items) => {
                             if (items.category === categoryId) {
