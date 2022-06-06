@@ -1,0 +1,101 @@
+@import "../../scss/variables.scss";
+@import "../../scss/mixins.scss";
+
+.home-category-container {
+  width: 80%;
+  .home-category-list {
+    list-style: none;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    .home-category-list-item {
+      width: 100%;
+      position: relative;
+      box-sizing: border-box;
+      padding: 12px 12px;
+      @include flex-container("", space-between, center, "");
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 90%;
+        left: 5%;
+        height: 10px;
+        z-index: -2;
+        background: radial-gradient(
+          at 50% -8px,
+          rgba(0, 0, 0, 0.3),
+          transparent 70%
+        );
+      }
+      &:last-child::after {
+        background: none;
+      }
+      img {
+        height: 150px;
+        width: 250px;
+      }
+      div {
+        flex: 1;
+        @include flex-container(column, center, center, "");
+        .home-category-list-item-name {
+          font-size: 16px;
+          font-weight: 600;
+          color: $black;
+          margin-bottom: 8px;
+        }
+        .home-category-list-item-desc {
+          font-size: 14px;
+          margin-bottom: 8px;
+          color: $black;
+        }
+        .home-category-list-item-link {
+          background: $primary-color;
+          margin-bottom: 8px;
+          padding: 8px;
+          a {
+            color: $white;
+            font-size: 14px;
+            text-decoration: none;
+            font-weight: 600;
+          }
+        }
+      }
+      &:nth-child(even) {
+        img {
+          order: 2;
+        }
+      }
+      &:last-child {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .home-category-container {
+    width: 100%;
+    .home-category-list {
+      .home-category-list-item {
+        img {
+          height: 112.5px;
+          width: 180px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .home-category-container {
+    .home-category-list {
+      .home-category-list-item {
+        img {
+          height: 87.5px;
+          width: 140px;
+        }
+      }
+    }
+  }
+}

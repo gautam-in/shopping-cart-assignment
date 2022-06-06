@@ -1,0 +1,134 @@
+@import "../../scss/variables.scss";
+@import "../../scss/mixins.scss";
+
+.cart-main-container {
+  flex: 1;
+  width: 100%;
+  background: $secondary-color;
+  @include flex-container(column, flex-start, center, "");
+  .cart-page-header {
+    padding: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    background: $white;
+    width: 80%;
+    text-align: start;
+    h3 {
+      margin: 0px;
+      span {
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+  }
+  ul {
+    width: 80%;
+    flex: 1;
+    list-style: none;
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px;
+    li {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 6px;
+      background-color: $white;
+      margin-bottom: 10px;
+      @include flex-container("", space-between, "", wrap);
+      &:first-child {
+        margin-top: 10px;
+      }
+      img {
+        height: 150px;
+        width: 150px;
+      }
+      .cart-sub-container {
+        flex: 1;
+        padding: 20px;
+        @include flex-container(column, space-between, flex-start, "");
+        span:last-child {
+          align-self: flex-end;
+        }
+      }
+
+      .card-button-container2 {
+        @include flex-container("", center, center, "");
+        font-weight: 600;
+        font-size: 14px;
+        box-sizing: border-box;
+        button {
+          border-radius: 4px;
+          padding: 4px 8px;
+          border: none;
+          box-sizing: border-box;
+          align-content: center;
+          background: $primary-color;
+          color: $white;
+          font-size: 14px;
+          font-weight: 600;
+          margin: 0px;
+        }
+        span {
+          padding: 6px;
+          width: 17px;
+          &:last-child {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+  .lowest-price-container {
+    @include flex-container("", "", center, "");
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    img {
+      height: auto;
+      width: auto;
+      margin-right: 20px;
+    }
+  }
+  .payment-button-container {
+    width: 80%;
+    box-sizing: border-box;
+    padding: 20px;
+    background: $white;
+    text-align: center;
+    @include flex-container(column, center, flex-start, wrap);
+    span {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .payment-button {
+      width: 100%;
+      @include flex-container("", center, center, "");
+      background: $primary-color;
+      padding: 12px;
+      border: none;
+      color: $white;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: end;
+      span {
+        flex: 1;
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .cart-main-container {
+    .cart-page-header {
+      width: 100%;
+    }
+
+    ul {
+      width: 100%;
+    }
+    .payment-button-container {
+      width: 100%;
+    }
+  }
+}

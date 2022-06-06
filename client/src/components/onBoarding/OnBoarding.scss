@@ -1,0 +1,95 @@
+@import "../../scss/mixins.scss";
+@import "../../scss/variables.scss";
+
+.login-screen-container {
+  width: 100%;
+  padding: 40px 10%;
+  box-sizing: border-box;
+  @include flex-container("", space-around, "", "");
+}
+
+.login-screen-title-container {
+  width: 46%;
+  box-sizing: border-box;
+  padding-top: 10px;
+  max-width: 450px;
+  @include flex-container(column, "", flex-start, "");
+  span {
+    text-align: left;
+  }
+}
+
+.login-form-container {
+  width: 46%;
+  max-width: 450px;
+  @include flex-container(column, "", flex-start, "");
+  span {
+    width: 100%;
+    color: $white;
+    font-size: 12px;
+    background: $primary-color;
+    padding: 4px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+  }
+}
+
+.login-form {
+  width: 100%;
+
+  @include flex-container(column, "", flex-start, "");
+
+  input {
+    width: 100%;
+    font-size: 14px;
+    &:last-child {
+      border: none;
+      background: $primary-color;
+      color: $white;
+      padding: 4px;
+    }
+  }
+}
+
+.form-group {
+  width: 100%;
+  @include flex-container(column-reverse, "", flex-start, "");
+
+  margin-bottom: 15px;
+
+  label {
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  input {
+    border: none;
+    border-bottom: 1px solid #656765;
+    width: 100%;
+    padding: 3px 0px;
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+      border-color: rgba(0, 200, 255, 0.942);
+
+      + label {
+        color: rgba(0, 200, 255, 0.942);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .login-screen-container {
+    @include flex-container(column, flex-start, center, "");
+    .login-screen-title-container {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .login-form-container {
+      width: 100%;
+    }
+  }
+}

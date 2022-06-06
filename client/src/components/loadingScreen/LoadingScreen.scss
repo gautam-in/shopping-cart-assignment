@@ -1,0 +1,11 @@
+@import '../../scss/mixins.scss';
+
+.model-container {
+    position: fixed;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+    background: #ffffffa3;
+    @include flex-container('', center, center, '');
+   transform: translateY(-110px);
+}
