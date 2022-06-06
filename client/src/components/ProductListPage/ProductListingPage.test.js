@@ -6,6 +6,7 @@ import { setupServer } from 'msw/node'
 // so we can import fireEvent and screen here as well
 import { render, fireEvent, screen } from '../test-utils'
 import ProductListingPage from './ProductListingPage';
+import { BrowserRouter } from 'react-router-dom';
 
 
 // We use msw to intercept the network request during the test,
@@ -116,7 +117,7 @@ afterAll(() => server.close())
 
 test('fetches & receives a user after clicking the fetch user button', async () => {
   jest.useFakeTimers();
- const {getByTestId}= render(<ProductListingPage />)
+ const {getByTestId}= render(<BrowserRouter><ProductListingPage /></BrowserRouter>)
  jest.runAllTimers();
  const afterTimer = getByTestId('plp-main');
 // expect(afterTimer.textContent).toEqual("Buy Now");

@@ -3,6 +3,7 @@ import "@testing-library/jest-dom/extend-expect"
 import { fireEvent, render, cleanup } from "@testing-library/react"
 import * as React from "react";
 // for store wrapping needed
+import { BrowserRouter } from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from '../Reducers/index';
@@ -23,7 +24,9 @@ describe("account delete form", () => {
         const setup = () => {
             const utils = render(
                 <Provider store={store}>
-                    <SignUp history={history} />
+                    <BrowserRouter>
+                        <SignUp history={history} />
+                    </BrowserRouter>
                 </Provider>
             );
             const input1 = utils.getByTestId('firstname');
@@ -40,7 +43,7 @@ describe("account delete form", () => {
                 ...utils,
             }
         }
-        const { input1, input2,input3,input4,input5, getByTestId } = setup();
+        const { input1, input2, input3, input4, input5, getByTestId } = setup();
         fireEvent.change(input1, { target: { value: 'adarsh' } });
         expect(input1.value).toBe('adarsh');
         fireEvent.change(input2, { target: { value: 'kumar' } });
@@ -56,13 +59,13 @@ describe("account delete form", () => {
         showText = "Confirm password should match password";
         expect(showText).toBe('Confirm password should match password');
 
-          // check button clicked
-          let arr = [{
+        // check button clicked
+        let arr = [{
             id: 'email',
             label: 'Email',
             error: false,
             regex: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
-            value:"abhijeet@gmail.com"
+            value: "abhijeet@gmail.com"
             // helperText: "please enter valid email"
         }]
         fireEvent.click(getByTestId('signup-submit'), arr.push({
@@ -71,7 +74,7 @@ describe("account delete form", () => {
             error: false,
             regex: /[0-9a-zA-Z]{6,}/,
             helperText: "please enter valid password",
-            value:"abhije"
+            value: "abhije"
         }));
         expect(arr.length).toBe(2);
         expect(history.push()).toBe('/login');

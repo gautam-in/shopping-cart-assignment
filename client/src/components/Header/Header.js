@@ -7,10 +7,11 @@ import LogoPng from '../../images/logo.png';
 import CartImage from '../../images/cart.svg';
 import './Header.css';
 import { Grid } from "@material-ui/core";
-import { Link } from 'react-router-dom';
+import { Link,withRouter} from 'react-router-dom';
 import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
-import Cart from '../Cart/Cart'
+import Cart from '../Cart/Cart';
+import useAuth from '../Hooks/Auth';
 const useStyles = makeStyles((theme) => ({
     middleSec: {
         [theme.breakpoints.down('xs')]: {
@@ -18,14 +19,19 @@ const useStyles = makeStyles((theme) => ({
         }
     }
 }));
-const Header = () => {
+const Header = (props) => {
     const classes = useStyles();
+    const { isLoggedIn,clearStorage } = useAuth();
     const countOfItems = useSelector((state) => {
         return state.CartReducer.countOfItems
     });
     const dispatch = useDispatch();
     const clickToOpenCart = () => {
         dispatch({ type: 'OPEN_MODAL_FOR_CART' })
+    }
+    const handleLogout = ()=>{
+        clearStorage();
+        props.history.push('/login');
     }
     return (
         <React.Fragment>
@@ -45,6 +51,8 @@ const Header = () => {
                             <div className="lastTextFirstChild">
                                 <Link to="/login" style={{ textDecoration: 'none' }} data-testid="header-signIn">Sign In</Link>
                                 <Link to="/signUp" style={{ marginLeft: '10px', textDecoration: 'none' }} data-testid="header-register">Register</Link>
+                                {isLoggedIn?<span style={{ marginLeft: '10px', textDecoration: 'none',color:'#3f51b5',cursor:'pointer' }} data-testid="header-logout" onClick={handleLogout}>Logout</span>:null}
+                                
                             </div>
                             <div className="cartMain">
                                 <div className="cartMainFirstChild">
@@ -57,11 +65,11 @@ const Header = () => {
                         </Grid>
 
                     </Grid>
-                    <Cart />
+                    {/* <Cart /> */}
 
                 </Toolbar>
             </AppBar>
         </React.Fragment>
     )
 }
-export default Header;
+export default withRouter(Header);

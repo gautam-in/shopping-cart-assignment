@@ -8,17 +8,19 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import ProductListingPage from './components/ProductListPage/ProductListingPage';
 import Cart from './components/Cart/Cart';
+import PrivateRoute from './components/Route/PrivateRoutes';
+import PublicRoute from './components/Route/PublicRoutes';
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Header/>
-      {/* <Cart/> */}
+      {/* <Header/> */}
+      <Cart/>
         <Switch>
-        <Route exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/signUp" component={SignUp} />
-          <Route path="/productListPage" component={ProductListingPage} />
+        <PrivateRoute exact path="/" component={Home} />
+          <PublicRoute path="/login" component={Login} />
+          <PublicRoute path="/signUp" component={SignUp} />
+          <PrivateRoute path="/productListPage" component={ProductListingPage} />
         </Switch>
         <Footer/>
       </BrowserRouter>

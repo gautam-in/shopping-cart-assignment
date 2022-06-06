@@ -3,6 +3,8 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Grid } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
+import useAuth from '../Hooks/Auth';
+import Header from '../Header/Header';
 import './Login.css';
 const data = [{
     id: 'email',
@@ -62,6 +64,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Login = (props) => {
     const [loginData, setLoginData] = useState(data);
+    const { setDataToStorage } = useAuth();
     const classes = useStyles();
     const handleChange = (index, event) => {
         setLoginData([...loginData.slice(0, index),
@@ -72,12 +75,18 @@ const Login = (props) => {
         ]);
     }
     const handleLogin = () => {
+        // let loginObject = {}
+        const loginObj = loginData.reduce((acc,curVal)=>{
+            return Object.assign(acc,{[curVal.id]:curVal.value})
+        },{})
+        setDataToStorage(loginObj);
         props.history.push('/');
     }
     const isLoginBtnDisabled = loginData.some((data) => data.error);
     const filedNotEmpty = loginData.some((data) => data.value === "");
     return (
         <React.Fragment>
+            <Header/>
             <Grid container spacing={8} className={classes.parentLoginContainer}>
                 <Grid item xs={12} md={6} sm={12}>
                     <div className={classes.leftAlign}>

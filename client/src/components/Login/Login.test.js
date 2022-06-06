@@ -3,6 +3,7 @@ import "@testing-library/jest-dom/extend-expect"
 import { fireEvent, render, cleanup } from "@testing-library/react"
 import * as React from "react";
 // for store wrapping needed
+import { BrowserRouter} from 'react-router-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducers from '../Reducers/index';
@@ -23,7 +24,10 @@ describe("account delete form", () => {
         const setup = () => {
             const utils = render(
                 <Provider store={store}>
-                    <Login history={history} />
+                        <BrowserRouter>
+                        <Login history={history} />
+                        </BrowserRouter>
+                   
                 </Provider>
             );
             const input1 = utils.getByTestId('email');

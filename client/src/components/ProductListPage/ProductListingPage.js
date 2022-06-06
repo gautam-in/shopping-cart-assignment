@@ -16,6 +16,7 @@ import Button from '@material-ui/core/Button';
 import { useDispatch,useSelector } from 'react-redux';
 import Hidden from '@material-ui/core/Hidden';
 import Notifier from '../Notifier/Notifier';
+import Header from '../Header/Header';
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -104,8 +105,9 @@ const ProductListingPage = () => {
     const snackbarClose = ()=>{
         dispatch({type:'CLOSE_SNACKBAR'})
     }
-    console.log("plp page",categoryId,countOfItems,productsData)
     return (
+        <React.Fragment>
+            <Header/>
         <div className={classes.root}>
             <Hidden smUp>
                 <div>
@@ -199,6 +201,7 @@ const ProductListingPage = () => {
 
             </main>
         </div>
+        </React.Fragment>
     );
 }
 export default ProductListingPage;
