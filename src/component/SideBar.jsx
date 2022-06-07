@@ -25,7 +25,9 @@ const SideBar = ({ toggleActiveCategoryCallback, activeCategory }) => {
   const handleClick = (e, category) => {
     e.preventDefault();
     toggleActiveCategoryCallback(category.id);
-    navigate(`/products/${category.id}`);
+    category.id === activeCategory
+      ? navigate("/products")
+      : navigate(`/products/${category.id}`);
   };
 
   return (
@@ -54,9 +56,7 @@ const SideBar = ({ toggleActiveCategoryCallback, activeCategory }) => {
         value={activeCategory}
         onChange={(event) => toggleActiveCategoryCallback(event.target.value)}
       >
-        <option key="" value="all">
-          Please select category
-        </option>
+        <option value="all">Please select category</option>
         {categoriesItems.map((category) => (
           <option key={category.key} value={category.id}>
             {category.name}
@@ -68,35 +68,3 @@ const SideBar = ({ toggleActiveCategoryCallback, activeCategory }) => {
 };
 
 export default SideBar;
-
-// import { useEffect, useState } from "react";
-// import axios from "axios";
-// import "../styles/sidebar.scss";
-// import Categories from "./Categories";
-
-// const SideBar = ({toggleActiveCategoryCallback, activeCategory}) => {
-//   const [categoriesItems, setCategoriesItem] = useState([]);
-
-//   const fetchCategories = async () => {
-//     await axios
-//       .get("http://localhost:8000/categories")
-//       .then((res) => setCategoriesItem(res.data))
-//       .catch((error) => console.log("Error occured", error.message));
-//   };
-
-//   useEffect(() => {
-//     fetchCategories();
-//   }, []);
-
-//   return (
-//     <div className="sidebar-card">
-//       {categoriesItems
-//         .filter((category) => category.enabled === true)
-//         .map((category) => (
-//           <Categories key={category.id} category={category} />
-//         ))}
-//     </div>
-//   );
-// };
-
-// export default SideBar;

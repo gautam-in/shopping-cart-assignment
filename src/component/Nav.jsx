@@ -14,6 +14,7 @@ import { setIsCartOpen } from "../store/slices/cart/cart.action";
 import { signOutUser } from "../utils/firebase.utils";
 import "../styles/nav.scss";
 import CartDropdown from "./CartDropdown";
+import { signOutStart } from "../store/slices/user/user.action";
 
 const Nav = () => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const Nav = () => {
   const isCartOpen = useSelector(selectIsCartOpen);
 
   const signOut = () => {
-    signOutUser();
+    dispatch(signOutStart());
   };
 
   const handleCartClick = () => {

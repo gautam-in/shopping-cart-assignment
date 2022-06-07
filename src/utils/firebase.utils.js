@@ -35,6 +35,7 @@ const createAuthUserWithEmailAndPassword = async (email, password) => {
 };
 
 const signInWithEmailAndPasswordFunction = async (email, password) => {
+  console.log("inisde  signInWithEmailAndPasswordFunction of firebaseUtils");
   console.log(email);
   console.log(password);
   if (!email || !password) return;
@@ -43,13 +44,26 @@ const signInWithEmailAndPasswordFunction = async (email, password) => {
 
 const signOutUser = async () => await signOut(auth);
 
-const onAuthStateChangedListner = (callback) =>
-  onAuthStateChanged(auth, callback);
+// const onAuthStateChangedListner = (callback) =>
+//   onAuthStateChanged(auth, callback);
 
+const getCurrentUser = () => {
+  console.log("INSIDE GET CURRENTUSER");
+  return new Promise((resove, reject) => {
+    const unsubcribe = onAuthStateChanged(
+      auth,
+      (userAuth) => {
+        unsubcribe();
+        resove(userAuth);
+      },
+      reject
+    );
+  });
+};
 export {
   auth,
   signOutUser,
   createAuthUserWithEmailAndPassword,
   signInWithEmailAndPasswordFunction,
-  onAuthStateChangedListner,
+  getCurrentUser,
 };

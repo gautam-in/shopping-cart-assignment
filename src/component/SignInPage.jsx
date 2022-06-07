@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { useDispatch } from "react-redux";
 import { signInWithEmailAndPasswordFunction } from "../utils/firebase.utils";
 import Button from "./Button";
 import FormInput from "./FormInput";
 import "../styles/sign-in.scss";
+import { signInwithEmail } from "../store/slices/user/user.action";
 
 const SignInPage = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const defaultFormFields = {
     email: "",
@@ -27,10 +29,11 @@ const SignInPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const user = await signInWithEmailAndPasswordFunction(email, password);
-      console.log(user);
+      dispatch(signInwithEmail(email, password));
+      // const user = await signInWithEmailAndPasswordFunction(email, password);
+      // console.log(user);
       setFormFields(defaultFormFields);
-      user && navigate("/");
+      // user && navigate("/");
     } catch (error) {
       console.log(error.code);
       switch (error.code) {

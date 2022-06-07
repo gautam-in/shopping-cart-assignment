@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { selectUser } from "../store/slices/user/user.selector";
 import Button from "./Button";
 import FormInput from "./FormInput";
-import { createAuthUserWithEmailAndPassword } from "../utils/firebase.utils";
 import "../styles/register.scss";
+import { signUpwithEmail } from "../store/slices/user/user.action";
 
 const RegisterPage = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const user = useSelector(selectUser);
 
   const defaultFormFields = {
     firstName: "",
@@ -26,7 +30,8 @@ const RegisterPage = () => {
       return;
     }
     try {
-      const user = await createAuthUserWithEmailAndPassword(email, password);
+      dispatch(signUpwithEmail(email, password));
+      // const user = await createAuthUserWithEmailAndPassword(email, password);
       user && navigate("/");
       setFormFields(defaultFormFields);
     } catch (error) {

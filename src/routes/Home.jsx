@@ -1,28 +1,26 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Carousel from "../component/Carousel";
 import BannerCards from "../component/BannerCards";
 import "../styles/home.scss";
+import { fetchCaregoriesStart } from "../store/slices/categories/categories.action";
+import { selectCategories } from "../store/slices/categories/categories.selector";
 
 const Banner = () => {
-  const [categoryList, setCategoryList] = useState([]);
-
-  const getCategoryList = async () => {
-    let newCategoryList = await axios.get("http://localhost:8000/categories");
-    setCategoryList(newCategoryList.data);
-  };
+  const dispatch = useDispatch();
+  const categoryList = useSelector(selectCategories);
 
   useEffect(() => {
-    getCategoryList();
-  }, []);
+    dispatch(fetchCaregoriesStart());
+  }, [dispatch]);
 
   return (
     <div className="home">
       <Carousel />
       <div>
         {categoryList
-          .filter((category) => category.enabled === true)
-          .map((category) => (
+          ?.filter((category) => category.enabled === true)
+          ?.map((category) => (
             <BannerCards key={category.id} category={category} />
           ))}
       </div>

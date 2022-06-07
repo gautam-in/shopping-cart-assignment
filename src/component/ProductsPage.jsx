@@ -1,45 +1,69 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import ProductList from "./ProductList";
 import { useParams } from "react-router-dom";
 import SideBar from "./SideBar";
+import { useNavigate } from "react-router-dom";
+import {
+  selectCategories,
+  isLoadingSelect,
+  selectActiveCategory,
+} from "../store/slices/categories/categories.selector";
 import "../styles/product-page.scss";
+import {
+  fetchCaregoriesStart,
+  setActiveCategory,
+} from "../store/slices/categories/categories.action";
+import Spinner from "./spinner/spinner";
 
 const ProductsPage = () => {
-  const { categoryId } = useParams();
-  const [activeCategory, setActiveCategory] = useState("all");
-  const [categories, setCategories] = useState([]);
+  const navigate = useNavigate();
+  const categories = useSelector(selectCategories);
+  const isLoading = useSelector(isLoadingSelect);
+  const activeCategory = useSelector(selectActiveCategory);
+  const dispatch = useDispatch();
 
-  const fetchCategories = async () => {
-    const categoryList = await axios.get("http://localhost:8000/categories");
-    setCategories(categoryList.data);
-  };
+  const { categoryId } = useParams();
 
   useEffect(() => {
-    fetchCategories();
+    dispatch(fetchCaregoriesStart());
   }, []);
 
   useEffect(() => {
-    if (categoryId && categories.length) {
+    if (categoryId && categories?.length) {
       const activeCategory = categories.find(
         (category) => category.id === categoryId
       );
-      setActiveCategory(activeCategory.id);
+      dispatch(setActiveCategory(activeCategory.id));
     }
   }, [categories, categoryId]);
 
   const toggleActiveCategory = (categoryId) => {
-    setActiveCategory(activeCategory === categoryId ? "all" : categoryId);
+    dispatch(
+      setActiveCategory(activeCategory === categoryId ? "all" : categoryId)
+    );
   };
 
   return (
     <div className="productpage-container">
-      <SideBar
-        toggleActiveCategoryCallback={toggleActiveCategory}
-        activeCategory={activeCategory}
-      />
-      <ProductList key={categories.id} activeCategory={activeCategory} />
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          <SideBar
+            toggleActiveCategoryCallback={toggleActiveCategory}
+            activeCategory={activeCategory}
+          />
+          <ProductList activeCategory={activeCategory} />
+        </>
+      )}
     </div>
   );
 };
 export default ProductsPage;
+
+// <SideBar
+//         toggleActiveCategoryCallback={toggleActiveCategory}
+//         activeCategory={activeCategory}
+//       />
+//       <ProductList key={categories.id} activeCategory={activeCategory} />
