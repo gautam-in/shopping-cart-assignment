@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
+import { updateAuthStatus } from "../../redux/Auth/AuthActions";
 
 function LoginScreen() {
-  const { setAuth, auth } = useState(false);
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth.isAuthenticated);
   const history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -26,7 +29,7 @@ function LoginScreen() {
     });
     const data = await response.json();
     if (data.status === "ok") {
-      setAuth(true);
+      dispatch(updateAuthStatus(true));
       localStorage.setItem("token", data.user);
       history.push("/");
     } else {

@@ -1,0 +1,1 @@
+export const UPDATE_AUTH_STATUS = "UPDATE_AUTH_STATUS";

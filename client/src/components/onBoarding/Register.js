@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
+import { updateAuthStatus } from "../../redux/Auth/AuthActions";
 
 function Register() {
-  const { setAuth, auth } = useState(false);
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth.isAuthenticated);
   const history = useHistory();
   const [fname, setFName] = useState();
   const [lname, setLName] = useState();
@@ -46,7 +49,7 @@ function Register() {
     });
     const data = await response.json();
     if (data.status === "ok") {
-      setAuth(true);
+      dispatch(updateAuthStatus(true));
       localStorage.setItem("token", data.user);
       history.push("/");
     } else {
@@ -83,7 +86,7 @@ function Register() {
             <input
               id="inputLname"
               type="text"
-              value={fname}
+              value={lname}
               onChange={(e) => {
                 setLName(e.target.value);
                 if (errorMessage) {
@@ -97,7 +100,7 @@ function Register() {
             <input
               id="inputEmail"
               type="email"
-              value={fname}
+              value={username}
               onChange={(e) => {
                 setUsername(e.target.value);
                 if (errorMessage) {

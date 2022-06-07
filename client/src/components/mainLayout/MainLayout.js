@@ -1,6 +1,7 @@
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
+import { updateAuthStatus } from "../../redux/Auth/AuthActions";
 import { updateCart } from "../../redux/cart/CartActions";
 import Error404 from "../errorScreens/404";
 import LoadingScreen from "../loadingScreen/LoadingScreen";
@@ -16,14 +17,13 @@ const LazyCart = lazy(() => import("../cart/cartPage"));
 
 function MainLayout() {
   const dispatch = useDispatch();
-  const [auth, setAuth] = useState(false);
-  const state = useSelector((state) => state);
+  const auth = useSelector((state) => state.auth.isAuthenticated);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     const cart = JSON.parse(localStorage.getItem("cart"));
     if (token && !auth) {
-      setAuth(true);
+      dispatch(updateAuthStatus(true));
     }
     if (cart) {
       dispatch(updateCart(cart));
