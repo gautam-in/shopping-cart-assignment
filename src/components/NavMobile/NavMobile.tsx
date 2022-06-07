@@ -34,6 +34,8 @@ export const NavMobile = ({ size }: CartSize) => {
         <NavLink to="/register" className={ ({ isActive }) => isActive ? "activeLink" : "inactiveLink" }>Register</NavLink>
         <NavLink to="/cart" className={ ({ isActive }) => isActive ? "activeLink" : "inactiveLink" }>Cart {size > 0 ? `(${size} items)` : null}</NavLink>
       </main>
+
+      {size > 0 && <span className="cart-size-indicator">{size}</span>}
     </>
   )
 }

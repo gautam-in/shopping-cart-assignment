@@ -7,10 +7,9 @@
   background-color: #f2f3f4;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
   &__header {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     font-weight: 600;
 
     margin: 3em 0 1.5em 0;
@@ -19,14 +18,59 @@
     background-color: #fff;
   }
 
+  &__body {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    min-height: 100vh;
+
+    &--empty {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+
+      margin: 0 auto;
+      min-height: 100%;
+      text-align: center;
+      width: max-content;
+
+      & > h1 {
+        font-size: 4rem;
+      }
+
+      & > p {
+        margin: 1.5rem 0;
+        font-size: 2.5rem;
+      }
+
+      & > a {
+        @include buttonHoverAndActive;
+        margin: 1em auto 0 auto;
+        padding: 1em 1.5em;
+        width: 100%;
+
+        font-size: 1.8rem;
+        text-decoration: none;
+
+        border-radius: 4px;
+        border: none;
+
+        background-color: $primary-color;
+        color: #fff;
+
+        box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
+        transition: all 0.2s;
+      }
+    }
+  }
+
   &__details {
     max-width: 100rem;
     min-width: 70rem;
     margin: 0 auto;
-
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-evenly;
   }
 
   &__lowest-price-banner {
@@ -68,9 +112,7 @@
         stroke: #fff;
       }
 
-      &:hover {
-        cursor: pointer;
-      }
+      @include buttonHoverAndActive;
     }
   }
 }

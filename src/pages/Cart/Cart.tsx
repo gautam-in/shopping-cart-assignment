@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import type { CartProps, Product } from "../../types/customTypes";
 import { CartItem } from "../../components/CartItem/CartItem";
 import { GrFormNext } from "react-icons/gr";
@@ -19,32 +20,38 @@ export const Cart = ({ cartState, cartDispatch }: CartProps) => {
 
   return (
     <div className="cart">
-      <div>
-      <header className="cart__header">{cartState.length > 0 ? `My Cart (${cartState.length} items)` : `My Cart`}</header>
-      <div className="cart__details">
-        {cartState.map((product) => {
-          return getCartItem(product);
-        })}
 
-        {cartState.length > 0 ? 
-          (
-            <div className="cart__lowest-price-banner">
-              <img src={lowestPriceBanner} alt="Lowest price guaranteed"/>
-            </div>
-          ) : null}
-      </div>
-      </div>
+        <header className="cart__header">{cartState.length > 0 ? `My Cart (${cartState.length} items)` : `My Cart`}</header>
 
-      {cartState.length > 0 ? (
-        <div className="cart__checkout">
-          <p>Promo code can be applied on payment page</p>
-            <button>
-            <span>Proceed to checkout</span>
-            <span>Rs { totalCartValue }</span>
-            <GrFormNext className="proceed-icon"/>
-            </button>
-        </div>
-      ) : null}
+        { cartState.length > 0 ? (
+                  <div className="cart__body">
+                    <div className="cart__details">
+                      {cartState.map((product) => {
+                        return getCartItem(product);
+                      })}
+          
+                      <div className="cart__lowest-price-banner">
+                        <img src={lowestPriceBanner} alt="Lowest price guaranteed"/>
+                      </div>
+                    </div>
+              
+
+                    <div className="cart__checkout">
+                      <p>Promo code can be applied on payment page</p>
+                      <button>
+                        <span>Proceed to checkout</span>
+                        <span>Rs { totalCartValue }</span>
+                        <GrFormNext className="proceed-icon"/>
+                        </button>
+                    </div>
+                    
+                  </div>
+        ) : (<div className="cart__body--empty">
+                <h1>No items in your cart</h1>
+                <p>Your favourite items are just a click away</p>
+                <Link to="/products/all">Start Shopping</Link>
+            </div>)}
+        
     </div>
   )
 }

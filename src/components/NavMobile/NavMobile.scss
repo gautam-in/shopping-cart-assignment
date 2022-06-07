@@ -1,16 +1,13 @@
 @import "../../../public/index.scss";
 
 .nav--mobile {
+  position: relative;
   height: 100%;
   transition: all 0.2s;
 
   &:hover {
     cursor: pointer;
-    background-color: $primary-color !important;
-  }
-
-  &:hover .cart-icon--mobile {
-    color: #fff;
+    background-color: #f2f3f4 !important;
   }
 
   .cart-icon--mobile {
@@ -56,4 +53,17 @@
 .hide-mobile-nav-menu {
   transition: all 0.5s;
   transform: translateY(calc(-100% - 7rem));
+}
+
+.cart-size-indicator {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: 1.3em;
+  height: 1.3em;
+  text-align: center;
+
+  background-color: $primary-color;
+  color: #fff;
+  border-radius: 100%;
 }
