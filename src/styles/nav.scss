@@ -1,0 +1,60 @@
+@import '../mixin.scss';
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1.8px 10px rgb(238, 235, 235);
+    
+   &-logo {
+        margin: 5px 45px;
+        width: 50%;
+        height: 100%;
+        object-fit: contain;
+   }
+
+    &-options {
+        margin-top: 10px;
+        display: flex;
+        width: 57%;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include for-phone-only {
+            width: 100%;
+        }
+
+       .nav-top {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .nav-link {
+            margin: 0 25px 0 30px;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .nav-bottom {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            .nav-cart{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(238, 235, 235);
+                padding: 12px;
+                .cart-icon {
+                    height: 25px;
+                    width: 50px;
+                }
+                svg {
+                    fill: #e71655;
+                }
+            }
+        }
+    }
+}

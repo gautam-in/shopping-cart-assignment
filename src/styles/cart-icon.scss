@@ -1,0 +1,12 @@
+.cart-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    padding: 12px;
+
+    .cart-icon {
+        height: 25px;
+        width: 50px;
+    }
+}

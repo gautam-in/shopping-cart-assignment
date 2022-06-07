@@ -1,0 +1,18 @@
+.sign-up-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    .sign-up-header{
+        margin-right: 50px;
+
+        .title{
+            margin-bottom: 20px;
+        }
+
+        span {
+            font-weight: 600;
+        }
+    }
+    }

@@ -1,0 +1,33 @@
+.button-container {
+  width: auto;
+  height: 50px;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 35px 0 35px;
+  font-size: 12px;
+  background-color: #e71655;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Open Sans Condensed';
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+
+
+  &.max {
+    width: 100%;
+  }
+
+  &.buy {
+    width: 60%;
+    min-width: 120px;
+  }
+
+  &.checkout {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+  }
+}
