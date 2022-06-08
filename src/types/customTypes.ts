@@ -37,13 +37,33 @@ export type ProductCardProps = {
     cartDispatch: React.Dispatch<CartAction>;
 }
 
-export type CartSize = {
-    size: number;
+export type HeaderProps = {
+    cartSize: number;
+    popupProps: PopupProps;
+}
+
+export type NavMobileProps = {
+    cartSize: number;
+}
+
+export type NavProps = {
+    cartSize: number;
+    popupProps: PopupProps;
 }
 
 export type CartProps = {
     cartState: Product[];
     cartDispatch: React.Dispatch<CartAction>;
+}
+
+export type PopupProps = {
+    cartPopupToggle: boolean;
+    setCartPopupToggle: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export type CartPopupProps = {
+    cartProps: CartProps;
+    popupProps: PopupProps;
 }
 
 export type CartItemProps = {

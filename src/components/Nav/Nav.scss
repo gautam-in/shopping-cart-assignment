@@ -41,16 +41,21 @@
   }
 
   // Cart
-  .nav--cart > a {
+  .nav--cart > button {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 1.8rem;
+
+    background-color: #fff;
+    color: lighten(grey, 5%);
+    border: none;
 
     text-decoration: none;
     height: 7rem;
     transition: all 0.2s;
 
-    padding: 0 2rem;
+    padding: 0 1.8rem;
 
     &:hover {
       cursor: pointer;
@@ -60,7 +65,7 @@
   }
 
   .cart-icon {
-    margin: 0.4rem 1rem 0 0;
+    margin: 0rem 1rem 0 0;
     font-size: 1.5em;
   }
 }
@@ -74,12 +79,12 @@
   color: lighten(grey, 5%);
 }
 
-.active-cart {
-  color: #fff;
-  background-color: $primary-color;
-}
+// .active-cart {
+//   color: #fff;
+//   background-color: $primary-color;
+// }
 
-.inactive-cart {
-  background-color: #fff;
-  color: lighten(grey, 5%);
-}
+// .inactive-cart {
+//   background-color: #fff;
+//   color: lighten(grey, 5%);
+// }

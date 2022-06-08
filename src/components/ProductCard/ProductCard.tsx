@@ -7,8 +7,6 @@ export const ProductCard = ({product, cartDispatch}: ProductCardProps) => {
   const windowWidth = useViewport();
   
   const handleClick = (event: React.BaseSyntheticEvent<MouseEvent>) => {
-    console.log("Clicked on product: ", event.target.innerText.indexOf("Buy Now"));
-    console.log("Product: ", product);
     if(event.target.innerText.indexOf("Buy Now") != -1) {
       cartDispatch({ type: "add-item", data: product })
     }

@@ -3,11 +3,11 @@ import { Nav } from "../Nav/Nav";
 import { NavMobile } from "../NavMobile/NavMobile";
 import { NavLink } from "react-router-dom";
 import { useViewport } from "../../hooks/useViewport";
-import type { CartSize } from "../../types/customTypes";
+import type { HeaderProps } from "../../types/customTypes";
 import logo from "../../static/images/logo.png";
 import "./Header.scss";
 
-export const Header = ({ size }: CartSize) => {
+export const Header = ({cartSize, popupProps}: HeaderProps) => {
     const windowWidth = useViewport();
 
     return (
@@ -15,7 +15,7 @@ export const Header = ({ size }: CartSize) => {
             <div className="header__logo">
                 <NavLink to={"/"}><img src={logo} alt="Sabka Bazaar Logo"/></NavLink>
             </div>
-            {windowWidth > 768 ? <Nav size={size}/> : <NavMobile size={size}/>}
+            {windowWidth > 768 ? <Nav cartSize={cartSize} popupProps={popupProps}/> : <NavMobile cartSize={cartSize}/>}
         </header>
     )
 }

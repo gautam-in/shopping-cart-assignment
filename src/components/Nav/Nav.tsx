@@ -1,10 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import type { CartSize } from "../../types/customTypes";
+import type { NavProps } from "../../types/customTypes";
 import { HiShoppingCart } from "react-icons/hi";
 import "./Nav.scss";
 
-export const Nav = ({ size }: CartSize) => {
+export const Nav = ({ cartSize, popupProps }: NavProps) => {
+  
+  const { setCartPopupToggle } = popupProps;
+
+  const openCartPopup = () => { setCartPopupToggle(true); }
+
   return (
     <>
       <nav className="nav">
@@ -19,10 +24,10 @@ export const Nav = ({ size }: CartSize) => {
         </div>
 
         <div className="nav--cart">
-            <NavLink to={"/cart"} className={ ({ isActive }) => isActive ? "active-cart" : "inactive-cart" }>
+            <button onClick={openCartPopup}>
               <HiShoppingCart className="cart-icon" />
-              <div>{size} items</div>
-            </NavLink>
+              <div>{cartSize} items</div>
+            </button>
         </div>
     </nav>
     </>

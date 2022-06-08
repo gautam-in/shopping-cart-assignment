@@ -1,13 +1,13 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import type { CartSize } from "../../types/customTypes";
+import type { HeaderProps } from "../../types/customTypes";
 import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 
-export const Layout = ({ size }: CartSize) => {
+export const Layout = ({cartSize, popupProps}: HeaderProps) => {
   return (
     <>
-      <Header size={size}/>
+      <Header cartSize={cartSize} popupProps={popupProps}/>
         <Outlet />
       <Footer />
     </>

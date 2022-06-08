@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import type { CartSize } from "../../types/customTypes";
+import type { NavMobileProps } from "../../types/customTypes";
 import { HiShoppingCart } from "react-icons/hi";
 import "./NavMobile.scss";
 
-export const NavMobile = ({ size }: CartSize) => {
+export const NavMobile = ({ cartSize }: NavMobileProps) => {
 
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
@@ -32,10 +32,10 @@ export const NavMobile = ({ size }: CartSize) => {
         <NavLink to="/products/all" className={ ({ isActive }) => isActive ? "activeLink" : "inactiveLink" }>Products</NavLink>
         <NavLink to="/signin" className={ ({ isActive }) => isActive ? "activeLink" : "inactiveLink" }>Sign In</NavLink>
         <NavLink to="/register" className={ ({ isActive }) => isActive ? "activeLink" : "inactiveLink" }>Register</NavLink>
-        <NavLink to="/cart" className={ ({ isActive }) => isActive ? "activeLink" : "inactiveLink" }>Cart {size > 0 ? `(${size} items)` : null}</NavLink>
+        <NavLink to="/cart" className={ ({ isActive }) => isActive ? "activeLink" : "inactiveLink" }>Cart {cartSize > 0 ? `(${cartSize} items)` : null}</NavLink>
       </main>
 
-      {size > 0 && <span className="cart-size-indicator">{size}</span>}
+      {cartSize > 0 && <span className="cart-size-indicator">{cartSize}</span>}
     </>
   )
 }
