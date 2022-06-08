@@ -1,11 +1,13 @@
 import React, { useMemo, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { updateCart } from "../../redux/cart/CartActions";
 import "./CartPage.scss";
 
 function CartPage() {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const cartData = useSelector((state) => state.cart.data);
   const [loading, setLoading] = useState("");
@@ -151,15 +153,29 @@ function CartPage() {
 
   return (
     <div className="cart-main-container">
-      {!(Object.entries(cartData).length > 0) && <h3>Cart is Empty</h3>}
-      {Object.entries(cartData).length > 0 && (
-        <div className="cart-page-header">
-          <h3>
-            My Cart{" "}
+      <div className="cart-page-header">
+        <h3>
+          My Cart{" "}
+          {Object.entries(cartData).length > 0 && (
             <span>{`( ${Object.entries(cartData).length} items )`}</span>
-          </h3>
+          )}
+        </h3>
+      </div>
+      {!(Object.entries(cartData).length > 0) && (
+        <div className="empty-cart-container">
+          <div className="empty-cart-text">
+            <h3>No items in your cart</h3>
+            <span>Your favorite items are just a click away</span>
+          </div>
+          <button
+            className="payment-button"
+            onClick={() => history.push("/products")}
+          >
+            Start Shopping
+          </button>
         </div>
       )}
+
       {cartLayout && (
         <ul>
           {cartLayout}
