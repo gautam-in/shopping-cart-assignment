@@ -1,0 +1,30 @@
+.sidebar{
+    width: 100%;
+    min-height: 100%;
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+}
+.sidebarItems{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.sidebarItem{
+    font-size: 12px;
+    color: black;
+    margin: 0;
+   padding: 8px 5px;
+   cursor: pointer;
+    border-bottom: 1px solid grey;
+}
+@media screen and (max-width:766px){
+ 
+}
+@media screen and (max-width:566px){
+    .sidebar{
+        display: none;
+    }
+}

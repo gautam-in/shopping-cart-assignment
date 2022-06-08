@@ -1,0 +1,108 @@
+.signUpContainer {
+    max-width: 100rem;
+    margin: 0 auto;
+  }
+  
+  .signUpWrapper {
+    display: flex;
+  
+    padding: 40px 0;
+  }
+  .signUpTitleContainer {
+    display: flex;
+    flex-direction: column;
+  
+    width: 30vw;
+  }
+  .signUpTitleContainer h1 {
+    margin: 0;
+    font-size: 24px;
+    padding: 0;
+  }
+  .signUpTitleContainer p {
+    font-size: 14px;
+  }
+  .signUpInputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+  }
+  .signUpButton {
+    width: 100%;
+    padding: 6px 0;
+    margin: 10px 0;
+    border: none;
+    background-color: #d00255;
+    color: white;
+    border-radius: 2px;
+  }
+  .form {
+    width: 100%;
+  }
+  .copyRightContainer {
+    background-color: lightgrey;
+  
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 996px) {
+    .signUpWrapper {
+      padding: 40px 0;
+    }
+    .signUpTitleContainer {
+      width: 40vw;
+    }
+  
+    .signUpInputContainer {
+      width: 40vw;
+    }
+  }
+  @media screen and (max-width: 776px) {
+    .signUpWrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 30px 0;
+    }
+  
+    .signUpTitleContainer {
+      width: 60vw !important;
+    }
+    .signUpInputContainer {
+      width: 60vw !important;
+      padding: 20px 0;
+    }
+  }
+  @media screen and (max-width: 566px) {
+    .signUpWrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      align-items: center;
+    }
+    .form {
+      width: 100%;
+    }
+    .signUpTitleContainer {
+      width: 80vw !important;
+    }
+    .signUpInputContainer {
+      width: 80vw !important;
+    }
+    .signUpTitleContainer h1 {
+      font-size: 20px;
+    }
+    .signUpTitleContainer p {
+      font-size: 10px;
+    }
+    .signUpInputContainer {
+      width: 40vw;
+      padding: 20px 0;
+    }
+  }
+  

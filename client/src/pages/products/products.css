@@ -1,0 +1,26 @@
+.productsContainer{
+    display: flex;
+    max-width: 100rem;
+    margin: 0 auto;
+}
+.cardsContainer{
+    display: flex;
+    width: 85%;
+    flex-wrap: wrap;
+
+  padding: 10px;
+
+}
+.sidebarConainer{
+    width: 15%;
+}
+@media (max-width:566px) {
+    .cardsContainer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .sidebarConainer{
+        display: none;
+    }
+}
