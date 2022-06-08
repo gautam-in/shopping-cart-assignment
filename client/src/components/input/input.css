@@ -1,0 +1,21 @@
+
+.inputContainer{
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100% !important;
+    padding: 10px 0;
+}
+.input{
+
+    border: none;
+    outline: none;
+  
+    width:  100% !important;
+    border-bottom: 2px solid #50dae2;
+   
+}
+.label{
+    font-size: 12px;
+}

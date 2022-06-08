@@ -1,0 +1,70 @@
+.cartContainer{
+    max-width: 100rem;
+    margin: 0 auto;
+    background-color: lightgrey;
+    height: 80vh;
+    position: relative;
+  }
+  
+.itemsContainer{
+    height: 60%;
+    overflow-y: auto;
+}
+  .cartItemCard{
+      background-color: white;
+      width: 100%;
+      padding: 8px 5px;
+      box-shadow: 1px 1px 20px 0 rgba(0,0,0,0,1);
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+
+  }
+  .cartItemImg{
+      width: 6rem;
+    
+  }
+  .itemDetails{
+display: flex;
+  }
+  .qtyButton{
+      background-color: brown;
+      color: white;
+      padding: 1px 8px;
+      border: none;
+      font-size: 10px;
+    margin-top: 10px;
+    
+  }
+  .qtyAdjustContinaer span{
+   padding: 0 10px;
+  
+}
+  .cartTitleContainer{
+    background-color: white;
+    width: 100%;
+    padding: 8px 10px;
+    box-shadow: 1px 1px 20px 0 rgba(0,0,0,0,1);
+    margin: 10px 0;
+;
+  }
+  .totalPriceDetailContainer{
+      position:absolute;
+      bottom: 0;
+      background-color: white;
+      width: 100%;
+      padding: 8px 10px;
+      box-shadow: 1px 1px 20px 0 rgba(0,0,0,0,1);
+      margin: 10px 0;
+    
+  }
+.totalPriceShowButton{
+    background-color: white;
+    width: 100%;
+    background-color: brown;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+    margin-top: 10px;
+}

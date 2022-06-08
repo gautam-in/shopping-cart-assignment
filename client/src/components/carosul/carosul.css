@@ -1,0 +1,8 @@
+.carosulContainer{
+    max-width: 100rem;
+    margin: 0 auto;
+    margin-top: 6rem;
+}
+.carosulContainer img{
+  width: 80rem !important;
+}
