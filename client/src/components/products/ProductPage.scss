@@ -1,0 +1,218 @@
+@import "../../scss/variables.scss";
+@import "../../scss/mixins.scss";
+
+.products-main-container {
+  width: 80%;
+  @include flex-container("", flex-start, "", "");
+
+  .product-mobile-dropdown {
+    display: none;
+    background: $secondary-color;
+    width: 100%;
+    ul {
+      list-style: none;
+      box-sizing: border-box;
+      padding-left: 4px;
+      padding-top: 20px;
+      width: 100%;
+      margin: 0px;
+      text-align: left;
+      li {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px 15px;
+        color: #656765;
+        border-bottom: 1px solid #d1d5d1c3;
+        font-size: 16px;
+        // font-weight: 600;
+      }
+    }
+    .mobile-categories-dropdown {
+      padding: 10px 15px;
+      box-sizing: border-box;
+      background: $primary-color;
+      color: $white;
+      font-weight: 600;
+      min-height: 40px;
+      @include flex-container("", space-between, center, "");
+    }
+  }
+  .product-desktop-sidebar {
+    background: $secondary-color;
+    width: 250px;
+    ul {
+      list-style: none;
+      box-sizing: border-box;
+      padding-left: 4px;
+      padding-top: 20px;
+      width: 100%;
+      margin: 0px;
+      text-align: left;
+      li {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px 15px;
+        color: #656765;
+        border-bottom: 1px solid #d1d5d1c3;
+        font-size: 16px;
+        // font-weight: 600;
+      }
+    }
+  }
+  .product-desktop-plp-container {
+    flex: 1;
+    padding: 0px 10px;
+  }
+}
+
+.product-items-container {
+  @include flex-container("", flex-start, stretch, wrap);
+  width: 100%;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#bottomArrow {
+  transform: rotate(90deg);
+}
+
+/*********************************** Product Card ****************************/
+
+.product-card-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1;
+  box-sizing: border-box;
+  min-width: 210px;
+  padding: 10px;
+  border-right: 1px solid $secondary-color;
+  border-bottom: 1px dotted #656765;
+  min-height: 100%;
+  h4 {
+    margin: 10px 0px;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+  }
+  .product-description {
+    @include flex-container(column, space-between, "", "");
+    background: $secondary-color;
+    color: $black;
+    font-size: 12px;
+    margin-bottom: 8px;
+    padding: 4px;
+  }
+
+  .product-mobile-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    .desctiption-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  .card-button-container {
+    @include flex-container("", space-between, center, "");
+    width: 100%;
+    > button {
+      padding: 8px 16px;
+      color: $white;
+      border-radius: 4px;
+      background: $primary-color;
+      border: none;
+      font-weight: 600;
+    }
+  }
+
+  .card-button-container2 {
+    @include flex-container("", center, center, "");
+    font-weight: 600;
+    font-size: 14px;
+    box-sizing: border-box;
+    button {
+      border-radius: 4px;
+      padding: 4px 8px;
+      border: none;
+      box-sizing: border-box;
+      align-content: center;
+      background: $primary-color;
+      color: $white;
+      font-size: 14px;
+      font-weight: 600;
+      margin: 0px;
+    }
+    span {
+      padding: 6px;
+      width: 15px;
+    }
+  }
+}
+
+#buttonPrice {
+  display: none;
+}
+
+@media only screen and (max-width: 550px) {
+  .products-main-container {
+    @include flex-container(column, "", center, "");
+    width: 100%;
+    .product-mobile-dropdown {
+      display: block;
+    }
+    .product-desktop-sidebar {
+      display: none;
+    }
+  }
+  .desctiption-container {
+    padding: 4px;
+  }
+  .product-mobile-view.product-mobile-view {
+    @include flex-container(row, "", center, "");
+    img {
+      height: 150px;
+      width: 150px;
+    }
+    .card-button-container {
+      width: 100%;
+      > button {
+        min-width: 100%;
+      }
+      .card-button-container2 {
+        width: 100%;
+        box-sizing: border-box;
+        @include flex-container("", flex-end, "", "");
+      }
+    }
+  }
+  .product-card-container {
+    flex: none;
+    width: 100%;
+
+    border-right: none;
+    .product-description {
+      background: $white;
+    }
+  }
+  #price {
+    display: none;
+  }
+  #buttonPrice {
+    display: inline-block;
+  }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 1024px) {
+  .products-main-container {
+    width: 100%;
+  }
+  .product-card-container {
+    width: 50% !important;
+  }
+}
