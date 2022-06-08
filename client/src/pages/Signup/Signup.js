@@ -1,18 +1,32 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import './Signup.css'
 
 function Signup() {
   const [formState, setFormState] = useState({
-    'firstName': '',
-    'lastName': '',
-    'email': '',
-    'password': '',
-    'confirmPassword': '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
   })
+  const [formErrorState, setFormErrorState] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  })
+  const history = useHistory()
+  const emailPattern = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}/
+  const passwordPattern = /[a-zA-Z0-9]{6}/
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formState)
+    if (formValidation()) {
+      console.log(formState)
+      history.push('/home')
+    }
   }
 
   const handleUserInput = (event) => {
@@ -20,6 +34,117 @@ function Signup() {
       ...formState,
       [event.target.name]: event.target.value
     })
+  }
+
+  const formValidation = () => {
+    let isFirstNameValid = false,
+    isLastNameValid = false,
+    isEmailValid = false,
+    isPasswordValid = false,
+    isConfirmPasswordValid = false;
+
+    for(let key in formState) {
+      if (formState[key] == '') {
+        setFormErrorState((prevState) => ({
+          ...prevState,
+          [key]: `please fill the ${key} field`
+        }))
+      } else if(key == 'firstName') {
+        setFormErrorState((prevState) => ({
+          ...prevState,
+          [key]: ''
+        }))
+        isFirstNameValid = true
+      } else if(key == 'lastName') {
+        setFormErrorState((prevState) => ({
+          ...prevState,
+          [key]: ''
+        }))
+        isLastNameValid = true
+      }
+    }
+
+
+    if ((formState.email != '')) {
+      if (formState.email.search(emailPattern) < 0) {
+        setFormErrorState((prevState) => ({
+          ...prevState,
+          email: 'incorrect email'
+        }))
+      } else {
+        setFormErrorState((prevState) => ({
+          ...prevState,
+          email: ''
+        }))
+        isEmailValid = true
+      }
+    }
+
+    if ((formState.password != '')) {
+      if (formState.password.length < 6) {
+        setFormErrorState((prevState) => ({
+          ...prevState,
+          password: 'password should contain minimum 6 characters'
+        }))
+      } else if (formState.password.search(/\s/) >= 0) {
+        setFormErrorState((prevState) => ({
+          ...prevState,
+          password: 'password should not contain space'
+        }))
+      } else if (formState.password.search(passwordPattern) < 0) {
+        setFormErrorState((prevState) => ({
+          ...prevState,
+          password: 'password should contain a number and alphabet'
+        }))
+      } else {
+        setFormErrorState((prevState) => ({
+          ...prevState,
+          password: ''
+        }))
+        isPasswordValid = true
+      }
+    }
+
+    if ((formState.confirmPassword != '')) {
+      if (formState.confirmPassword.length < 6) {
+        setFormErrorState((prevState) => ({
+          ...prevState,
+          confirmPassword: 'confirm password should contain minimum 6 characters'
+        }))
+      } else if (formState.confirmPassword.search(/\s/) >= 0) {
+        setFormErrorState((prevState) => ({
+          ...prevState,
+          confirmPassword: 'confirm password should not contain space'
+        }))
+      } else if (formState.confirmPassword.search(passwordPattern) < 0) {
+        setFormErrorState((prevState) => ({
+          ...prevState,
+          confirmPassword: 'confirm password should contain a number and alphabet'
+        }))
+      } else {
+        setFormErrorState((prevState) => ({
+          ...prevState,
+          confirmPassword: ''
+        }))
+        isConfirmPasswordValid = true
+      }
+    }
+
+    if (isConfirmPasswordValid && isPasswordValid) {
+      if (formState.confirmPassword !== formState.password) {
+        setFormErrorState((prevState) => ({
+          ...prevState,
+          confirmPassword: 'confirm password did not match'
+        }))
+        isConfirmPasswordValid = false
+      }
+    }
+
+    return isFirstNameValid &&
+      isLastNameValid &&
+      isEmailValid &&
+      isPasswordValid &&
+      isConfirmPasswordValid
   }
 
   return (
@@ -32,24 +157,74 @@ function Signup() {
         <div className='signup-form-container'>
           <form onSubmit={handleSubmit}>
             <div className="material-textfield">
-              <input type='text' name='firstName' required placeholder=' ' onChange={handleUserInput} ></input>
-              <label>First Name</label>
+              <input
+                type='text'
+                name='firstName'
+                placeholder=' '
+                onChange={handleUserInput}
+                aria-labelledby='first-name-label'
+              />
+              <label id='first-name-label'>First Name</label>
+              {
+                formErrorState.firstName &&
+                <small>{formErrorState.firstName}</small>
+              }
             </div>
             <div className="material-textfield">
-              <input type='text' name='lastName' required placeholder=' ' onChange={handleUserInput} ></input>
-              <label>Last Name</label>
+              <input
+                type='text'
+                name='lastName'
+                placeholder=' '
+                onChange={handleUserInput}
+                aria-labelledby='last-name-label'
+              />
+              <label id='last-name-label'>Last Name</label>
+              {
+                formErrorState.lastName &&
+                <small>{formErrorState.lastName}</small>
+              }
             </div>
             <div className="material-textfield">
-              <input type='text' name='email' required placeholder=' ' onChange={handleUserInput} pattern='[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}' ></input>
-              <label>Email</label>
+              <input
+                type='text'
+                name='email'
+                placeholder=' '
+                onChange={handleUserInput}
+                aria-labelledby='email-label'
+              />
+              <label id='email-label'>Email</label>
+              {
+                formErrorState.email &&
+                <small>{formErrorState.email}</small>
+              }
             </div>
             <div className="material-textfield">
-              <input type='password' name='password' required placeholder=' ' onChange={handleUserInput} ></input>
-              <label>Password</label>
+              <input
+                type='password'
+                name='password'
+                placeholder=' '
+                onChange={handleUserInput}
+                aria-labelledby='password-label'
+              />
+              <label id='password-label'>Password</label>
+              {
+                formErrorState.password &&
+                <small>{formErrorState.password}</small>
+              }
             </div>
             <div className="material-textfield">
-              <input type='password' name='confirmPassword' required placeholder=' ' onChange={handleUserInput} ></input>
-              <label>Confirm Password</label>
+              <input
+                type='password'
+                name='confirmPassword'
+                placeholder=' '
+                onChange={handleUserInput}
+                aria-labelledby='confirm-password-label'
+              />
+              <label id='confirm-password-label'>Confirm Password</label>
+              {
+                formErrorState.confirmPassword &&
+                <small>{formErrorState.confirmPassword}</small>
+              }
             </div>
             <button type='submit'>Signup</button>
           </form>

@@ -27,8 +27,8 @@ function Cart({ onClose }) {
           <FontAwesomeIcon icon={faXmark} />
         </div>
       </div>
-      {isCartEmpty && <CartEmpty />}
-      {!isCartEmpty && <CartContent />}
+      {isCartEmpty && <CartEmpty onClose={onClose} />}
+      {!isCartEmpty && <CartContent onClose={onClose} />}
     </div>
   )
 }

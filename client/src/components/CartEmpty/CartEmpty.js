@@ -1,7 +1,7 @@
 import React from 'react'
 import './CartEmpty.css'
 
-function CartEmpty() {
+function CartEmpty({ onClose }) {
   return (
     <>
       <div className='cart-content-empty'>
@@ -9,7 +9,7 @@ function CartEmpty() {
         <div className='cart-content-empty-text'>Your favorite items are just a click away</div>
       </div>
       <div className='cart-footer-empty'>
-        <div className='cart-footer-empty-button'>
+        <div className='cart-footer-empty-button' onClick={() => onClose(false)}>
           Start Shopping
         </div>
       </div>

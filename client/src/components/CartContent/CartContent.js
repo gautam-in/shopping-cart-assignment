@@ -5,7 +5,7 @@ import './CartContent.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, removeFromCart, selectorCartProducts, selectorCartTotalAmount } from '../../features/cart/cartSlice'
 
-function CartContent() {
+function CartContent({ onClose }) {
   const totalAmount = useSelector(selectorCartTotalAmount)
   const cartProductsObject = useSelector(selectorCartProducts)
   const dispatch = useDispatch()
@@ -69,7 +69,7 @@ function CartContent() {
         <div className='cart-footer-text'>
           Promo code can be applied on payment page
         </div>
-        <div className='cart-footer-button'>
+        <div className='cart-footer-button' onClick={() => onClose(false)}>
           <div className='cart-footer-button-chekout'>Proceed to Checkout</div>
           <div className='cart-footer-button-amount'>
             Rs.{totalAmount}
