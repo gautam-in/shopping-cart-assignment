@@ -61,7 +61,10 @@ const ProductList = () => {
       )
       .map((product: Product, index: number) => {
         return (
-          <div className="relative border-b border-dashed border-gray-300">
+          <div
+            className="relative border-b border-dashed border-gray-300"
+            key={product.id}
+          >
             <h2 className="font-bold text-lg text-slate-900 h-[60px]">
               {product.name}
             </h2>
@@ -136,7 +139,9 @@ const ProductList = () => {
                   | null
                   | undefined
               }) => (
-                <option value={category.id}>{category.name}</option>
+                <option value={category.id} key={category.id}>
+                  {category.name}
+                </option>
               ),
             )}
           </select>
@@ -146,7 +151,10 @@ const ProductList = () => {
         {selectedCategory === 'ALL'
           ? data.map((product: Product, index: number) => {
               return (
-                <div className="relative border-b border-dashed border-gray-300">
+                <div
+                  className="relative border-b border-dashed border-gray-300"
+                  key={product.id}
+                >
                   <h2 className="font-bold text-lg text-slate-900 h-[60px]">
                     {product.name}
                   </h2>

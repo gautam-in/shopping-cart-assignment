@@ -119,7 +119,7 @@ const CartDialog = ({isOpen, setIsOpen, closeModal}: Props) => {
                               className="h-20 w-20"
                               src={item.imageURL}
                               alt=""
-                              srcset=""
+                              srcSet=""
                             />
                             <div className="pl-4">
                               <h2 className="text-gray-900 text-lg font-bold">
@@ -157,9 +157,9 @@ const CartDialog = ({isOpen, setIsOpen, closeModal}: Props) => {
                                     fill="currentColor"
                                   >
                                     <path
-                                      fill-rule="evenodd"
+                                      fillRule="evenodd"
                                       d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
-                                      clip-rule="evenodd"
+                                      clipRule="evenodd"
                                     />
                                   </svg>
                                 </button>
@@ -194,7 +194,7 @@ const CartDialog = ({isOpen, setIsOpen, closeModal}: Props) => {
                     >
                       <img src="/static/images/lowest-price.png" alt="" />
                       <p className="text-base">
-                        You won't find it cheaper anywhere
+                        You won`&apos;`t find it cheaper anywhere
                       </p>
                     </div>
                   </div>

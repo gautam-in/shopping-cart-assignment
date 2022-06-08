@@ -11,7 +11,7 @@ async function fetchCategories() {
 
 export const categoryContext = React.createContext(null)
 
-const products = () => {
+const Products = () => {
   const [selectedCategory, setSelectedCategory] = React.useState('ALL')
   const {isLoading, isError, data, error} = useQuery(
     'categories',
@@ -33,4 +33,4 @@ const products = () => {
   )
 }
 
-export default products
+export default Products

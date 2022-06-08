@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import RegisterForm from '../components/Register/RegisterForm'
 
-const register = () => {
+const Register = () => {
   return (
     <Layout>
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-24 md:pt-20 mb-8">
@@ -18,4 +18,4 @@ const register = () => {
   )
 }
 
-export default register
+export default Register
