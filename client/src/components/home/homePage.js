@@ -33,7 +33,6 @@ function HomePage() {
     if (offers) {
       const data = await offers.json();
       dispatch(updateBanners(data));
-      setLoading(false);
       return;
     }
     setLoading(false);
@@ -61,7 +60,7 @@ function HomePage() {
       if (imageUrl) {
         return (
           <li className="home-category-list-item" key={id}>
-            <img src={imageUrl} alt={key} />
+            <img src={imageUrl} alt={`${key} category}`} />
             <div>
               <span className="home-category-list-item-name">{name}</span>
               <span className="home-category-list-item-desc">
