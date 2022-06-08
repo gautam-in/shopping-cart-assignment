@@ -1,81 +1,171 @@
 import React from 'react'
+import {useForm, SubmitHandler} from 'react-hook-form'
+
+interface IFormInputs {
+  firstName: string
+  lastName: string
+  email: string
+  password: string
+  confirmPassword: string
+}
 
 const RegisterForm = () => {
+  const {
+    register,
+    formState: {errors},
+    handleSubmit,
+  } = useForm<IFormInputs>()
+  const onSubmit: SubmitHandler<IFormInputs> = data => console.log(data)
+
   return (
     <form
       className="col-span-1	md:w-[80%] lg:w-[70%] xl:w-[60%] mx-6 md:mx-0"
-      action=""
+      onSubmit={handleSubmit(onSubmit)}
     >
-      <div className="relative border-b-2 focus-within:border-cyan-500 mt-4 border-gray-300 pb-2 mb-8">
+      <div
+        className={`relative border-b-2  mt-8 ${
+          errors.firstName
+            ? `border-red-300 focus-within:border-red-500`
+            : `border-gray-300 focus-within:border-cyan-500`
+        } pb-2`}
+      >
         <input
           type="text"
-          name="fname"
+          aria-required="true"
+          {...register('firstName', {
+            required: 'first name cannot be empty',
+          })}
           placeholder=" "
           className="block w-full appearance-none focus:outline-none bg-transparent"
         />
         <label
-          htmlFor="fname"
-          className="absolute top-0 -z-1 origin-0 text-gray-400"
+          htmlFor="firstName"
+          className={`absolute top-0 -z-1 origin-0 ${
+            errors.firstName ? `text-red-400 ` : `text-gray-400`
+          }`}
         >
           First Name
         </label>
       </div>
-      <div className="relative border-b-2 focus-within:border-cyan-500 mt-4 border-gray-300 pb-2 mb-8">
+      <p className="text-red-600" tabIndex={0}>
+        {errors.firstName && errors.firstName.message}
+      </p>
+      <div
+        className={`relative border-b-2  mt-8 ${
+          errors.lastName
+            ? `border-red-300 focus-within:border-red-500`
+            : `border-gray-300 focus-within:border-cyan-500`
+        } pb-2`}
+      >
         <input
           type="text"
-          name="lname"
+          aria-required="true"
+          {...register('lastName', {
+            required: 'last name cannot be empty',
+          })}
           placeholder=" "
           className="block w-full appearance-none focus:outline-none bg-transparent"
         />
         <label
-          htmlFor="lname"
-          className="absolute top-0 -z-1 origin-0 text-gray-400"
+          htmlFor="lastName"
+          className={`absolute top-0 -z-1 origin-0 ${
+            errors.email ? `text-red-400 ` : `text-gray-400`
+          }`}
         >
           Last Name
         </label>
       </div>
-      <div className="relative border-b-2 focus-within:border-cyan-500 mt-4 border-gray-300 pb-2 mb-8">
+      <p className="text-red-600" tabIndex={0}>
+        {errors.lastName && errors.lastName.message}
+      </p>
+      <div
+        className={`relative border-b-2  mt-8 ${
+          errors.email
+            ? `border-red-300 focus-within:border-red-500`
+            : `border-gray-300 focus-within:border-cyan-500`
+        } pb-2`}
+      >
         <input
           type="email"
-          name="email"
+          aria-required="true"
+          {...register('email', {
+            required: 'email cannot be empty',
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: 'enter valid email',
+            },
+          })}
           placeholder=" "
           className="block w-full appearance-none focus:outline-none bg-transparent"
         />
         <label
           htmlFor="email"
-          className="absolute top-0 -z-1 origin-0 text-gray-400"
+          className={`absolute top-0 -z-1 origin-0 ${
+            errors.email ? `text-red-400 ` : `text-gray-400`
+          }`}
         >
           Email
         </label>
       </div>
-      <div className="relative border-b-2 focus-within:border-cyan-500 mt-4 border-gray-300 pb-2 mb-8">
+      <p className="text-red-600" tabIndex={0}>
+        {errors.email && errors.email.message}
+      </p>
+      <div
+        className={`relative border-b-2  mt-8 ${
+          errors.password
+            ? `border-red-300 focus-within:border-red-500`
+            : `border-gray-300 focus-within:border-cyan-500`
+        } pb-2`}
+      >
         <input
           type="password"
-          name="password"
+          aria-required="true"
+          {...register('password', {
+            required: 'password cannot be empty',
+          })}
           placeholder=" "
           className="block w-full appearance-none focus:outline-none bg-transparent"
         />
         <label
           htmlFor="password"
-          className="absolute top-0 -z-1 origin-0 text-gray-400"
+          className={`absolute top-0 -z-1 origin-0 ${
+            errors.password ? `text-red-400 ` : `text-gray-400`
+          }`}
         >
           Password
         </label>
       </div>
-      <div className="relative border-b-2 focus-within:border-cyan-500 mt-4 border-gray-300 pb-2">
+      <p className="text-red-600" tabIndex={0}>
+        {errors.password && errors.password.message}
+      </p>
+      <div
+        className={`relative border-b-2  mt-8 ${
+          errors.confirmPassword
+            ? `border-red-300 focus-within:border-red-500`
+            : `border-gray-300 focus-within:border-cyan-500`
+        } pb-2`}
+      >
         <input
           type="password"
-          name="confirmpassword"
+          aria-required="true"
+          {...register('confirmPassword', {
+            required: 'confirm password cannot be empty',
+          })}
           placeholder=" "
           className="block w-full appearance-none focus:outline-none bg-transparent"
         />
         <label
           htmlFor="confirmpassword"
-          className="absolute top-0 -z-1 origin-0 text-gray-400"
+          className={`absolute top-0 -z-1 origin-0 ${
+            errors.confirmPassword ? `text-red-400 ` : `text-gray-400`
+          }`}
         >
           Confirm Password
         </label>
       </div>
+      <p className="text-red-600" tabIndex={0}>
+        {errors.confirmPassword && errors.confirmPassword.message}
+      </p>
       <div>
         <button
           type="submit"

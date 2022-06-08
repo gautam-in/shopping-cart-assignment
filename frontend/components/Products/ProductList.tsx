@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useState, useEffect, useReducer} from 'react'
 import {useQuery} from 'react-query'
 import {Product} from '../../typings'
 import {categoryContext} from '../../pages/products'
 import {Category} from '../../typings'
+import CartDialog from '../Cart/CartDialog'
+import {useCartContext} from '../Cart/CartContext'
 
 async function fetchProducts() {
   const response = await fetch(`http://localhost:5000/products/`)
@@ -10,11 +12,47 @@ async function fetchProducts() {
 }
 
 const ProductList = () => {
+  let [isOpen, setIsOpen] = useState(false)
+  const {cartItems, dispatch} = useCartContext()
+
   const {selectedCategory, categoryList, setSelectedCategory} =
     React.useContext(categoryContext)
   const {isLoading, isError, data, error} = useQuery('products', fetchProducts)
 
+  useEffect(() => {
+    return () => {
+      closeModal()
+    }
+  }, [])
+
   if (isLoading) return <div>Loading....</div>
+
+  function closeModal() {
+    setIsOpen(false)
+  }
+
+  function openModal() {
+    setIsOpen(true)
+  }
+
+  function addItemToCart(item) {
+    if (cartItems.products.length === 0) {
+      dispatch({type: 'ADD', payload: item})
+    } else {
+      let productIndex = cartItems.products.findIndex(
+        product => product.id === item.id,
+      )
+      if (productIndex > -1) {
+        dispatch({
+          type: 'CHANGE_QUANTITY',
+          payload: {...item, qty: cartItems.products[productIndex].qty + 1},
+        })
+      } else {
+        dispatch({type: 'ADD', payload: item})
+      }
+    }
+    openModal()
+  }
 
   const renderFilteredProducts = () => {
     return data
@@ -51,7 +89,10 @@ const ProductList = () => {
                 <div className="pl-2 hidden lg:block">
                   MRP Rs.{product.price}
                 </div>
-                <button className="text-white bg-[#d10054] px-8 py-2 md:grow lg:grow-0 mr-2">
+                <button
+                  className="text-white bg-[#d10054] px-8 py-2 md:grow lg:grow-0 mr-2"
+                  onClick={() => addItemToCart(product)}
+                >
                   Buy Now
                   <span className="hidden md:inline lg:hidden">{` @ ${product.price}`}</span>
                 </button>
@@ -63,6 +104,11 @@ const ProductList = () => {
   }
   return (
     <div>
+      <CartDialog
+        closeModal={closeModal}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
       <div className=" md:hidden flex justify-center">
         <div className="mb-3 w-full">
           <select
@@ -115,11 +161,13 @@ const ProductList = () => {
                         <div className="flex justify-between flex-col px-2 gap-4">
                           <div className="relative bg-gray-200 px-2 py-2 text-sm h-full lg:h-[75px]">
                             <p className="lg:line-clamp-3">
-                              {' '}
                               {product.description}
                             </p>
                           </div>
-                          <button className="text-white bg-[#d10054] px-4 py-2 inline md:hidden mb-4">
+                          <button
+                            className="text-white bg-[#d10054] px-4 py-2 inline md:hidden mb-4"
+                            onClick={() => addItemToCart(product)}
+                          >
                             Buy Now
                             <span className="inline lg:hidden">{` @ ${product.price}`}</span>
                           </button>
@@ -131,7 +179,10 @@ const ProductList = () => {
                       <div className="pl-2 hidden lg:block">
                         MRP Rs.{product.price}
                       </div>
-                      <button className="text-white bg-[#d10054] px-8 py-2 md:grow lg:grow-0 mr-2">
+                      <button
+                        className="text-white bg-[#d10054] px-8 py-2 md:grow lg:grow-0 mr-2"
+                        onClick={() => addItemToCart(product)}
+                      >
                         Buy Now
                         <span className="hidden md:inline lg:hidden">{` @ ${product.price}`}</span>
                       </button>
