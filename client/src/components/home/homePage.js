@@ -33,7 +33,6 @@ function HomePage() {
     if (offers) {
       const data = await offers.json();
       dispatch(updateBanners(data));
-      return;
     }
     setLoading(false);
   };
