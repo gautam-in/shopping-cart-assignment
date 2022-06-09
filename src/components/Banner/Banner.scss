@@ -1,15 +1,11 @@
 @import "../../../public/index.scss";
 
 .banner {
-  box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 
   width: 100%;
-  // min-height: 24rem;
   margin: 12rem auto 4rem auto;
-  // padding: 2rem;
-
   position: relative;
-  // border: 1px solid aqua;
 
   & > img {
     width: 100%;
@@ -31,6 +27,7 @@
   /* Mobile Landscape */
   @media only screen and (min-width: 478px) {
     width: 80%;
+    box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
   }
 
   /* Tablet */
