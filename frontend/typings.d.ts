@@ -17,4 +17,5 @@ export interface Product {
   category: string
   sku: string
   id: string
+  qty?: number
 }

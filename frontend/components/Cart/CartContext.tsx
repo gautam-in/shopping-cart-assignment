@@ -1,12 +1,30 @@
 import React from 'react'
-
-const CartContext = React.createContext([])
+import {Product} from '../../typings'
 
 interface Props {
   children?: JSX.Element | JSX.Element[]
 }
 
-const reducer = (state, action) => {
+interface CartState {
+  products: Product[]
+}
+
+const initialState = {products: []}
+
+const CartContext = React.createContext<{
+  cartItems: CartState
+  dispatch: React.Dispatch<any>
+}>({
+  cartItems: initialState,
+  dispatch: () => null,
+})
+
+type ACTIONTYPE =
+  | {type: 'ADD'; payload: Product}
+  | {type: 'REMOVE'; payload: Product}
+  | {type: 'CHANGE_QUANTITY'; payload: Product}
+
+const reducer = (state: {products: any[]}, action: ACTIONTYPE) => {
   switch (action.type) {
     case 'ADD':
       return {
@@ -34,7 +52,7 @@ const reducer = (state, action) => {
 }
 
 export function CartWrapper({children}: Props) {
-  const [cartItems, dispatch] = React.useReducer(reducer, {products: []})
+  const [cartItems, dispatch] = React.useReducer(reducer, initialState)
   return (
     <CartContext.Provider value={{cartItems, dispatch}}>
       {children}

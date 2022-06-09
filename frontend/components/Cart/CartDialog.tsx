@@ -85,7 +85,13 @@ const CartDialog = ({isOpen, setIsOpen, closeModal}: Props) => {
                     as="h3"
                     className="text-lg font-medium leading-6 text-white bg-gray-900 py-4 px-4 flex justify-between"
                   >
-                    <h2>My Cart{` (${cartItems.products.length} item)`}</h2>
+                    <h2>
+                      My Cart
+                      {` (${cartItems.products.reduce(
+                        (acc, curr) => acc + Number(curr.qty),
+                        0,
+                      )} item)`}
+                    </h2>
                     <button onClick={closeModal}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -194,7 +200,7 @@ const CartDialog = ({isOpen, setIsOpen, closeModal}: Props) => {
                     >
                       <img src="/static/images/lowest-price.png" alt="" />
                       <p className="text-base">
-                        You won`&apos;`t find it cheaper anywhere
+                        You won&apos;t find it cheaper anywhere
                       </p>
                     </div>
                   </div>

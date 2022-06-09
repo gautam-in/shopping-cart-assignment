@@ -1,5 +1,6 @@
 import React from 'react'
 import {useForm, SubmitHandler} from 'react-hook-form'
+import {useRouter} from 'next/router'
 
 interface IFormInputs {
   email: string
@@ -7,12 +8,13 @@ interface IFormInputs {
 }
 
 const LoginForm = () => {
+  const router = useRouter()
   const {
     register,
     formState: {errors},
     handleSubmit,
   } = useForm<IFormInputs>()
-  const onSubmit: SubmitHandler<IFormInputs> = data => console.log(data)
+  const onSubmit: SubmitHandler<IFormInputs> = data => router.push('/')
   return (
     <form
       className="col-span-1	md:w-[80%] lg:w-[70%] xl:w-[60%] mx-6 md:mx-0"

@@ -1,5 +1,6 @@
 import React from 'react'
 import {useForm, SubmitHandler} from 'react-hook-form'
+import {useRouter} from 'next/router'
 
 interface IFormInputs {
   firstName: string
@@ -10,12 +11,24 @@ interface IFormInputs {
 }
 
 const RegisterForm = () => {
+  const router = useRouter()
   const {
     register,
+    setError,
     formState: {errors},
     handleSubmit,
   } = useForm<IFormInputs>()
-  const onSubmit: SubmitHandler<IFormInputs> = data => console.log(data)
+  const onSubmit: SubmitHandler<IFormInputs> = data => {
+    if (data.password !== data.confirmPassword) {
+      setError(
+        'confirmPassword',
+        {type: 'focus', message: "password and confirm password doesn't match"},
+        {shouldFocus: true},
+      )
+    } else {
+      router.push('/')
+    }
+  }
 
   return (
     <form
@@ -122,6 +135,11 @@ const RegisterForm = () => {
           aria-required="true"
           {...register('password', {
             required: 'password cannot be empty',
+            pattern: {
+              value: /[0-9a-zA-Z]{6,}/,
+              message:
+                'Password should have minimum 6 characters with a number & alphabet without spaces',
+            },
           })}
           placeholder=" "
           className="block w-full appearance-none focus:outline-none bg-transparent"
@@ -150,6 +168,11 @@ const RegisterForm = () => {
           aria-required="true"
           {...register('confirmPassword', {
             required: 'confirm password cannot be empty',
+            pattern: {
+              value: /[0-9a-zA-Z]{6,}/,
+              message:
+                'Password should have minimum 6 characters with a number & alphabet without spaces',
+            },
           })}
           placeholder=" "
           className="block w-full appearance-none focus:outline-none bg-transparent"

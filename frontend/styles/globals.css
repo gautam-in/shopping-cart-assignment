@@ -25,3 +25,20 @@ input:not(:placeholder-shown) ~ label {
 input:focus-within ~ label {
   @apply text-cyan-500;
 }
+
+.carousel {
+  overflow: hidden;
+  position: relative;
+}
+
+.inner {
+  white-space: nowrap;
+  transition: transform 0.3s;
+}
+
+.carousel-item {
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}

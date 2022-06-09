@@ -120,7 +120,7 @@ const ProductList = () => {
             aria-label="Select a Category"
             onChange={e => setSelectedCategory(e.target.value)}
           >
-            <option selected value="ALL">
+            <option defaultValue="true" value="ALL">
               All Products
             </option>
             {categoryList.map(
@@ -152,7 +152,7 @@ const ProductList = () => {
           ? data.map((product: Product, index: number) => {
               return (
                 <div
-                  className="relative border-b border-dashed border-gray-300"
+                  className="relative border-b border-dashed border-gray-300 pb-2"
                   key={product.id}
                 >
                   <h2 className="font-bold text-lg text-slate-900 h-[60px]">
@@ -164,10 +164,10 @@ const ProductList = () => {
                         <img
                           src={product.imageURL}
                           alt=""
-                          className="mb-5 h-40 w-40 md:w-36 md:h-36 lg:w-full md:h-56 lg:h-64 object-fit object-top"
+                          className="mb-5 h-40 w-36 md:w-36 md:h-36 lg:w-full md:h-48 object-fit object-top"
                         />
                         <div className="flex justify-between flex-col px-2 gap-4">
-                          <div className="relative bg-gray-200 px-2 py-2 text-sm h-full lg:h-[75px]">
+                          <div className="relative bg-gray-100 px-2 py-2 text-sm h-full lg:h-[75px]">
                             <p className="lg:line-clamp-3">
                               {product.description}
                             </p>

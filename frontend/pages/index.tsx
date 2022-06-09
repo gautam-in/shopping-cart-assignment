@@ -6,6 +6,7 @@ import Offers from '../components/Home/Offers'
 import Categories from '../components/Home/Categories'
 import Footer from '../components/Layout/Footer'
 import Layout from '../components/Layout'
+import {useEffect} from 'react'
 
 const Home: NextPage = () => {
   return (

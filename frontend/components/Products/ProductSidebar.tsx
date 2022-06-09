@@ -15,7 +15,7 @@ const ProductSidebar = ({data}: Props) => {
   }
 
   return (
-    <aside className="bg-[#EAEAEA] sticky h-screen md:min-w-[22%] w-0 md:top-[92px] lg:top-[100px] hidden md:block">
+    <aside className="bg-[#EAEAEA] sticky h-screen md:min-w-[22%] w-0 md:top-[86px] hidden md:block">
       <div className="flex flex-col divide-y px-2 divide-gray-300 mt-8">
         {data
           .sort(function (a: {order: number}, b: {order: number}) {
