@@ -1,0 +1,33 @@
+.cart {
+    height: 100%;
+    width: 100%;
+    background-color: #eee;
+}
+
+.cart-header {
+    height: 66px;
+    background-color: #1d2124;
+    color: #fff;
+    font-weight: 600;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-header-text {
+    margin-left: 20px;
+}
+
+.cart .item-count {
+    font-size: 15px;
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.cart-close {
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 20px;
+    cursor: pointer;
+}

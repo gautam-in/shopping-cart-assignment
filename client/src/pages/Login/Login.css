@@ -1,0 +1,57 @@
+.login .container {
+    width: 90%;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.login-text {
+    width: 30%;
+    margin-top: 30px;
+}
+
+.login-text div {
+    font-weight: 600;
+}
+
+.login-form-container {
+    width: 30%;
+}
+
+.login-form-container button {
+    background-color: #B03758;
+    outline: none;
+    border: 1px solid #B03758;
+    color: #fff;
+    height: 38px;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+}
+
+.login-form-container button:hover {
+    background-color: #9a2a49;
+}
+
+.login small {
+  color: red;
+  font-size: 16px;
+}
+
+/* Extra small devices (phones, 320px to 480px) */
+@media only screen and (min-width : 320px) and (max-width: 480px) {
+  .login .container {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .login-text {
+    width: 100%;
+  }
+
+  .login-form-container {
+      width: 100%;
+  }
+}
