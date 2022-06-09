@@ -39,3 +39,5 @@ export const NavMobile = ({ cartSize }: NavMobileProps) => {
     </>
   )
 }
+
+export default NavMobile;

@@ -1,8 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import { Header, Footer } from "../index";
 import type { HeaderProps } from "../../types/customTypes";
-import { Footer } from "../Footer/Footer";
-import { Header } from "../Header/Header";
 
 export const Layout = ({cartSize, popupProps}: HeaderProps) => {
   return (
@@ -13,3 +12,5 @@ export const Layout = ({cartSize, popupProps}: HeaderProps) => {
     </>
   )
 }
+
+export default Layout;

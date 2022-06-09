@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { GrFormNext } from "react-icons/gr";
 import { Link } from "react-router-dom";
-import type { CartPopupProps, CartProps, Product } from "../../types/customTypes";
 import { CartItem } from "../CartItem/CartItem";
-import { IoMdClose } from "react-icons/io";
 import { useViewport } from "../../hooks/useViewport";
+import { IoMdClose } from "react-icons/io";
+import { GrFormNext } from "react-icons/gr";
+import type { CartPopupProps, Product } from "../../types/customTypes";
 import lowestPriceBanner from "../../../public/static/images/lowest-price.png";
 import "./CartPopup.scss";
 
@@ -70,3 +70,5 @@ export const CartPopup = ({ cartProps, popupProps }: CartPopupProps) => {
     </>
   )
 }
+
+export default CartPopup;

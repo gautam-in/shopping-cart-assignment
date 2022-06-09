@@ -1,14 +1,7 @@
 import React, { useEffect, useReducer, useState } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
-import { Layout } from "./components/Layout/Layout";
-import { ProductGrid } from "./components/ProductGrid/ProductGrid";
-import { Home } from "./pages/Home/Home";
-import { Products } from "./pages/Products/Products";
-import { Register } from "./pages/Register/Register";
-import { SignIn } from "./pages/SignIn/SignIn";
-import { PageNotFound } from "./pages/PageNotFound/PageNotFound";
-import { Cart } from "./pages/Cart/Cart";
-import { CartPopup } from "./components/CartPopup/CartPopup";
+import { Layout, ProductGrid, CartPopup } from "./components/index";
+import { Home, Products, Cart, Register, SignIn, PageNotFound } from "./pages/index";
 import { cartReducer } from "./utils/cartReducer";
 import { useViewport } from "./hooks/useViewport";
 import type { Product } from "./types/customTypes";

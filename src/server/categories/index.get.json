@@ -41,6 +41,7 @@
     "description": "Great place to buy fresh seafood.",
     "enabled": false,
     "order": -1,
+    "imageUrl": "/static/images/category/seafood.png",
     "id": "5b68997d3d1a866534f516e1"
   },
   {

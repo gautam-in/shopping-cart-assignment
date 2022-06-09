@@ -4,7 +4,7 @@ import { NavMobile } from "../NavMobile/NavMobile";
 import { NavLink } from "react-router-dom";
 import { useViewport } from "../../hooks/useViewport";
 import type { HeaderProps } from "../../types/customTypes";
-import logo from "../../static/images/logo.png";
+import logo from "/static/images/logo.png";
 import "./Header.scss";
 
 export const Header = ({cartSize, popupProps}: HeaderProps) => {
@@ -19,3 +19,5 @@ export const Header = ({cartSize, popupProps}: HeaderProps) => {
         </header>
     )
 }
+
+export default Header;

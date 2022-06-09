@@ -1,7 +1,7 @@
 import React from "react";
 import "./SignIn.scss";
 
-export const SignIn = () => {
+const SignIn = () => {
   return (
     <div className="signin">
       <div className="signin__header">
@@ -19,3 +19,5 @@ export const SignIn = () => {
     </div>
   )
 }
+
+export default SignIn;

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Register.scss";
 
-export const Register = () => {
+const Register = () => {
   return (
     <div className="register">
       <div className="register__header">
@@ -21,3 +21,5 @@ export const Register = () => {
       </div>
     </div>)
 }
+
+export default Register;

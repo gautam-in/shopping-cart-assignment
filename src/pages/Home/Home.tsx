@@ -1,8 +1,7 @@
 import React from "react";
-import { Banner } from "../../components/Banner/Banner";
-import { Categories } from "../../components/Categories/Categories";
+import { Banner, Categories } from "../../components/index";
 
-export const Home = () => {
+const Home = () => {
   
   return (
     <main>
@@ -11,3 +10,5 @@ export const Home = () => {
     </main>
   )
 }
+
+export default Home;

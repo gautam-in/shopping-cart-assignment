@@ -42,3 +42,5 @@ export const ProductMenuMobile = () => {
     </div>
   )
 }
+
+export default ProductMenuMobile;

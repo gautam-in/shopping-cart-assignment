@@ -33,3 +33,5 @@ export const ProductCard = ({product, cartDispatch}: ProductCardProps) => {
     </div>
   )
 }
+
+export default ProductCard;

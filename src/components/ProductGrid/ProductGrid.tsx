@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { ProductCard } from "../index";
 import type { Product, ProductGridProps } from "../../types/customTypes";
-import { ProductCard } from "../ProductCard/ProductCard";
 import products from "../../server/products/index.get.json";
 import "./ProductGrid.scss";
 
@@ -24,7 +24,13 @@ export const ProductGrid = ({ cartDispatch }: ProductGridProps) => {
   }
   
   const getProductsByCategory = () => {
-    return products.filter((product: Product) => product.category === id).map((product: Product) => getProductCard(product));
+    const productsByCategory = products.filter((product: Product) => product.category === id).map((product: Product) => getProductCard(product));
+
+    if(productsByCategory.length === 0) {
+      return (<p className="no-products">Sorry No Products available right now</p>);
+    } 
+
+    return productsByCategory;
   }
 
   return (
@@ -33,4 +39,6 @@ export const ProductGrid = ({ cartDispatch }: ProductGridProps) => {
     </div>
   )
 }
+
+export default ProductGrid;
 

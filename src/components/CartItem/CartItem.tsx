@@ -50,3 +50,5 @@ export const CartItem = ({ product, cartDispatch }: CartItemProps) => {
     </div>
   )
 }
+
+export default CartItem;

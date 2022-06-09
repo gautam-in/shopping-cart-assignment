@@ -13,3 +13,5 @@ export const ProductMenu = () => {
     </div>
   )
 }
+
+export default ProductMenu;

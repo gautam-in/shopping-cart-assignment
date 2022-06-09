@@ -1,11 +1,10 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { ProductMenu } from "../../components/ProductMenu/ProductMenu";
-import { ProductMenuMobile } from "../../components/ProductMenuMobile/ProductMenuMobile";
+import { ProductMenu, ProductMenuMobile } from "../../components/index";
 import { useViewport } from "../../hooks/useViewport";
 import "./Products.scss";
 
-export const Products = () => {
+const Products = () => {
   const windowWidth = useViewport();
 
   return (

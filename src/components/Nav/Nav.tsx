@@ -33,3 +33,5 @@ export const Nav = ({ cartSize, popupProps }: NavProps) => {
     </>
   )
 }
+
+export default Nav;

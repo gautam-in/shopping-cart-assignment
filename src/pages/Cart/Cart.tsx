@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import type { CartProps, Product } from "../../types/customTypes";
-import { CartItem } from "../../components/CartItem/CartItem";
+import { CartItem } from "../../components/index";
 import { GrFormNext } from "react-icons/gr";
+import type { CartProps, Product } from "../../types/customTypes";
 import lowestPriceBanner from "../../../public/static/images/lowest-price.png";
 import "./Cart.scss";
 
-export const Cart = ({ cartState, cartDispatch }: CartProps) => {
-
+const Cart = ({ cartState, cartDispatch }: CartProps) => {
   const [totalCartValue, setTotalCartValue] = useState(0);
 
   const getCartItem = (product: Product) => {
@@ -55,3 +54,5 @@ export const Cart = ({ cartState, cartDispatch }: CartProps) => {
     </div>
   )
 }
+
+export default Cart;
