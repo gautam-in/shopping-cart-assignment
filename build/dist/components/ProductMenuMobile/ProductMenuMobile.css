@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 37.5%;
+  font-family: "Dosis", sans-serif;
+  box-sizing: border-box;
+  /* Mobile Landscape */
+  /* Tablet */
+  /* Desktop Base */
+  /* Desktop Large */
+  /* Larger breakpoints */
+  /*
+    Responsive breakpoints
+    1920px: styles applied to screens 1920px wide and above
+    1440px: styles applied to screens 1440px wide and above
+    1280px: styles applied to screens 1280px wide and above
+    Desktop (base): styles apply to all devices unless overridden at other device breakpoints
+    Tablet: styles applied to screens 991px wide and below
+    Mobile landscape: styles applied to screens 767px wide and below
+    Mobile portrait: styles applied to screens 478px wide and below
+  */
+}
+@media only screen and (min-width: 478px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html {
+    font-size: 68.75%;
+  }
+}
+
+.product-menu-mobile {
+  margin: 8rem auto 0 auto;
+  width: 100%;
+  font-size: 3rem;
+  position: relative;
+}
+.product-menu-mobile__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #b3005c;
+  color: #fff;
+}
+.product-menu-mobile__head:hover {
+  cursor: pointer;
+  background-color: #cd0069;
+}
+.product-menu-mobile__categories {
+  display: flex;
+  flex-flow: column nowrap;
+  position: absolute;
+  z-index: 1;
+  background-color: #fff;
+  width: 100%;
+}
+.product-menu-mobile__categories > a {
+  font-size: 3rem;
+  text-decoration: none;
+  text-align: left;
+  padding: 2rem;
+  transition: all 0.2s;
+}
+.product-menu-mobile__categories > a:hover {
+  cursor: pointer;
+  background-color: rgb(240, 236, 236);
+  color: rgb(94, 94, 94);
+}
+
+.arrow-icon {
+  margin-top: 0.2em;
+  font-size: 1.2em;
+}
+
+.active-mobile-menu-link {
+  background-color: #b3005c;
+  color: #fff;
+}
+
+.inactive-mobile-menu-link {
+  color: #666666;
+}
+
+.hide-menu {
+  transition: all 0.5s;
+  opacity: 0;
+  transform: translateY(-130%);
+}
+
+.show-menu {
+  transition: all 0.5s;
+  transform: translateY(0%);
+  opacity: 1;
+}
