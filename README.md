@@ -4,12 +4,11 @@ This is the base folder for the shopping cart exercise. You will have all the st
 
 ## Getting Started
 
-Clone this repo and run following command for starting the mock server:
+Clone this repo and run following command for starting the mock server and client:
 
 ```
-npm install
+npm i -g json-server
+npm run install
 npm run start
-# or
-yarn install
-yarn start
+open browser and copy paste this url - http://localhost:4000
 ```
