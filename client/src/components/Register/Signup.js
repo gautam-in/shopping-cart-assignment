@@ -32,7 +32,7 @@ const data = [{
     id: 'password',
     label: 'Password',
     value: "",
-    regex: /[0-9a-zA-Z]{6,}/,
+    regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/,
     error: false,
     helperText: "please enter valid password"
 },
@@ -40,7 +40,7 @@ const data = [{
     id: 'confirmPassword',
     label: 'Confirm Password',
     value: "",
-    regex: /[0-9a-zA-Z]{6,}/,
+    regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/,
     error: false,
     helperText: "please enter valid confirm password"
 }

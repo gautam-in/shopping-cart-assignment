@@ -18,7 +18,8 @@ const data = [{
     label: 'Password',
     value: "",
     error: false,
-    regex: /[0-9a-zA-Z]{6,}/,
+    // regex: /[0-9a-zA-Z]{6,}/,
+    regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/,
     helperText: "please enter valid password"
 }
 ];
