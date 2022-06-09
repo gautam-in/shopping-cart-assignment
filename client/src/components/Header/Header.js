@@ -27,7 +27,9 @@ const Header = (props) => {
     });
     const dispatch = useDispatch();
     const clickToOpenCart = () => {
-        dispatch({ type: 'OPEN_MODAL_FOR_CART' })
+        if(isLoggedIn){
+            dispatch({ type: 'OPEN_MODAL_FOR_CART' })
+        }
     }
     const handleLogout = ()=>{
         clearStorage();

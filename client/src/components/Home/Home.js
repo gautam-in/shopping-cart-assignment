@@ -68,9 +68,9 @@ const Home = () => {
             <Header/>
             <div>
                 <Carousel>
-                    {bannerData && bannerData.map((items) => {
+                    {bannerData && bannerData.map((items,index) => {
                         return (
-                            <div>
+                            <div key={index}>
                                 <img src={items.bannerImageUrl} />
                             </div>
                         )
@@ -82,7 +82,7 @@ const Home = () => {
                 {categoryData && categoryData.map((datas,index) => {
                     if(index%2==0){
                         return (
-                            <React.Fragment>
+                            <React.Fragment key={index}>
                                 <Card className={classes.root}>
                                     <CardContent>
                                         <Grid container>
@@ -107,7 +107,7 @@ const Home = () => {
                     }
                     else{
                         return (
-                            <React.Fragment>
+                            <React.Fragment key={index}>
                                 <Card className={classes.root}>
                                     <CardContent>
                                         <Grid container>

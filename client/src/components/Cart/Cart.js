@@ -17,7 +17,6 @@ import RemoveCircleSharpIcon from '@material-ui/icons/RemoveCircleSharp';
 import AddCircleSharpIcon from '@material-ui/icons/AddCircleSharp';
 import { useDispatch } from 'react-redux';
 const ResponsiveDialog = () => {
-    const [open, setOpen] = React.useState(false);
     const countOfItems = useSelector((state) => {
         return state.CartReducer.countOfItems
     });
@@ -31,12 +30,7 @@ const ResponsiveDialog = () => {
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
-    const handleClickOpen = () => {
-        setOpen(true);
-    };
-
     const handleClose = () => {
-        setOpen(false);
         dispatch({ type: 'CLOSE_MODAL_FOR_CART' })
     };
     /** when click on plus icon in cart */

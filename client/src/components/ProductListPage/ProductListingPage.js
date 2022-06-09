@@ -114,7 +114,7 @@ const ProductListingPage = () => {
                     <select className='mobileDropDown' onChange={handleDropdown}>
                         <option value="">Please select category</option>
                         {categoriesData.map((text, index) => (
-                            <option value={text.id} size="3">{text.name}</option>
+                            <option value={text.id} size="3" key={index}>{text.name}</option>
                         ))}
                     </select>
                 </div>
@@ -141,10 +141,10 @@ const ProductListingPage = () => {
             <main className={classes.content}>
                 <Grid container spacing={2} data-testid="plp-main">
                     {
-                        productsData.map((items) => {
+                        productsData.map((items,i) => {
                             if (items.category === categoryId) {
                                 return (
-                                    <React.Fragment>
+                                    <React.Fragment key={i}>
 
                                         <Grid item xs={12} sm={6} md={3} style={{ textAlign: 'center' ,boxShadow:'0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%'}}>
                                             <p className='headerText'>{items.name}</p>
@@ -166,7 +166,7 @@ const ProductListingPage = () => {
                             else {
                                 if (categoryId === "") {
                                     return (
-                                        <React.Fragment>
+                                        <React.Fragment key={i}>
                                             <Grid item xs={12} sm={6} md={3} style={{ textAlign: 'center',boxShadow:'0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%' }}>
 
                                                 <p className='headerText'>{items.name}</p>
@@ -176,7 +176,7 @@ const ProductListingPage = () => {
                                                     <div><span>MRP</span>&nbsp;<span>Rs</span>&nbsp;<span>{items.price}</span></div>
                                                     <div>
                                                         <Button size="small" variant="contained" color="secondary" onClick={(ev) => handleBuyNow(ev, items)}>
-                                                            Buy now
+                                                            Buy Now
                                                         </Button>
                                                     </div>
                                                 </div>
