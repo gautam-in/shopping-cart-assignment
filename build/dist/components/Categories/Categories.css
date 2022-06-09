@@ -58,7 +58,7 @@ html {
 
 .category {
   display: flex;
-  box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
   margin: 4rem auto;
   padding: 2rem;
@@ -68,6 +68,7 @@ html {
 @media only screen and (min-width: 478px) {
   .category {
     width: 80%;
+    box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
   }
 }
 @media only screen and (min-width: 768px) {
