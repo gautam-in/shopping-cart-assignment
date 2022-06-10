@@ -8,6 +8,7 @@ const Register = () => {
     <Layout>
       <Head>
         <title>Register - Sabka Bazaar</title>
+        <meta name="description" content="Register - Sabka Bazaar" />
       </Head>
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-24 md:pt-20 mb-8">
         <div className="col-span-1 md:ml-auto ml-6">

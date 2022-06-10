@@ -43,10 +43,10 @@ function Offers() {
               <Image
                 src={offer.bannerImageUrl}
                 alt={offer.bannerImageAlt}
-                height={220}
-                width={1200}
+                height={600}
+                width={2400}
                 quality="100"
-                priority
+                priority={true}
               />
             </CarouselItem>
           ),

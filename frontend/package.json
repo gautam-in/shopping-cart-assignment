@@ -11,6 +11,7 @@
     "@headlessui/react": "^1.6.4",
     "@tailwindcss/line-clamp": "^0.4.0",
     "next": "latest",
+    "next-pwa": "^5.5.4",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-hook-form": "^7.31.3",

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React, {useEffect, useState} from 'react'
 
 interface Props {
@@ -6,11 +8,7 @@ interface Props {
 }
 
 export const CarouselItem = ({children, width}: Props) => {
-  return (
-    <div className="carousel-item" style={{width: width}}>
-      {children}
-    </div>
-  )
+  return <div className="carousel-item w-full h-full">{children}</div>
 }
 
 const Carousel = ({children}: Props) => {
@@ -48,7 +46,7 @@ const Carousel = ({children}: Props) => {
       onMouseLeave={() => setPaused(false)}
     >
       <div
-        className="inner  h-[20vh] md:h-[30vh] lg:h-[40vh]"
+        className="inner max-w-[2400px]  max-h-[600px]"
         style={{transform: `translateX(-${activeIndex * 100}%)`}}
       >
         {React.Children.map(children, (child, index) => {
@@ -60,7 +58,7 @@ const Carousel = ({children}: Props) => {
         onClick={() => {
           updateIndex(activeIndex - 1)
         }}
-        className="absolute top-[50%] translate-y-[-50%] p-2 uppercase text-white bg-slate-800 bg-opacity-40"
+        className="absolute top-[50%] translate-y-[-50%] p-2 uppercase text-white bg-slate-800 bg-opacity-60"
       >
         Prev
       </button>
@@ -69,7 +67,7 @@ const Carousel = ({children}: Props) => {
         onClick={() => {
           updateIndex(activeIndex + 1)
         }}
-        className="absolute top-[50%] right-0 translate-y-[-50%] p-2 uppercase text-white bg-slate-800 bg-opacity-40"
+        className="absolute top-[50%] right-0 translate-y-[-50%] p-2 uppercase text-white bg-slate-800 bg-opacity-60"
       >
         Next
       </button>
@@ -80,7 +78,7 @@ const Carousel = ({children}: Props) => {
               aria-label={`navigate to offer ${index + 1}`}
               className={`${
                 index === activeIndex ? 'bg-slate-900' : 'bg-slate-500'
-              } h-2 w-2 rounded-full  mr-2`}
+              } h-2 w-2 rounded-full  mr-4 md:inline hidden`}
               onClick={() => {
                 updateIndex(index)
               }}

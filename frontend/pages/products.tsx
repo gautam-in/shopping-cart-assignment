@@ -8,6 +8,7 @@ const Products = () => {
     <Layout>
       <Head>
         <title>Products List - Sabka Bazaar</title>
+        <meta name="description" content="Products List - Sabka Bazaar" />
       </Head>
       <div className="flex -mt-4">
         <CategoryWrapper />

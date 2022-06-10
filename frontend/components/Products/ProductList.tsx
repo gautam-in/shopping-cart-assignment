@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, {useState, useEffect, useReducer} from 'react'
 import {useQuery} from 'react-query'
 import {Product} from '../../typings'

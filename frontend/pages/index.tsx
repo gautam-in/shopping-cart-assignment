@@ -15,6 +15,10 @@ const Home: NextPage = () => {
         <title>
           Online shopping site in India to buy groceries - Sabka Bazaar
         </title>
+        <meta
+          name="description"
+          content="Sabka Bazaar - Ecommerce platform for India"
+        />
       </Head>
       <Layout>
         <Offers />

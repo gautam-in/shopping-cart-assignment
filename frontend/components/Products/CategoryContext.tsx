@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react'
 import {useQuery} from 'react-query'
 import ProductSidebar from './ProductSidebar'

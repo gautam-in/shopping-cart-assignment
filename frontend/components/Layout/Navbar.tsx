@@ -16,13 +16,13 @@ function Navbar() {
           <Link href="/">
             <a
               aria-label="Sabka Bazaar"
-              className="lg:w-[14%] md:w-[20%] w-[25%] lg:p-1 h-full self-center"
+              className="lg:w-[12.5%] md:w-[25%] w-[25%] lg:p-1 h-full self-center"
             >
               <Image
                 src="/static/images/logo_2x.png"
                 alt="sabka bazaar logo"
-                width={400}
-                height={200}
+                width={380}
+                height={172}
               />
             </a>
           </Link>

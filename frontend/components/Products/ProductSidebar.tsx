@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react'
 import {Category} from '../../typings'
 import {categoryContext} from './CategoryContext'

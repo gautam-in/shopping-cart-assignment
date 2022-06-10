@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, {Fragment, useState} from 'react'
 import {Dialog, Transition} from '@headlessui/react'
 import Link from 'next/link'
