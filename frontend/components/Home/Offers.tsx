@@ -1,6 +1,7 @@
 import React from 'react'
 import Carousel, {CarouselItem} from './Carousel'
 import {useQuery} from 'react-query'
+import Image from 'next/image'
 
 interface Banner {
   bannerImageUrl: string
@@ -39,10 +40,13 @@ function Offers() {
             bannerImageAlt: string
           }) => (
             <CarouselItem key={offer.id}>
-              <img
+              <Image
                 src={offer.bannerImageUrl}
                 alt={offer.bannerImageAlt}
-                className="object-fill w-full"
+                height={220}
+                width={1200}
+                quality="100"
+                priority
               />
             </CarouselItem>
           ),

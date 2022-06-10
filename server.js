@@ -1,6 +1,6 @@
 var canned = require('canned'),
   http = require('http'),
-  opts = {logger: process.stdout, cors: false}
+  opts = {logger: process.stdout, cors: true}
 
 can = canned('./server', opts)
 

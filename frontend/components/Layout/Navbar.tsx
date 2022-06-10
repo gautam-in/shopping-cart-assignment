@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 import {useCartContext} from '../Cart/CartContext'
+import Image from 'next/image'
+
 function Navbar() {
   const {cartItems} = useCartContext()
 
@@ -16,18 +18,12 @@ function Navbar() {
               aria-label="Sabka Bazaar"
               className="lg:w-[14%] md:w-[20%] w-[25%] lg:p-1 h-full self-center"
             >
-              <picture>
-                <source
-                  className="object-cover"
-                  srcSet="/static/images/logo_2x.png"
-                  media="(min-width:768px)"
-                />
-                <img
-                  className="object-cover"
-                  src="/static/images/logo.png"
-                  alt="sabka bazaar logo"
-                />
-              </picture>
+              <Image
+                src="/static/images/logo_2x.png"
+                alt="sabka bazaar logo"
+                width={400}
+                height={200}
+              />
             </a>
           </Link>
           <h1 className="sr-only">Sabka Bazaar</h1>
