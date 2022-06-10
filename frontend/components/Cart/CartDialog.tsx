@@ -92,7 +92,7 @@ const CartDialog = ({isOpen, setIsOpen, closeModal}: Props) => {
                         0,
                       )} item)`}
                     </h2>
-                    <button onClick={closeModal}>
+                    <button aria-label="Close Cart" onClick={closeModal}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-5 w-5"
@@ -133,6 +133,7 @@ const CartDialog = ({isOpen, setIsOpen, closeModal}: Props) => {
                               </h2>
                               <div className="flex mt-2 gap-4 items-center">
                                 <button
+                                  aria-label={`remove 1 quantity of ${item.name}`}
                                   onClick={() => removeItemFromCart(item)}
                                   className="inline-flex items-center justify-center w-6 h-6  text-white transition-colors duration-150 bg-[#d10054] rounded-full focus:shadow-outline hover:bg-pink-800"
                                 >
@@ -153,6 +154,7 @@ const CartDialog = ({isOpen, setIsOpen, closeModal}: Props) => {
                                   {item.qty}
                                 </h4>
                                 <button
+                                  aria-label={`add 1 quantity of ${item.name}`}
                                   onClick={() => addItemToCart(item)}
                                   className="inline-flex items-center justify-center w-6 h-6  text-white transition-colors duration-150 bg-[#d10054] rounded-full focus:shadow-outline hover:bg-pink-800"
                                 >
@@ -211,6 +213,7 @@ const CartDialog = ({isOpen, setIsOpen, closeModal}: Props) => {
                     </p>
                     {cartItems.products.length === 0 ? (
                       <button
+                        aria-label="close cart"
                         type="button"
                         onClick={closeModal}
                         className="text-white bg-[#d10054] px-4 py-4 text-center w-full"
@@ -219,6 +222,7 @@ const CartDialog = ({isOpen, setIsOpen, closeModal}: Props) => {
                       </button>
                     ) : (
                       <button
+                        aria-label="Proceed to Checkout"
                         type="button"
                         onClick={closeModal}
                         className="text-white bg-[#d10054] px-4 py-4 flex justify-between w-full"

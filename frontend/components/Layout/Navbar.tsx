@@ -9,7 +9,7 @@ function Navbar() {
       <div className="lg:container mx-auto flex justify-between">
         <>
           <div id="skip">
-            <a href="#content">Skip to main content</a>
+            <a href="#main">Skip to main content</a>
           </div>
           <Link href="/">
             <a
@@ -25,11 +25,12 @@ function Navbar() {
                 <img
                   className="object-cover"
                   src="/static/images/logo.png"
-                  alt="logo"
+                  alt="sabka bazaar logo"
                 />
               </picture>
             </a>
           </Link>
+          <h1 className="sr-only">Sabka Bazaar</h1>
         </>
 
         <div className="self-end justify-start grow space-x-4 ml-8 lg:ml-[10rem] mb-4 hidden md:flex">

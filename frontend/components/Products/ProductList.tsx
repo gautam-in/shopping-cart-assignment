@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useReducer} from 'react'
 import {useQuery} from 'react-query'
 import {Product} from '../../typings'
-import {categoryContext} from '../../pages/products'
+import {categoryContext} from './CategoryContext'
 import {Category} from '../../typings'
 import CartDialog from '../Cart/CartDialog'
 import {useCartContext} from '../Cart/CartContext'
@@ -25,7 +25,16 @@ const ProductList = () => {
     }
   }, [])
 
-  if (isLoading) return <div>Loading....</div>
+  if (isLoading)
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ml-4 mt-6 mb-4 animate-pulse">
+        {[1, 1, 1, 1, 1, 1, 1, 1].map((dummy, index) => (
+          <React.Fragment key={index}>
+            <div className="h-40 w-40 bg-slate-200"></div>
+          </React.Fragment>
+        ))}
+      </div>
+    )
 
   function closeModal() {
     setIsOpen(false)

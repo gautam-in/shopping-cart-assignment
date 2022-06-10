@@ -43,6 +43,7 @@ const RegisterForm = () => {
         } pb-2`}
       >
         <input
+          id="firstName"
           type="text"
           aria-required="true"
           {...register('firstName', {
@@ -54,7 +55,7 @@ const RegisterForm = () => {
         <label
           htmlFor="firstName"
           className={`absolute top-0 -z-1 origin-0 ${
-            errors.firstName ? `text-red-400 ` : `text-gray-400`
+            errors.firstName ? `text-red-400 ` : `text-gray-500`
           }`}
         >
           First Name
@@ -71,6 +72,7 @@ const RegisterForm = () => {
         } pb-2`}
       >
         <input
+          id="lastName"
           type="text"
           aria-required="true"
           {...register('lastName', {
@@ -82,7 +84,7 @@ const RegisterForm = () => {
         <label
           htmlFor="lastName"
           className={`absolute top-0 -z-1 origin-0 ${
-            errors.email ? `text-red-400 ` : `text-gray-400`
+            errors.email ? `text-red-400 ` : `text-gray-500`
           }`}
         >
           Last Name
@@ -100,6 +102,7 @@ const RegisterForm = () => {
       >
         <input
           type="email"
+          id="email"
           aria-required="true"
           {...register('email', {
             required: 'email cannot be empty',
@@ -114,7 +117,7 @@ const RegisterForm = () => {
         <label
           htmlFor="email"
           className={`absolute top-0 -z-1 origin-0 ${
-            errors.email ? `text-red-400 ` : `text-gray-400`
+            errors.email ? `text-red-400 ` : `text-gray-500`
           }`}
         >
           Email
@@ -132,6 +135,7 @@ const RegisterForm = () => {
       >
         <input
           type="password"
+          id="password"
           aria-required="true"
           {...register('password', {
             required: 'password cannot be empty',
@@ -147,7 +151,7 @@ const RegisterForm = () => {
         <label
           htmlFor="password"
           className={`absolute top-0 -z-1 origin-0 ${
-            errors.password ? `text-red-400 ` : `text-gray-400`
+            errors.password ? `text-red-400 ` : `text-gray-500`
           }`}
         >
           Password
@@ -164,6 +168,7 @@ const RegisterForm = () => {
         } pb-2`}
       >
         <input
+          id="confirmpassword"
           type="password"
           aria-required="true"
           {...register('confirmPassword', {
@@ -180,7 +185,7 @@ const RegisterForm = () => {
         <label
           htmlFor="confirmpassword"
           className={`absolute top-0 -z-1 origin-0 ${
-            errors.confirmPassword ? `text-red-400 ` : `text-gray-400`
+            errors.confirmPassword ? `text-red-400 ` : `text-gray-500`
           }`}
         >
           Confirm Password

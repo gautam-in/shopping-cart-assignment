@@ -29,6 +29,7 @@ const LoginForm = () => {
       >
         <input
           type="email"
+          id="email"
           aria-required="true"
           {...register('email', {
             required: 'email cannot be empty',
@@ -43,7 +44,7 @@ const LoginForm = () => {
         <label
           htmlFor="email"
           className={`absolute top-0 -z-1 origin-0 ${
-            errors.email ? `text-red-400 ` : `text-gray-400`
+            errors.email ? `text-red-400 ` : `text-gray-500`
           }`}
         >
           Email
@@ -62,6 +63,7 @@ const LoginForm = () => {
       >
         <input
           type="password"
+          id="password"
           aria-required="true"
           {...register('password', {
             required: 'password cannot be empty',
@@ -72,7 +74,7 @@ const LoginForm = () => {
         <label
           htmlFor="password"
           className={`absolute top-0 -z-1 origin-0 ${
-            errors.password ? `text-red-400 ` : `text-gray-400`
+            errors.password ? `text-red-400 ` : `text-gray-500`
           }`}
         >
           Password

@@ -10,7 +10,9 @@ const Layout = ({children}: Props) => {
   return (
     <>
       <Navbar />
-      <main className="mt-28 lg:container mx-auto">{children}</main>
+      <main id="main" className="mt-28 lg:container mx-auto">
+        {children}
+      </main>
       <Footer />
     </>
   )

@@ -14,12 +14,16 @@ const Categories = () => {
   )
   if (isLoading)
     return (
-      <div className="mt-16">
-        <div className="flex justify-between items-center animate-pulse space-x-8 md:mx-0 mx-4">
+      <>
+        <div className="flex justify-between items-center animate-pulse space-x-8 md:mx-0 mx-4 mb-8">
+          <div className="h-48 w-full bg-slate-200"></div>
+          <div className="h-48 w-[30%] bg-slate-200"></div>
+        </div>
+        <div className="flex justify-between items-center animate-pulse space-x-8 md:mx-0 mx-4 mb-8">
           <div className="h-48 w-[30%] bg-slate-200"></div>
           <div className="h-48 w-full bg-slate-200"></div>
         </div>
-      </div>
+      </>
     )
   if (isError) return <>Error Occured</>
   return (
@@ -44,7 +48,7 @@ const Categories = () => {
               <img
                 src={category.imageUrl}
                 className="md:max-w-[450px] max-w-[200px]"
-                alt={category.description}
+                alt={`image depicting ${category.name} category`}
               />
               <div className="flex flex-col items-center grow">
                 <h2 className="text-lg text-slate-900 font-semibold">

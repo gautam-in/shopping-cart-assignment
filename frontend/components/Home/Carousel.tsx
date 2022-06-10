@@ -77,6 +77,7 @@ const Carousel = ({children}: Props) => {
         {React.Children.map(children, (child, index) => {
           return (
             <button
+              aria-label={`navigate to offer ${index + 1}`}
               className={`${
                 index === activeIndex ? 'bg-slate-900' : 'bg-slate-500'
               } h-2 w-2 rounded-full  mr-2`}

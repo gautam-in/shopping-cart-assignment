@@ -1,6 +1,6 @@
 import React from 'react'
 import {Category} from '../../typings'
-import {categoryContext} from '../../pages/products'
+import {categoryContext} from './CategoryContext'
 interface Props {
   data: Category[]
 }
@@ -26,7 +26,7 @@ const ProductSidebar = ({data}: Props) => {
             return (
               <a
                 key={category.id}
-                className="text-gray-500 text-normal py-3 px-6 cursor-pointer"
+                className="text-gray-700 text-normal py-3 px-6 cursor-pointer"
                 onClick={() => handleCategoryFilter(category.id)}
               >
                 {category.name}
