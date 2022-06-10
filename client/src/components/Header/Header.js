@@ -37,6 +37,7 @@ const Header = (props) => {
     }
     return (
         <React.Fragment>
+            <div className="appbarParent">
             <AppBar className="appbar" position="static">
                 <Toolbar>
                     <Grid item xs={6} sm={4} md={4}>
@@ -71,6 +72,8 @@ const Header = (props) => {
 
                 </Toolbar>
             </AppBar>
+            </div>
+
         </React.Fragment>
     )
 }
