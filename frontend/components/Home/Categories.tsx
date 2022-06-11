@@ -6,7 +6,6 @@ import axios from 'axios'
 
 async function fetchCategories() {
   const {data} = await axios.get(`http://localhost:5000/categories/`)
-  console.log(data)
   return data
 }
 
