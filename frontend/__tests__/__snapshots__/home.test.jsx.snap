@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Page renders homepage unchanged 1`] = `
+<div>
+  <nav
+    class="drop-shadow-md bg-white w-full fixed top-0 left-0 right-0 z-10"
+  >
+    <div
+      class="lg:container mx-auto flex justify-between"
+    >
+      <div
+        id="skip"
+      >
+        <a
+          href="#main"
+        >
+          Skip to main content
+        </a>
+      </div>
+      <a
+        aria-label="Sabka Bazaar"
+        class="lg:w-[12.5%] md:w-[25%] w-[25%] lg:p-1 h-full self-center"
+        href="/"
+      >
+        <span
+          style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+        >
+          <span
+            style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27380%27%20height=%27172%27/%3e"
+              style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+            />
+          </span>
+          <img
+            alt="sabka bazaar logo"
+            data-nimg="intrinsic"
+            decoding="async"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          />
+          <noscript />
+        </span>
+      </a>
+      <h1
+        class="sr-only"
+      >
+        Sabka Bazaar
+      </h1>
+      <div
+        class="self-end justify-start grow space-x-4 ml-8 lg:ml-[10rem] mb-4 hidden md:flex"
+      >
+        <div>
+          <a
+            href="/"
+          >
+            Home
+          </a>
+        </div>
+        <div>
+          <a
+            href="/products"
+          >
+            Products
+          </a>
+        </div>
+      </div>
+      <div
+        class="flex md:flex-col justify-between md:pt-1 space-x-2"
+      >
+        <div
+          class="md:flex space-x-4 self-end mr-2 lg:mr-0 hidden"
+        >
+          <div>
+            <a
+              class="text-sm hover:underline"
+              href="/login"
+              tabindex="0"
+            >
+              SignIn
+            </a>
+          </div>
+          <div>
+            <a
+              class="text-sm hover:underline"
+              href="/register"
+              tabindex="0"
+            >
+              Register
+            </a>
+          </div>
+        </div>
+        <a
+          aria-label="0 items in cart"
+          class="bg-[#EAEAEA] px-6 py-4 flex items-center space-x-3 focus:border mt-2"
+          href="/cart"
+        >
+          <svg
+            class="h-8 w-8 fill-[#d10054]"
+            focusable="false"
+            id="Layer_1"
+            version="1.1"
+            viewBox="0 0 24 24"
+            x="0px"
+            xml:space="preserve"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            y="0px"
+          >
+            <path
+              d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+            />
+          </svg>
+          <span>
+            0
+             
+            items
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <main
+    class="mt-28 lg:container mx-auto"
+    id="main"
+  >
+    <div
+      class="mt-16"
+    >
+      <div
+        class="flex justify-between items-center animate-pulse space-x-8 md:mx-0 mx-4 mb-8 mt-8"
+      >
+        <div
+          class="h-48 w-full bg-slate-200"
+        />
+      </div>
+    </div>
+    <div
+      class="flex justify-between items-center animate-pulse space-x-8 md:mx-0 mx-4 mb-8"
+    >
+      <div
+        class="h-48 w-full bg-slate-200"
+      />
+      <div
+        class="h-48 w-[30%] bg-slate-200"
+      />
+    </div>
+    <div
+      class="flex justify-between items-center animate-pulse space-x-8 md:mx-0 mx-4 mb-8"
+    >
+      <div
+        class="h-48 w-[30%] bg-slate-200"
+      />
+      <div
+        class="h-48 w-full bg-slate-200"
+      />
+    </div>
+  </main>
+  <footer
+    class="bg-[#EAEAEA]"
+  >
+    <div
+      class="container mx-auto text-center md:text-left py-4 text-normal"
+    >
+      Copyright 2011 - 
+      2022
+       Sabka Bazaar Grocery Supplies Pvt Ltd
+    </div>
+  </footer>
+</div>
+`;
