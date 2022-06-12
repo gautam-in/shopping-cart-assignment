@@ -6,6 +6,7 @@ import {categoryContext} from './CategoryContext'
 import {Category} from '../../typings'
 import CartDialog from '../Cart/CartDialog'
 import {useCartContext} from '../Cart/CartContext'
+import {useRouter} from 'next/router'
 
 async function fetchProducts() {
   const response = await fetch(`http://localhost:5000/products/`)
@@ -13,6 +14,8 @@ async function fetchProducts() {
 }
 
 const ProductList = () => {
+  const router = useRouter()
+  const {category} = router.query
   let [isOpen, setIsOpen] = useState(false)
   const {cartItems, dispatch} = useCartContext()
 
@@ -21,10 +24,13 @@ const ProductList = () => {
   const {isLoading, isError, data, error} = useQuery('products', fetchProducts)
 
   useEffect(() => {
+    if (category) {
+      setSelectedCategory(category)
+    }
     return () => {
       closeModal()
     }
-  }, [])
+  }, [category, setSelectedCategory])
 
   if (isLoading)
     return (

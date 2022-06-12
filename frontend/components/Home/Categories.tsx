@@ -3,6 +3,7 @@ import {useQuery} from 'react-query'
 import {Category} from '../../typings'
 import Image from 'next/image'
 import axios from 'axios'
+import {useRouter} from 'next/router'
 
 async function fetchCategories() {
   const {data} = await axios.get(`http://localhost:5000/categories/`)
@@ -14,6 +15,8 @@ const Categories = () => {
     'categories',
     fetchCategories,
   )
+  const router = useRouter()
+
   if (isLoading)
     return (
       <>
@@ -28,6 +31,9 @@ const Categories = () => {
       </>
     )
   if (isError) return <>Error Occured</>
+  const navigateToProducts = (category: Category) => {
+    router.push(`/products?category=${category.id}`)
+  }
   return (
     <div className="container mx-auto mt-16">
       {data
@@ -65,7 +71,10 @@ const Categories = () => {
                 <p className="text-normal text-slate-500 mt-2 mb-4 px-4 md:px-0">
                   {category.description}
                 </p>
-                <button className="text-white bg-[#d10054] px-4 py-2">
+                <button
+                  onClick={() => navigateToProducts(category)}
+                  className="text-white bg-[#d10054] px-4 py-2"
+                >
                   Explore {category.key}
                 </button>
               </div>
