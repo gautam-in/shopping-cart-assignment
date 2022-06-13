@@ -1,9 +1,9 @@
 // @ts-nocheck
 import React from 'react'
 import {useQuery} from 'react-query'
-import ProductSidebar from './ProductSidebar'
-import ProductList from './ProductList'
-import axios from '../../axiosConfig'
+import ProductSidebar from 'components/Products/ProductSidebar'
+import ProductList from 'components/Products/ProductList'
+import axios from 'axiosConfig'
 
 async function fetchCategories() {
   const {data} = await axios.get(`/categories/`)

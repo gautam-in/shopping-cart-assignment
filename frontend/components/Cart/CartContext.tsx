@@ -1,5 +1,5 @@
 import React from 'react'
-import {Product} from '../../typings'
+import {Product} from 'typings'
 
 interface Props {
   children?: JSX.Element | JSX.Element[]

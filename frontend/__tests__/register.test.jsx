@@ -1,6 +1,6 @@
 import {render, screen} from '@testing-library/react'
-import Register from '../pages/register.tsx'
-import {renderWithClient} from '../mocks/utils'
+import Register from 'pages/register.tsx'
+import {renderWithClient} from 'mocks/utils'
 import userEvent from '@testing-library/user-event'
 
 describe('Register Page', () => {

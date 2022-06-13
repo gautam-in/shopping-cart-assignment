@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import {useCartContext} from '../Cart/CartContext'
+import {useCartContext} from 'components/Cart/CartContext'
 import Image from 'next/image'
 
 function Navbar() {

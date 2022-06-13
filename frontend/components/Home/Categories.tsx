@@ -1,8 +1,8 @@
 import React from 'react'
 import {useQuery} from 'react-query'
-import {Category} from '../../typings'
+import {Category} from 'typings'
 import Image from 'next/image'
-import axios from '../../axiosConfig'
+import axios from 'axiosConfig'
 import {useRouter} from 'next/router'
 
 async function fetchCategories() {

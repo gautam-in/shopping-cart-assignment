@@ -1,6 +1,6 @@
 import {render, screen} from '@testing-library/react'
-import Login from '../pages/login.tsx'
-import {renderWithClient} from '../mocks/utils'
+import Login from 'pages/login.tsx'
+import {renderWithClient} from 'mocks/utils'
 import userEvent from '@testing-library/user-event'
 
 describe('Login Page', () => {

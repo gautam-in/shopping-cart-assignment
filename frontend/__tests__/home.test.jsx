@@ -1,7 +1,7 @@
 import {render, screen} from '@testing-library/react'
-import Home from '../pages/index.tsx'
-import {server} from '../mocks/server'
-import {renderWithClient} from '../mocks/utils'
+import Home from 'pages/index.tsx'
+import {server} from 'mocks/server'
+import {renderWithClient} from 'mocks/utils'
 
 beforeAll(() => server.listen())
 

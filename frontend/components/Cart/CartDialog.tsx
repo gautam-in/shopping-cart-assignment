@@ -1,8 +1,7 @@
 // @ts-nocheck
 import React, {Fragment, useState} from 'react'
 import {Dialog, Transition} from '@headlessui/react'
-import Link from 'next/link'
-import {useCartContext} from './CartContext'
+import {useCartContext} from 'components/Cart/CartContext'
 
 interface Props {
   isOpen: boolean

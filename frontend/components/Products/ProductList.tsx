@@ -1,12 +1,12 @@
 // @ts-nocheck
 import React, {useState, useEffect, useReducer} from 'react'
 import {useQuery} from 'react-query'
-import {Product} from '../../typings'
+import {Product} from 'typings'
 import {categoryContext} from './CategoryContext'
-import CartDialog from '../Cart/CartDialog'
-import {useCartContext} from '../Cart/CartContext'
+import CartDialog from 'components/Cart/CartDialog'
+import {useCartContext} from 'components/Cart/CartContext'
 import {useRouter} from 'next/router'
-import axios from '../../axiosConfig'
+import axios from 'axiosConfig'
 
 async function fetchProducts() {
   const {data} = await axios.get(`/products/`)

@@ -1,8 +1,8 @@
 import React from 'react'
-import Carousel, {CarouselItem} from './Carousel'
+import Carousel, {CarouselItem} from 'components/Home/Carousel'
 import {useQuery} from 'react-query'
 import Image from 'next/image'
-import axios from '../../axiosConfig'
+import axios from 'axiosConfig'
 
 interface Banner {
   bannerImageUrl: string

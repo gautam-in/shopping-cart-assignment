@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from './Navbar'
-import Footer from './Footer'
+import Navbar from 'components/Layout/Navbar'
+import Footer from 'components/Layout/Footer'
 
 interface Props {
   children?: JSX.Element | JSX.Element[]

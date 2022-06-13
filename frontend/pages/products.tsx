@@ -1,6 +1,6 @@
 import React from 'react'
-import Layout from '../components/Layout'
-import CategoryWrapper from '../components/Products/CategoryContext'
+import Layout from 'components/Layout'
+import CategoryWrapper from 'components/Products/CategoryContext'
 import Head from 'next/head'
 
 const Products = () => {

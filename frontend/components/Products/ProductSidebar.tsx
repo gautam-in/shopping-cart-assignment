@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react'
-import {Category} from '../../typings'
+import {Category} from 'typings'
 import {categoryContext} from './CategoryContext'
 interface Props {
   data: Category[]
