@@ -3,7 +3,7 @@ import Login from '../pages/login.tsx'
 import {renderWithClient} from '../mocks/utils'
 import userEvent from '@testing-library/user-event'
 
-describe('Home Page', () => {
+describe('Login Page', () => {
   it('testing login ui fields', async () => {
     const result = renderWithClient(<Login />)
     const loginHeading = screen.getByRole('heading', {name: /login/i})

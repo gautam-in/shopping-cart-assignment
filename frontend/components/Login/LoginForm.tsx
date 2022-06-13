@@ -50,7 +50,7 @@ const LoginForm = () => {
           Email
         </label>
       </div>
-      <p className="text-red-600" id="emailerror" tabIndex={0}>
+      <p className="text-red-600" data-testid="password-error" tabIndex={0}>
         {errors.email && errors.email.message}
       </p>
 

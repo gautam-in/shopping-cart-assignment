@@ -157,7 +157,7 @@ const RegisterForm = () => {
           Password
         </label>
       </div>
-      <p className="text-red-600" tabIndex={0}>
+      <p className="text-red-600" tabIndex={0} data-testid="password-error">
         {errors.password && errors.password.message}
       </p>
       <div
