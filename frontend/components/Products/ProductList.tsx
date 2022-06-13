@@ -3,14 +3,14 @@ import React, {useState, useEffect, useReducer} from 'react'
 import {useQuery} from 'react-query'
 import {Product} from '../../typings'
 import {categoryContext} from './CategoryContext'
-import {Category} from '../../typings'
 import CartDialog from '../Cart/CartDialog'
 import {useCartContext} from '../Cart/CartContext'
 import {useRouter} from 'next/router'
+import axios from '../../axiosConfig'
 
 async function fetchProducts() {
-  const response = await fetch(`http://localhost:5000/products/`)
-  return response.json()
+  const {data} = await axios.get(`/products/`)
+  return data
 }
 
 const ProductList = () => {
@@ -163,7 +163,7 @@ const ProductList = () => {
           </select>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ml-4 mt-6 mb-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ml-4 mt-6 mb-4">
         {selectedCategory === 'ALL'
           ? data.map((product: Product, index: number) => {
               return (
@@ -180,7 +180,7 @@ const ProductList = () => {
                         <img
                           src={product.imageURL}
                           alt=""
-                          className="mb-5 h-40 w-36 md:w-36 md:h-36 lg:w-full md:h-48 object-fit object-top"
+                          className="mb-5 h-40 w-36 md:w-36 md:h-36 lg:w-48 md:h-48 object-fit object-top lg:mx-auto"
                         />
                         <div className="flex justify-between flex-col px-2 gap-4">
                           <div className="relative bg-gray-100 px-2 py-2 text-sm h-full lg:h-[75px]">

@@ -3,10 +3,11 @@ import React from 'react'
 import {useQuery} from 'react-query'
 import ProductSidebar from './ProductSidebar'
 import ProductList from './ProductList'
+import axios from '../../axiosConfig'
 
 async function fetchCategories() {
-  const response = await fetch(`http://localhost:5000/categories/`)
-  return response.json()
+  const {data} = await axios.get(`/categories/`)
+  return data
 }
 
 export const categoryContext = React.createContext(null)

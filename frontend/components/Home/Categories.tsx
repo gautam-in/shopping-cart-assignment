@@ -2,11 +2,11 @@ import React from 'react'
 import {useQuery} from 'react-query'
 import {Category} from '../../typings'
 import Image from 'next/image'
-import axios from 'axios'
+import axios from '../../axiosConfig'
 import {useRouter} from 'next/router'
 
 async function fetchCategories() {
-  const {data} = await axios.get(`http://localhost:5000/categories/`)
+  const {data} = await axios.get(`/categories/`)
   return data
 }
 

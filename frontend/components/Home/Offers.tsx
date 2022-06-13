@@ -2,7 +2,7 @@ import React from 'react'
 import Carousel, {CarouselItem} from './Carousel'
 import {useQuery} from 'react-query'
 import Image from 'next/image'
-import axios from 'axios'
+import axios from '../../axiosConfig'
 
 interface Banner {
   bannerImageUrl: string
@@ -13,7 +13,7 @@ interface Banner {
 }
 
 async function fetchOffers() {
-  const {data} = await axios.get(`http://localhost:5000/banners/`)
+  const {data} = await axios.get(`/banners/`)
   return data
 }
 
