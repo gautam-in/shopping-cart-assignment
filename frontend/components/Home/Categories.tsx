@@ -59,11 +59,6 @@ const Categories = () => {
                 width={450}
                 height={300}
               />
-              {/* <img
-                src={category.imageUrl}
-                className="md:max-w-[450px] max-w-[200px]"
-                alt={`image depicting ${category.name} category`}
-              /> */}
               <div className="flex flex-col items-center grow">
                 <h2 className="text-lg text-slate-900 font-semibold">
                   {category.name}

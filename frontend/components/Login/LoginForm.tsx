@@ -50,7 +50,7 @@ const LoginForm = () => {
           Email
         </label>
       </div>
-      <p className="text-red-600" tabIndex={0}>
+      <p className="text-red-600" id="emailerror" tabIndex={0}>
         {errors.email && errors.email.message}
       </p>
 
@@ -80,7 +80,7 @@ const LoginForm = () => {
           Password
         </label>
       </div>
-      <p className="text-red-600" tabIndex={0}>
+      <p className="text-red-600" id="passworderror" tabIndex={0}>
         {errors.password && errors.password.message}
       </p>
 
