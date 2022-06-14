@@ -5,6 +5,7 @@ form {
   display: block;
   transition: 0.3s;
   position: relative;
+
   &.up {
     transition: translateY(-180px);
   }
@@ -20,30 +21,36 @@ h1 {
   font-weight: 500;
   font-size: 16px;
   color: $form-input-color;
-  & + & {
+
+  &+& {
     margin-top: 30px;
   }
+
   .form-label {
     position: absolute;
     left: 0;
     top: 5px;
     transition: 0.3s;
   }
+
   .form-control {
     width: 100%;
     position: relative;
     border: none;
     padding: 5px 0;
     border-bottom: 1px solid $form-input-color;
+
     &:invalid {
       outline: none;
     }
+
     &:focus,
     &:valid {
       outline: none;
       box-shadow: 0 1px $color-lightblue;
       border-color: $color-lightblue;
-      + .form-label {
+
+      +.form-label {
         font-weight: 500;
         font-size: 16px;
         color: $color-lightblue;

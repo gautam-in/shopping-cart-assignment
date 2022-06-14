@@ -4,7 +4,6 @@
   "scripts": {
     "start": "nodemon ./bin/www",
     "compile:sass": "node-sass helpers/sass/main.scss helpers/css/style.css",
-    "start:dev": "npm run compile:sass"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

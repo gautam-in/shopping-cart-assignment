@@ -4,15 +4,14 @@ const banners = require('../helpers/db/banners/index.get.json');
 const prodCategories = require('../helpers/db/categories/index.get.json');
 const loginData = require('../helpers/db/label/login.get.json');
 const registerData = require('../helpers/db/label/register.get.json');
-
-
 const products = require('../helpers/db/products/index.get.json');
+
 const cart = {
     items: [],
     count: 0,
     totalPrice: 0
 }
-/* GET home page. */
+
 router.get('/', function (req, res, next) {
     ActiveBanners = banners.filter(banner => banner.isActive);
     ActiveCategories = prodCategories.filter(category => category.enabled);
@@ -63,7 +62,6 @@ router.get('/cart', function (req, res, next) {
 
 
 
-// cart operations 
 router.post('/cart/:operation', function (req, res) {
     const operation = req.params.operation;
     console.log('Hello')
