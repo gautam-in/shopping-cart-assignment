@@ -1,0 +1,55 @@
+body > #root {
+  grid-template:
+        "header header"
+        "aside main" 1fr
+        "footer footer" 50px/ 20% 1fr;
+}
+.categories__item {
+  display: flex;
+  height: 300px;
+  align-items: center;
+  position: relative;
+  background-color: #fff;
+  margin-top: 10px;
+}
+.categories__item:first-child{
+  margin-top: 4%;
+}
+.categories__item:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    box-shadow: 0 0 30px rgb(0 0 0 / 10%);
+    border-radius: 100%;
+    height: 20%;
+    width: 80%;
+    left: 10%;
+    right: 10%;
+    bottom: 0px;
+}
+
+.categories__item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+
+.categories__item > div:nth-child(1) {
+  flex: 1;
+}
+
+.categories__item > div:nth-child(2) {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.categories__item > div > h1,
+.categories__item > div > p {
+  text-align: center;
+}
+
+
+.categories__item > div > img {
+  width: 100%;
+}

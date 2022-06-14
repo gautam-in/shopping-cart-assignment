@@ -7,6 +7,7 @@ const Aside = ({ categories }) => (
   <aside>
     <ul>
       {categories
+        .filter((category) => category.enabled)
         .sort((a, b) => parseInt(a.order) - parseInt(b.order))
         .map((category) => (
           <li key={category.key}>

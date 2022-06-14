@@ -8,5 +8,6 @@ aside > ul {
   border: red;
 }
 aside > ul > li {
-  padding: 5%;
+  padding: 5% 0 5% 10%;
+  border-bottom: 1px solid rgb(140, 139, 139);
 }
