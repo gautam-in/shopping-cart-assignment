@@ -1,0 +1,25 @@
+footer {
+    grid-area: footer;
+    background-color: #eaeaea;
+    .footer {
+        margin-left: 13%;
+        font-weight: 500;
+        font-size: 16px;
+        /* line-height: 50px; */
+        padding: 1%;
+        font-family: $primary-font;
+    }
+}
+
+
+/* for ipad */
+
+@media screen and (max-width: 480px) {
+    footer .footer {
+        margin-left: 8%;
+        padding: 1%;
+        font-family: $primary-font;
+        /* text-align: left; */
+        font-size: 14px;
+    }
+}

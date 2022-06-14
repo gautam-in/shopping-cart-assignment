@@ -1,0 +1,27 @@
+<div class="wrap container-fluid" id="login_page">
+    <section>
+        <div class="login row">
+            <div class="login__content col-xs-7">
+                <p class="login__content__heading">Login
+                </p>
+                <p class="login__content__text">Get access to your orders. Wishlist and Recommendations.
+                </p>
+            </div>
+            <div class="col-xs-5">
+                <form class="login__form">
+                    {{#each loginData}}
+                    <div class="form-group">
+                        <input type="{{type}}" name="{{label}}" class="form-control" required />
+                        <label class="form-label">{{label}}
+                        </label>
+                    </div>
+                    {{/each}}
+                    <div class="form-group">
+                        <button class="login__form__btn">Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>

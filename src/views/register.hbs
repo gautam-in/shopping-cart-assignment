@@ -1,0 +1,30 @@
+<div class="wrap container-fluid" id="signup_page">
+    <main>
+    <section>
+        <div class="signup row">
+            <div class="signup__content col-xs-7">
+                <p class="signup__content__heading">Signup
+                </p>
+                <p class="signup__content__text">We do not share your personal details with anyone.
+                </p>
+            </div>
+            <div class="col-xs-5">
+                <form class="signup__form">
+
+                    {{#each registerData}}
+                    <div class="form-group">
+                        <input type="{{type}}" name="{{label}}" class="form-control" required />
+                        <label class="form-label">{{label}}
+                        </label>
+                    </div>
+                    {{/each}}
+                    <div class="form-group">
+                        <button class="signup__form__btn">Signup
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    </main>
+</div>

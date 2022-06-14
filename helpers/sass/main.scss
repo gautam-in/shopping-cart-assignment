@@ -1,0 +1,16 @@
+@import "abstracts/mixins";
+@import "abstracts/variables";
+@import "base/base";
+@import "base/animation";
+@import "layout/header";
+@import "layout/footer";
+@import "components/form";
+@import "pages/home";
+@import "pages/plp";
+@import "pages/login";
+@import "pages/cart";
+@import "pages/register";
+@import "abstracts/flexboxgrid";
+main {
+    grid-area: main;
+}
