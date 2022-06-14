@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Product} from 'typings'
 
 interface Props {
@@ -14,9 +14,13 @@ const initialState = {products: []}
 const CartContext = React.createContext<{
   cartItems: CartState
   dispatch: React.Dispatch<any>
+  isOpen: boolean
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }>({
   cartItems: initialState,
+  isOpen: false,
   dispatch: () => null,
+  setIsOpen: () => null,
 })
 
 type ACTIONTYPE =
@@ -53,8 +57,10 @@ const reducer = (state: {products: any[]}, action: ACTIONTYPE) => {
 
 export function CartWrapper({children}: Props) {
   const [cartItems, dispatch] = React.useReducer(reducer, initialState)
+  let [isOpen, setIsOpen] = useState(false)
+
   return (
-    <CartContext.Provider value={{cartItems, dispatch}}>
+    <CartContext.Provider value={{cartItems, dispatch, isOpen, setIsOpen}}>
       {children}
     </CartContext.Provider>
   )

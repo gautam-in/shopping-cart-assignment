@@ -10,7 +10,7 @@ interface Props {
 }
 
 const CartDialog = ({isOpen, setIsOpen, closeModal}: Props) => {
-  const {cartItems, dispatch} = useCartContext()
+  const {cartItems, dispatch, isCartDialogOpen} = useCartContext()
   function addItemToCart(item) {
     if (cartItems.products.length === 0) {
       dispatch({type: 'ADD', payload: item})
@@ -69,8 +69,8 @@ const CartDialog = ({isOpen, setIsOpen, closeModal}: Props) => {
             <div className="fixed inset-0 bg-black bg-opacity-25" />
           </Transition.Child>
 
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
+          <div className="fixed inset-0 overflow-y-auto container mx-auto">
+            <div className="flex min-h-full items-center justify-center md:justify-end text-center">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"

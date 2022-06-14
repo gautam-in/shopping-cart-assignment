@@ -7,6 +7,7 @@ import CartDialog from 'components/Cart/CartDialog'
 import {useCartContext} from 'components/Cart/CartContext'
 import {useRouter} from 'next/router'
 import axios from 'axiosConfig'
+import BuyButton from 'components/utils/Buttons/BuyButton/BuyButton'
 
 async function fetchProducts() {
   const {data} = await axios.get(`/products/`)
@@ -16,8 +17,8 @@ async function fetchProducts() {
 const ProductList = () => {
   const router = useRouter()
   const {category} = router.query
-  let [isOpen, setIsOpen] = useState(false)
-  const {cartItems, dispatch} = useCartContext()
+  // let [isOpen, setIsOpen] = useState(false)
+  const {cartItems, dispatch, isOpen, setIsOpen} = useCartContext()
 
   const {selectedCategory, categoryList, setSelectedCategory} =
     React.useContext(categoryContext)
@@ -96,10 +97,13 @@ const ProductList = () => {
                     <div className="relative bg-gray-200 px-2 py-2 text-sm h-full lg:h-[75px]">
                       <p className="lg:line-clamp-3"> {product.description}</p>
                     </div>
-                    <button className="text-white bg-[#d10054] px-4 py-2 inline md:hidden mb-4">
-                      Buy Now
+                    <BuyButton
+                      displayPrice={true}
+                      onClick={() => addItemToCart(product)}
+                      text={`Buy Now`}
+                    >
                       <span className="inline lg:hidden">{` @ ${product.price}`}</span>
-                    </button>
+                    </BuyButton>
                   </div>
                 </div>
               </div>
@@ -188,13 +192,13 @@ const ProductList = () => {
                               {product.description}
                             </p>
                           </div>
-                          <button
-                            className="text-white bg-[#d10054] px-4 py-2 inline md:hidden mb-4"
+                          <BuyButton
+                            displayPrice={true}
                             onClick={() => addItemToCart(product)}
+                            text={`Buy Now`}
                           >
-                            Buy Now
                             <span className="inline lg:hidden">{` @ ${product.price}`}</span>
-                          </button>
+                          </BuyButton>
                         </div>
                       </div>
                     </div>
@@ -203,6 +207,7 @@ const ProductList = () => {
                       <div className="pl-2 hidden lg:block">
                         MRP Rs.{product.price}
                       </div>
+
                       <button
                         className="text-white bg-[#d10054] px-8 py-2 md:grow lg:grow-0 mr-2"
                         onClick={() => addItemToCart(product)}

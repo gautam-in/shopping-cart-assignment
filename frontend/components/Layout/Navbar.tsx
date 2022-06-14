@@ -2,9 +2,16 @@ import React from 'react'
 import Link from 'next/link'
 import {useCartContext} from 'components/Cart/CartContext'
 import Image from 'next/image'
+import {useRouter} from 'next/router'
 
 function Navbar() {
-  const {cartItems} = useCartContext()
+  const {cartItems, setIsOpen} = useCartContext()
+  const router = useRouter()
+
+  function openModal() {
+    router.push('/products')
+    setIsOpen(true)
+  }
 
   return (
     <nav className="drop-shadow-md bg-white w-full fixed top-0 left-0 right-0 z-10">
@@ -59,8 +66,8 @@ function Navbar() {
               </Link>
             </div>
           </div>
-          <a
-            href="/cart"
+          <button
+            onClick={openModal}
             className="bg-[#EAEAEA] px-6 py-4 flex items-center space-x-3 focus:border mt-2"
             aria-label={`${cartItems.products.reduce(
               (acc, curr) => acc + Number(curr.qty),
@@ -88,7 +95,7 @@ function Navbar() {
               )}
               {` `}items
             </span>
-          </a>
+          </button>
         </div>
       </div>
     </nav>

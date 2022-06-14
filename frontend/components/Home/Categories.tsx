@@ -4,6 +4,7 @@ import {Category} from 'typings'
 import Image from 'next/image'
 import axios from 'axiosConfig'
 import {useRouter} from 'next/router'
+import PrimaryButton from 'components/utils/Buttons/PrimaryButton/PrimaryButton'
 
 async function fetchCategories() {
   const {data} = await axios.get(`/categories/`)
@@ -66,12 +67,10 @@ const Categories = () => {
                 <p className="text-normal text-slate-500 mt-2 mb-4 px-4 md:px-0">
                   {category.description}
                 </p>
-                <button
+                <PrimaryButton
                   onClick={() => navigateToProducts(category)}
-                  className="text-white bg-[#d10054] px-4 py-2"
-                >
-                  Explore {category.key}
-                </button>
+                  text={`Explore ${category.key}`}
+                />
               </div>
             </div>
           )
