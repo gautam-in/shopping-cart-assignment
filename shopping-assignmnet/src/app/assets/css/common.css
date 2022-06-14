@@ -1,0 +1,75 @@
+body > #root{
+  min-height: 100vh;
+  display: grid;
+  grid-template:
+      "header header"
+      "main main" 1fr
+      "footer footer" 50px/ 20% 1fr;
+}
+aside {
+  grid-area: aside;
+  display: none;
+}
+main {
+  grid-area: main;
+}
+footer{
+  grid-area: footer;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.btn {
+  height: 46px;
+  border: none;
+  background-color: #A81444;
+  color: #fff;
+  padding: 0 1rem;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.5rem
+}
+
+ul > li > a {
+  padding: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+@media screen and (min-width: 760px) {
+  body > #root{
+    grid-template:
+    "header header"
+    "aside main" 1fr
+    "footer footer" 50px/ 20% 1fr;
+  }
+  aside{
+    display: block;
+  }
+}
