@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/css?family=Dosis:400,600,700);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+#skip a {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+#skip a:focus {
+  height: auto;
+  position: static;
+  width: auto;
+}
+
+input:focus-within ~ label,
+input:not(:placeholder-shown) ~ label {
+  @apply transform scale-75 -translate-y-6;
+}
+
+input:focus-within ~ label {
+  @apply text-cyan-500;
+}
+
+.carousel {
+  overflow: hidden;
+  position: relative;
+}
+
+.inner {
+  white-space: nowrap;
+  transition: transform 0.3s;
+}
+
+.carousel-item {
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
