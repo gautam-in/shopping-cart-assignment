@@ -33,7 +33,7 @@ const Banner = () => {
               <div>
                 <img
                   src={process.env.PUBLIC_URL + category.imageUrl}
-                  alt={category.name}
+                  alt={`${category.name} image for banner`}
                 />
               </div>
               <div>

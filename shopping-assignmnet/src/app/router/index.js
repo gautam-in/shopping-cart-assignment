@@ -4,4 +4,6 @@ import App from "../../App";
 import ProductView from "../../component/product/productView";
 const Banner = React.lazy(() => import("../../component/banner/banner"));
 const SignUp = React.lazy(() => import("../../component/auth/signup"));
-export { Login, App, ProductView, Banner, SignUp };
+const CartPage = React.lazy(() => import("../../component/cart/cart"));
+
+export { Login, App, ProductView, Banner, SignUp, CartPage };

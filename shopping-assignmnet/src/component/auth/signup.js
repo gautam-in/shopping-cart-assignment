@@ -45,7 +45,7 @@ const SignUp = () => {
             type="text"
             inputName="firstName"
             id="firstname"
-            placeholder=""
+            placeholder=" "
             displayName="First Name"
             onChange={handleChange}
             value={signupDetails.firstName}
@@ -55,7 +55,7 @@ const SignUp = () => {
             type="text"
             inputName="lastName"
             id="lastname"
-            placeholder="Last Name"
+            placeholder=" "
             displayName="Last Name"
             onChange={handleChange}
             value={signupDetails.lastName}
@@ -65,7 +65,7 @@ const SignUp = () => {
             type="email"
             inputName="email"
             id="email"
-            placeholder="Email"
+            placeholder=" "
             displayName="Email"
             onChange={handleChange}
             value={signupDetails.email}
@@ -75,7 +75,7 @@ const SignUp = () => {
             type="password"
             inputName="password"
             id="password"
-            placeholder="Password"
+            placeholder=" "
             displayName="Password"
             onChange={handleChange}
             value={signupDetails.password}
@@ -85,7 +85,7 @@ const SignUp = () => {
             type="password"
             inputName="confirmPassword"
             id="confirmpassword"
-            placeholder="Confirm Password"
+            placeholder=" "
             displayName="Confirm Password"
             onChange={handleChange}
             value={signupDetails.confirmPassword}

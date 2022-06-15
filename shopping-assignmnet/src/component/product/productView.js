@@ -1,5 +1,7 @@
+/* eslint-disable no-console */
 import React, { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { SabkaBazarContext } from "../../store/context";
 import Aside from "../common/view/aside";
 import { Footer } from "../common/view/footer";
 import Header from "../common/view/header";
@@ -8,7 +10,7 @@ const ProductView = () => {
   const params = useParams();
   const [allProd, setAllProd] = useState([]);
   const [cateogories, setCategories] = useState([]);
-
+  const { addToCart, addProducts } = React.useContext(SabkaBazarContext);
   /* Fetch categories */
 
   const getCategories = useCallback(async () => {
@@ -27,6 +29,7 @@ const ProductView = () => {
       );
       setAllProd(filteredProducts);
     } else {
+      addProducts(products);
       setAllProd(products);
     }
   }, [params]);
@@ -34,6 +37,10 @@ const ProductView = () => {
     getCategories();
     getAllProducts();
   }, [params]);
+
+  const addItemToCart = (id) => {
+    addToCart(id);
+  };
   return (
     <React.Fragment>
       <Header />
@@ -51,7 +58,9 @@ const ProductView = () => {
                   />
                   <p>{singleProducts.description}</p>
                   <span>MRP Rs.{singleProducts.price}</span>
-                  <button>Buy Now</button>
+                  <button onClick={() => addItemToCart(singleProducts.id)}>
+                    Buy Now
+                  </button>
                 </div>
               ))
             : "No Products.."}

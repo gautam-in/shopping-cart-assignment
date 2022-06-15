@@ -5,7 +5,10 @@ export const formValidation = (values, validationRules) => {
   };
   let errorMessage = {};
   validationRules.forEach((validation) => {
-    if (!validation.method(values[validation.name])) {
+    if (
+      validation.name in values &&
+      !validation.method(values[validation.name])
+    ) {
       errorMessage = {
         ...errorMessage,
         [validation.name]: validation.message,
@@ -13,7 +16,7 @@ export const formValidation = (values, validationRules) => {
     }
   });
   if (Object.keys(errorMessage).length) {
-    error = {
+    return {
       ...error,
       isError: true,
       errorMessage: { ...errorMessage },

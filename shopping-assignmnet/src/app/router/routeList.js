@@ -1,4 +1,4 @@
-import { Login, ProductView, Banner, SignUp } from "./index";
+import { Login, ProductView, Banner, SignUp, CartPage } from "./index";
 
 const OpenRoutes = [
   {
@@ -24,6 +24,10 @@ const OpenRoutes = [
   {
     path: "/banner",
     component: Banner,
+  },
+  {
+    path: "/cart",
+    component: CartPage,
   },
 ];
 export { OpenRoutes };
