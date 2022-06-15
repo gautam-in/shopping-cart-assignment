@@ -4,7 +4,7 @@
     "description": "This is a shopping cart coding exercise",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "jest",
         "compile:sass": "node-sass resources/sass/main.scss resources/css/style.css",
         "start": "node ./bin/www",
         "start:dev": "npm run compile:sass-dev"
@@ -12,12 +12,15 @@
     "author": "Manju",
     "license": "MIT",
     "devDependencies": {
+        "@babel/preset-env": "^7.18.2",
         "express": "^4.16.4",
         "hbs": "^4.0.3",
+        "jest": "^28.1.1",
         "node-sass": "^4.14.1",
         "postcss-loader": "^3.0.0",
         "postcss-preset-env": "^6.6.0",
-        "sass-loader": "^7.1.0"
+        "sass-loader": "^7.1.0",
+        "supertest": "^6.2.3"
     },
     "dependencies": {
         "axios": "^0.27.2",
