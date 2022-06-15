@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../app/assets/css/banner.css";
+import { Footer } from "../common/view/footer";
 import Header from "../common/view/header";
 
 const Banner = () => {
@@ -48,6 +49,7 @@ const Banner = () => {
           ))}
         </section>
       </main>
+      <Footer />
     </React.Fragment>
   );
 };

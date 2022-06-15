@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Aside from "../common/view/aside";
+import { Footer } from "../common/view/footer";
 import Header from "../common/view/header";
 
 const ProductView = () => {
@@ -56,9 +57,7 @@ const ProductView = () => {
             : "No Products.."}
         </section>
       </main>
-      <footer>
-        Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Put Ltd
-      </footer>
+      <Footer />
     </React.Fragment>
   );
 };

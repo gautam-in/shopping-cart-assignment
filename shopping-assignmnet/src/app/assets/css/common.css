@@ -13,8 +13,10 @@ aside {
 main {
   grid-area: main;
 }
-footer{
+footer {
   grid-area: footer;
+  background-color: #EBECEC;
+  padding: 1rem 0;
 }
 .sr-only {
   position: absolute;
@@ -42,7 +44,7 @@ footer{
 
 .container {
   max-width: 1024px;
-  padding: 0 10px;
+  padding: 0 10%;
 }
 
 ul {

@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "../../../app/assets/css/aside.css";
+
 const Aside = ({ categories }) => (
   <aside>
     <ul>
@@ -19,6 +19,6 @@ const Aside = ({ categories }) => (
 );
 export default Aside;
 
-Aside.PropTypes = {
+Aside.propTypes = {
   categories: PropTypes.objectOf(PropTypes.any).isRequired,
 };

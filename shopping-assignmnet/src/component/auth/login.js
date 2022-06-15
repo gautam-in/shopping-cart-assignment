@@ -1,45 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../common/view/header";
+import { Input } from "../common/input";
 import "../../app/assets/css/login.css";
+import "../../app/assets/css/form.css";
+import { Footer } from "../common/view/footer";
+import { formValidation } from "../common/formValidator";
+import { validationRules } from "./validationRules";
 
-const Login = () => (
-  <React.Fragment>
-    <Header />
-    <main className="container">
-      <div>
-        <h1>Login</h1>
-        <p>Get access to your Orders. Wishlist and RecommendationsLogin</p>
-      </div>
-      <form>
-        <div className="form-field">
-          <input
+const Login = () => {
+  const [loginDetails, setLoginDetails] = useState({
+    email: "",
+    password: "",
+  });
+  const [errorMessage, setErrorMessage] = useState({});
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const localDetails = { ...loginDetails };
+    localDetails[e.target.name] = e.target.value;
+    setLoginDetails(localDetails);
+  };
+  const handleClick = (e) => {
+    e.preventDefault();
+    let error = formValidation({ ...loginDetails }, validationRules);
+    setErrorMessage(error.errorMessage);
+    if (!error.isError) {
+      navigate("/");
+    }
+  };
+  return (
+    <>
+      <Header />
+      <main className="container">
+        <div>
+          <h1>Login</h1>
+          <p>Get access to your Orders. Wishlist and RecommendationsLogin</p>
+        </div>
+        <form>
+          <Input
             type="email"
-            className="form-field__input"
-            name="email"
+            inputName="email"
             id="email"
             placeholder=" "
+            value={loginDetails.email}
+            displayName="Email"
+            onChange={handleChange}
+            errorMessage={errorMessage.email}
           />
-          <label htmlFor="email" className="form-field__label">
-            Email
-          </label>
-          <div className="form-field__bar"></div>
-        </div>
-        <div className="form-field">
-          <input
+          <Input
             type="password"
-            className="form-field__input"
-            name="password"
+            inputName="password"
             id="password"
             placeholder=" "
+            displayName="Password"
+            value={loginDetails.password}
+            onChange={handleChange}
+            errorMessage={errorMessage.password}
           />
-          <label htmlFor="password" className="form-field__label">
-            Password
-          </label>
-          <div className="form-field__bar"></div>
-        </div>
-        <button className="btn btn--full">Login</button>
-      </form>
-    </main>
-  </React.Fragment>
-);
+          <button className="btn btn--full" onClick={handleClick}>
+            Login
+          </button>
+        </form>
+      </main>
+      <Footer />
+    </>
+  );
+};
 export default Login;
