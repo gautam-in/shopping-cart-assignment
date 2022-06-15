@@ -1,0 +1,24 @@
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import "../../../app/assets/css/aside.css";
+
+const Aside = ({ categories }) => (
+  <aside>
+    <ul>
+      {categories
+        .filter((category) => category.enabled)
+        .sort((a, b) => parseInt(a.order) - parseInt(b.order))
+        .map((category) => (
+          <li key={category.key}>
+            <Link to={`/product/${category.id}`}>{category.name}</Link>
+          </li>
+        ))}
+    </ul>
+  </aside>
+);
+export default Aside;
+
+Aside.propTypes = {
+  categories: PropTypes.objectOf(PropTypes.any).isRequired,
+};

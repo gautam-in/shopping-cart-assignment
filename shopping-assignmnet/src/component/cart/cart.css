@@ -1,0 +1,134 @@
+/* body > #root {
+  grid-template:
+      "header header"
+      "main main" 1fr
+      "footer footer" 50px/ 20% 1fr;
+} */
+.custom-container {
+  display: block;
+}
+.dark-bg {
+  background-color: #000 !important;
+  color: #fff;
+  font-weight: 600;
+}
+.cart-wrapper {
+  height: calc(100vh - 17vh);
+  background: #eeeeee;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-wrapper > header {
+  background-color: #ffffff;
+  padding: 1.5em;
+  font-size: 1rem;
+}
+header span::nth-child(2) {
+  font-size: 0.8rem;
+}
+header span::nth-child(1) {
+  font-size: 600
+}
+
+.cart-wrapper .cart-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.cart-wrapper .cart-item {
+  display: flex;
+  margin: 0.5em 0;
+  padding: 1em;
+  background: #ffffff;
+}
+.cart-wrapper .cart-item > .item-img {
+  height: 4em;
+}
+.cart-wrapper .cart-item > .item-img >img {
+  width: 100%;
+  height: 100%;
+}
+.cart-item > .item-details {
+  margin: 0 1em;
+  width: 100%;
+}
+
+.cart-item > .item-details > .title {
+  font-size: 1rem;
+  font-weight: 600;
+  padding-bottom: 1em;
+}
+.cart-item > .item-details > .calc {
+  display: flex;
+  justify-content: space-between;
+}
+.item-details > .calc > .left > button {
+  border: none;
+  border-radius: 20px;
+  background: #be2856;
+  color: #ffffff;
+  cursor: pointer;
+}
+.calc > .left > button:active {
+  background: #ecc3ca;
+}
+.item-details > .calc.right {
+      flex: 30%;
+      display: flex;
+      justify-content: flex-end;
+}
+.info-item {
+  background: #ffffff;
+  padding: 0.5em;
+  margin: 1em;
+  display: flex;
+  align-items: center;
+}
+.info-item  >img {
+      width: 8em;
+      padding-right: 1em;
+}
+.cart-footer {
+  background: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart-footer .desc {
+  font-size: 0.8rem;
+}
+
+.cart-footer button {
+  display: flex;
+  width: 100%;
+  margin: 1em;
+  padding: 1em;
+  background: #bf2957;
+  border: none;
+  color: #ffffff;
+  font-size: 0.9rem;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.cart-footer button:active {
+  background: #ecc3ca;
+}
+.cart-footer > .empty-cart-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.empty-cart-action  span {
+  color: #ffffff !important;
+}
+.empty-cart{
+  justify-content: center;
+  align-items: center;
+}
+.empty-cart:first-child{
+      font-size: 1.1rem;
+      font-weight: 600;
+}

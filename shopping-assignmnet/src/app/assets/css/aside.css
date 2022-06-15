@@ -1,0 +1,13 @@
+aside{
+  background-color: #EBECEC;
+}
+
+aside > ul {
+  display: flex;
+  flex-direction: column;
+  border: red;
+}
+aside > ul > li {
+  padding: 5% 0 5% 10%;
+  border-bottom: 1px solid rgb(140, 139, 139);
+}

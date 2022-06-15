@@ -1,0 +1,77 @@
+section.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* gap: 0.75rem; */
+}
+
+section.products > div.products__item {
+  padding: 0.75rem;
+  display: grid;
+  grid-template: 
+  "title title" 30px
+  "image content" 1fr
+  "image buyNow" 46px / 1fr 1fr; 
+  align-items: center;
+}
+
+section.products > div.products__item > span {
+  display: none;
+}
+
+section.products > div.products__item > h2 {
+  grid-area: title;
+}
+
+section.products > div.products__item > img {
+  grid-area: image;
+  width: 100%;
+}
+
+section.products > div.products__item > p {
+  grid-area: content;
+  background-color: #EBECEC;
+}
+
+section.products > div.products__item > span {
+  grid-area: price;
+}
+
+section.products > div.products__item > button {
+  grid-area: buyNow;
+  height: 46px;
+  border: none;
+  background-color: #A81444;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  section.products > div.products__item {
+      grid-template: 
+      "title title"
+      "image content"
+      "buyNow buyNow";
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  section.products > div.products__item {
+      grid-template: 
+      "title title"
+      "image image"
+      "content content"
+      "price buyNow";
+  }
+
+  section.products > div.products__item > span {
+      display: block;
+  }
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+  background-color: coral;
+}
+
+
+
