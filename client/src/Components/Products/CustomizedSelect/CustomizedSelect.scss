@@ -1,0 +1,33 @@
+@import "../../../App.scss";
+
+.section-cust-select {
+  color: #fff;
+  background-color: $base-icon-color;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 0.5rem;
+  .show-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    div {
+      width: auto;
+    }
+  }
+  .list {
+    transition: all 0.3s ease;
+    // color: rgb(255, 255, 255);
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background-color: $base-icon-color;
+    z-index: 5;
+    left: 0;
+    padding: 0.5rem 1rem;
+    .items {
+      padding: 0.4rem 0;
+      z-index: 6;
+    }
+  }
+}
