@@ -1,0 +1,86 @@
+/* common css */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.btn {
+  height: 46px;
+  border: none;
+  background-color: #a81444;
+  color: #fff;
+  padding: 0 1rem;
+}
+.btn--full {
+  width: 100%;
+}
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+ul > li > a {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+/* header css */
+
+header {
+  grid-area: header;
+  padding: 1rem 0;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+header > .container {
+  display: flex;
+  align-items: flex-end;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+header > .container img {
+  height: 80px;
+}
+
+header > .container > nav {
+  /* flex-grow: 1; */
+  flex: 1;
+}
+
+header > .container > section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+header > .container > section > button {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+header > .container > section > button svg {
+  height: 24px;
+  width: 24px;
+}
+button > div > svg {
+  fill: #bf2956;
+}
