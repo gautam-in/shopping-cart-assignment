@@ -13,3 +13,27 @@ npm run start
 yarn install
 yarn start
 ```
+
+## Run the frontend application
+
+`cd shopping-assignment`
+`npm install`
+`npm run start`
+or 
+`yarn install`
+`yarn start`
+
+## Run the server demo server
+
+`cd shopping-assignment`
+`npm install`
+`npm run start`
+# or 
+`yarn install`
+`yarn start`
+
+## Technology used
+
+HTML
+CSS
+ReactJs
