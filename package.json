@@ -1,15 +1,28 @@
 {
-  "name": "code-exercise",
-  "version": "1.0.0",
-  "description": "This is a shopping cart coding exercise",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
-  },
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "canned": "^0.3.12"
-  }
+    "name": "shopping-app",
+    "version": "1.0.0",
+    "description": "This is a shopping cart coding exercise",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "compile:sass": "node-sass resources/sass/main.scss resources/css/style.css",
+        "start": "node ./bin/www",
+        "start:dev": "npm run compile:sass-dev"
+    },
+    "author": "Manju",
+    "license": "MIT",
+    "devDependencies": {
+        "express": "^4.16.4",
+        "hbs": "^4.0.3",
+        "node-sass": "^4.14.1",
+        "postcss-loader": "^3.0.0",
+        "postcss-preset-env": "^6.6.0",
+        "sass-loader": "^7.1.0"
+    },
+    "dependencies": {
+        "axios": "^0.27.2",
+        "cookie-parser": "^1.4.4",
+        "morgan": "^1.9.1",
+        "path": "^0.12.7"
+    }
 }

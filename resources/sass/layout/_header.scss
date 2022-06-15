@@ -1,0 +1,156 @@
+header {
+  width: 100%;
+  nav {
+    -moz-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.15);
+  }
+  .row-header {
+    @include div-row;
+    text-align: center;
+    ul > li {
+      margin-left: 20px;
+      a {
+        text-decoration: none;
+        color: #787677;
+        font-weight: 600;
+      }
+    }
+    .logo {
+      flex: 0;
+      height: 70px;
+      width: auto;
+    }
+    .main-nav {
+      @include flex;
+      flex: 1;
+      align-items: center;
+      margin-left: 11%;
+      margin-top: 3%;
+    }
+    .super-header {
+      flex: 0;
+      font-size: 14px;
+      .cart-section {
+        @include flex;
+        margin-top: 21%;
+        background-color: #eeeeee;
+        width: 100px;
+        align-items: center;
+        justify-content: center;
+        .img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+}
+
+.header-nav {
+  @include flex;
+  list-style: none;
+}
+
+.show {
+  display: none;
+}
+
+.hide {
+  display: block;
+}
+
+.hide-menu {
+  display: inline-block;
+}
+
+.w3-teal,
+.w3-hover-teal:hover {
+  color: $color-white;
+  background-color: #0e0e0e;
+}
+
+#mobile-menu-close {
+  float: right;
+  background-color: inherit;
+  text-align: center;
+  border: none;
+  white-space: nowrap;
+}
+
+/* for ipad */
+
+@media screen and (max-width: 480px) {
+  #cart-section {
+    margin-top: 0%;
+  }
+  .show {
+    display: block;
+  }
+  .hide-menu {
+    display: none;
+  }
+  .hide {
+    display: none;
+  }
+  .header-nav {
+    display: none;
+  }
+  .row-header {
+    @include div-row;
+    text-align: center;
+    height: 45px;
+    /* justify-content: center; */
+  }
+  .logo_img {
+    width: 25%;
+    padding: 2%;
+  }
+
+  body {
+    padding: 2%;
+  }
+  .w3-teal,
+  .w3-hover-teal:hover {
+    color: $color-white;
+    background-color: #0e0e0e;
+  }
+  .mobile_menu {
+    margin-left: 55%;
+    color: #8a8a8a;
+    font-size: 18px;
+    font-weight: 400;
+    a {
+      text-decoration: none;
+    }
+    .w3-sidebar {
+      height: auto;
+      width: 200px;
+      background-color: #eaeaea;
+      position: fixed;
+      z-index: 1;
+      overflow: auto;
+    }
+  }
+}
+
+/*tablet */
+
+@media screen and (max-width: 767px) {
+  .super-header {
+    padding-right: 1%;
+  }
+  .cart-section {
+    margin-left: 16%;
+  }
+}
+
+/*tablet  landscape*/
+
+@media screen and (max-width: 1023px) {
+  .super-header {
+    padding-right: 1%;
+  }
+  .cart-section {
+    margin-left: 16%;
+  }
+}

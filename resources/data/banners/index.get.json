@@ -23,7 +23,7 @@
   {
     "bannerImageUrl": "/static/images/offers/offer4.jpg",
     "bannerImageAlt": "Independence Day Deal - Rs99 off on bodywash",
-    "isActive": true,
+    "isActive": false,
     "order": 4,
     "id": "5b6c38576cb7d770b7010ccf"
   },

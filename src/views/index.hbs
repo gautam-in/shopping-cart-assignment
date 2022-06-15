@@ -1,0 +1,106 @@
+<main id="categories-id">
+    <section class="home">
+        <div class="home__row">
+            <div class="col-xs-12">
+                <div class="w3-content w3-display-container">
+                    {{#each banners}}
+                    <img src="{{this.bannerImageUrl}}" alt="{{this.bannerImageAlt}}" class="home__row__slider">
+                    {{/each}}
+                    <button id="prev-button-js" class="hide__icon w3-button
+                                w3-grey w3-display-left
+                                ">PREV
+                    </button>
+                    <button id="next-button-js" class=" hide__icon w3-button
+                                w3-grey
+                                w3-display-right">NEXT
+                    </button>
+                    {{#each banners}}
+                    <span class="w3-badge demo w3-border
+                                 w3-hover-black home__row__slider--dot"
+                        onclick="currentSlide({{math @index "+" 1}})"></span>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </section>
+    {{#each categories}}
+    <section class="home">
+        <div class="home__row">
+            <div class="col-xs-4">
+                <img src="{{this.imageUrl}}" alt="{{this.name}}" class="home__row__img">
+            </div>
+            <div class="col-xs-8">
+                <div class="home__row__heading">{{this.name}}
+                </div>
+                <p class="home__row__text">{{this.description}}
+                </p>
+                <a href="product/{{this.id}}"> <button class="home__row__button">Explore {{this.key}}
+                    </button></a>
+            </div>
+        </div>
+    </section>
+    {{/each}}
+</main>
+<script>
+
+    /* Home page slider  */
+    var prev = document.getElementById("prev-button-js");
+    var next = document.getElementById("next-button-js");
+
+    var slider_dot = document.getElementsByClassName("home__row__slider--dot");
+    var slider_dot = Array.prototype.slice.call(slider_dot)
+    var slideIndex = 1;
+
+    if (typeof (prev) != 'undefined' && prev != null) {
+        showSlide(slideIndex);
+
+        prev.addEventListener("click", function () {
+            slideIndex--;
+            showSlide(slideIndex);
+        });
+        next.addEventListener("click", function () {
+            slideIndex++
+            showSlide(slideIndex);
+        });
+    }
+
+
+    if (typeof (slider_dot) != 'undefined' && slider_dot != null) {
+        slider_dot.forEach(function (elem, index) {
+            elem.addEventListener("click", function () {
+                currentSlide(index + 1);
+            });
+        });
+
+    }
+
+    function plusSlide(n) {
+        showSlide(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlide(slideIndex = n);
+    }
+
+    function showSlide(n) {
+        var i;
+        var slides = document.getElementsByClassName("home__row__slider");
+        var dots = document.getElementsByClassName("home__row__slider--dot");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+
+</script>
