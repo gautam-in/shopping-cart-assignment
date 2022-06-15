@@ -1,15 +1,17 @@
-# XT Shopping Cart Assignment
 
-This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.
+Backed server is running on Nodejs
+to start serer navigate to \server then
+npm install
+npm run server
+it will start post 3200
+http://localhost:3200/
 
-## Getting Started
-
-Clone this repo and run following command for starting the mock server:
-
-```
+Frontend configured with webpack
+to started frontend
 npm install
 npm run start
-# or
-yarn install
-yarn start
-```
+it will start at port 8080
+http://localhost:8080/login.html
+for login
+email : u1@test.com
+password : u1

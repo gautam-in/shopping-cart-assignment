@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sabka bazaar shows all product categories and offers">
+    <link rel="canonical" href="http://localhost:8080/home.html" />
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./common.css">
+    <title>Home: Sabka Bazaar</title>
+<script defer src="styles_cart_scss.js"></script><script defer src="home.js"></script></head>
+
+<body>
+    <header class="app-header">
+        <div class="container">
+            <picture>
+                <source srcset="static/images/logo_2x.png " media="(min-width: 720px)" />
+                <img src="static/images/logo.png" alt="Logo Sabka Bazaar iamge">
+            </picture>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="home.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="products.html">Products</a>
+                    </li>
+                </ul>
+            </nav>
+            <section>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="login.html">SignIn</a>
+                        </li>
+                        <li>
+                            <a href="/register.html">Register</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="cart-view" id="openModal">
+                    <div>
+                        <span class="sr-only">View Shopping Cart</span>
+                        <svg version="1.1" id="Layer_1" focusable="false" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24"
+                            xml:space="preserve">
+                            <path
+                                d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" />
+                        </svg>
+                    </div>
+                    <span id="itemCount">0 item</span>
+                </button>
+            </section>
+        </div>
+    </header>
+    <div class="cart_con" id="cart_modal">
+        <div class="cart_container">
+            <div class="cart__header">
+                <h1 id="cart-title">My Cart</h1>
+                <span class="close" id="close">&times;</span>
+            </div>
+            <div class="cart_item" id="cart_item">
+            </div>
+            <div class="cart_footer">
+                <p>Proceed to checkout</p>
+                 <p id="total_cart_amount">Rs. 88</p>
+            </div>
+        </div>
+    </div>
+    <main>
+        <section>
+            <div class="categories__item">
+                <div class="section-for-banners" id="section-for-banners"> </div>
+            </div>
+        </section>
+        <section class="categories" id="categories"></section>
+    </main>
+    <footer>
+        <p>Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Put Ltd</p>
+    </footer>
+</body>
+
+</html>

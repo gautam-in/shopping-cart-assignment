@@ -1,0 +1,129 @@
+@use "common";
+@use "header";
+@use "footer";
+
+main {
+    display: flex;
+    margin-bottom: 2rem!important;
+    align-items: center;
+    max-width: 1024px;
+    margin: 0px auto;
+
+    div, form {
+        flex:1;
+        width: 50%;
+        }
+}
+
+form {
+    display: block;
+    .form-field {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        margin: .75rem 0;
+    }
+
+    .form-field__label {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 1rem 0 0;
+        font-size: 0.75rem;
+        transform: translateY(-1rem);
+        transition: all 0.4s;
+    }
+
+    .form-field__input {
+        appearance: none;
+        background: transparent;
+        border: 0;
+        font-size: 1.2rem;
+        outline: 0;
+        width: 100%;
+        padding: 0 0.75rem 0.625rem 0;
+        border-bottom: 1px solid #999;
+        margin-top: 1rem;
+
+    }
+
+    .form-field__input:placeholder-shown {
+        ~ .form-field__label  {
+            font-size: 1.2rem;
+            transform: translateY(0);
+        }
+    }
+
+    .form-field__input:focus {
+        ~ .form-field__label  {
+            font-size: 0.75rem;
+            transform: translateY(-1rem);
+        }
+
+        ~ .form-field__bar  {
+            transform: scaleX(150)
+        }
+    }
+
+    .form-field__input {
+        appearance: none;
+        background: transparent;
+        border: 0;
+        font-size: 1.2rem;
+        outline: 0;
+        width: 100%;
+        padding: 0 0.75rem 0.625rem 0;
+        border-bottom: 1px solid #999;
+        margin-top: 1.5rem;
+    }
+
+    .form-field__bar {
+        border-bottom: 2px solid dodgerblue;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top:0;
+        z-index: 1;
+        width: 1%;
+        margin: 0 auto;
+        display: block;
+        transform: scaleX(0);
+        transition: all 0.4s;
+    }
+}
+
+.btn {
+    height: 46px;
+    border: none;
+    background-color: #A81444;
+    color: #fff;
+    padding: 0 1rem;
+}
+
+.btn--full {
+    width: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+
+    .main_container{
+        height: 45vh;
+        max-width: 1024px;
+        margin: 10px auto;
+        overflow: auto;
+        display: flex;
+        div, form{
+            flex: 1;
+        }
+    }
+}
+
+footer p{
+    max-width: 1024px;
+    margin: 0px auto;
+}
