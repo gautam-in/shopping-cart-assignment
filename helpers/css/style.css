@@ -47,6 +47,7 @@ body {
     opacity: 1; } }
 
 header {
+  margin-bottom: 5px;
   grid-area: header;
   padding: 1rem 0;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); }
@@ -1305,6 +1306,3 @@ h6 {
 
 main {
   grid-area: main; }
-
-.w3-content, .w3-display-container {
-  max-width: auto !important; }
