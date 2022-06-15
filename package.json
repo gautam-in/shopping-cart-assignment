@@ -1,15 +1,23 @@
 {
-  "name": "code-exercise",
-  "version": "1.0.0",
-  "description": "This is a shopping cart coding exercise",
-  "main": "index.js",
+  "name": "shopping-cart-assignment",
+  "version": "0.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "start": "nodemon ./bin/www",
+    "compile:sass": "node-sass helpers/sass/main.scss helpers/css/style.css"
   },
-  "author": "",
-  "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "express": "^4.16.4",
+    "hbs": "^4.0.6",
+    "http-errors": "^1.6.3",
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.16",
+    "postcss-loader": "^7.0.0",
+    "postcss-preset-env": "^7.7.1",
+    "sass-loader": "^13.0.0"
   }
 }

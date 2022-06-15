@@ -13,3 +13,5 @@ npm run start
 yarn install
 yarn start
 ```
+## Compile scss
+npm run compile:sass

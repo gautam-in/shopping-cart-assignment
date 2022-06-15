@@ -1,0 +1,75 @@
+@mixin container($screen-size: lg) {
+  margin: 0 auto;
+  @if $screen-size == sm {
+      max-width: 320px
+  } @else if $screen-size == md {
+      max-width: 720px
+  } @else if $screen-size == lg {
+      max-width: 1024px
+  } @else {
+      max-width: 1280px
+  }
+}
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template:
+      "header header"
+      "main main"
+      "footer footer";
+}
+
+.home__row__slider {
+  width: 100%
+}
+.categories {
+  @include container();
+
+  &__item {
+    display: flex;
+    height: 300px;
+    align-items: center;
+    position: relative;
+    background-color: #fff;
+    margin-bottom: 1rem;
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    &:after {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      border-radius: 100%;
+      height: 20%;
+      width: 80%;
+      left: 10%;
+      right: 10%;
+      bottom: 0px;
+    }
+    >div {
+      &:nth-child(1) {
+        flex: 1;
+      }
+
+      &:nth-child(2) {
+        display: flex;
+        flex: 2;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      >h1,
+      p {
+        text-align: center;
+      }
+
+      >img {
+        width: 80%;
+      }
+    }
+  }
+}
+

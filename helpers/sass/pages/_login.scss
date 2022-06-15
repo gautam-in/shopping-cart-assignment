@@ -1,0 +1,57 @@
+// Login  page Css
+
+#login_page{
+margin-top: 3em;
+}
+.login__content{
+&__text{
+   @include form-left-text; 
+}
+&__heading{
+    @include form-text-heading;
+}
+}
+
+.login__form {
+    padding: 20px 40px;
+    &__btn {
+    @include form-btn;
+}
+}
+
+
+@media screen and (max-width: 480px) {
+    /*login page */
+    .login__form {
+        padding: 20px 0px;
+    }
+    .login__content {
+        margin-left: -10%;
+    }
+}
+
+
+/*tablet */
+
+@media screen and (max-width: 767px) {
+    /*login page */
+    .login__form {
+        padding: 20px 0px;
+    }
+    .login__content {
+        margin-left: -10%;
+    }
+}
+
+
+/*tablet  landscape*/
+
+@media screen and (max-width: 1023px) {
+    /*login page */
+    .login__form {
+        padding: 20px 0px;
+    }
+    .login__content {
+        margin-left: -10%;
+    }
+}

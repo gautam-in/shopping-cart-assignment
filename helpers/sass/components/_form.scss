@@ -1,0 +1,65 @@
+form {
+  display: none;
+  max-width: 400px;
+  margin: auto;
+  display: block;
+  transition: 0.3s;
+  position: relative;
+
+  &.up {
+    transition: translateY(-180px);
+  }
+}
+
+h1 {
+  color: $color-lightblue;
+  font-family: $primary-font;
+}
+
+.form-group {
+  position: relative;
+  font-weight: 500;
+  font-size: 16px;
+  color: $form-input-color;
+
+  &+& {
+    margin-top: 30px;
+  }
+
+  .form-label {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    transition: 0.3s;
+  }
+
+  .form-control {
+    width: 100%;
+    position: relative;
+    border: none;
+    padding: 5px 0;
+    border-bottom: 1px solid $form-input-color;
+
+    &:invalid {
+      outline: none;
+    }
+
+    &:focus,
+    &:valid {
+      outline: none;
+      box-shadow: 0 1px $color-lightblue;
+      border-color: $color-lightblue;
+
+      +.form-label {
+        font-weight: 500;
+        font-size: 16px;
+        color: $color-lightblue;
+        -o-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        -moz-transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+      }
+    }
+  }
+}
