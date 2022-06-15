@@ -1,0 +1,25 @@
+{
+  "devDependencies": {
+    "cssloader": "^1.1.1",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.2"
+  },
+  "name": "version-4",
+  "version": "1.0.0",
+  "main": "webpack-config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack serve",
+    "server": "json-server --watch db.json -m ./node_modules/json-server-auth"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "global": "^4.4.0",
+    "node": "^17.7.2"
+  },
+  "description": ""
+}
