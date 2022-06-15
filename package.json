@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "nodemon ./bin/www",
-    "compile:sass": "node-sass helpers/sass/main.scss helpers/css/style.css",
+    "compile:sass": "node-sass helpers/sass/main.scss helpers/css/style.css"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
