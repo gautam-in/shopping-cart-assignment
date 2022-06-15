@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 import "../../app/assets/css/banner.css";
-import { SingleCategory } from "../common/singleCategory";
 import Header from "../common/view/header";
 
 const Banner = () => {
@@ -29,13 +28,23 @@ const Banner = () => {
       <main>
         <section className="categories container">
           {allCategories.map((category) => (
-            <SingleCategory
-              key={category.id}
-              id={category.id}
-              name={category.name}
-              description={category.description}
-              imageUrl={category.imageUrl}
-            />
+            <div className="categories__item" key={category.id}>
+              <div>
+                <img
+                  src={process.env.PUBLIC_URL + category.imageUrl}
+                  alt={category.name}
+                />
+              </div>
+              <div>
+                <h1>{category.name}</h1>
+                <p>{category.description}</p>
+                <Link to={`/product/${category.id}`}>
+                  <button type="button" className="btn">
+                    Explore {category.name}
+                  </button>
+                </Link>
+              </div>
+            </div>
           ))}
         </section>
       </main>

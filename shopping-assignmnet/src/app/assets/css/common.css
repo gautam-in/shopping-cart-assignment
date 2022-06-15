@@ -4,7 +4,7 @@ body > #root{
   grid-template:
       "header header"
       "main main" 1fr
-      "footer footer" 50px/ 20% 1fr;
+      "footer footer";
 }
 aside {
   grid-area: aside;
@@ -42,7 +42,6 @@ footer{
 
 .container {
   max-width: 1024px;
-  margin: 0 auto;
   padding: 0 10px;
 }
 

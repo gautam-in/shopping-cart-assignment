@@ -1,9 +1,3 @@
-body > #root {
-  grid-template:
-        "header header"
-        "aside main" 1fr
-        "footer footer" 50px/ 20% 1fr;
-}
 .categories__item {
   display: flex;
   height: 300px;
