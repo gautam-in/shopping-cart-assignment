@@ -1,0 +1,104 @@
+@use "common";
+@use "header";
+@use "footer";
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    .btn{
+        display: none;
+    }
+    &__item {
+        padding: 0.5rem 0rem;
+        display: grid;
+        grid-template:
+        "title title" 30px
+        "image content" 1fr
+        "image buyNow" 1fr;
+        align-items: center;
+        margin: 10px;
+        border-bottom: .1rem dashed black;
+
+        > span {
+            display: none;
+            grid-area: price;
+        }
+
+        > h2 {
+            grid-area: title;
+            margin-left: 5px;
+        }
+
+        > img {
+            grid-area: image;
+            width: 100% !important;
+        }
+
+        > p {
+            grid-area: content;
+            background-color: #EBECEC;
+            // text-align: justify;
+            // text-justify: inter-word;
+        }
+
+        .btn, .btn-price {
+            grid-area: buyNow;
+        }
+
+        @media screen and (min-width: 768px) {
+            grid-template:
+            "title title"
+            "image content"
+            "buyNow buyNow";
+            > span, .btn {
+                display: none;
+            }
+            .btn-price{
+                display: block;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            grid-template:
+                "title title"
+                "image image"
+                "content content"
+                "price buyNow";
+
+            > span, .btn {
+                display: block;
+            }
+            .btn-price{
+                display: none;
+            }
+        }
+    }
+}
+
+.aside_container{
+        list-style-type: none;
+        padding-left: 1rem;
+        margin: 0;
+        display: flex;
+        gap: 0.5rem;
+        flex-direction: column !important;
+    li{
+        cursor: pointer;
+        border-bottom: 1px solid rgb(141, 138, 138);
+        margin: 0px !important;
+        padding: 0px !important;
+        &:hover{
+            background: lightblue;
+        }
+        a {
+            padding: 10px 0px;
+            text-decoration: none;
+            color: initial;
+            width: 100%;
+            display: block;
+        }
+    }
+}
+
+
+

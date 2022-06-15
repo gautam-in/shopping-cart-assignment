@@ -1,0 +1,103 @@
+.cart_con {
+    position: absolute;
+    right: 5rem;
+    top: 115px;
+    display: none;
+    width: 50%;
+    border: 2px solid black;
+    background-color: #f3f6f6;
+    z-index: 1;
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        right: 0px;
+        border: none;
+    }
+
+    .cart_container {
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+
+        .cart__header {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0rem 1rem;
+
+            @media screen and (max-width: 768px) {
+                background-color: white;
+                color: black;
+                margin-top: 1rem;
+            }
+
+            h1 {
+                font-size: 1.2rem;
+            }
+        }
+
+        .cart_footer {
+            margin: .2rem;
+            background-color: #A81444;
+            color: white;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            border-radius: .2rem;
+            cursor: pointer;
+        }
+
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .cart_item{
+            flex: 1;
+            .no-item-list {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h2 {
+                    margin: 0px;
+                }
+            }
+        }
+    }
+
+    .cart-list {
+        .cart-list-item {
+            display: flex;
+            padding: 10px;
+            background-color: white;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px;
+
+            img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .dlsITem {
+                flex: 1;
+                padding-left: 10px;
+
+                button {
+                    background-color: #940d0d;
+                    border-radius: 50%;
+                    color: white;
+                    padding: 2px 6px;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
