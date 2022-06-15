@@ -1,0 +1,97 @@
+@import '../../common/common';
+
+
+.nav-wrapper {
+    display: flex;
+    box-shadow: 0px 10px 12px -12px rgba(0, 0, 0, 0.3);
+}
+
+
+.container {
+    @include autoMargin;
+
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 15em;
+    padding: 0.2em;
+}
+
+.container img {
+    height: 4em;
+
+}
+
+.left-item,
+.right-item {
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        gap: 1rem;
+        margin: 0.2em;
+        padding: 0px;
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+        color: initial;
+        cursor: pointer;
+    }
+
+}
+
+.left-item {
+    display: flex;
+    flex-grow: 1;
+    align-items: flex-end;
+    margin-bottom: 1em;
+}
+
+.right-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-item nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.add-to-cart {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+        cursor: pointer;
+    }
+}
+
+.add-to-cart button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 100%;
+    padding: 0.5em 0px;
+
+    &:active{
+        background: #6e6e6e93
+    }
+}
+
+.add-to-cart button * {
+    padding: 0.2rem;
+}
+
+
+.add-to-cart svg {
+    height: 1em;
+    fill: red;
+}

@@ -1,0 +1,85 @@
+@mixin autoMargin() {
+    display: flex;
+    width: 100%;
+    max-width: 1280px;
+    margin:0 auto;
+}
+
+
+.sideModal {
+    position: absolute;
+    width: 100%;
+    height:calc(100vh - 4.5em);
+    background: rgba(62, 62, 62, 0.5);
+    top: 4.5em;
+    right: 0;
+
+    .sideModal-item {
+        @include autoMargin;
+        justify-content: flex-end;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@mixin container($screen-size: lg) {
+    margin: 0 auto;
+    @if $screen-size == sm {
+        max-width: 320px
+    } @else if $screen-size == md {
+        max-width: 720px
+    } @else if $screen-size == lg {
+        max-width: 1024px
+    } @else {
+        max-width: 1280px
+    }
+}
+
+
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+
+.btn {
+    height: 46px;
+    border: none;
+    background-color: #A81444;
+    color: #fff;
+    padding: 0 0.75rem;
+}
+
+main {
+    display: flex;
+    margin-top: 2rem!important;
+    margin-bottom: 2rem!important;
+    align-items: center;
+}
+
+main > div,
+main > form {
+    flex: 1
+}
+
+
+footer {
+    grid-area: footer;
+    background-color: #EBECEC;
+    padding: 1rem 0;
+}

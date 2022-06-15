@@ -1,0 +1,39 @@
+<header class="product-list-header">
+    {{>../../layout/header/header header=headerLayoutController}}
+</header>
+<div class="product-container">
+
+    <div class="product-list-wrapper">
+
+        <div class="left-menu">
+            <aside>
+                <ul>
+                    {{#each cuurentRouteData.categories}}
+                    <li>
+                        <a class="category-list" data-catobject={{id}}>{{name}}</a>
+                    </li>
+                    {{/each}}
+
+                </ul>
+            </aside>
+        </div>
+
+        <div class="product-list-content">
+            {{#each cuurentRouteData.SelectedProductList}}
+            {{> ../productCard/productCard data=.}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+
+{{#if headerLayoutController}}
+{{#if headerLayoutController.cartState}}
+
+<div class="sideModal">
+    <div class="sideModal-item">
+        {{> ../cart/cart header=headerLayoutController}}
+    </div>
+</div>
+{{/if}}
+{{/if}}

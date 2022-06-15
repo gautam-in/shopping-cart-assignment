@@ -1,0 +1,24 @@
+<header>
+    {{>../../layout/header/header header=headerLayoutController}}
+</header>
+<main class="container">
+    <div>
+        <h1>Login</h1>
+        <p>Get access to your Orders. Wishlist and RecommendationsLogin</p>
+    </div>
+    <form>
+        <div class="form-field">
+            <input type="email" class="form-field__input" name="email" id="email" placeholder=" ">
+            <label for="email" class="form-field__label">Email</label>
+            <div class="form-field__bar"></div>
+        </div>
+        <div class="form-field">
+            <input type="password" class="form-field__input" name="password" id="password" placeholder=" ">
+            <label for="password" class="form-field__label">Password</label>
+            <div class="form-field__bar"></div>
+        </div>
+        <button class="btn btn--full">Login</button>
+    </form>
+</main>
+
+{{>../../layout/footer/footer.hbs}}

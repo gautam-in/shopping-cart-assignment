@@ -1,0 +1,61 @@
+<div class="cart-wrapper">
+    <header class="cart-header">
+        <span>My Cart</span>
+        <span>({{header.cartLength}} Items)</span>
+    </header>
+    {{#if header.isEmptyCart}}
+    <div class="cart-content empty-cart">
+        <div>No Items in your Cart</div>
+        <div>Your favourite Items are just click away</div>
+    </div>
+    {{else}}
+    <div class="cart-content">
+        {{#each header.cartItemMap}}
+        <div class="cart-item">
+            <div class="item-img">
+                <img src="{{data.imageURL}}" alt={{data.name}} />
+            </div>
+            <div class="item-details">
+                <div class="title">
+                    {{data.name}}
+                </div>
+                <div class="calc">
+                    <div class="left">
+                        <button class="decrement" data-item={{data.id}}>-</button>
+                        <span>{{count}}</span>
+                        <button class="increment" data-item={{data.id}}>+</button>
+                        <span>X</span>
+                        <span>Rs{{data.price}}</span>
+                    </div>
+                    <div class="right">
+                        <span>Rs. {{totalPrice}}</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        <div class="info-item">
+            <img src="/static/images/lowest-price.png" />
+            <span>You won't find it cheaper anywhere</span>
+        </div>
+        
+    </div>
+    {{/if}}
+    <div class="cart-footer">
+        {{#if header.isEmptyCart}}
+        <button class="empty-cart-action">
+            <span>Start Shooping</span>
+        </button>
+        {{else}}
+        <div class="desc">
+            Promo code can be applied on payment page
+        </div>
+        <button>
+            <span>Proceed To Checkout</span>
+            <span>Rs.{{header.cartFinalPrice}} &nbsp; ></span>
+        </button>
+        {{/if}}
+
+    </div>
+</div>

@@ -1,0 +1,116 @@
+.card-wrapper {
+
+    padding: 0.75rem;
+    display: grid;
+    grid-template:
+        "title title" 30px
+        "image content" 1fr
+        "image buyNow" 46px / 1fr 1fr;
+    align-items: center;
+    border-bottom: 1px dashed rgb(175, 175, 175);
+    margin: 0.75rem;
+    box-shadow: 2px 0px 18px -15px rgb(0 0 0 / 33%);
+
+    >span {
+        display: none;
+        grid-area: price;
+    }
+
+    >h2 {
+        grid-area: title;
+        font-size: 1.3rem;
+    }
+
+    >img {
+        grid-area: image;
+        width: 100%;
+        max-height: 100%;
+        // border: 1px solid black;
+    }
+
+    >p {
+        grid-area: content;
+        background-color: #EBECEC;
+        padding: 0.3em;
+    }
+
+    >button {
+        grid-area: buyNow;
+        background: #bf2957;
+        border: 0px;
+        color: #ffffff;
+        padding: 0.5em 0;
+        cursor: pointer;
+        text-align: center;
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        transition-duration: 0.4s;
+        text-decoration: none;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+
+        >.sm {
+            display: none;
+        }
+
+    }
+
+
+    button:after {
+        content: "";
+        background: #460716;
+        display: block;
+        position: absolute;
+        padding-top: 300%;
+        padding-left: 350%;
+        margin-left: -20px !important;
+        margin-top: -120%;
+        opacity: 0;
+        transition: all 0.8s
+    }
+
+    button:active:after {
+        padding: 0;
+        margin: 0;
+        opacity: 1;
+        transition: 0s
+    }
+
+    button:hover {
+        color: #e9c3c3;
+    }
+
+    @media screen and (min-width: 768px) {
+        grid-template:
+            "title title"
+            "image content"
+            "buyNow buyNow";
+
+        button {
+            display: flex;
+            justify-content: center;
+            >.sm {
+                display: block;
+            }
+        }
+
+    }
+
+    @media screen and (min-width: 1024px) {
+        grid-template:
+            "title title" 5em
+            "image image"
+            "content content" minmax(6em, 1fr) "price buyNow";
+
+        >span {
+            display: block;
+        }
+        button {
+            >.sm {
+                display: none;
+            }
+        }
+    }
+
+}
