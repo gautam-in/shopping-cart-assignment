@@ -1,0 +1,111 @@
+#categories-id {
+  .home {
+    padding: 33px 0px;
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    &__row {
+      @include div-row;
+      text-align: center;
+      flex-direction: row;
+      &__slider {
+        display: none;
+        width: 100%;
+      }
+      &__button {
+        background: $color-red;
+        color: $color-white;
+        border-color: $color-red;
+        padding: 1%;
+        font-weight: 500;
+        font-size: 1em;
+        /* line-height: 2%; */
+      }
+      &__heading {
+        font-family: $primary-font;
+        font-weight: 700;
+
+        font-size: 22px;
+      }
+      &__img {
+        width: 60%;
+      }
+      &__text {
+        font-weight: 500;
+        font-size: 15px;
+        /* line-height: 50px; */
+        padding: 2%;
+      }
+    }
+    &:nth-child(odd) {
+      .home__row {
+        flex-direction: row-reverse;
+      }
+    }
+
+    .demo {
+      background-color: #7f7f7f;
+    }
+
+    .w3-left,
+    .w3-right {
+      cursor: pointer;
+    }
+    .w3-badge {
+      height: 7px;
+      width: 7px;
+      padding: 3px;
+      margin: 1%;
+      cursor: pointer;
+    }
+    .w3-grey {
+      background-color: #999999;
+      opacity: 0.6;
+      font-weight: 400;
+    }
+    .w3-button {
+      color: $color-white;
+      &:hover {
+        color: $color-white;
+      }
+    }
+    .w3-content {
+      max-width: 1150px;
+    }
+  }
+  .home:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -1rem;
+    background: radial-gradient(
+      farthest-corner at 50% 0px,
+      grey 0%,
+      transparent 50%
+    );
+    width: 100%;
+    height: 1rem;
+  }
+}
+/* for mobile */
+@media screen and (max-width: 480px) {
+  /* for ipad  menu css */
+  .hide__icon {
+    display: none;
+  }
+  .home__row__img {
+    width: 125%;
+    margin-top: 31%;
+  }
+  .w3-btn,
+  .w3-button {
+    border: none;
+    padding: 2px 13px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .home__row__img {
+    width: 116%;
+  }
+}

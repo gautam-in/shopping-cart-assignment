@@ -1,0 +1,52 @@
+<main class="cart">
+    <section>
+        <div class="cart__header">
+            <div class="cart__header__text">My Cart {{cart.count}} items</div>
+        </div>
+        {{#if cart.items}} {{#each cart.items}}
+        <div class="cart__item" data-id="{{product.id}}">
+            <img src="{{product.imageURL}}" alt="{{product.name}}" class="cart__item__logo" />
+            <div class="cart__item__detail">
+                <h2 class="cart__item__detail__heading">{{product.name}}</h2>
+                <div class="cart__item__detail__info">
+                    <div class="cart__item__detail__info--count">
+                        <a class="cart__item__detail__info--remove" data-id="{{product.id}}">&#45;</a>
+                        <span data-id="{{product.id}}">{{count}}</span>
+                        <a class="cart__item__detail__info--add" data-id="{{product.id}}">&#43;</a>* Rs.{{product.price}}
+                    </div>
+                    <span class="cart__item__detail__info--total" data-id="{{product.id}}"> Rs.{{totalPrice}}
+                    </span>
+                </div>
+            </div>
+        </div>
+        {{/each }}
+        <div class="cart__content__price">
+            <img src="/static/images/lowest-price.png" alt="lowest price" class="lowest__price">
+            <span>You won't find it cheaper anywhere.</span>
+        </div>
+        <div class="checkout__box">
+            <div class="checkout__box__text">Promo code can be applied on payment page.
+            </div>
+            <div>
+                <button class="checkout__box__button">Proceed to checkout
+                    <span class="checkout__box__button--price">Rs. {{cart.totalPrice}}</span>
+                </button>
+            </div>
+        </div>
+        {{else}}
+        <div class="blank__cart">
+                <h4 class="blank__cart__text__noitem">No items in your cart
+                </h4>
+                <h6>Your Favourite items are just a click away
+                </h6>
+            </div>
+        <div class="cart__modal__footer">
+            <button class="cart__modal__footer__text">
+                <a href="/product">
+                    <span>Start Shopping</span></a>
+            </button>
+        </div>
+        {{/if}}
+    </section>
+</main>
+<script type="text/javascript" src="/js/cart.js"></script>
