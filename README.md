@@ -13,3 +13,12 @@ npm run start
 yarn install
 yarn start
 ```
+
+Features Covered
+
+1. Login+Registration
+2. Home Screen
+3. PLP
+4. Shopping Cart
+5. Responsiveness
+6. 0 code smells+bugs
