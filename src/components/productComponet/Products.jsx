@@ -22,13 +22,10 @@ const Products = ({ action }) => {
   return (
     <>
       <div className="grid md:grid-cols-2 xl:grid-cols-3 sm:pl-2 sm:pt-4 pt-0 sm:grid-cols-1 ">
-        <section>
-          {filterByCategory?.map((item) => {
-            return (
-              <div
-                key={item.id}
-                className="flex flex-col justify-center items-center sm:ml-2 pb-5"
-              >
+        {filterByCategory?.map((item) => {
+          return (
+            <section key={item.id}>
+              <div className="flex flex-col justify-center items-center sm:ml-2 pb-5">
                 <h1 className="text-left sm:h-20 w-72 pr-3  pl-3 font-medium ">
                   {item.name}
                 </h1>
@@ -53,9 +50,9 @@ const Products = ({ action }) => {
                 </button>
                 <div className="border-b-2  w-64 pt-2 border-dotted border-gray-300"></div>
               </div>
-            );
-          })}
-        </section>
+            </section>
+          );
+        })}
       </div>
     </>
   );

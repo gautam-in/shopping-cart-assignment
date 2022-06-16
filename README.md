@@ -12,4 +12,10 @@ npm run start
 # or
 yarn install
 yarn start
+
+## Info
+
+go to the root folder of the app and start the server
+
+using command json-server --watch db.json
 ```
