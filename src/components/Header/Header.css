@@ -1,0 +1,59 @@
+.grey {
+  text-decoration: "none" !important;
+  color: "grey" !important;
+}
+
+.black {
+  text-decoration: "none";
+  color: "black";
+}
+
+.signInRegister {
+  display: flex !important;
+  flex-flow: row !important;
+  justify-content: flex-end !important;
+  margin-left: 20% !important;
+}
+
+.home {
+  display: flex;
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 899px) {
+  .logo {
+    margin-left: 3% !important;
+  }
+
+  .headerRight {
+    width: 100% !important;
+    margin-left: 11% !important;
+  }
+  .smallHome {
+    font-size: 25px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .gridContainer {
+    max-width: 100% !important;
+  }
+  .logoSize {
+    width: 30% !important;
+  }
+  .smallfont {
+    font-size: 10px !important;
+  }
+
+  .smallHome {
+    font-size: 15px !important;
+  }
+}
+@media screen and (max-width: 300px) {
+  .smallHome {
+    font-size: 10px !important;
+  }
+  .smallfont {
+    font-size: 7px !important;
+  }
+}

@@ -1,0 +1,36 @@
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  background-color: #e22b62;
+  width: 100%;
+  position: relative;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  padding: 2px;
+  background-color: #e22b62;
+}
+
+.show {
+  display: block;
+}
+.content {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+}
+
+.list {
+  display: none;
+  cursor: pointer;
+  padding: 5px;
+  color: #fff;
+  border-bottom: 1px solid #f2f7f5;
+}

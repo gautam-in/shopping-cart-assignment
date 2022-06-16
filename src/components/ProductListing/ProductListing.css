@@ -1,0 +1,40 @@
+.product-container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.card {
+  flex: 1;
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.mobileDisplay {
+  display: none !important;
+}
+.desktopDisplay {
+  display: block !important;
+}
+
+@media screen and (max-width: 900px) {
+}
+
+@media screen and (max-width: 600px) {
+  .product-container {
+    flex-direction: column;
+  }
+  .card {
+    grid-template-columns: 1fr;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .mobileDisplay {
+    display: block !important;
+  }
+  .desktopDisplay {
+    display: none !important;
+  }
+}

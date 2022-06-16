@@ -1,0 +1,15 @@
+.cartpage {
+  background-color: "#ab003c";
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.cartPagetitle {
+  padding: 1rem 1rem;
+  background-color: #fff;
+  margin: 2rem 0;
+  border-top: 5px solid #d7ced1;
+  display: flex;
+}

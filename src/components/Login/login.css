@@ -1,0 +1,85 @@
+.loginLeft {
+  margin-left: 0.5rem;
+}
+.loginBanner {
+  margin-bottom: 2% !important;
+  font-size: 1.5rem !important;
+  margin-right: 8.3rem !important;
+  font-weight: bold !important;
+  margin-top: 4.5rem !important;
+  text-align: left;
+}
+
+.loginLabel {
+  margin-bottom: 1.5rem !important;
+  text-align: left !important;
+}
+
+.signinForm {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+  margin-left: 4rem !important;
+  margin-right: 0rem !important;
+}
+
+@media screen and (max-width: 899px) {
+  .loginBanner {
+    margin-bottom: 5rem !important;
+    font-size: 2.5rem !important;
+    font-weight: bold !important;
+    margin-top: 4.5rem !important;
+    text-align: center !important;
+    margin: auto !important;
+    margin-top: 10% !important;
+  }
+  .loginLabel {
+    margin-top: 1rem !important;
+    margin-bottom: 1.5rem !important;
+    text-align: center !important;
+    font-size: 1.3rem !important;
+  }
+  .formGrid {
+    margin: auto !important;
+    margin-left: 12% !important;
+    margin-top: 0.3% !important;
+  }
+  .signinForm {
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .loginBanner {
+    margin-left: 32% !important;
+  }
+  .loginLabel {
+    margin-left: 32% !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .loginBanner {
+    margin-bottom: 5rem !important;
+    font-size: 2rem !important;
+    font-weight: bold !important;
+    margin-top: 4.5rem !important;
+    text-align: center !important;
+    margin: auto !important;
+    margin-top: 10% !important;
+  }
+  .loginLabel {
+    margin-top: 1rem !important;
+    margin-bottom: 1.5rem !important;
+    text-align: center !important;
+    font-size: 1rem !important;
+  }
+  .formGrid {
+    margin: auto !important;
+  }
+  .signinForm {
+    margin-top: 0rem !important;
+    margin-bottom: 2rem !important;
+    margin-left: 0rem !important;
+    margin-right: 0rem !important;
+  }
+}
