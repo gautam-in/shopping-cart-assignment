@@ -1,0 +1,24 @@
+.headerText{
+    font-weight: 700;
+    /* height:10%; */
+}
+.descriptionText{
+    background: lightgray;
+}
+.bottomText{
+display:flex;
+justify-content: space-between;
+align-items: center;
+/* height:30%; */
+}
+.productDesc{
+    font-size: 13px; 
+    text-align: left;  
+    /* height: 25%; */
+}
+.mobileDropDown{
+    width:100%;
+    background: #f50057;
+    color: #fff;
+    height: 40px;
+}
