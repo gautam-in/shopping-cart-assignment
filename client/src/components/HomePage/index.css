@@ -1,0 +1,26 @@
+.home-page-container{
+    display:flex;
+    flex-direction:column;
+}
+.home-page-carousel-container{
+    display: flex;
+    justify-content: center;
+}
+.home-page-carousel{
+    width: 70%;
+}
+.home-page-category-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-page-category-image-box{
+    width: 40%;
+}
+.home-page-category-image{
+    width: 80%;
+    height: 200px;
+}
+.home-page-category-content-box{
+    width: 60%;
+}

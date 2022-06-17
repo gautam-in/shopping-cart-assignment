@@ -1,0 +1,14 @@
+.plp-page-container{
+    display: flex;
+}
+.plp-page-categories-container{
+    width: 20%;
+}
+.plp-page-products-container{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.plp-page-product-container{
+    flex-basis: 25%;
+}

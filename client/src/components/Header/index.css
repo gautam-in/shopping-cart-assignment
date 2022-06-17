@@ -1,0 +1,39 @@
+.header-container{
+    display: flex;
+    box-shadow: 0 0px 8px 0 rgb(0 0 0 / 10%), 0 0px 20px 0 rgb(0 0 0 / 10%);
+}
+.header-image-box{
+    width: 20%;
+}
+.header-image-icon{
+    width: 100px;
+    height: 50px;
+}
+.signin-signup-container{
+    text-align: right;
+}
+.header-navigation-content-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.home-products-link-cart-container{
+    width: 100%;
+    display: flex;
+}
+.header-navigation-content-container  .link {
+    text-decoration: none;
+}
+.singin-link{
+    margin-left: 20px;
+}
+.singin-link{
+    margin-right: 20px;
+}
+.home-products-link-container{
+    width: 50%;
+}
+.products-cart-container{
+width: 50%;
+text-align: right;
+}
