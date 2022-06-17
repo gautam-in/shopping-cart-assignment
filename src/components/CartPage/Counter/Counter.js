@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./Counter.css";
 import { BootstrapButton as Button } from "../../BootstrapButton";
 import { GlobalContext } from "../../../context/GlobalContext";
@@ -12,7 +12,6 @@ export default function Counter({ quantity, price, id, stock }) {
       type: "EDIT_ITEM",
       id: id,
     });
-    console.log(quantity);
   };
 
   const removeItem = () => {
@@ -29,7 +28,7 @@ export default function Counter({ quantity, price, id, stock }) {
       </Button>
       <Typography className="counterText">{quantity}</Typography>
       <Button
-        onClick={() => editItem()}
+        onClick={editItem}
         className={"plusMinusbutton"}
         disabled={stock === quantity}
       >
