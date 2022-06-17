@@ -6,6 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { BootstrapButton as Button } from "../../BootstrapButton";
 import { GlobalContext } from "../../../context/GlobalContext";
+import { Hidden, Link } from "@mui/material";
 
 export default function MediaCard({
   name,
@@ -20,6 +21,7 @@ export default function MediaCard({
     dispatch,
     cartItems: { products },
   } = React.useContext(GlobalContext);
+  const [noWrap, setNoWrap] = React.useState(true);
 
   function addItemToCart() {
     if (!products[id]) {
@@ -52,10 +54,14 @@ export default function MediaCard({
         flexDirection: "column",
         flexWrapp: "wrap",
         maxHeight: "auto",
-        // justifyContent: "space-between",
       }}
     >
-      <Typography gutterBottom variant="subtitle1" component="div">
+      <Typography
+        gutterBottom
+        variant="subtitle1"
+        component="div"
+        sx={{ minHeight: "60px" }}
+      >
         {name}
       </Typography>
       <CardMedia
@@ -68,9 +74,19 @@ export default function MediaCard({
         <Typography
           variant="body2"
           color="text.secondary"
-          sx={{ fontSize: "0.775rem" }}
+          noWrap={noWrap}
+          sx={{ fontSize: "0.775rem", textOverflow: "clip" }}
+          textAlign="start"
         >
           {description}
+        </Typography>
+        <Typography variant="body2" textAlign={"start"}>
+          <Link
+            onClick={() => setNoWrap(!noWrap)}
+            sx={{ textDecoration: "none", color: "#35393c" }}
+          >
+            {noWrap ? "...more" : "less..."}
+          </Link>
         </Typography>
       </CardContent>
 
