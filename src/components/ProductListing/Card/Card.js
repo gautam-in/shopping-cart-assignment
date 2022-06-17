@@ -92,7 +92,7 @@ export default function MediaCard({
 
       <CardActions sx={{ display: "flex", justifyContent: "space-between" }}>
         <Typography gutterBottom variant="body1" component="div">
-          {`MRP Rs.${price}`}
+          {`MRP Rs ${price}`}
         </Typography>
         <Button onClick={addItemToCart} size="small">
           Buy Now

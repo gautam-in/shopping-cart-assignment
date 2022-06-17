@@ -2,7 +2,7 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import ProductListing from "./components/ProductListing/ProductListing";
@@ -24,13 +24,25 @@ function App() {
         <Routes>
           <Route path="/" element={<Login setIsAuth={setIsAuth} />} />
 
-          <Route path="/home" auth={isAuth} exact element={<Home />} />
-          <Route path="/products" element={<ProductListing />} />
+          <Route
+            path="/home"
+            auth={isAuth}
+            exact
+            element={isAuth ? <Home /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/products"
+            element={isAuth ? <ProductListing /> : <Navigate to="/" />}
+          />
           <Route
             path="/register"
             element={<Register setIsAuth={setIsAuth} />}
           />
-          <Route exact path="/cartpage" element={<Cart />} />
+          <Route
+            exact
+            path="/cartpage"
+            element={isAuth ? <Cart /> : <Navigate to="/" />}
+          />
         </Routes>
         <Footer />
       </BrowserRouter>
