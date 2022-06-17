@@ -1,12 +1,13 @@
 import React from 'react'
+import { StyledHamburger } from './HamburgerMenu.styled';
 
 const HamburgerMenu = () => {
     return (
-        <div className="hamburger">
+        <StyledHamburger className="hamburger">
             <span>bar</span>
             <span>bar</span>
             <span>bar</span>
-        </div>
+        </StyledHamburger>
     )
 }
 

@@ -1,8 +1,9 @@
 import React from 'react'
 import LogoSrc from '../../../assets/static/images/logo.png';
+import { StyledLogo } from './Logo.styled';
 const Logo = () => {
     return (
-        <h1><a href="/"><img src={LogoSrc} alt="Sabka Baazar - Logo" /></a></h1>
+        <StyledLogo><a href="/"><img src={LogoSrc} alt="Sabka Baazar - Logo" /></a></StyledLogo>
     )
 }
 

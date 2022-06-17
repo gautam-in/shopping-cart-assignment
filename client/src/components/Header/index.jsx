@@ -1,17 +1,21 @@
 import React from 'react'
+import Wrapper from '../Utilities/Wrapper';
 import HamburgerMenu from './HamburgerMenu';
+import { StyledHeader } from './Header.styled';
 import HeaderMenu from './HeaderMenu';
 import Logo from './Logo';
 import Navbar from './Navbar';
 
 const Header = () => {
     return (
-        <header>
+        <StyledHeader>
+            <Wrapper width={73}>
             <Logo/>
             <Navbar />
             <HeaderMenu />
             <HamburgerMenu />
-        </header>
+            </Wrapper>
+        </StyledHeader>
     )
 }
 
