@@ -1,0 +1,8 @@
+.linebreak-wrapper{
+    height: 2px ; 
+    background: rgb(234,234,234);
+
+    &:last-child {
+        display: none;
+    }
+}

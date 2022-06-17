@@ -1,0 +1,49 @@
+@import "../../../styles/mixins.scss";
+
+.header-wrapper {
+	display: flex;
+	justify-content: space-between;
+  padding:4px 16px;
+  align-items: center;
+  box-shadow: 0px 2px 11px -4px rgba(0,0,0,0.31);
+  background: #ffffff;
+
+
+  .header-container{
+    display: flex;
+    align-items: center;
+    a {
+      img {
+        width: 72px;
+        height: 36px;
+        object-fit: cover;
+      }
+    }
+    
+    .nav-container{
+      display: none;
+    }
+  }
+
+
+  @include onDesktop(){
+
+    padding:4px 32px;
+
+    .header-container{
+      .nav-container{
+        display: flex;
+        margin: 0 72px;
+        a{
+          display: flex;
+          margin-right: 24px;
+          svg{
+            width: calculateRem(20px);
+            height: calculateRem(20px);
+           
+          }
+        }
+      }
+    }
+  }
+}

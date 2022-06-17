@@ -1,0 +1,30 @@
+@import "../../styles/mixins.scss";
+
+.catcard-wrapper{
+    display: grid;
+    grid-template-columns: 0.75fr 1fr;
+    align-items: center;
+    text-align: center;
+    padding: 24px;
+    gap: 24px;
+    background: #ffffff;
+    margin-bottom: 8px;
+    
+   img{
+    width: 100%;
+   }
+   h6{
+    margin-bottom: 12px;
+   }
+
+   p{
+    margin-bottom: 16px;
+   }
+
+   a{
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    font-size: calculateRem(14px);
+   }
+}
