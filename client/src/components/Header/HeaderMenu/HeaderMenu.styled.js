@@ -11,7 +11,7 @@ export const StyledHeaderMenu = styled.div`
         display: flex;
         justify-content: space-between;
         align-self: flex-end;
-        width: 80%;
+        width: 100%;
 
         li a {
             font-size: 11px;

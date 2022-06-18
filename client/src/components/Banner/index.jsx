@@ -5,19 +5,27 @@ import Wrapper from '../Utilities/Wrapper';
 import { StyledBanner } from './Banner.styled';
 
 const Banner = () => {
+
+  const carouselList = () => {
+    const list_of_images = [];
+    for (const slide in theme.carousel_images) {
+      if (Object.hasOwnProperty.call(theme.carousel_images, slide)) {
+        const imageSlide = theme.carousel_images[slide];
+        list_of_images.push(<img src={imageSlide} alt='' />);
+      }
+    }
+    return(list_of_images);
+  }
+
   return (
     <StyledBanner className='banner'>
         <Wrapper>
         <Carousel>
-            <img src={theme.carousel_images.slide_one} alt='' />
-            <img src={theme.carousel_images.slide_two} alt='' />
-            <img src={theme.carousel_images.slide_three} alt='' />
-            <img src={theme.carousel_images.slide_four} alt='' />
-            <img src={theme.carousel_images.slide_five} alt='' />
+          {carouselList()}
         </Carousel>
         </Wrapper>
     </StyledBanner>
   )
 }
 
-export default Banner
+export default Banner;
