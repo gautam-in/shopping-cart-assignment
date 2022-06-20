@@ -1,27 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel from 'nuka-carousel';
-import theme from '../../theme';
 import Wrapper from '../Utilities/Wrapper';
 import { StyledBanner } from './Banner.styled';
+import { getBannerList } from '../../services/ApiService';
 
 const Banner = () => {
 
-  const carouselList = () => {
-    const list_of_images = [];
-    for (const slide in theme.carousel_images) {
-      if (Object.hasOwnProperty.call(theme.carousel_images, slide)) {
-        const imageSlide = theme.carousel_images[slide];
-        list_of_images.push(<img src={imageSlide} alt='' />);
-      }
+  const [bannerImages, setBannerImages] = useState([]);
+
+  useEffect(() => {
+    async function getBanners() {
+      const bannerList = await getBannerList();
+      setBannerImages(bannerList);
     }
-    return(list_of_images);
-  }
+
+    getBanners();
+  }, []);
+
 
   return (
     <StyledBanner className='banner'>
         <Wrapper>
         <Carousel>
-          {carouselList()}
+          {
+            bannerImages.map((bannerImage) => (
+              <img key={bannerImage.id} id={bannerImage.id} order={bannerImage.order} src={bannerImage.bannerImageUrl} alt={bannerImage.bannerImageAlt} />
+            ))
+          }
         </Carousel>
         </Wrapper>
     </StyledBanner>

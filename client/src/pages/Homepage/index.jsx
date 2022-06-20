@@ -1,28 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Banner from '../../components/Banner';
 import Explore from '../../components/Explore';
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
-import { homepage_categories } from '../../data/homepage-explore-categories';
 import { StyledHomepage } from './Homepage.styled';
-
+import {getCategoryList} from '../../services/ApiService';
 const Homepage = () => {
+
+    const [homePageCategories, setHomePageCategories] = useState([]);
+
+    useEffect(() => {
+      async function getCategories() {
+        const filterList = await getCategoryList();
+        setHomePageCategories(filterList);
+      }
+  
+      getCategories();
+    }, []);
+
     return (
         <StyledHomepage>
-            <Header />
             <Banner/>
+            <main>
             {
-                homepage_categories.map((homepage_category) => (
+                homePageCategories.map((homepage_category) => (
                     <Explore
-                        exploreCategoryClass={homepage_category.categoryClass}
-                        categorySrc={homepage_category.categorySrc}
-                        categoryTitle={homepage_category.categoryTitle}
-                        categoryInfo={homepage_category.categoryInfo}
-                        categoryCTA={homepage_category.categoryCTA}
+                        isEnabled={homepage_category.enabled}
+                        key={homepage_category.id}
+                        exploreCategoryClass={homepage_category.key}
+                        categorySrc={homepage_category.imageUrl}
+                        categoryTitle={homepage_category.name}
+                        categoryInfo={homepage_category.description}
+                        categoryCTA={`Explore ${homepage_category.key}`}
+                        categoryId={homepage_category.id}
+                        categoryOrder={homepage_category.order}
                     />
                 ))
             }
-            <Footer/>
+            </main>
         </StyledHomepage>
     )
 }

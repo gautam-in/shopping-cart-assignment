@@ -89,6 +89,24 @@ const GlobalStyle = createGlobalStyle`
     .overflow-hide { overflow:hidden; }
     .hide { display: none; }
 
+    .banner,
+    .explore-categories:not(.baby) {
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          width: 70%;
+          left: 0%;
+          height: 10px;
+          z-index: -1;
+          background: radial-gradient(at 50% 0, rgba(0, 0, 0, 0.5), transparent 70%);
+      }
+    }
+
+    .banner::after {
+      left: 10%;
+    }
+
     ::-webkit-scrollbar-track {
       border-radius: 50px;
       background: ${theme.colors.SCROLLBAR_TRACK};

@@ -1,14 +1,15 @@
 import React from 'react'
+import { getCartIcon } from '../../../services/ApiService';
 import theme from '../../../theme';
 import { StyledCartBox } from './Cartbox.styled';
 
-const CartIcon = theme.icons.CART;
-
 const CartBox = ({ itemCount }) => {
+
+    const cartIcon = getCartIcon();
+
     return (
         <StyledCartBox className="cartbox">
-            <CartIcon />
-            {/* <img src={theme.icons.CART} alt="cart icon" /> */}
+            <img src={cartIcon} alt="cart icon" />
             <a href="#FIXME" className="cartIcon">{itemCount} items</a>
         </StyledCartBox>
     )

@@ -6,14 +6,14 @@ export const StyledCartBox = styled.div`
     justify-content: space-between;
     background-color: ${(props) => props.theme.colors.GRAY};    
 
-    &:hover svg {
-        fill: ${(props) => props.theme.colors.BLACK};
+    &:hover img {
+        filter: ${(props) => props.theme.colors.BLACK_FILTER_COLOR};
     }
 
-    svg {
+    img {
         max-width: 100%;
         width: 30%;
-        fill: ${(props) => props.theme.colors.CTA_COLOR};
+        filter: ${(props) => props.theme.colors.FILTER_COLOR};
         cursor: pointer;
     }
 

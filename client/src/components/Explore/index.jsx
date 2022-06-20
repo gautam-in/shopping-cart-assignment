@@ -3,9 +3,10 @@ import Wrapper from '../Utilities/Wrapper';
 import { StyledExploreCategories } from './Explore.styled';
 import Button from '../Utilities/Button';
 
-const Explore = ({exploreCategoryClass,categorySrc,categoryTitle,categoryInfo,categoryCTA}) => {
+const Explore = ({exploreCategoryClass,categorySrc,categoryTitle,categoryInfo,categoryCTA,categoryId,categoryOrder, isEnabled}) => {
+  if(!isEnabled === true) return null;
   return (
-    <StyledExploreCategories className={`explore-categories ${exploreCategoryClass}`}>
+    <StyledExploreCategories id={categoryId} order={categoryOrder} className={`explore-categories ${exploreCategoryClass}`}>
         <Wrapper>
             <figure>
                 <img src={categorySrc} alt={categoryTitle} />

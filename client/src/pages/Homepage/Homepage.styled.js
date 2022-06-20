@@ -1,11 +1,23 @@
 import styled from "styled-components";
 
 export const StyledHomepage = styled.div`
-    .explore-categories:nth-child(2n) .wrapper {
-        flex-direction: row-reverse;
+
+    main {
+        display: flex;
+        flex-direction: column;
     }
 
-    .explore-categories:nth-child(2n+1) .wrapper {
+    .bakery-cakes-dairy .wrapper,
+    .beauty-hygiene .wrapper {
+        flex-direction: row-reverse;
+        figure {
+            margin-left: 20%;
+        }
+    }
+
+    .fruit-and-veg .wrapper,
+    .beverages .wrapper,
+    .baby .wrapper {
         .explore-details {
             margin-left: 20%;
         }

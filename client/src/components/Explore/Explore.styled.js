@@ -5,7 +5,9 @@ export const StyledExploreCategories = styled.div`
     flex-direction: column;
     justify-content: center;
     margin-left: 20%;
-    padding: 20px 0;
+    padding: 40px 0;
+    position: relative;
+    order: ${(props) => props.order};
 
     figure {
         width: 40%;

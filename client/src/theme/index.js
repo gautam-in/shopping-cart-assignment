@@ -1,15 +1,13 @@
-import {ReactComponent as CartIcon } from '../assets/static/images/cart.svg';
-import SlideOne from '../assets/static/images/offers/offer1.jpg';
-import SlideTwo from '../assets/static/images/offers/offer2.jpg';
-import SlideThree from '../assets/static/images/offers/offer3.jpg';
-import SlideFour from '../assets/static/images/offers/offer4.jpg';
-import SlideFive from '../assets/static/images/offers/offer5.jpg';
+const CartIcon = 'https://via.placeholder.com/150';
 
 const theme = {
     colors: {
       BOX_SHADOW_LEFT: 'rgba(0, 0, 0, .3)',
       BOX_SHADOW_RIGHT: 'rgba(0, 0, 0, .1)',
       CTA_COLOR: '#bf2957',
+      CADET_BLUE: '#5f9ea0',
+      FILTER_COLOR: 'invert(19%) sepia(71%) saturate(2574%) hue-rotate(321deg) brightness(103%) contrast(90%)',
+      BLACK_FILTER_COLOR:'invert(0%) sepia(0%) saturate(0%) hue-rotate(268deg) brightness(97%) contrast(107%)',
       SCROLLBAR_BG: '#fbfbfb',
       SCROLLBAR_THUMB_BG: '#7d7d7d',
       SCROLLBAR_TRACK: '#f0f0f0',
@@ -17,19 +15,15 @@ const theme = {
       WHITE: '#ffffff',
       BLACK: '#000000',
       GRAY: '#eaeaea',
+      RED: '#ff0000',
+      DARK_GRAY: '#8c8c8c',
+      FILTER_BORDER_COLOR: '#8d8d8d',
     },
     fonts: {
       DOSIS: 'Dosis',
     },
     icons: {
       CART: CartIcon,
-    },
-    carousel_images: {
-      slide_one: SlideOne,
-      slide_two: SlideTwo,
-      slide_three: SlideThree,
-      slide_four: SlideFour,
-      slide_five: SlideFive,
     },
     breakpoints: {
       SM_MOBILE: '320px',
