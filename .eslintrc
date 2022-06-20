@@ -1,0 +1,47 @@
+{
+    "env": {
+      "browser": true,
+      "node": true,
+      "jasmine": true
+    },
+    "extends": [
+      "plugin:react/recommended",
+      "airbnb",
+      "prettier"
+    ],
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "react"
+    ],
+    "rules": {
+      "indent": "off",
+      "comma-dangle": "off",
+      "arrow-body-style": "off",
+      "array-callback-return": "off",
+      "consistent-return": "off",
+      "linebreak-style": "off",
+      "operator-linebreak": "off",
+      "react/prop-types": "off",
+      "no-underscore-dangle": "off",
+      "no-return-assign": "off",
+      "no-param-reassign": "off",
+      "object-curly-newline": "off",
+      "prefer-destructuring": "off",
+      "react/jsx-indent": "off",
+      "no-restricted-syntax": "off",
+      "react/jsx-one-expression-per-line": "off",
+      "react/no-array-index-key": "off",
+      "react/destructuring-assignment": "off",
+      "react/jsx-props-no-spreading": "off",
+      "react/jsx-curly-newline": "off",
+      "react/jsx-wrap-multilines": "off",
+      "jsx-a11y/no-static-element-interactions": "off",
+      "jsx-a11y/no-noninteractive-element-interactions": "off"
+    }
+  }
