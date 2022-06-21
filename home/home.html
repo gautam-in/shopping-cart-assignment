@@ -7,20 +7,88 @@
     <meta name="title" content="Sabka Bazaar">
     <meta name="description" content="E commerce site for day to day products">
     <title>Products | Sabka Bazaar</title>
-    <!-- <link href="../../styles/css/common.css" rel="stylesheet"> -->
-    <!-- <link href="../../styles/css/home.css" rel="stylesheet"> -->
-    <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="home.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;400;600;700&display=swap" rel="stylesheet">
-    <script src="../../components/footer/footer.js" defer></script>
-    <script src="../../components/header/header.js" defer></script>  -->
+<link rel="stylesheet" href="/shopping-cart-assignment/header/header.scss">
    <script src="./home.js" defer></script> 
 </head>
 <header>
-    <link rel="stylesheet" href="home.scss">
+    <style>
+       #nav__logo{
+    margin-right: 5rem;
+    height: 75px;
+}
+
+a.nav {
+    margin-right: 20px;
+}
+.nav__links{
+             text-decoration: none;
+             color: black;
+             padding: 0 15px 0px 0;
+         }
+         @media screen and (max-width: 480px){
+                     nav{
+                         width: 100%
+                     }
+                     #nav__logo{
+                         height: 50px;
+                         margin: 0 15px 0 0;
+                     }
+                     .nav__links{
+                         padding: 0 10px 0 0;
+                     }
+               }
+.p1{
+    margin-bottom: 0.5rem;
+}
+    header{
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034);
+        box-shadow: 0 8px 8px -4px rgb(0 0 0 / 20%);
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    #nav__logo{
+        margin-right: 5rem;
+        height: 75px;
+    }
+    .nav__links{
+        text-decoration: none;
+        color: black;
+        padding: 0 15px 0px 0;
+    }
+    .nav__cart__container{
+        background-color: #ddd6d6;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .nav__rightcontainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 10px;
+    }
+    .nav__leftcontainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    @media screen and (max-width: 480px){
+        nav{
+            width: 100%
+        }
+        #nav__logo{
+            height: 50px;
+            margin: 0 15px 0 0;
+        }
+        .nav__links{
+            padding: 0 10px 0 0;
+        }
+    } 
+    </style>
+    <!-- <link rel="stylesheet" href="header.scss"> -->
     <nav>
         <div class="nav__leftcontainer">
             <img src="/shopping-cart-assignment/static//images//logo.png" id="nav__logo" alt="Sabka Bazaar Logo"/>
@@ -42,8 +110,8 @@
 </header>
 <body>
     <main class="dashboard_items">
-        <div class="row-cols-12" > 
-            <img src="/shopping-cart-assignment/static//images/offers/offer5.jpg" width="100%" id="nav__logo" alt="offer5"/>
+        <div class="row-cols-12 height=100% " > 
+            <img src="/shopping-cart-assignment/static//images/offers/offer5.jpg" width="100%" height="300px" id="nav__logo" alt="offer5"/>
         </div>
         <div class="row" >
             <div class="col-6">
@@ -53,7 +121,7 @@
                 <div class="text-center" >
                     <p> Fruits & Vegetables</p>
                     <p id="first_content" > </p>
-                    <button id="btn-custom" >Explore Fruit and Veg</button>
+                    <button id="btn btn-danger" >Explore Fruit and Veg</button>
                 </div>
             </div>
         </div>
@@ -62,7 +130,7 @@
                 <div class="text-center" >
                     <p> Bakery</p>
                     <p id="first_content1" > </p>
-                    <button id="btn-custom" >Explore bakery-cakes-dairy</button>
+                    <button id="btn btn-danger" >Explore bakery-cakes-dairy</button>
                 </div>
             </div>
             <div class="col-6">
@@ -78,7 +146,7 @@
                 <div class="text-center" >
                     <p> Beverages</p>
                     <p id="first_content2" > </p>
-                    <button id="btn-custom" >Explore beverages</button>
+                    <button id="btn btn-danger" >Explore beverages</button>
                 </div>
             </div>
         </div>
@@ -87,7 +155,7 @@
             <div class="text-center" >
                 <p> Beauty</p>
                 <p id="first_content3" > </p>
-                <button id="btn-custom" >Explore beauty-hyginee</button>
+                <button id="btn btn-danger" >Explore beauty-hyginee</button>
             </div>
         </div>
         <div class="col-6">
@@ -102,19 +170,17 @@
             <div class="text-center" >
                 <p> Baby</p>
                 <p id="first_content4" > </p>
-                <button id="btn-custom" >Explore baby</button>
+                <button id="btn btn-danger" >Explore baby</button>
             </div>
         </div>
         </div>
-        <p> hllo</p>
-        <section class="carousel">
+        <!-- <section class="carousel">
             <a class="prev" onclick="plusSlides(-1)"></a> 
             <a class="next" onclick="plusSlides(1)"> </a>
-        </section>
+        </section> -->
         <section id="categories">
 
         </section>
     </main>
-    <!-- <uc-footer></uc-footer> -->
 </body>
 </html> 

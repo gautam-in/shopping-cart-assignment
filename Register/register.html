@@ -9,17 +9,93 @@
     <meta name="keywords" content="shopping, bazaar, e commerce, products">
     <title>Register | Sabka Bazaar</title>
     <link href="../../styles/css/common.css" rel="stylesheet">
-    <link href="../../styles/css/register.css" rel="stylesheet">
+    <!-- <link href="../../styles/css/register.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;400;600;700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;400;600;700&display=swap" rel="stylesheet">
     <script src="../../components/footer/footer.js" defer></script>
     <script src="../../components/header/header.js" defer></script>
-    <script src="./register.js" defer></script>
+    <script src="./register.js" defer></script> -->
 </head>
 <header>
+    <style>
+        #nav__logo{
+     margin-right: 5rem;
+     height: 75px;
+ }
+ 
+ a.nav {
+     margin-right: 20px;
+ }
+ .nav__links{
+              text-decoration: none;
+              color: black;
+              padding: 0 15px 0px 0;
+          }
+          @media screen and (max-width: 480px){
+                      nav{
+                          width: 100%
+                      }
+                      #nav__logo{
+                          height: 50px;
+                          margin: 0 15px 0 0;
+                      }
+                      .nav__links{
+                          padding: 0 10px 0 0;
+                      }
+                }
+ .p1{
+     margin-bottom: 0.5rem;
+ }
+     header{
+         box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034);
+         box-shadow: 0 8px 8px -4px rgb(0 0 0 / 20%);
+     }
+     nav{
+         display: flex;
+         justify-content: space-between;
+         padding: 1rem;
+     }
+     #nav__logo{
+         margin-right: 5rem;
+         height: 75px;
+     }
+     .nav__links{
+         text-decoration: none;
+         color: black;
+         padding: 0 15px 0px 0;
+     }
+     .nav__cart__container{
+         background-color: #ddd6d6;
+         padding: 10px;
+         cursor: pointer;
+     }
+     .nav__rightcontainer{
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         padding-top: 10px;
+     }
+     .nav__leftcontainer{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+     }
+     @media screen and (max-width: 480px){
+         nav{
+             width: 100%
+         }
+         #nav__logo{
+             height: 50px;
+             margin: 0 15px 0 0;
+         }
+         .nav__links{
+             padding: 0 10px 0 0;
+         }
+     } 
+     </style>
     <link rel="stylesheet" href="register.scss">
     <nav>
         <div class="nav__leftcontainer">
@@ -41,47 +117,7 @@
     <script src="header.js"></script>
 </header>
 <body>
-    <uc-header></uc-header>
-    <!-- <main class="register__container">
-        <div class="col-6">
-        <section class="register__heading">
-            <h1>Signup</h1>
-            <p>We do not share your personal details with anyone.</p>
-        </section>
-    </div>
-        <section>
-            <section id="error__block">
-
-            </section>
-            <div class="col-6">
-            <form class="register__form" onsubmit="registerUser(event)">
-                <div>
-                    <input type="text" id="firstname" required/>
-                    <label for="firstname">First Name</label>
-                </div>
-                <div>
-                    <input type="text" id="lastname" required/>
-                    <label for="lastname" >Last Name</label>
-                </div>
-                <div>
-                    <input type="email" id="email" required/>
-                    <label for="email">Email</label>
-                </div>
-                <div>
-                    <input type="password" id="password" minlength="6" required/>
-                    <label for="password">Password</label>
-                </div>
-                <div>
-                    <input type="password" id="cfmPassword" minlength="6" required/>
-                    <label for="cfmPassword">Confirm Password</label>
-                </div>
-                <button type="submit">Signup</button>
-            </form>
-        </section>
-    </div>
-    </main>
-    <uc-footer></uc-footer> -->
-    <div class="row">
+    <div class="row container mt-5">
     <div class="col-6">
         <h1>Signup</h1>
         <p>We do not share your personal details with anyone.</p>

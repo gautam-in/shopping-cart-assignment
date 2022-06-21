@@ -20,6 +20,82 @@
     <script src="./login.js" defer></script>
 </head>
 <header>
+    <style>
+        #nav__logo{
+     margin-right: 5rem;
+     height: 75px;
+ }
+ 
+ a.nav {
+     margin-right: 20px;
+ }
+ .nav__links{
+              text-decoration: none;
+              color: black;
+              padding: 0 15px 0px 0;
+          }
+          @media screen and (max-width: 480px){
+                      nav{
+                          width: 100%
+                      }
+                      #nav__logo{
+                          height: 50px;
+                          margin: 0 15px 0 0;
+                      }
+                      .nav__links{
+                          padding: 0 10px 0 0;
+                      }
+                }
+ .p1{
+     margin-bottom: 0.5rem;
+ }
+     header{
+         box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034);
+         box-shadow: 0 8px 8px -4px rgb(0 0 0 / 20%);
+     }
+     nav{
+         display: flex;
+         justify-content: space-between;
+         padding: 1rem;
+     }
+     #nav__logo{
+         margin-right: 5rem;
+         height: 75px;
+     }
+     .nav__links{
+         text-decoration: none;
+         color: black;
+         padding: 0 15px 0px 0;
+     }
+     .nav__cart__container{
+         background-color: #ddd6d6;
+         padding: 10px;
+         cursor: pointer;
+     }
+     .nav__rightcontainer{
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         padding-top: 10px;
+     }
+     .nav__leftcontainer{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+     }
+     @media screen and (max-width: 480px){
+         nav{
+             width: 100%
+         }
+         #nav__logo{
+             height: 50px;
+             margin: 0 15px 0 0;
+         }
+         .nav__links{
+             padding: 0 10px 0 0;
+         }
+     } 
+     </style>
     <link rel="stylesheet" href="login.scss">
     <nav>
         <div class="nav__leftcontainer">
@@ -41,7 +117,6 @@
     <script src="header.js"></script>
 </header>
 <body>
-    <uc-header></uc-header>
     <!-- <main class="register__container">
         <div class="row">
             <div class="col-6">
@@ -72,7 +147,7 @@
             </div>
         </div>
     </main> -->
-    <div class="row container">
+    <div class="row container mt-5">
         <div class="col-6 me-auto" > 
              <h1>Login</h1>
             <p>Get Access to your Orders, Wishlist and Recommendations</p></div>
