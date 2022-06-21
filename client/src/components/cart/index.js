@@ -7,8 +7,8 @@ import theme from '../../theme';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
-    border: `2px solid ${theme.palette.background.paper}`,
-    padding: '0 4px',
+    border: `0.125rem solid ${theme.palette.background.paper}`,
+    padding: '0 0.25rem',
     
   },
 }));

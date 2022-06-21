@@ -1,70 +1,68 @@
-@import "slick-carousel/slick/slick.css"; 
+@import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
 @import "./styles/mixins.scss";
 
 body {
-  font-family: 'Dosis', sans-serif !important;
+  font-family: "Dosis", sans-serif !important;
 
-  figure, p, h3{
+  figure,
+  p,
+  h3 {
     margin: 0;
   }
 
-
-  .root{
+  .root {
     background: #f4f4f4;
 
-
-    a{
+    a {
       color: black;
       text-decoration: none;
     }
-   
 
-    button{
-      font-family: 'Dosis', sans-serif !important;
-  
+    button {
+      font-family: "Dosis", sans-serif !important;
     }
-  
-  
-  
-  
-    .slick-arrow{
+
+    .slick-arrow {
       display: none !important;
     }
-  
-  
+
     .slick-prev {
-      left: 4px;
-      &:before{
+      left: 0.25rem;
+      &:before {
         color: black;
-        font-size: 24px;
+        font-size: 1.5rem;
       }
     }
-  
+
     .slick-next {
-      right: 4px;
-      &:before{
+      right: 0.25rem;
+      &:before {
         color: black;
-        font-size: 24px;
+        font-size: 1.5rem;
       }
     }
-  }
 
-  footer{
-    text-align: center;
-    padding: 8px 4px;
-  }
+    footer {
+      text-align: center;
+      padding: 0.5rem 0.25rem;
+    }
 
+    @include onDesktop() {
+      .main-container {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
 
-  @include onDesktop(){
-
-    .main-container{
-      width: 80%;
-      margin: 0 auto;
+    @include onTab() {
+      .main-container {
+       width: 100%;
+       margin: 0;
+      }
     }
 
 
   }
 }
-

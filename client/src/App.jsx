@@ -1,9 +1,9 @@
 import AppLayout from "./layouts/appLayout";
 import "./global.scss";
 import HomeLayout from "./layouts/homeLayout";
+import PlpLayout from "./layouts/plpLayout";
 
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import Banner from "./components/banner";
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={HomeLayout} />
           <Route exact path="/products" component={
-            Banner
+           PlpLayout
           } />
         </Switch>
       </ BrowserRouter >

@@ -1,5 +1,6 @@
 import {createTheme, responsiveFontSizes} from '@mui/material/styles';
 
+
 // eslint-disable-next-line import/no-mutable-exports
 let theme = createTheme({
 	palette: {
@@ -28,10 +29,20 @@ let theme = createTheme({
           fontSize: '1rem',
 					textTransform: 'capitalize',
 					boxShadow: 'none',
-					borderRadius: '2px'
+					borderRadius: '0.125rem'
         },
       },
     },
+		MuiOutlinedInput: {
+			styleOverrides: {
+        root: {
+          fontFamily: '"dosis", sans-serif',
+					border: 'none',
+					borderRadius: 0,
+        },
+      },
+
+		}
 
 	},
 	typography: {

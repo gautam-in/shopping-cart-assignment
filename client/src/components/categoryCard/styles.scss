@@ -1,28 +1,43 @@
 @import "../../styles/mixins.scss";
 
-.catcard-wrapper{
-    display: grid;
-    grid-template-columns: 0.75fr 1fr;
-    align-items: center;
-    text-align: center;
-    padding: 24px;
-    gap: 24px;
-    background: #ffffff;
-    margin-bottom: 8px;
-    
-   img{
+.catcard-wrapper {
+  display: grid;
+  grid-template-columns: 0.75fr 1fr;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  background: #ffffff;
+  margin-bottom: 0.5rem;
+
+  img {
     width: 100%;
-   }
-   h6{
-    margin-bottom: 12px;
-   }
+  }
+  h6 {
+    margin-bottom: 0.75rem;
+  }
 
-   p{
-    margin-bottom: 16px;
-   }
+  p {
+    margin-bottom: 1rem;
+  }
 
-   a{
-    padding: 8px;
-    font-size: calculateRem(14px);
-   }
+  button {
+    span {
+      font-size: 1rem;
+      @include horizontalEllipsis(132px);
+    }
+  }
+
+  @include onDesktop(){
+    button {
+        span {
+          font-size: 1rem;
+          @include horizontalEllipsis(200px);
+        }
+      }
+
+  }
+
+
+
 }

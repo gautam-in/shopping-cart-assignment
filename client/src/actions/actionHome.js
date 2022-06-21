@@ -18,3 +18,8 @@ export const getBannersAction = createAsyncThunk(
       return response
     }
   )
+
+
+
+
+  

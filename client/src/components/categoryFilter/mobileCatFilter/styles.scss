@@ -1,0 +1,13 @@
+@import "../../../styles/variables.scss";
+
+.mobilecatfilter-wrapper{
+  .MuiOutlinedInput-root{
+    background: $primaryRed !important;
+    color: $white;
+    height: 2rem;
+    svg{
+      fill: $white;
+    }
+
+  }
+}

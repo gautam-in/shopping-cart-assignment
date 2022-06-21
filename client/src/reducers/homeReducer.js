@@ -8,7 +8,7 @@ const initialState = {
 }
 
 export const homeReducer = createSlice({
-  name: 'counter',
+  name: 'home',
   initialState,
   reducers: {
    
@@ -26,7 +26,7 @@ export const homeReducer = createSlice({
 
 		builder.addCase(getCategoriesAction.fulfilled, (state, action) => {
       // Add user to the state array
-      state.categoryData = action.payload
+      state.categoryData = action.payload.filter((item)=>item.order>=0).sort((a,b)=> a.order - b.order)
       state.categoryLoading = false
     }).addCase(getCategoriesAction.pending, (state, action) => {
       // Add user to the state array

@@ -27,8 +27,8 @@
   z-index: 100;
   border: none;
   @include onDesktop() {
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
   }
 }
 @mixin appHeaderStyle($background: 'white') {
@@ -40,13 +40,7 @@
   }
 }
 
-@mixin textOverflowEllipses($line:1) {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: $line;
-  -webkit-box-orient: vertical;
-}
+
 @mixin for-big-desktop-up {
   @media (min-width: 1800px) { @content; }
 }
@@ -58,7 +52,7 @@
 }
 
 @mixin onTab {
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  @media only screen and (min-device-width: 600px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
     @content;
   }
 }
@@ -66,4 +60,22 @@
 
 @mixin fromPxToRem($fontSize) {
   font-size: ($fontSize/16) + rem;
+}
+
+
+
+@mixin verticalEllipsis($maxLines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $maxLines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+
+@mixin horizontalEllipsis($width) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: $width;
 }
