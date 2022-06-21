@@ -1,15 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit'
-import {getProductsAction} from '../actions/actionProducts';
+import {getProductsAction,  postAddtoCartAction} from '../actions/actionProducts';
 
 const initialState = {
   productData: [],
-  isProductLoading: false
+  isProductLoading: false,
+  cartItems: 0,
+  isAddingToCart: false
 }
 
 export const productReducer = createSlice({
   name: 'product',
   initialState,
   reducers: {
+    sortProductData : (state, action) => {
+     let filteredData  = state.productData.filter((item)=> item.category === action.payload
+      )
+      let unFilteredData = state.productData.filter((item)=> item.category !== action.payload
+      )
+      state.productData = [...filteredData,...unFilteredData]
+    }
   },
   extraReducers: (builder) => {
     // Add reducers for additional action types here, and handle loading state as needed
@@ -22,8 +31,22 @@ export const productReducer = createSlice({
       state.isProductLoading = true
     })
 
+    builder.addCase(postAddtoCartAction.fulfilled, (state, action) => {
+      // Add user to the state array
+      state.cartItems += 1
+      state.isAddingToCart = false
+    }).addCase(postAddtoCartAction.pending, (state, action) => {
+      // Add user to the state array
+      state.isAddingToCart = true
+    })
+
+
   },
 })
+
+
+export const { sortProductData } = productReducer.actions
+
 
 // Action creators are generated for each case reducer function
 

@@ -9,7 +9,7 @@ const CategoryFilter = () => {
 	return (
 		<section className="categoryfilter-wrapper">
 			<MobileCatFilter />
-			{/* <DesktopCatFilter /> */}
+			<DesktopCatFilter />
 		</section>
 	);
 };

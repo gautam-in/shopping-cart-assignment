@@ -28,8 +28,8 @@ const ProductList = () => {
 
 	return (
 		<section className="productlist-wrapper">
-		{ productData?.map(({id,...item})=> (
-			<ProductCard key={id} details = {item}/>
+		{ productData?.map((item)=> (
+			<ProductCard key={item?.id} details = {item}/>
 		))}
 		</section>
 	);

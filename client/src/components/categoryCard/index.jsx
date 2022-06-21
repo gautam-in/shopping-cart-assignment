@@ -1,4 +1,4 @@
-import {Link, Typography} from '@mui/material';
+import {Typography} from '@mui/material';
 import theme from '../../theme';
 import MuiButton from '../common/muiButton';
 import './styles.scss';

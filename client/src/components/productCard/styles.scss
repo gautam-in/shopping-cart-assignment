@@ -59,8 +59,12 @@
         div {
           padding: 0.5rem;
           background: $grey100;
+          height: 100%;
           p {
             @include verticalEllipsis(10);
+            font-weight: 500;
+            font-family: "Dosis",sans-serif;
+            line-height: 1.4;
           }
         }
       }
@@ -74,7 +78,6 @@
         margin-top: 0.5rem;
       }
     }
-
   }
 
 
@@ -95,8 +98,12 @@
         div {
           padding: 0.5rem;
           background: $grey100;
+          height: 100%;
           p {
             @include verticalEllipsis(10);
+            font-weight: 500;
+            font-family: "Dosis",sans-serif;
+            line-height: 1.4;
           }
         }
       }

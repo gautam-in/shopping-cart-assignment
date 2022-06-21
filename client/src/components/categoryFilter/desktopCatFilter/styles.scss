@@ -1,0 +1,41 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+
+
+.desktopfilter-wrapper{
+  display: none;
+  position: sticky;
+  background: $grey100;
+  height: 100vh;
+  top: 1rem;
+
+
+
+
+  .desktopfilter-container{
+    button{
+      display: block;
+      text-align: left;
+      border-radius: 0;
+    }
+    &-active {
+      button{
+        color: $white;
+        background: $grey700;
+      }
+    }
+  }
+
+
+
+
+
+
+
+  @include onTab(){
+    display: block;
+  }
+  @include onDesktop(){
+    display: block;
+  }
+}

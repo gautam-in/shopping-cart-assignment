@@ -15,7 +15,6 @@ const Categories = () => {
 	const {categoryData} = useSelector((state)=>state.home)
 
 
-	console.log(categoryData, 'categoryData')
 
 
 

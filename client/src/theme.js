@@ -13,6 +13,9 @@ let theme = createTheme({
 		text: {
 			primary: '#000000',
 		},
+		success: {
+			main: '#d10056',
+		}
 	},
 	components: {
 		MuiTypography: {

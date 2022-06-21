@@ -13,7 +13,7 @@ const Header = () => {
 				<img src={assetObject.logo.src}  alt={assetObject.logo.alt} />
 			</a>
 			<nav className="nav-container">
-				<a href="/" > <CottageOutlinedIcon/>  Home</a>
+				<a href="/" > <CottageOutlinedIcon/>Home</a>
 				<a href="/products" > <Inventory2OutlinedIcon/>  Products</a>
 			</nav>
 			</div>

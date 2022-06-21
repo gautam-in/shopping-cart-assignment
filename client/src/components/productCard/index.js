@@ -2,10 +2,22 @@ import {Typography} from "@mui/material";
 import theme from "../../theme";
 import MuiButton from "../common/muiButton";
 import "./styles.scss";
+import {useDispatch} from 'react-redux'
+import {postAddtoCartAction} from "../../actions/actionProducts";
 
 const ProductCard = ({details}) => {
 
-  const {name, imageURL, description, price} = details
+  const dispatch = useDispatch()
+
+  const {name, imageURL, description, price, id} = details
+
+
+
+const onCheckoutHandler = () => {
+  dispatch(postAddtoCartAction({productId: id }))
+}
+
+
 
   return ( 
     <article className="productcard-wrapper">
@@ -22,14 +34,13 @@ const ProductCard = ({details}) => {
             {description}
           </Typography>
           </div>
-
-          <MuiButton className = "button-container" variant="contained">
+          <MuiButton onClick = {onCheckoutHandler} className = "button-container" variant="contained">
             Buy now @ Rs.{price} 
           </MuiButton>
         </article>
       </article>
 
-      <MuiButton className = "button-container-one" variant="contained">
+      <MuiButton onClick = {onCheckoutHandler} className = "button-container-one" variant="contained">
         Buy now @ Rs.{price} 
       </MuiButton>
     </article>
