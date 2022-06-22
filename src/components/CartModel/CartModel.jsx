@@ -18,7 +18,6 @@ const CartModel = ({ handleCartOpen }) => {
   return (
     <div className="CartModel-container">
       <div className="cartModel">
-        {/* header */}
         <header className="cartModel-header-container">
           <div className="cartModel-header-left">
             My Cart <span>(1 item)</span>
@@ -27,7 +26,6 @@ const CartModel = ({ handleCartOpen }) => {
             x
           </div>
         </header>
-        {/* itmes */}
         <div className="cartModel-itmes-container">
           <img
             className="cartModel-itmes-image"
@@ -47,12 +45,10 @@ const CartModel = ({ handleCartOpen }) => {
             </div>
           </div>
         </div>
-        {/* banner */}
         <div className="cartModel-priceBanner">
           <img src="/static/images/lowest-price.png" alt="lowest-price png" />
           <p>You won't find it cheaper anywhere</p>
         </div>
-        {/* checkout */}
         <div className="cartModel-checkout-container">
           <span className="promo">
             Promo code can be applied on payment page.

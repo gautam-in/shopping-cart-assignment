@@ -1,22 +1,27 @@
 import React, { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import "../Header/Header.scss";
 import { MdShoppingCart } from "react-icons/md";
 import CartModel from "../CartModel/CartModel";
 
 const Header = () => {
+  const Navigate = useNavigate();
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   const handleCartOpen = () => {
-    console.log("click");
-    setIsCartOpen(!isCartOpen);
-    isCartOpen
-      ? (document.getElementById("overlay").style.display = "none")
-      : (document.getElementById("overlay").style.display = "block");
+    if (window.screen.width >= 992) {
+      setIsCartOpen(!isCartOpen);
+      Navigate("/");
+      isCartOpen
+        ? (document.getElementById("overlay").style.display = "none")
+        : (document.getElementById("overlay").style.display = "block");
 
-    isCartOpen
-      ? (document.body.style.overflow = "unset")
-      : (document.body.style.overflow = "hidden");
+      isCartOpen
+        ? (document.body.style.overflow = "unset")
+        : (document.body.style.overflow = "hidden");
+    } else {
+      Navigate("/cart");
+    }
   };
   return (
     <>

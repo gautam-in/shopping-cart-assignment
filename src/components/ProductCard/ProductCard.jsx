@@ -6,13 +6,23 @@ const ProductCard = ({ product }) => {
   return (
     <div className="product-container">
       <div className="product-name">{product.name}</div>
-      <div>
-        <img className="product-image" src={product.imageURL} alt="product" />
+      <div className="product-tablet">
+        <div>
+          <img className="product-image" src={product.imageURL} alt="product" />
+        </div>
+        <div className="product-description">{product.description}</div>
       </div>
-      <div className="product-description">{product.description}</div>
       <div className="product-price-button-container">
-        <div className="product-price">MRP Rs{product.price}</div>
-        <Button type="sm">Buy now</Button>
+        <div className="product-price">Rs{product.price}</div>
+        <Button type="sign">
+          Buy now
+          <span
+            className="product-card-price--mobile"
+            style={{ color: "white" }}
+          >
+            @ Rs 187
+          </span>
+        </Button>
       </div>
     </div>
   );

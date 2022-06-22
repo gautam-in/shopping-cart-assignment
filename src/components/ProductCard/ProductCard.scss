@@ -1,6 +1,8 @@
+@import "../../maxin.scss";
+
 .product-container {
-  flex-basis: 21%;
-  height: 500px;
+  flex-basis: 46%;
+  height: 300px;
   margin: 20px 0;
   display: flex;
   padding: 10px;
@@ -8,35 +10,73 @@
   justify-content: space-between;
   border-bottom: 1px dashed rgb(174, 173, 173);
   box-shadow: 5px 0px 10px #f1f1f1;
+  @include for-desktop-up {
+    flex-basis: 21%;
+    height: 500px;
+  }
   .product-name {
     font-size: 20px;
     font-weight: 800;
     margin-bottom: 30px;
   }
-  .product-image {
-    width: 100%;
-    height: 100%;
-  }
-  .product-description {
-    font-size: 14px;
-    font-weight: 500;
-    background-color: #f1f1f1;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    max-width: 250px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    height: 70px;
-    margin-bottom: 15px;
-    padding: 5px;
-  }
-  .product-price-button-container {
+  .product-tablet {
+    display: flex;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include for-tablet-portrait-up {
+      flex-direction: row;
+    }
+    @include for-desktop-up {
+      flex-direction: column;
+    }
+    .product-image {
+      width: 100%;
+      height: 70%;
+      object-fit: contain;
+      @include for-desktop-up {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .product-description {
+      font-size: 14px;
+      font-weight: 500;
+      background-color: #f1f1f1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      max-width: 50%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 87px;
+      margin-bottom: 15px;
+      padding: 5px;
+      @include for-desktop-up {
+        max-width: 250px;
+        height: 70px;
+      }
+    }
+  }
+  .product-price-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     .product-price {
       font-size: 14px;
+      display: none;
+      @include for-desktop-up {
+        display: inline-block;
+        width: 40%;
+      }
     }
+  }
+}
+
+.product-card-price--mobile {
+  display: inline-block;
+  @include for-desktop-up {
+    display: none;
   }
 }

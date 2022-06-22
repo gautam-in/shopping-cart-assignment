@@ -1,20 +1,30 @@
+@import "../../maxin.scss";
+
 .cartModel {
   height: 90vh;
   background-color: #eeeeee;
-  width: 30%;
+  width: 100%;
   position: fixed;
-  right: 11%;
   z-index: 10;
+  @include for-desktop-up {
+    right: 11%;
+    width: 30%;
+  }
   .cartModel-header-container {
-    width: 91%;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     font-size: 20px;
     font-weight: 800;
     padding: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 20px;
+    @include for-desktop-up {
+      background-color: black;
+      color: white;
+      margin-top: 0;
+    }
     span {
       font-size: 16px;
       font-weight: 400;
@@ -22,6 +32,10 @@
   }
   .cartModel-header-right {
     cursor: pointer;
+    display: none;
+    @include for-desktop-up {
+      display: block;
+    }
   }
   .cartModel-itmes-container {
     padding: 10px 15px;
