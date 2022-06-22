@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Sabka Bazaar">
+    <meta name="description" content="E commerce site for day to day products">
+    <title>Products | Sabka Bazaar</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link rel="stylesheet" href="/shopping-cart-assignment/header/header.scss">
+   <script src="./home.js" defer></script> 
+</head>
+<header>
+    <style>
+       #nav__logo{
+    margin-right: 5rem;
+    height: 75px;
+}
+
+a.nav {
+    margin-right: 20px;
+}
+.nav__links{
+             text-decoration: none;
+             color: black;
+             padding: 0 15px 0px 0;
+         }
+         @media screen and (max-width: 480px){
+                     nav{
+                         width: 100%
+                     }
+                     #nav__logo{
+                         height: 50px;
+                         margin: 0 15px 0 0;
+                     }
+                     .nav__links{
+                         padding: 0 10px 0 0;
+                     }
+               }
+.p1{
+    margin-bottom: 0.5rem;
+}
+    header{
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034);
+        box-shadow: 0 8px 8px -4px rgb(0 0 0 / 20%);
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    #nav__logo{
+        margin-right: 5rem;
+        height: 75px;
+    }
+    .nav__links{
+        text-decoration: none;
+        color: black;
+        padding: 0 15px 0px 0;
+    }
+    .nav__cart__container{
+        background-color: #ddd6d6;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .nav__rightcontainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 10px;
+    }
+    .nav__leftcontainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    @media screen and (max-width: 480px){
+        nav{
+            width: 100%
+        }
+        #nav__logo{
+            height: 50px;
+            margin: 0 15px 0 0;
+        }
+        .nav__links{
+            padding: 0 10px 0 0;
+        }
+    } 
+    </style>
+    <!-- <link rel="stylesheet" href="header.scss"> -->
+    <nav>
+        <div class="nav__leftcontainer">
+            <img src="/shopping-cart-assignment/static//images//logo.png" id="nav__logo" alt="Sabka Bazaar Logo"/>
+            <a class="nav" href="../home/home.html">Home</a>
+            <a class="nav__links" href="/shopping-cart-assignment/Plp/plp.html">Products</a>
+        </div>
+        <style>
+            .button{
+  background-color: #e30e55;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+            }
+        </style>
+        <div class="nav__rightcontainer">
+            <div class="p1">
+                <a class="nav__links" href="../login/login.html">SignIn</a>
+                <a class="nav__links" href="../register/register.html">Register</a>
+            </div>
+            <div class="nav__cart__container" onclick="openCart()">
+                <img src="/shopping-cart-assignment/static//images/cart.svg" height="30px" width="30px" alt="Item Cart"/>
+                <span id="cart-count"></span>
+            </div>
+        </div>
+    </nav>
+    <script src="header.js"></script>
+</header>
+<body>
+    <main class="dashboard_items">
+        <div class="row-cols-12 height=100% " > 
+            <img src="/shopping-cart-assignment/static//images/offers/offer5.jpg" width="100%" height="300px" id="nav__logo" alt="offer5"/>
+        </div>
+        <div class="row" >
+            <div class="col-6">
+                <img src="/shopping-cart-assignment/static//images/category/fruits.png" id="nav__logo" alt="Fruits"/>
+            </div>
+            <div class="col-6 my-auto">
+                <div class="text-center" >
+                    <p> Fruits & Vegetables</p>
+                    <p id="first_content" > </p>
+                    <button class="button" >Explore Fruit and Veg</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 my-auto">
+                <div class="text-center" >
+                    <p> Bakery</p>
+                    <p id="first_content1" > </p>
+                    <button class="button" >Explore bakery-cakes-dairy</button>
+                </div>
+            </div>
+            <div class="col-6">
+                <img src="/shopping-cart-assignment/static//images/category/bakery.png" id="nav__logo" alt="Bakery"/>
+            </div> 
+           
+        </div>
+        <div class="row">
+            <div class="col-6">
+            <img src="/shopping-cart-assignment/static//images/category/beverages.png" id="nav__logo" alt="Beverages"/>
+            </div>
+            <div class="col-6 my-auto">
+                <div class="text-center" >
+                    <p> Beverages</p>
+                    <p id="first_content2" > </p>
+                    <button class="button" >Explore beverages</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-6 my-auto">
+            <div class="text-center" >
+                <p> Beauty</p>
+                <p id="first_content3" > </p>
+                <button class="button" >Explore beauty-hyginee</button>
+            </div>
+        </div>
+        <div class="col-6">
+            <img src="/shopping-cart-assignment/static//images/category/beauty.png" id="nav__logo" alt="Beauty"/>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-6">
+            <img src="/shopping-cart-assignment/static//images/category/baby.png" id="nav__logo" alt="Baby"/>
+        </div>
+        <div class="col-6 my-auto">
+            <div class="text-center" >
+                <p> Baby</p>
+                <p id="first_content4" > </p>
+                <button class="button" >Explore baby</button>
+            </div>
+        </div>
+        </div>
+        <!-- <section class="carousel">
+            <a class="prev" onclick="plusSlides(-1)"></a> 
+            <a class="next" onclick="plusSlides(1)"> </a>
+        </section> -->
+        <section id="categories">
+
+        </section>
+    </main>
+</body>
+</html> 

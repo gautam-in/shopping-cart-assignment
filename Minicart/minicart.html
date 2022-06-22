@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabka Bazar</title>
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <script defer src="./header.js"></script>
+</head>
+
+<body>
+    <header id="main-header" class="main-header">
+        <uc-header count="0"></uc-header>
+    </header>
+    <div class="cart-container">
+        <div class="display-flex">
+            <h3>My Cart</h3>
+            <span class="cart-count"></span>
+        </div>
+        <div class="cart-items"></div>
+    </div>
+    <div class="cart-footer">
+        <div>Promo code can be applied on payment page</div>
+        <button class="button">Proceed to Checkout <span id="total-amount"></span>></button>
+    </div>
+    <div class="no-item" id="no-item">
+        <div class="container">
+            <div>
+                <h2>No items in your cart</h2>
+                <div>Your favourite items are just one click away.</div>
+            </div>
+        </div>
+        <div>
+            <style>
+                .button{
+      background-color: #e30e55;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+                }
+            </style>
+            <button class="button" onclick="goToProducts()">Start Shopping</button>
+        </div>
+    </div>
+</script>
+</body>
+
+</html>
