@@ -1,34 +1,52 @@
-import React from 'react'
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { getCategoryList } from '../../services/ApiService'
+import React, { useEffect, useState } from 'react';
 import { StyledFilterItem, StyledFilterMenu } from './FilterMenu.styled';
 
-const FilterMenu = () => {
+import { getCategories } from '../../services/ApiService';
+import { selectedFilter } from '../../redux/slices/product-filter';
+import { unwrapResult } from '@reduxjs/toolkit';
+import { useDispatch } from 'react-redux';
 
+const FilterMenu = () => {
+  const dispatch = useDispatch();
   const [filterMenuList, setFilterMenuList] = useState([]);
 
-  useEffect(() => {
-    async function getCategory() {
-      const filterList = await getCategoryList();
-      const menuList = filterList?.filter((menuItem) => (menuItem.order > 0))
-      setFilterMenuList(menuList);
-    }
+  const filterHandler = (e) => {
+    dispatch(selectedFilter(e.target.id));
+  };
 
-    getCategory();
-  }, []);
-  
+  useEffect(() => {
+    dispatch(getCategories())
+      .then(unwrapResult)
+      .then((categoryData) => {
+        const menuList = categoryData?.filter((menuItem) => menuItem.order > 0);
+        setFilterMenuList(menuList);
+      })
+      .catch((error) => error);
+  }, [dispatch]);
 
   return (
-        <StyledFilterMenu>
-          <StyledFilterItem className='all'>All</StyledFilterItem>
-            {
-                filterMenuList.map((filterMenuItem) => (
-                  <StyledFilterItem order={filterMenuItem.order} key={filterMenuItem.id}>{filterMenuItem.name}</StyledFilterItem>
-                ))
-            }
-        </StyledFilterMenu>
-  )
-}
+    <StyledFilterMenu>
+      <StyledFilterItem
+        className={`all`}
+        id="all"
+        onClick={(e) => filterHandler(e)}
+      >
+        All
+      </StyledFilterItem>
+      {filterMenuList.map((filterMenuItem) => {
+        return (
+          <StyledFilterItem
+            order={filterMenuItem.order}
+            key={filterMenuItem.id}
+            id={filterMenuItem.id}
+            onClick={(e) => filterHandler(e)}
+          >
+            {filterMenuItem.name}
+          </StyledFilterItem>
+        );
+      })}
+    </StyledFilterMenu>
+  );
+};
 
 export default FilterMenu;

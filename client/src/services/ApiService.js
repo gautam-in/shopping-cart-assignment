@@ -1,46 +1,99 @@
 import axios from 'axios';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const REACT_API_DOMAIN_URL = "http://localhost:3000";
-const REACT_API_CLIENT_DOMAIN_URL = "http://localhost:5000";
+const REACT_API_DOMAIN_URL = process.env.REACT_APP_API_DOMAIN_URL;
+const REACT_API_CLIENT_DOMAIN_URL = process.env.REACT_APP_API_CLIENT_DOMAIN_URL;
 
 export const getLogo = () => {
   return `${REACT_API_CLIENT_DOMAIN_URL}/static/images/logo.png`;
-}
+};
 
 export const getCartIcon = () => {
   return `${REACT_API_CLIENT_DOMAIN_URL}/static/images/cart.svg`;
-}
+};
 
-export const getBannerList = async () => {
+export const getCartAdvertise = () => {
+  return `${REACT_API_CLIENT_DOMAIN_URL}/static/images/lowest-price.png`;
+};
+
+export const getBanners = createAsyncThunk('banner/getBanners', async () => {
   try {
     const resp = await axios.get(`${REACT_API_DOMAIN_URL}/banners`);
     if (resp.status === 200) {
       return resp.data;
     }
-    console.error("something went wrong");
+    console.error('something went wrong');
   } catch (error) {
-    console.error("Unable to fetch banner images", error);
+    console.error('Unable to fetch banner images', error);
   }
-};
-export const getCategoryList = async () => {
-  try {
-    const resp = await axios.get(`${REACT_API_DOMAIN_URL}/categories`);
-    if (resp.status === 200) {
-      return resp.data;
+});
+
+export const getCategories = createAsyncThunk(
+  'category/getCategories',
+  async () => {
+    try {
+      const resp = await axios.get(`${REACT_API_DOMAIN_URL}/categories`);
+      if (resp.status === 200) {
+        return resp.data;
+      }
+      console.error('something went wrong');
+    } catch (error) {
+      console.error('Unable to fetch category list');
     }
-    console.error("something went wrong");
-  } catch (error) {
-    console.error("Unable to fetch category list");
   }
-};
-export const getProductList = async () => {
-  try {
-    const resp = await axios.get(`${REACT_API_DOMAIN_URL}/products`);
-    if (resp.status === 200) {
-      return resp.data;
+);
+
+export const getProducts = createAsyncThunk(
+  'products/getProducts',
+  async () => {
+    try {
+      const resp = await axios.get(`${REACT_API_DOMAIN_URL}/products`);
+      if (resp.status === 200) {
+        return resp.data;
+      }
+      console.error('something went wrong');
+    } catch (error) {
+      console.error('Unable to fetch product list');
     }
-    console.error("something went wrong");
-  } catch (error) {
-    console.error("Unable to fetch product list");
   }
-};
+);
+
+export const getProductFilteredByCategories = createAsyncThunk(
+  'products/getProductFilteredByCategories',
+  async ({ category_id }) => {
+    try {
+      const resp = await axios.get(`${REACT_API_DOMAIN_URL}/products`);
+      if (resp.status === 200) {
+        let productsData = resp.data;
+        if (category_id !== 'all') {
+          productsData = productsData.filter(
+            (products) => products?.category === category_id
+          );
+        }
+        return productsData;
+      }
+      console.error('something went wrong');
+    } catch (error) {
+      console.error('Unable to fetch product list');
+    }
+  }
+);
+
+export const getProductFilteredByProductId = createAsyncThunk(
+  'products/getProductFilteredByProductId',
+  async ({ product_id }) => {
+    try {
+      const resp = await axios.get(`${REACT_API_DOMAIN_URL}/products`);
+      if (resp.status === 200) {
+        let productsData = resp.data;
+        productsData = productsData.filter(
+          (products) => products?.id === product_id
+        );
+        return productsData[0];
+      }
+      console.error('something went wrong');
+    } catch (error) {
+      console.error('Unable to fetch product list');
+    }
+  }
+);

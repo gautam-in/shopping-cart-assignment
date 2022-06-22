@@ -4,6 +4,11 @@ export const StyledFilterMenu = styled.ul`
     width: 100%;
     display: flex;
     flex-direction: column;
+
+    .active {
+        background: ${(props) => props.theme.colors.CTA_COLOR};
+        color: ${(props) => props.theme.colors.WHITE};        
+    }
 `;
 
 export const StyledFilterItem = styled.li`

@@ -9,5 +9,6 @@ export const StyledHeader = styled.header`
 
     .wrapper {
         display: flex;
+        position: relative;
     } 
 `;

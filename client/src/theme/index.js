@@ -4,6 +4,7 @@ const theme = {
     colors: {
       BOX_SHADOW_LEFT: 'rgba(0, 0, 0, .3)',
       BOX_SHADOW_RIGHT: 'rgba(0, 0, 0, .1)',
+      OVERLAY: 'rgba(0,0,0,.8)',
       CTA_COLOR: '#bf2957',
       CADET_BLUE: '#5f9ea0',
       FILTER_COLOR: 'invert(19%) sepia(71%) saturate(2574%) hue-rotate(321deg) brightness(103%) contrast(90%)',
@@ -20,7 +21,7 @@ const theme = {
       FILTER_BORDER_COLOR: '#8d8d8d',
     },
     fonts: {
-      DOSIS: 'Dosis',
+      DOSIS: `'Dosis'`,
     },
     icons: {
       CART: CartIcon,
