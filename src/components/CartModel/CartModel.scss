@@ -1,0 +1,103 @@
+.cartModel {
+  height: 90vh;
+  background-color: #eeeeee;
+  width: 30%;
+  position: fixed;
+  right: 11%;
+  z-index: 10;
+  .cartModel-header-container {
+    width: 91%;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+  .cartModel-header-right {
+    cursor: pointer;
+  }
+  .cartModel-itmes-container {
+    padding: 10px 15px;
+    display: flex;
+    background: white;
+    margin-top: 16px;
+    .cartModel-itmes-image {
+      width: 100px;
+    }
+  }
+  .cartModel-name-price-container {
+    padding: 10px;
+    width: 100%;
+    .cartModel-itmes-name {
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .cartModel-itmes-price {
+      display: flex;
+      margin-top: 20px;
+      width: 100%;
+      justify-content: space-between;
+      .cartModel-itmes-price-calculator {
+        width: 48%;
+        display: flex;
+        justify-content: space-between;
+        .cartModel-price-button {
+          border-radius: 50%;
+          border: none;
+          background-color: #d00156;
+          color: white;
+          font-size: 22px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .cartModel-priceBanner {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    background-color: white;
+    padding: 5px;
+    align-content: center;
+    img {
+      width: 120px;
+      object-fit: contain;
+    }
+  }
+  .cartModel-checkout-container {
+    /* position: absolute; */
+    width: 96%;
+    bottom: 0;
+    background-color: white;
+    padding: 10px;
+    position: absolute;
+    .promo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5px;
+      padding: 5px;
+      font-size: 14px;
+    }
+  }
+}
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+  color: white;
+}
