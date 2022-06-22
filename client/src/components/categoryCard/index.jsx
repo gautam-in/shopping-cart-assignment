@@ -18,10 +18,9 @@ const CategoryCard = ({details, index}) => {
 						{details?.description}
 					</Typography>
 					<a href="/products">
-
 						<MuiButton variant="contained">
 							<span>
-							Explore {details?.name}
+							Explore {details?.key}
 							</span>
 						</MuiButton>
 					</a>

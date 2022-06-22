@@ -36,6 +36,22 @@ let theme = createTheme({
         },
       },
     },
+
+		MuiInputLabel : {
+			styleOverrides: {
+        root: {
+					fontFamily: '"dosis", sans-serif',
+      },
+		},
+	},
+	MuiFormControl : {
+		styleOverrides: {
+			root: {
+				marginTop: '1rem'
+		},
+	},
+},
+
 		MuiOutlinedInput: {
 			styleOverrides: {
         root: {
@@ -51,11 +67,19 @@ let theme = createTheme({
 	typography: {
 		h3: {
 			fontSize: '2rem',
-			fontWeight: 600,
+			fontWeight: 700,
 		},
 		h6: {
 			fontSize: '1.5rem',
 			fontWeight: 700,
+		},
+		body1: {
+			fontSize: '1.25rem',
+			fontWeight: 500,
+		},
+		body2: {
+			fontSize: '1.2rem',
+			fontWeight: 500,
 		},
 
 		p:{
@@ -70,5 +94,4 @@ let theme = createTheme({
 	}
 });
 
-theme = responsiveFontSizes(theme);
 export default theme;

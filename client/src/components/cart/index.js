@@ -23,7 +23,7 @@ export default function Cart() {
   return (
     <IconButton aria-label="cart">
       <StyledBadge fontSize='medium' badgeContent={cartItems} color="secondary" >
-        <ShoppingCartIcon fontSize='large' color="primary" />
+        <ShoppingCartIcon fontSize='medium' color="primary" />
       </StyledBadge>
     </IconButton>
   );

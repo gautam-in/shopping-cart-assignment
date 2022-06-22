@@ -9,7 +9,7 @@
   background: #ffffff;
 
 
-  .header-container{
+  .header-container-one{
     display: flex;
     align-items: center;
     a {
@@ -25,12 +25,19 @@
     }
   }
 
+  .header-container-two{
+    button{
+      margin-left: 0.5rem;
+      font-size: 1rem;
+      padding: 0px 8px;
+
+    }
+  }
+
 
   @include onDesktop(){
-
     padding:0.25rem 2rem;
-
-    .header-container{
+    .header-container-one{
       .nav-container{
         display: flex;
         margin: 0 4.5rem;
@@ -45,5 +52,56 @@
         }
       }
     }
+
+    .header-container-two{
+      .MuiSvgIcon-root{
+        width: 2rem;
+        height: 2rem;
+      }
+      .MuiButton-outlined{
+        margin-left: 1rem;
+        font-size: 1.2rem;
+        padding: 0 0.5rem;
+        box-sizing: content-box;
+  
+      }
+    }
+  
+  }
+
+  @include onTab(){
+      padding:0.25rem 2rem;
+      .header-container-one{
+        .nav-container{
+          display: flex;
+          margin: 0 4.5rem;
+          a{
+            display: flex;
+            margin-right: 1.5rem;
+            svg{
+              width: 1.25rem;
+              height: 1.25rem;
+             
+            }
+          }
+        }
+      }
+  
+      .header-container-two{
+        .MuiSvgIcon-root{
+          width: 2rem;
+          height: 2rem;
+        }
+        .MuiButton-outlined{
+          margin-left: 1rem;
+          font-size: 1rem;
+          padding: 0 0.5rem;
+          box-sizing: content-box;
+    
+        }
+      }
+    
+
+  
   }
 }

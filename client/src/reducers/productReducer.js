@@ -5,7 +5,8 @@ const initialState = {
   productData: [],
   isProductLoading: false,
   cartItems: 0,
-  isAddingToCart: false
+  isAddingToCart: false,
+  
 }
 
 export const productReducer = createSlice({
@@ -23,20 +24,21 @@ export const productReducer = createSlice({
   extraReducers: (builder) => {
     // Add reducers for additional action types here, and handle loading state as needed
     builder.addCase(getProductsAction.fulfilled, (state, action) => {
-      // Add user to the state array
       state.isProductLoading = false
       state.productData = action.payload
     }).addCase(getProductsAction.pending, (state, action) => {
-      // Add user to the state array
       state.isProductLoading = true
     })
 
     builder.addCase(postAddtoCartAction.fulfilled, (state, action) => {
-      // Add user to the state array
+
+
+      // add item to cart
+
+
       state.cartItems += 1
       state.isAddingToCart = false
     }).addCase(postAddtoCartAction.pending, (state, action) => {
-      // Add user to the state array
       state.isAddingToCart = true
     })
 
