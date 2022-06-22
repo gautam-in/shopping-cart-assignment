@@ -1,0 +1,28 @@
+.category-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.category-image-box {
+  width: 40%;
+}
+.category-image {
+  width: 90%;
+  height: 200px;
+  object-fit: contain;
+}
+.category-content-box {
+  width: 70%;
+  text-align: center;
+}
+.category-content-heading {
+  font-size: 28px;
+  font-weight: 800;
+}
+.category-contnent-description {
+  margin-top: 20px;
+  font-size: 16px;
+}
+.category-contnent-button {
+  margin-top: 30px;
+}

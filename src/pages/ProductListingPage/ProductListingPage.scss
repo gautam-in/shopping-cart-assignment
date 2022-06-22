@@ -5,43 +5,13 @@
     // padding: 20px;
     background-color: #eaeaea;
     width: 20%;
-    .category {
-      font-size: 14px;
-      padding: 15px;
-      padding-left: 30px;
-      border-bottom: 1px solid rgb(174, 173, 173);
-    }
   }
   .products-container {
     width: 80%;
     display: flex;
     flex-wrap: wrap;
-    padding: 20px;
-    .product-container {
-      flex-basis: 20%;
-      padding: 20px;
-      height: 400px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      .product-description {
-        font-size: small;
-        background-color: lightgray;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        max-width: 250px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        height: 70px;
-        margin-bottom: 15px;
-        padding: 5px;
-      }
-      .price-button-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
+    // padding: 10px;
+    margin: 20px;
+    justify-content: space-between;
   }
 }

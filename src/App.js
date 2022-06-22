@@ -1,17 +1,24 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
-import ProductListingPage from "./pages/ProductListingPage/ProductListingPage";
+import SignIn from "./pages/SignIn/SignIn";
+import Register from "./pages/Register/Register";
+import ProductView from "./routes/ProductView/ProductView";
 
 function App() {
   return (
     <Router>
-      <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<ProductListingPage />} />
+        <Route path="/" element={<Header />}>
+          <Route index element={<Home />} />
+          <Route path="/products/*" element={<ProductView />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/register" element={<Register />} />
+        </Route>
       </Routes>
+      <Footer />
     </Router>
   );
 }

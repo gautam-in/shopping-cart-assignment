@@ -1,0 +1,15 @@
+.register-container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 10px;
+  .register-heading {
+    width: 50%;
+    margin-top: -35%;
+  }
+  .register-form {
+    width: 50%;
+  }
+}

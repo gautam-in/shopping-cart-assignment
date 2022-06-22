@@ -1,9 +1,12 @@
 import axios from "../../api/axios";
 import React, { useEffect, useState } from "react";
 import "../ProductListingPage/ProductListingPage.scss";
-import Button from "../../components/Button/Button";
+import ProductCard from "../../components/ProductCard/ProductCard";
+import CategorySidebar from "../../components/CategorySidebar/CategorySidebar";
+import { useNavigate } from "react-router-dom";
 
 const ProductListingPage = () => {
+  const navigate = useNavigate();
   const [productList, setProductList] = useState([]);
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -21,7 +24,6 @@ const ProductListingPage = () => {
     (async () => {
       const fetchproducts = await axios.get("/products");
       const products = await fetchproducts.data;
-      console.log(products);
       setProductList(products);
       setProducts(products);
       const fetchCategory = await axios.get("/categories");
@@ -34,6 +36,9 @@ const ProductListingPage = () => {
     category.id === activeCategory
       ? setActiveCategory("all")
       : setActiveCategory(category.id);
+    category.id === activeCategory
+      ? navigate("/products")
+      : navigate(`/products/${category.id}`);
   };
 
   return (
@@ -41,35 +46,18 @@ const ProductListingPage = () => {
       <div className="categories-container">
         {categories.map((category) =>
           category.enabled ? (
-            <div
-              className="category"
-              onClick={() => handleCategoryClick(category)}
+            <CategorySidebar
+              active={category.id === activeCategory}
+              handleClick={handleCategoryClick}
               key={category.id}
-            >
-              {category.name}
-            </div>
+              category={category}
+            />
           ) : null
         )}
       </div>
       <div className="products-container">
         {products.map((product) => {
-          return (
-            <div className="product-container" key={product.id}>
-              <div>{product.name}</div>
-              <div>
-                <img
-                  style={{ width: "200px", height: "150px" }}
-                  src={product.imageURL}
-                  alt="product"
-                />
-              </div>
-              <div className="product-description">{product.description}</div>
-              <div className="price-button-container">
-                <div>MRP Rs{product.price}</div>
-                <Button type="sm">Buy now</Button>
-              </div>
-            </div>
-          );
+          return <ProductCard key={product.id} product={product} />;
         })}
       </div>
     </div>

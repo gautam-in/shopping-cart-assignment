@@ -6,12 +6,13 @@
   box-shadow: 0 0px 8px 0 rgb(0 0 0 / 10%), 0 0px 20px 0 rgb(0 0 0 / 10%);
   .image-container {
     margin-left: 10%;
-    width: 20%;
+    height: 100%;
+    width: 24%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     .image-logo {
-      height: 70px;
+      height: 80px;
       object-fit: contain;
     }
   }
@@ -53,6 +54,7 @@
         align-items: center;
         .cart-icon {
           font-size: 30px;
+          margin-right: 10px;
           color: #d00156;
         }
       }
@@ -64,4 +66,5 @@
   color: black;
   margin-left: 20px;
   font-size: 16px;
+  font-weight: 500;
 }

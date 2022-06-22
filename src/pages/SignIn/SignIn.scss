@@ -1,0 +1,15 @@
+.signin-container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 10px;
+  .signin-heading {
+    width: 50%;
+    margin-top: -75px;
+  }
+  .signin-form {
+    width: 50%;
+  }
+}

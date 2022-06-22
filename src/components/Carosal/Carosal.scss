@@ -1,0 +1,10 @@
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  .carousel-box {
+    width: 80%;
+    .carosal {
+      margin-top: 20px;
+    }
+  }
+}
