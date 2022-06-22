@@ -24,7 +24,7 @@
     </div>
     <div class="cart-footer">
         <div>Promo code can be applied on payment page</div>
-        <button>Proceed to Checkout <span id="total-amount"></span>></button>
+        <button class="button">Proceed to Checkout <span id="total-amount"></span>></button>
     </div>
     <div class="no-item" id="no-item">
         <div class="container">
@@ -34,7 +34,21 @@
             </div>
         </div>
         <div>
-            <button onclick="goToProducts()">Start Shopping</button>
+            <style>
+                .button{
+      background-color: #e30e55;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+                }
+            </style>
+            <button class="button" onclick="goToProducts()">Start Shopping</button>
         </div>
     </div>
 </script>
