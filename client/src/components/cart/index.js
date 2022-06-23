@@ -32,7 +32,9 @@ export default function Cart() {
   React.useEffect(() => {
     let newPrice = 0;
     Object.values(groupedCartData).forEach((item) => {
-      newPrice += item[0]?.price * item?.length;
+      if( item?.length>0){
+        newPrice += item[0]?.price * item?.length;
+      }
     });
     setTotalPrice(newPrice);
   }, [groupedCartData]);

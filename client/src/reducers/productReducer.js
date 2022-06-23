@@ -8,7 +8,8 @@ const initialState = {
   isAddingToCart: false,
   isResponsiveDialogOpen: false, 
   cartData : [],
-  groupedCartData : {}
+  groupedCartData : {},
+  isSnackBarVisible: false
 }
 
 export const productReducer = createSlice({
@@ -39,11 +40,16 @@ export const productReducer = createSlice({
 
     // cart counter decreaser
     decreaseCounterInCart  : (state, {payload}) => {
-      let targetArray =  state.groupedCartData[payload]
+      let targetArray = [...state.groupedCartData[payload]]
       targetArray.splice(targetArray.length-1, 1)
-      state.groupedCartData = {...state.groupedCartData, [payload] : targetArray}
-      state.cartItems -= 1
+        state.groupedCartData = {...state.groupedCartData, [payload] : targetArray}
+        state.cartItems -= 1
     },
+
+    toggleSnackBar: (state, action)=>{
+      state.isSnackBarVisible = action.payload
+    }
+
   },
   extraReducers: (builder) => {
     // Add reducers for additional action types here, and handle loading state as needed
@@ -56,8 +62,8 @@ export const productReducer = createSlice({
 
     builder.addCase(postAddtoCartAction.fulfilled, (state, action) => {
       // find object by id and append it to new array
+      state.isSnackBarVisible = true
       state.cartData = [state.productData.find((item)=> item.id === action?.meta?.arg?.productId), ...state.cartData]
-
       // group cartdata by id
       state.groupedCartData = state.cartData.reduce(function (r, a) {
         r[a.id] = r[a.id] || [];
@@ -75,7 +81,7 @@ export const productReducer = createSlice({
 })
 
 
-export const { sortProductData, showMiniCart, hideMiniCart, increaseCounterInCart, decreaseCounterInCart } = productReducer.actions
+export const { sortProductData, showMiniCart, hideMiniCart, increaseCounterInCart, decreaseCounterInCart, toggleSnackBar } = productReducer.actions
 
 
 // Action creators are generated for each case reducer function

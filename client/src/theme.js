@@ -13,9 +13,6 @@ let theme = createTheme({
 		text: {
 			primary: '#000000',
 		},
-		success: {
-			main: '#d10056',
-		}
 	},
 	components: {
 		MuiTypography: {
@@ -65,9 +62,23 @@ let theme = createTheme({
 			styleOverrides: {
 				root: {
 					fontFamily: '"dosis", sans-serif',
+					fontSize: '1.25rem',
+					justifyContent: 'center'
+				},
+			},
+		},
+
+	
+
+
+		MuiAlert: {
+			styleOverrides: {
+				root: {
+					fontFamily: '"dosis", sans-serif',
 					fontSize: '1rem'
 				},
 			},
+
 		}
 
 	},

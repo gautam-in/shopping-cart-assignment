@@ -25,7 +25,8 @@ body {
     }
 
     .slick-arrow {
-      display: none !important;
+      z-index: 1;
+      opacity:  0.6;
     }
 
     .slick-prev {
