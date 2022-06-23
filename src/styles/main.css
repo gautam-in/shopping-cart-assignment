@@ -1,6 +1,99 @@
 @import url("./bootstrap/bootstrap-grid.min.css");
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
+
+:root {
+  --bg-color: #e0e0e0;
+  --link-color: #292929;
+  --link-hover: #d10256;
+  --link-font-size: 16px;
+  --link-font-size-large: 20px;
+  --link-font-size-small: 14px;
+}
 
 * {
-    padding: 0px;
-    margin: 0px;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Dosis", Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  box-sizing: border-box;
 }
+button,
+a {
+  cursor: pointer;
+}
+main {
+  padding: 15px;
+  min-height: 500px;
+}
+ul {
+  list-style: none;
+}
+.navbar {
+  margin-left: 50px;
+  padding: 10px;
+}
+ul.nav-links > li {
+  display: inline;
+}
+ul.nav-links > li:not(:last-child) {
+  margin-right: 10px;
+}
+.nav-links li > a {
+  color: var(--link-color);
+  font-size: var(--link-font-size-large);
+  padding: 5px;
+  display: inline-block;
+  font-weight: 600;
+}
+.fs-large {
+  font-size: var(--link-font-size-large) !important;
+}
+.fs-small {
+  font-size: var(--link-font-size-small) !important;
+}
+.logo {
+  display: block;
+  max-width: max-content;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  padding: 5px;
+}
+header {
+  width: 100%;
+  background: white;
+  box-shadow: 0px 6px 6px 0px rgb(0 0 0 / 8%);
+}
+
+button.cart {
+  border: none;
+  width: 120px;
+  height: 100%;
+  padding: 5px 10px;
+  background: var(--bg-color);
+  color: var(--link-color);
+}
+button.cart svg {
+  width: 30px;
+  height: 30px;
+}
+button.cart svg path {
+  fill: var(--link-hover);
+}
+button.cart span {
+  display: inline-block;
+  font-size: 14px;
+  color: var(--link-color);
+  font-weight: 600;
+}
+button.cart span.counter {
+  margin-right: 5px;
+}
+
+/* Footer */
+footer {
+  background: var(--bg-color);
+  padding: 15px 10px;
+  font-weight: 600;
+}
+/* Footer */

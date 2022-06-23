@@ -1,13 +1,13 @@
 import React from "react";
 
-function Register(props) {
+function Products(props) {
   return (
     <main>
       <div className="container-md max-auto">
-        <h3>Register</h3>
+        <h3>Products</h3>
       </div>
     </main>
   );
 }
 
-export default Register;
+export default Products;
