@@ -1,0 +1,59 @@
+.navLogo {
+  src: url("../assets/logo_2x.png");
+  height: auto;
+  width: 160px;
+  margin-left: 10%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.navButtons {
+  text-transform: none;
+  font-size: large;
+}
+
+@media only screen and (max-width: 600px) {
+  .navLogo {
+    height: auto;
+    width: 100px;
+    margin-left: 5%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+}
+.authButtons button {
+  padding: 0;
+  display: flex;
+}
+.authButtons p {
+  color: black;
+  padding-right: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.authButtons button:hover {
+  background-color: #f0f0f0;
+}
+.authButtons button:focus {
+  outline-style: dashed;
+  outline-width: 1px;
+  outline-color: black;
+}
+
+.cartButton {
+  padding: 0px;
+  background-color: #f0f0f0;
+}
+.cartButton:hover {
+  background-color: coral;
+}
+.cartButton:focus {
+  outline-style: dashed;
+  outline-width: 1px;
+  outline-color: black;
+}
+.carousel .control-arrow,
+.carousel.carousel-slider .control-arrow:focus {
+  background-color: gray;
+}

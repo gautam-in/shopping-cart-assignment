@@ -1,0 +1,91 @@
+.cartFontColor {
+  color: white;
+  text-align: center;
+
+  padding-left: 10px;
+
+  padding-right: 10px;
+  font-weight: 600;
+  font-size: 20px;
+}
+.cartCountFont {
+  text-align: center;
+  color: white;
+  padding-top: 2px;
+  font-size: 16px;
+}
+
+.cartItemName {
+  padding-left: 2px;
+  padding-right: 2px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.circularButton {
+  padding: 5px;
+  background-color: #be2857; /* Green */
+  border: none;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.circularButton:hover {
+  background-color: coral;
+}
+.circularButton:focus {
+  background-color: coral;
+}
+
+.cartCountNum p {
+  font-weight: 600;
+}
+
+.cartItemImage {
+  height: 100;
+  width: 100px;
+}
+.adText {
+  font-size: 14px;
+}
+.buy_button {
+  height: 50px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.start_shopping_button {
+  height: 50px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: white;
+}
+.topView {
+  flex-grow: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.topView p {
+  display: block;
+}
+.bottomView {
+  flex-grow: 1;
+}
+.boldText {
+  font-weight: 600;
+  font-size: 20px;
+}
