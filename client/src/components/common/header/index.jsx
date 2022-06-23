@@ -10,9 +10,7 @@ const Header = () => {
 	return (
 		<header className="header-wrapper">
 			<div className="header-container-one">
-			<a href="/">
 				<img src={assetObject.logo.src}  alt={assetObject.logo.alt} />
-			</a>
 			<nav className="nav-container">
 				<a href="/" > <CottageOutlinedIcon/>Home</a>
 				<a href="/products" > <Inventory2OutlinedIcon/>  Products</a>

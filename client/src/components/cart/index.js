@@ -120,7 +120,7 @@ export default function Cart() {
                     return (
                       <article className='minicart-main-article' key={item[0]?.id}>
                         <figure>
-                          <img src={item[0]?.imageURL} alt={item[0]?.name} />
+                          <img src={item[0]?.imageURL} alt={""} />
                         </figure>
                         <article>
                           <Typography gutterBottom fontWeight={theme.typography.fontWeightBold} component='p' variant="p">{item[0]?.name}</Typography>

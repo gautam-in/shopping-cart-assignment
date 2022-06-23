@@ -8,7 +8,7 @@ const CategoryCard = ({details, index}) => {
 		<>
 			<section style={{gridTemplateColumns: index % 2 === 0 ? '0.75fr 1.25fr' : '1.25fr 0.75fr'}} className='catcard-wrapper'>
 				<figure style={{order: index % 2 === 0 ? 0 : 1}} className='catcard-item1'>
-					<img src={details?.imageUrl} alt={details?.description} />
+					<img src={details?.imageUrl} alt={""} />
 				</figure>
 				<article className='catcard-item2'>
 					<Typography component="h6" variant='h6'  >

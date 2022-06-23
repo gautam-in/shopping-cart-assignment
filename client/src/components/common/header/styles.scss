@@ -12,13 +12,11 @@
   .header-container-one{
     display: flex;
     align-items: center;
-    a {
       img {
         width: 4.5rem;
         height: 2.25rem;
         object-fit: cover;
       }
-    }
     
     .nav-container{
       display: none;
