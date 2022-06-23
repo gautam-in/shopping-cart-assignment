@@ -1,4 +1,5 @@
 import React from 'react'
+import SkipToMainContent from '../SkipToMainContent';
 import Wrapper from '../Utilities/Wrapper';
 import HamburgerMenu from './HamburgerMenu';
 import { StyledHeader } from './Header.styled';
@@ -10,6 +11,7 @@ const Header = () => {
     return (
         <StyledHeader>
             <Wrapper width={73}>
+            <SkipToMainContent/>
             <Logo/>
             <Navbar />
             <HeaderMenu />

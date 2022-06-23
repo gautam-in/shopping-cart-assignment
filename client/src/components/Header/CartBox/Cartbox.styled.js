@@ -11,20 +11,25 @@ export const StyledCart = styled.div`
     right: 5%;
     z-index: 3;
 
+    @media(min-width: ${(props) => props.theme.breakpoints.LAPTOP}) {
+        width: 30%;
+    }
+
     .promo-code {
-        position: fixed;
+        position: static;
         left: 0;
         bottom: 0;
         width: 100%;
-        background-color: ${(props) => props.theme.colors.WHITE};
+        background-color: none;
 
-        @media(min-width: ${(props) => props.theme.breakpoints.SM_LAPTOP}) {
-            position: static;
-            background-color: none;
+        @media(max-width: ${(props) => props.theme.breakpoints.TAB}) {
+            position: fixed;
+            background-color: ${(props) => props.theme.colors.WHITE};
         }
 
         & > p {
             margin: 15px 0;
+
             text-align: center;
             font-size: 12px;
             font-weight: 400;
@@ -52,10 +57,14 @@ export const StyledCart = styled.div`
 `;
 
 export const StyledCartBox = styled.div`
-    padding: 10px 12%;
+    padding: 6px 12%;
     display: flex;
     justify-content: space-between;
     background-color: ${(props) => props.theme.colors.GRAY};    
+    
+    @media(max-width: ${(props) => props.theme.breakpoints.TAB}) {
+        padding: 10px 12%;
+    }
 
     &:hover img {
         filter: ${(props) => props.theme.colors.BLACK_FILTER_COLOR};

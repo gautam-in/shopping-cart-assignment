@@ -6,6 +6,7 @@ import { StyledHomepage } from './Homepage.styled';
 import { getCategories } from '../../services/ApiService';
 import { unwrapResult } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
+import ErrorBoundary from '../../components/Utilities/ErrorBoundary';
 
 const Homepage = () => {
   const dispatch = useDispatch();
@@ -23,22 +24,26 @@ const Homepage = () => {
 
   return (
     <StyledHomepage>
-      <Banner />
-      <main>
-        {homePageCategories.map((homepage_category) => (
-          <Explore
-            isEnabled={homepage_category.enabled}
-            key={homepage_category.id}
-            exploreCategoryClass={homepage_category.key}
-            categorySrc={homepage_category.imageUrl}
-            categoryTitle={homepage_category.name}
-            categoryInfo={homepage_category.description}
-            categoryCTA={`Explore ${homepage_category.key}`}
-            categoryId={homepage_category.id}
-            categoryOrder={homepage_category.order}
-          />
-        ))}
-      </main>
+      <ErrorBoundary>
+        <Banner />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <main id='maincontent'>
+          {homePageCategories.map((homepage_category) => (
+            <Explore
+              isEnabled={homepage_category.enabled}
+              key={homepage_category.id}
+              exploreCategoryClass={homepage_category.key}
+              categorySrc={homepage_category.imageUrl}
+              categoryTitle={homepage_category.name}
+              categoryInfo={homepage_category.description}
+              categoryCTA={`Explore ${homepage_category.key}`}
+              categoryId={homepage_category.id}
+              categoryOrder={homepage_category.order}
+            />
+          ))}
+        </main>
+      </ErrorBoundary>
     </StyledHomepage>
   );
 };

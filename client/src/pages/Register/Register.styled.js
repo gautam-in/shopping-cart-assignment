@@ -8,9 +8,9 @@ export const StyledRegister = styled.div`
 `;
 
 export const StyledRegisterDetails = styled.div`
-    padding: 60px 0;
+    padding: 60px 4%;
     width: 45%;
-    margin-left: 8%;
+    margin-left: 4%;
 
     h3 {
         margin-bottom: 20px;

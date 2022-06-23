@@ -1,7 +1,7 @@
-import Button from '../Utilities/Button';
 import React from 'react';
 import { StyledExploreCategories } from './Explore.styled';
 import Wrapper from '../Utilities/Wrapper';
+import { Link } from 'react-router-dom';
 
 const Explore = ({
   exploreCategoryClass,
@@ -13,6 +13,11 @@ const Explore = ({
   categoryOrder,
   isEnabled,
 }) => {
+
+  const exploreBtnHandler = (e) => {
+    console.log(e);
+  }
+
   if (!isEnabled === true) return null;
   return (
     <StyledExploreCategories
@@ -22,15 +27,15 @@ const Explore = ({
     >
       <Wrapper>
         <figure>
-          <img src={categorySrc} alt={categoryTitle} />
+          <img src={categorySrc} alt={`some ${categoryTitle} visuals`} />
         </figure>
         <div className="explore-details">
-          <h3>{categoryTitle}</h3>
+          <h2>{categoryTitle}</h2>
           <p>{categoryInfo}</p>
-          <Button>{categoryCTA}</Button>
+          <Link onClick={exploreBtnHandler} to={`/product/${categoryId}`}>{categoryCTA}</Link>
         </div>
       </Wrapper>
-    </StyledExploreCategories>
+    </StyledExploreCategories >
   );
 };
 

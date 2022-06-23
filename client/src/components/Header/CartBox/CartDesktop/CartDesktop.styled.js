@@ -15,7 +15,7 @@ export const StlyledDesktopCartHeader = styled.div`
         margin-left: 50%;
     }
 
-    @media(min-width: ${(props) => props.theme.breakpoints.SM_LAPTOP}) {
+    @media(min-width: ${(props) => props.theme.breakpoints.TAB}) {
         background: ${(props) => props.theme.colors.BLACK};
         color: ${(props) => props.theme.colors.WHITE};
         text-align: center;
@@ -42,7 +42,7 @@ export const StyledDesktopCartDetails = styled.div`
 export const StyledCloseIcon = styled.a`
     display: none;
 
-    @media(min-width: ${(props) => props.theme.breakpoints.SM_LAPTOP}) {
+    @media(min-width: ${(props) => props.theme.breakpoints.TAB}) {
         display: inline-block;
         float: right;
         font-weight: bold;

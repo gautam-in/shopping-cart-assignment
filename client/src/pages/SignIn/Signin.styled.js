@@ -8,9 +8,9 @@ export const StyledSignin = styled.div`
 `;
 
 export const StyledSigninDetails = styled.div`
-    padding: 70px 0;
+    padding: 70px 4%;
     width: 45%;
-    margin-left: 8%;
+    margin-left: 4%;
 
     h3 {
         margin-bottom: 20px;

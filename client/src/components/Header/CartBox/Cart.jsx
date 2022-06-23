@@ -20,10 +20,10 @@ const Cart = ({ cartItems }) => {
   const cartPrice = getCartPrice(cartQuantifiedItems);
   const { width } = useWindowDimensions();
   const dispatch = useDispatch();
-  const LAPTOP_WIDTH = parseInt(
-    theme.breakpoints.SM_LAPTOP.substring(
+  const TAB_WIDTH = parseInt(
+    theme.breakpoints.TAB.substring(
       0,
-      theme.breakpoints.SM_LAPTOP.length - 2
+      theme.breakpoints.TAB.length - 2
     )
   );
 
@@ -35,7 +35,7 @@ const Cart = ({ cartItems }) => {
 
   return (
     <StyledCart className="cart">
-      {width >= LAPTOP_WIDTH ? (
+      {width >= TAB_WIDTH ? (
         <CartDesktop cartItems={cartQuantifiedItems} />
       ) : (
         <CartMobile />

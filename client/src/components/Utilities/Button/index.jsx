@@ -7,7 +7,7 @@ const Button = ({ styleClass, onClick, children }) => {
     const buttonClass = `button ${styleClass}`;
 
     return (
-        <StyledButton type="button" className={buttonClass} onClick={handleClick}>
+        <StyledButton type="button" role="button" tabindex="0" className={buttonClass} onClick={handleClick}>
             {children}
         </StyledButton>
     );

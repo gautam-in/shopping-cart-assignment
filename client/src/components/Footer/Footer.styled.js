@@ -6,7 +6,7 @@ export const StyledFooter = styled.footer`
     background: ${(props) => props.theme.colors.GRAY};
 
     p {
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 700;
     }
 `;

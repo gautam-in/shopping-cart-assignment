@@ -7,6 +7,14 @@ export const StyledHeaderMenu = styled.div`
     align-content: space-between;
     width: 10%;
 
+    @media(min-width: ${(props) => props.theme.breakpoints.LAPTOP}) {
+        width: 7%;
+    }
+
+    @media(max-width: ${(props) => props.theme.breakpoints.SM_LAPTOP}) {
+        width: 15%;
+    }
+
     .auth-links {
         display: flex;
         justify-content: space-between;

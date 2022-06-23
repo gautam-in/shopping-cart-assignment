@@ -19,7 +19,7 @@ export const StyledExploreCategories = styled.div`
         justify-content: center;
         align-items: center;
 
-        h3 {
+        h2 {
             font-size: 16px;
             font-family: ${(props) => props.theme.fonts.DOSIS}, sans-serif;
             font-weight: 700;
@@ -33,13 +33,16 @@ export const StyledExploreCategories = styled.div`
             margin-bottom: 25px;
         }
 
-        .button {
-            display: block;
+        a {
+            display: flex;
             max-width: fit-content;
-            font-size: 11px;
+            padding: 10px 3%;
+            font-size: 14px;
             font-weight: 400;
             cursor: pointer;
             font-family: ${(props) => props.theme.fonts.DOSIS}, sans-serif;
+            background: ${(props) => props.theme.colors.CTA_COLOR};
+            color: ${(props) => props.theme.colors.WHITE};
         }
     }
 

@@ -2,11 +2,10 @@ import styled from 'styled-components';
 
 export const StyledLogo = styled.h1`
 
-    h1 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-indent: -9999px;
 
     img {
         max-width: 100%;

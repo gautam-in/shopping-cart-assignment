@@ -9,7 +9,7 @@ import ProductCard from '../Utilities/ProductCard';
 import { StyledProductListing } from './ProductListing.styled';
 import { unwrapResult } from '@reduxjs/toolkit';
 
-const ProductListing = () => {
+const ProductListing = ({ categoryId }) => {
   const dispatch = useDispatch();
   const [productList, setProductList] = useState([]);
   const selectedFilter = useSelector(
@@ -17,7 +17,7 @@ const ProductListing = () => {
   );
 
   useEffect(() => {
-    dispatch(getProductFilteredByCategories({ category_id: selectedFilter }))
+    dispatch(getProductFilteredByCategories({ category_id: categoryId || selectedFilter }))
       .then(unwrapResult)
       .then((productData) => {
         setProductList(productData);
