@@ -1,0 +1,99 @@
+.category-list {
+  width: 100%;
+  position: relative;
+}
+.category-list ul {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+.category-list ul li {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  border-bottom: 1px solid #606060;
+}
+
+.category-list ul button {
+  padding: 0px;
+  width: 100%;
+}
+.selectedCategory {
+  background-color: #be2857;
+  color: white;
+}
+
+.selectedCategory p {
+  background-color: #be2857;
+  color: white;
+}
+.category-list ul button:focus {
+  font-weight: 600;
+  outline: 1px solid #606060;
+}
+
+.category-list label {
+  cursor: pointer;
+  color: #606060;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* mobile dropdown tyles */
+.dropbtn {
+  background-color: #be2857;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: 2px;
+  border-style: groove;
+  cursor: pointer;
+  min-width: 100%;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #be2857;
+}
+
+.dropdown {
+  position: relative;
+  width: 100vh;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 100%;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content div {
+  padding: 12px 0px;
+  text-decoration: none;
+  display: block;
+  border-bottom-style: ridge;
+}
+
+.show {
+  display: block;
+}
+.dropdown-content p {
+  margin: 0;
+}
+.selectedCategoryMobile {
+  background-color: #be2857;
+  color: white;
+}
+.selectedCategoryMobile a {
+  background-color: #be2857;
+  color: white;
+  margin: 0;
+}

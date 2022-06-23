@@ -1,0 +1,29 @@
+.fixed-height-text{
+    max-height: 50px;
+    min-height: 50px;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.fixed-height-text-desc{
+    max-height: 80px;
+    min-height: 80px;
+    font-size: 14px;
+    overflow: hidden;
+    font-weight: 600;
+}
+
+.max_width_button{
+    width: 100%;
+    cursor: pointer;
+}
+.max_width_button:hover{
+   background-color: coral;
+}
+.max_width_button:focus{
+    background-color: coral;
+ }
+.price-text{
+    font-size: 14px;
+    font-weight: 600;
+}
