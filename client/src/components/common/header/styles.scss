@@ -44,6 +44,9 @@
         a{
           display: flex;
           margin-right: 1.5rem;
+          &:hover{
+            text-decoration: underline;
+          }
           svg{
             width: 1.25rem;
             height: 1.25rem;
