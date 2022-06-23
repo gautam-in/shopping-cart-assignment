@@ -1,6 +1,6 @@
 # XT Shopping Cart Assignment
 
-This is the project forked from [https://github.com/gautam-in/shopping-cart-assignment][PlDb]
+This is the project forked from https://github.com/gautam-in/shopping-cart-assignment
 
  
 ## Tools used
