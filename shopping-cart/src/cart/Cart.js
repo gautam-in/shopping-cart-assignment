@@ -64,7 +64,7 @@ const Cart = ({ handleClose, handleOpen, open }) => {
               alignItems: "center",
             }}
           >
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex", alignItems: "center" }}>
               <p className="cartFontColor">My cart</p>
               <p className="cartCountFont">{`[${totalItems} ${
                 totalItems > 1 ? "items" : "item"
@@ -181,7 +181,7 @@ const Cart = ({ handleClose, handleOpen, open }) => {
               <Box
                 sx={{
                   backgroundColor: "white",
-                  height: { xs: 100, sm: 150, md: 200 },
+                  height: { xs: 120, sm: 150, md: 200 },
                   width: "100%",
                   position: "absolute",
                   bottom: "0%",

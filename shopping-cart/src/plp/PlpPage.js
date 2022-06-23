@@ -57,32 +57,31 @@ const PlpPage = () => {
           xs={12}
           sx={{ display: { xs: "flex", sm: "none", md: "none" } }}
         >
-          <div className="dropdown">
-            <button onClick={toggleDropdown} className="dropbtn">
-              {selectedCategory ? selectedCategory.name : "select category"}
-            </button>
-            <div
-              id="myDropdown"
-              className={`dropdown-content ${open ? "show" : ""}`}
-              tabIndex={1}
-            >
-              {categoriesData &&
-                categoriesData.map((item, index) => (
-                  <div
+          {categoriesData && (
+            <div className="dropdown">
+              <button onClick={toggleDropdown} className="dropbtn">
+                {selectedCategory ? selectedCategory.name : "select category"}
+              </button>
+              <div
+                id="myDropdown"
+                className={`dropdown-content ${open ? "show" : ""}`}
+              >
+                {categoriesData.map((item, index) => (
+                  <button
                     key={item.id}
                     className={`listElements ${
                       selectedCategory?.id === item.id
                         ? "selectedCategoryMobile"
                         : ""
                     }`}
-                    tabIndex={index + 1}
                     onClick={() => handleCategory(item)}
                   >
                     {item.name}
-                  </div>
+                  </button>
                 ))}
+              </div>
             </div>
-          </div>
+          )}
         </Grid>
         <Grid
           item

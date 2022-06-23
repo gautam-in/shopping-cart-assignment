@@ -53,3 +53,7 @@
   outline-width: 1px;
   outline-color: black;
 }
+.carousel .control-arrow,
+.carousel.carousel-slider .control-arrow:focus {
+  background-color: gray;
+}

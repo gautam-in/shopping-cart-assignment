@@ -75,13 +75,18 @@ img {
   z-index: 1;
 }
 
-.dropdown-content div {
+.dropdown-content button {
+  width: 100%;
   padding: 12px 0px;
   text-decoration: none;
   display: block;
   border-bottom-style: ridge;
 }
-
+.dropdown-content button:focus {
+  outline-style: dashed;
+  outline-width: 1px;
+  outline-color: black;
+}
 .show {
   display: block;
 }
