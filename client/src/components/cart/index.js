@@ -49,6 +49,14 @@ export default function Cart() {
     dispatch(hideMiniCart());
   };
 
+  const onIncrementHandler = (item) => {
+    dispatch(increaseCounterInCart(item.id));
+  };
+
+
+  const onDecrementHandler = (item) => {
+    dispatch(decreaseCounterInCart(item.id));
+  };
 
 
   const Title = () => {
@@ -74,19 +82,6 @@ export default function Cart() {
   const Footer = () => (<MuiButton className="footer-button" onClick={(e) => onCloseHandler(e)} fullWidth variant="contained">{cartItems ? PriceContainer : 'Start shopping'}</MuiButton>);
 
 
-
-
-  const onIncrementHandler = (item) => {
-    dispatch(increaseCounterInCart(item.id));
-  };
-
-
-  const onDecrementHandler = (item) => {
-    dispatch(decreaseCounterInCart(item.id));
-  };
-
-
-  console.log(groupedCartData, 'ggg');
 
 
   return (
