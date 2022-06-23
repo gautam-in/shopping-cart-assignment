@@ -1,5 +1,108 @@
-.cart-wrapper{
-    button{
-        box-shadow: none;
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.cart-wrapper {
+  button {
+    box-shadow: none;
+  }
+}
+
+.minicart-dialog-wrapper {
+
+
+	.MuiDialog-container{
+		align-items: end;
+    justify-content: end;
+
+	}
+
+
+
+  .minicart-dialog-body {
+    background: $grey100;
+    padding: 0;
+    section {
+      height: 100%;
+      .minicart-empty-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 1rem;
+      }
+
+      .minicart-full-container {
+        .minicart-main-article {
+          margin-top: 1rem;
+          display: grid;
+          grid-template-columns: 1fr 3fr 1fr;
+          gap: 0.5rem;
+          background: white;
+          align-items: center;
+          img {
+            width: 6rem;
+          }
+          article {
+            .button-price-group {
+              display: flex;
+              height: 1.5rem;
+              .MuiButtonGroup-root {
+                box-shadow: none;
+                button {
+                  padding: 0;
+                  box-sizing: content-box;
+                  min-width: unset;
+                  box-sizing: content-box;
+                  width: 1.6rem;
+                  border-radius: 1.25rem;
+                  height: 100%;
+                }
+              }
+              p {
+                padding: 0px 8px;
+                display: flex;
+                align-items: center;
+              }
+            }
+          }
+
+          .total-price {
+            margin: 1.4rem 0 0 0.5rem;
+          }
+        }
+
+        .banner-container {
+          display: flex;
+          background: white;
+          margin-top: 0.5rem;
+          align-items: center;
+          height: unset;
+          padding: 0.5rem 0.25rem;
+          img {
+            width: 6rem;
+          }
+          p {
+            margin-left: 0.5rem;
+          }
+        }
+      }
     }
+  }
+  button {
+    font-family: Dosis, "sans-serif";
+  }
+
+  .footer-button {
+    height: 2.5rem;
+    font-weight: 600;
+    article {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      p {
+        font-weight: 600;
+      }
+    }
+  }
 }

@@ -6,7 +6,9 @@ const initialState = {
   isProductLoading: false,
   cartItems: 0,
   isAddingToCart: false,
-  
+  isResponsiveDialogOpen: false, 
+  cartData : [],
+  groupedCartData : {}
 }
 
 export const productReducer = createSlice({
@@ -19,7 +21,29 @@ export const productReducer = createSlice({
       let unFilteredData = state.productData.filter((item)=> item.category !== action.payload
       )
       state.productData = [...filteredData,...unFilteredData]
-    }
+    },
+    showMiniCart : (state, action) => {
+      state.isResponsiveDialogOpen = true
+    },
+    hideMiniCart : (state, action) => {
+      state.isResponsiveDialogOpen = false
+    },
+
+    // cart counter increaser
+    increaseCounterInCart : (state, {payload}) => {
+     let targetArray =  state.groupedCartData[payload]
+     targetArray = [...targetArray, targetArray[0]]
+     state.groupedCartData = {...state.groupedCartData, [payload] : targetArray}
+     state.cartItems += 1
+    }, 
+
+    // cart counter decreaser
+    decreaseCounterInCart  : (state, {payload}) => {
+      let targetArray =  state.groupedCartData[payload]
+      targetArray.splice(targetArray.length-1, 1)
+      state.groupedCartData = {...state.groupedCartData, [payload] : targetArray}
+      state.cartItems -= 1
+    },
   },
   extraReducers: (builder) => {
     // Add reducers for additional action types here, and handle loading state as needed
@@ -31,23 +55,27 @@ export const productReducer = createSlice({
     })
 
     builder.addCase(postAddtoCartAction.fulfilled, (state, action) => {
+      // find object by id and append it to new array
+      state.cartData = [state.productData.find((item)=> item.id === action?.meta?.arg?.productId), ...state.cartData]
 
+      // group cartdata by id
+      state.groupedCartData = state.cartData.reduce(function (r, a) {
+        r[a.id] = r[a.id] || [];
+        r[a.id].push(a);
+        return r;
+    }, Object.create(null));
 
-      // add item to cart
-
-
+      // increase card count by one
       state.cartItems += 1
       state.isAddingToCart = false
     }).addCase(postAddtoCartAction.pending, (state, action) => {
       state.isAddingToCart = true
     })
-
-
   },
 })
 
 
-export const { sortProductData } = productReducer.actions
+export const { sortProductData, showMiniCart, hideMiniCart, increaseCounterInCart, decreaseCounterInCart } = productReducer.actions
 
 
 // Action creators are generated for each case reducer function

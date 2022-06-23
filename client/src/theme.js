@@ -25,42 +25,49 @@ let theme = createTheme({
 			},
 		},
 		MuiButton: {
-      styleOverrides: {
-        // Name of the slot
-        root: {
-          // Some CSS
-          fontSize: '1rem',
+			styleOverrides: {
+				// Name of the slot
+				root: {
+					// Some CSS
+					fontSize: '1rem',
 					textTransform: 'capitalize',
 					boxShadow: 'none',
 					borderRadius: '0.125rem'
-        },
-      },
-    },
+				},
+			},
+		},
 
-		MuiInputLabel : {
+		MuiInputLabel: {
 			styleOverrides: {
-        root: {
+				root: {
 					fontFamily: '"dosis", sans-serif',
-      },
+				},
+			},
 		},
-	},
-	MuiFormControl : {
-		styleOverrides: {
-			root: {
-				marginTop: '1rem'
+		MuiFormControl: {
+			styleOverrides: {
+				root: {
+					marginTop: '1rem'
+				},
+			},
 		},
-	},
-},
 
 		MuiOutlinedInput: {
 			styleOverrides: {
-        root: {
-          fontFamily: '"dosis", sans-serif',
+				root: {
+					fontFamily: '"dosis", sans-serif',
 					border: 'none',
 					borderRadius: 0,
-        },
-      },
-
+				},
+			},
+		},
+		MuiMenuItem:{
+			styleOverrides: {
+				root: {
+					fontFamily: '"dosis", sans-serif',
+					fontSize: '1rem'
+				},
+			},
 		}
 
 	},
@@ -82,7 +89,7 @@ let theme = createTheme({
 			fontWeight: 500,
 		},
 
-		p:{
+		p: {
 			fontSize: '1rem',
 			fontWeight: 400,
 		},
