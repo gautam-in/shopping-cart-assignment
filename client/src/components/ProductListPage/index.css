@@ -1,14 +1,31 @@
 .plp-page-container{
     display: flex;
+    justify-content: center;
+}
+.plp-page-category{
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+.category-selected{
+    background-color: #095BF6;
+    color: #fff;
+}
+
+.plp-page-body{
+    display: flex;
+    width: 80%;
 }
 .plp-page-categories-container{
+    background-color: #EEECEC;
     width: 20%;
 }
 .plp-page-products-container{
     width: 80%;
     display: flex;
     flex-wrap: wrap;
+    padding: 20px;
 }
 .plp-page-product-container{
-    flex-basis: 25%;
+    width: 25%;
 }

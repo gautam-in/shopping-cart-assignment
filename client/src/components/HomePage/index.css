@@ -1,6 +1,7 @@
 .home-page-container{
     display:flex;
     flex-direction:column;
+    padding: 16px;
 }
 .home-page-carousel-container{
     display: flex;

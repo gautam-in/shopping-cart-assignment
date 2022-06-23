@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import './index.css'
+import './index.css';
 import { Carousel } from 'react-responsive-carousel';
+import { Button } from '@mui/material';
 
 export const HomePage = (props) => {
     const [banners, setBanners] = useState([]);
-    const [categories, setCategories] = useState([])
+    const [categories, setCategories] = useState([]);
     useEffect(() => {
         ((async () => {
             const bannerList = await (await axios.get('http://localhost:5000/banners')).data;
@@ -52,7 +53,7 @@ export const HomePage = (props) => {
                                 <div className='home-page-category-content-box'>
                                     <div>{category.name}</div>
                                     <div>{category.description}</div>
-                                    <div><button>Explore {category.key}</button></div>
+                                    <div><Button variant="contained">Explore {category.key}</Button></div>
                                 </div>
                             }
                         </div>

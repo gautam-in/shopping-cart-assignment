@@ -1,3 +1,10 @@
-.page-body{
-  margin-top: 10px;
+.page-footer-container{
+  display: flex;
+  width: 100%;
+  background-color: #EEECEC;
+  justify-content: center;
+}
+.page-footer-container-content{
+  display: flex;
+  flex-basis: 75%;
 }
