@@ -1,23 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { StyledFilterItem, StyledFilterMenu } from './FilterMenu.styled';
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { getCategories } from '../../services/ApiService';
 import { selectedFilter } from '../../redux/slices/product-filter';
 import { unwrapResult } from '@reduxjs/toolkit';
-import { useNavigate, useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-const FilterMenu = ({ categoryId }) => {
+const FilterMenu = () => {
   const dispatch = useDispatch();
   let navigate = useNavigate();
-  const selectedItem = useSelector((state) => state.productsFilter.selected_filter);
   const [filterMenuList, setFilterMenuList] = useState([]);
   const location = useLocation();
   const { pathname } = location;
   const splitLocation = pathname.split("/");
 
   const filterHandler = (e) => {
-    console.log(selectedItem, e.target.id)
     dispatch(selectedFilter(e.target.id));
     navigate(`/product/${e.target.id}`, { replace: true });
   };

@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import { StyledRegister, StyledRegisterDetails, StyledRegisterForm } from './Register.styled';
+
 import Button from '../../components/Utilities/Button';
 import Input from '../../components/Utilities/Input';
+import React from 'react'
 import Wrapper from '../../components/Utilities/Wrapper';
-// import { ERROR_MESSAGES, REGEX_INPUTS } from '../../Constants';
 import useForm from '../../hooks/useForm';
 import useValidate from '../../hooks/useValidate';
-import { StyledRegister, StyledRegisterDetails, StyledRegisterForm } from './Register.styled';
 
 const Register = () => {
 
@@ -24,7 +24,7 @@ const Register = () => {
                         labelName='First Name'
                         type='text'
                         inputValue={values.firstname}
-                        errMsg={errors.firsname}
+                        errMsg={errors.firstname}
                         onInputChange={handleChange}
                         onKeyInputPress={handleKeyPress}
                     />

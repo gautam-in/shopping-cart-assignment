@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import {
-  getProductFilteredByCategories,
-  getProducts,
-} from '../../services/ApiService';
 import { useDispatch, useSelector } from 'react-redux';
 
 import ProductCard from '../Utilities/ProductCard';
 import { StyledProductListing } from './ProductListing.styled';
+import {
+  getProductFilteredByCategories,
+} from '../../services/ApiService';
 import { unwrapResult } from '@reduxjs/toolkit';
 
 const ProductListing = ({ categoryId }) => {
@@ -23,7 +22,7 @@ const ProductListing = ({ categoryId }) => {
         setProductList(productData);
       })
       .catch((error) => error);
-  }, [dispatch, selectedFilter]);
+  }, [categoryId, dispatch, selectedFilter]);
 
   return (
     <StyledProductListing>

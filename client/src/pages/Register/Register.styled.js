@@ -21,6 +21,7 @@ export const StyledRegisterDetails = styled.div`
 
     p {
         font-size: 12px;
+        line-height: 1.2;
     }
 `;
 

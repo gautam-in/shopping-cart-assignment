@@ -11,7 +11,7 @@ export const StyledCart = styled.div`
     right: 5%;
     z-index: 3;
 
-    @media(min-width: ${(props) => props.theme.breakpoints.LAPTOP}) {
+    @media(min-width: ${(props) => props.theme.breakpoints.DESKTOP}) {
         width: 30%;
     }
 
@@ -62,8 +62,12 @@ export const StyledCartBox = styled.div`
     justify-content: space-between;
     background-color: ${(props) => props.theme.colors.GRAY};    
     
-    @media(max-width: ${(props) => props.theme.breakpoints.TAB}) {
+    @media(max-width: ${(props) => props.theme.breakpoints.LG_TAB}) {
         padding: 10px 12%;
+    }
+
+    @media(max-width: ${(props) => props.theme.breakpoints.TAB}) {
+        padding: 5px 12%;
     }
 
     &:hover img {
@@ -86,16 +90,4 @@ export const StyledCartBox = styled.div`
         color: ${(props) => props.theme.colors.BLACK};
         font-family: ${(props) => props.theme.fonts.DOSIS},sans-serif;
     }
-`;
-
-export const StyledCartOverlay = styled.div`
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: ${(props) => props.theme.colors.OVERLAY};
-    z-index: 2;
 `;

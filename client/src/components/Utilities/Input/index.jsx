@@ -1,10 +1,24 @@
-import React from 'react'
-// import { useEffect } from 'react';
-// import { useRef } from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react'
+
 import { StyledInput } from './Input.styled';
 
 const Input = ({ inputName, inputValue, labelName, type, errMsg, onInputChange, onKeyInputPress }) => {
+
+  const [validInput, setValidInput] = useState();
+  const [inputFocus, setInputFocus] = useState(false);
+
+  function onInptChange(e) {
+      const isValid = onInputChange(e);
+      setValidInput(isValid);
+  }
+
+  function onBlurHandler(e) {
+      setInputFocus(false);
+  }
+
+  function onFocusHandler(e) {
+    setInputFocus(true);
+  }
 
   return (
     <StyledInput className='form-group'>
@@ -13,11 +27,13 @@ const Input = ({ inputName, inputValue, labelName, type, errMsg, onInputChange, 
           type={type}
           id={inputName}
           name={inputName}
-          onChange={onInputChange}
+          onChange={(e) => {onInptChange(e);}}
           value={inputValue}
           onKeyPress={onKeyInputPress}
+          onFocus={(e) => onFocusHandler(e)}
+          onBlur={(e) => onBlurHandler(e)}
           autoComplete="off"
-          // aria-invalid={validInput ? "false" : "true"}
+          aria-invalid={validInput ? "false" : "true"}
           aria-describedby="uidnote"
           required
         />
@@ -26,7 +42,7 @@ const Input = ({ inputName, inputValue, labelName, type, errMsg, onInputChange, 
         </label>
       </div>
       <span
-        className={`error`}
+        className={inputFocus ? `error` : ''}
         id='uidnote'
       >{errMsg}</span>
     </StyledInput>

@@ -1,61 +1,81 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 
 const useForm = (validate) => {
-    const [values, setValues] = useState({
-        form: '',
-        firstname: '',
-        lastname: '',
-        email: '',
-        password: '',
-        confirm_password: ''
+  const [values, setValues] = useState({
+    form: '',
+    firstname: '',
+    lastname: '',
+    email: '',
+    password: '',
+    confirm_password: '',
+  });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formName, setFormName] = useState('');
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
     });
-    const [errors, setErrors] = useState({});
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const navigate = useNavigate();
+    return !validate({ ...values })[name] ? true : false;
+  };
 
-    const handleChange = e => {
-        const { name, value } = e.target;
-        setValues({
-            ...values,
-            [name]: value
-        });
-        console.log(value, values)
-    };
-
-    const handleKeyPress = e => {
-        const { name, value } = e.target;
-        setValues({
-            ...values,
-            [name]: value
-        });
-        setErrors(validate(values));
+  const handleKeyPress = (e) => {
+    const {
+      form: { localName, id },
+      name,
+      value,
+    } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
+      [localName]: id,
+    });
+    if (id === 'sign-in') {
+      let { form, email, password } = values;
+      setErrors(validate({ form, email, password }));
+    } else {
+      setErrors(validate({ ...values }));
     }
+    return !validate({ ...values })[name] ? true : false;
+  };
 
-    const handleSubmit = (e) => {
-        const { localName, id } = e.target.form;
-        console.log(e.target.form.id, e);
-        setValues({
-            ...values,
-            [localName]: id
-        });
-        console.log(isSubmitting, errors);
-        e.preventDefault();
-        setErrors(validate(values));
-        setIsSubmitting(true);
-    };
+  const handleSubmit = (e) => {
+    const { localName, id } = e.target.form;
+    setValues({
+      ...values,
+      [localName]: id,
+    });
+    e.preventDefault();
+    if (id === 'sign-in') {
+      let { form, email, password } = values;
+      setErrors(validate({ form, email, password }));
+    } else {
+      setErrors(validate({ ...values }));
+    }
+    setFormName(id);
+    setIsSubmitting(true);
+  };
 
-    useEffect(
-        () => {
-            if (Object.keys(errors).length === 0 && isSubmitting) {
-                localStorage.setItem('userData', JSON.stringify(values));
-                navigate('/', { replace: true });
-            }
-        },
-        [errors]
-    );
+  useEffect(() => {
+    if (Object.keys(errors).length === 0 && isSubmitting) {
+      if (formName === 'register') {
+        localStorage.setItem('userData', JSON.stringify([values]));
+        navigate('/sign-in', { replace: true });
+      } else {
+        const {email,password}= values;
+        sessionStorage.setItem('loggedInUser',JSON.stringify([{email,password}]))
+        navigate('/', { replace: true });
+      }
+    }
+  }, [errors, formName, isSubmitting, navigate, values]);
 
-    return { handleKeyPress, handleChange, handleSubmit, values, errors };
+  return { handleKeyPress, handleChange, handleSubmit, values, errors };
 };
 
 export default useForm;

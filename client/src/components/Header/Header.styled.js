@@ -7,6 +7,14 @@ export const StyledHeader = styled.header`
     -moz-box-shadow:0 1px 4px ${(props) => props.theme.colors.BOX_SHADOW_LEFT}, 0 0 20px ${(props) => props.theme.colors.BOX_SHADOW_RIGHT};
     box-shadow:0 1px 4px ${(props) => props.theme.colors.BOX_SHADOW_LEFT}, 0 0 2    0px ${(props) => props.theme.colors.BOX_SHADOW_RIGHT};
 
+    @media(max-width: ${(props) => props.theme.breakpoints.TAB}) {
+        width: 100%;
+        position: fixed;
+        z-index: 5;
+        background: ${(props) => props.theme.colors.WHITE};
+        top: 0;
+    }
+
     .wrapper {
         display: flex;
         position: relative;

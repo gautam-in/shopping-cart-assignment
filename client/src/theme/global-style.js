@@ -1,9 +1,9 @@
 // globalStyles.js
+
 import { createGlobalStyle } from 'styled-components';
 import theme from '.';
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css?family=Dosis:400,600,700');
     /* http://meyerweb.com/eric/tools/css/reset/ 
   v2.0 | 20110126
   License: none (public domain)

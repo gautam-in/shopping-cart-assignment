@@ -1,8 +1,9 @@
-import { StyledCartBox, StyledCartOverlay } from './Cartbox.styled';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Cart from './Cart';
+import Overlay from '../../Utilities/Overlay';
 import React from 'react';
+import { StyledCartBox } from './Cartbox.styled';
 import { currentState } from '../../../redux/slices/cart';
 import { getCartIcon } from '../../../services/ApiService';
 
@@ -27,7 +28,7 @@ const CartBox = () => {
       {isCartOpen && (
         <>
           <Cart cartItems={cartItems} />
-          <StyledCartOverlay onClick={toggleCart}></StyledCartOverlay>
+          <Overlay onClick={toggleCart}/>
         </>
       )}
     </>

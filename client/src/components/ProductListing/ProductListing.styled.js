@@ -9,5 +9,9 @@ export const StyledProductListing = styled.ul`
         width: 24%;
         margin: 3px;
         border-bottom: 1px dashed;
+
+        @media(max-width: ${(props) => props.theme.breakpoints.SM_LAPTOP}) {
+           width: 30%;
+        }
     }
 `;
