@@ -6,7 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { BootstrapButton as Button } from "../../BootstrapButton";
 import { GlobalContext } from "../../../context/GlobalContext";
-import { Hidden, Link } from "@mui/material";
+import { Link } from "@mui/material";
 
 export default function MediaCard({
   name,

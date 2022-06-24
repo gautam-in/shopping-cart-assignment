@@ -13,9 +13,7 @@ export default function Sidebar({ filteredCategory, handleProduct }) {
   const [activeId, setActiveId] = React.useState(null);
 
   React.useMemo(() => {
-    if (search.includes("?id")) {
-      setActiveId(search.slice(4));
-    }
+    if (search.includes("?id")) setActiveId(search.slice(4));
   }, [search]);
 
   const [state, setState] = React.useState({

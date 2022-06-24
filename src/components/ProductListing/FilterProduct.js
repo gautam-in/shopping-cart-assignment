@@ -1,10 +1,5 @@
-import React, { useState, useEffect, useMemo } from "react";
-import {
-  useNavigate,
-  useLocation,
-  useMatch,
-  useSearchParams,
-} from "react-router-dom";
+import { useState, useEffect, useMemo } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { fetchData } from "../../api/api";
 
 export default function useFilterProduct() {

@@ -22,11 +22,6 @@ function Home() {
     };
     apiData();
   }, []);
-  const [authData, setAuthData] = useState();
-  useEffect(() => {
-    const auth = sessionStorage.getItem("Auth");
-    setAuthData(auth);
-  });
 
   return (
     <>
