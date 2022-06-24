@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Dropdown.css";
-import { BootstrapButton as Button } from "../../BootstrapButton";
 import Box from "@mui/material/Box";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -11,8 +10,6 @@ export default function Dropdown({ items, handleProduct }) {
   const [name, setName] = useState("All Products");
 
   const { search } = useLocation();
-
-  //const [activeId, setActiveId] = React.useState(null);
 
   React.useMemo(() => {
     if (search.includes("?id") && items.length > -1) {
