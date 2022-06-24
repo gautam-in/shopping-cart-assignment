@@ -40,7 +40,7 @@ const ProductList = () => {
 			{productData?.map((item) => (
 				<ProductCard key={item?.id} details={item} />
 			))}
-			<MuiSnackBar anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }} timeout={1000} onClose={handleClose} showSnackBar = {isSnackBarVisible}>
+			<MuiSnackBar anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} timeout={1000} onClose={handleClose} showSnackBar = {isSnackBarVisible}>
 				<Alert  severity="success" sx={{width: '100%'}}>
 					Successfully Added to cart! 
 				</Alert>

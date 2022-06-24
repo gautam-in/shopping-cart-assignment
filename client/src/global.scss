@@ -2,7 +2,6 @@
 @import "slick-carousel/slick/slick-theme.css";
 
 @import "./styles/mixins.scss";
-
 body {
   font-family: "Dosis", sans-serif !important;
   font-size: 1rem !important;
@@ -12,13 +11,17 @@ body {
     margin: 0;
   }
 
+  button:focus{
+    font-weight: 600;
+  }   
+  
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
   .root {
     background: #f4f4f4;
-
-    a {
-      color: black;
-      text-decoration: none;
-    }
 
     button {
       font-family: "Dosis", sans-serif !important;

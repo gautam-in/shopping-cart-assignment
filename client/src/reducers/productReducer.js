@@ -9,7 +9,8 @@ const initialState = {
   isResponsiveDialogOpen: false, 
   cartData : [],
   groupedCartData : {},
-  isSnackBarVisible: false
+  isSnackBarVisible: false,
+  isAddedToCartError: false,
 }
 
 export const productReducer = createSlice({
@@ -74,8 +75,14 @@ export const productReducer = createSlice({
       // increase card count by one
       state.cartItems += 1
       state.isAddingToCart = false
+      state.isAddedToCartError = false
     }).addCase(postAddtoCartAction.pending, (state, action) => {
       state.isAddingToCart = true
+      state.isAddedToCartError = false
+    }).addCase(postAddtoCartAction.rejected, (state, action) => {
+      state.isAddingToCart = false
+      state.isAddedToCartError = true
+      state.isSnackBarVisible = true
     })
   },
 })

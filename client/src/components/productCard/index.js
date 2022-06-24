@@ -15,6 +15,7 @@ const ProductCard = ({details}) => {
 
 const onCheckoutHandler = () => {
   dispatch(postAddtoCartAction({productId: id }))
+
 }
 
 

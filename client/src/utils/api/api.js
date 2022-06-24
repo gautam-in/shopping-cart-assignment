@@ -9,5 +9,5 @@ export function axiosGet({endpoint}) {
 
 export function axiosPost({endpoint, payload}) {
 
-	return axios.post(`${API_URL}${endpoint}`, payload).then((res) => res.data);
+	return axios.post(`${API_URL}${endpoint}`, payload).then((res) => res.data).catch((err)=>err);
 }

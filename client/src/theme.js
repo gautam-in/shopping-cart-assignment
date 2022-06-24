@@ -1,4 +1,4 @@
-import {createTheme, responsiveFontSizes} from '@mui/material/styles';
+import {createTheme} from '@mui/material/styles';
 
 
 // eslint-disable-next-line import/no-mutable-exports
@@ -13,6 +13,9 @@ let theme = createTheme({
 		text: {
 			primary: '#000000',
 		},
+		success: {
+			main: '#004b15'
+		}
 	},
 	components: {
 		MuiTypography: {
@@ -75,7 +78,7 @@ let theme = createTheme({
 			styleOverrides: {
 				root: {
 					fontFamily: '"dosis", sans-serif',
-					fontSize: '1rem'
+					fontSize: '1rem',
 				},
 			},
 
