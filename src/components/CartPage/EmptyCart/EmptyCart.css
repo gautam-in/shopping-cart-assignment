@@ -1,0 +1,40 @@
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 68vh;
+  background-color: #fff;
+  flex: 1;
+  position: relative;
+}
+.sub-container {
+  display: flex;
+  min-height: 40vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+}
+.emptyCart-title {
+  font-size: 0.9rem;
+}
+
+.text {
+  font-size: 0.8rem;
+  padding: 1rem 0rem;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 1rem;
+  position: relative;
+}
+.startbutton {
+  width: 100%;
+}
+.cartFooter {
+  width: 92% !important;
+}

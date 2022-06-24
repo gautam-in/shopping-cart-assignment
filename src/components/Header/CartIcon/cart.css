@@ -1,0 +1,32 @@
+.cart-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: "#ab003c";
+  padding: 5px 5px 5px 5px;
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  cursor: pointer;
+  background-color: darkgrey;
+}
+.cartimage {
+  width: 30px;
+}
+.Itemtext {
+  color: black;
+  font-size: 16px !important;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .cart-wrapper {
+    height: 61%;
+  }
+  .cartimage {
+    width: 22px;
+  }
+  .Itemtext {
+    font-size: 10px !important;
+  }
+}

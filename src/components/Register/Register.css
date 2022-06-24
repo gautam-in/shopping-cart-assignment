@@ -1,0 +1,84 @@
+.signupLeft {
+  margin-left: 0.5rem;
+}
+.signupBanner {
+  margin-bottom: 2% !important;
+  font-size: 1.5rem !important;
+  margin-right: 8.3rem !important;
+  font-weight: bold !important;
+  margin-top: 4.5rem !important;
+  text-align: left;
+}
+
+.signupLabel {
+  margin-bottom: 1.5rem !important;
+  text-align: left !important;
+}
+
+.signupForm {
+  margin: auto;
+  display: flex !important;
+  justify-content: center;
+  margin-left: 12% !important;
+}
+
+@media screen and (max-width: 899px) {
+  .signupBanner {
+    margin-bottom: 5rem !important;
+    font-size: 2.5rem !important;
+    font-weight: bold !important;
+    margin-top: 4.5rem !important;
+    text-align: center !important;
+    margin: auto !important;
+    margin-top: 10% !important;
+  }
+  .signupLabel {
+    margin-top: 1rem !important;
+    text-align: center !important;
+    font-size: 1.3rem !important;
+  }
+  .formGrid {
+    margin: auto !important;
+    margin-left: 12% !important;
+    margin-top: 0.3% !important;
+  }
+  .signupForm {
+    align-items: center;
+    display: flex !important;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .signupBanner {
+    margin-left: 29% !important;
+  }
+  .signupLabel {
+    margin-left: 29% !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .signupBanner {
+    margin-bottom: 5rem !important;
+    font-size: 2rem !important;
+    font-weight: bold !important;
+    margin-top: 4.5rem !important;
+    text-align: center !important;
+    margin: auto !important;
+    margin-top: 10% !important;
+  }
+  .signupLabel {
+    margin-top: 1rem !important;
+    margin-bottom: 0% !important;
+    text-align: center !important;
+    font-size: 1rem !important;
+  }
+  .formGrid {
+    margin: auto !important;
+  }
+  .signupForm {
+    display: flex !important;
+    justify-content: center;
+  }
+}

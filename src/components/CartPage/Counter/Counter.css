@@ -1,0 +1,21 @@
+.counter {
+  grid-column: 2 / 3;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.counterText {
+  padding: 0 0.5rem !important;
+}
+
+.multiply {
+  padding-left: 0.5rem !important;
+  font-size: 0.8rem !important;
+}
+
+.plusMinusbutton {
+  padding: 0.1rem 0.5rem !important;
+  border-radius: 4px !important;
+  min-width: 0 !important;
+}

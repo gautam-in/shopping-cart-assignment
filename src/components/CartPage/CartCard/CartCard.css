@@ -1,0 +1,76 @@
+.tablet {
+  font-size: 0.9rem;
+  background-color: #d7ced1;
+  display: flex;
+  flex-direction: column;
+  max-height: 68vh;
+}
+.section-wrapper {
+  overflow-y: auto;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.discount {
+  margin: 1rem 0.5rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  max-width: 90px;
+  max-height: 60px;
+  object-fit: contain;
+}
+
+.discount-text {
+  font-size: 0.8rem;
+  padding-left: 0.5rem;
+  color: #4d4d4d;
+}
+
+.Cartfooter {
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  flex-basis: fit-content;
+  background-color: #fff;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+.footer-text {
+  font-size: 0.8re;
+  padding: 0.5rem 0rem;
+}
+
+.buyout-button {
+  font-size: 0.9rem;
+  width: 95%;
+  padding: 0.7rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.back-button {
+  font-size: 0.9rem;
+  width: 95%;
+  padding: 0.7rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 600px) {
+  .discount {
+    padding: 0.5rem 1rem;
+  }
+  .img {
+    max-width: 100px;
+    max-height: 60px;
+  }
+  .discount-text {
+    padding-left: 1rem;
+    font-size: 0.9rem;
+  }
+}

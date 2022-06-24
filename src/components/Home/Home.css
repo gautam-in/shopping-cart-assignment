@@ -1,0 +1,31 @@
+.carousel {
+  width: 72% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.categoryGrid {
+  width: 72% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media screen and (max-width: 899px) {
+  .carousel {
+    width: 100% !important;
+  }
+
+  .categoryGrid {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .carousel {
+    width: 100% !important;
+  }
+
+  .categoryGrid {
+    width: 100% !important;
+  }
+}
