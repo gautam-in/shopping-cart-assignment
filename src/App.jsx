@@ -147,7 +147,15 @@ class App extends Component {
         {/* Router */}
         <Routes>
           <Route path="/">
-            <Route index element={<Home />} />
+            <Route
+              index
+              element={
+                <Home
+                  banners={this.state.banners}
+                  categories={this.state.categories}
+                />
+              }
+            />
             <Route path="register" element={<Register />} />
             <Route path="signin" element={<SignIn />} />
             <Route path="products" element={<Products />} />

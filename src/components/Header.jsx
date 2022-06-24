@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../static/images/logo.png";
-import cartIcon from "../static/images/cart.svg";
+// import cartIcon from "../static/images/cart.svg";
 
 function Header(props) {
   return (
@@ -10,9 +10,7 @@ function Header(props) {
         <div className="row">
           <div className="col-6 col-md-8 p-0">
             <div className="container-fluid mx-auto d-flex justify-content-start align-items-center">
-              <Link to={"/"}>
-                <img src={logo} alt="sabka bazaar logo" className="logo" />
-              </Link>
+              <img src={logo} alt="sabka bazaar logo" className="logo" />
               <nav className="navbar align-self-end d-md-block d-none">
                 <ul className="nav-links fs-large">
                   <li>
@@ -21,7 +19,7 @@ function Header(props) {
                     </Link>
                   </li>
                   <li>
-                    <Link title={"Product page"} to={"products"}>
+                    <Link title={"Product page"} to={"/products"}>
                       Products
                     </Link>
                   </li>
@@ -30,15 +28,15 @@ function Header(props) {
             </div>
           </div>
           <div className="p-0 col-6 col-md-4 d-flex flex-column justify-content-between align-items-end text-end">
-            <nav className="navbar align-self-end d-md-block d-none">
-              <ul className="nav-links">
+            <nav className="guestbar align-self-end d-md-block d-none">
+              <ul className="guest-links">
                 <li>
-                  <Link to={"signin"} className="fs-small">
+                  <Link to={"/signin"} className="fs-small">
                     Sign In
                   </Link>
                 </li>
                 <li>
-                  <Link to={"register"} className="fs-small">
+                  <Link to={"/register"} className="fs-small">
                     Register
                   </Link>
                 </li>
