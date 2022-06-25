@@ -20,7 +20,7 @@ const RegisterForm = () => {
         name: "isPresent",
         message: "User with this email is already in system",
         test: (value) => {
-          let users = JSON.parse(localStorage.getItem("users"));
+          let users = JSON.parse(localStorage.getItem("users")) || [];
           return users.filter((user) => user.email.toLowerCase() === value)
             .length > 0
             ? false
@@ -56,7 +56,7 @@ const RegisterForm = () => {
         // Deleting not required key
         delete data.confirmPassword;
         // Storing user data in local machince
-        let users = JSON.parse(localStorage.getItem("users"));
+        let users = JSON.parse(localStorage.getItem("users")) || [];
         localStorage.setItem(
           "users",
           JSON.stringify([...users].concat(data), null, 2)

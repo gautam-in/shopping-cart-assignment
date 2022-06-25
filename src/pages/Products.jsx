@@ -1,10 +1,120 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useLocation, Link, useNavigate } from "react-router-dom";
+import ProductCard from "../components/product/ProductCard";
+import { v4 } from "node-uuid";
 
-function Products(props) {
+class Search {
+  constructor(location) {
+    this.location = location;
+    this.search = location.search;
+    this.isSearched = this.search === "" ? false : true;
+    this.searchKey = this.isSearched && this.search.replace("?", "").split("&");
+  }
+
+  getKey(key) {
+    return (
+      this.isSearched &&
+      this.searchKey.filter((keys) => keys.includes(key + "="))[0]
+    );
+  }
+  getValue(key) {
+    return this.isSearched ? this.getKey(key).replace(`${key}=`, "") : "";
+  }
+}
+
+function Products({ products, categories }) {
+  // Hook Initialization
+  const location = useLocation();
+  const navigate = useNavigate();
+  // Initiating Search
+  const search = new Search(location);
+  // State
+  const [filterID, setFilterID] = useState("");
+
+  useEffect(() => {
+    setFilterID(search.getValue("filter"));
+    localStorage.setItem("selectedCategory", search.getValue("filter"));
+  }, [location]);
+
+  function RenderProducts() {
+    let data = products.data.filter((item) => item.category === filterID);
+    return data.length > 0
+      ? data.map((product) => {
+          return <ProductCard data={product} key={v4()} />;
+        })
+      : products.data.map((product) => {
+          return <ProductCard data={product} key={v4()} />;
+        });
+  }
+
+  function CategoryDropdown() {
+    return (
+      <select
+        name="category-dropdown"
+        id="categoryDropdown"
+        className="filter-items-dropdown d-md-none d-block"
+        defaultValue={localStorage.getItem("selectedCategory")}
+        onChange={(e) => {
+          let value = e.currentTarget.value;
+          navigate(
+            search.getValue("filter") === value
+              ? "/products"
+              : `/products?filter=${value}`
+          );
+        }}
+      >
+        <option key={"index-0"} value="">
+          All Categories
+        </option>
+        {categories.data.map((category, index) => {
+          return (
+            <option key={"index-" + index} value={category.id}>
+              {category.name}
+            </option>
+          );
+        })}
+      </select>
+    );
+  }
+
   return (
-    <main>
-      <div className="container-md max-auto">
-        <h3>Products</h3>
+    <main className="products">
+      <div className="container-md max-auto p-0">
+        <div className="row">
+          <div className="col-12 col-md-4 col-lg-3 p-0">
+            <aside className="filter-panel">
+              <CategoryDropdown />
+              <nav className="filter-items-wrapper d-md-block d-none">
+                {categories.data.map((category) => {
+                  return (
+                    <Link
+                      key={v4()}
+                      to={`${
+                        search.getValue("filter") === category.id
+                          ? "/products"
+                          : `/products?filter=${category.id}`
+                      }`}
+                      className={`filter-item ${
+                        category.id === search.getValue("filter")
+                          ? "active"
+                          : ""
+                      }`}
+                    >
+                      {category.name}
+                    </Link>
+                  );
+                })}
+              </nav>
+            </aside>
+          </div>
+          <div className="col-12 col-md-8 col-lg-9 p-0">
+            <div className="container-fluid mx-auto">
+              <div className="row">
+                <RenderProducts />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   );

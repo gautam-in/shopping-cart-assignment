@@ -47,7 +47,7 @@ class App extends Component {
             ...state,
             products: {
               ...state.products,
-              data: res,
+              data: res || [],
               loaded: true,
               error: null,
             },
@@ -77,7 +77,7 @@ class App extends Component {
             categories: {
               ...state.categories,
               loaded: true,
-              data: res,
+              data: res || [],
               error: null,
             },
           };
@@ -106,7 +106,7 @@ class App extends Component {
             banners: {
               ...state.banners,
               loaded: true,
-              data: res,
+              data: res || [],
               error: null,
             },
           };
@@ -158,7 +158,15 @@ class App extends Component {
             />
             <Route path="register" element={<Register />} />
             <Route path="signin" element={<SignIn />} />
-            <Route path="products" element={<Products />} />
+            <Route
+              path="products"
+              element={
+                <Products
+                  products={this.state.products}
+                  categories={this.state.categories}
+                />
+              }
+            />
           </Route>
         </Routes>
         {/* Router */}

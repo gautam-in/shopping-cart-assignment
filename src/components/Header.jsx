@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink as Link } from "react-router-dom";
 import logo from "../static/images/logo.png";
 // import cartIcon from "../static/images/cart.svg";
 
@@ -7,19 +7,67 @@ function Header(props) {
   return (
     <header>
       <div className="container-md mx-auto">
+        <div className="row d-md-none d-flex outline">
+          <div className="col-6">
+            <nav className="guestbar">
+              <ul className="guest-links">
+                <li>
+                  <Link to="/" className="fs-small">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/products" className="fs-small">
+                    Products
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div className="col-6">
+            <nav className="guestbar text-right">
+              <ul className="guest-links">
+                <li>
+                  <Link to="/signin" className="fs-small">
+                    Sign In
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/register" className="fs-small">
+                    Register
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
         <div className="row">
           <div className="col-6 col-md-8 p-0">
             <div className="container-fluid mx-auto d-flex justify-content-start align-items-center">
-              <img src={logo} alt="sabka bazaar logo" className="logo" />
+              <img
+                src={logo}
+                alt="sabka bazaar logo"
+                className="logo"
+                width={"100%"}
+                height={"100%"}
+              />
               <nav className="navbar align-self-end d-md-block d-none">
                 <ul className="nav-links fs-large">
                   <li>
-                    <Link to={"/"} title={"Homepage"}>
+                    <Link
+                      to={"/"}
+                      title={"Homepage"}
+                      className={({ isActive }) => (isActive ? "active" : "")}
+                    >
                       Home
                     </Link>
                   </li>
                   <li>
-                    <Link title={"Product page"} to={"/products"}>
+                    <Link
+                      title={"Product page"}
+                      to={"/products"}
+                      className={({ isActive }) => (isActive ? "active" : "")}
+                    >
                       Products
                     </Link>
                   </li>
@@ -31,12 +79,22 @@ function Header(props) {
             <nav className="guestbar align-self-end d-md-block d-none">
               <ul className="guest-links">
                 <li>
-                  <Link to={"/signin"} className="fs-small">
+                  <Link
+                    to={"/signin"}
+                    className={({ isActive }) =>
+                      isActive ? "fs-small active" : "fs-small"
+                    }
+                  >
                     Sign In
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/register"} className="fs-small">
+                  <Link
+                    to={"/register"}
+                    className={({ isActive }) =>
+                      isActive ? "fs-small active" : "fs-small"
+                    }
+                  >
                     Register
                   </Link>
                 </li>

@@ -26,7 +26,12 @@ const Banner = ({ banners }) => {
           return (
             <SwiperSlide key={uuid()}>
               <div className="banner">
-                <img src={banner.bannerImageUrl} alt={banner.bannerImageAlt} />
+                <img
+                  src={banner.bannerImageUrl}
+                  alt={banner.bannerImageAlt}
+                  height={"100px"}
+                  width={"100px"}
+                />
               </div>
             </SwiperSlide>
           );
