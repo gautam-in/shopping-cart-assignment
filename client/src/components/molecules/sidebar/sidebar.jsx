@@ -10,7 +10,7 @@ function Sidebar(props) {
         <ul className="navList">
           {constants.sideNavItems?.map(({ id, name }) => {
             return (
-              <li key={id} className="navList__items" onClick={() => handleOnClickNavItems(id)}>
+              <li tabIndex="0" key={id + name} className="navList__items" onClick={() => handleOnClickNavItems(id)}>
                 {name}
               </li>
             );

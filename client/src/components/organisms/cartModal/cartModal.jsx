@@ -67,9 +67,9 @@ function CartModal() {
               </ul>
             </div>
             <div className=" modal-footer modal__footer">
-              <p className="text-center">
+              <span className="text-center">
                 {cartItemData?.length > 0 && <p className="text-center">Promo code can be applied on payment page</p>}
-              </p>
+              </span>
               <Button onClick={hideModal}>
                 <div className="d-flex justify-content-between align-items-center p-2">
                   {cartItemData?.length > 0 ? (

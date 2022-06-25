@@ -12,8 +12,11 @@
     padding: 10px;
     border-bottom: 1px solid #b8b7b7;
     cursor: pointer;
-    &__items:active {
-      background-color: blue;
+    &:hover {
+      background-color: #ceced2;
+    }
+    &:focus {
+      background-color: #ceced2;
     }
   }
 }
