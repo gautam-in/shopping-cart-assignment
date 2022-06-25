@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"npm run build && serve -s build -p 3000\" \"canned -p 8000 ./server/api\"",
+    "start": "concurrently \"npm run build && serve -s build\" \"canned -p 8000 ./server/api\"",
     "dev": "concurrently \"canned -p 8000 ./server/api\" \"react-scripts start\"",
     "build": "react-scripts build",
     "react-start": "react-scripts start",
