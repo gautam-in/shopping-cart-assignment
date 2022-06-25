@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fascinate&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 37.5%;
+  font-family: "Dosis", sans-serif;
+  box-sizing: border-box;
+  /* Mobile Landscape */
+  /* Tablet */
+  /* Desktop Base */
+  /* Desktop Large */
+  /* Larger breakpoints */
+  /*
+    Responsive breakpoints
+    1920px: styles applied to screens 1920px wide and above
+    1440px: styles applied to screens 1440px wide and above
+    1280px: styles applied to screens 1280px wide and above
+    Desktop (base): styles apply to all devices unless overridden at other device breakpoints
+    Tablet: styles applied to screens 991px wide and below
+    Mobile landscape: styles applied to screens 767px wide and below
+    Mobile portrait: styles applied to screens 478px wide and below
+  */
+}
+@media only screen and (min-width: 478px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html {
+    font-size: 68.75%;
+  }
+}
+
+.nav--mobile {
+  position: relative;
+  height: 100%;
+  transition: all 0.2s;
+}
+.nav--mobile:hover {
+  cursor: pointer;
+  background-color: #f2f3f4 !important;
+}
+.nav--mobile .cart-icon--mobile {
+  margin-top: 0.9em;
+  font-size: 1.5em;
+  color: #b3005c;
+  width: 3em;
+  height: 1.2em;
+  padding: 0.05rem;
+}
+
+.nav--mobile__links {
+  position: absolute;
+  top: 7rem;
+  left: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  background-color: #f2f3f4;
+}
+.nav--mobile__links > a {
+  padding: 1.5rem 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+.nav--mobile__links > a:hover {
+  cursor: pointer;
+  color: #b3005c;
+}
+
+.show-mobile-nav-menu {
+  transition: all 0.5s;
+  transform: translateY(0%);
+}
+
+.hide-mobile-nav-menu {
+  transition: all 0.5s;
+  transform: translateY(calc(-100% - 7rem));
+}
+
+.cart-size-indicator {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: 1.3em;
+  height: 1.3em;
+  text-align: center;
+  background-color: #b3005c;
+  color: #fff;
+  border-radius: 100%;
+}

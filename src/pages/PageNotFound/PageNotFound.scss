@@ -1,0 +1,63 @@
+@import "../../../public/index.scss";
+
+.page-not-found {
+  font-family: "Fascinate", cursive;
+  font-size: 20rem;
+
+  margin: 20vh 0;
+
+  @media only screen and (min-width: 768px) {
+    margin: 0;
+  }
+}
+
+.page-not-found__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4rem;
+}
+
+.page-not-found__image {
+  width: 25rem;
+  min-width: 16rem;
+  transform: translate(-1.8rem, 7rem) rotate(25deg);
+
+  & > img {
+    width: 100%;
+  }
+}
+
+.links-to-try {
+  font-family: "Dosis", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+
+  & > h2 {
+    font-size: 3.5rem;
+    margin: 2rem 0;
+  }
+
+  & > h4 {
+    font-size: 2.5rem;
+    margin: 2rem 0;
+  }
+}
+
+.available-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  & > a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: $primary-color;
+    border-bottom: 1px solid transparent;
+    transition: all 0.5s;
+
+    &:hover {
+      border-bottom: 1px solid $primary-color;
+    }
+  }
+}

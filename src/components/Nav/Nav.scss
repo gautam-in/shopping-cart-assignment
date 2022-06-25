@@ -1,0 +1,90 @@
+@import "../../../public/index.scss";
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  & > div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 2rem;
+    width: 100%;
+
+    @media only screen and (min-width: 478px) {
+      width: 100%;
+      padding: 0 2.5rem;
+    }
+
+    @media only screen and (min-width: 768px) {
+      width: 100%;
+      padding: 0 4rem;
+    }
+  }
+
+  // Nav Left and Right
+  .nav--left,
+  .nav--right {
+    font-weight: 600;
+
+    & > a {
+      transition: all 0.2s;
+
+      text-decoration: none;
+
+      &:hover {
+        cursor: pointer;
+        color: $primary-color;
+      }
+    }
+  }
+
+  // Cart
+  .nav--cart > button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.8rem;
+
+    background-color: #fff;
+    color: lighten(grey, 5%);
+    border: none;
+
+    text-decoration: none;
+    height: 7rem;
+    transition: all 0.2s;
+
+    padding: 0 1.8rem;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $primary-color;
+      color: #fff;
+    }
+  }
+
+  .cart-icon {
+    margin: 0rem 1rem 0 0;
+    font-size: 1.5em;
+  }
+}
+
+// Link Styles
+.activeLink {
+  color: $primary-color;
+}
+
+.inactiveLink {
+  color: lighten(grey, 5%);
+}
+
+// .active-cart {
+//   color: #fff;
+//   background-color: $primary-color;
+// }
+
+// .inactive-cart {
+//   background-color: #fff;
+//   color: lighten(grey, 5%);
+// }

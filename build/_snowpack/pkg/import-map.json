@@ -1,0 +1,12 @@
+{
+  "imports": {
+    "react": "./react.js",
+    "react-dom/client": "./react-dom/client.js",
+    "react-icons/ai": "./react-icons/ai.js",
+    "react-icons/bi": "./react-icons/bi.js",
+    "react-icons/gr": "./react-icons/gr.js",
+    "react-icons/hi": "./react-icons/hi.js",
+    "react-icons/io": "./react-icons/io.js",
+    "react-router-dom": "./react-router-dom.js"
+  }
+}

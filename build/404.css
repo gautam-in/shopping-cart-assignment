@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fascinate&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 37.5%;
+  font-family: "Dosis", sans-serif;
+  box-sizing: border-box;
+  /* Mobile Landscape */
+  /* Tablet */
+  /* Desktop Base */
+  /* Desktop Large */
+  /* Larger breakpoints */
+  /*
+    Responsive breakpoints
+    1920px: styles applied to screens 1920px wide and above
+    1440px: styles applied to screens 1440px wide and above
+    1280px: styles applied to screens 1280px wide and above
+    Desktop (base): styles apply to all devices unless overridden at other device breakpoints
+    Tablet: styles applied to screens 991px wide and below
+    Mobile landscape: styles applied to screens 767px wide and below
+    Mobile portrait: styles applied to screens 478px wide and below
+  */
+}
+@media only screen and (min-width: 478px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html {
+    font-size: 68.75%;
+  }
+}
+
+.page-not-found {
+  font-family: "Fascinate", cursive;
+  font-size: 20rem;
+  margin: 20vh 0;
+}
+@media only screen and (min-width: 768px) {
+  .page-not-found {
+    margin: 0;
+  }
+}
+
+.page-not-found__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4rem;
+}
+
+.page-not-found__image {
+  width: 25rem;
+  min-width: 16rem;
+  transform: translate(-1.8rem, 7rem) rotate(25deg);
+}
+.page-not-found__image > img {
+  width: 100%;
+}
+
+.links-to-try {
+  font-family: "Dosis", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+}
+.links-to-try > h2 {
+  font-size: 3.5rem;
+  margin: 2rem 0;
+}
+.links-to-try > h4 {
+  font-size: 2.5rem;
+  margin: 2rem 0;
+}
+
+.available-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.available-links > a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #b3005c;
+  border-bottom: 1px solid transparent;
+  transition: all 0.5s;
+}
+.available-links > a:hover {
+  border-bottom: 1px solid #b3005c;
+}

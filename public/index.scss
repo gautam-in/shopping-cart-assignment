@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fascinate&display=swap");
+
+// Colors
+$primary-color: #b3005c;
+$secondary-color: #12d8fa;
+$snow-background: #f0f8ff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // font-size: 62.5%; // 10/16 * 100 -> setting 1rem = 10px;
+  font-size: 37.5%;
+  font-family: "Dosis", sans-serif;
+  box-sizing: border-box;
+
+  /* Mobile Landscape */
+  @media only screen and (min-width: 478px) {
+    font-size: 50%; // 1rem = 8px
+  }
+
+  /* Tablet */
+  @media only screen and (min-width: 768px) {
+    font-size: 50%; // 1rem = 8px
+  }
+
+  /* Desktop Base */
+  @media only screen and (min-width: 992px) {
+    font-size: 56.25%;
+  }
+
+  /* Desktop Large */
+  @media only screen and (min-width: 1200px) {
+    font-size: 62.5%; // 1rem = 10px
+  }
+
+  /* Larger breakpoints */
+  @media only screen and (min-width: 1440px) {
+    font-size: 68.75%; // 1rem = 11px
+  }
+
+  /*
+    Responsive breakpoints
+    1920px: styles applied to screens 1920px wide and above
+    1440px: styles applied to screens 1440px wide and above
+    1280px: styles applied to screens 1280px wide and above
+    Desktop (base): styles apply to all devices unless overridden at other device breakpoints
+    Tablet: styles applied to screens 991px wide and below
+    Mobile landscape: styles applied to screens 767px wide and below
+    Mobile portrait: styles applied to screens 478px wide and below
+  */
+}
+
+// Button style
+@mixin buttonStyle {
+  padding: 0.8em 1em;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  background-color: $primary-color;
+  color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+
+  @include buttonHoverAndActive;
+}
+
+@mixin buttonHoverAndActive {
+  &:hover,
+  &:active {
+    cursor: pointer;
+    background-color: darken($primary-color, 5%);
+  }
+
+  &:active {
+    outline: none;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+  }
+}

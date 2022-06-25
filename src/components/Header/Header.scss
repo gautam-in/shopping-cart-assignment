@@ -1,0 +1,42 @@
+@import "../../../public/index.scss";
+
+.header {
+  font-size: 1.8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 7rem;
+  padding: 0 2rem;
+
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: #fff;
+
+  // Desktop and above
+  @media only screen and (min-width: 992px) {
+    padding: 0 14rem;
+  }
+
+  // Logo
+  &__logo {
+    margin: 0.5rem 0 0 0;
+    padding: 1.5rem;
+
+    & img {
+      width: 40%;
+      min-width: 10rem;
+
+      // Mobile landscape and above
+      @media only screen and (min-width: 478px) {
+        width: 60%;
+      }
+    }
+  }
+}

@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fascinate&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 37.5%;
+  font-family: "Dosis", sans-serif;
+  box-sizing: border-box;
+  /* Mobile Landscape */
+  /* Tablet */
+  /* Desktop Base */
+  /* Desktop Large */
+  /* Larger breakpoints */
+  /*
+    Responsive breakpoints
+    1920px: styles applied to screens 1920px wide and above
+    1440px: styles applied to screens 1440px wide and above
+    1280px: styles applied to screens 1280px wide and above
+    Desktop (base): styles apply to all devices unless overridden at other device breakpoints
+    Tablet: styles applied to screens 991px wide and below
+    Mobile landscape: styles applied to screens 767px wide and below
+    Mobile portrait: styles applied to screens 478px wide and below
+  */
+}
+@media only screen and (min-width: 478px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html {
+    font-size: 68.75%;
+  }
+}
+
+.cart {
+  margin: 7rem 0 0 0;
+  min-height: calc(100vh - 7rem);
+  position: relative;
+  background-color: #f2f3f4;
+  display: flex;
+  flex-direction: column;
+}
+.cart__header {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 3em 0 1.5em 0;
+  padding: 1em 2em;
+  background-color: #fff;
+}
+.cart__body {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+.cart__body--empty {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  min-height: 100%;
+  text-align: center;
+  width: max-content;
+}
+.cart__body--empty > h1 {
+  font-size: 4rem;
+}
+.cart__body--empty > p {
+  margin: 1.5rem 0;
+  font-size: 2.5rem;
+}
+.cart__body--empty > a {
+  margin: 1em auto 0 auto;
+  padding: 1em 1.5em;
+  width: 100%;
+  font-size: 1.8rem;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  background-color: #b3005c;
+  color: #fff;
+  box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+.cart__body--empty > a:hover, .cart__body--empty > a:active {
+  cursor: pointer;
+  background-color: #9a004f;
+}
+.cart__body--empty > a:active {
+  outline: none;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}
+.cart__details {
+  max-width: 100rem;
+  min-width: 70rem;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.cart__lowest-price-banner {
+  width: 90%;
+  margin: 2rem auto;
+}
+.cart__checkout {
+  font-size: 2.2rem;
+  text-align: center;
+  box-shadow: 0 -8px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  padding: 1.2rem 0;
+  background-color: #fff;
+}
+.cart__checkout > button {
+  margin: 1em auto 0 auto;
+  padding: 1em 1.5em;
+  width: 90%;
+  border-radius: 4px;
+  border: none;
+  background-color: #b3005c;
+  color: #fff;
+  align-items: center;
+  display: flex;
+}
+.cart__checkout > button > span:nth-child(2) {
+  margin-left: auto;
+}
+.cart__checkout > button > svg {
+  width: 1.5em;
+  height: 1.5em;
+}
+.cart__checkout > button > svg > polyline {
+  stroke: #fff;
+}
+.cart__checkout > button:hover, .cart__checkout > button:active {
+  cursor: pointer;
+  background-color: #9a004f;
+}
+.cart__checkout > button:active {
+  outline: none;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}

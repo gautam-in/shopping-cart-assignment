@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fascinate&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 37.5%;
+  font-family: "Dosis", sans-serif;
+  box-sizing: border-box;
+  /* Mobile Landscape */
+  /* Tablet */
+  /* Desktop Base */
+  /* Desktop Large */
+  /* Larger breakpoints */
+  /*
+    Responsive breakpoints
+    1920px: styles applied to screens 1920px wide and above
+    1440px: styles applied to screens 1440px wide and above
+    1280px: styles applied to screens 1280px wide and above
+    Desktop (base): styles apply to all devices unless overridden at other device breakpoints
+    Tablet: styles applied to screens 991px wide and below
+    Mobile landscape: styles applied to screens 767px wide and below
+    Mobile portrait: styles applied to screens 478px wide and below
+  */
+}
+@media only screen and (min-width: 478px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  html {
+    font-size: 68.75%;
+  }
+}
+
+.signin {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: baseline;
+  margin: 7rem auto 0 auto;
+  padding: 4rem 8rem;
+  min-height: calc(100vh - 7rem);
+}
+@media only screen and (min-width: 768px) {
+  .signin {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+}
+.signin__header {
+  margin: 0 0 1.5rem 0;
+}
+.signin__header > h2 {
+  font-size: 4rem;
+  margin: 0.5em 0;
+}
+.signin__header > p {
+  font-size: 3rem;
+  margin: 0.5em 0;
+}
+@media only screen and (min-width: 768px) {
+  .signin__header {
+    width: 50%;
+  }
+}
+.signin__form {
+  color: #858585;
+  text-align: center;
+  width: 100%;
+}
+.signin__form > form > input {
+  position: relative;
+  margin: 0.5em 0 1em 0;
+  padding: 1.5rem 2rem;
+  width: 100%;
+  border: none;
+  border-bottom: 1.8px solid #b3b3b3;
+  transition: all 0.5s;
+}
+.signin__form > form > input:focus {
+  outline: none;
+  border-bottom: 1.8px solid #12d8fa;
+  transition: all 0.5s;
+}
+.signin__form > form > input:focus::placeholder {
+  color: #12d8fa;
+}
+@media only screen and (min-width: 768px) {
+  .signin__form > form > input {
+    width: 70%;
+  }
+}
+.signin__form > form > button {
+  width: 100%;
+  margin: 1.5em 0;
+  padding: 0.5em 0;
+  border: none;
+  border-radius: 4px;
+  background-color: #b3005c;
+  color: #fff;
+  font-size: 2rem;
+  box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+.signin__form > form > button:hover {
+  cursor: pointer;
+  background-color: #cd0069;
+}
+.signin__form > form > button:active {
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(0.2rem);
+}
+@media only screen and (min-width: 768px) {
+  .signin__form > form > button {
+    width: 60%;
+  }
+}

@@ -1,0 +1,77 @@
+@import "../../../public/index.scss";
+
+.product-menu-mobile {
+  margin: 8rem auto 0 auto;
+  width: 100%;
+
+  font-size: 3rem;
+  position: relative;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1rem 2rem;
+
+    background-color: $primary-color;
+    color: #fff;
+
+    &:hover {
+      cursor: pointer;
+      background-color: lighten($primary-color, 5%);
+    }
+  }
+
+  &__categories {
+    display: flex;
+    flex-flow: column nowrap;
+
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    width: 100%;
+
+    & > a {
+      font-size: 3rem;
+      text-decoration: none;
+      text-align: left;
+      padding: 2rem;
+
+      transition: all 0.2s;
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgb(240, 236, 236);
+        color: rgb(94, 94, 94);
+      }
+    }
+  }
+}
+
+.arrow-icon {
+  margin-top: 0.2em;
+  font-size: 1.2em;
+}
+
+// Active and inactive link Styles
+.active-mobile-menu-link {
+  background-color: $primary-color;
+  color: #fff;
+}
+
+.inactive-mobile-menu-link {
+  color: lighten(#000, 40%);
+}
+
+.hide-menu {
+  transition: all 0.5s;
+  opacity: 0;
+  transform: translateY(-130%);
+}
+
+.show-menu {
+  transition: all 0.5s;
+  transform: translateY(0%);
+  opacity: 1;
+}

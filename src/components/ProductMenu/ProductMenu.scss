@@ -1,0 +1,45 @@
+@import "../../../public/index.scss";
+
+.product-menu {
+  margin: 7rem 0 0rem 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20%;
+  min-width: 25rem;
+
+  background-color: rgb(236, 236, 236);
+
+  // Common link styles
+  & > a {
+    font-size: 2rem;
+    text-decoration: none;
+
+    padding: 2rem;
+
+    text-align: left;
+    transition: all 0.2s;
+
+    &:hover {
+      cursor: pointer;
+      color: $primary-color;
+      border-bottom: 0.5px solid currentColor;
+      width: 80%;
+    }
+  }
+}
+
+// Active and inactive link Styles
+.active-menu-link {
+  color: $primary-color;
+  border-bottom: 0.5px solid currentColor;
+  width: 80%;
+}
+
+.inactive-menu-link {
+  color: lighten(#000, 40%);
+  border-bottom: 0.5px solid lighten(#000, 75%);
+  width: 85%;
+}

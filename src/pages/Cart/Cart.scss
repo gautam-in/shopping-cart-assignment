@@ -1,0 +1,118 @@
+@import "../../../public/index.scss";
+
+.cart {
+  margin: 7rem 0 0 0;
+  min-height: calc(100vh - 7rem);
+  position: relative;
+  background-color: #f2f3f4;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    font-size: 2.5rem;
+    font-weight: 600;
+
+    margin: 3em 0 1.5em 0;
+    padding: 1em 2em;
+
+    background-color: #fff;
+  }
+
+  &__body {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    min-height: 100vh;
+
+    &--empty {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+
+      margin: 0 auto;
+      min-height: 100%;
+      text-align: center;
+      width: max-content;
+
+      & > h1 {
+        font-size: 4rem;
+      }
+
+      & > p {
+        margin: 1.5rem 0;
+        font-size: 2.5rem;
+      }
+
+      & > a {
+        @include buttonHoverAndActive;
+        margin: 1em auto 0 auto;
+        padding: 1em 1.5em;
+        width: 100%;
+
+        font-size: 1.8rem;
+        text-decoration: none;
+
+        border-radius: 4px;
+        border: none;
+
+        background-color: $primary-color;
+        color: #fff;
+
+        box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
+        transition: all 0.2s;
+      }
+    }
+  }
+
+  &__details {
+    max-width: 100rem;
+    min-width: 70rem;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  &__lowest-price-banner {
+    width: 90%;
+    margin: 2rem auto;
+  }
+
+  &__checkout {
+    font-size: 2.2rem;
+    text-align: center;
+    box-shadow: 0 -8px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    padding: 1.2rem 0;
+    background-color: #fff;
+
+    & > button {
+      margin: 1em auto 0 auto;
+      padding: 1em 1.5em;
+      width: 90%;
+
+      border-radius: 4px;
+      border: none;
+
+      background-color: $primary-color;
+      color: #fff;
+      align-items: center;
+
+      display: flex;
+      & > span:nth-child(2) {
+        margin-left: auto;
+      }
+
+      & > svg {
+        width: 1.5em;
+        height: 1.5em;
+      }
+
+      & > svg > polyline {
+        stroke: #fff;
+      }
+
+      @include buttonHoverAndActive;
+    }
+  }
+}

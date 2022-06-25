@@ -1,0 +1,69 @@
+@import "../../../public/index.scss";
+
+.nav--mobile {
+  position: relative;
+  height: 100%;
+  transition: all 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #f2f3f4 !important;
+  }
+
+  .cart-icon--mobile {
+    margin-top: 0.9em;
+    font-size: 1.5em;
+    color: $primary-color;
+
+    width: 3em;
+    height: 1.2em;
+    padding: 0.05rem;
+  }
+}
+
+.nav--mobile__links {
+  position: absolute;
+  top: 7rem;
+  left: 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  background-color: #f2f3f4;
+
+  & > a {
+    padding: 1.5rem 0;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+      color: $primary-color;
+    }
+  }
+}
+
+.show-mobile-nav-menu {
+  transition: all 0.5s;
+  transform: translateY(0%);
+}
+
+.hide-mobile-nav-menu {
+  transition: all 0.5s;
+  transform: translateY(calc(-100% - 7rem));
+}
+
+.cart-size-indicator {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: 1.3em;
+  height: 1.3em;
+  text-align: center;
+
+  background-color: $primary-color;
+  color: #fff;
+  border-radius: 100%;
+}
