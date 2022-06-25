@@ -3,20 +3,39 @@
 .productList-container {
   // margin: 0 10%;
   display: flex;
+  flex-direction: column;
   @include for-desktop-up {
     margin: 0 10%;
   }
-  .categories-container {
-    // padding: 20px;
-    background-color: #eaeaea;
-    width: 20%;
-  }
-  .products-container {
-    width: 80%;
+
+  .categories-products-container {
     display: flex;
-    flex-wrap: wrap;
-    // padding: 10px;
-    margin: 20px;
-    justify-content: space-between;
+    .categories-container {
+      // padding: 20px;
+      background-color: #eaeaea;
+
+      display: none;
+      @include for-tablet-portrait-up {
+        width: 25%;
+        display: block;
+      }
+      @include for-desktop-up {
+        width: 20%;
+      }
+    }
+    .products-container {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      // padding: 10px;
+      margin: 20px;
+      justify-content: space-between;
+      @include for-tablet-portrait-up {
+        width: 75%;
+      }
+      @include for-desktop-up {
+        width: 80%;
+      }
+    }
   }
 }

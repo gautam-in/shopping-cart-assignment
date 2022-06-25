@@ -1,7 +1,7 @@
 @import "../../maxin.scss";
 
 .product-container {
-  flex-basis: 46%;
+  flex-basis: 100%;
   height: 300px;
   margin: 20px 0;
   display: flex;
@@ -10,6 +10,9 @@
   justify-content: space-between;
   border-bottom: 1px dashed rgb(174, 173, 173);
   box-shadow: 5px 0px 10px #f1f1f1;
+  @include for-tablet-portrait-up {
+    flex-basis: 46%;
+  }
   @include for-desktop-up {
     flex-basis: 21%;
     height: 500px;
@@ -68,7 +71,7 @@
       display: none;
       @include for-desktop-up {
         display: inline-block;
-        width: 40%;
+        width: 100%;
       }
     }
   }

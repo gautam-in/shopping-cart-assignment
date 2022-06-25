@@ -1,29 +1,33 @@
 import React from "react";
 import "../Banner/Banner.scss";
 import Button from "../Button/Button";
+import { useNavigate } from "react-router-dom";
 
 const Banner = ({ category }) => {
+  const navigate = useNavigate();
+  const handleCLick = (id) => {
+    navigate(`/products/${id}`);
+  };
+
   return (
-    <div className="category-container" key={category.key}>
-      <div className="category-image-box">
-        <img
-          className="category-image"
-          src={category.imageUrl}
-          alt="Category"
-        />
-      </div>
-      <div className="category-content-box">
-        <div className="category-content-heading">{category.name}</div>
-        <div className="category-contnent-description">
-          {category.description}
+    <>
+      <div id="myBox" className="banner-container" key={category.key}>
+        <div className="banner-image-box">
+          <img className="banner-image" src={category.imageUrl} alt="banner" />
         </div>
-        <div className="category-contnent-button">
-          <Button type="xl" onClick={null}>
-            Explore {category.key}
-          </Button>
+        <div className="banner-content-box">
+          <div className="banner-content-heading">{category.name}</div>
+          <div className="banner-contnent-description">
+            {category.description}
+          </div>
+          <div className="banner-contnent-button">
+            <Button type="xl" onClick={() => handleCLick(category.id)}>
+              Explore {category.key}
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

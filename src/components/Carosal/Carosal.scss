@@ -1,8 +1,15 @@
+@import "../../maxin.scss";
+
 .carousel-container {
   display: flex;
   justify-content: center;
+
   .carousel-box {
-    width: 80%;
+    border-bottom: 1px solid black;
+    width: 100%;
+    @include for-tablet-portrait-up {
+      width: 80%;
+    }
     .carosal {
       margin-top: 20px;
     }

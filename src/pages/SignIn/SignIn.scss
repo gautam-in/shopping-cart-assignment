@@ -1,15 +1,40 @@
+@import "../../maxin.scss";
+
 .signin-container {
-  width: 50%;
+  width: 98%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
   padding: 10px;
-  .signin-heading {
+
+  @include for-phone-only {
+    height: 50vh;
+    width: 90%;
+    flex-direction: column;
+  }
+  @include for-tablet-portrait-up {
+    height: 50vh;
+    width: 70%;
+    flex-direction: column;
+  }
+
+  @include for-desktop-up {
     width: 50%;
+    height: 40vh;
+    flex-direction: row;
+  }
+  .signin-heading {
+    width: 90%;
     margin-top: -75px;
+    @include for-desktop-up {
+      width: 50%;
+    }
   }
   .signin-form {
-    width: 50%;
+    width: 90%;
+    @include for-desktop-up {
+      width: 50%;
+    }
   }
 }

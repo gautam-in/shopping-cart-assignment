@@ -18,9 +18,10 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/register" element={<Register />} />
           <Route path="cart" element={<CartModel />} />
+          <Route element={<div>404 Not Found</div>} />{" "}
         </Route>
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 }

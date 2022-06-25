@@ -1,15 +1,44 @@
+@import "../../maxin.scss";
+
 .register-container {
-  width: 50%;
+  width: 90%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   margin: auto;
   padding: 10px;
-  .register-heading {
+
+  @include for-phone-only {
+    width: 100%;
+    margin-top: 30px;
+    height: 70vh;
+    margin: 0%;
+    padding: 0;
+  }
+  @include for-tablet-portrait-up {
+    width: 100%;
+    margin-top: 85px;
+    height: 60vh;
+  }
+  @include for-desktop-up {
     width: 50%;
+    height: 60vh;
+    flex-direction: row;
+    margin-top: 0;
+    justify-content: center;
+  }
+  .register-heading {
+    width: 80%;
     margin-top: -35%;
+    @include for-desktop-up {
+      width: 50%;
+    }
   }
   .register-form {
-    width: 50%;
+    width: 80%;
+    @include for-desktop-up {
+      width: 50%;
+    }
   }
 }

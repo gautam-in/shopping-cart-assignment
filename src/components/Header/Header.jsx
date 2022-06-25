@@ -3,15 +3,17 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import "../Header/Header.scss";
 import { MdShoppingCart } from "react-icons/md";
 import CartModel from "../CartModel/CartModel";
+import { useSelector } from "react-redux";
+import { selectCartTotalCount } from "../../redux/selectors/cardSelector";
 
 const Header = () => {
   const Navigate = useNavigate();
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const totalCount = useSelector(selectCartTotalCount);
 
   const handleCartOpen = () => {
     if (window.screen.width >= 992) {
       setIsCartOpen(!isCartOpen);
-      Navigate("/");
       isCartOpen
         ? (document.getElementById("overlay").style.display = "none")
         : (document.getElementById("overlay").style.display = "block");
@@ -28,18 +30,20 @@ const Header = () => {
       <div id="overlay"></div>
       <header className="header-container">
         <div className="image-container">
-          <img
-            className="image-logo"
-            src="/static/images/logo.png"
-            alt="logo"
-          />
+          <Link to="/">
+            <img
+              className="image-logo"
+              src="/static/images/logo.png"
+              alt="logo"
+            />
+          </Link>
         </div>
         <div className="header-right-container">
           <div className="signin-rigester-container">
-            <Link className="singin-link link" to="/signin">
+            <Link className="singin-signup-link " to="/signin">
               SignIn
             </Link>
-            <Link className="signup-link link" to="/register">
+            <Link className="singin-signup-link " to="/register">
               Register
             </Link>
           </div>
@@ -54,7 +58,8 @@ const Header = () => {
             </div>
             <div className="products-cart-container">
               <div className="cart" onClick={handleCartOpen}>
-                <MdShoppingCart className="cart-icon" />0 Items
+                <MdShoppingCart className="cart-icon" />
+                {totalCount} Items
               </div>
             </div>
           </div>

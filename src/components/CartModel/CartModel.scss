@@ -1,7 +1,7 @@
 @import "../../maxin.scss";
 
 .cartModel {
-  height: 90vh;
+  height: 90%;
   background-color: #eeeeee;
   width: 100%;
   position: fixed;
@@ -37,28 +37,35 @@
       display: block;
     }
   }
-  .cartModel-itmes-container {
-    padding: 10px 15px;
-    display: flex;
-    background: white;
-    margin-top: 16px;
-    .cartModel-itmes-image {
-      width: 100px;
+  .cartModel-items-banner-container {
+    height: 70vh;
+    overflow: auto;
+    @include for-desktop-up {
+      height: 70vh;
+    }
+    .cartModel-items-container {
+      padding: 10px 15px;
+      display: flex;
+      background: white;
+      margin-top: 16px;
+      .cartModel-items-image {
+        width: 100px;
+      }
     }
   }
   .cartModel-name-price-container {
     padding: 10px;
     width: 100%;
-    .cartModel-itmes-name {
+    .cartModel-items-name {
       font-size: 20px;
       font-weight: 800;
     }
-    .cartModel-itmes-price {
+    .cartModel-items-price {
       display: flex;
       margin-top: 20px;
       width: 100%;
       justify-content: space-between;
-      .cartModel-itmes-price-calculator {
+      .cartModel-items-price-calculator {
         width: 48%;
         display: flex;
         justify-content: space-between;
@@ -86,12 +93,14 @@
     }
   }
   .cartModel-checkout-container {
-    /* position: absolute; */
     width: 96%;
+    position: absolute;
     bottom: 0;
     background-color: white;
-    padding: 10px;
-    position: absolute;
+    margin: 10px;
+    @include for-desktop-up {
+      width: 96%;
+    }
     .promo {
       display: flex;
       justify-content: center;
@@ -101,17 +110,17 @@
     }
   }
 }
-.overlay {
-  position: fixed;
-  display: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2;
-  cursor: pointer;
-  color: white;
+.cartModel-empty-container {
+  div {
+    height: 75vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    color: gray;
+  }
+  .sign-button {
+    width: 96%;
+    margin: 10px;
+  }
 }
