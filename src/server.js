@@ -1,5 +1,5 @@
 class Server {
-  constructor(hostname = "localhost", port = 5000) {
+  constructor(hostname = "localhost", port = 8000) {
     this.hostname = hostname;
     this.port = port;
     this.url = `http://${this.hostname}:${this.port}/`;
