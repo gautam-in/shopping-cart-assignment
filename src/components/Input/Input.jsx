@@ -1,7 +1,7 @@
 import React from "react";
 import "../Input/Input.scss";
 
-const Input = ({ label, ...props }) => {
+const Input = ({ label, error, ...props }) => {
   return (
     <div className="input-container">
       <input className="form-input" {...props} />
@@ -13,6 +13,7 @@ const Input = ({ label, ...props }) => {
           {label}
         </label>
       )}
+      <span className="input-error">{error && error}</span>
     </div>
   );
 };

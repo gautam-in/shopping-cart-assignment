@@ -22,7 +22,7 @@ $main-color: black;
     border: none;
     border-radius: 0;
     border-bottom: 1px solid $sub-color;
-    margin: 25px 0;
+    // margin: 25px 0;
 
     &:focus {
       outline: none;
@@ -51,5 +51,8 @@ $main-color: black;
       @include shrinkLabel();
       color: #99dadf;
     }
+  }
+  .input-error {
+    color: rgb(154, 14, 14);
   }
 }

@@ -10,6 +10,7 @@ const Register = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    error: {},
   };
   const [formFields, setFormFields] = useState(initialFromFields);
   const { firstName, lastName, email, password, confirmPassword } = formFields;
@@ -18,10 +19,24 @@ const Register = () => {
     const { name, value } = event.target;
     setFormFields({
       ...formFields,
+      error: {
+        ...formFields.error,
+        [name]: "",
+      },
       [name]: value,
     });
   };
-
+  const handleInputvalidate = (event) => {
+    const { name, value } = event.target;
+    value === "" &&
+      setFormFields({
+        ...formFields,
+        error: {
+          ...formFields.error,
+          [name]: `${name} cannot be blank`,
+        },
+      });
+  };
   return (
     <div className="register-container">
       <div className="register-heading">
@@ -36,6 +51,8 @@ const Register = () => {
           label="First Name"
           required
           onChange={handleInputChange}
+          onBlur={handleInputvalidate}
+          error={formFields.error.firstName && formFields.error.firstName}
         />
         <Input
           type="text"
@@ -44,6 +61,8 @@ const Register = () => {
           label="Last Name"
           required
           onChange={handleInputChange}
+          onBlur={handleInputvalidate}
+          error={formFields.error.lastName && formFields.error.lastName}
         />
         <Input
           type="email"
@@ -52,6 +71,8 @@ const Register = () => {
           label="Email"
           required
           onChange={handleInputChange}
+          onBlur={handleInputvalidate}
+          error={formFields.error.email && formFields.error.email}
         />
         <Input
           type="password"
@@ -60,6 +81,8 @@ const Register = () => {
           label="Password"
           required
           onChange={handleInputChange}
+          onBlur={handleInputvalidate}
+          error={formFields.error.password && formFields.error.password}
         />
         <Input
           type="password"
@@ -68,6 +91,10 @@ const Register = () => {
           label="Confirm Password"
           required
           onChange={handleInputChange}
+          onBlur={handleInputvalidate}
+          error={
+            formFields.error.confirmPassword && formFields.error.confirmPassword
+          }
         />
         <Button type="sign">SignUp</Button>
       </form>
