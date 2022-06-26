@@ -1,10 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  solid,
-  regular,
-  brands,
-} from "@fortawesome/fontawesome-svg-core/import.macro";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const CartHeader = ({ counter }) => {
   return (
@@ -22,7 +18,7 @@ const CartHeader = ({ counter }) => {
             document.body.style.overflow = "auto";
           }}
         >
-          <FontAwesomeIcon icon={solid("times")} />
+          <FontAwesomeIcon icon={faTimes} />
         </button>
       </div>
     </>

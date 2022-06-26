@@ -2,7 +2,7 @@ import React from "react";
 import CartOffer from "./CartOffer";
 import CartEmpty from "./CartEmpty";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { faMinus, faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const CartItem = ({ data, isEmpty, addToCart, deleteCartItem }) => {
   return (
@@ -37,7 +37,7 @@ const CartItem = ({ data, isEmpty, addToCart, deleteCartItem }) => {
                             deleteCartItem({ data: item });
                           }}
                         >
-                          <FontAwesomeIcon icon={solid("minus")} />
+                          <FontAwesomeIcon icon={faMinus} />
                         </button>
                         <span className="qty mx-2">{item.qty}</span>
                         <button
@@ -47,11 +47,11 @@ const CartItem = ({ data, isEmpty, addToCart, deleteCartItem }) => {
                             addToCart({ data: item });
                           }}
                         >
-                          <FontAwesomeIcon icon={solid("plus")} />
+                          <FontAwesomeIcon icon={faPlus} />
                         </button>
                         <span className="mx-3">
                           <FontAwesomeIcon
-                            icon={solid("times")}
+                            icon={faTimes}
                             style={{ fontSize: "14px" }}
                           />
                           <span className="mx-2">Rs.{item.price}</span>

@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const CartFooter = ({ isEmpty, totalPrice }) => {
   return (
@@ -24,7 +24,7 @@ const CartFooter = ({ isEmpty, totalPrice }) => {
           {!isEmpty && (
             <span>
               Rs.{totalPrice}{" "}
-              <FontAwesomeIcon icon={solid("chevron-right")} className="ms-2" />
+              <FontAwesomeIcon icon={faChevronRight} className="ms-2" />
             </span>
           )}
         </button>
