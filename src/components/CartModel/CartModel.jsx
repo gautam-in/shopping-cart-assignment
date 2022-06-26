@@ -11,14 +11,26 @@ import {
 import {
   decrementItemsFromCart,
   incrementItemsFromCart,
+  clearItemsFromCart,
 } from "../../redux/actions/cartActions";
+import { useNavigate } from "react-router-dom";
 
 const CartModel = ({ handleCartOpen }) => {
   const dispatch = useDispatch();
+  const Navigate = useNavigate();
   const cartItems = useSelector(selectCartItems);
   const totalPrice = useSelector(selectCartTotalPrice);
   const totalCount = useSelector(selectCartTotalCount);
 
+  const handleCartClose = () => {
+    if (window.screen.width >= 992) {
+      dispatch(clearItemsFromCart({}));
+      handleCartOpen();
+    } else {
+      dispatch(clearItemsFromCart({}));
+      Navigate("/products");
+    }
+  };
   return (
     <div className="CartModel-container">
       <div className="cartModel">
@@ -86,7 +98,7 @@ const CartModel = ({ handleCartOpen }) => {
               <span className="promo">
                 Promo code can be applied on payment page.
               </span>
-              <Button type="checkout">
+              <Button type="checkout" onClick={handleCartClose}>
                 <span>Proceed to cart</span>
                 <div className="cart-proceed">
                   <span>Rs.{totalPrice}</span>
@@ -101,7 +113,7 @@ const CartModel = ({ handleCartOpen }) => {
               <h2>No Items in your Cart</h2>
               <span>Your favourite items are just a click away</span>
             </div>
-            <Button type="sign" onClick={handleCartOpen}>
+            <Button type="sign" onClick={handleCartClose}>
               Start Shopping
             </Button>
           </div>

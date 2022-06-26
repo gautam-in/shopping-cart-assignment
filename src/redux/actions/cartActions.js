@@ -53,3 +53,7 @@ export const incrementItemsFromCart = (cartItems, productToAdd) => {
   const newCartItem = incrementItemsFromCartHelper(cartItems, productToAdd);
   return { type: ActionTypes.ADD_SELECTED_CART_ITEMS, payload: newCartItem };
 };
+
+export const clearItemsFromCart = () => {
+  return { type: ActionTypes.CLEAR_CART_ITEMS, payload: {} };
+};

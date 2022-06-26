@@ -7,7 +7,7 @@
   position: fixed;
   z-index: 10;
   @include for-desktop-up {
-    right: 11%;
+    right: 10%;
     width: 30%;
   }
   .cartModel-header-container {
@@ -112,12 +112,18 @@
 }
 .cartModel-empty-container {
   div {
-    height: 75vh;
+    height: 70vh;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     display: flex;
     color: gray;
+    @include for-tablet-portrait-up {
+      height: 65vh;
+    }
+    @include for-desktop-up {
+      height: 75vh;
+    }
   }
   .sign-button {
     width: 96%;

@@ -21,7 +21,7 @@ function App() {
           <Route element={<div>404 Not Found</div>} />{" "}
         </Route>
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   );
 }

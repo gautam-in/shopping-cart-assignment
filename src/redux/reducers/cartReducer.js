@@ -13,6 +13,8 @@ export const cartReducer = (state = initialState, { type, payload }) => {
       return { ...state, cartItems: payload };
     case ActionTypes.ADD_SELECTED_CART_ITEMS:
       return { ...state, cartItems: payload };
+    case ActionTypes.CLEAR_CART_ITEMS:
+      return { ...state, cartItems: [] };
     default:
       return state;
   }
