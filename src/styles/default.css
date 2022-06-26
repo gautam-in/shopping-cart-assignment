@@ -1,0 +1,35 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Dosis", Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+}
+/* Swiper JS */
+.swiper-pagination-bullet-active {
+  opacity: 0.7;
+  background: black;
+}
+/* Swiper JS */
+
+button,
+a {
+  cursor: pointer;
+}
+a:focus {
+  background: var(--link-hover);
+  color: white !important;
+}
+main {
+  position: relative;
+  padding: 15px;
+  /* min-height: 100vh; */
+}
+ul {
+  list-style: none;
+}
+
+.outline {
+  outline: 1px solid #e0e0e0;
+}

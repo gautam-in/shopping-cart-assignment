@@ -3,6 +3,16 @@ import { useLocation, Link, useNavigate } from "react-router-dom";
 import ProductCard from "../components/product/ProductCard";
 import { v4 } from "node-uuid";
 
+/**
+ * ### Search Class
+ * search class is a very usefull when, using
+ * location search api, it help's you to find
+ * key and value form the location pathname
+ *
+ * #### Method
+ * - ```getValue(key)```: help's you find the value of a key, for ex: **?key=```value```**
+ * - ```getKey(key)```: help's you find the key from the location path, for ex: **?```key```=value&```key2```=value2**
+ */
 class Search {
   constructor(location) {
     this.location = location;
@@ -22,7 +32,7 @@ class Search {
   }
 }
 
-function Products({ products, categories }) {
+function Products({ products, categories, addToCart }) {
   // Hook Initialization
   const location = useLocation();
   const navigate = useNavigate();
@@ -40,10 +50,14 @@ function Products({ products, categories }) {
     let data = products.data.filter((item) => item.category === filterID);
     return data.length > 0
       ? data.map((product) => {
-          return <ProductCard data={product} key={v4()} />;
+          return (
+            <ProductCard addToCart={addToCart} data={product} key={v4()} />
+          );
         })
       : products.data.map((product) => {
-          return <ProductCard data={product} key={v4()} />;
+          return (
+            <ProductCard addToCart={addToCart} data={product} key={v4()} />
+          );
         });
   }
 
@@ -52,6 +66,7 @@ function Products({ products, categories }) {
       <select
         name="category-dropdown"
         id="categoryDropdown"
+        aria-label="filter category"
         className="filter-items-dropdown d-md-none d-block"
         defaultValue={localStorage.getItem("selectedCategory")}
         onChange={(e) => {

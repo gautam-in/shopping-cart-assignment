@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import TextField from "../components/TextField";
 import * as Yup from "yup";
 import bcrypt from "bcryptjs";
+import toast from "izitoast";
 
 const RegisterForm = () => {
   const validate = Yup.object({
@@ -61,6 +62,8 @@ const RegisterForm = () => {
           "users",
           JSON.stringify([...users].concat(data), null, 2)
         );
+        // Showing Alert that user successfully registered to the app
+        toast.success({ message: "Registered successfuly" });
         // Resetting form fields;
         const resetBtn = document.getElementById("resetBtn");
         resetBtn.click();
@@ -121,9 +124,9 @@ const RegisterForm = () => {
 
 function Register(props) {
   return (
-    <main
+    <div
       className="py-5 px-md-5 px-3 login- d-flex justify-content-center align-items-center"
-      role={"main"}
+      role={"group"}
     >
       <div className="container max-auto">
         <div className="row">
@@ -140,7 +143,7 @@ function Register(props) {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
 

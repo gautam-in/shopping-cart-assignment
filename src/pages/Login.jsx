@@ -1,8 +1,15 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import { Link } from "react-router-dom";
+import bcrypt from "bcryptjs";
+import toast from "izitoast";
 import TextField from "../components/TextField";
 import * as Yup from "yup";
+
+toast.settings({
+  position: "bottomCenter",
+  timeout: "2000",
+});
 
 const LoginForm = () => {
   const validate = Yup.object({
@@ -19,7 +26,43 @@ const LoginForm = () => {
       }}
       validationSchema={validate}
       onSubmit={(value) => {
-        console.log(value);
+        let data = value;
+
+        // Authenticated Data
+        function _authenticate() {
+          // checking weather email is present in the system
+          let email = data["email"];
+          let password = data["password"];
+          let users = JSON.parse(localStorage.getItem("users"));
+          let isFound =
+            users.filter(
+              (user) => user["email"].toLowerCase() === email.toLowerCase()
+            ).length > 0
+              ? true
+              : false;
+          let foundData =
+            isFound &&
+            users.filter(
+              (user) => user["email"].toLowerCase() === email.toLowerCase()
+            )[0];
+
+          if (isFound) {
+            let isPassowrdTrue = bcrypt.compareSync(
+              password,
+              foundData["password"]
+            );
+
+            if (isPassowrdTrue) {
+              toast.success({ message: "Logged In Successfully" });
+            } else {
+              toast.error({ message: "Incorrect password" });
+            }
+          } else {
+            toast.error({ message: "User not found!" });
+          }
+        }
+
+        _authenticate();
       }}
     >
       {(formik) => (
@@ -50,9 +93,9 @@ const LoginForm = () => {
 
 function Login(props) {
   return (
-    <main
+    <div
       className="py-5 px-md-5 px-3 login-wrapper d-flex justify-content-center align-items-center"
-      role={"main"}
+      role={"group"}
     >
       <div className="container max-auto">
         <div className="row">
@@ -69,7 +112,7 @@ function Login(props) {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
 

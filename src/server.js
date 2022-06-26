@@ -41,10 +41,7 @@ class Server {
     try {
       const res = await fetch(`${this.url}/addToCart`, {
         method: "POST",
-        body: { product_id: product_id },
-        headers: {
-          "Content-Type": "application/json",
-        },
+        body: `product_id=${product_id}`,
       });
       const value = await res.json();
       return value;
