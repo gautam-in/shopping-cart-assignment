@@ -40,6 +40,9 @@ export const cartSlice = createSlice({
         1
       );
     },
+    emptyCart: (state = initialState, action) => {
+      state.products = initialState.products;
+    },
   },
   extraReducers: {
     [getProductFilteredByProductId.pending]: (state, action) => {
@@ -61,6 +64,7 @@ export const {
   addProductToCart,
   removeProductFromCart,
   setCartPrice,
+  emptyCart,
   setCartQuantity,
 } = cartSlice.actions;
 

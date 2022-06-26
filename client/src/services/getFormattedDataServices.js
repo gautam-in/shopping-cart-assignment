@@ -17,3 +17,27 @@ export const getCartPrice = (cartItems) => {
     return cartPrevItem + cartItem.price * cartItem.quantity;
   }, 0);
 };
+
+// get width in numbers (px removed)
+export const getNumericalWidth = (width) => {
+  return parseInt(
+    width.substring(
+      0,
+      width.length - 2
+    )
+  );
+}
+
+// get product filter options for select menu
+export const getProductFilterOptions = (filterMenuList) => {
+  const options = [];
+
+  filterMenuList.forEach((filterMenuItem) => {
+    options.push({
+      label: filterMenuItem.name,
+      value: filterMenuItem.id,
+    })
+  });
+
+  return options;
+}

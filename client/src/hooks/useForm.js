@@ -66,7 +66,7 @@ const useForm = (validate) => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       if (formName === 'register') {
         localStorage.setItem('userData', JSON.stringify([values]));
-        navigate('/sign-in', { replace: true });
+        navigate('/form/sign-in', { replace: true });
       } else {
         const {email,password}= values;
         sessionStorage.setItem('loggedInUser',JSON.stringify([{email,password}]))

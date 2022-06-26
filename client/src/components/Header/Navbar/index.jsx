@@ -1,12 +1,17 @@
+import { Link } from 'react-router-dom';
 import React from 'react'
 import { StyledNavbar } from './Navbar.styled';
+import useToggleHamMenu from '../../../hooks/useToggleHamMenu';
 
-const Navbar = () => {
+const Navbar = ({show}) => {
+
+    const {toggleHamMenu} = useToggleHamMenu();
+
     return (
         <StyledNavbar>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/products">Products</a></li>
+            <ul className={`nav-links ${show ? 'slide-in-right visible' : ''}`}>
+                <li><Link onClick={toggleHamMenu} to="/">Home</Link></li>
+                <li><Link onClick={toggleHamMenu} to="/products">Products</Link></li>
             </ul>
         </StyledNavbar>
     )

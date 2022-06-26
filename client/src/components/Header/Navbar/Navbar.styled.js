@@ -21,13 +21,13 @@ export const StyledNavbar = styled.nav`
         }
 
         @media(max-width: ${(props) => props.theme.breakpoints.TAB}) {
+            display: none;
             position: fixed;
-            top: 168px;
+            top: 70px;
             right: 0%;
             z-index: 3;
             width: 25%;
             margin: 0 2%;
-            display: flex;
             justify-content: space-between;
             flex-direction: column;
 
@@ -50,14 +50,16 @@ export const StyledNavbar = styled.nav`
                 width: 100%;
             }
 
-            &:hover::after {
-                content: '';
-                background: ${(props) => props.theme.colors.CTA_COLOR};
-                height: 1px;
-                width: 55%;
-                position: absolute;
-                bottom: -8px;
-                left: 0;
+            @media(min-width: ${(props) => props.theme.breakpoints.LG_TAB}) {            
+                &:hover::after {
+                    content: '';
+                    background: ${(props) => props.theme.colors.BLACK};
+                    height: 1px;
+                    width: 55%;
+                    position: absolute;
+                    bottom: -4px;
+                    left: 0;
+                }
             }
         }
     }

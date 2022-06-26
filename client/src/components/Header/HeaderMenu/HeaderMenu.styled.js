@@ -20,6 +20,15 @@ export const StyledHeaderMenu = styled.div`
         justify-content: flex-end;
     }
 
+    @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
+        width: 30%;
+
+
+       & > .cart-overlay {
+            display: none !important;
+        }
+    }
+
 
     .auth-links {
         display: flex;
@@ -28,8 +37,9 @@ export const StyledHeaderMenu = styled.div`
         width: 100%;
 
         @media(max-width: ${(props) => props.theme.breakpoints.TAB}) {
+            display: none;
             position: fixed;
-            top: 70px;
+            top: 168px;
             right: 0%;
             z-index: 3;
             width: 25%;
@@ -56,14 +66,16 @@ export const StyledHeaderMenu = styled.div`
                 padding: 10px 20%;
             }
 
-            &:hover::after {
-                content: '';
-                background: ${(props) => props.theme.colors.BLACK};
-                height: 1px;
-                width: 55%;
-                position: absolute;
-                bottom: -4px;
-                left: 0;
+            @media(min-width: ${(props) => props.theme.breakpoints.LG_TAB}) {            
+                &:hover::after {
+                    content: '';
+                    background: ${(props) => props.theme.colors.BLACK};
+                    height: 1px;
+                    width: 55%;
+                    position: absolute;
+                    bottom: -4px;
+                    left: 0;
+                }
             }
         }
     }

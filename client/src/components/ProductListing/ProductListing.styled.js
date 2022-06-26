@@ -5,6 +5,10 @@ export const StyledProductListing = styled.ul`
     flex-wrap: wrap;
     width: 100%;
 
+    @media(max-width: ${(props) => props.theme.breakpoints.TAB}) {
+        justify-content: center;
+    }
+
     li {
         width: 24%;
         margin: 3px;
@@ -12,6 +16,13 @@ export const StyledProductListing = styled.ul`
 
         @media(max-width: ${(props) => props.theme.breakpoints.SM_LAPTOP}) {
            width: 30%;
+        }
+
+        @media(max-width: ${(props) => props.theme.breakpoints.TAB}) {
+            width: 45%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
         }
     }
 `;

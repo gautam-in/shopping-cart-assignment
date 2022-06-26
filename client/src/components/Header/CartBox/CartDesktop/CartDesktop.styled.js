@@ -36,6 +36,10 @@ export const StyledDesktopCartDetails = styled.div`
         background-color: ${(props) => props.theme.colors.GRAY};
         overflow-y: scroll;
         max-height: 250px;
+
+        @media(max-width: ${(props) => props.theme.breakpoints.LG_TAB}) {
+            max-height: 190px;
+        }
     }
 `;
 
@@ -88,6 +92,10 @@ export const StyledNoItemContainer = styled.div`
     align-items: center;
     justify-content: center;
     padding: 125px 0;
+
+    @media(max-width: ${(props) => props.theme.breakpoints.LG_TAB}) {
+        padding: 95px 0;
+    }
 
     h5 {
         font-size: 14px;

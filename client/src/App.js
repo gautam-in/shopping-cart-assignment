@@ -1,14 +1,13 @@
-import React, { lazy, Suspense } from 'react';
-import { ThemeProvider } from 'styled-components';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import FourZeroFourPage from './pages/FourZeroFourPage';
-import Loader from './components/Loader';
+import React, { Suspense, lazy } from 'react';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+
 import Footer from './components/Footer';
-import Header from './components/Header';
-import theme from './theme';
-import Signin from './pages/SignIn';
-import Register from './pages/Register';
 import Form from './components/Form';
+import FourZeroFourPage from './pages/FourZeroFourPage';
+import Header from './components/Header';
+import Loader from './components/Loader';
+import { ThemeProvider } from 'styled-components';
+import theme from './theme';
 
 const Home = lazy(() => import('./pages/Homepage'));
 const Product = lazy(() => import('./pages/Products'));
@@ -34,7 +33,7 @@ function App() {
                 element={<Product />}
               />
               <Route
-                path='/:formName'
+                path='/form/:formName'
                 element={<Form />}
               />
               <Route

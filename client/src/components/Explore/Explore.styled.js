@@ -9,8 +9,15 @@ export const StyledExploreCategories = styled.div`
     position: relative;
     order: ${(props) => props.order};
 
+    @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
+        margin: 0 auto;
+    }
+
     figure {
         width: 40%;
+        @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
+            width: 50%;
+        }
     }
 
     .explore-details {
@@ -19,11 +26,19 @@ export const StyledExploreCategories = styled.div`
         justify-content: center;
         align-items: center;
 
+        @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
+            text-align: center;
+        }
+
         h2 {
             font-size: 16px;
             font-family: ${(props) => props.theme.fonts.DOSIS}, sans-serif;
             font-weight: 700;
             margin-bottom: 15px;
+    
+            @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
+                align-self: center;
+            }
         }
 
         p {
@@ -31,6 +46,10 @@ export const StyledExploreCategories = styled.div`
             font-family: ${(props) => props.theme.fonts.DOSIS}, sans-serif;
             font-weight: 400;
             margin-bottom: 25px;
+
+            @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
+                text-align: center;
+            }
         }
 
         a {
@@ -43,6 +62,11 @@ export const StyledExploreCategories = styled.div`
             font-family: ${(props) => props.theme.fonts.DOSIS}, sans-serif;
             background: ${(props) => props.theme.colors.CTA_COLOR};
             color: ${(props) => props.theme.colors.WHITE};
+
+            @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
+                align-self: center;
+                font-size: 11px;
+            }
         }
     }
 
@@ -50,5 +74,9 @@ export const StyledExploreCategories = styled.div`
     .wrapper {
         display: flex;
         margin: 0;
+
+        @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
+            margin: 0 auto;
+        }
     }
 `;

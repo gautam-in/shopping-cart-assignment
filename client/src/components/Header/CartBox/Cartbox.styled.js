@@ -9,10 +9,24 @@ export const StyledCart = styled.div`
     background-color: ${(props) => props.theme.colors.WHITE};
     top: 70px;
     right: 5%;
-    z-index: 3;
+    z-index: 4;
 
     @media(min-width: ${(props) => props.theme.breakpoints.DESKTOP}) {
         width: 30%;
+    }
+
+    @media(max-width: ${(props) => props.theme.breakpoints.LG_TAB}) {
+        width: 50%;
+    }
+
+    @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
+        width: 100%;
+        left: 0;
+        top: 52px;
+        border: 0;
+        right: unset;
+        position: fixed;
+        min-height: 100vh;
     }
 
     .promo-code {
@@ -22,14 +36,13 @@ export const StyledCart = styled.div`
         width: 100%;
         background-color: none;
 
-        @media(max-width: ${(props) => props.theme.breakpoints.TAB}) {
+        @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
             position: fixed;
             background-color: ${(props) => props.theme.colors.WHITE};
         }
 
         & > p {
             margin: 15px 0;
-
             text-align: center;
             font-size: 12px;
             font-weight: 400;

@@ -1,5 +1,6 @@
 import {
   getCartPrice,
+  getNumericalWidth,
   getQuantifiedCartItems,
 } from '../../../services/getFormattedDataServices';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,6 +13,7 @@ import React from 'react';
 import { StyledCart } from './Cartbox.styled';
 import { currentState } from '../../../redux/slices/cart';
 import theme from '../../../theme';
+import { useNavigate } from 'react-router-dom';
 import useWindowDimensions from '../../../hooks/useWindowDimensions';
 
 const Cart = ({ cartItems }) => {
@@ -20,15 +22,12 @@ const Cart = ({ cartItems }) => {
   const cartPrice = getCartPrice(cartQuantifiedItems);
   const { width } = useWindowDimensions();
   const dispatch = useDispatch();
-  const TAB_WIDTH = parseInt(
-    theme.breakpoints.TAB.substring(
-      0,
-      theme.breakpoints.TAB.length - 2
-    )
-  );
+  const navigate = useNavigate();
+  const TAB_WIDTH = getNumericalWidth(theme.breakpoints.TAB);
 
   const startShoppingHandler = () => {
     dispatch(currentState(!isCartOpen));
+    navigate('/product/all',{replace:true})
   };
 
   if (!isCartOpen) return null;
@@ -38,7 +37,7 @@ const Cart = ({ cartItems }) => {
       {width >= TAB_WIDTH ? (
         <CartDesktop cartItems={cartQuantifiedItems} />
       ) : (
-        <CartMobile />
+        <CartMobile cartItems={cartQuantifiedItems} />
       )}
       <div className="promo-code">
         <p>Promo code can be applied on payment page</p>

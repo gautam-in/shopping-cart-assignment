@@ -99,6 +99,9 @@ const GlobalStyle = createGlobalStyle`
           height: 10px;
           z-index: -1;
           background: radial-gradient(at 50% 0, rgba(0, 0, 0, 0.5), transparent 70%);
+          @media(max-width: ${theme.breakpoints.SM_TAB}) {
+            left: 15%;
+          }
       }
     }
 

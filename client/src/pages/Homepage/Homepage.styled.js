@@ -12,6 +12,22 @@ export const StyledHomepage = styled.div`
         flex-direction: row-reverse;
         figure {
             margin-left: 20%;
+    
+            @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
+                width: 100%;
+                margin-left: 5%;
+            }
+        }
+    }
+
+    .beverages {
+        figure {
+            margin-left: 20%;
+    
+            @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
+                width: 100%;
+                margin-left: 5%;
+            }
         }
     }
 

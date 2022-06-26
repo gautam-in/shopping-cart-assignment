@@ -42,7 +42,7 @@ const CartDesktop = ({ cartItems }) => {
         </StyledCloseIcon>
       </StlyledDesktopCartHeader>
       {cartItems && cartQuantity > 0 ? (
-        <StyledDesktopCartDetails className="cart-details">
+        <StyledDesktopCartDetails >
           <ul className="cart-items">
             {cartItems.map((item) => (
               <CartItem key={item.id} item={item} />

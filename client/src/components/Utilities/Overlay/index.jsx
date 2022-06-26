@@ -1,9 +1,16 @@
 import React from 'react'
 import { StyledOverlay } from './Overlay.styled';
 
-const Overlay = ({color}) => {
+const Overlay = ({show, color, onOverlayClick, styleClass}) => {
+
+  const overlayClass = `slide-in-right visible ${styleClass}`;
+
+  const handleClick = (e) => {
+    onOverlayClick(e);
+  }
+
   return (
-    <StyledOverlay color={color}>Overlay</StyledOverlay>
+    <StyledOverlay onClick={(onOverlayClick) && ((e) => handleClick(e))} className={`overlay ${show ? overlayClass : ''}`} color={color}>Overlay</StyledOverlay>
   )
 }
 
