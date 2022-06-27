@@ -2,8 +2,11 @@ import './navigation.scss';
 import { Link, Outlet } from 'react-router-dom';
 import { Fragment } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
-
+import { useLocation } from 'react-router-dom'
 const Navigation = () => {
+    const location = useLocation();
+    const { pathname } = location;
+
     return (
         <div className="container">
             <div className='navigation'>
@@ -12,8 +15,8 @@ const Navigation = () => {
                 </Navbar.Brand>
 
                 <Nav className="me-auto">
-                    <Link className='nav-link' to="/">Home</Link>
-                    <Link className='nav-link' to="/products">Products</Link>
+                    <Link className={'nav-link ' + (pathname === '/' ? 'active' : '') } to="/">Home</Link>
+                    <Link className={'nav-link ' + (pathname === '/products' ? 'active' : '') } to="/products">Products</Link>
                 </Nav>
                 <Nav>
                     <Nav.Link href="#deets">Sign In</Nav.Link>

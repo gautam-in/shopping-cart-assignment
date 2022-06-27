@@ -5,18 +5,15 @@
   justify-content: space-between;
   margin-bottom: 25px;
 
-  // .nav-links-container {
-  //   width: 50%;
-  //   height: 100%;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: flex-end;
-
-  //   .nav-link {
-  //     padding: 10px 15px;
-  //     cursor: pointer;
-  //   }
-  // }
+  .nav-link{
+    color: #000; 
+    &.active{
+      color: #e80a79;
+    }
+    &:hover {
+      color:#e80a79;
+  }
+  }
   .logo-container {
     height: 100%;
     width: 70px;

@@ -1,37 +1,61 @@
-.product {
-    .card{
-        border: none;
-        border-bottom: 1px dashed #ccc;
-        box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
-        .title {
-            padding: 20px;
-            font-size: 20px;
-            font-weight: 700;
-            height: 100px;
-        }
-        .card-text {
-            display: inline;
-            -webkit-line-clamp: 3;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            word-wrap: break-word;
-            background: #ccccccc7;
-            padding: 5px 8px;
-        }
-        .card-footer{
-            display: flex;
-            padding: 0;
-            background: none;
+.products-section {
+    .product {
+        background-color: #fff;
+        .card {
             border: none;
-            justify-content: space-between;
-            .price{
-                margin-top: 10px;
+            border-bottom: 1px dashed #ccc;
+            box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+
+            .title {
+                padding: 20px;
+                font-size: 20px;
+                font-weight: 700;
+                height: 100px;
+            }
+
+            .card-text {
+                display: inline;
+                -webkit-line-clamp: 3;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                word-wrap: break-word;
+                background: #eee;
+                padding: 5px 8px;
+            }
+
+            .card-footer {
+                display: flex;
+                padding: 0;
+                background: none;
+                border: none;
+                justify-content: space-between;
+
+                .price {
+                    margin-top: 10px;
+                }
             }
         }
     }
-}
-.nav-link{
-    cursor: pointer;
+
+    .side-menu {
+        height: 100%;
+        background-color: #eee;
+        .menu-btn{
+            padding: 10px;
+           
+            border-bottom: 1px dashed #ccc;
+            &.focusButton{
+                background-color: #ccc;
+                color: white;
+            }
+        }
+        button{
+            border: none;
+            background:none;
+            width: 100%;
+            text-align: left;
+        }
+    }
 }

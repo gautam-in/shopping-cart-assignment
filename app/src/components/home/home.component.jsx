@@ -1,9 +1,11 @@
 import { Card, Carousel, Col, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './home.scss';
 
 const Home = () => {
+    const navigate = useNavigate();
     const [banners, setBanners] = useState([]);
     const [categories, setCategory] = useState([]);
     useEffect(() => {
@@ -15,6 +17,9 @@ const Home = () => {
         }
         fetchData();
     }, [])
+    const gotoProducts = (e) => {
+        navigate("/products", { state: { id: e } })
+    };
     return (
         <div>
             <div className='banner-section'>
@@ -40,7 +45,7 @@ const Home = () => {
                         return (
                             <Card key={item.id}>
                                 {
-                                    i % 2 === 0 ? <Row className="justify-content-md-center">
+                                    i % 2 === 0 ? <Row>
                                         <Col xs={6} md={5}>
                                             <div className='category-img'>
                                                 <Card.Img variant="top" src={item.imageUrl} alt={item.name} />
@@ -53,11 +58,11 @@ const Home = () => {
                                                     <Card.Text>
                                                         {item.description}
                                                     </Card.Text>
-                                                    <button className='btn-cls'>Explore {item.name}</button>
+                                                    <button className='btn-cls' onClick={() => gotoProducts(item.id)}>Explore {item.name}</button>
                                                 </div>
                                             </Card.Body>
                                         </Col>
-                                    </Row> : <Row className="justify-content-md-center">
+                                    </Row> : <Row>
                                         <Col xs={6} md={6}>
                                             <Card.Body>
                                                 <div className='category-desc'>
@@ -65,7 +70,7 @@ const Home = () => {
                                                     <Card.Text>
                                                         {item.description}
                                                     </Card.Text>
-                                                    <button className='btn-cls'>Explore {item.name}</button>
+                                                    <button className='btn-cls' onClick={() => gotoProducts(item.id)}>Explore {item.name}</button>
                                                 </div>
                                             </Card.Body>
                                         </Col>

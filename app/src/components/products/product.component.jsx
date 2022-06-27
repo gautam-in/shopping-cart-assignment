@@ -1,73 +1,73 @@
 import axios from 'axios';
-import { Component, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Card, Col, Nav, Row, Tab } from 'react-bootstrap';
 import ProductCard from './product-card';
 import './product.scss'
+import { useLocation } from "react-router-dom";
 
+const Products = () => {
+    const location = useLocation();
+    const [id, setId] = useState(null);
+    const [productData, setproductData] = useState([]);
+    const [category, setCategoryData] = useState([])
 
-class Products extends Component {
-    // const [products, setProducts] = useState([]);
-    // const [key, setKey] = useState('5b6899123d1a866534f516de');
-    constructor() {
-        super();
-        this.state = {
-            products: [],
-            key: '5b6899953d1a866534f516e2'
+    useEffect(() => {
+        if (location.state != null) {
+            setId(location.state.id);
+            location.state = null;
         }
-    }
-    componentDidMount() {
         const fetchData = async () => {
-            const product = await axios.get('http://localhost:8000/products');
-            this.setState({ products: product.data });
-        }
+            const category = await axios.get('http://localhost:8000/categories');
+            setCategoryData(category.data);
+            const res = await axios.get('http://localhost:8000/products');
+            filterProducts(res.data);
+        };
         fetchData();
+    }, [id]);
+
+    const setKey = (e) => {
+        if (id !== e.target.id) {
+            setId(e.target.id);
+        } else {
+            setId(null);
+        }
     }
-    setKey(e){
-        this.setState({key:e})
-    }
+    const filterProducts = (data) => {
+        if (id !== null) {
+            let res = data.filter((item) => item.category === id);
+            setproductData(res);
+        } else {
+            console.log("id",data,id)
+            setproductData(data);
+        }
+    };
 
-    render() {
-        const {products,key} = this.state;
-        const filteredProducts = products.filter((item) => {
-            return item.category.includes(key)
-        })
-        return (
-
-            <div>
-                <Tab.Container id="left-tabs-example" defaultActiveKey="5b6899953d1a866534f516e2" >
-                    <Row>
-                        <Col sm={3}>
-                            <Nav variant="pills" className="flex-column" onSelect={(k) => this.setKey(k)}>
-                                <Nav.Item>
-                                    <Nav.Link eventKey="5b6899953d1a866534f516e2">Fruits & Vegetables</Nav.Link>
-                                </Nav.Item>
-                                <Nav.Item>
-                                    <Nav.Link eventKey="5b6899123d1a866534f516de">Bakery Cakes and Dairy</Nav.Link>
-                                </Nav.Item>
-                                <Nav.Item>
-                                    <Nav.Link eventKey="5b675e5e5936635728f9fc30">Beverages</Nav.Link>
-                                </Nav.Item>
-                                <Nav.Item>
-                                    <Nav.Link eventKey="5b68994e3d1a866534f516df">Beauty and Hygiene</Nav.Link>
-                                </Nav.Item>
-                                <Nav.Item>
-                                    <Nav.Link eventKey="5b6899683d1a866534f516e0">Baby Care</Nav.Link>
-                                </Nav.Item>
-                            </Nav>
-                        </Col>
-                        <Col sm={9}>
-                            <Tab.Content>
-                                <Tab.Pane eventKey={key}>
-                                    <ProductCard products={filteredProducts} />
-                                </Tab.Pane>
-
-                            </Tab.Content>
-                        </Col>
-                    </Row>
-                </Tab.Container>
+    return (
+        <div className='products-section'>
+            <Row >
+                <Col sm={3}>
+                <div className='side-menu'>
+                    {category.map((item) => {
+                        return (<div key={item.id} className={id === item.id ? 'menu-btn' +  " focusButton" : "menu-btn"}>
+                            <button
+                                key={item.id}
+                                tabIndex={id && id !== item.id ? -1 : 0}
+                                name={item.name}
+                                id={item.id}
+                                onClick={(e) => setKey(e)}
+                            >
+                                {item.name}
+                            </button>
+                        </div>)
+                    })}
+                    </div>
+                </Col>
+                <Col sm={9}>
+                    <ProductCard products={productData} />
+                </Col>
+            </Row>
             </div>
-        );
-    }
-}
+    );
+};
 
 export default Products;
