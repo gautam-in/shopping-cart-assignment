@@ -1,0 +1,220 @@
+.minicart_container {
+   position: fixed;
+   top: 12.1%;
+   right: 10.3%;
+   /* transform: translate(-50%, -50%); */
+   background: #fff;
+   border-radius: 4px;
+   outline: none;
+   width: 85vw;
+
+
+
+
+
+
+
+
+   & .minicart_header {
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5%;
+
+      & .cartitems_count {
+         font-size: 1rem;
+      }
+
+
+      & .closebutton {
+         font-size: 1rem;
+      }
+
+
+   }
+
+   & .minicart_empty_body {
+      min-height: 50vh;
+      background-color: white;
+      min-height: 279px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & .empty_cart {
+
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+
+      }
+   }
+
+
+
+
+   & .minicart_body {
+      overflow: auto;
+      min-height: 50vh;
+      max-height: 50vh;
+      background-color: lightgray;
+
+
+
+
+
+      & .minicart_item {
+         display: flex;
+         background-color: white;
+         margin: 2% 2% 2% 0%;
+         justify-content: space-evenly;
+         padding: 1rem;
+
+
+         & .desc {
+            flex-direction: column;
+            justify-content: center;
+            flex: 2 1;
+            display: flex;
+            margin: 0rem 0rem 0rem 1rem;
+
+            & .calculation_box {
+               display: flex;
+               justify-content: start;
+               align-items: center;
+
+               & .btn-plus,
+               & .btn-minus {
+
+                  border-radius: 22%;
+                  background-color: #bf2857;
+                  border: none;
+                  color: white;
+                  min-height: 5vh;
+                  margin: 0.5rem;
+               }
+
+               & .quantity {
+                  font-size: 1rem;
+               }
+
+               & .cross_multiply {
+                  font-size: 1rem;
+
+               }
+
+
+
+               & .price {
+                  margin: 2%;
+                  font-size: 1rem;
+                  flex: 1;
+               }
+
+               & .desc_name {
+                  font-size: 1rem;
+                  white-space: nowrap;
+
+
+               }
+
+            }
+
+
+
+
+
+
+
+         }
+
+         & img {
+            width: 100px
+         }
+      }
+
+      & .cheaper_container {
+         display: flex;
+         justify-content: flex-start;
+         background-color: white;
+         margin: 2% 2%;
+
+         & img {
+            width: 100px;
+            height: auto;
+         }
+
+         & p {
+            font-size: 1rem;
+         }
+      }
+   }
+
+   & .minicart_footer {
+      & .cart_content_footer {
+         display: flex;
+         flex-direction: column;
+
+         & p {
+
+            margin: 0px;
+
+            font-weight: 500;
+            padding: 0.5rem;
+            flex: 1;
+         }
+
+         & .cart_checkout_button {
+            flex: 1;
+            display: flex;
+            background-color: #bf2857;
+            justify-content: space;
+
+            & a {
+               flex: 2;
+                text-decoration: none;
+                color: white;
+                font-size: 1rem;
+            }
+
+            & .totalPrice {
+               color: white;
+               font-size: 1rem;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+            }
+
+         }
+      }
+
+      & .cart_shopping_button {
+         // width: 100%;
+         padding: 2%;
+         background-color: #bf2857;
+         border: none;
+         color: white;
+         margin: 2%;
+         font-size: 1rem;
+      }
+   }
+}
+
+.minicart_empty {
+   position: fixed;
+   top: 45.6%;
+   right: -12.7%;
+   transform: translate(-50%, -50%);
+   /* border: 1px solid #ccc; */
+   background: #fff;
+   /* overflow: auto; */
+   border-radius: 4px;
+   outline: none;
+   /* padding: 20px; */
+   width: 41vw;
+   min-height: 50vh;
+
+
+}

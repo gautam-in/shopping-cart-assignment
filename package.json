@@ -1,15 +1,21 @@
 {
-  "name": "code-exercise",
+  "name": "jsonserver",
   "version": "1.0.0",
-  "description": "This is a shopping cart coding exercise",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "server": "json-server --watch data.json --port 4000",
+    "client": "cd client && npm run start",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "install:client": "cd client && npm install",
+    "tests":"cd client && npm run test",
+    "test:coverage":"cd client && npm run test:coverage"
   },
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
-    "canned": "^0.3.12"
+    "concurrently": "^7.2.2",
+    "json-server": "^0.17.0"
   }
 }

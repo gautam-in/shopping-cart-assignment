@@ -1,0 +1,90 @@
+@import "../common.scss";
+
+@keyframes animate {
+   0% {
+      opacity: 0;
+   }
+
+
+   100% {
+      opacity: 0.7;
+   }
+}
+
+.register_form_container {
+   display: flex;
+   min-height: 70vh;
+   justify-content: center;
+   align-items: center;
+   padding: 1rem;
+
+   & .register_text {
+
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+
+      & p {
+         margin: 0rem 1rem 1rem 1rem;
+      }
+   }
+
+   & .resgister_form {
+      flex: 1;
+      padding: 1rem;
+
+      & .input_Item {
+         
+
+         & .errorbox {
+           & .text-danger {
+               animation: animate 1.5s linear infinite;
+               color: red;
+               font-size: 0.8rem;
+            }
+
+         }
+      }
+
+
+
+      & form {
+
+         & .input_Item{
+            margin-bottom: 1rem;
+         }
+     
+
+         & .input_ele {
+            display: flex;
+            flex-direction: column;
+
+            & input {
+               width: 100%;
+               min-height: 2rem;
+               border-top-style: hidden;
+               border-right-style: hidden;
+               border-left-style: hidden;
+               border-bottom-style: solid;
+            }
+         }
+      }
+
+      & .submit_btn {
+       
+
+         & input {
+            width: 100%;
+            padding: 0.5rem;
+            background-color: #ee2765;
+            border: none;
+
+         }
+      }
+   }
+
+
+
+}

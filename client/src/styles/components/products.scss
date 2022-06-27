@@ -1,0 +1,140 @@
+@import "../common.scss";
+
+
+
+.productList_Container {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 3;
+    justify-content: flex-start;
+
+    & .productItem {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        box-shadow: 0 0 2px 2px grey;
+        box-shadow: 0 0 10px #cec4c4;
+        margin: 0.5rem;
+        padding: 0.5rem;
+
+
+        & img {
+            width: 50%;
+            height: auto;
+        }
+    }
+
+    & .productItem_cart_active {
+        padding: 1rem;
+        margin: 1rem;
+        width: 15%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        box-shadow: 0 0 2px 2px grey;
+        height: 30vh;
+        opacity: 0.1
+    }
+
+    & .added_to_cart,
+    & .buynow_btn {
+
+        padding: 0px;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #bf2857;
+        border: none;
+        font-size: 1rem;
+        color: white;
+        padding: 0px;
+
+
+
+    }
+
+
+
+
+
+}
+
+
+.product_description {
+
+    background-color: lightgray;
+    min-height: 20vh;
+    max-height: 20vh;
+    overflow-y: clip;
+}
+
+.product_metadata {
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+
+    & .price {
+        font-size: 1rem;
+        font-weight: 600;
+        flex: 1;
+        white-space: nowrap
+    }
+}
+
+@media screen and (max-width:480px) {
+    .productList_Container {
+        display: flex;
+        flex-direction: column;
+
+        & .mobileview_product_metadeta{
+            display:flex;
+        }
+
+        & .product_metadata{
+            display:none;
+
+        }
+
+        & .productItem {
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+
+            & img {
+                flex: 1;
+
+            }
+
+            & .metadata {
+                flex: 2
+            }
+
+
+        }
+    }
+}
+
+@media screen and (min-width:481px) {
+    .productList_Container{
+        & .mobileview_product_metadeta{
+            display:none;
+        }
+
+        & .product_metadata{
+            display:flex;
+            & .price{
+                font-weight: 500;
+            }
+
+        }
+
+        & .productItem{
+            width: 27%;
+        }
+
+        
+    }
+    
+}

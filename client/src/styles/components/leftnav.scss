@@ -1,0 +1,67 @@
+.leftnav_container {
+    background-color: lightgrey;
+    flex: 1;
+
+    & .hide_dropdown{
+        display:none
+    }
+
+
+    & .nav_item {
+        padding: 1rem;
+        border-bottom: 1px solid;
+        cursor: pointer;
+
+        & .nav-link {
+            font-size: 1rem;
+            text-decoration: none;
+        }
+    }
+
+}
+
+
+@media screen and (max-width:448px) {
+    .leftnav_container {
+        display: none
+    }
+
+    .dropdown {
+        display: block;
+        width: 100%;
+       
+
+        & .css-1s2u09g-control, & .css-1pahdxg-control {
+            background-color: #bf2857;
+            border-color: #bf2857;
+        }
+
+        // & .css-1pahdxg-control:hover {
+        //     border-color: #bf2857;
+        // }
+
+        & #react-select-3-placeholder,
+        & .css-tj5bde-Svg {
+            color: white
+        }
+
+        & .css-1okebmr-indicatorSeparator {
+            background-color: none;
+        }
+
+  }
+
+
+
+
+
+
+}
+
+@media screen and (min-width:449px)  {
+
+    .dropdown {
+        display: none
+    }
+
+}
