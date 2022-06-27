@@ -11,10 +11,9 @@ import { hashIt } from '../../auth/passwordEncryption';
 
 const Register = () => {
 
-    const registeredSuccess = () => toast('user registered in successfully !',{
-        position: "top-center",
-      });
-
+    const registeredSuccess = () => toast('user registered in successfully !',{position: "top-center"});
+    const enterDetails = () => toast('kindly enter details to proceed !',{position: "top-center"});
+    
     const initialFormFields = {
         form: '',
         firstname: "",
@@ -79,7 +78,9 @@ const Register = () => {
             registeredSuccess();
             setTimeout(() => {
                 navigate('/form/sign-in', { replace: true });
-              }, 3000);
+            }, 3000);
+        } else {
+            enterDetails();
         }
     }
 }

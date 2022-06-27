@@ -15,6 +15,7 @@ const Signin = () => {
     const dispatch = useDispatch();
     const isUserLoggedIn = useSelector((state) => state.auth.isUserLoggedIn);
     const loginSuccess = () => toast('user logged in successfully !',{position: "top-center"});
+    const enterDetails = () => toast('kindly enter details to proceed !',{position: "top-center"});
 
     const initialFormFields = {
         form: '',
@@ -65,8 +66,9 @@ const Signin = () => {
 
   const handleSubmit = (e) => {
     if(e.target.keyCode === 13 || e.target) {
-        const isEmpty = Object.values(errors).every(error => error === null || error === '');
-        if(isEmpty) {
+        const isEmptyErrors = Object.values(errors).every(error => error === null || error === '');
+        const isEmptyValues = Object.values(values).some(value => value === null || value === '' || value === {});
+        if(isEmptyErrors && !isEmptyValues) {
            const updatedData = {
                 'email': email,
             }
@@ -78,7 +80,9 @@ const Signin = () => {
             }
             setTimeout(() => {
                 navigate('/',{replace:true});
-              }, 3000);
+            }, 3000);
+        } else {
+            enterDetails();
         }
     }
 }
