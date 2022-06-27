@@ -1,0 +1,12 @@
+@mixin flexwrap {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@mixin hideInputFieldsBorder {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+
+}

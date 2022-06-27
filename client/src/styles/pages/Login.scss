@@ -1,0 +1,66 @@
+@import "../common.scss";
+
+
+.login_container {
+    display: flex;
+    /* justify-content: space-around; */
+    min-height: 50vh;
+    align-items: center;
+
+    & .login_text {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        & h2 {
+            margin: 0px;
+            padding: 1rem;
+        }
+
+        & p {
+            margin: 0;
+            padding: 0rem 1rem 1rem 1rem;
+        }
+    }
+
+    & .login_form {
+        flex: 1;
+        padding: 1rem;
+
+        & form {
+            width: 100%;
+
+            & .input_ele {
+                display: flex;
+                margin: 2%;
+                flex-direction: column;
+
+                & input {
+                    width: 100%;
+                    padding: 2%;
+                    @include hideInputFieldsBorder;
+                    border-bottom-style: solid;
+
+                }
+            }
+
+
+            & .login_btn {
+                display: flex;
+                justify-content: center;
+                margin-top: 6%;
+
+                & input {
+                    width: 100%;
+                    padding: 0.5rem;
+                    background-color: #bf2857;
+                    color: white;
+                    font-weight: 800;
+                    @include hideInputFieldsBorder
+
+                }
+
+            }
+        }
+    }
+}

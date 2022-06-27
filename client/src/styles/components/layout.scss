@@ -1,0 +1,24 @@
+.layout_main {
+    width: 100%;
+
+}
+
+@mixin borderLine {
+    border-bottom: 2px solid grey;
+    position: relative
+}
+
+
+
+.border_bottom_top {
+    @include borderLine();
+
+}
+
+
+
+.border_bottom_bottom {
+    @include borderLine();
+
+    
+}
