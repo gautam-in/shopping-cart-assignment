@@ -8,6 +8,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { currentState, emptyCart } from '../../../redux/slices/cart';
 import { useNavigate } from 'react-router-dom';
+import { getSessionCartData } from '../../../services/getFormattedDataServices';
+import useOverflowHidden from '../../../hooks/useOverflowHidden';
 
 const Checkout = ({ cartPrice }) => {
 
@@ -15,14 +17,18 @@ const Checkout = ({ cartPrice }) => {
     position: "top-center",
   });
   const isCartOpen = useSelector((state) => state.cart.isOpen);
+  const cartData = useSelector((state) => state.cart.products);
+  const {overflowHidden,toggleOverflowHide} = useOverflowHidden();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const checkoutHandler = () => {
     happyShopping();
+    const cartSessionData = getSessionCartData(cartData);
+    sessionStorage.setItem('cartData',JSON.stringify(cartSessionData));
     dispatch(emptyCart());
-    dispatch(currentState(!isCartOpen));
-
+    dispatch(currentState(!isCartOpen));    
+    toggleOverflowHide(!overflowHidden);
     setTimeout(() => {
       navigate('/',{replace:true});
     }, 3000);

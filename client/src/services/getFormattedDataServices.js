@@ -41,3 +41,18 @@ export const getProductFilterOptions = (filterMenuList) => {
 
   return options;
 }
+
+// get product filter options for select menu
+export const getSessionCartData = (cartData) => {
+  const options = [];
+  const data = getQuantifiedCartItems(cartData);
+  data.forEach((cartItem) => {
+    options.push({
+      name:cartItem.name,
+      price: cartItem.price,
+      quantity: cartItem.quantity,
+    });
+  })
+
+  return options;
+}

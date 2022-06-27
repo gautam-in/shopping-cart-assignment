@@ -13,9 +13,11 @@ import CartItem from '../CartItem';
 import React from 'react';
 import { currentState } from '../../../../redux/slices/cart';
 import { getCartAdvertise } from '../../../../services/ApiService';
+import useOverflowHidden from '../../../../hooks/useOverflowHidden';
 
 const CartDesktop = ({ cartItems }) => {
   const isCartOpen = useSelector((state) => state.cart.isOpen);
+  const {overflowHidden,toggleOverflowHide} = useOverflowHidden();
   const overallCartItems = useSelector((state) => state.cart.products);
   const dispatch = useDispatch();
   const cartAd = getCartAdvertise();
@@ -23,6 +25,7 @@ const CartDesktop = ({ cartItems }) => {
   const cartItemsLength = `(${overallCartItems.length} item)`;
   
   const closeCartHandler = () => {
+    toggleOverflowHide(!overflowHidden);
     dispatch(currentState(!isCartOpen));
   };
 

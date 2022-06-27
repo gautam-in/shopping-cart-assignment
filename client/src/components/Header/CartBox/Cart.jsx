@@ -15,17 +15,20 @@ import { currentState } from '../../../redux/slices/cart';
 import theme from '../../../theme';
 import { useNavigate } from 'react-router-dom';
 import useWindowDimensions from '../../../hooks/useWindowDimensions';
+import useOverflowHidden from '../../../hooks/useOverflowHidden';
 
 const Cart = ({ cartItems }) => {
   const isCartOpen = useSelector((state) => state.cart.isOpen);
   const cartQuantifiedItems = getQuantifiedCartItems(cartItems);
   const cartPrice = getCartPrice(cartQuantifiedItems);
   const { width } = useWindowDimensions();
+  const {overflowHidden,toggleOverflowHide} = useOverflowHidden();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const TAB_WIDTH = getNumericalWidth(theme.breakpoints.TAB);
 
   const startShoppingHandler = () => {
+    toggleOverflowHide(!overflowHidden);
     dispatch(currentState(!isCartOpen));
     navigate('/product/all',{replace:true})
   };

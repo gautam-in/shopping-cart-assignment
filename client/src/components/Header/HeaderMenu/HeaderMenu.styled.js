@@ -90,4 +90,24 @@ export const StyledHeaderMenu = styled.div`
             }
         }
     }
+
+    .logout {
+
+        p {
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        a {
+            position: absolute;
+            right: 12%;
+            padding: 10px 2%;
+            background: ${(props) => props.theme.colors.CTA_COLOR};
+            color: ${(props) => props.theme.colors.WHITE};
+            font-weight: 700;
+            text-transform: capitalize;
+            font-size: 14px;
+            top: 30px
+        }
+    }
 `;

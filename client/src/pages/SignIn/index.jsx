@@ -7,12 +7,14 @@ import React, { useState } from 'react'
 import Wrapper from '../../components/Utilities/Wrapper';
 import useValidate from '../../hooks/useValidate';
 import { useNavigate } from 'react-router-dom';
+import { setIsUserLoggedIn, setUserEmail } from '../../redux/slices/auth';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Signin = () => {
 
-    const loginSuccess = () => toast('user logged in successfully !',{
-        position: "top-center",
-      });
+    const dispatch = useDispatch();
+    const isUserLoggedIn = useSelector((state) => state.auth.isUserLoggedIn);
+    const loginSuccess = () => toast('user logged in successfully !',{position: "top-center"});
 
     const initialFormFields = {
         form: '',
@@ -70,6 +72,10 @@ const Signin = () => {
             }
             sessionStorage.setItem('userData', JSON.stringify([updatedData]));
             loginSuccess();
+            if(updatedData.email) {
+              dispatch(setUserEmail(updatedData.email));
+              dispatch(setIsUserLoggedIn(true));
+            }
             setTimeout(() => {
                 navigate('/',{replace:true});
               }, 3000);

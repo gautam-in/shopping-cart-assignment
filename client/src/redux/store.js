@@ -6,6 +6,7 @@ import formReducer from './slices/form';
 import productFilterReducer from './slices/product-filter';
 import productReducer from './slices/products';
 import homeReducer from './slices/home';
+import authReducer from './slices/auth';
 
 // eslint-disable-next-line import/named
 
@@ -13,6 +14,7 @@ const store = configureStore({
   reducer: {
     home: homeReducer,
     formData: formReducer,
+    auth: authReducer,
     category: categoryReducer,
     banner: bannerReducer,
     cart: cartReducer,
