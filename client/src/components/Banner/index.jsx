@@ -28,6 +28,7 @@ const Banner = () => {
     <StyledBanner className="banner">
       <Wrapper>
         <Carousel
+          ariaLabel="offers"
           swiping={width <= getNumericalWidth(theme.breakpoints.SM_TAB) ? true : false}
           dragging={true}
           wrapAround={true}

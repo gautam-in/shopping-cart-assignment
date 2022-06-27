@@ -46,12 +46,19 @@ const CartItem = ({ item }) => {
         <div className="cart-item-details-pricing">
           <span
             className="cart-item-quantity--icon"
+            tabIndex={0}
             onClick={removeItemHandler}
+            onKeyPress={removeItemHandler}
           >
             &#45;
           </span>
           <span className="cart-item-quantity">{itemQuantity}</span>
-          <span className="cart-item-quantity--icon" onClick={addItemHandler}>
+          <span 
+            className="cart-item-quantity--icon" 
+            tabIndex={0}
+            onClick={addItemHandler}
+            onKeyPress={addItemHandler}
+          >
             &#43;
           </span>
           <span className="cart-item-quantity--multiply">&#120;</span>

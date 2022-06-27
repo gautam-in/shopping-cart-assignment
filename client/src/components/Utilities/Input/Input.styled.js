@@ -12,20 +12,30 @@ export const StyledInput = styled.div`
         position: absolute;
         left: 0%;
         bottom: -20px;
-        color: red;
+        color: ${(props) => props.theme.colors.RED};
         font-size: 12px;
         text-transform: lowercase;
+
+        @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
+            bottom: -30px;
+        }
     }
 
     .note {
-        color: black;
+        color: ${(props) => props.theme.colors.BLACK};
     }
 
     .form-input {
-        width: 60%;
         height: 40px;
         position: relative;
         overflow: hidden;
+        margin: 25px 0;
+        padding: 5px 0;
+
+        @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
+            width: 100%;
+            margin: 40px 0;
+        }
     }
 
     input {

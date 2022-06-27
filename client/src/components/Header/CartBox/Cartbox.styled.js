@@ -29,6 +29,10 @@ export const StyledCart = styled.div`
         min-height: 100vh;
     }
 
+    @media(max-width: ${(props) => props.theme.breakpoints.MOBILE}) {
+        top: 44px;
+    }
+
     .promo-code {
         position: static;
         left: 0;

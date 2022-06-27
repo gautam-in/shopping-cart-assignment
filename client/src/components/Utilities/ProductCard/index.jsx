@@ -5,22 +5,22 @@ import Button from '../Button';
 import React from 'react';
 import { StyledProductCard } from './ProductCard.styled';
 import { addProductToCart } from '../../../redux/slices/cart';
-import { getProductFilteredByProductId } from '../../../services/ApiService';
+import { addItemToCart } from '../../../services/ApiService';
 import { unwrapResult } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 
 const ProductCard = ({ productId, imageSrc, name, description, price }) => {
   const dispatch = useDispatch();
-  const notify = () => toast('product has been added to cart successfully!');
-
+  const notify = (productResponse) => toast(`${productResponse} !`);
+  
   const productHandler = () => {
-    dispatch(getProductFilteredByProductId({ product_id: productId }))
-      .then(unwrapResult)
-      .then((productList) => {
-        dispatch(addProductToCart(productList));
-      })
-      .catch((error) => error);
-    notify();
+    dispatch(addItemToCart({ product_id: productId }))
+    .then(unwrapResult)
+    .then((product) => {
+      dispatch(addProductToCart(product.data));
+    })
+    .catch((error) => error);
+    notify('Product added to cart successfully');
   };
 
   return (

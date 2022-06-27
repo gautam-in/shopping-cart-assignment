@@ -37,6 +37,10 @@ export const StyledNavbar = styled.nav`
             }
         }
 
+        @media(max-width: ${(props) => props.theme.breakpoints.MOBILE}) {
+            width: 35%;
+        }
+
         li a {
             font-size: 12px;
             color: ${(props) => props.theme.colors.CTA_COLOR};

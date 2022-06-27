@@ -1,3 +1,4 @@
+import { compareIt } from '../auth/passwordEncryption';
 import {
   EMAIL_ERROR,
   EMAIL_REGEX,
@@ -14,8 +15,8 @@ export default function useValidate({
   email,
   password,
   confirm_password,
+  errors,
 }) {
-  let errors = {};
   if (form === 'sign-in') {
     if (!email) {
       errors.email = 'Email required';
@@ -27,9 +28,11 @@ export default function useValidate({
     const users = JSON.parse(localStorage.getItem('userData'));
     users.forEach((user) => {
       if (user.email === email) {
-        if (password !== user.password) {
-          errors.password = 'Passwords do not match';
-        }
+        compareIt(password,user.password).then((res) => {
+          if(!res) {
+            errors.password = 'Passwords do not match';
+          } 
+        });
       } else {
         errors.email = 'No such user with this email exist !';
       }

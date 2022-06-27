@@ -22,6 +22,10 @@ export const StyledCartItem = styled.li`
             @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
                 width: 80%;
             }
+
+            @media(max-width: ${(props) => props.theme.breakpoints.MOBILE}) {
+                width: 100%;
+            }
         }
 
         @media(max-width: ${(props) => props.theme.breakpoints.LG_TAB}) {

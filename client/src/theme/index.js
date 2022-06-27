@@ -30,7 +30,7 @@ const theme = {
     CART: CartIcon,
   },
   breakpoints: {
-    SM_MOBILE: '320px',
+    SM_MOBILE: '380px',
     MOBILE: '480px',
     SM_TAB: '540px',
     TAB: '768px',

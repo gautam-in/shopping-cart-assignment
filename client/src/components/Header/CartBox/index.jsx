@@ -9,17 +9,20 @@ import { getCartIcon } from '../../../services/ApiService';
 import { getNumericalWidth } from '../../../services/getFormattedDataServices';
 import theme from '../../../theme';
 import useWindowDimensions from '../../../hooks/useWindowDimensions';
+import useOverflowHidden from '../../../hooks/useOverflowHidden';
 
 const CartBox = () => {
   const cartIcon = getCartIcon();
   const dispatch = useDispatch();
   const {width} = useWindowDimensions();
+  const {overflowHidden,toggleOverflowHide} = useOverflowHidden();
   const isCartOpen = useSelector((state) => state.cart.isOpen);
   const cartItems = useSelector((state) => state.cart.products);
   const [cartOverlayClass, setCartOverlayClass] = useState('');
 
   const toggleCart = () => {
     dispatch(currentState(!isCartOpen));
+    toggleOverflowHide(!overflowHidden);
     setCartOverlayClass('cart-overlay');
   };
 

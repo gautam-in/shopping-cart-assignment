@@ -31,6 +31,11 @@ export const StyledBanner = styled.div`
                     padding: 6px;
                 }
             }
+
+            @media(max-width: ${(props) => props.theme.breakpoints.MOBILE}) {
+                display: none;
+            }
+
         }
     }
 

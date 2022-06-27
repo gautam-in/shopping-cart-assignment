@@ -21,6 +21,7 @@ const CartDesktop = ({ cartItems }) => {
   const cartAd = getCartAdvertise();
   const cartQuantity = cartItems.length;
   const cartItemsLength = `(${overallCartItems.length} item)`;
+  
   const closeCartHandler = () => {
     dispatch(currentState(!isCartOpen));
   };
@@ -36,7 +37,9 @@ const CartDesktop = ({ cartItems }) => {
         <StyledCloseIcon
           className="close"
           title="close"
+          tabIndex={0}
           onClick={closeCartHandler}
+          onKeyPress={closeCartHandler}
         >
           &#88;
         </StyledCloseIcon>

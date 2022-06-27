@@ -22,6 +22,15 @@ export const StyledHamburger = styled.div`
             right: 30%;
         }
 
+        @media(max-width: ${(props) => props.theme.breakpoints.MOBILE}) {
+            top: 65%;
+            right: 40%;
+        }
+
+        @media(max-width: ${(props) => props.theme.breakpoints.SM_MOBILE}) {
+            right: 45%;
+        }
+
         & span,
         & span:first-of-type,
         & span:last-of-type {

@@ -29,6 +29,14 @@ export const StyledHeaderMenu = styled.div`
         }
     }
 
+    @media(max-width: ${(props) => props.theme.breakpoints.MOBILE}) {
+        width: 50%;
+    }
+
+    @media(max-width: ${(props) => props.theme.breakpoints.SM_MOBILE}) {
+        width: 60%;
+    }
+
 
     .auth-links {
         display: flex;
@@ -53,6 +61,9 @@ export const StyledHeaderMenu = styled.div`
             }
         }
 
+        @media(max-width: ${(props) => props.theme.breakpoints.MOBILE}) {
+            width: 35%;
+        }
 
         li a {
             font-size: 11px;

@@ -1,22 +1,31 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { StyledInput } from './Input.styled';
 
-const Input = ({ inputName, inputValue, labelName, type, errMsg, onInputChange, onKeyInputPress }) => {
+const Input = ({ inputName, labelName, type, errMsg, onInputChange, onBlurChange }) => {
 
-  const [validInput, setValidInput] = useState();
+  const [inputValue, setInputValue] = useState('');
   const [inputFocus, setInputFocus] = useState(false);
+  const [validInput, setValidInput] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  function onInptChange(e) {
-      const isValid = onInputChange(e);
-      setValidInput(isValid);
+  function onKeyChange(e) {
+    setInputValue(e.target.value);
+    onInputChange(e);
   }
 
+  useEffect(() => {
+    setErrorMessage(errMsg);
+  }, [errMsg]);
+  
+
   function onBlurHandler(e) {
+      const isValid = onBlurChange(e);
+      setValidInput(isValid);
       setInputFocus(false);
   }
 
-  function onFocusHandler(e) {
+  function onFocusHandler() {
     setInputFocus(true);
   }
 
@@ -27,9 +36,8 @@ const Input = ({ inputName, inputValue, labelName, type, errMsg, onInputChange, 
           type={type}
           id={inputName}
           name={inputName}
-          onChange={(e) => {onInptChange(e);}}
+          onChange={(e) => onKeyChange(e)}
           value={inputValue}
-          onKeyPress={onKeyInputPress}
           onFocus={(e) => onFocusHandler(e)}
           onBlur={(e) => onBlurHandler(e)}
           autoComplete="off"
@@ -44,7 +52,7 @@ const Input = ({ inputName, inputValue, labelName, type, errMsg, onInputChange, 
       <span
         className={inputFocus ? `error` : ''}
         id='uidnote'
-      >{errMsg}</span>
+      >{errorMessage}</span>
     </StyledInput>
   )
 }

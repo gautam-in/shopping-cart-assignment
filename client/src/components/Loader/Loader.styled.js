@@ -43,7 +43,7 @@ const LoaderStyle = styled.div`
       display: block;
       width: 25%;
       height: 25%;
-      background-color: black;
+      background-color: ${(props) => props.theme.colors.BLACK};
       border-radius: 100%;
       animation: ${skChaseDotBefore} 2s infinite ease-in-out both;
     }

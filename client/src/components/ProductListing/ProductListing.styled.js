@@ -24,5 +24,9 @@ export const StyledProductListing = styled.ul`
             justify-content: flex-end;
             align-items: flex-end;
         }
+
+        @media(max-width: ${(props) => props.theme.breakpoints.MOBILE}) {
+            width: 86%;
+        }
     }
 `;

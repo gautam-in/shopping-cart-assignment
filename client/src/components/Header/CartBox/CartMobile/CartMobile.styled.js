@@ -12,6 +12,10 @@ export const StlyledMobileCartHeader = styled.div`
         width: 15%;
         padding: 17px 2%;
         background-color: ${(props) => props.theme.colors.WHITE};
+
+        @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
+            width: 25%;
+        }
     }
 
     h3 {
@@ -43,7 +47,11 @@ export const StyledMobileCartDetails = styled.div`
         }
 
         @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
-            max-height: 100%;
+            min-height: 60vh;
+        }
+
+        @media(max-width: ${(props) => props.theme.breakpoints.MOBILE}) {
+            min-height: 69vh;
         }
     }
 `;
@@ -91,6 +99,10 @@ export const StyledNoItemContainer = styled.div`
 
     @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
         padding: 32vh 0;
+    }
+
+    @media(max-width: ${(props) => props.theme.breakpoints.MOBILE}) {
+        padding: 35vh 0;
     }
 
     h5 {

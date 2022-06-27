@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   isHamMenuOpen: false,
+  overflowHidden: '',
 };
 
 export const homeSlice = createSlice({
@@ -14,10 +15,16 @@ export const homeSlice = createSlice({
         isHamMenuOpen: action.payload,
       };
     },
+    setOverflowHidden: (state, action) => {
+      return {
+        ...state,
+        overflowHidden: action.payload,
+      };
+    },
   }
 });
 
 // Action creators are generated for each case reducer function
-export const { setIsHamMenuOpen } = homeSlice.actions;
+export const { setIsHamMenuOpen, setOverflowHidden } = homeSlice.actions;
 
 export default homeSlice.reducer;

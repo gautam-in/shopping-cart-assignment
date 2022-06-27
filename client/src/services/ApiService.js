@@ -79,9 +79,7 @@ export const getProductFilteredByCategories = createAsyncThunk(
   }
 );
 
-export const getProductFilteredByProductId = createAsyncThunk(
-  'products/getProductFilteredByProductId',
-  async ({ product_id }) => {
+export const getProductFilteredByProductId = async ({ product_id }) => {
     try {
       const resp = await axios.get(`${REACT_API_DOMAIN_URL}/products`);
       if (resp.status === 200) {
@@ -91,6 +89,26 @@ export const getProductFilteredByProductId = createAsyncThunk(
         );
         return productsData[0];
       }
+      console.error('something went wrong');
+    } catch (error) {
+      console.error('Unable to fetch product list');
+    }
+  };
+
+export const addItemToCart = createAsyncThunk(
+  'cart/addItemToCart',
+  async ({ product_id }) => {
+    try {
+      const payload = await axios.post(`${REACT_API_DOMAIN_URL}/addToCart`,product_id);
+      const data = await getProductFilteredByProductId({product_id});
+
+        if (data && payload.data.response === 'Success') {
+          let responseMessage = payload.data.responseMessage;
+          return {
+            data,
+            responseMessage
+          };
+        }
       console.error('something went wrong');
     } catch (error) {
       console.error('Unable to fetch product list');

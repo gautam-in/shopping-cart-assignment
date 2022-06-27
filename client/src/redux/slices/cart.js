@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getProductFilteredByProductId } from '../../services/ApiService';
+import { addItemToCart } from '../../services/ApiService';
 
 const initialState = {
   products: [],
@@ -45,14 +45,14 @@ export const cartSlice = createSlice({
     },
   },
   extraReducers: {
-    [getProductFilteredByProductId.pending]: (state, action) => {
+    [addItemToCart.pending]: (state, action) => {
       state.status = 'loading';
     },
-    [getProductFilteredByProductId.fulfilled]: (state, { payload }) => {
+    [addItemToCart.fulfilled]: (state, { payload }) => {
       state.data = payload;
       state.status = 'success';
     },
-    [getProductFilteredByProductId.rejected]: (state, action) => {
+    [addItemToCart.rejected]: (state, action) => {
       state.status = 'failed';
     },
   },

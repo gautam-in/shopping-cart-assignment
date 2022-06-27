@@ -19,4 +19,9 @@ export const StyledOverlay = styled.div`
     @media(max-width: ${(props) => props.theme.breakpoints.SM_TAB}) {
         width: 35%;
     }
+
+    @media(max-width: ${(props) => props.theme.breakpoints.MOBILE}) {
+        top: 50px;
+        width: 40%;
+    }
 `;
