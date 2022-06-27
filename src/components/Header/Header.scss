@@ -1,0 +1,108 @@
+@import "../../maxin.scss";
+
+.header-container {
+  display: flex;
+  padding: 5px 5px 0px 5px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0px 8px 0 rgb(0 0 0 / 10%), 0 0px 20px 0 rgb(0 0 0 / 10%);
+  .image-container {
+    height: 100%;
+    width: 24%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    @include for-desktop-up {
+      margin-left: 10%;
+    }
+    .image-logo {
+      height: 50px;
+      object-fit: contain;
+      @include for-desktop-up {
+        height: 80px;
+      }
+    }
+  }
+  .header-right-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    @include for-desktop-up {
+      margin-right: 10%;
+    }
+    .signin-rigester-container {
+      text-align: right;
+      margin: 0 10px 10px 0;
+      .singin-signup-link {
+        margin-left: 10px;
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+  }
+  .links-cart-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .link-container {
+      display: none;
+      display: flex;
+      @include for-desktop-up {
+        display: block;
+        width: 50%;
+        margin-left: 20px;
+      }
+    }
+    .products-cart-container {
+      width: 50%;
+      display: flex;
+      justify-content: right;
+      .cart {
+        cursor: pointer;
+        width: 100px;
+        background-color: #eeeeee;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .cart-icon {
+          font-size: 30px;
+          margin-right: 10px;
+          color: #d00156;
+        }
+      }
+    }
+  }
+}
+.link {
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  display: none;
+  @include for-tablet-portrait-up {
+    display: inline-block;
+  }
+  @include for-desktop-up {
+    display: inline-block;
+  }
+}
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  cursor: pointer;
+  overflow-y: hidden;
+}

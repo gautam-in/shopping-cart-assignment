@@ -1,0 +1,58 @@
+@import "../../maxin.scss";
+
+.banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding: 0 10px;
+  @include for-tablet-portrait-up {
+    padding: 20px;
+  }
+  &:nth-of-type(2n) {
+    flex-direction: row-reverse;
+  }
+  .banner-image-box {
+    width: 70%;
+    @include for-tablet-portrait-up {
+      width: 40%;
+    }
+    .banner-image {
+      width: 100%;
+      height: 250px;
+      object-fit: contain;
+      @include for-tablet-portrait-up {
+        height: 200px;
+      }
+    }
+  }
+  .banner-content-box {
+    width: 70%;
+    text-align: center;
+    .banner-content-heading {
+      font-size: 22px;
+      font-weight: 800;
+      @include for-tablet-portrait-up {
+        font-size: 28px;
+      }
+    }
+    .banner-contnent-description {
+      margin-top: 20px;
+      font-size: 13px;
+      @include for-tablet-portrait-up {
+        font-size: 16px;
+      }
+    }
+    .banner-contnent-button {
+      margin-top: 30px;
+      .xl-button {
+        font-size: 13px;
+        padding: 10px;
+        @include for-tablet-portrait-up {
+          font-size: 16px;
+          padding: 15px;
+        }
+      }
+    }
+  }
+}

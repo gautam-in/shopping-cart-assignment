@@ -1,0 +1,13 @@
+@import "../../maxin.scss";
+
+.homePage-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.homePage-categories-container {
+  padding: 0;
+  @include for-tablet-portrait-up {
+    padding: 0 10%;
+  }
+}

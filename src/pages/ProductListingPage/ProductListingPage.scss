@@ -1,0 +1,38 @@
+@import "../../maxin.scss";
+
+.productList-container {
+  display: flex;
+  flex-direction: column;
+  @include for-desktop-up {
+    margin: 0 10%;
+  }
+
+  .categories-products-container {
+    display: flex;
+    .categories-container {
+      background-color: #eaeaea;
+
+      display: none;
+      @include for-tablet-portrait-up {
+        width: 25%;
+        display: block;
+      }
+      @include for-desktop-up {
+        width: 20%;
+      }
+    }
+    .products-container {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 20px;
+      justify-content: space-between;
+      @include for-tablet-portrait-up {
+        width: 75%;
+      }
+      @include for-desktop-up {
+        width: 80%;
+      }
+    }
+  }
+}

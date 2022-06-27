@@ -1,0 +1,17 @@
+@import "../../maxin.scss";
+
+.footer-container {
+  background-color: #eaeaea;
+  padding: 10px;
+  width: 95%;
+  text-align: center;
+  font-size: 12px;
+
+  @include for-tablet-portrait-up {
+    width: 98%;
+  }
+
+  @include for-desktop-up {
+    width: 98.5%;
+  }
+}

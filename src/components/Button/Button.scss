@@ -1,0 +1,35 @@
+$primary-color: #d00156;
+$text-color: white;
+
+@mixin button-common {
+  background-color: $primary-color;
+  color: $text-color;
+  border: none;
+  cursor: pointer;
+}
+.xl-button {
+  @include button-common();
+  padding: 15px;
+  font-size: 16px;
+}
+.sm-button {
+  @include button-common();
+  padding: 10px 30px;
+  font-size: 12px;
+}
+.sign-button {
+  @include button-common();
+  padding: 10px 30px;
+  font-size: 12px;
+  width: 100%;
+}
+
+.checkout-button {
+  @include button-common();
+  padding: 15px;
+  width: 100%;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
