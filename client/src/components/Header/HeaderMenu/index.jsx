@@ -15,14 +15,13 @@ const HeaderMenu = ({show}) => {
  
   useEffect(() => {
     if(sessionStorage.length > 0) {
-      const user = JSON.parse(sessionStorage.getItem('userData'))[0];
+      const user = JSON.parse(sessionStorage.getItem('userData'))?.[0];
       if(user) {
         dispatch(setIsUserLoggedIn(true));
         dispatch(setUserEmail(user.email));
       }
     }
-  }, [])
-  
+  }, []);
 
   const handleLogout = () => {
     sessionStorage.removeItem('userData');
@@ -36,16 +35,16 @@ const HeaderMenu = ({show}) => {
         (
           <ul className={`auth-links ${show ? 'slide-in-right visible' : ''}`}>
             <li>
-              <Link onClick={toggleHamMenu} to="/form/sign-in">Signin</Link>
+              <Link onClick={toggleHamMenu} to="/form/sign-in" title='sign in' >Signin</Link>
             </li>
             <li>
-              <Link onClick={toggleHamMenu} to="/form/register">Register</Link>
+              <Link onClick={toggleHamMenu} to="/form/register" title='register' >Register</Link>
             </li>
           </ul>
         ) : (
           <div className="auth-links logout">
             <p>Hi {userEmail}</p>
-            <Link to="/" onClick={handleLogout} >logout</Link>
+            <Link to="/" onClick={handleLogout} title='logout' >logout</Link>
           </div>
         )
       }

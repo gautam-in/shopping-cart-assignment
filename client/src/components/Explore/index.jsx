@@ -28,7 +28,7 @@ const Explore = ({
         <div className="explore-details">
           <h2>{categoryTitle}</h2>
           <p>{categoryInfo}</p>
-          <Link to={`/product/${categoryId}`}>{categoryCTA}</Link>
+          <Link to={`/product/${categoryId}`} title={categoryCTA} >{categoryCTA}</Link>
         </div>
       </Wrapper>
     </StyledExploreCategories >

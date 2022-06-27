@@ -8,7 +8,7 @@ const Logo = () => {
 
     return (
         // eslint-disable-next-line jsx-a11y/anchor-is-valid
-        <StyledLogo><a href="#"><img src={LogoSrc} alt="Sabka Baazar - Logo" /></a>logo</StyledLogo>
+        <StyledLogo><a href="#" title='logo'><img src={LogoSrc} alt="Sabka Baazar - Logo" /></a>logo</StyledLogo>
     )
 }
 

@@ -30,7 +30,7 @@ const CartBox = () => {
     <>
       <StyledCartBox className="cartbox" onClick={toggleCart}>
         <img src={cartIcon} alt="cart icon" />
-        <a href="#cart-icon" id='cart-icon' className="cartIcon">
+        <a href="#cart-icon" title='cart-icon' id='cart-icon' className="cartIcon">
           {cartItems.length} items
         </a>
       </StyledCartBox>

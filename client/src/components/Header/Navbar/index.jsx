@@ -10,8 +10,8 @@ const Navbar = ({show}) => {
     return (
         <StyledNavbar>
             <ul className={`nav-links ${show ? 'slide-in-right visible' : ''}`}>
-                <li><Link onClick={toggleHamMenu} to="/">Home</Link></li>
-                <li><Link onClick={toggleHamMenu} to="/product/all/">Products</Link></li>
+                <li><Link onClick={toggleHamMenu} title='home' to="/">Home</Link></li>
+                <li><Link onClick={toggleHamMenu} title='products' to="/product/all/">Products</Link></li>
             </ul>
         </StyledNavbar>
     )
