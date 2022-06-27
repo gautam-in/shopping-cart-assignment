@@ -1,13 +1,10 @@
 import React from 'react'
 import Wrapper from '../../components/Utilities/Wrapper';
-import { FourZeroFourContainer, FourZeroFourBody, FourZeroFourHero } from './FourZeroFourPage.styled';
+import { FourZeroFourContainer, FourZeroFourBody } from './FourZeroFourPage.styled';
 
 const FourZeroFourPage = () => {
   return (
     <FourZeroFourContainer>
-        <FourZeroFourHero>
-          <h2>404</h2>
-        </FourZeroFourHero>
         <Wrapper>
           <FourZeroFourBody>
           <h3>404 Page not found</h3>

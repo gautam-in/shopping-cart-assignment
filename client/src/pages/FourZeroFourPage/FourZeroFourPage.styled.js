@@ -4,63 +4,6 @@ export const FourZeroFourContainer = styled.div`
   position: relative;
 `;
 
-export const FourZeroFourHero = styled.div`
-  border-radius: 50%;
-  color: ${(props) => props.theme.colors.WHITE};
-  text-align: center;
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 18vw;
-  height: 18vw;
-  background: ${(props) => props.theme.colors.CTA_COLOR};
-  display: block;
-
-  @media screen and (max-width: ${(props) => props.theme.breakpoints[4]}) {
-    top: 28%;
-  }
-
-  @media screen and (max-width: ${(props) => props.theme.breakpoints[3]}) {
-    top: 24%;
-  }
-
-  @media screen and (max-width: ${(props) => props.theme.breakpoints[2]}) {
-    top: 20%;
-  }
-
-  @media screen and (max-width: ${(props) => props.theme.breakpoints[1]}) {
-    top: 16%;
-  }
-
-  @media screen and (max-width: ${(props) => props.theme.breakpoints[0]}) {
-    top: 14%;
-  }
-
-  h2 {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 45px;
-    line-height: 3.2vw;
-    font-family: ${(props) => props.theme.fonts.DOSIS}, sans-serif;
-    color: ${(props) => props.theme.colors.WHITE};
-
-    @media screen and (max-width: ${(props) => props.theme.breakpoints[3]}) {
-      font-size: 38px;
-    }
-
-    @media screen and (max-width: ${(props) => props.theme.breakpoints[2]}) {
-      font-size: 32px;
-    }
-
-    @media screen and (max-width: ${(props) => props.theme.breakpoints[1]}) {
-      font-size: 25px;
-    }
-  }
-`;
-
 export const FourZeroFourBody = styled.div`
   text-align: center;
   padding: 45px 0;
