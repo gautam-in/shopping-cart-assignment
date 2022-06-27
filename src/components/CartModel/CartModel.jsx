@@ -23,7 +23,6 @@ const CartModel = ({ handleCartOpen }) => {
   const totalCount = useSelector(selectCartTotalCount);
 
   const handleCartClose = () => {
-    alert("Order placed");
     if (window.screen.width >= 992) {
       dispatch(clearItemsFromCart({}));
       handleCartOpen();

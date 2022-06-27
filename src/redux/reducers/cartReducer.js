@@ -5,7 +5,6 @@ const initialState = {
 };
 
 export const cartReducer = (state = initialState, { type, payload }) => {
-  //   console.log("reducer", type, payload);
   switch (type) {
     case ActionTypes.SET_CART_ITEMS:
       return { ...state, cartItems: payload };

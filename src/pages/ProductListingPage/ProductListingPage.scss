@@ -1,7 +1,6 @@
 @import "../../maxin.scss";
 
 .productList-container {
-  // margin: 0 10%;
   display: flex;
   flex-direction: column;
   @include for-desktop-up {
@@ -11,7 +10,6 @@
   .categories-products-container {
     display: flex;
     .categories-container {
-      // padding: 20px;
       background-color: #eaeaea;
 
       display: none;
@@ -27,7 +25,6 @@
       width: 100%;
       display: flex;
       flex-wrap: wrap;
-      // padding: 10px;
       margin: 20px;
       justify-content: space-between;
       @include for-tablet-portrait-up {
