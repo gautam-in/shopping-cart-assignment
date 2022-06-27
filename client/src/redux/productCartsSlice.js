@@ -31,7 +31,6 @@ export const productCartsSlice = createSlice({
     },
     extraReducers:(builder)=>{
         builder.addCase(productAddToCart.fulfilled, (state, action) => {
-            console.log(action)
             if(action.payload.response==='Success'){
                 const elementIndex=state.findIndex(el=>el.id===action.payload.productData.id);
                 if(!state.length||elementIndex===-1){

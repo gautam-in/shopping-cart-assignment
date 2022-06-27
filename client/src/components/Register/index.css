@@ -1,17 +1,26 @@
-.signup-body-container{
+.signup-body-container {
     display: flex;
     justify-content: center;
     padding: 20px;
 }
-.signup-form{
+
+.signup-form {
     display: flex;
     flex-direction: column;
     flex-basis: 35%;
 }
-.signup-content{
+
+.signup-content {
     flex-basis: 35%;
 }
-.signup-button{
+
+.signup-button {
     margin-top: 20px !important;
     background-color: #cc1269 !important;
+}
+
+@media screen and (max-width: 480px) {
+    .signup-body-container {
+        flex-direction: column;
+    }
 }

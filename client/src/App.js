@@ -18,11 +18,11 @@ function App() {
           <Route path='/signup' element={<Register />} />
         </Routes>
       </div>
-      <div className="page-footer-container">
+      {/* <div className="page-footer-container"> */}
         <div className="page-footer-container-content">
           Copyright {<CopyrightIcon />} 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
         </div>
-      </div>
+      {/* </div> */}
     </div>
   );
 }

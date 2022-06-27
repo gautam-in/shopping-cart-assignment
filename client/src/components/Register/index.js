@@ -16,7 +16,7 @@ const defaultFieldvalues = {
 }
 export const Register = (props) => {
     const [signupFieldValues, setSignupFieldValues] = useState(defaultFieldvalues);
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     const handleChange = (fieldType) => (event) => {
         setSignupFieldValues({
             ...signupFieldValues,
@@ -34,18 +34,18 @@ export const Register = (props) => {
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
-    const isSignupAllowed=()=>{
-        if(!validatePassword(signupFieldValues.password)||signupFieldValues.password!==signupFieldValues.confirmPassword){
+    const isSignupAllowed = () => {
+        if (!validatePassword(signupFieldValues.password) || signupFieldValues.password !== signupFieldValues.confirmPassword) {
             return false;
         }
-        if(!validateEmail(signupFieldValues.email)||signupFieldValues.firstName.length<3||signupFieldValues.lastName.length<3){
+        if (!validateEmail(signupFieldValues.email) || signupFieldValues.firstName.length < 3 || signupFieldValues.lastName.length < 3) {
             return false
         }
         return true
     }
     const handleSignupClick = () => {
-        if(isSignupAllowed()){
-          navigate('../',{ replace: true })
+        if (isSignupAllowed()) {
+            navigate('../', { replace: true })
         }
     }
 
@@ -87,7 +87,7 @@ export const Register = (props) => {
                         />
                         {signupFieldValues.password && !validatePassword(signupFieldValues.password) ? <FormHelperText id="password-error-content">Password must contain Minimum 6 characters,one number and alphabet</FormHelperText> : null}
                     </FormControl>
-                    <FormControl required variant="standard" error={signupFieldValues.confirmPassword&&signupFieldValues.password!==signupFieldValues.confirmPassword ? true : false}>
+                    <FormControl required variant="standard" error={signupFieldValues.confirmPassword && signupFieldValues.password !== signupFieldValues.confirmPassword ? true : false}>
                         <InputLabel htmlFor="standard-adornment-confirm-password">Confirm Password</InputLabel>
                         <Input
                             id="signup-confirm-password"
@@ -108,7 +108,7 @@ export const Register = (props) => {
                                 </InputAdornment>
                             }
                         />
-                        {signupFieldValues.confirmPassword && signupFieldValues.confirmPassword!==signupFieldValues.password ? <FormHelperText id="confirm-password-error-content">Confirm password must match with password</FormHelperText> : null}
+                        {signupFieldValues.confirmPassword && signupFieldValues.confirmPassword !== signupFieldValues.password ? <FormHelperText id="confirm-password-error-content">Confirm password must match with password</FormHelperText> : null}
                     </FormControl>
                     <Button className="signup-button" variant="contained" style={{ textTransform: 'capitalize' }} onClick={handleSignupClick}>Signup</Button>
                 </div>
