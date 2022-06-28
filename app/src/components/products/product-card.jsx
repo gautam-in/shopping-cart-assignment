@@ -1,32 +1,31 @@
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
+import { addCart } from "../../store/actions/cart.action";
+import { useDispatch } from "react-redux";
 
-const ProductCard = (props) => {
-    const { products } = props;
+const ProductCard = ({ product }) => {
+    const { name, imageURL, description, price } = product;
+    const dispatch = useDispatch();
+    const buyProduct = () => {
+        dispatch(addCart(product))
+    }
     return (
         <div className='product'>
-            <Row>
-                {
-                    products.map((item) => {
-                        return (
-                            <Col xs={6} md={4} key={item.id}>
-                                <Card >
-                                    <div className='title'>{item.name}</div>
-                                    <Card.Img variant="top" src={item.imageURL} alt={item.name} />
-                                    <Card.Body>
-                                        <Card.Text>
-                                           {item.description}
-                                        </Card.Text>
-                                        <div className='card-footer'>
-                                        <div className='price'>MRP Rs{item.price}</div>
-                                        <button className='btn-cls'>Buy now</button>
-                                        </div>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        )
-                    })
-                }
-            </Row>
+            <Card >
+                <div className='title'>{name}</div>
+                <div className='card-data'>
+                    <Card.Img variant="top" src={imageURL} alt={name} />
+                    <Card.Body>
+                        <Card.Text>
+                            {description}
+                        </Card.Text>
+                        <div className='card-footer'>
+                            <div className='price'>MRP Rs.{price}</div>
+                            <button className='btn-cls' onClick={buyProduct}>Buy now</button>
+                        </div> 
+                    </Card.Body>
+                </div>
+            </Card>
+
         </div>
     );
 }

@@ -46,12 +46,12 @@ const Home = () => {
                             <Card key={item.id}>
                                 {
                                     i % 2 === 0 ? <Row>
-                                        <Col xs={6} md={5}>
+                                        <Col xs={5} md={5}>
                                             <div className='category-img'>
                                                 <Card.Img variant="top" src={item.imageUrl} alt={item.name} />
                                             </div>
                                         </Col>
-                                        <Col xs={6} md={6}>
+                                        <Col xs={7} md={6}>
                                             <Card.Body>
                                                 <div className='category-desc'>
                                                     <Card.Title>{item.name}</Card.Title>
@@ -63,7 +63,7 @@ const Home = () => {
                                             </Card.Body>
                                         </Col>
                                     </Row> : <Row>
-                                        <Col xs={6} md={6}>
+                                        <Col xs={7} md={6}>
                                             <Card.Body>
                                                 <div className='category-desc'>
                                                     <Card.Title>{item.name}</Card.Title>
@@ -74,7 +74,7 @@ const Home = () => {
                                                 </div>
                                             </Card.Body>
                                         </Col>
-                                        <Col xs={6} md={5}>
+                                        <Col xs={5} md={5}>
                                             <div className='category-img'>
                                                 <Card.Img variant="top" src={item.imageUrl} alt={item.name} />
                                             </div>
@@ -87,7 +87,6 @@ const Home = () => {
                     })
                 }
             </div>
-
         </div>
     );
 }

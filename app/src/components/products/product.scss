@@ -1,54 +1,120 @@
+@import '../../common.scss';
+
 .products-section {
+    margin-bottom: 30px;
     .product {
         background-color: #fff;
+        margin-bottom: 10px;
         .card {
             border: none;
             border-bottom: 1px dashed #ccc;
             box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
-
+            padding-bottom: 10px;
+            @include phone{
+                border: none;
+            }
             .title {
                 padding: 20px;
                 font-size: 20px;
                 font-weight: 700;
                 height: 100px;
-            }
-
-            .card-text {
-                display: inline;
-                -webkit-line-clamp: 3;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                word-wrap: break-word;
-                background: #eee;
-                padding: 5px 8px;
-            }
-
-            .card-footer {
-                display: flex;
-                padding: 0;
-                background: none;
-                border: none;
-                justify-content: space-between;
-
-                .price {
-                    margin-top: 10px;
+                @include phone{
+                    padding: 5px;
+                    font-size: 16px;
+                    height: auto;
+                }
+                @include tablet{
+                    padding: 8px;
+                    font-size: 15px;
+                    height: 60px;
                 }
             }
+            .card-body{
+                @include tablet{
+                    padding: 10px;
+                }
+            }
+            .card-data{
+                @include phone{
+                   display: flex;
+                   img{
+                    max-width: 150px;
+                   }
+                }
+                @include tablet{
+                    img{
+                        max-width: 200px;
+                    }
+                }
+                .card-text {
+                    display: inline;
+                    -webkit-line-clamp: 3;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    word-wrap: break-word;
+                    background: #eee;
+                    padding: 5px 8px;
+                    @include phone{
+                        font-size: 14px;
+                    }
+                    @include tablet{
+                        font-size: 14px;
+                        margin-bottom: 8px;
+                    }
+                }
+    
+                .card-footer {
+                    display: flex;
+                    padding: 0;
+                    background: none;
+                    border: none;
+                    justify-content: space-between;
+                    @include phone{
+                        font-size: 14px;
+                    }
+                    .price {
+                        margin-top: 10px;
+                        font-size: 14px;
+                    }
+                }
+            }
+       
         }
     }
-
+    .sidemenuSelect{
+        @include desktop{
+            display: none;
+        }
+        @include tablet{
+            display: none;
+        }
+       select{
+        padding: 5px;
+        width: 100%;
+        font-size: 14px;
+        background: #e80a79;
+        color: #fff;
+        border: 1px solid #e80a79;
+        border-radius: 4px;
+       }
+    }
     .side-menu {
         height: 100%;
         background-color: #eee;
+        @include phone{
+            display: none;
+        }
         .menu-btn{
             padding: 10px;
-           
             border-bottom: 1px dashed #ccc;
             &.focusButton{
                 background-color: #ccc;
                 color: white;
+            }
+            @include tablet{
+                padding: 5px 8px;
             }
         }
         button{
@@ -56,6 +122,10 @@
             background:none;
             width: 100%;
             text-align: left;
+            @include tablet{
+            font-size: 14px;
+            padding: 0;
+            }
         }
     }
 }

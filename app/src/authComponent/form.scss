@@ -1,0 +1,41 @@
+@import '../common.scss';
+
+.form-sec {
+    .signup-data {
+        padding: 40px;
+
+        h4 {
+            margin-bottom: 20px;
+        }
+        @include phone{
+            padding: 0;
+        }
+    }
+    label {
+        display: block;
+        @include phone{
+           font-size: 14px;
+        }
+    }
+    input {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #ccc;
+
+        &:focus-visible,
+        &:focus {
+            outline: none;
+            border-bottom: 1px solid #8bebdf;
+        }
+    }
+
+    .error {
+        color: #ff0000;
+    }
+    .error-border {
+        border-bottom: 1px solid #ff0000;
+    }
+    .login-btn{
+        width: 100%;
+    }
+}

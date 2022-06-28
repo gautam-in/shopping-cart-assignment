@@ -1,26 +1,94 @@
+@import '../../common.scss';
+
+.header-section {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+}
+
 .navigation {
-  height: 70px;
+  height: 90px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
+  @include phone{
+    height: 66px;
+  }
+  .nav-link {
+    color: #000;
 
-  .nav-link{
-    color: #000; 
-    &.active{
+    &.active {
       color: #e80a79;
     }
+
     &:hover {
-      color:#e80a79;
+      color: #e80a79;
+    }
   }
+  .me-auto{
+    @include phone{
+      display: none;
+     }
   }
+  .navbar-brand{
+    @include phone{
+      margin-top: 5px;
+    }
+  }
+
+  .nav {
+    flex-direction: column;
+    margin-top: 6px;
+  }
+
+  .login-sec {
+    margin-top: 10px;
+    a {
+      padding: 10px 10px 10px 0;
+      ;
+      text-decoration: none;
+      color: #000;
+
+      &.active {
+        color: #e80a79;
+      }
+      @include phone{
+        font-size: 12px;
+        padding: 5px;
+      }
+    }
+    @include phone{
+      margin: 0;
+    }
+  }
+  .cart-logo {
+    a {
+      display: block;
+      text-decoration: none;
+      color: #000;
+
+      &.active {
+        color: #e80a79;
+      }
+      @include phone{
+        font-size: 14px;
+      }
+    }
+  }
+
   .logo-container {
     height: 100%;
     width: 70px;
-  }
-    .nav-link {
-      padding: 10px 15px;
-      margin: 25px 0;
-      cursor: pointer;
+    img{
+      @include phone{
+        width: 100px;
+      }
     }
+  }
+
+  .nav-link {
+    padding: 10px 15px;
+    margin: 25px 0;
+    cursor: pointer;
+  }
 }
