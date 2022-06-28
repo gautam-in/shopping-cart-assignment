@@ -1,4 +1,3 @@
-import { faBorderStyle } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { NavLink as Link } from "react-router-dom";
 import logo from "../static/images/logo.png";
@@ -11,7 +10,7 @@ function Header({ cartCounter }) {
         <div className="row d-md-none d-flex outline">
           <div className="col-6">
             <nav className="guestbar">
-              <ul className="guest-links">
+              <ul className="guest-links" data-testid="guest-link">
                 <li>
                   <Link to="/" className="fs-small">
                     Home
@@ -103,6 +102,7 @@ function Header({ cartCounter }) {
             </nav>
             <button
               type="button"
+              data-testid="cart-button"
               className="cart d-flex justify-content-between align-items-center"
               onClick={() => {
                 let cartPanel = document.getElementById("cartPanel");

@@ -67,7 +67,7 @@ const LoginForm = () => {
     >
       {(formik) => (
         <>
-          <Form>
+          <Form role={"form"}>
             <TextField name="email" type="email" label="Email" id="email" />
             <TextField
               name="password"

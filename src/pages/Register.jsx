@@ -71,7 +71,7 @@ const RegisterForm = () => {
     >
       {(formik) => (
         <>
-          <Form>
+          <Form role={"form"}>
             <TextField
               name="firstName"
               type="text"
