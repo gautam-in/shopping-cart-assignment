@@ -1,0 +1,43 @@
+.login-wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 2rem 0;
+
+}
+.login-wrapper > p {
+    text-align: center;
+}
+.login-form-wrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.login-form-wrapper > label > p {
+    margin-bottom: 0.2rem;
+    transition: ease 0.5s;
+}
+.login-form-btn {
+    background-color: #D90467;
+    color: whitesmoke;
+    border: 0;
+}
+.login-form-input {
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid grey;
+    width: 15rem;
+}
+
+.login-input > p{
+    position: relative;
+    top: 0.5rem;
+}
+.login-input:focus-within > p {
+    color: #4ED9D9;
+    top: -0.5rem;
+}
+.login-input:focus-within > input {
+    border-bottom: 2px solid #4ED9D9;
+}

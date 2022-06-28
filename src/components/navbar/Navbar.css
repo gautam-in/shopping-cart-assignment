@@ -1,0 +1,111 @@
+.header-nav-wrapper {
+}
+.navbar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin: 0.5rem auto;
+    border-bottom: 2px solid rgb(191, 190, 190);
+}   
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar-inner-first {
+    display: flex;
+    gap: 1rem;
+    align-items:baseline;
+}
+.navbar-first-links {
+    display: flex;
+    gap: 1rem;
+    align-items:baseline;
+}
+.navbar-inner-second {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.navbar-logo {
+    height:2rem;
+    width: 4rem;
+}
+.navbar-cart-logo {
+    height: 1.5rem;
+    width: 2rem;
+}
+.navbar-authlinks-wrapper {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+.nav-cart-items {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background-color: rgb(224, 223, 223);
+    padding: 0.2rem;
+    font-size: inherit;
+}
+@media only screen and (min-width: 450px){
+    .navbar-inner-first {
+        gap: 2rem;
+    }
+    .navbar-logo {
+        height:3rem;
+        width: 6rem;
+    }
+    .navbar-cart-logo {
+        height: 2rem;
+        width: 2rem;
+    }
+    .navbar-wrapper { 
+        font-size: 1rem;
+        width: 90%;
+        margin: 1rem auto;
+    }
+    .nav-cart-items {
+        padding: 0.2rem 0.4rem;
+    }
+    .navbar-first-links {
+        gap: 1.5rem;
+    }
+}
+@media only screen and (min-width: 650px){
+    .navbar-logo {
+        height:4rem;
+        width: 8rem;
+    }
+    .navbar-wrapper { 
+        width: 80%;
+    }
+    .navbar-inner-first {
+        gap: 3rem;
+    }
+    .navbar-first-links {
+        gap: 2rem;
+    }
+    .nav-cart-items {
+        padding: 0.4rem 0.5rem;
+    }
+}
+@media only screen and (min-width: 950px){
+    .navbar-logo {
+        height:5rem;
+        width: 10rem;
+    }
+    .navbar-wrapper { 
+        width: 75%;
+    }
+    .navbar-inner-first {
+        gap: 8rem;
+    }
+    .navbar-first-links {
+        gap: 3rem;
+    }
+    .nav-cart-items {
+        padding: 1rem 1.5rem;
+    }
+}
