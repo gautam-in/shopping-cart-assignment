@@ -1,6 +1,9 @@
-@import '../common.scss';
+@import '../common_mixin.scss';
 
 .form-sec {
+    .form-group{
+        margin-bottom: 20px;
+    }
     .signup-data {
         padding: 40px;
 

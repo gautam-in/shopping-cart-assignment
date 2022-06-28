@@ -1,4 +1,4 @@
-@import '../../common.scss';
+@import '../../common_mixin.scss';
 
 .cart-section {
   
@@ -19,9 +19,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
       flex-direction: column;
-
       .nocart {
         font-weight: 600;
         font-size: 16px;
@@ -45,13 +43,12 @@
     }
 
     .cart-items {
-      padding: 30px 15px;
+      padding: 20px 15px;
       display: flex;
       background: white;
       margin-top: 16px;
       justify-content: center;
       align-items: center;
-
       .item-img {
         width: 120px;
       }

@@ -63,28 +63,28 @@ const SignUp = () => {
                 <Col md={4}>
                     <Form onSubmit={handleSubmit} >
                         <div className='form-group'>
-                            <label>First Name</label>
-                            <input type="text" className={errors.firstname ? 'error-border' : ''} name="firstname" value={formValues.firstname} onChange={handleChange} />
+                            
+                            <input type="text" placeholder='First Name' className={errors.firstname ? 'error-border' : ''} name="firstname" value={formValues.firstname} onChange={handleChange} />
                             <p className='error'>{errors.firstname}</p>
                         </div>
                         <div className='form-group'>
-                            <label>Last Name</label>
-                            <input type="text" className={errors.lastname ? 'error-border' : ''} name="lastname" value={formValues.lastname} onChange={handleChange} />
+                          
+                            <input type="text" placeholder='Last Name' className={errors.lastname ? 'error-border' : ''} name="lastname" value={formValues.lastname} onChange={handleChange} />
                             <p className='error'>{errors.lastname}</p>
                         </div>
                         <div className='form-group'>
-                            <label>Email</label>
-                            <input type="text" className={errors.email ? 'error-border' : ''} name="email" value={formValues.email} onChange={handleChange} />
+                           
+                            <input type="text" placeholder='Email' className={errors.email ? 'error-border' : ''} name="email" value={formValues.email} onChange={handleChange} />
                             <p className='error'>{errors.email}</p>
                         </div>
                         <div className='form-group'>
-                            <label>Password</label>
-                            <input type="password" className={errors.password ? 'error-border' : ''} name="password" value={formValues.password} onChange={handleChange} />
+                          
+                            <input type="password" placeholder='Password' className={errors.password ? 'error-border' : ''} name="password" value={formValues.password} onChange={handleChange} />
                             <p className='error'>{errors.password}</p>
                         </div>
                         <div className='form-group'>
-                            <label>Confirm password</label>
-                            <input type="text" className={errors.confirmpassword ? 'error-border' : ''} name="confirmpassword" value={formValues.confirmpassword} onChange={handleChange} />
+                            
+                            <input type="text" placeholder='Confirm password' className={errors.confirmpassword ? 'error-border' : ''} name="confirmpassword" value={formValues.confirmpassword} onChange={handleChange} />
                             <p className='error'>{errors.confirmpassword}</p>
                         </div>
                         <button type="submit" className='btn-cls login-btn'>Signup</button>

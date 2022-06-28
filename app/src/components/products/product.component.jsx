@@ -61,6 +61,7 @@ const Products = () => {
                             name="categories"
                             onChange={handleChange}
                             defaultValue={"Categories"}
+                            value={id}
                         >
                             <option value="Categories" disabled>
                                 Categories

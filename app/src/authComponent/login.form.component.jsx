@@ -50,13 +50,13 @@ const Login = () => {
                 <Col md={4}>
                     <Form onSubmit={handleSubmit} >
                         <div className='form-group'>
-                            <label>Email</label>
-                            <input type="text" className={errors.email ? 'error-border' : ''} name="email" value={formValues.email} onChange={handleChange} />
+                        
+                            <input type="text" placeholder='Email' className={errors.email ? 'error-border' : ''} name="email" value={formValues.email} onChange={handleChange} />
                             <p className='error'>{errors.email}</p>
                         </div>
                         <div className='form-group'>
-                            <label>Password</label>
-                            <input type="password" className={errors.password ? 'error-border' : ''} name="password" value={formValues.password} onChange={handleChange} />
+                           
+                            <input type="password" placeholder='Password' className={errors.password ? 'error-border' : ''} name="password" value={formValues.password} onChange={handleChange} />
                             <p className='error'>{errors.password}</p>
                         </div>
                         <button type="submit" className='btn-cls login-btn'>Login</button>
