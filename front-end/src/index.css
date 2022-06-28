@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Dosis', sans-serif;
+}
+
+
+@media only screen and (max-width: 767px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+.error-color {
+    color: red;
+    font-size: 10px;
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+}

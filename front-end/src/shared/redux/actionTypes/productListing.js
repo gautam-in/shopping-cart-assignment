@@ -1,0 +1,3 @@
+export const PRODUCTS_ACTION_TYPES = {
+    FETCH_PRODUCTS: 'FETCH_PRODUCTS',
+};
