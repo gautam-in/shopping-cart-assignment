@@ -20,28 +20,28 @@ const SignUp = () => {
         setIsSubmit(true);
     }
     const validate = (values) => {
-        const errors = {};
+        const formerrors = {};
         const regx = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
         if (!values.firstname) {
-            errors.firstname = 'Firstname is required';
+            formerrors.firstname = 'Firstname is required';
         }
         if (!values.lastname) {
-            errors.lastname = 'Lastname is required';
+            formerrors.lastname = 'Lastname is required';
         }
         if (!values.email) {
-            errors.email = 'Email is required';
+            formerrors.email = 'Email is required';
         } else if (!regx.test(values.email)) {
-            errors.email = 'This is not valid email format';
+            formerrors.email = 'This is not valid email format';
         }
         if (!values.password) {
-            errors.password = 'Password is required';
+            formerrors.password = 'Password is required';
         }
         if (!values.confirmpassword) {
-            errors.confirmpassword = 'Confirm password is required';
+            formerrors.confirmpassword = 'Confirm password is required';
         } else if (values.password !== values.confirmpassword) {
-            errors.confirmpassword = 'Password entered did not match!'
+            formerrors.confirmpassword = 'Password entered did not match!'
         }
-        return errors;
+        return formerrors;
     }
 
     useEffect(() => {

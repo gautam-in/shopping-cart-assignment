@@ -1,12 +1,10 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { connect } from 'react-redux';
+import { useEffect,useState } from "react";
+import { connect,useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { decrementItem, incrementItem, removeItem } from "../../store/actions/cart.action";
 import './cart.scss';
 
-const Cart = ({ props, cartItems }) => {
+const Cart = ({  cartItems }) => {
   const dispatch = useDispatch()
   const navigate = useNavigate();
   const [totalPrice, setTotalPrice] = useState(null)
@@ -25,11 +23,11 @@ const Cart = ({ props, cartItems }) => {
     dispatch(removeItem(id))
   }
 
-  const increment = (data, i) => {
+  const increment = (data) => {
     dispatch(incrementItem(data))
 
   }
-  const decrement = (data, i) => {
+  const decrement = (data) => {
     dispatch(decrementItem(data))
   }
   
@@ -39,7 +37,7 @@ const Cart = ({ props, cartItems }) => {
       <div className="cart-popup">
         <h4>  My Cart <span>({cartItems && cartItems.length} item)</span></h4>
         <div className="cart-content">
-          {cartItems && cartItems.length > 0 && cartItems.map((items, i) => {
+          {cartItems && cartItems.length > 0 && cartItems.map((items) => {
             return (
               <div className="cart-items" key={items.id}>
                 <img
@@ -52,10 +50,10 @@ const Cart = ({ props, cartItems }) => {
                   <div className="price-section">
                     <div className="price-section-calculator">
                       <button className={items.count === 1 ? "price-btn disable" : "price-btn"}
-                        onClick={() => decrement(items && items, i)}
+                        onClick={() => decrement(items)}
                       >-</button>{items.count}
                       <button className="price-btn"
-                        onClick={() => increment(items && items, i)}
+                        onClick={() => increment(items)}
                       >+</button>
                       <span
                         onClick={() => removeCartItem(items)}
@@ -91,7 +89,7 @@ const Cart = ({ props, cartItems }) => {
               Promo code can be applied on payment page.
             </span>
             <button className="btn-cls">
-              Proceed to checkout Rs.{totalPrice && totalPrice}
+              Proceed to checkout Rs.{totalPrice}
             </button>
           </div> :
             <div className="checkout-btn-sec shopping-btn">

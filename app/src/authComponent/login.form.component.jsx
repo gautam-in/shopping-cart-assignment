@@ -19,17 +19,17 @@ const Login = () => {
         setIsSubmit(true);
     }
     const validate = (values) => {
-        const errors = {};
+        const formerrors = {};
         const regx = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
         if (!values.email) {
-            errors.email = 'Email is required';
+            formerrors.email = 'Email is required';
         } else if (!regx.test(values.email)) {
-            errors.email = 'This is not valid email format';
+            formerrors.email = 'This is not valid email format';
         }
         if (!values.password) {
-            errors.password = 'Password is required';
+            formerrors.password = 'Password is required';
         }
-        return errors;
+        return formerrors;
     }
 
     useEffect(() => {

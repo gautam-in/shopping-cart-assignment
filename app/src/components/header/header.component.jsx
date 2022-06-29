@@ -1,7 +1,6 @@
 import './navigation.scss';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet,useLocation } from 'react-router-dom';
 import { Nav, Navbar } from 'react-bootstrap';
-import { useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import Footer from '../footer/footer';
 import { Fragment } from 'react';
