@@ -1,0 +1,81 @@
+.banner-index-btn {
+    margin: 1rem;
+    color: rgb(201, 198, 198)
+}
+.home-banner-image {
+    width: 100%;
+    margin:auto;
+    height: auto;
+    object-fit: cover;
+}
+.home-banner-wrapper {
+    text-align: center;
+    position: relative;
+}
+.banner-active {
+    color: #333
+}
+.banner-left-arrow, .banner-right-arrow {
+    position: absolute;
+    top: 35%;
+    cursor: pointer;
+}
+.banner-left-arrow {
+    left: 0.1rem;
+}
+.banner-right-arrow {
+    right: 0.1rem;
+}
+.cat-wrapper {
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    margin: 1rem;
+    
+}
+.cat-text-wrapper {
+    width: 70%;
+    flex-direction: column;
+    gap: 1rem;
+}
+.cat-image-wrapper {
+    width: 30%;
+}
+.explore-deals-btn {
+    width: 70%;
+    background-color: #D90467;
+    color: whitesmoke;
+    margin: auto;
+}
+.home-cat-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+}
+@media only screen and (min-width: 650px){
+    .home-banner-wrapper { 
+        width: 80%;
+        margin: auto;
+    }
+    .banner-left-arrow, .banner-right-arrow { 
+        font-size: 1.5rem;
+    }
+    .cat-wrapper {
+        width: 80%;
+        margin: auto;
+    }
+}
+@media only screen and (min-width: 950px){
+    .home-banner-wrapper { 
+        width: 75%;
+    }
+    .banner-left-arrow, .banner-right-arrow { 
+        font-size: 2rem;
+    }
+    .cat-wrapper {
+        width: 75%;
+    }
+    .cat-text-wrapper {
+        gap: 2.5rem;
+    }
+
+}
