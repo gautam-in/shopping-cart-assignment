@@ -11,7 +11,7 @@
     "react-start": "react-scripts start",
     "production": "concurrently \"npm run build && serve -s build -p 5000\" \"canned -p 8000 ./server/api\""
   },
-  "author": "",
+  "author": "Raj Ghosh",
   "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
