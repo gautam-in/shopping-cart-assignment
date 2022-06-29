@@ -9,9 +9,6 @@ import { BrowserRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 import Login from "../pages/Login";
 
-const getById = queryByAttribute.bind("id", null);
-const getAllByClass = queryAllByAttribute.bind("class", null);
-
 test("Login page contains form element", () => {
   render(
     <BrowserRouter>
@@ -22,6 +19,7 @@ test("Login page contains form element", () => {
   const form = screen.getByRole("form");
   expect(form).toBeInTheDocument();
 });
+
 test("Login page contains form elements and it contains required input fields with type: email, and password", () => {
   render(
     <BrowserRouter>
@@ -31,8 +29,15 @@ test("Login page contains form elements and it contains required input fields wi
 
   const email = screen.getByLabelText(/email/i);
   const password = screen.getByLabelText(/password/i);
+  // Email
   expect(email).toHaveAttribute("type", "email");
+  expect(email).toHaveAttribute("class", "input-fields");
+  // Email
+
+  // Password
   expect(password).toHaveAttribute("type", "password");
+  expect(password).toHaveAttribute("class", "input-fields");
+  // Password
 });
 
 test("Login page contains button with type submit", () => {
@@ -46,7 +51,7 @@ test("Login page contains button with type submit", () => {
   expect(button).toHaveAttribute("type", "submit");
 });
 
-test("On invalid input, input fields has invalid class", () => {
+test("While form is empty and button is pressed, labels has invalid class", () => {
   render(
     <BrowserRouter>
       <Login />
@@ -54,15 +59,16 @@ test("On invalid input, input fields has invalid class", () => {
   );
 
   const button = screen.getByRole("button", { name: "Login" });
-  const inputs = screen.queryAllByAttribute("class", "input", "input-fields");
+  const labels = screen.getAllByRole("group");
+
   userEvent.click(button).then(() => {
-    inputs.forEarch((field) => {
-      console.log(field);
+    labels.forEach((label) => {
+      expect(label).toHaveAttribute("class", /invalid/i);
     });
   });
 });
 
-test("Page is validating while clicking on submit button", () => {
+test("Upon typing invalid email, and submitting the form should show invalid email error", () => {
   render(
     <BrowserRouter>
       <Login />
@@ -70,5 +76,15 @@ test("Page is validating while clicking on submit button", () => {
   );
 
   const button = screen.getByRole("button", { name: "Login" });
-  console.log("step 3");
+  const labels = screen.getAllByRole("group");
+  const email = screen.getByLabelText(/email/i);
+
+  // Typing email in email address field
+  userEvent.type(email, "rajghosh").then(() => {
+    userEvent.click(button).then(() => {
+      labels.forEach((label) => {
+        expect(label).toHaveAttribute("class", /invalid/i);
+      });
+    });
+  });
 });
