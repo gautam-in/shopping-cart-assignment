@@ -21,9 +21,8 @@ const Navigation = () => {
             <div className='header-section'>
                 <div className="container">
                     <div className='navigation'>
-
                         <Navbar.Brand >
-                            <Link to="/" className='logo-container'><img src="static/images/logo.png" alt="logo" /></Link>
+                            <Link to="/" className='logo-container'><img src="static/images/logo.png" alt="sabka bazar" /></Link>
                         </Navbar.Brand>
 
                         <Nav className="me-auto">
