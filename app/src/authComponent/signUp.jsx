@@ -1,11 +1,12 @@
-import React, {  useEffect, useState } from 'react';
-import { Col, Form,  Row } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Col, Form, Row, Toast } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
 import './form.scss';
 
 const SignUp = () => {
     const initialValue = { firstname: "", lastname: "", email: "", password: "", confirmpassword: "" };
     const [formValues, setFormValues] = useState(initialValue);
+    const [show, setToast] = useState(false);
     const [errors, setErrors] = useState(false);
     const [isSubmit, setIsSubmit] = useState(false)
     const navigate = useNavigate();
@@ -45,11 +46,20 @@ const SignUp = () => {
     }
 
     useEffect(() => {
-        console.log(errors)
         if (Object.keys(errors).length === 0 && isSubmit) {
-            navigate('/')
+            console.log(formValues)
+            setToast(true)
+            localStorage.setItem('email', formValues.email);
+            localStorage.setItem('password', formValues.password);
+            setTimeout(() => {
+                gotoLogin()
+            }, 500);
         }
     }, [errors])
+
+    const gotoLogin = () => {
+        navigate('/login')
+    }
 
     return (
         <div className='form-sec'>
@@ -63,32 +73,34 @@ const SignUp = () => {
                 <Col md={4}>
                     <Form onSubmit={handleSubmit} >
                         <div className='form-group'>
-                            
                             <input type="text" placeholder='First Name' className={errors.firstname ? 'error-border' : ''} name="firstname" value={formValues.firstname} onChange={handleChange} />
                             <p className='error'>{errors.firstname}</p>
                         </div>
                         <div className='form-group'>
-                          
+
                             <input type="text" placeholder='Last Name' className={errors.lastname ? 'error-border' : ''} name="lastname" value={formValues.lastname} onChange={handleChange} />
                             <p className='error'>{errors.lastname}</p>
                         </div>
                         <div className='form-group'>
-                           
+
                             <input type="text" placeholder='Email' className={errors.email ? 'error-border' : ''} name="email" value={formValues.email} onChange={handleChange} />
                             <p className='error'>{errors.email}</p>
                         </div>
                         <div className='form-group'>
-                          
+
                             <input type="password" placeholder='Password' className={errors.password ? 'error-border' : ''} name="password" value={formValues.password} onChange={handleChange} />
                             <p className='error'>{errors.password}</p>
                         </div>
                         <div className='form-group'>
-                            
-                            <input type="text" placeholder='Confirm password' className={errors.confirmpassword ? 'error-border' : ''} name="confirmpassword" value={formValues.confirmpassword} onChange={handleChange} />
+                            <input type="password" placeholder='Confirm password' className={errors.confirmpassword ? 'error-border' : ''} name="confirmpassword" value={formValues.confirmpassword} onChange={handleChange} />
                             <p className='error'>{errors.confirmpassword}</p>
                         </div>
                         <button type="submit" className='btn-cls login-btn'>Signup</button>
                     </Form>
+                    <p>Already have an account ? <Link to="/login">Login</Link></p>
+                    <Toast bg="success" autohide onClose={() => setToast(false)} show={show} delay={300}>
+                        <Toast.Body>Successfully registered!!</Toast.Body>
+                    </Toast>
                 </Col>
             </Row>
         </div>

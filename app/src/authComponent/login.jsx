@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './form.scss';
 
 const Login = () => {
-    const initialValue = {  email: "", password: "" };
+    const initialValue = { email: "", password: "" };
     const [formValues, setFormValues] = useState(initialValue);
     const [errors, setErrors] = useState(false);
     const [isSubmit, setIsSubmit] = useState(false)
@@ -21,13 +21,20 @@ const Login = () => {
     const validate = (values) => {
         const formerrors = {};
         const regx = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+        const useremail = localStorage.getItem('email');
+        const userpassword = localStorage.getItem('password');
+        console.log(useremail, userpassword)
         if (!values.email) {
             formerrors.email = 'Email is required';
         } else if (!regx.test(values.email)) {
             formerrors.email = 'This is not valid email format';
+        } else if (useremail !== values.email) {
+            formerrors.email = `email did not match`;
         }
         if (!values.password) {
             formerrors.password = 'Password is required';
+        } else if (userpassword !== values.password) {
+            formerrors.password = `Password did not match`;
         }
         return formerrors;
     }
@@ -50,12 +57,12 @@ const Login = () => {
                 <Col md={4}>
                     <Form onSubmit={handleSubmit} >
                         <div className='form-group'>
-                        
+
                             <input type="text" placeholder='Email' className={errors.email ? 'error-border' : ''} name="email" value={formValues.email} onChange={handleChange} />
                             <p className='error'>{errors.email}</p>
                         </div>
                         <div className='form-group'>
-                           
+
                             <input type="password" placeholder='Password' className={errors.password ? 'error-border' : ''} name="password" value={formValues.password} onChange={handleChange} />
                             <p className='error'>{errors.password}</p>
                         </div>
