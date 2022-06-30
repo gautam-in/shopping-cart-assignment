@@ -1,13 +1,12 @@
 import axios from "axios"
 
-export const getFetch = (url, stateSetter) => {
-    (async () => {
+export const getFetch = async (url) => {
         try {
             const response = await axios.get(url)
-            stateSetter(() => response.data)
+            return response.data
         }
         catch(err) {
             console.log(err)
         }
-    })()
+
 }

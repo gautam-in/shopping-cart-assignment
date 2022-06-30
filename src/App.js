@@ -1,5 +1,5 @@
 import './App.css';
-import { Login, Navbar, Signup, Home } from './components/index-components';
+import { Login, Navbar, Signup, Home, Products } from './components/index-components';
 import { Route, Routes } from 'react-router-dom';
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
         <Route path = "/" element = {<Home />} />
         <Route path = "login" element = {<Login />} />
         <Route path = "signup" element = {<Signup />} />
+        <Route path = "products" element = {<Products />} />
       </Routes>
     </div>
   );

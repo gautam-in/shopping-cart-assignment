@@ -1,15 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import "./Home.css"
-import { getFetch } from '../../customHooks/useFetch'
+import { getFetch } from '../../customHooks/getFetch'
 import { CategoryItem } from "./../index-components"
+import { useProducts } from '../../context/productContext'
 
 const Home = () => {
     const [bannerData, setBannerData] = useState([])
     const [currentBannerIndex, setCurrentBannerIndex] = useState(0)
-    const [categoriesData, setCategoriesData] = useState([])
+    const { productState } = useProducts()
+    const { categoryData } = productState
     useEffect(() => {
-        getFetch("http://localhost:4000/bannersJSON", setBannerData)
-        getFetch("http://localhost:4000/categoriesJSON", setCategoriesData)
+        (async () => {
+            try {
+                const bannerServerData = await getFetch("http://localhost:4000/bannersJSON")
+                setBannerData(() => bannerServerData)
+            }
+            catch (e) {
+                console.log(e)
+            }
+        })()
     },[])
     const changeBannerHandler = (index) => {
         setCurrentBannerIndex(() => index)
@@ -46,7 +55,7 @@ const Home = () => {
         </div>
         <div className = "flex home-cat-wrapper">
             {
-                categoriesData.map((item) => {
+                categoryData.map((item) => {
                     return <CategoryItem key = {item.id} item = {item}/>
                 })
             }

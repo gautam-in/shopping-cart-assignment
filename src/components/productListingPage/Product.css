@@ -1,0 +1,125 @@
+.productInfo-wrapper {
+    padding: 1rem 0;
+    gap: 0.3rem;
+    align-items: center;
+}
+.product-text-wrapper {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    margin:0 auto;
+}
+.product-img-wrapper {
+    width: 40%;
+    margin: auto;
+}
+.product-image {
+    width: 80%;
+    height: 100%;
+    object-fit: contain;
+}
+.product-description {
+    padding: 0.4rem;
+    background-color: rgb(211, 211, 211);
+}
+.product-buy-btn, .buy-btn{
+    background-color: #D90467;
+    color: whitesmoke;
+    border: 0;
+    padding: 0.5rem 1rem;
+}
+.buy-btn {
+    display: none;
+}
+.product-wrapper {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 12rem;
+}
+.product-filter-wrapper {
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: #D90467;
+}
+.filter-clear-btn {
+    padding: 0.5rem;
+    background-color: transparent;
+    border: 0;
+    text-decoration: underline;
+    font-size: 1.2rem;
+    color: whitesmoke;
+}
+.product-filter-select {
+    border: 0;
+    background-color: #D90467;
+    outline: 0;
+    color: whitesmoke;
+    font-size: 1.2rem;
+}
+.product-filter-sidebar {
+    display: none;
+}
+.product-main-container {
+    flex-direction: column;
+}
+
+
+@media only screen and (min-width: 768px){
+    .product-filter-wrapper, .product-buy-btn {
+        display: none;
+    }
+    .buy-btn {
+        display: inline;
+        width: 100%;
+    }
+    .product-filter-sidebar {
+        display: flex;
+        flex-direction: column;
+        min-width: 12rem;
+        background-color: rgb(217, 213, 213);
+        height: 100vh;
+    }
+    .product-main-container {
+        flex-direction: row;
+        height: 100vh;
+    }
+    .filter-btn {
+        padding: 1rem;
+        border: 0;
+        border-bottom: 1px solid grey;
+        background-color: rgb(217, 213, 213);
+    }
+    .single-product-container {
+        overflow-y: scroll;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 20rem;
+        align-items: baseline;
+    }
+    .product-wrapper {
+        height: 18rem;
+    }
+}
+@media only screen and (min-width: 920px){ 
+    .single-product-container { 
+        grid-template-columns: 1fr 1fr 1fr ;
+        
+    }
+
+}
+@media only screen and (min-width: 1200px){ 
+    .single-product-container { 
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .product-main-container {
+        width: 75%;
+        margin: auto;
+    }
+
+}
+.active {
+    background-color: #D90467;
+    color: whitesmoke
+  }

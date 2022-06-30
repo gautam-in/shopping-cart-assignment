@@ -22,7 +22,7 @@ const Login = () => {
     }
     return errorObject
   }
-  const loginClickHandler = (event) => {
+  const loginClickHandler = () => {
     const formError = validateForm()
     if(!formError.email && !formError.password){
       setError(() => ({email:"", password:""}))

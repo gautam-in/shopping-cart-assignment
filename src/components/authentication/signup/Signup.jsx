@@ -31,7 +31,7 @@ const Signup = () => {
     }
     return errorObject
   }
-  const loginClickHandler = (event) => {
+  const loginClickHandler = () => {
     const formError = validateForm()
     if(Object.values(formError).length < 1){
       setError(() => ({}))
