@@ -4,6 +4,7 @@ import { Col, Row } from 'react-bootstrap';
 import ProductCard from './product-card';
 import './product.scss'
 import { useLocation } from "react-router-dom";
+import { ProductsURL, CategoryURL } from '../../store/url/api';
 
 const Products = () => {
     const location = useLocation();
@@ -17,9 +18,9 @@ const Products = () => {
             location.state = null;
         }
         const fetchData = async () => {
-            const categories = await axios.get('http://localhost:8000/categories');
+            const categories = await axios.get(CategoryURL);
             setCategoryData(categories.data);
-            const res = await axios.get('http://localhost:8000/products');
+            const res = await axios.get(ProductsURL);
             filterProducts(res.data);
         };
         fetchData();

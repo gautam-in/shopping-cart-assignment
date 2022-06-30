@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './home.scss';
+import { BannerURL, CategoryURL } from '../../store/url/api';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -10,8 +11,8 @@ const Home = () => {
     const [categories, setCategory] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            const bannersdata = await axios.get('http://localhost:8000/banners');
-            const category = await axios.get('http://localhost:8000/categories');
+            const bannersdata = await axios.get(BannerURL);
+            const category = await axios.get(CategoryURL);
             setBanners(bannersdata.data);
             setCategory(category.data)
         }

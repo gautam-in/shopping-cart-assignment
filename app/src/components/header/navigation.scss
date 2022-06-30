@@ -20,11 +20,11 @@
     margin: 25px 0;
     cursor: pointer;
     &.active {
-      color: #e80a79;
+      color: #d1056b;
     }
 
     &:hover {
-      color: #e80a79;
+      color: #d1056b;
     }
   }
   .me-auto{
@@ -51,7 +51,7 @@
       color: #000;
 
       &.active {
-        color: #e80a79;
+        color: #d1056b;
       }
       @include phone{
         font-size: 12px;
@@ -69,7 +69,7 @@
       color: #000;
 
       &.active {
-        color: #e80a79;
+        color: #d1056b;
       }
       @include phone{
         font-size: 14px;

@@ -23,7 +23,6 @@ const Login = () => {
         const regx = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
         const useremail = localStorage.getItem('email');
         const userpassword = localStorage.getItem('password');
-        console.log(useremail, userpassword)
         if (!values.email) {
             formerrors.email = 'Email is required';
         } else if (!regx.test(values.email)) {
@@ -33,7 +32,8 @@ const Login = () => {
         }
         if (!values.password) {
             formerrors.password = 'Password is required';
-        } else if (userpassword !== values.password) {
+        }
+        else  if (userpassword !== values.password) {
             formerrors.password = `Password did not match`;
         }
         return formerrors;
