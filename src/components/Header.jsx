@@ -12,12 +12,12 @@ function Header({ cartCounter }) {
             <nav className="guestbar">
               <ul className="guest-links" data-testid="guest-link">
                 <li>
-                  <Link to="/" className="fs-small">
+                  <Link to="/" className="fs-small" title="Home">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/products" className="fs-small">
+                  <Link to="/products" className="fs-small" title="Products">
                     Products
                   </Link>
                 </li>
@@ -28,12 +28,12 @@ function Header({ cartCounter }) {
             <nav className="guestbar text-right">
               <ul className="guest-links">
                 <li>
-                  <Link to="/signin" className="fs-small">
+                  <Link to="/signin" className="fs-small" title="Sign In">
                     Sign In
                   </Link>
                 </li>
                 <li>
-                  <Link to="/register" className="fs-small">
+                  <Link to="/register" className="fs-small" title="Register">
                     Register
                   </Link>
                 </li>
@@ -81,6 +81,7 @@ function Header({ cartCounter }) {
                 <li>
                   <Link
                     to={"/signin"}
+                    title="Sign In"
                     className={({ isActive }) =>
                       isActive ? "fs-small active" : "fs-small"
                     }
@@ -91,6 +92,7 @@ function Header({ cartCounter }) {
                 <li>
                   <Link
                     to={"/register"}
+                    title="Register"
                     className={({ isActive }) =>
                       isActive ? "fs-small active" : "fs-small"
                     }

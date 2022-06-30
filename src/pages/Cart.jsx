@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CartHeader from "../components/cart/CartHeader";
 import CartFooter from "../components/cart/CartFooter";
 import CartItem from "../components/cart/CartItem";
 
 const Cart = ({ data, addToCart, deleteCartItem }) => {
+  useEffect(() => {
+    window.onkeyup = (event) => {
+      if (event.keyCode === 27) {
+        let panel = document.getElementById("cartPanel");
+        if (panel.classList.contains("active")) {
+          panel.classList.remove("active");
+          document.body.style.overflow = "auto";
+        }
+      }
+    };
+  }, []);
+
   return (
     <>
       <div
