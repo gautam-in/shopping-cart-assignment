@@ -10,9 +10,9 @@ const Home = () => {
     const [categories, setCategory] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            const banners = await axios.get('http://localhost:8000/banners');
+            const bannersdata = await axios.get('http://localhost:8000/banners');
             const category = await axios.get('http://localhost:8000/categories');
-            setBanners(banners.data);
+            setBanners(bannersdata.data);
             setCategory(category.data)
         }
         fetchData();

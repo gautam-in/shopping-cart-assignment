@@ -1,11 +1,11 @@
 import './App.scss';
 import Home from './components/home/home.component'
 import { Route, Routes } from 'react-router-dom';
-import Navigation from './components/header/header.component';
-import Products from './components/products/product.component';
+import Navigation from './components/header/navigation';
+import Products from './components/products/products';
 import Cart from './components/cart/cart.component';
-import SignUp from './authComponent/signup.form.component';
-import Login from './authComponent/login.form.component';
+import SignUp from './authComponent/signUp';
+import Login from './authComponent/login';
 
 
 function App() {

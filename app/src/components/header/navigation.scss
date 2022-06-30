@@ -16,7 +16,9 @@
   }
   .nav-link {
     color: #000;
-
+    padding: 10px 15px;
+    margin: 25px 0;
+    cursor: pointer;
     &.active {
       color: #e80a79;
     }
@@ -83,11 +85,5 @@
         width: 100px;
       }
     }
-  }
-
-  .nav-link {
-    padding: 10px 15px;
-    margin: 25px 0;
-    cursor: pointer;
   }
 }

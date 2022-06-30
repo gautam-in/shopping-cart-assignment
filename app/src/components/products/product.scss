@@ -107,8 +107,10 @@
             display: none;
         }
         .menu-btn{
-            padding: 10px;
             border-bottom: 1px dashed #ccc;
+            button{
+                padding: 10px;
+            }
             &.focusButton{
                 background-color: #ccc;
                 color: white;

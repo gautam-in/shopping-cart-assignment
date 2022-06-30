@@ -7,18 +7,18 @@ import { useLocation } from "react-router-dom";
 
 const Products = () => {
     const location = useLocation();
-    const [id, setId] = useState(null);
+    const [id, setCategory] = useState(null);
     const [productData, setproductData] = useState([]);
     const [category, setCategoryData] = useState([])
 
     useEffect(() => {
         if (location.state != null) {
-            setId(location.state.id);
+            setCategory(location.state.id);
             location.state = null;
         }
         const fetchData = async () => {
-            const category = await axios.get('http://localhost:8000/categories');
-            setCategoryData(category.data);
+            const categories = await axios.get('http://localhost:8000/categories');
+            setCategoryData(categories.data);
             const res = await axios.get('http://localhost:8000/products');
             filterProducts(res.data);
         };
@@ -26,11 +26,11 @@ const Products = () => {
     }, [id]);
 
     // set category id based on sidemenu
-    const setKey = (e) => {
+    const setCategoryId = (e) => {
         if (id !== e.target.id) {
-            setId(e.target.id);
+            setCategory(e.target.id);
         } else {
-            setId(null);
+            setCategory(null);
         }
     }
 
@@ -47,9 +47,9 @@ const Products = () => {
     const handleChange = (e) => {
         console.log(e.target.value)
         if (id !== e.target.value) {
-            setId(e.target.value);
+            setCategory(e.target.value);
         } else {
-            setId(null);
+            setCategory(null);
         }
     };
     return (
@@ -60,8 +60,7 @@ const Products = () => {
                         <select
                             name="categories"
                             onChange={handleChange}
-                            defaultValue={"Categories"}
-                            value={id}
+                            value={id ? id : " "}
                         >
                             <option value="Categories" disabled>
                                 Categories
@@ -81,7 +80,7 @@ const Products = () => {
                                     tabIndex={id && id !== item.id ? -1 : 0}
                                     name={item.name}
                                     id={item.id}
-                                    onClick={(e) => setKey(e)}
+                                    onClick={(e) => setCategoryId(e)}
                                 >
                                     {item.name}
                                 </button>
