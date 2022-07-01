@@ -1,11 +1,16 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import { getFetch } from '../customHooks/getFetch';
 import { productReducer } from './productReducer';
+import { useMediaQuery } from 'react-responsive'
+
 
 const ProductsContext = createContext()
 const useProducts = () => useContext(ProductsContext)
 const ProductsProvider = ({children}) => {
-    const [productState, dispatch] = useReducer(productReducer, { serverData:[], productsData:[], categoryData: [], categoryValue:"" })
+    const [productState, dispatch] = useReducer(productReducer, { serverData:[], productsData:[], categoryData: [], categoryValue:"", cartData: [], closeCartModel: true })
+    const isDesktopOrLaptop = useMediaQuery({
+        query: '(min-width: 1224px)'
+      })
     useEffect(() => {
         (async () => {
             try {
@@ -20,8 +25,9 @@ const ProductsProvider = ({children}) => {
             }
         })()
     },[])
+   
     return (
-        <ProductsContext.Provider value = {{ productState, dispatch}}>
+        <ProductsContext.Provider value = {{ productState, dispatch, isDesktopOrLaptop}}>
             {children}
         </ProductsContext.Provider>
     )

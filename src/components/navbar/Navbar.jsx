@@ -3,11 +3,16 @@ import { NavLink, Link } from 'react-router-dom'
 import "./Navbar.css"
 import logo from "./../../logo.png"
 import { useProducts } from '../../context/productContext'
+
 const Navbar = () => {
-    const { productState, dispatch } = useProducts()
+    const { productState, dispatch, isDesktopOrLaptop } = useProducts()
     const { serverData } = productState
+    
+    const toggleCarModelView = () => {
+        dispatch({type: "SET_CART_VIEW", payload: false})
+    }
   return (
-    <header className = "header-nav-wrapper">
+    <header className = "header-nav-wrapper bg-color">
         <nav className = "navbar-wrapper">
         <div className = "navbar-inner-first">
             <img src = {logo} alt = "sabka bazar logo" className = "navbar-logo"/>
@@ -21,7 +26,7 @@ const Navbar = () => {
                 <NavLink to = "/login" className = "nav-links">SignIn</NavLink>
                 <NavLink to = "/signup" className = "nav-links">Register</NavLink>
             </div>
-            <Link to = "" className = "nav-cart-items">
+            <Link to = {`${isDesktopOrLaptop ? "products/cart":"cart"}`} className = "nav-cart-items" onClick = { toggleCarModelView }>
                 <i className = "fa-solid fa-cart-shopping navbar-cart-logo"></i>
                 <span>Items</span>
             </Link>

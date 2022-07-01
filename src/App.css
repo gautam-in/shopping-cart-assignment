@@ -11,3 +11,14 @@
   cursor: pointer;
   border: 0;
 }
+.App {
+  background-color: rgb(209, 209, 209);
+  min-height: 100vh;
+}
+.bg-color {
+  background-color: white;
+}
+.btn-color {
+  color: whitesmoke;
+  background-color: #D90467;
+}

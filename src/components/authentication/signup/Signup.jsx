@@ -42,7 +42,7 @@ const Signup = () => {
     }
   }
   return (
-    <main className = "flex login-wrapper">
+    <main className = "flex login-wrapper bg-color">
         <div className = "flex login-header-wrapper">
           <h2>Signup</h2>
           <p>We do not share your personal details with anyone</p>

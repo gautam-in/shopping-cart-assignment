@@ -34,7 +34,7 @@ const Login = () => {
   }
   
   return (
-    <main className = "flex login-wrapper">
+    <main className = "flex login-wrapper bg-color">
         <div className = "flex login-header-wrapper">
           <h2>Login</h2>
           <p>Get access to your Orders, Wishlist and Recommendations</p>

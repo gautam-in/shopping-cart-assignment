@@ -42,7 +42,7 @@ const Home = () => {
         }
     }
   return (
-    <main>
+    <main className = "bg-color">
         <div className = "home-banner-wrapper">
             <img src = {bannerData[currentBannerIndex]?.bannerImageUrl} alt = "offer banner" className = "home-banner-image"/>
             {

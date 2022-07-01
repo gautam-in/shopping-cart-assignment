@@ -6,4 +6,7 @@ import CategoryItem from './home/CategoryItem';
 import Products from './productListingPage/Products';
 import Filter from './productListingPage/Filter';
 import SingleProduct from './productListingPage/SingleProduct';
-export { Navbar, Login, Signup, Home, CategoryItem, Products, Filter, SingleProduct }
+import Cart from './cart/Cart';
+import QuantityButton from './productListingPage/QuantityButton';
+import CartItem from './cart/CartItem';
+export { Navbar, Login, Signup, Home, CategoryItem, Products, Filter, SingleProduct, Cart, QuantityButton, CartItem }
