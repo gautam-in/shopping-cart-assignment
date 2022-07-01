@@ -31,7 +31,7 @@ const Cart = () => {
           <img src = {priceLabel} alt = "least price guaranteed" />
           <p>You won't find it cheaper anywhere</p>
         </div>
-        <div className =  {`bg-color ${isDesktopOrLaptop ? "checkout-text-wrapper":"checkout-text-wrapper"}`}>
+        <div className =  {`bg-color checkout-text-wrapper`}>
           <p>Promo code can be applied on payment page</p>
           <button className = "flex cart-checkout-btn btn-color">
             <span>Proceed to Checkout</span>

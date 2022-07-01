@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useReducer, useState } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import { getFetch } from '../customHooks/getFetch';
 import { productReducer } from './productReducer';
 import { useMediaQuery } from 'react-responsive'
