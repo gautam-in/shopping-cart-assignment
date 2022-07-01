@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import ProductCard from "../components/product/ProductCard";
 import { v4 } from "node-uuid";
@@ -48,17 +48,17 @@ function Products({ products, categories, addToCart }) {
 
   function RenderProducts() {
     let data = products.data.filter((item) => item.category === filterID);
+    
+    function mapFilteredData() {
+      return data.map((product) => <ProductCard addToCart={addToCart} data={product} key={v4()} />)
+    }
+    function mapProductsData() {
+      return products.data.map((product) => <ProductCard addToCart={addToCart} data={product} key={v4()} />)
+    }
+
     return data.length > 0
-      ? data.map((product) => {
-          return (
-            <ProductCard addToCart={addToCart} data={product} key={v4()} />
-          );
-        })
-      : products.data.map((product) => {
-          return (
-            <ProductCard addToCart={addToCart} data={product} key={v4()} />
-          );
-        });
+      ? mapFilteredData()
+      : mapProductsData();
   }
 
   function CategoryDropdown() {

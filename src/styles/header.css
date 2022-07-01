@@ -1,6 +1,9 @@
 /* Header */
 header {
   position: relative;
+  width: 100%;
+  background: white;
+  box-shadow: var(--shadow);
 }
 .navbar {
   margin-left: 50px;
@@ -50,11 +53,6 @@ a.active {
   object-fit: cover;
   object-position: center;
   padding: 5px;
-}
-header {
-  width: 100%;
-  background: white;
-  box-shadow: var(--shadow);
 }
 
 button.cart {

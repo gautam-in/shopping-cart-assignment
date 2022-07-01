@@ -8,8 +8,8 @@ class Server {
   async fetchProducts() {
     try {
       const res = await fetch(`${this.url}/products`, { method: "GET" });
-      const value = await res.json();
-      return value;
+      
+      return await res.json();
     } catch (err) {
       return err.message;
     }
@@ -18,9 +18,9 @@ class Server {
   async fetchBanners() {
     try {
       const res = await fetch(`${this.url}/banners`, { method: "GET" });
-      const value = await res.json();
+      
 
-      return value;
+      return await res.json();
     } catch (err) {
       return err.message;
     }
@@ -29,9 +29,9 @@ class Server {
   async fetchCategories() {
     try {
       const res = await fetch(`${this.url}/categories`, { method: "GET" });
-      const value = await res.json();
+      
 
-      return value;
+      return await res.json();
     } catch (err) {
       return err.message;
     }
@@ -43,8 +43,8 @@ class Server {
         method: "POST",
         body: `product_id=${product_id}`,
       });
-      const value = await res.json();
-      return value;
+      
+      return await res.json();
     } catch (err) {
       return err.message;
     }

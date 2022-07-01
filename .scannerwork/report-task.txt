@@ -1,6 +1,0 @@
-projectKey=React-Test
-serverUrl=http://localhost:9000
-serverVersion=9.5.0.56709
-dashboardUrl=http://localhost:9000/dashboard?id=React-Test
-ceTaskId=AYG5yoJ5wf2mvufSDGDz
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AYG5yoJ5wf2mvufSDGDz

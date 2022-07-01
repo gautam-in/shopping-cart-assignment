@@ -5,7 +5,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 const CartHeader = ({ counter }) => {
   return (
     <>
-      <div className="cart-header" onClick={() => {}}>
+      <div className="cart-header">
         <span className="header">
           <h3 className="d-inline-block me-2">My Cart</h3> ({counter} items)
         </span>

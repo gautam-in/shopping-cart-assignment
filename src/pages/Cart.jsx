@@ -6,13 +6,13 @@ import CartItem from "../components/cart/CartItem";
 const Cart = ({ data, addToCart, deleteCartItem }) => {
   useEffect(() => {
     window.onkeyup = (event) => {
-      if (event.keyCode === 27) {
+      if (event.code.toLowerCase() === "escape") {
         let panel = document.getElementById("cartPanel");
         if (panel.classList.contains("active")) {
           panel.classList.remove("active");
           document.body.style.overflow = "auto";
         }
-      }
+      }      
     };
   }, []);
 

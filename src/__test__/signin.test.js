@@ -1,9 +1,7 @@
 import "@testing-library/jest-dom";
 import {
   screen,
-  render,
-  queryByAttribute,
-  queryAllByAttribute,
+  render
 } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";

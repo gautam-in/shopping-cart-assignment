@@ -63,3 +63,4 @@ typings/
 # Build
 build/
 sonar-scanner.txt
+.scannerwork/
