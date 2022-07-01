@@ -20,8 +20,8 @@ const Products = () => {
         const fetchData = async () => {
             const categories = await axios.get(CategoryURL);
             setCategoryData(categories.data);
-            const res = await axios.get(ProductsURL);
-            filterProducts(res.data);
+            const products = await axios.get(ProductsURL);
+            filterProducts(products.data);
         };
         fetchData();
     }, [id]);
@@ -38,10 +38,9 @@ const Products = () => {
     // filter products based on sidemenu select
     const filterProducts = (data) => {
         if (id !== null) {
-            let res = data.filter((item) => item.category === id);
-            setproductData(res);
+            let filteredValue = data.filter((item) => item.category === id);
+            setproductData(filteredValue);
         } else {
-            console.log("id", data, id)
             setproductData(data);
         }
     };
@@ -55,7 +54,7 @@ const Products = () => {
     };
     return (
         <div className='products-section'>
-            <Row >
+            <Row>
                 <Col sm={3}>
                     <div className="sidemenuSelect">
                         <select

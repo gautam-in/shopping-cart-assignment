@@ -83,7 +83,7 @@ const SignUp = () => {
                         </div>
                         <div className='form-group'>
 
-                            <input type="text" placeholder='Email' className={errors.email ? 'error-border' : ''} name="email" value={formValues.email} onChange={handleChange} />
+                            <input type="email" placeholder='Email' className={errors.email ? 'error-border' : ''} name="email" value={formValues.email} onChange={handleChange} />
                             <p className='error'>{errors.email}</p>
                         </div>
                         <div className='form-group'>
