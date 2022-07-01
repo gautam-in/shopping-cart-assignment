@@ -1,6 +1,6 @@
 import React from "react";
 
-function Footer(props) {
+function Footer(_props) {
   return (
     <footer data-testid="footer">
       <div className="container-md mx-auto">

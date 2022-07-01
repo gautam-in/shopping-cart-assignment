@@ -65,7 +65,7 @@ const LoginForm = () => {
         _authenticate();
       }}
     >
-      {(formik) => (
+      {(_formik) => (
         <>
           <Form role={"form"}>
             <TextField name="email" type="email" label="Email" id="email" />
@@ -91,7 +91,7 @@ const LoginForm = () => {
   );
 };
 
-function Login(props) {
+function Login(_props) {
   return (
     <div
       className="py-5 px-md-5 px-3 login-wrapper d-flex justify-content-center align-items-center"

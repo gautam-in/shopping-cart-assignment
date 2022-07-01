@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink as Link } from "react-router-dom";
 import logo from "../static/images/logo.png";
-// import cartIcon from "../static/images/cart.svg";
 
 function Header({ cartCounter }) {
   return (

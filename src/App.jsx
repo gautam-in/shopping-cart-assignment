@@ -44,7 +44,7 @@ class App extends Component {
   // Function to fetch server data;
   // Please don't edit unless you
   // know what you're doing.
-  fetchServerData = (setState) => {
+  fetchServerData = () => {
     // Fetching Products
     server
       .fetchProducts()

@@ -1,7 +1,6 @@
 import "@testing-library/jest-dom";
 import { screen, render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-/* import userEvent from "@testing-library/user-event"; */
 import Register from "../pages/Register";
 
 test("Register page contains form element", () => {

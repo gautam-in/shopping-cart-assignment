@@ -69,7 +69,7 @@ const RegisterForm = () => {
         resetBtn.click();
       }}
     >
-      {(formik) => (
+      {(_formik) => (
         <>
           <Form role={"form"}>
             <TextField
@@ -122,7 +122,7 @@ const RegisterForm = () => {
   );
 };
 
-function Register(props) {
+function Register(_props) {
   return (
     <div
       className="py-5 px-md-5 px-3 login- d-flex justify-content-center align-items-center"
