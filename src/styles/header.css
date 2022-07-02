@@ -1,9 +1,11 @@
 /* Header */
 header {
-  position: relative;
+  position: sticky;
+  top: 0px;
   width: 100%;
   background: white;
   box-shadow: var(--shadow);
+  z-index: 1;
 }
 .navbar {
   margin-left: 50px;

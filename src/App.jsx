@@ -257,13 +257,12 @@ class App extends Component {
           <link rel="icon" href={icon} />
         </Helmet>
         <Header cartCounter={this.state.cart.length} />
+        <Cart
+          data={this.state.cart}
+          addToCart={this.addToCart}
+          deleteCartItem={this.deleteCartItem}
+        />
         <main>
-          <Cart
-            data={this.state.cart}
-            addToCart={this.addToCart}
-            deleteCartItem={this.deleteCartItem}
-          />
-
           {/* Router */}
           <Routes>
             <Route path="/">

@@ -12,7 +12,9 @@
   background: black;
 }
 /* Swiper JS */
-
+#root {
+  display: initial;
+}
 button,
 a {
   cursor: pointer;
@@ -23,6 +25,7 @@ a:focus {
 }
 main {
   position: relative;
+  z-index: 0;
   padding: 15px;
   /* min-height: 100vh; */
 }

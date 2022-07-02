@@ -62,5 +62,5 @@ typings/
 
 # Build
 build/
-sonar-scanner.txt
+scan.bat
 .scannerwork/

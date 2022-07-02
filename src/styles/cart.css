@@ -8,11 +8,11 @@
   height: 100%;
   max-width: 500px;
   width: 100%;
-  z-index: 99;
   transition-delay: 300ms;
   transition-duration: 600ms;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   overflow: hidden;
+  z-index: 10;
 }
 .cart-panel.active {
   /* position: fixe; */
@@ -31,7 +31,7 @@
   background: rgb(0 0 0 / 50%);
   width: 100%;
   height: 100%;
-  z-index: 98;
+  z-index: 9;
   transform: scale(0);
 }
 /* Cart Panel */

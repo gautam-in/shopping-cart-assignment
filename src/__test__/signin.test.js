@@ -54,7 +54,7 @@ test("While form is empty and button is pressed, labels has invalid class", () =
   );
 
   const button = screen.getByRole("button", { name: "Login" });
-  const labels = screen.getAllByRole("group");
+  const labels = screen.getAllByTestId("label");
 
   userEvent.click(button).then(() => {
     labels.forEach((label) => {
@@ -71,7 +71,7 @@ test("Upon typing invalid email, and submitting the form should show invalid ema
   );
 
   const button = screen.getByRole("button", { name: "Login" });
-  const labels = screen.getAllByRole("group");
+  const labels = screen.getAllByTestId("label");
   const email = screen.getByLabelText(/email/i);
 
   // Typing email in email address field

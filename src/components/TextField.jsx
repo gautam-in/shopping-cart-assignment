@@ -8,7 +8,7 @@ const TextField = ({ label, ...props }) => {
     <>
       <label
         htmlFor={field.name}
-        role={"group"}
+        data-testid="label"
         className={`${meta.touched && meta.error && "is-invalid"}`}
       >
         <input
