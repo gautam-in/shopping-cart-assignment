@@ -1,0 +1,153 @@
+.cart-modal {
+  width: 30%;
+  top: 7%;
+  left: 25%;
+}
+
+/* -- cart header -- */
+.cart-header {
+  width: 100%;
+  background-color: #080808;
+  display: inline-block;
+  color: #fff;
+  padding: 15px 15px;
+
+  h2 {
+    font-size: 80%;
+    display: inline-block;
+  }
+
+  span {
+    font-size: 60%;
+    margin-left: 5px;
+  }
+
+  .close {
+    color: #fff;
+    line-height: 0.5;
+    font-weight: 100;
+    // font-size: 200%;
+  }
+}
+
+/* -- cart body -- */
+.cart-content {
+  width: 100%;
+  height: 60vh;
+  overflow-y: auto;
+  background-color: #eee;
+  padding: 0;
+}
+
+.cart-item {
+  width: 100%;
+  background-color: #fff;
+  margin-top: 10px;
+  padding: 15px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.product-image {
+  img {
+    width: 50px;
+    height: 100%;
+  }
+}
+
+.product-details {
+  margin-left: 10px;
+  width: 100%;
+
+  h2 {
+    font-size: 70%;
+  }
+  .count-button {
+    padding: 2px 6px;
+    background-color: #d33761;
+    border-radius: 50%;
+    border: none;
+    color: #fff;
+  }
+  .products-number {
+    font-size: 80%;
+    margin: 0 5px;
+  }
+  .multiply-product {
+    font-size: 60%;
+  }
+  .price-of-product {
+    float: right;
+    font-size: 80%;
+    font-weight: 400;
+    margin-top: 2px;
+  }
+}
+
+.lowest-price {
+  margin: 10px 10px 0 10px;
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 70px;
+    height: auto;
+    margin-left: 2%;
+  }
+  span {
+    font-size: 70%;
+    margin-left: 2%;
+  }
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40%;
+
+  h2 {
+    font-size: 80%;
+  }
+  p {
+    font-size: 60%;
+  }
+}
+
+/*--cart-footer--*/
+.cart-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  P {
+    font-size: 70%;
+  }
+  .proceed-button {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: #fff;
+    background-color: #d33761;
+    border: none;
+  }
+  .empty-cart-button {
+    width: 100%;
+    color: #fff;
+    background-color: #d33761;
+    border: none;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width:1023px) and (min-width:100px){
+  .cart-modal {
+    width: 100%;
+    height: 100%;
+    top: 7%;
+    left: 0;
+    right: 0;
+  }
+}

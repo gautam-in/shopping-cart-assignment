@@ -1,0 +1,42 @@
+.section-login {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 55vh;
+}
+
+.login-text {
+  margin-left: 40%;
+}
+
+.login-box:last-child {
+  text-align: left;
+  padding-left: 20px;
+}
+
+/* --Login Form-- */
+.login-form {
+  width: 50%;
+}
+
+.login-button {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: #d33761 !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .section-login {
+    text-align: center;
+    align-items: center;
+  }
+  .login-text {
+    margin-left: 0;
+  }
+  .login-form {
+    width: 80%;
+    margin: 0 10%;
+  }
+}
