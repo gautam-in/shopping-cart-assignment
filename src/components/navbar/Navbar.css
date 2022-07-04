@@ -49,6 +49,14 @@ a {
     padding: 0.2rem 0.2rem 0.2rem 0.5rem;
     font-size: inherit;
 }
+.footer-wrapper {
+    margin: auto;
+    padding: 1rem;
+}
+.nav-cart-items > .fa-solid {
+    display: flex;
+    align-items: center;
+}
 @media only screen and (min-width: 450px){
     .navbar-inner-first {
         gap: 2rem;
@@ -66,6 +74,9 @@ a {
         width: 90%;
         margin: 1rem auto 0 auto;
     }
+    .footer-wrapper {
+        width: 90%;
+    }
     .nav-cart-items {
         padding: 0.2rem 0.4rem;
     }
@@ -81,6 +92,9 @@ a {
     .navbar-wrapper { 
         width: 80%;
     }
+    .footer-wrapper {
+        width: 80%;
+    }
     .navbar-inner-first {
         gap: 3rem;
     }
@@ -89,6 +103,7 @@ a {
     }
     .nav-cart-items {
         padding: 0.4rem 0.5rem;
+        gap: 0;
     }
 }
 @media only screen and (min-width: 950px){
@@ -97,6 +112,9 @@ a {
         width: 10rem;
     }
     .navbar-wrapper { 
+        width: 75%;
+    }
+    .footer-wrapper {
         width: 75%;
     }
     .navbar-inner-first {

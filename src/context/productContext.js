@@ -12,12 +12,10 @@ const ProductsProvider = ({children}) => {
         query: '(min-width: 1224px)'
       })
     useEffect(() => {
-        (async () => {
+        ( () => {
             try {
-                const bannerServerData = await getFetch("http://localhost:4000/productsJSON")
-                const catServerData = await getFetch("http://localhost:4000/categoriesJSON")
-                dispatch({type:"GET_PRODUCTS_DATA", payload: bannerServerData})
-                dispatch({type:"SET_CATEGORY_DATA", payload: catServerData})
+                getFetch("http://localhost:4000/productsJSON").then((res) => dispatch({type:"GET_PRODUCTS_DATA", payload: res}))
+                getFetch("http://localhost:4000/categoriesJSON").then((res) => dispatch({type:"SET_CATEGORY_DATA", payload: res}))
 
             }
             catch (e) {

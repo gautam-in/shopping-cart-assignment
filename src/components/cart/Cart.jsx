@@ -4,11 +4,15 @@ import { CartItem } from "./../index-components"
 import "./Cart.css"
 import priceLabel from "./../../lowest-price.png"
 import { useNavigate } from 'react-router-dom'
+
+export const extractTotalPrice = (cartData) => {
+  return cartData.reduce((prev, curr) => prev + (curr.price * curr.quantity), 0)
+}
 const Cart = () => {
   const { productState, isDesktopOrLaptop, dispatch } = useProducts()
   const { cartData } = productState
   const navigate = useNavigate()
-  const totalPrice = cartData.reduce((prev, curr) => prev + (curr.price * curr.quantity), 0)
+  const totalPrice = extractTotalPrice(cartData)
   const modelToggleHandler = () => {
     dispatch({type: "SET_CART_VIEW", payload: true})
     navigate("/products")

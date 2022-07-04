@@ -10,7 +10,7 @@ const CartItem = ({product}) => {
             <div className = "flex cart-qty-wrapper">
                 <div className = "flex qty-price-wrapper">
                     <QuantityButton product = {product}/>
-                    <p> X {product.quantity * product.price}</p>
+                    <p> X {product.price}</p>
                 </div>
                 <p>RS.{product.quantity * product.price}</p>
             </div>

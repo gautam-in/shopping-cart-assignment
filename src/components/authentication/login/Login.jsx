@@ -1,31 +1,19 @@
 import React, { useState } from 'react'
 import  "./Login.css"
 import { useNavigate } from 'react-router-dom'
+import { validateLoginForm } from './validateLoginForm'
+
 const Login = () => {
 
   const [formData, setFormaData] = useState({email:"", password:""})
-  const [error, setError] = useState({email:"", password:""})
+  const [error, setError] = useState({})
 
   const navigate = useNavigate()
 
-  const validateForm = () => {
-    const validateEmail =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    const errorObject = {email:"", password:""}
-    if(formData.password.length === 0){
-      errorObject.password = "Password must not be empty"
-    }
-    if(formData.password.includes(" ")){
-      errorObject.password = "Password must not contain space"
-    }
-    if(!validateEmail.test(formData.email)){
-      errorObject.email = "Please enter a valid email"
-    }
-    return errorObject
-  }
   const loginClickHandler = () => {
-    const formError = validateForm()
-    if(!formError.email && !formError.password){
-      setError(() => ({email:"", password:""}))
+    const formError = validateLoginForm(formData)
+    if(Object.keys(formError).length < 1){
+      setError(() => ({}))
       navigate("/")
     }
     else {
@@ -45,10 +33,11 @@ const Login = () => {
                 <input type = "email" id = "email" className = "login-form-input" onChange = {(e) => setFormaData((prev) => ({...prev, email:e.target.value}))}/>
                 <p className = "error-message">{error.email}</p>
             </label>
+            
             <label htmlFor = "password" className = "login-input">
                 <p>Password</p>
                 <input type = "password" id = "password" className = "login-form-input" onChange = {(e) => setFormaData((prev) => ({...prev, password:e.target.value}))}/>
-                <p className = "error-message">{error.password}</p>
+                <p className = "error-message">{error.pwd}</p>
             </label>
             <button className = "btn login-form-btn" onClick = { loginClickHandler}>Login</button>
         </form>

@@ -3,7 +3,6 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    margin-top: 2rem;
     padding: 2rem 0;
 
 }
@@ -11,6 +10,7 @@
 .login-form-wrapper, .login-header-wrapper {
     flex-direction: column;
     gap: 1.5rem;
+    align-items: center;
 }
 .login-header-wrapper {
     align-items: center;
@@ -35,10 +35,13 @@
     padding: 0.5rem 1rem 0.2rem 0.3rem;
     font-size: 1rem;
 }
-
+.login-input {
+    text-align: center;
+}
 .login-input :first-child {
     position: relative;
     top: 0.5rem;
+    text-align: left;
 }
 .login-input:focus-within > p:first-child {
     color: #4ED9D9;
@@ -49,7 +52,13 @@
 }
 .error-message {
     color: red;
-    margin-top: 0.5rem
+    margin-top: 0.5rem;
+    text-align: center;
+}
+.show-password {
+    position: absolute;
+    right: 5%;
+    top: 55%;
 }
 @media only screen and (min-width: 768px){
     .login-wrapper {

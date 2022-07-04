@@ -13,7 +13,7 @@
 }
 .App {
   background-color: rgb(209, 209, 209);
-  min-height: 100vh;
+  min-height: max-content;
 }
 .bg-color {
   background-color: white;
@@ -21,4 +21,7 @@
 .btn-color {
   color: whitesmoke;
   background-color: #D90467;
+}
+.relative {
+  position: relative;
 }

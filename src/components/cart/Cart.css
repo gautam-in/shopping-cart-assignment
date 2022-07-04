@@ -22,7 +22,8 @@
 }
 .cart-title {
     padding: 1rem;
-    margin: 1rem 0; 
+    margin: 1rem 0;
+    width: 100%;
 }
 .cart-title-small {
     font-size: 1rem;

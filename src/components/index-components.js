@@ -9,4 +9,6 @@ import SingleProduct from './productListingPage/SingleProduct';
 import Cart from './cart/Cart';
 import QuantityButton from './productListingPage/QuantityButton';
 import CartItem from './cart/CartItem';
-export { Navbar, Login, Signup, Home, CategoryItem, Products, Filter, SingleProduct, Cart, QuantityButton, CartItem }
+import TogglePasswordDisplay from './authentication/signup/TogglePasswordDisplay';
+import Footer from './footer/Footer';
+export { Navbar, Login, Signup, Home, CategoryItem, Products, Filter, SingleProduct, Cart, QuantityButton, CartItem, TogglePasswordDisplay, Footer }

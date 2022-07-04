@@ -111,7 +111,7 @@
         flex-direction: column;
         min-width: 10rem;
         background-color: rgb(217, 213, 213);
-        height: 100vh;
+        height: max-content;
     }
     .product-main-container {
         flex-direction: row;
