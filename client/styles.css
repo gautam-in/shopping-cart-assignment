@@ -1,7 +1,7 @@
 @import url("./modules/styles/bootstrap.min.css");
 
 body {
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Dosis', sans-serif !important;
 }
 
 .navbar-header {
@@ -13,8 +13,8 @@ body {
 }
 
 .container-style {
-    height: 100%;
-    margin: 0 75px;
+    height: 100% !important;
+    margin: 0 75px !important;
 }
 
 .home-logo {
@@ -177,6 +177,11 @@ body {
 }
 .bi-x {
     padding: 0 10px;
+    cursor: pointer;
+}
+
+.bi-plus-circle, .bi-dash-circle {
+    cursor: pointer;
 }
 
 .checkout {
@@ -191,4 +196,90 @@ body {
 
 .checkout-div {
     padding: 10px;
+    cursor: pointer;
 }
+
+.copy-right {
+    margin-top: 4%;
+    background-color: rgba(204, 198, 198, 0.776);
+  }
+
+  .copy-right-msg {
+    color: black !important;
+  }
+  
+  .form-input {
+    display: inline;
+    width: 100%;
+  }
+  
+  .form-control-lg {
+    border-radius: initial !important;
+  }
+  
+  .form-attribute:focus-within .form-label {
+    color: rgb(18, 181, 175);
+  }
+  
+  .SignInBtn {
+    border: none;
+    outline: 0;
+    background-color: rgba(246, 241, 241, 0.388);
+  }
+  
+  input[type=text],
+  input[type=email],
+  input[type=password] {
+    border: none;
+    border-bottom: 2px solid rgba(204, 198, 198, 0.776);
+    outline: 0;
+    font-size: 12px;
+  }
+  input[type=text]:focus,
+  input[type=email]:focus,
+  input[type=password]:focus {
+    border: none;
+    outline: 0;
+    border-bottom: 2px solid rgb(18, 181, 175);
+  }
+  input[type=text]:invalid:focus:not(:-moz-placeholder-shown) ~ .requirements, input[type=email]:invalid:focus:not(:-moz-placeholder-shown) ~ .requirements, input[type=password]:invalid:focus:not(:-moz-placeholder-shown) ~ .requirements {
+    max-height: 200px;
+    padding: 0 30px 20px 50px;
+  }
+  input[type=text]:invalid:focus:not(:-ms-input-placeholder) ~ .requirements, input[type=email]:invalid:focus:not(:-ms-input-placeholder) ~ .requirements, input[type=password]:invalid:focus:not(:-ms-input-placeholder) ~ .requirements {
+    max-height: 200px;
+    padding: 0 30px 20px 50px;
+  }
+  input[type=text]:invalid:focus:not(:placeholder-shown) ~ .requirements,
+  input[type=email]:invalid:focus:not(:placeholder-shown) ~ .requirements,
+  input[type=password]:invalid:focus:not(:placeholder-shown) ~ .requirements {
+    max-height: 200px;
+    padding: 0 30px 20px 50px;
+  }
+  
+  .loginForm {
+    margin-top: 24px;
+  }
+  
+  .requirements {
+    padding: 0 30px 0 50px;
+    color: #999;
+    max-height: 0;
+    transition: 0.28s;
+    overflow: hidden;
+    font-style: italic;
+  }
+  
+  .form-container {
+    margin-top: 50px;
+  }
+
+  .signin-btn {
+    background: #be1d1d; 
+    width: 100%; 
+    border-radius: 0;
+    border: none;
+  }
+  .signin-btn:hover {
+    background: #be1d1d;
+  }

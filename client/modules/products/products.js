@@ -1,6 +1,5 @@
 let productsData;
 export async function productsLoad() {
-    console.log('products');
     const response = await fetch('http://localhost:5000/products');
     productsData = await response.json();
 }
@@ -12,17 +11,14 @@ export async function getCategoryList() {
     try {
         const response = await fetch('http://localhost:5000/categories');
         const categories = await response.json();
-        console.log(categories);
         let catDiv = document.getElementsByClassName('categories-list');
         //let mainDiv = document.getElementsByClassName('products-list');
         for (let i = 0; i < categories.length; i++) {
-            console.log('sdfsf')
             let categoryTitle = $.createElement('div');
             categoryTitle.className = categories[i].id === categoryId ? 'cat-title active-click' : 'cat-title';
             categoryTitle.innerHTML = categories[i].name;
             categoryTitle.addEventListener('click', () => {
                 if (categoryTitle.classList.contains('active-click')) {
-                    console.log('containssssssss');
                     categoryTitle.classList.remove('active-click');
                     categoryId = '';
                     updateProductList(null);
@@ -40,26 +36,16 @@ export async function getCategoryList() {
 
 
     } catch (e) {
-        console.log(e);
+        
     }
 }
 
 function updateProductList(category) {
-    /* if(category[i].id === JSON.parse(localStorage.getItem('selectedCategory'))) {
-        console.log('if active........')
-        categoryTitle.classList.add('active')
-    } else {
-        console.log('else...')
-        categoryTitle.classList.remove('active');
-    } */
-    console.log(category, productsData);
     if (category !== null) {
         let categoryProducts = productsData.filter(product => product.category === category.id);
-        console.log(categoryProducts);
         categoryId = category.id;
         updateCategoryProducts(categoryProducts);
     } else {
-        console.log('sfsfsddsa');
         updateCategoryProducts(productsData);
     }
 
@@ -71,7 +57,6 @@ function updateCategoryProducts(products) {
         mainDiv[0].removeChild(mainDiv[0].firstChild);
     }
 
-    console.log(mainDiv);
     for (let i = 0; i < products.length; i++) {
         let prodDiv = $.createElement('div');
         prodDiv.className = 'col-12 col-md-6 col-lg-4 col-xl-3 card-shadow col-width';
@@ -122,8 +107,6 @@ function updateCategoryProducts(products) {
         optionsDiv.appendChild(mrp);
         optionsDiv.appendChild(addButton);
 
-
-
         prodCardBody.appendChild(prodDescDiv);
         prodCardBody.appendChild(optionsDiv);
 
@@ -136,20 +119,17 @@ export async function getProducts() {
     try {
         const response = await fetch('http://localhost:5000/products');
         const products = await response.json();
-        console.log(products);
-
         //Update Products on the page
         updateCategoryProducts(products);
 
     } catch (e) {
-        console.log(e);
     }
 }
 
 let productsList = [];
 function addItemToCart(product) {
 
-    productsList = JSON.parse(localStorage.getItem('cart'));
+    productsList = JSON.parse(localStorage.getItem('cart')) || [];
 
     let productMatched = productsList.find(prod => product.id === prod.id);
     let filteredProductIndex = productsList.findIndex(p => p.id === product.id);
@@ -176,12 +156,8 @@ function updateProductsCount(product, number) {
 }
 
 // show cart Items
-
-
-
 export function showCart() {
     const cartItems = JSON.parse(localStorage.getItem("cart"));
-    console.log('cartItems=====', cartItems);
     let cartItemsDiv = $.getElementsByClassName('cart-items-container');
     while (cartItemsDiv[0].firstChild) {
         cartItemsDiv[0].removeChild(cartItemsDiv[0].firstChild);
@@ -236,20 +212,6 @@ export function showCart() {
         cartIcons.appendChild(priceDiv);
         cartIcons.appendChild(totalPriceDiv);
 
-        //Checkout Footer
-
-        /* let footerdiv = $.getElementsByClassName('modal-footer');
-        let checkoutDiv = $.createElement('div');
-        checkoutDiv.className = 'row cart-items';
-        let checkOutText = $.createElement('div');
-        checkOutText.textContent = 'Proceed to checkout';
-        let totalAmountDiv = $.createElement('div');
-        totalAmountDiv.textContent += `Rs ${cartItems[i].qty * cartItems[i].price}`; */
-
-        /* checkoutDiv.appendChild(checkOutText);
-        checkoutDiv.appendChild(totalAmountDiv);
-        footerdiv[0].appendChild(checkoutDiv); */
-
         cartProductDescription.appendChild(productTitle);
         cartProductDescription.appendChild(cartIcons);
 
@@ -261,7 +223,6 @@ export function showCart() {
 
         minusIcon.addEventListener('click', () => {
             if (parseInt(quantitySpan.textContent) > 0) {
-                console.log(cartItems[i]);
                 //addItemToCart(cartItems[i]);
                 quantitySpan.textContent = parseInt(quantitySpan.textContent) - 1;
                 totalPriceDiv.innerHTML = `Rs ${parseInt(quantitySpan.textContent) * cartItems[i].price}`;
@@ -272,7 +233,6 @@ export function showCart() {
 
         })
         addIcon.addEventListener('click', () => {
-            console.log(cartItems[i]);
             //addItemToCart(cartItems[i]);
             quantitySpan.textContent = parseInt(quantitySpan.textContent) + 1;
             totalPriceDiv.innerHTML = `Rs ${parseInt(quantitySpan.textContent) * cartItems[i].price}`;
@@ -287,6 +247,4 @@ export function showCart() {
         checkoutAmount[0].textContent = `${totalAMount}`;
     let cart = document.querySelector('#staticBackdropLabel .cart-counter');
     cart.textContent = JSON.parse(localStorage.getItem("cart")).length || 0;
-
-    let plusIcon = document.getElementsByClassName('bi-plus-circle');
 }
