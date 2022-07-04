@@ -1,0 +1,15 @@
+.banner-section{
+  padding-left: 80px;
+  padding-right: 80px;
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  width: auto;
+  margin-top: 180px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.banner-section img{
+  height: 200px;
+  width: auto;
+}

@@ -1,0 +1,48 @@
+.container-sign{
+  width: auto;
+}
+
+.sign-in-pad{
+  margin-top: 170px;
+  width: auto;
+  padding-bottom: 30px;
+
+}
+
+.access-label{
+  margin-top: 20px;
+}
+
+
+.login-btn{
+  margin-top: 30px;
+  color: white;
+  background: #BD2440;
+  border-radius: 1px;
+  text-align: center;
+  padding:10px;
+  width: 100%;
+  border: none!important;
+  margin-top: 15px;
+}
+
+
+.login-block p{
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+input[type='email']:focus, input[type='password']:focus, input[type='text']:focus{
+    outline: none !important;
+    border-bottom: 2px solid #58D780;
+}
+
+.login-block input{
+  width: 80%;
+  margin-top: 7px;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid black;
+}

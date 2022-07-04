@@ -1,0 +1,89 @@
+@media only screen and (max-width:700px){
+    .banner-section{
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        margin-top: 85px !important;
+    }
+    .sabka-bazaar-img{
+        margin-left: 0px !important;
+    }
+    .nav-links{
+        display: none !important;
+    }
+    .header-container{
+        height: 50px !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+    .mobile-link{
+        display: none !important;
+    }
+    .cart-menu-section{
+        margin: 0!important;
+        width: 140px !important;
+    }
+    .descr{
+        font-size: 14px !important;
+    }
+    .btn{
+        margin-top: 10px !important;
+        font-size: 12px !important;
+    }
+    .cart-placeholder{
+        top: 60px !important;
+        width: 100% !important;
+    }
+    .hamburger-icon{
+        position: fixed;
+        top:20px;
+        left: 20px;
+        font-size: 25px;
+        z-index: 150 !important;
+    }
+    .side-list{
+        position: fixed !important;
+        top: 70px !important;
+        left: 0px !important;
+        margin: 0px !important;
+        width: 100% !important;
+        min-height: auto !important;
+        padding-bottom: 10px !important;
+    }
+    .productList{
+        width: 85% !important;
+    }
+    .each-product{
+        width: 90% !important;
+    }
+    .img-product{
+        height: 100px !important;
+        width: 40% !important;
+    }
+    .product-description {
+        width: 40% !important;
+        margin-left: 50% !important;
+        margin-top: -35% !important;
+    }
+    .price-buy-section{
+        background-color: #BD2440 !important;
+        color: white !important;
+        margin-top: 48px !important;
+    }
+    .list-products{
+        display: flex;
+        flex-direction: column !important;
+    }
+    .product-wrapper{
+        margin-top: 70px !important;
+    }
+   .heading{
+    background-color: white !important;
+    color: black !important;
+   }
+   .close-cart-btn{
+    color: black !important;
+    }
+    .mobile-font{
+        font-size: 12px !important;
+    }
+}

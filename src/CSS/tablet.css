@@ -1,0 +1,59 @@
+/* CSS module for Tablets */
+@media only screen and (min-width:768px) and (max-width:990px){
+	.cart-menu-section{
+        width: 115% !important;
+    }
+    .cart-placeholder{
+        width: 100% !important;
+    }
+	.heading{
+        margin-top: 15px !important;
+        background-color: white !important;
+        color: black !important;
+    }
+    .listing{
+        height: 70vh !important;
+    }
+    .listing li{
+        padding-left: 5px !important;
+        padding-right: 0px !important;
+    }
+    .listing li:active{
+        background: white !important;
+        color: black !important;
+    }
+    .side-list{
+        width: 15% !important;
+        margin-left: 0px !important;
+    }
+    .side-list li{
+        height: max-content !important;
+        font-size: 12px !important;
+    }
+    .productList{
+        width: 85% !important;
+    }
+    .each-product{
+        width: 40% !important;
+    }
+    .img-product{
+        height: 100px !important;
+        width: 40% !important;
+    }
+    .product-description {
+        width: 40% !important;
+        margin-left: 50% !important;
+        margin-top: -35% !important;
+    }
+    .price-buy-section{
+        background-color: #BD2440 !important;
+        color: white !important;
+    }
+    .close-cart-btn{
+        color: black !important;
+    }
+    .add-btn, .minus-btn{
+        width: 30px !important;
+        height: 30px !important;
+    }
+}
