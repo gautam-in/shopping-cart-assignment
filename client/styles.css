@@ -1,7 +1,11 @@
-@import url("./modules/styles/bootstrap.min.css");
+@import url("./js/styles/bootstrap.min.css");
 
 body {
     font-family: 'Dosis', sans-serif !important;
+}
+iframe {
+    width: 100%;
+    height: auto;
 }
 
 .navbar-header {
@@ -89,15 +93,19 @@ body {
 }
 
 .categories-list {
-    margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
 .cat-title {
-    border-bottom: 1px solid #cccccc;
-    cursor: pointer;
-    /* width: 100%; */
+  border-bottom: 1px solid #cccccc;
+  cursor: pointer;
+  padding: 10px 0;
+  /* width: 100%; */
 }
 
+.cat-name {
+  padding: 0 10px;
+}
 .active-click {
     background-color: crimson;
     color: white;
@@ -283,3 +291,53 @@ body {
   .signin-btn:hover {
     background: #be1d1d;
   }
+
+  .header-container {
+    background: rgb(248, 249, 250);
+  }
+
+  .header-row {
+    margin: 0 75px;
+    display: flex;
+    justify-content: space-between; 
+  }
+
+  .image-col {
+    display: flex;
+    align-items: end;
+  }
+  .nav-btns {
+    padding: 0;
+  }
+
+  .list-btns {
+    margin: 0 15px;
+  }
+
+  .link-button {
+    text-decoration: none;
+    color: black;
+  }
+
+  .cart-colunm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: end;
+  }
+
+  .sign-register-btn {
+    padding: 0;
+    display: flex;
+  }
+
+  .cart-text {
+    text-align: center;
+    width: 120px;
+  }
+
+  .home-tabs {
+    display: flex;
+    align-items: end;
+  }
+  

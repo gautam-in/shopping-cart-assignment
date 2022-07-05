@@ -9,46 +9,49 @@
     <title>Register</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-  <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
-  <script src="modules/styles/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+    <script src="js/styles/bootstrap.min.js"></script>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light navigation-head">
-            <div class="container-fluid container-style">
-                <div class="navbar-brand home-logo">
-                    <img class="logo" src="../static/images/logo.png" alt="" width="80" height="24">
-                </div>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav home-links me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./products-page.html">Products</a>
-                        </li>
-                    </ul>
-                    <div>
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="./signin.html">Sign In</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Register</a>
-                            </li>
-                        </ul>
-                        <div class="cart" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            <i class="bi bi-cart-fill">
-                            </i>
-                            <div id="cartAmount" class="cartAmount"><span class="counter">0</span> Items</div>
+        <div class="container-fluid header-container">
+            <div class="row header-row">
+                <div class="col-8">
+                    <div class="container-fluid">
+                        <div class="row ">
+                            <div class="col-6 image-col">
+                                <img class="img-fluid" src="../../../static/images/logo.png" alt="" width="100%"
+                                    height="100%">
+                            </div>
+                            <div class="col-6 home-tabs">
+                                <nav class="custom-navbar" aria-labelledby="mainmenu">
+                                    <ul class="nav-links nav-btns">
+                                        <li class="list-btns"><a class="link-button" href="./index.html">Home</a></li>
+                                        <li><a class="link-button" href="./products-page.html">Products</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-4 cart-colunm">
+                    <nav class="custom-navbar" aria-labelledby="sign">
+                        <ul class="nav-links sign-register-btn">
+                            <li class="list-btns"><a class="link-button" href="./signin.html">Sign In</a></li>
+                            <li><a class="link-button" href="#">Register</a></li>
+                        </ul>
+                    </nav>
+                    <div class="cart cart-text" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <i class="bi bi-cart-fill">
+                        </i>
+                        <div id="cartAmount" class="cartAmount"><span class="counter">0</span> Items</div>
+                    </div>
+                </div>
             </div>
-        </nav>
+        </div>
     </header>
 
     <!--cart modal-->
@@ -108,7 +111,8 @@
                         <!-- Password input -->
                         <div class="form-outline mb-3 form-attribute">
                             <label for="password" class="form-label">Password</label>
-                            <input id="pwd1" pattern="(?=.*\d)(?=.*[A-Z]).{8,}" required type="password" class="form-input form-control-lg" />
+                            <input id="pwd1" pattern="(?=.*\d)(?=.*[A-Z]).{8,}" required type="password"
+                                class="form-input form-control-lg" />
                             <div class="requirements">
                                 Your password must be at least 8 characters and at least one uppercase, and one number.
                             </div>
@@ -116,7 +120,8 @@
                         <!--Confirm Password input -->
                         <div class="form-outline mb-3 form-attribute">
                             <label for="password" class="form-label">Confirm Password</label>
-                            <input id="pwd2" pattern="(?=.*\d)(?=.*[A-Z]).{8,}" required type="password" class="form-input form-control-lg" />
+                            <input id="pwd2" pattern="(?=.*\d)(?=.*[A-Z]).{8,}" required type="password"
+                                class="form-input form-control-lg" />
                             <div id="confirm-password" class="requirements">
                                 Your password must be at least 8 characters and at least one uppercase, and one number.
                             </div>
@@ -131,7 +136,7 @@
                             let pwd1 = document.querySelector("#pwd1");
                             let pwd2 = document.querySelector("#pwd2");
                             let confirm = document.querySelector("#confirm-password");
-                            if(pwd1.value !== pwd2.value) {
+                            if (pwd1.value !== pwd2.value) {
                                 alert('Confirm password does not match');
                                 return false;
                             } else {
@@ -151,7 +156,7 @@
             <!-- Copyright -->
         </div>
     </section>
-    <script type="module" src="./register_load.js"></script>
+    <script type="module" src="./client_index.js"></script>
 </body>
 
 </html>

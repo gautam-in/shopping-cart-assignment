@@ -12,43 +12,46 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
-  <script src="modules/styles/bootstrap.min.js"></script>
+  <script src="./js/styles/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light navigation-head">
-        <div class="container-fluid container-style">
-            <div class="navbar-brand home-logo">
-                <img class="logo" src="../static/images/logo.png" alt="" width="80" height="24">
-            </div>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav home-links me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id='products' class="nav-link" href="./products-page.html">Products</a>
-                    </li>
-                </ul>
-                <div>
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./signin.html">Signin</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./register.html">Register</a>
-                        </li>
-                    </ul>
-                    <div class="cart" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <i class="bi bi-cart-fill">
-                        </i>
-                        <div id="cartAmount" class="cartAmount"><span class="counter">0</span> Items</div>
-                    </div>
+    <header>
+        <div class="container-fluid header-container">
+          <div class="row header-row">
+            <div class="col-8">
+              <div class="container-fluid">
+                <div class="row ">
+                  <div class="col-6 image-col">
+                    <img class="img-fluid" src="../../../static/images/logo.png" alt="" width="100%" height="100%">
+                  </div>
+                  <div class="col-6 home-tabs">
+                    <nav class="custom-navbar" aria-label="mainmenu">
+                      <ul class="nav-links nav-btns">
+                        <li class="list-btns"><a class="link-button" href="./index.html">Home</a></li>
+                        <li><a class="link-button" href="./products-page.html">Products</a></li>
+                      </ul>
+                    </nav>
+                  </div>
                 </div>
+              </div>
             </div>
+            <div class="col-4 cart-colunm">
+              <nav class="custom-navbar" aria-label="singupmenu">
+                <ul class="nav-links sign-register-btn">
+                  <li class="list-btns"><a class="link-button" href="#">Sign In</a></li>
+                  <li><a class="link-button" href="./register.html">Register</a></li>
+                </ul>
+              </nav>
+              <div class="cart cart-text" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <i class="bi bi-cart-fill">
+                </i>
+                <div id="cartAmount" class="cartAmount"><span class="counter">0</span> Items</div>
+              </div>
+            </div>
+          </div>
         </div>
-    </nav>
-
+      </header>
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -119,7 +122,7 @@
             <!-- Copyright -->
         </div>
     </section>
-    <script type="module" src="./signin_load.js"></script>
+    <script type="module" src="./client_index.js"></script>
 </body>
 
 </html>
