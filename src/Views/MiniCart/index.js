@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import { retreiveLocalCartData } from '../../Utility/RetrieveLocalData'
 
 
-const CartView = ({closeBtn, updateCartPage}) => {
+const CartView = ({closeBtn, updateProductPage}) => {
     const [cartItems, setCartItems] = useState([])
     const [sum,setSum] = useState(0)
     const navigate = useNavigate()
@@ -35,7 +35,7 @@ const CartView = ({closeBtn, updateCartPage}) => {
         let totalProductSum = 0
         cartItems.forEach(a => { totalProductSum += (a.price * a.amt)})
         setSum(totalProductSum)
-        updateCartPage()
+        !!updateProductPage && updateProductPage()
         // eslint-disable-next-line
     },[cartItems])
 

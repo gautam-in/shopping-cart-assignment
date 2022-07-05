@@ -133,7 +133,7 @@ const ProductListing = () => {
     return (
         <React.Fragment>
             {window.innerWidth < `${760}` && <div onClick={openFilterForMobile} className='hamburger-icon pointer'>☰</div>}
-            {!!viewCart && <CartView closeBtn = {closeBtn} updateCartPage = {retrieveCartData}/>}
+            {!!viewCart && <CartView closeBtn = {closeBtn} updateProductPage = {retrieveCartData}/>}
             <div id='product-listing-body'>
                 <Header itemsInCart={!!cartElements && cartElements.length > 0 ? cartElements.length : 0} showCart={showCart}/>
                     <div className='product-wrapper md-12 flex-r'>
