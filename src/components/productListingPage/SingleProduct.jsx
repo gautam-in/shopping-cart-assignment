@@ -5,6 +5,7 @@ const SingleProduct = ({product}) => {
   const { productState, dispatch } = useProducts()
   const { cartData } = productState
   const [itemInCart, setItemInCart] = useState(false)
+  
   const addToCartHandler = () => {
     const cartProductData = {...product, quantity: 1 }
     dispatch({type: "ADD_TO_CART", payload: [...cartData,cartProductData] })

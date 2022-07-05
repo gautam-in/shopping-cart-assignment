@@ -23,24 +23,8 @@ const Home = () => {
     const changeBannerHandler = (index) => {
         setCurrentBannerIndex(() => index)
     }
-    const bannerLeftArrowHandler = () => {
-        if(currentBannerIndex === 0) {
-            setCurrentBannerIndex(() => bannerData.length - 1)
-        }
-        else {
-            setCurrentBannerIndex((prev) => prev - 1)
-
-        }
-    }
-    const bannerRightArrowHandler = () => {
-        if(currentBannerIndex === bannerData.length - 1) {
-            setCurrentBannerIndex(() => 0)
-        }
-        else {
-            setCurrentBannerIndex((prev) => prev + 1)
-
-        }
-    }
+    const bannerLeftArrowHandler = bannerToggleLeftBtn(currentBannerIndex, setCurrentBannerIndex, bannerData)
+    const bannerRightArrowHandler = bannerToggleRightBtn(currentBannerIndex, bannerData, setCurrentBannerIndex)
   return (
     <main className = "bg-color">
         <div className = "home-banner-wrapper">
@@ -65,3 +49,27 @@ const Home = () => {
 }
 
 export default Home
+
+function bannerToggleRightBtn(currentBannerIndex, bannerData, setCurrentBannerIndex) {
+    return () => {
+        if (currentBannerIndex === bannerData.length - 1) {
+            setCurrentBannerIndex(() => 0)
+        }
+        else {
+            setCurrentBannerIndex((prev) => prev + 1)
+
+        }
+    }
+}
+
+function bannerToggleLeftBtn(currentBannerIndex, setCurrentBannerIndex, bannerData) {
+    return () => {
+        if (currentBannerIndex === 0) {
+            setCurrentBannerIndex(() => bannerData.length - 1)
+        }
+        else {
+            setCurrentBannerIndex((prev) => prev - 1)
+
+        }
+    }
+}

@@ -1,12 +1,9 @@
 import React from 'react'
-import { Cart, Navbar } from "../components/index-components"
-import { useProducts } from '../context/productContext'
+import { Cart } from "../components/index-components"
 
 const CartPage = () => {
-  const { isDesktopOrLaptop } = useProducts
   return (
     <div>
-      { !isDesktopOrLaptop && <Navbar />}
       <Cart />
     </div>
   )

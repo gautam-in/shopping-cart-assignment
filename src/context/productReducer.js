@@ -15,6 +15,12 @@ export const productReducer = (state, action) => {
         case "ADD_TO_CART" : {
             return {...state, cartData: action.payload}
         }
+        case "INCREMENT_CART_QTY" : {
+            return {...state, cartData: action.payload}
+        }
+        case "DECREMENT_CART_QTY" : {
+            return {...state, cartData: action.payload}
+        }
         case "SET_CART_VIEW" : {
             return {...state, closeCartModel: action.payload}
         }
