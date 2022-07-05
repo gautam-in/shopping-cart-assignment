@@ -1,15 +1,10 @@
-# XT Shopping Cart Assignment
+#Shopping Cart Assignment
 
-This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.
+Steps :
+1. Clone the repository
 
-## Getting Started
+2. Run npm install 
 
-Clone this repo and run following command for starting the mock server:
+3. Start JSON-server at port 3000, with npx json-server --watch db.json
 
-```
-npm install
-npm run start
-# or
-yarn install
-yarn start
-```
+4. Run the react app with npm start or npm run start.

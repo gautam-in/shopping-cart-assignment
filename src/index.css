@@ -1,0 +1,159 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Dosis;
+}
+
+#root{
+  width: 100%;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+/* modal container */
+.modal-div{
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100%;
+  z-index: 9999 !important;
+}
+
+/* fonts */
+.bold{
+  font-weight: 700;
+}
+.semi-bold{
+  font-weight: 600;
+}
+.regular{
+  font-weight: 400;
+}
+
+.no-wrap{
+  white-space: nowrap;
+}
+
+
+/* flex-Box */
+.flex-r{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-c{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-w{
+  flex-wrap: wrap;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.justify-spc-around{
+  justify-content: space-around;
+}
+
+.justify-spc-between{
+  justify-content: space-between;
+}
+
+.justify-spc-evenly{
+  justify-content: space-evenly;
+}
+
+.align-center{
+  align-items: center;
+}
+
+.align-start{
+  align-items: flex-start;
+}
+
+.align-end{
+  align-items: flex-end;
+}
+
+/* Grid spacing */
+/* sm,md,xs */
+
+.md-1{
+  width: 8.33%;
+}
+.md-2{
+  width: 16.66%;
+}
+.md-3{
+  width: 25%;
+}
+.md-4{
+  width: 33.33%;
+}
+.md-5{
+  width: 41.66%;
+}
+.md-6{
+  width: 50%;
+}
+.md-7{
+  width: 58.33%;
+}
+.md-8{
+  width: 66.66%;
+}
+.md-9{
+  width: 75%;
+}
+.md-10{
+  width: 83.33%;
+}
+.md-11{
+  width: 91.65%;
+}
+.md-12{
+  width: 100%;
+}
+
+
+/* Grid Offsets */
+.offset-md-1{
+  margin-left: 8.33%;
+}
+.offset-md-2{
+  margin-left: 16.66%;
+}
+.offset-md-3{
+  margin-left: 25%;
+}
+.offset-md-4{
+  margin-left: 33.33%;
+}
+.offset-md-5{
+  margin-left: 41.66%;
+}
+.offset-md-6{
+  margin-left: 50%;
+}
+.offset-md-7{
+  margin-left: 58.33%;
+}
+.offset-md-8{
+  margin-left: 66.66%;
+}
+.offset-md-9{
+  margin-left: 75%;
+}
+.offset-md-10{
+  margin-left: 83.33%;
+}
+.offset-md-11{
+  margin-left: 91.65%;
+}

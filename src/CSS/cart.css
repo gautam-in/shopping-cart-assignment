@@ -1,0 +1,123 @@
+.cart-placeholder{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    position: fixed;
+    right: 0px;
+    top:120px;
+    z-index: 999;
+    width: 40%;
+    background: #dcdcdc;
+    border-left: 1px solid #808080;
+    border-bottom: 2px solid #808080;
+    -webkit-animation: slide-in-right 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-right 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-in-right {
+    0% {
+      -webkit-transform: translateX(1000px);
+              transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-right {
+    0% {
+      -webkit-transform: translateX(1000px);
+              transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  
+
+.heading{
+    color: white;
+    background-color: black;
+    height: 40px;
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.close-cart-btn{
+    background-color: transparent;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+}
+
+.listing{
+    height: 70vh;
+    width: 100%;
+    overflow: scroll;
+}
+
+.listing ul{
+    overflow: scroll;
+    background-color: #dcdcdc;
+}
+
+.listing li{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    background-color: white;
+    padding: 15px;
+    height: 80px;
+    list-style: none;
+}
+
+.pro-img{
+    height: 80px;
+    width: 45px;
+    background-size: contain;
+}
+
+.add-btn, .minus-btn{
+    background-color: #BD2440;
+    color: white;
+    font-size: 16px;
+    height: 25px;
+    width: 25px;
+    border-radius: 30%;
+    border: none;
+}
+
+.action-center{
+    margin-top: 20px;
+}
+
+.checkout-section{
+    bottom: 0px;
+    background-color: white;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.checkout-block{
+    margin-top: 10px;
+    width: 100%;
+    font-size: 15px;
+    background-color: #BD2440;
+    color:white;
+    padding: 10px;
+}
+
+.blank-cart{
+    background-color: white;
+    overflow: scroll;
+    padding-top: 40% ;
+    text-align: center;
+    height: 50vh;
+}
