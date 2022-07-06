@@ -36,6 +36,8 @@ const SignUp = () => {
         }
         if (!values.password) {
             formerrors.password = 'Password is required';
+        }else if(values.password.length < 6){
+            formerrors.password = 'Password should be atlease minimum 6 characters';
         }
         if (!values.confirmpassword) {
             formerrors.confirmpassword = 'Confirm password is required';
@@ -88,7 +90,7 @@ const SignUp = () => {
                         </div>
                         <div className='form-group'>
 
-                            <input type="password" placeholder='Password' className={errors.password ? 'error-border' : ''} name="password" value={formValues.password} onChange={handleChange} />
+                            <input type="password" placeholder='Password' className={errors.password ? 'error-border' : ''} name="password" value={formValues.password.trim()} onChange={handleChange} />
                             <p className='error'>{errors.password}</p>
                         </div>
                         <div className='form-group'>
