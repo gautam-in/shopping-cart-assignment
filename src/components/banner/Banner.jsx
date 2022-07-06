@@ -1,22 +1,21 @@
-import React from "react";
+import { v4 } from "node-uuid";
 import { Swiper, SwiperSlide } from "swiper/react";
-import uuid from "node-uuid";
+import { Pagination, Navigation, Autoplay } from "swiper";
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-// import required modules
-import { Pagination, Navigation, Autoplay } from "swiper";
+import("swiper/css");
+import("swiper/css/pagination");
+import("swiper/css/navigation");
 
 const Banner = ({ banners }) => {
   return (
     <>
       <Swiper
-        pagination={{ dynamicBullets: true }}
+        pagination={{ dynamicBullets: false }}
         observeParents={true}
         observer={true}
         observeSlideChildren={true}
+        navigation={true}
         autoplay={{ disableOnInteraction: false, delay: 3000 }}
         loop={true}
         modules={[Pagination, Navigation, Autoplay]}
@@ -24,7 +23,7 @@ const Banner = ({ banners }) => {
       >
         {banners.data.map((banner) => {
           return (
-            <SwiperSlide key={uuid()}>
+            <SwiperSlide key={v4()}>
               <div className="banner">
                 <img
                   src={banner.bannerImageUrl}

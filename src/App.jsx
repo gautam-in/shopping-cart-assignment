@@ -1,18 +1,27 @@
-import React, { Component } from "react";
+import React, { Component, lazy, Suspense } from "react";
 import Server from "./server";
-import Home from "./pages/Home";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import SignIn from "./pages/Login";
-import Register from "./pages/Register";
-import Products from "./pages/Products";
-import Cart from "./pages/Cart";
 import { Routes, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import icon from "./static/images/logo.png";
 import toast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
+// COmponents
+/* import Home from "./pages/Home";
+import SignIn from "./pages/Login";
+import Register from "./pages/Register";
+import Products from "./pages/Products";
+import Cart from "./pages/Cart";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+ */
+const Home = lazy(() => import("./pages/Home"));
+const SignIn = lazy(() => import("./pages/Login"));
+const Register = lazy(() => import("./pages/Register"));
+const Products = lazy(() => import("./pages/Products"));
+const Cart = lazy(() => import("./pages/Cart"));
+const Header = lazy(() => import("./components/Header"));
+const Footer = lazy(() => import("./components/Footer"));
 // Creating new Server instance
 const server = new Server("localhost", 8000);
 
@@ -263,33 +272,35 @@ class App extends Component {
           deleteCartItem={this.deleteCartItem}
         />
         <main>
-          {/* Router */}
-          <Routes>
-            <Route path="/">
-              <Route
-                index
-                element={
-                  <Home
-                    banners={this.state.banners}
-                    categories={this.state.categories}
-                  />
-                }
-              />
-              <Route path="register" element={<Register />} />
-              <Route path="signin" element={<SignIn />} />
-              <Route
-                path="products"
-                element={
-                  <Products
-                    products={this.state.products}
-                    categories={this.state.categories}
-                    addToCart={this.addToCart}
-                  />
-                }
-              />
-            </Route>
-          </Routes>
-          {/* Router */}
+          <Suspense>
+            {/* Router */}
+            <Routes>
+              <Route path="/">
+                <Route
+                  index
+                  element={
+                    <Home
+                      banners={this.state.banners}
+                      categories={this.state.categories}
+                    />
+                  }
+                />
+                <Route path="register" element={<Register />} />
+                <Route path="signin" element={<SignIn />} />
+                <Route
+                  path="products"
+                  element={
+                    <Products
+                      products={this.state.products}
+                      categories={this.state.categories}
+                      addToCart={this.addToCart}
+                    />
+                  }
+                />
+              </Route>
+            </Routes>
+            {/* Router */}
+          </Suspense>
         </main>
         <Footer />
       </React.Fragment>

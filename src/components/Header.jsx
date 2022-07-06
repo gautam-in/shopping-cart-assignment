@@ -4,7 +4,7 @@ import logo from "../static/images/logo.png";
 
 function Header({ cartCounter }) {
   return (
-    <header>
+    <header data-testid="header">
       <div className="container-md mx-auto">
         <div className="row d-md-none d-flex outline">
           <div className="col-6">
