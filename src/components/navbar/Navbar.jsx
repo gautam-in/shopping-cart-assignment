@@ -14,10 +14,12 @@ const Navbar = () => {
         dispatch({type: "SET_CART_VIEW", payload: false})
     }
   return (
-    <header className = "header-nav-wrapper bg-color">
+    <header className = "header-nav-wrapper bg-color box-shadow">
         <nav className = "navbar-wrapper">
         <div className = "navbar-inner-first">
-            <img src = {isDesktopOrLaptop ? logoLarge : logo} alt = "sabka bazar logo" className = "navbar-logo"/>
+            <Link to = "/">
+                <img src = {isDesktopOrLaptop ? logoLarge : logo} alt = "sabka bazar logo" className = "navbar-logo"/>
+            </Link>
             <div className = "navbar-first-links">
                 <NavLink to = "/" className = "nav-links">Home</NavLink>
                 <NavLink to = "/products" className = "nav-links" onClick = {() => dispatch({ type: "SET_PRODUCTS_DATA", payload: serverData })}>Products</NavLink>

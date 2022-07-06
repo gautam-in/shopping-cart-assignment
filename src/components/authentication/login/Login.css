@@ -23,14 +23,14 @@
     transition: ease 0.5s;
 }
 .login-form-btn {
-    background-color: #D90467;
-    color: whitesmoke;
+    background-color:  var(--app-btn-color);
+    color: var(--whitesmoke-color);
     border: 0;
 }
 .login-form-input {
     border: 0;
     outline: 0;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid var(--grey-color);
     width: 15rem;
     padding: 0.5rem 1rem 0.2rem 0.3rem;
     font-size: 1rem;
@@ -44,14 +44,14 @@
     text-align: left;
 }
 .login-input:focus-within > p:first-child {
-    color: #4ED9D9;
+    color: var(--form-active-color);
     top: -0.5rem;
 }
 .login-input:focus-within > input {
-    border-bottom: 2px solid #4ED9D9;
+    border-bottom: 2px solid var(--form-active-color);
 }
 .error-message {
-    color: red;
+    color: var(--error-msg-color);
     margin-top: 0.5rem;
     text-align: center;
 }

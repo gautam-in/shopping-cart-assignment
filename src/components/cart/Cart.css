@@ -66,20 +66,29 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    background-color: var(--white-color);
+    margin-bottom: 1rem;
 }
 .close-btn {
     background-color: transparent;
     border: 0;
-    text-decoration: underline;
     cursor: pointer;
     margin-right: 1rem;
+    color: var(--whitesmoke-color);
 }
 .singleItem-wrapper {
     overflow-y: scroll;
     height: 30rem;
 }
 .cart-wrapper {
-    background-color: whitesmoke;
+    background-color: var(--whitesmoke-color);
+}
+.header-larger-bg {
+    background-color: var(--banner-active-color);
+    color: var(--whitesmoke-color)
+}
+.empty-cart-description {
+    padding: 1rem;
 }
 @media screen and (min-width: 768px){
     .cart-item-wrapper {

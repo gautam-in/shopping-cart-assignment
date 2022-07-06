@@ -4,8 +4,8 @@
     justify-content: space-between;
     font-size: 0.8rem;
     margin: 0.5rem 0.5rem 0 0.5rem;
-    border-bottom: 2px solid rgb(191, 190, 190);
-}   
+} 
+ 
 a {
     text-decoration: none;
     color: inherit;
@@ -45,7 +45,7 @@ a {
     display: flex;
     gap: 1rem;
     align-items: center;
-    background-color: rgb(224, 223, 223);
+    background-color: var(--app-bg-color);
     padding: 0.2rem 0.2rem 0.2rem 0.5rem;
     font-size: inherit;
 }
@@ -74,8 +74,9 @@ a {
         width: 90%;
         margin: 1rem auto 0 auto;
     }
-    .footer-wrapper {
+    .footer-wrapper > p{
         width: 90%;
+        margin: auto;
     }
     .nav-cart-items {
         padding: 0.2rem 0.4rem;
@@ -92,7 +93,7 @@ a {
     .navbar-wrapper { 
         width: 80%;
     }
-    .footer-wrapper {
+    .footer-wrapper > p{
         width: 80%;
     }
     .navbar-inner-first {
@@ -114,7 +115,7 @@ a {
     .navbar-wrapper { 
         width: 75%;
     }
-    .footer-wrapper {
+    .footer-wrapper > p{
         width: 75%;
     }
     .navbar-inner-first {

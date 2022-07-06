@@ -20,11 +20,15 @@ const Cart = () => {
 
   return (
     <section className = {`${isDesktopOrLaptop? "bg-color cart-wrapper" :""}`}>
-        <div className = "flex cart-header-wrapper">
-          <h2 className = "cart-title bg-color">My Cart <span className = "cart-title-small">[{cartData.length === 1 ? `${cartData.length}item` : `${cartData.length}items`}]</span></h2>
+      
+        <div className = {`flex cart-header-wrapper ${isDesktopOrLaptop ? "header-larger-bg" :""}`}>
+          <h2 className = "cart-title">My Cart <span className = "cart-title-small">[{cartData.length === 1 ? `${cartData.length}item` : `${cartData.length}items`}]</span></h2>
           {isDesktopOrLaptop && <button onClick = { modelToggleHandler } className = "close-btn">Close</button>}
         </div>
         <div className = {`flex cart-items-wrapper ${isDesktopOrLaptop ? "singleItem-wrapper" :""}`}>
+          {
+            cartData.length < 1 && <p className = "empty-cart-description">You have not added anything to the Cart</p>
+           }
           {
             cartData.map((product) => {
               return <CartItem product = { product } key = {product.id}/>

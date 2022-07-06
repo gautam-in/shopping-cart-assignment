@@ -16,11 +16,11 @@
 }
 .product-description {
     padding: 0.4rem;
-    background-color: rgb(211, 211, 211);
+    background-color: var(--whitesmoke-color);
 }
 .product-buy-btn, .buy-btn{
-    background-color: #D90467;
-    color: whitesmoke;
+    background-color: var(--app-btn-color);
+    color: var(--whitesmoke-color);
     border: 0;
     padding: 0.5rem 1rem;
 }
@@ -37,7 +37,7 @@
 .product-filter-wrapper {
     justify-content: space-between;
     padding: 0.5rem;
-    background-color: #D90467;
+    background-color: var(--app-btn-color);
 }
 .filter-clear-btn {
     padding: 0.5rem;
@@ -45,13 +45,13 @@
     border: 0;
     text-decoration: underline;
     font-size: 1.2rem;
-    color: whitesmoke;
+    color: var(--whitesmoke-color);
 }
 .product-filter-select {
     border: 0;
-    background-color: #D90467;
+    background-color: var(--app-btn-color);
     outline: 0;
-    color: whitesmoke;
+    color: var(--whitesmoke-color);
     font-size: 1.2rem;
 }
 .product-filter-sidebar {
@@ -72,31 +72,29 @@
     padding: 0.2rem 0;
 }
 .qty-btn {
-    background-color: #D90467;
-    border: 1px solid whitesmoke;
+    background-color: var(--app-btn-color);
+    border: 1px solid var(--whitesmoke-color);
     width: 1.5rem;
     height:1.5rem;
     border-radius: 1.5rem;
     cursor: pointer;
-    color: whitesmoke;
+    color: var(--whitesmoke-color);
 }
 .cart-model-wrapper {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
-    bottom: 0;
+    bottom: -20%;
     width: 100%;
-    background-color: rgba(181, 169, 169, 0.5);
+    background-color: var(--model-bg-color);
 }
-.product-details-container {
-    position: relative;
-}
+
 .cart-model-parentWrapper {
-    position: absolute;
-    left: 50%;
-    top:40%;
+    position: fixed;
+    left: 70%;
+    top:60%;
     transform: translate(-50%, -50%);
-    width: 40rem;
+    width: 30rem;
 }
 @media only screen and (min-width: 768px){
     .product-filter-wrapper, .product-buy-btn {
@@ -105,12 +103,13 @@
     .buy-btn {
         display: inline;
         width: 100%;
+        cursor: pointer;
     }
     .product-filter-sidebar {
         display: flex;
         flex-direction: column;
         min-width: 10rem;
-        background-color: rgb(217, 213, 213);
+        background-color: var(--app-bg-color);
         height: max-content;
     }
     .product-main-container {
@@ -120,8 +119,9 @@
     .filter-btn {
         padding: 1rem;
         border: 0;
-        border-bottom: 1px solid grey;
-        background-color: rgb(217, 213, 213);
+        border-bottom: 1px solid var(--grey-color);
+        background-color: var(--app-bg-color);
+        cursor: pointer;
     }
     .single-product-container {
         overflow-y: scroll;
@@ -156,6 +156,6 @@
 
 }
 .active {
-    background-color: #D90467;
-    color: whitesmoke
+    background-color: var(--app-btn-color);
+    color: var(--whitesmoke-color)
   }

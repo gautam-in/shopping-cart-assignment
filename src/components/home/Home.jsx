@@ -27,7 +27,7 @@ const Home = () => {
     const bannerRightArrowHandler = bannerToggleRightBtn(currentBannerIndex, bannerData, setCurrentBannerIndex)
   return (
     <main className = "bg-color">
-        <div className = "home-banner-wrapper">
+        <div className = "home-banner-wrapper box-shadow">
             <img src = {bannerData[currentBannerIndex]?.bannerImageUrl} alt = "offer banner" className = "home-banner-image"/>
             {
                 bannerData.map((banner, index) => {

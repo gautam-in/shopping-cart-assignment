@@ -14,7 +14,7 @@ const CategoryItem = ({item}) => {
       navigate("/products")
   }
   return (
-    <section className = "flex cat-wrapper">
+    <section className = "flex cat-wrapper box-shadow">
         <div className = "cat-image-wrapper">
             <img src = {item.imageUrl} alt = {item.key} className = "home-banner-image"/>
         </div>

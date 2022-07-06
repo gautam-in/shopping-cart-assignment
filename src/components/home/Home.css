@@ -1,6 +1,7 @@
 .banner-index-btn {
     margin: 1rem;
-    color: rgb(201, 198, 198)
+    color: var(--app-bg-color);
+    cursor: pointer;
 }
 .home-banner-image {
     width: 100%;
@@ -13,7 +14,7 @@
     position: relative;
 }
 .banner-active {
-    color: #333
+    color: var(--banner-active-color)
 }
 .banner-left-arrow, .banner-right-arrow {
     position: absolute;
@@ -43,8 +44,8 @@
 }
 .explore-deals-btn {
     width: 70%;
-    background-color: #D90467;
-    color: whitesmoke;
+    background-color: var(--app-btn-color);
+    color: var(--whitesmoke-color);
     margin: auto;
 }
 .home-cat-wrapper {
