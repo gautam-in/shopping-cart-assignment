@@ -1,6 +1,6 @@
 import React from 'react'
 import { useProducts } from '../../context/productContext'
-import { categoryFilterHandler } from './categoryFilterHandler';
+import { categoryFilterHandler } from './categoryFilterHandler.jsx';
 
 const Filter = () => {
     const { productState, dispatch } = useProducts()

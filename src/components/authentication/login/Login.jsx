@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import  "./Login.css"
 import { useNavigate } from 'react-router-dom'
-import { validateLoginForm } from './validateLoginForm'
+import { validateLoginForm } from './validateLoginForm.jsx'
 
 const Login = () => {
 

@@ -3,13 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "json-server": "^0.17.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-responsive": "^9.0.0-beta.10",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
@@ -18,7 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -40,9 +37,51 @@
     ]
   },
   "devDependencies": {
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
+    "babel-jest": "^28.1.2",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
+    "jest": "^28.1.2",
+    "jest-enzyme": "^7.1.2",
     "jest-sonar": "^0.2.12"
   },
   "jest": {
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ],
+    "collectCoverage": true,
+    "verbose": false,
+    "moduleNameMapper": {
+      "^@$": "<rootDir>/src",
+        "^@/(.*)\\.(?!jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+            "<rootDir>/src/$1",
+        ".*\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+            "<rootDir>/__test__/__mock__/fileMock.js",
+            "\\.(css|less|scss|sass)$": "<rootDir>/__test__/__mock__/styleMock.js"
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text"
+    ],
+    "coverageDirectory": "coverage",
+    "testMatch": [
+      "<rootDir>/__test__/**/?(*.)+(spec|test).js"
+    ],
+    "moduleFileExtensions": [
+      ["jsx", "js", "mjs", "cjs", "node", "ts", "tsx", "json"],
+      "js",
+      "json"
+    ],
     "reporters": [
       "default",
       [
@@ -53,6 +92,12 @@
           "reportedFilePath": "absolute"
         }
       ]
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
     ]
   }
 }

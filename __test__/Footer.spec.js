@@ -11,7 +11,7 @@ import React from "react";
 
 import { shallow } from "enzyme";
 
-import {Footer} from './../index-components';
+import {Footer} from './../src/components/index-components';
 
 
 
