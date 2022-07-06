@@ -1,0 +1,39 @@
+// @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap');
+@import './common_mixin.scss';
+
+
+
+.btn-cls {
+    background-color: #d1056b;
+    color: white;
+    font-size: 14px;
+    padding: 8px 10px;
+    border: none;
+    display: inline-block;
+
+    @include phone {
+        font-size: 11px;
+        padding: 5px;
+    }
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 8px !important;
+    height: 8px !important;
+    background-color: #999 !important;
+    border-radius: 50%;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    display: none !important;
+}
+
+@include phone {
+    h4{
+        font-size: 16px !important;
+    }
+    p {
+        font-size: 14px;
+    }
+}

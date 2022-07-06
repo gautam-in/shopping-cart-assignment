@@ -1,0 +1,43 @@
+@import '../../common_mixin.scss';
+
+.category-section {
+    margin-bottom: 30px;
+    .row{
+            align-items: center;
+            justify-content: center;
+        
+    }
+    .category-desc {
+        text-align: center;
+        padding: 80px;
+
+        @include phone {
+            padding: 0;
+            .card-title {
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+            .card-text {
+                font-size: 12px;
+                line-height: 15px;
+                margin-bottom: 5px;
+            }  
+        }
+        @include tablet{
+            padding: 20px;
+        }
+    }
+
+    .category-img {
+        padding: 1em;
+        @include phone {
+            padding: 5px;
+        }
+    }
+
+    .card {
+        border: none;
+        box-shadow: rgb(0 0 0 / 10%) 0px 20px 25px -5px, rgb(0 0 0 / 4%) 0px 10px 10px -5px;
+        margin: 5px 0;
+    }
+}
