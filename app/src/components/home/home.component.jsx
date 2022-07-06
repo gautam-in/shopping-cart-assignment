@@ -4,12 +4,14 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './home.scss';
 import { BannerURL, CategoryURL } from '../../store/url/api';
+import { getBannerData } from '../../store/actions/cart.action';
 
 const Home = () => {
     const navigate = useNavigate();
     const [banners, setBanners] = useState([]);
     const [categories, setCategory] = useState([]);
     useEffect(() => {
+       
         const fetchData = async () => {
             const bannersdata = await axios.get(BannerURL);
             const category = await axios.get(CategoryURL);
