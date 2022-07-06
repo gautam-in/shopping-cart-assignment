@@ -272,7 +272,7 @@ class App extends Component {
           deleteCartItem={this.deleteCartItem}
         />
         <main>
-          <Suspense>
+          <Suspense fallback={"Loading..."}>
             {/* Router */}
             <Routes>
               <Route path="/">

@@ -1,11 +1,11 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
+import userEvent from "@testing-library/user-event";
 import Header from "../components/Header";
 
 describe("Header", () => {
-  test("Is header contains logo", async () => {
+  test("contains logo", async () => {
     render(
       <BrowserRouter>
         <Header cartCounter={0} />
@@ -17,7 +17,7 @@ describe("Header", () => {
     );
   });
 
-  test("Is header contains home, product, signin, and register, link", async () => {
+  test("contains navigation link - home, product, signin, and register", async () => {
     render(
       <BrowserRouter>
         <Header cartCounter={0} />
@@ -46,7 +46,7 @@ describe("Header", () => {
     });
   });
 
-  test("Header contains cart button", () => {
+  test("Contains cart button", () => {
     render(
       <BrowserRouter>
         <Header cartCounter={0} />

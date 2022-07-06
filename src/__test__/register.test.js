@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import Register from "../pages/Register";
 
 describe("Registration", () => {
-  test("Register page contains form element", () => {
+  test("Page contains form element", () => {
     render(
       <BrowserRouter>
         <Register />
@@ -15,7 +15,7 @@ describe("Registration", () => {
     expect(form).toBeInTheDocument();
   });
 
-  test("Register page contains form elements and it contains required input fields with type: email, and password", () => {
+  test("Page contains form elements and it contains required input fields with type: email, and password", () => {
     render(
       <BrowserRouter>
         <Register />
