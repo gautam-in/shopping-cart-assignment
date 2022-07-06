@@ -1,10 +1,6 @@
-import { cleanup, render, screen, waitFor } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
-import Home from './home.component';
-import { store } from '../../store/store';
+import { cleanup } from '@testing-library/react';
 import axios from 'axios';
-import { BannerURL, BASE_URL } from '../../store/url/api';
+import { BASE_URL } from '../../store/url/api';
 import { getBannerData, getCategories } from '../../utils/utils';
 
 jest.mock('axios');
@@ -114,17 +110,12 @@ describe('testing home page', () => {
             // given
             const message = "Network Error";
             axios.get.mockRejectedValueOnce(new Error(message));
-            
+
             const result = await getBannerData();
 
             expect(axios.get).toHaveBeenCalledWith(`${BASE_URL}/banners`);
             expect(result).toEqual([]);
         });
     });
-    // it('test banner section', () => {
-    //     // axios.get.mockResolvedValue({ data: fakeUsers });
-    //     const { container } = render(<Provider store={store}><BrowserRouter><Home /></BrowserRouter></Provider>);
-
-    //     // expect(screen.getByText('Users:')).toBeInTheDocument();
-    // })
+  
 })
