@@ -16,7 +16,8 @@ const CategoryItem = ({item}) => {
   return (
     <section className = "flex cat-wrapper box-shadow">
         <div className = "cat-image-wrapper">
-            <img src = {item.imageUrl} alt = {item.key} className = "home-banner-image"/>
+            <img srcset = {`${item.imageUrlSmall} 80w, ${item.imageUrl} 1080w`} sizes = "(max-width:600px) 80px, 1080px" src = {item.imageUrl} alt = {item.key} className = "home-cat-image"/>
+      
         </div>
         <div className = "flex cat-text-wrapper">
             <h4>{item.name}</h4>

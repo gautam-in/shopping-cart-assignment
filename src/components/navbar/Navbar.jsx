@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import "./Navbar.css"
 import logo from "./../../logo.png"
-import logoLarge from "./../../logo_2x.png"
+import  logoLarge from "./../../logo_2x.png"
 
 
 import { useProducts } from '../../context/productContext'
@@ -18,7 +18,8 @@ const Navbar = () => {
         <nav className = "navbar-wrapper">
         <div className = "navbar-inner-first">
             <Link to = "/">
-                <img src = {isDesktopOrLaptop ? logoLarge : logo} alt = "sabka bazar logo" className = "navbar-logo"/>
+                {/* <img src = {isDesktopOrLaptop ? logoLarge : logo} alt = "sabka bazar logo" className = "navbar-logo"/> */}
+                <img src = {logo} srcSet = {`${logo} 480w, ${logoLarge} 1080w`} sizes = "40vw" alt = "sabka bazar logo" className = "navbar-logo"/>
             </Link>
             <div className = "navbar-first-links">
                 <NavLink to = "/" className = "nav-links">Home</NavLink>

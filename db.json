@@ -253,35 +253,35 @@
     ],
     "bannersJSON": [
       {
-        "bannerImageUrl": "images/offers/offer1.jpg",
+        "bannerImageUrl": "images/offers/offer1.webp",
         "bannerImageAlt": "Independence Day Deal - 25% off on shampoo",
         "isActive": true,
         "order": 1,
         "id": "5b6c38156cb7d770b7010ccc"
       },
       {
-        "bannerImageUrl": "images/offers/offer2.jpg",
+        "bannerImageUrl": "images/offers/offer2.webp",
         "bannerImageAlt": "Independence Day Deal - Rs120 off on surf",
         "isActive": true,
         "order": 2,
         "id": "5b6c38336cb7d770b7010ccd"
       },
       {
-        "bannerImageUrl": "images/offers/offer3.jpg",
+        "bannerImageUrl": "images/offers/offer3.webp",
         "bannerImageAlt": "Independence Day Deal - Rs99 off on domex",
         "isActive": true,
         "order": 3,
         "id": "5b6c38456cb7d770b7010cce"
       },
       {
-        "bannerImageUrl": "images/offers/offer4.jpg",
+        "bannerImageUrl": "images/offers/offer4.webp",
         "bannerImageAlt": "Independence Day Deal - Rs99 off on bodywash",
         "isActive": true,
         "order": 4,
         "id": "5b6c38576cb7d770b7010ccf"
       },
       {
-        "bannerImageUrl": "images/offers/offer5.jpg",
+        "bannerImageUrl": "images/offers/offer5.webp",
         "bannerImageAlt": "Independence Day Deal - Rs70 off on tea",
         "isActive": true,
         "order": 5,
@@ -295,7 +295,8 @@
         "description": "Our beverage department will ensure your fridge is always fully stocked. Shop for soda, juice, beer and more. ",
         "enabled": true,
         "order": 3,
-        "imageUrl": "images/category/beverages.png",
+        "imageUrl": "images/category/beverages.webp",
+        "imageUrlSmall": "images/category/beverages_small.webp",
         "id": "5b675e5e5936635728f9fc30"
       },
       {
@@ -304,7 +305,8 @@
         "description": "The best cupcakes, cookies, cakes, pies, cheesecakes, fresh bread, biscotti, muffins, bagels, fresh coffee, milk and more.",
         "enabled": true,
         "order": 2,
-        "imageUrl": "images/category/bakery.png",
+        "imageUrl": "images/category/bakery.webp",
+        "imageUrlSmall": "images/category/bakery_small.webp",
         "id": "5b6899123d1a866534f516de"
       },
       {
@@ -313,7 +315,8 @@
         "description": "Buy beauty and personal care products online in India at best prices.",
         "enabled": true,
         "order": 4,
-        "imageUrl": "images/category/beauty.png",
+        "imageUrl": "images/category/beauty.webp",
+        "imageUrlSmall": "images/category/beauty_small.webp",
         "id": "5b68994e3d1a866534f516df"
       },
       {
@@ -322,7 +325,8 @@
         "description": "Shop online for Baby Products, Diapers, Skin Care Products,etc.",
         "enabled": true,
         "order": 5,
-        "imageUrl": "images/category/baby.png",
+        "imageUrl": "images/category/baby.webp",
+        "imageUrlSmall": "images/category/baby_small.webp",
         "id": "5b6899683d1a866534f516e0"
       },
       {
@@ -331,7 +335,8 @@
         "description": "A variety of fresh fruits and vegetables.",
         "enabled": true,
         "order": 1,
-        "imageUrl": "images/category/fruits.png",
+        "imageUrl": "images/category/fruits.webp",
+        "imageUrlSmall": "images/category/fruits_small.webp",
         "id": "5b6899953d1a866534f516e2"
       }
     ],

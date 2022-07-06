@@ -28,7 +28,10 @@ const Home = () => {
   return (
     <main className = "bg-color">
         <div className = "home-banner-wrapper box-shadow">
-            <img src = {bannerData[currentBannerIndex]?.bannerImageUrl} alt = "offer banner" className = "home-banner-image"/>
+            <div>
+                 <img src = {bannerData[currentBannerIndex]?.bannerImageUrl} alt = "offer banner" className = "home-banner-image"/>
+
+            </div>
             {
                 bannerData.map((banner, index) => {
                     return <i className = {`fa-solid fa-circle banner-index-btn ${currentBannerIndex === index ? "banner-active" : ""}`} key = {banner.id} onClick = { () => changeBannerHandler(index) }></i>

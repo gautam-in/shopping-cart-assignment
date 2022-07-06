@@ -4,7 +4,7 @@
     cursor: pointer;
 }
 .home-banner-image {
-    width: 100%;
+    width: 20rem;
     margin:auto;
     height: auto;
     object-fit: cover;
@@ -51,10 +51,12 @@
 .home-cat-wrapper {
     flex-direction: column;
     gap: 2rem;
+    margin-top: 1rem;
 }
-.cat-banner-image {
-    width: 4rem;
-    height: 4rem;
+
+.home-cat-image {
+    width: 5rem;
+    height: 3rem;
 }
 @media only screen and (min-width: 650px){
     .home-banner-wrapper { 
@@ -67,6 +69,15 @@
     .cat-wrapper {
         width: 80%;
         margin: auto;
+    }
+}
+@media only screen and (min-width: 768px){
+    .home-banner-image {
+        width: 40rem;
+    }
+    .home-cat-image {
+        width: 8rem;
+        height: 6rem;
     }
 }
 @media only screen and (min-width: 950px){
@@ -83,4 +94,13 @@
         gap: 2.5rem;
     }
 
+}
+@media only screen and (min-width: 1200px){
+    .home-banner-image {
+        width: 60rem;
+    }
+    .home-cat-image {
+        width: 11rem;
+        height: 9rem;
+    }
 }
