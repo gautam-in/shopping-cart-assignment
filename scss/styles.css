@@ -208,6 +208,132 @@
     stroke-width: 0;
   }
 }
+.catg-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: inset 0px 6px 15px -3px rgba(224, 219, 219, 0.75);
+  margin-bottom: 2rem;
+  padding: 2rem 1rem;
+}
+.catg-list-item:nth-child(even) .catg-image {
+  order: 2;
+}
+.catg-list-item:nth-child(even) .catg-content {
+  order: 1;
+}
+
+.catg-image {
+  flex: 1 1 100px;
+}
+.catg-image img {
+  max-width: 100%;
+}
+
+.catg-content {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.catg-header {
+  margin-bottom: 0.8rem;
+}
+
+.catg-action {
+  font-size: 0.8rem;
+  padding: 0.5rem 1.2rem;
+  margin-top: 1.3rem;
+}
+
+.prod-wrapper {
+  display: flex;
+  height: 100%;
+}
+.prod-wrapper aside {
+  flex: 1 0 20%;
+  background-color: #f0f0f0;
+}
+.prod-wrapper aside .prod-menu-items li {
+  border-bottom: 2px solid rgba(163, 168, 172, 0.2);
+}
+.prod-wrapper aside .prod-menu-items li a {
+  display: block;
+  padding: 0.8rem;
+  color: #000000;
+}
+.prod-wrapper select {
+  display: none;
+}
+.prod-wrapper main {
+  overflow-y: auto;
+  flex: 1 0 80%;
+  margin: 0px auto;
+}
+
+@media (max-width: 600px) {
+  .prod-wrapper {
+    flex-direction: column;
+  }
+  .prod-wrapper aside {
+    display: none;
+  }
+}
+.card-wrapper {
+  margin: 10px;
+}
+.card-wrapper .cards {
+  display: grid;
+  grid-column-gap: 14px;
+  grid-row-gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.card-wrapper .cards-item {
+  border-bottom: 1px dashed #a3a8ac;
+}
+.card-wrapper .cards .card-header {
+  margin-bottom: 1rem;
+}
+.card-wrapper .cards .card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+.card-wrapper .cards .card-image img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card-wrapper .cards .card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.card-wrapper .cards .card-content .card-text {
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.4rem 0.6rem;
+  background: #f0f0f0;
+  flex: 1 0 auto;
+}
+.card-wrapper .cards .card-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 1.2rem 0 0.8rem 0.6rem;
+}
+.card-wrapper .cards .card-footer-left {
+  align-self: center;
+}
+.card-wrapper .cards .card-btn {
+  font-size: 0.8rem;
+  padding: 0.5rem 1.2rem;
+}
+.card-wrapper .cards .card-btn-sm, .card-wrapper .cards .card-btn-md {
+  display: none;
+}
+
 .signup-container {
   max-width: 80%;
   margin: 0 auto;

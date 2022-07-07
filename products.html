@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description"
+        content="Get the best offers on food, groceries, beverages, personal care, and more at Sabka Bazaar store across India. Save more with Sabka Bazaar shopping." />
+    <meta name="keywords" content="home needs products, grocery store, fruits, bakery, online shopping" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./scss/styles.css" />
+    <title>Sabka Bazaar</title>
+    <link rel="icon" type="image/png" href="./static/images/logo.png" />
+</head>
+
+<body>
+    <!-- Navbar starts here -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <img src="./static/images/logo.png" alt="Main logo" class="main-logo" />
+                <div class="navbar-links-left">
+                    <ul class="navbar-list-items navbar-list-items--light">
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/products.html">Products</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-links-right">
+                    <ul class="navbar-list-items navbar-list-items--dark">
+                        <li><a href="/signin.html">SignIn</a></li>
+                        <li><a href="/register.html">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Navbar ends here -->
+
+    <!-- Main content Starts here -->
+    <div class="prod-wrapper">
+        <!-- Side Menu for larger screen starts here -->
+        <aside>
+            <div class="prod-menu">
+                <ul class="prod-menu-items">
+                </ul>
+            </div>
+        </aside>
+        <!-- Side Menu for larger screen ends here -->
+
+        <!-- Side Menu for smaller screen starts here -->
+        <label for="categories"></label>
+        <select name="categories" id="categories">
+        </select>
+        <!-- Side Menu for smaller screen ends here -->
+
+        <!-- Products display section starts here -->
+        <main>
+            <div class="card-wrapper">
+                <ul class="cards"></ul>
+            </div>
+        </main>
+        <!-- Products display section ends here -->
+    </div>
+    <!-- Main content ends here -->
+
+    <!-- Footer starts here -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>
+                Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt. Ltd.
+            </p>
+        </div>
+    </footer>
+    <!-- Footer ends here -->
+
+    <script src="./categories.json"></script>
+    <script src="./products.json"></script>
+    <script src="./products.js"></script>
+    <script src="./cart.js"></script>
+</body>
+
+</html>
