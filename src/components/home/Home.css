@@ -5,9 +5,7 @@
 }
 .home-banner-image {
     width: 20rem;
-    margin:auto;
-    height: auto;
-    object-fit: cover;
+    height: 5rem;
 }
 .home-banner-wrapper {
     text-align: center;
@@ -79,6 +77,10 @@
         width: 8rem;
         height: 6rem;
     }
+    .home-banner-image {
+        width: 30rem;
+        height: 8rem;
+    }
 }
 @media only screen and (min-width: 950px){
     .home-banner-wrapper { 
@@ -102,5 +104,9 @@
     .home-cat-image {
         width: 11rem;
         height: 9rem;
+    }
+    .home-banner-image {
+        width: 40rem;
+        height: 10rem;
     }
 }

@@ -46,3 +46,10 @@
 .cart-bg-color {
   background-color: var(--whitesmoke-color);
 }
+.loader-align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}

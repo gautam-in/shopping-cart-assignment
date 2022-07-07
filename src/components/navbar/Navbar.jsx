@@ -32,8 +32,8 @@ const Navbar = () => {
                 <NavLink to = "/signup" className = "nav-links">Register</NavLink>
             </div>
             <Link to = {`${isDesktopOrLaptop ? "/products/cart":"/cart"}`} className = "nav-cart-items" onClick = { toggleCarModelView }>
-                <i className = "fa-solid fa-cart-shopping navbar-cart-logo"></i>
-                <span><b>{cartData.length < 2 ? `${cartData.length}  item` :  `${cartData.length}  items`}</b></span>
+                
+            Cart:<span><b>{cartData.length < 2 ? `${cartData.length}  item` :  `${cartData.length}  items`}</b></span>
             </Link>
         </div>
     </nav>

@@ -41,7 +41,7 @@ const Signup = () => {
     }
   }
   return (
-    <main className = "flex login-wrapper bg-color">
+    <main className = "flex login-wrapper bg-color" data-testid = "signup-form">
         <div className = "flex login-header-wrapper">
           <h2>Signup</h2>
           <p>We do not share your personal details with anyone</p>
@@ -49,28 +49,28 @@ const Signup = () => {
         <form className = "flex login-form-wrapper signup-form-wrapper" onSubmit={(e) => e.preventDefault()}>
             <label htmlFor = "first-name" className = "login-input">
                 <p>First Name</p>
-                <input type = "text" id = "first-name" className = "login-form-input" onChange = {(e) => setFormaData((prev) => ({...prev, firstName:e.target.value}))}/>
+                <input type = "text" id = "first-name" className = "login-form-input" onChange = {(e) => setFormaData((prev) => ({...prev, firstName:e.target.value}))} placeholder = "Enter your first name"/>
             </label>
             <p className = "error-message">{error?.firstName}</p>
             <label htmlFor = "last-name" className = "login-input">
                 <p>Last Name</p>
-                <input type = "text" id = "last-name" className = "login-form-input" onChange = {(e) => setFormaData((prev) => ({...prev, lastName:e.target.value}))}/>
+                <input type = "text" id = "last-name" className = "login-form-input" onChange = {(e) => setFormaData((prev) => ({...prev, lastName:e.target.value}))} placeholder = "Enter your last name"/>
             </label>
             <p className = "error-message">{error?.lastName}</p>
             <label htmlFor = "email" className = "login-input">
                 <p>Email</p>
-                <input type = "email" id = "email" className = "login-form-input" onChange = {(e) => setFormaData((prev) => ({...prev, email:e.target.value}))}/>
+                <input type = "email" id = "email" className = "login-form-input" onChange = {(e) => setFormaData((prev) => ({...prev, email:e.target.value}))} placeholder = "Enter your email"/>
             </label>
             <p className = "error-message">{error?.email}</p>
             <label htmlFor = "password" className = "login-input relative">
                 <p>Password</p>
-                <TogglePasswordDisplay setFormaData = { setFormaData } id = {"password"} formData = {formData} setError = {setError}/>
+                <TogglePasswordDisplay setFormaData = { setFormaData } id = {"password"} formData = {formData} setError = {setError} placeholder = "Enter your password"/>
             </label>
             <p className = "error-message">{error?.pwd}</p>
 
             <label htmlFor = "confirm-password" className = "login-input">
                 <p>Confirm Password</p>
-                <TogglePasswordDisplay setFormaData = { setFormaData } id = {"confirm-password"} formData = {formData} setError = {setError}/>
+                <TogglePasswordDisplay setFormaData = { setFormaData } id = {"confirm-password"} formData = {formData} setError = {setError} placeholder = "Re-enter your password"/>
             </label>
             <p className = "error-message">{error?.confirmPwd}</p>
             <button className = "btn login-form-btn signup-form-btn" onClick = { loginClickHandler}>Signup</button>

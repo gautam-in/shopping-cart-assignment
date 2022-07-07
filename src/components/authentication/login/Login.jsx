@@ -22,7 +22,7 @@ const Login = () => {
   }
   
   return (
-    <main className = "flex login-wrapper bg-color">
+    <main className = "flex login-wrapper bg-color" data-testid = "login-form">
         <div className = "flex login-header-wrapper">
           <h2>Login</h2>
           <p>Get access to your Orders, Wishlist and Recommendations</p>
@@ -36,7 +36,7 @@ const Login = () => {
             
             <label htmlFor = "password" className = "login-input">
                 <p>Password</p>
-                <input type = "password" id = "password" className = "login-form-input" onChange = {(e) => setFormaData((prev) => ({...prev, password:e.target.value}))}/>
+                <input type = "password" id = "password" className = "login-form-input" onChange = {(e) => setFormaData((prev) => ({...prev, password:e.target.value}))} placeholder = "Enter your password"/>
                 <p className = "error-message">{error.pwd}</p>
             </label>
             <button className = "btn login-form-btn" onClick = { loginClickHandler}>Login</button>

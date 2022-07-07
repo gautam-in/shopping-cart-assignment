@@ -24,6 +24,9 @@ export const productReducer = (state, action) => {
         case "SET_CART_VIEW" : {
             return {...state, closeCartModel: action.payload}
         }
+        case "SET_BANNER_DATA" : {
+            return {...state, bannerData: action.payload}
+        }
         default : {
             return state
         }

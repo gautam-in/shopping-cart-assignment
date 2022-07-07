@@ -1,5 +1,10 @@
 
+import Login from './Login';
 import { validateLoginForm } from './validateLoginForm';
+import { render, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
+import '@testing-library/jest-dom'
+
 describe("test login form", () => {
     test("should success on valid form data", () => {
         const formData = {email:"ram@gmail.com", password:"one123"}
@@ -23,5 +28,33 @@ describe("test login form", () => {
         const result = validateLoginForm(formData)
         const expectedResult = {pwd: "Password must have at least six characters"}
         expect(result).toEqual(expectedResult)
+    })
+})
+
+describe("test login component render", () => {
+    
+    test("should contain email, password and button fields in Login component", () => {
+        render(<BrowserRouter><Login /></BrowserRouter>)
+        const labelElement =  screen.getByLabelText("Email")
+        const firstInput = screen.getByRole("textbox")
+        const secondLabelElement = screen.getByLabelText("Password")
+        const secondInput = screen.getByPlaceholderText("Enter your password")
+        const loginButton = screen.getByRole("button")
+        expect( labelElement).toBeInTheDocument()
+        expect( secondLabelElement).toBeInTheDocument()
+        expect( firstInput ).toHaveAttribute("type", "email")
+        expect( secondInput ).toHaveAttribute("type", "password")
+        expect( loginButton ).toBeInTheDocument()
+    })
+    test("should render login component on Page", () => {
+        render(<BrowserRouter><Login /></BrowserRouter>)
+        const loginComponent = screen.getByTestId("login-form")
+        expect( loginComponent ).toBeInTheDocument()
+
+    })
+    test("should redirect to home on successful login", () => {
+        const formData = {email:"ram@gmail.com", password:"one123"}
+        const result = validateLoginForm(formData)
+        
     })
 })

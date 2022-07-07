@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const TogglePasswordDisplay = ({setFormaData, id, formData, setError}) => {
+const TogglePasswordDisplay = ({setFormaData, id, formData, setError, placeholder}) => {
     const [togglePasswordDisplay, setTogglePasswordDisplay] = useState(false)
 
     const passwordChangeHandler = (e) => {
@@ -20,7 +20,7 @@ const TogglePasswordDisplay = ({setFormaData, id, formData, setError}) => {
 
   return (
     <div className = "relative">
-         <input type = {`${togglePasswordDisplay ? "text" : "password"}`} id = {id} className = "login-form-input" onChange = { passwordChangeHandler}/>
+         <input type = {`${togglePasswordDisplay ? "text" : "password"}`} id = {id} className = "login-form-input" onChange = { passwordChangeHandler} placeholder = {placeholder}/>
         { togglePasswordDisplay ? <i className="fa-solid fa-eye show-password" onClick = {() => setTogglePasswordDisplay((prev) => !prev)} title = "hide password"></i> : <i className="fa-solid fa-eye-slash show-password" onClick = {() => setTogglePasswordDisplay((prev) => !prev)} title = "show password"></i>}
     </div>
   )
