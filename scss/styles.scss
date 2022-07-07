@@ -1,0 +1,38 @@
+@import "../partials/variables";
+@import "../partials/mixins";
+@import "../partials/navbar";
+@import "../partials/index";
+@import "../partials/products";
+@import "../partials/register";
+@import "../partials/footer";
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Dosis", sans-serif;
+}
+
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  font: inherit;
+  border: none;
+  color: $color-white;
+  background: $color-primary;
+  cursor: pointer;
+}

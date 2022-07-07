@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description"
+        content="Get the best offers on food, groceries, beverages, personal care, and more at Sabka Bazaar store across India. Save more with Sabka Bazaar shopping." />
+    <meta name="keywords" content="home needs products, grocery store, fruits, bakery, online shopping" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./scss/styles.css" />
+    <title>Sabka Bazaar</title>
+    <link rel="icon" type="image/png" href="./static/images/logo.png" />
+</head>
+
+<body>
+    <!-- Navbar starts here -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <img src="./static/images/logo.png" alt="Main logo" class="main-logo" />
+                <div class="navbar-links-left">
+                    <ul class="navbar-list-items navbar-list-items--light">
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/products.html">Products</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-links-right">
+                    <ul class="navbar-list-items navbar-list-items--dark">
+                        <li><a href="/signin.html">SignIn</a></li>
+                        <li><a href="/register.html">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Navbar ends here -->
+
+    <!-- Main section starts here -->
+    <main id="catg-section">
+        <!-- Category carousel starts here -->
+        <section class="slideshow" aria-label="carousel">
+            <div class="photo_slider">
+                <input type="radio" name="slider" class="slide-radio1" checked id="slider_1" />
+                <input type="radio" name="slider" class="slide-radio2" id="slider_2" />
+                <input type="radio" name="slider" class="slide-radio3" id="slider_3" />
+                <input type="radio" name="slider" class="slide-radio4" id="slider_4" />
+                <input type="radio" name="slider" class="slide-radio5" id="slider_5" />
+                <div class="slider-pagination">
+                    <label for="slider_1" class="page1"></label>
+                    <label for="slider_2" class="page2"></label>
+                    <label for="slider_3" class="page3"></label>
+                    <label for="slider_4" class="page4"></label>
+                    <label for="slider_5" class="page5"></label>
+                </div>
+                <div class="next control">
+                    <label for="slider_1" class="numb1"> NEXT </label>
+                    <label for="slider_2" class="numb2"> NEXT </label>
+                    <label for="slider_3" class="numb3"> NEXT </label>
+                    <label for="slider_4" class="numb4"> NEXT </label>
+                    <label for="slider_5" class="numb5"> NEXT </label>
+                </div>
+                <div class="previous control">
+                    <label for="slider_1" class="numb1"> PREV </label>
+                    <label for="slider_2" class="numb2"> PREV </label>
+                    <label for="slider_3" class="numb3"> PREV </label>
+                    <label for="slider_4" class="numb4"> PREV </label>
+                    <label for="slider_5" class="numb5"> PREV </label>
+                </div>
+                <div class="slider slide_img_01"></div>
+                <div class="slider slide_img_02"></div>
+                <div class="slider slide_img_03"></div>
+                <div class="slider slide_img_04"></div>
+                <div class="slider slide_img_05"></div>
+            </div>
+        </section>
+        <!-- Category carousel ends here -->
+        <!-- Categories display section starts here -->
+        <section class="catg-container">
+            <div class="catg-wrapper">
+                <ul class="catg-list"></ul>
+            </div>
+        </section>
+        <!-- Categories display section ends here -->
+    </main>
+    <!-- Main section ends here -->
+
+    <!-- Footer starts here -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>
+                Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt. Ltd.
+            </p>
+        </div>
+    </footer>
+    <!-- Footer ends here -->
+
+    <script src="./banners.json"></script>
+    <script src="./categories.json"></script>
+    <script src="./products.json"></script>
+    <script src="./products.js"></script>
+    <script src="./index.js"></script>
+    <script src="./cart.js"></script>
+</body>
+
+</html>
