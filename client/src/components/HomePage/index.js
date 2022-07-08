@@ -20,7 +20,7 @@ export const HomePage = (props) => {
         })())
     },[])
     return (
-        <div className='home-page-container'>
+        <div className='home-page-container' >
             <div className="home-page-carousel-container">
                 <Carousel
                     showStatus={false}
@@ -29,7 +29,7 @@ export const HomePage = (props) => {
                     centerSlidePercentage={70}
                 >
                     {banners.map((banner) => {
-                        return (<div id={banner.id} key={banner.id}>
+                        return (<div id={banner.id} key={banner.id} data-testid="banner-item">
                             <img src={banner.bannerImageUrl} alt={banner.bannerImageAlt} />
                         </div>)
                     })}
@@ -38,7 +38,7 @@ export const HomePage = (props) => {
             <div className='home-page-categories-container'>
                 {categories.map((category) => {
                     return (
-                        <div className='home-page-category-container' key={category.id} >
+                        <div className='home-page-category-container' key={category.id} data-testid="category-item">
                             {Math.floor(category.order % 2) === 0 && <div className='home-page-category-content-box left-category-content'>
                                 <div className='home-page-category-name'>{category.name}</div>
                                 <div className='home-page-category-description'>{category.description}</div>

@@ -1,9 +1,19 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import productCategoryReducer from './productCategorySlice'
-import productCartsReducer from './productCartsSlice'
-export const store = configureStore({
-  reducer: {
-    productCategory:productCategoryReducer,
-    productCarts:productCartsReducer
-  },
+import productCartsReducer from './productCartsSlice';
+
+const rootReducer = combineReducers({
+  productCategory:productCategoryReducer,
+  productCarts:productCartsReducer
 })
+
+export const store = configureStore({
+  reducer:rootReducer
+})
+
+export const setupStore = preloadedState => {
+  return configureStore({
+    reducer: rootReducer,
+    preloadedState
+  })
+}

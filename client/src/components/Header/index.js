@@ -30,7 +30,7 @@ export const Header = (props) => {
                             <Link tabIndex={0} className="products-link link" to={'/products'}>Products</Link>
                         </div>
                         <div className="products-cart-container">
-                            <div className="products-cart-container-content" ><div className="products-cart-icon-items"  tabIndex={0} onClick={handleCartClick}><span><ShoppingCartIcon sx={{ color: '#cc1269' }} /></span> <span>{cartProducts.length} {cartProducts.length === 0 || cartProducts.length === 1 ? "item" : "items"}</span></div>
+                            <div className="products-cart-container-content" ><div className="products-cart-icon-items" data-testid="cart-icon-container" tabIndex={0} onClick={handleCartClick}><span><ShoppingCartIcon sx={{ color: '#cc1269' }} /></span> <span>{cartProducts.length} {cartProducts.length === 0 || cartProducts.length === 1 ? "item" : "items"}</span></div>
                                 {isShowCart && <MiniCart handleCartClose={handleCartClose} />}
                             </div>
                             {isShowCart && <ModalOverlay><div className={"overlay"} /></ModalOverlay>}

@@ -1,17 +1,17 @@
 import { render, screen } from '@testing-library/react';
-import { store } from './redux/store'
+import { store } from '../../../redux/store';
 import { Provider } from 'react-redux'
 import {BrowserRouter} from 'react-router-dom';
-import App from './App';
+import {MiniCart} from '../../../components/MiniCart'
 
-test('App spec', () => {
+test('MiniCart spec', () => {
   render(
     <Provider store={store}>
       <BrowserRouter>
-  <App />
+  <MiniCart />
   </BrowserRouter>
   </Provider>
   );
-  const linkElement = screen.getByText(/Copyright/i);
+  const linkElement = screen.getByText(/Start Shopping/i);
   expect(linkElement).toBeInTheDocument();
 });

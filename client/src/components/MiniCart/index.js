@@ -25,7 +25,7 @@ export const MiniCart = (props) => {
     return (
         <div className="mini-cart-container">
             <div className="cart-title-close-icon-container">
-                <div>{`My Cart ${cartProducts.length !== 0 ? cartProducts.length === 1 ? '(' + cartProducts.length + ' item)' : '(' + cartProducts.length + ' items)' : ''}`}</div><div><IconButton tabIndex={0} style={{ color: '#fff' }} onClick={handleCartCloseClick}><CloseIcon /></IconButton></div>
+                <div>{`My Cart ${cartProducts.length !== 0 ? cartProducts.length === 1 ? '(' + cartProducts.length + ' item)' : '(' + cartProducts.length + ' items)' : ''}`}</div><div><IconButton  tabIndex={0} style={{ color: '#fff' }} data-testid="mini-cart-close" onClick={handleCartCloseClick}><CloseIcon /></IconButton></div>
             </div>
             {cartProducts.length ? cartProducts.map(cartProduct => {
                 return (

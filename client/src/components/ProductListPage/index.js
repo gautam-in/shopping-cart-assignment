@@ -64,6 +64,7 @@ export const ProductListPage = (props) => {
                 <div className="mobile-category-container">
                     <FormControl variant={"standard"} sx={{ m: 0, width: '100%', backgroundColor: '#cc1269' }}>
                         <Select
+                            data-testid="plp-page-category-mobile"
                             value={selectedProductCategory}
                             onChange={handleMobileCategory}
                             renderValue={(selected) => {
@@ -76,7 +77,7 @@ export const ProductListPage = (props) => {
                             inputProps={{ "aria-label": "Without label" }}
                         >
                             {categories.map((category) => (
-                                <MenuItem sx={{ backgroundColor: category.name === selectedProductCategory.name ? '#095BF6' : "" }} key={category.name} value={category}>
+                                <MenuItem data-testid={`menuitem-${category.key}`} sx={{ backgroundColor: category.name === selectedProductCategory.name ? '#095BF6' : "" }} key={category.name} value={category}>
                                     {category.name}
                                 </MenuItem>
                             ))}
@@ -86,7 +87,7 @@ export const ProductListPage = (props) => {
                 <div className="plp-page-categories-container">
                     {categories.map(category => {
                         return (
-                            <div tabIndex={0} className={`plp-page-category ${selectedProductCategory.id === category.id ? 'category-selected' : ''}`} key={category.id} onClick={handleCategory(category)}>
+                            <div data-testid="plp-select-category" tabIndex={0} className={`plp-page-category ${selectedProductCategory.id === category.id ? 'category-selected' : ''}`} key={category.id} onClick={handleCategory(category)}>
                                 {category.name}
                             </div>
                         )
