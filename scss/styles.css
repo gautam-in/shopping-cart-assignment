@@ -334,6 +334,225 @@
   display: none;
 }
 
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .prod-wrapper aside {
+    flex: 1 0 30%;
+  }
+  .prod-wrapper select {
+    display: none;
+  }
+  .prod-wrapper main {
+    flex: 1 0 70%;
+  }
+
+  .card-wrapper .cards {
+    display: grid;
+    grid-column-gap: 14px;
+    grid-row-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .card-wrapper .cards .card {
+    display: flex;
+    flex-direction: row;
+  }
+  .card-wrapper .cards .card-header {
+    margin-bottom: 1rem;
+  }
+  .card-wrapper .cards .card-top {
+    flex-basis: 50%;
+  }
+  .card-wrapper .cards .card-content {
+    flex-basis: 50%;
+  }
+  .card-wrapper .cards .card-footer {
+    display: none;
+  }
+  .card-wrapper .cards .card-footer-left {
+    display: none;
+  }
+  .card-wrapper .cards .card-btn {
+    display: none;
+  }
+  .card-wrapper .cards .card-btn-sm {
+    display: none;
+  }
+  .card-wrapper .cards .card-btn-md {
+    display: block;
+    font-size: 0.8rem;
+    padding: 0.5rem 1.2rem;
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .prod-wrapper select {
+    display: block;
+    padding: 0.6rem;
+    background: #bf2957;
+    color: #ffffff;
+    font: inherit;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+  }
+
+  .card-wrapper .cards {
+    display: grid;
+    grid-gap: 14px;
+    grid-template-columns: 1fr;
+  }
+  .card-wrapper .cards .card-header {
+    margin-top: 0px;
+  }
+  .card-wrapper .cards .card {
+    display: flex;
+    flex-direction: row;
+  }
+  .card-wrapper .cards .card-top {
+    flex-basis: 50%;
+  }
+  .card-wrapper .cards .card-content {
+    flex-basis: 50%;
+  }
+  .card-wrapper .cards .card-footer {
+    padding: 2rem 0 0;
+  }
+  .card-wrapper .cards .card-footer-left {
+    display: none;
+  }
+  .card-wrapper .cards .card-btn {
+    display: none;
+  }
+  .card-wrapper .cards .card-btn-md {
+    display: none;
+  }
+  .card-wrapper .cards .card-btn-sm {
+    display: block;
+    font-size: 0.8rem;
+    padding: 0.5rem 1.2rem;
+    width: 100%;
+  }
+}
+.addToCartPopup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.addToCartPopup:target {
+  visibility: visible;
+  opacity: 1;
+  z-index: 999;
+}
+
+.popup {
+  margin: 70px auto;
+  background: #f0f0f0;
+  width: 50%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+.popup .close {
+  position: absolute;
+  top: -10px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 4rem;
+  text-decoration: none;
+  color: #474747 !important;
+}
+.popup-header {
+  padding: 1.6rem;
+  background: #ffffff;
+}
+.popup-header h3 {
+  margin: 0;
+}
+.popup-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  background: #ffffff;
+  margin: 1rem 0;
+  padding: 1rem 1.4rem;
+}
+.popup-item h3 {
+  margin: 0;
+}
+.popup-item .item-img {
+  height: 80px;
+  width: 80px;
+}
+.popup-item .item-img img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.popup-item .item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.popup-item .item-info h3 {
+  margin-bottom: 0.8rem;
+}
+.popup-item .item-count {
+  display: flex;
+}
+.popup-item .item-count .decrement, .popup-item .item-count .increment {
+  height: 24px;
+  line-height: 24px;
+  width: 24px;
+  font-size: 1.4em;
+  border-radius: 50%;
+  background: #bf2957;
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+}
+.popup-item .item-count .number {
+  margin: 0 1rem;
+}
+.popup-item .item-count .cross {
+  margin: 0 1rem;
+}
+.popup-item .item-total-price {
+  align-self: center;
+  margin-left: auto;
+}
+.popup-disclaimer {
+  background: #ffffff;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+}
+.popup-disclaimer img {
+  margin-right: 1.4rem;
+}
+.popup-footer {
+  padding: 1rem;
+  background: #ffffff;
+}
+.popup-footer p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.popup-btn {
+  width: 100%;
+  padding: 0.8rem 1.4rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .popup {
+    width: 80%;
+  }
+}
 .signup-container {
   max-width: 80%;
   margin: 0 auto;

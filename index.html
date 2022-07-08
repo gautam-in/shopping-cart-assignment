@@ -33,6 +33,34 @@
                         <li><a href="/signin.html">SignIn</a></li>
                         <li><a href="/register.html">Register</a></li>
                     </ul>
+                    <div>
+                        <a href="#popup" class="cart-items" aria-label="cart" role="button">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>&nbsp;<span class="card-items-count"> 0 </span>items</p>
+                        </a>
+                        <div id="popup" class="addToCartPopup">
+                            <div class="popup">
+                                <a class="close" href="#">&times;</a>
+                                <div class="popup-header">
+                                    <h3>My Cart <span class="cart-count">(0 items)</span></h3>
+                                </div>
+                                <div class="popup-content">
+                                    <!-- display cart items here -->
+                                </div>
+                                <div class="popup-disclaimer">
+                                    <img src="./static/images/lowest-price.png" alt="Lowest Price Guaranteed logo">
+                                    <span>You won't find it cheaper anywhere</span>
+                                </div>
+                                <div class="popup-footer">
+                                    <p>Promo code can be applied on payment page</p>
+                                    <button class="btn popup-btn">
+                                        <span>Proceed to Checkout</span>
+                                        <span class="subtotal"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
