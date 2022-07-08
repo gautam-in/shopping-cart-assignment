@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
+  <script src="./js/styles/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="container-fluid header-container">
+      <div class="row header-row">
+        <div class="col-8">
+          <div class="container-fluid">
+            <div class="row ">
+              <div class="col-6 image-col">
+                <img class="img-fluid" src="../../../static/images/logo.png" alt="" width="100%" height="100%">
+              </div>
+              <div class="col-6 home-tabs">
+                <nav class="custom-navbar" aria-labelledby="mainmenu">
+                  <ul class="nav-links nav-btns">
+                    <li class="list-btns"><a class="link-button" href="./index.html">Home</a></li>
+                    <li><a class="link-button" href="#">Products</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 cart-colunm">
+          <nav class="custom-navbar" aria-labelledby="singup">
+            <ul class="nav-links sign-register-btn">
+              <li class="list-btns"><a class="link-button" href="./signin.html">Sign In</a></li>
+              <li><a class="link-button" href="./register.html">Register</a></li>
+            </ul>
+          </nav>
+          <div class="cart cart-text" data-testid="cartButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <i class="bi bi-cart-fill">
+            </i>
+            <div id="cartAmount" class="cartAmount"><span class="counter">0</span> Items</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!--cart-->
+  <div class="modal fade" data-testid="cartModal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">MY Cart (<span class="cart-counter">0</span> items)</h5>
+          <button type="button" class="btn-close opacity btn-close-white" data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+        <div class="modal-body cart-body">
+          <div class="container-fluid cart-items-container">
+
+          </div>
+        </div>
+        <div data-bs-dismiss="modal" class="checkout-div">
+          <div class="checkout">
+            <div class="checkout-text">Proceed to checkout</div>
+            <div class="checkout-amount">Rs
+              <span class="amount"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main data-testid="products-main" id="products-main">
+    <div class="row products-row">
+      <div class="col-md-3 categories-col">
+        <div class="categories-list">
+
+        </div>
+      </div>
+      <div class="col-md-9 products-col">
+        <div class="container-fluid">
+          <div class="row products-list">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <script type="module" src="./client_index.js"></script>
+</body>
+
+</html>
