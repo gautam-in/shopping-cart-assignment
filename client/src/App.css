@@ -1,0 +1,17 @@
+/* .page-footer-container{
+  display: flex;
+  width: 100%;
+} */
+.page-footer-container-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #EEECEC;
+}
+
+@media screen and (max-width: 480px) {
+  .page-footer-container-content{
+    font-size: 11px;
+  }
+}

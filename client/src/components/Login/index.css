@@ -1,0 +1,30 @@
+.login-body-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 35%;
+}
+
+.login-content {
+    flex-basis: 35%;
+}
+
+.login-button {
+    background-color: #cc1269 !important;
+}
+
+.login-button,
+.login-button-disabled {
+    margin-top: 20px !important;
+}
+
+@media screen and (max-width: 480px) {
+    .login-body-container {
+        flex-direction: column;
+    }
+}
