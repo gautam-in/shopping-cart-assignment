@@ -15,6 +15,9 @@
   margin: 0;
   padding: 0;
 }
+*:focus {
+  outline: 3px solid var(--form-active-color)
+}
 .flex {
   display: flex;
 }
@@ -22,6 +25,9 @@
   padding: 0.5rem 1rem;
   cursor: pointer;
   border: 0;
+}
+button:hover, a:hover {
+  opacity: 0.8;
 }
 .App {
 

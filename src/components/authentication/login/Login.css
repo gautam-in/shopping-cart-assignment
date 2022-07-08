@@ -38,7 +38,11 @@
 .login-input {
     text-align: center;
 }
-.login-input :first-child {
+.warning-sign {
+    font-size: 1.5rem;
+    top:0;
+}
+.login-input> *:first-child {
     position: relative;
     top: 0.5rem;
     text-align: left;
@@ -60,6 +64,7 @@
     right: 5%;
     top: 55%;
 }
+
 @media only screen and (min-width: 768px){
     .login-wrapper {
         flex-direction: row;

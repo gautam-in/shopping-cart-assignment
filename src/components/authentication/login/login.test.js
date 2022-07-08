@@ -4,8 +4,8 @@ import { validateLoginForm } from './validateLoginForm';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import '@testing-library/jest-dom'
-
-describe("test login form", () => {
+import userEvent from '@testing-library/user-event';
+describe("test validate function with login form", () => {
     test("should success on valid form data", () => {
         const formData = {email:"ram@gmail.com", password:"one123"}
         const result = validateLoginForm(formData)
@@ -52,9 +52,24 @@ describe("test login component render", () => {
         expect( loginComponent ).toBeInTheDocument()
 
     })
-    test("should redirect to home on successful login", () => {
-        const formData = {email:"ram@gmail.com", password:"one123"}
-        const result = validateLoginForm(formData)
-        
+    test("should display error messages on empty form submission", async() => {
+        render(<BrowserRouter><Login /></BrowserRouter>)
+        await userEvent.type(screen.getByPlaceholderText(/Enter your email/i), "ram")
+        await userEvent.type(screen.getByPlaceholderText(/Enter your password/i), "a")
+        const button = screen.getByRole("button", {name: "Login"})
+        userEvent.click(button)
+        expect(await screen.findByTestId("email-error")).toHaveTextContent("Please enter a valid email")
+        expect(await screen.findByTestId("pwd-error")).toHaveTextContent("Password must have at least six characters")
+    })
+   
+    test("should not have any error messages on valid form data submission", async() => {
+        render(<BrowserRouter><Login /></BrowserRouter>)
+        await userEvent.type(screen.getByPlaceholderText(/Enter your email/i), "ram@gmail.com")
+        await userEvent.type(screen.getByPlaceholderText(/Enter your password/i), "one123")
+        const button = screen.getByRole("button", {name: "Login"})
+        await userEvent.click(button)
+        expect( screen.queryByTestId("email-error")).not.toBeInTheDocument()
+        expect( screen.queryByTestId("pwd-error")).not.toBeInTheDocument()
     })
 })
+ 

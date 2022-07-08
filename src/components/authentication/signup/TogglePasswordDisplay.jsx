@@ -1,26 +1,12 @@
 import React, { useState } from 'react'
 
-const TogglePasswordDisplay = ({setFormaData, id, formData, setError, placeholder}) => {
+const TogglePasswordDisplay = ({ id, placeholder, name, firstNameHandler, errorMsg}) => {
     const [togglePasswordDisplay, setTogglePasswordDisplay] = useState(false)
-
-    const passwordChangeHandler = (e) => {
-      if(id === "confirm-password"){
-        setFormaData((prev) => ({...prev, confirmPassword:e.target.value}))
-        if(formData.password === e.target.value) {
-          setError((prev) => ({...prev, confirmPwd: ""}))
-        }
-        else {
-          setError((prev) => ({...prev, confirmPwd: "passwords don't match"}))
-        }
-      }
-      else {
-        setFormaData((prev) => ({...prev, password:e.target.value}))
-      }
-    }
+    const checkPassword = /^(?!.* )(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/
 
   return (
     <div className = "relative">
-         <input type = {`${togglePasswordDisplay ? "text" : "password"}`} id = {id} className = "login-form-input" onChange = { passwordChangeHandler} placeholder = {placeholder}/>
+         <input type = {`${togglePasswordDisplay ? "text" : "password"}`} id = {id} name = {name}className = "login-form-input" onChange = {(e) => firstNameHandler(e, name === "password" ?!checkPassword.test(e.target.value):"", errorMsg)} placeholder = {placeholder}/>
         { togglePasswordDisplay ? <i className="fa-solid fa-eye show-password" onClick = {() => setTogglePasswordDisplay((prev) => !prev)} title = "hide password"></i> : <i className="fa-solid fa-eye-slash show-password" onClick = {() => setTogglePasswordDisplay((prev) => !prev)} title = "show password"></i>}
     </div>
   )

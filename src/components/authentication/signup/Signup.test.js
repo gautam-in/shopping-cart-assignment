@@ -3,6 +3,8 @@ import Signup from './Signup';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import '@testing-library/jest-dom'
+import userEvent from '@testing-library/user-event';
+
 describe("test login component render", () => {
     
     test("should contain firstName, lastName, email, password and Login button in the component", () => {
@@ -37,5 +39,20 @@ describe("test login component render", () => {
         const loginComponent = screen.getByTestId("signup-form")
         expect( loginComponent ).toBeInTheDocument()
 
+    })
+    test("should display error messages on empty form submission", async() => {
+        render(<BrowserRouter><Signup /></BrowserRouter>)
+        await userEvent.type(screen.getByPlaceholderText(/Enter your first name/i), "ram")
+        await userEvent.type(screen.getByPlaceholderText(/Enter your last name/i), "a")
+        await userEvent.type(screen.getByPlaceholderText(/Enter your email/i), "ram")
+        await userEvent.type(screen.getByPlaceholderText(/Enter your password/i), "a")
+        await userEvent.type(screen.getByPlaceholderText(/Re-enter your password/i), "ram")
+
+        const button = screen.getByRole("button", {name: "Signup"})
+        await userEvent.click(button)
+        expect(await screen.findByTestId("email-error")).toHaveTextContent("Please enter a valid email")
+        expect(await screen.findByTestId("pwd-error")).toHaveTextContent("Password must contain one character and a number and at least six characters with no space")
+        expect(await screen.findByTestId("cfPwd-error")).toHaveTextContent("Passwords don't match")
+        expect(await screen.findByTestId("cfPwd-error")).toHaveTextContent("Passwords don't match")
     })
 })
