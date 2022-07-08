@@ -1,5 +1,4 @@
-import {getBanners, getCategories, showCart, getCategoryList, getProducts, productsLoad,} from './js/home.js';
-//import { showCart  } from './products/products.js';
+import { getBanners, getCategories, showCart, getCategoryList, getProducts, productsLoad, } from './js/home.js';
 
 window.onload = (event) => {
     getBanners();

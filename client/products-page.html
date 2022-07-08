@@ -42,7 +42,7 @@
               <li><a class="link-button" href="./register.html">Register</a></li>
             </ul>
           </nav>
-          <div class="cart cart-text" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <div class="cart cart-text" data-testid="cartButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <i class="bi bi-cart-fill">
             </i>
             <div id="cartAmount" class="cartAmount"><span class="counter">0</span> Items</div>
@@ -53,7 +53,7 @@
   </header>
 
   <!--cart-->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  <div class="modal fade" data-testid="cartModal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -79,7 +79,7 @@
     </div>
   </div>
 
-  <main id="products-main">
+  <main data-testid="products-main" id="products-main">
     <div class="row products-row">
       <div class="col-md-3 categories-col">
         <div class="categories-list">

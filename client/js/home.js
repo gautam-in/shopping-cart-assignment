@@ -1,25 +1,24 @@
 const url = "http://localhost:5000/banners";
 const $ = document;
 
-export async function getBanners()
-{ 
+export async function getBanners() {
     try {
         const response = await fetch('http://localhost:5000/banners');
-        const result = await response.json();    
-        let image = document.getElementsByClassName('carousel-inner'); 
-        for (let i = 0; i< result.length; i++) {
-            let div =document.createElement('div');
+        const result = await response.json();
+        let image = document.getElementsByClassName('carousel-inner');
+        for (let i = 0; i < result.length; i++) {
+            let div = document.createElement('div');
             div.className = "carousel-item";
             let imageTag = document.createElement('img');
             imageTag.className = "d-block w-100";
             imageTag.setAttribute('src', result[i].bannerImageUrl);
-            div.appendChild(imageTag); 
+            div.appendChild(imageTag);
             image[0].appendChild(div);
         }
         let defaultCarousel = document.getElementsByClassName('carousel-item')[0];
         defaultCarousel.classList.add('active');
     } catch (e) {
-        
+
     }
 
 }
@@ -29,7 +28,7 @@ export async function getCategories() {
         const response = await fetch('http://localhost:5000/categories');
         const result = await response.json();
         let categoryDiv = document.getElementsByClassName('categories');
-        for (let i = 0; i< result.length; i++) {
+        for (let i = 0; i < result.length; i++) {
             //category-desc
             let categoryDesc = $.createElement('div');
             categoryDesc.className = 'category-desc';
@@ -77,7 +76,7 @@ export async function getCategories() {
             categoryDesc.appendChild(container);
             categoryDiv[0].appendChild(categoryDesc);
         }
-            
+
     } catch (e) {
 
     }
@@ -124,7 +123,7 @@ export async function getCategoryList() {
 
 
     } catch (e) {
-        
+
     }
 }
 
@@ -296,7 +295,7 @@ export function showCart() {
         priceDiv.appendChild(addIcon);
         priceDiv.appendChild(mulIcon);
         priceDiv.appendChild(priceSpan);
-        
+
         cartIcons.appendChild(priceDiv);
         cartIcons.appendChild(totalPriceDiv);
 
@@ -331,8 +330,8 @@ export function showCart() {
         })
     }
 
-        let checkoutAmount = $.getElementsByClassName('amount');
-        checkoutAmount[0].textContent = `${totalAMount}`;
+    let amount = $.getElementsByClassName('amount');
+    amount[0].textContent = `${totalAMount}`;
     let cart = document.querySelector('#staticBackdropLabel .cart-counter');
     cart.textContent = JSON.parse(localStorage.getItem("cart")).length || 0;
 }
