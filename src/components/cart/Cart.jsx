@@ -13,13 +13,14 @@ const Cart = () => {
   const { cartData } = productState
   const navigate = useNavigate()
   const totalPrice = extractTotalPrice(cartData)
+  
   const modelToggleHandler = () => {
     dispatch({type: "SET_CART_VIEW", payload: true})
     navigate("/products")
   }
 
   return (
-    <section className = {`${isDesktopOrLaptop? "bg-color cart-wrapper" :""}`}>
+    <section className = {`${isDesktopOrLaptop? "bg-color cart-wrapper" :""}`} data-testid = "cart-page">
       
         <div className = {`flex cart-header-wrapper ${isDesktopOrLaptop ? "header-larger-bg" :""}`}>
           <h2 className = "cart-title">My Cart <span className = "cart-title-small">[{cartData.length === 1 ? `${cartData.length}item` : `${cartData.length}items`}]</span></h2>

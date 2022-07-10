@@ -11,7 +11,7 @@ const QuantityButton = ( { product }) => {
     const modifyCartQuantityHandler = updateCartQuantityHandler(cartItem, cartData, product, dispatch)
     
   return (
-    <section className = "flex qty-btn-wrapper">
+    <section className = "flex qty-btn-wrapper" data-testid = "quantity-button">
         <button onClick = { () => modifyCartQuantityHandler(decrement, "decrement") } className = "qty-btn">-</button>
         <p>Qty: {cartItem?.quantity}</p>
         <button onClick = { () => modifyCartQuantityHandler (increment, "increment")} className = "qty-btn">+</button>

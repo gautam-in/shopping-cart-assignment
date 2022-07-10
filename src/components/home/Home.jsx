@@ -13,7 +13,8 @@ const Home = () => {
     const bannerLeftArrowHandler = bannerToggleLeftBtn(currentBannerIndex, setCurrentBannerIndex, bannerData)
     const bannerRightArrowHandler = bannerToggleRightBtn(currentBannerIndex, bannerData, setCurrentBannerIndex)
   return (
-    <main className = "bg-color">
+    <main className = "bg-color" data-testid = "home-page">
+        <h1>Welcome to Sabka bazar</h1>
         <div className = "home-banner-wrapper box-shadow">
             <div>
                 <picture>

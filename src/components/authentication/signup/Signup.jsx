@@ -11,7 +11,7 @@ const Signup = () => {
   const validateEmail =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
  
   const loginClickHandler = () => {
-    const condition = Object.values(formData).length === 5 && Object.values(error).every((item) => item === false) 
+    const condition = Object.values(formData).length === 5 && Object.values(error).every((item) => item === "") 
     if(condition){
       navigate("/")
     }
@@ -25,7 +25,7 @@ const Signup = () => {
     noValuesError && setNoValuesError(() => "")
     if(name === "confirmPassword"){
       if(formData.password === e.target.value){
-        setError((prev) => ({...prev, [name]:false}))
+        setError((prev) => ({...prev, [name]:""}))
       }
       else {
         setError((prev) => ({...prev, [name]:msg}))
@@ -35,7 +35,7 @@ const Signup = () => {
       setError((prev) => ({...prev, [name]:msg}))
     }
     else {
-      setError((prev) => ({...prev, [name]:false}))
+      setError((prev) => ({...prev, [name]:""}))
     }
   }
   return (
@@ -45,19 +45,19 @@ const Signup = () => {
           <p>We do not share your personal details with anyone</p>
         </div>
         <form className = "flex login-form-wrapper signup-form-wrapper" onSubmit={(e) => e.preventDefault()}>
-        {noValuesError && <p className = "error-message" data-testid = "firstname-error"><span className = "warning-sign">&#9888;</span> {noValuesError}</p>}
+        {noValuesError && <p className = "error-message" data-testid = "default-error"><span className = "warning-sign">&#9888;</span> {noValuesError}</p>}
 
             <label htmlFor = "first-name" className = "login-input">
                 <p>First Name</p>
                 <input type = "text" id = "first-name" name = "firstName"className = "login-form-input" onChange = {(e) => firstNameHandler(e, e.target.value.length < 3 || e.target.value[0]=== " ", "Enter valid first name")} placeholder = "Enter your first name"/>
             </label>
-            {error?.firstName && <p className = "error-message" data-testid = "firstname-error"><span className = "warning-sign">&#9888;</span> {error?.firstName}</p>}
+            {error?.firstName && <p className = "error-message" data-testid = "firstName-error"><span className = "warning-sign">&#9888;</span> {error?.firstName}</p>}
 
             <label htmlFor = "last-name" className = "login-input">
                 <p>Last Name</p>
                 <input type = "text" id = "last-name" name = "lastName" className = "login-form-input" onChange = {(e) => firstNameHandler(e, e.target.value.length < 3 || e.target.value[0]=== " ", "Enter valid last name")} placeholder = "Enter your last name"/>
             </label>
-            {error?.lastName && <p className = "error-message" data-testid = "lastname-error"><span className = "warning-sign">&#9888;</span> {error?.lastName}</p>}
+            {error?.lastName && <p className = "error-message" data-testid = "lastName-error"><span className = "warning-sign">&#9888;</span> {error?.lastName}</p>}
 
             <label htmlFor = "email" className = "login-input">
                 <p>Email</p>
