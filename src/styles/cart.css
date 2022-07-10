@@ -1,0 +1,116 @@
+/* Cart Panel */
+.cart-panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -500px;
+  background: var(--bg-color);
+  height: 100%;
+  max-width: 500px;
+  width: 100%;
+  transition-delay: 300ms;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  overflow: hidden;
+  z-index: 10;
+}
+.cart-panel.active {
+  /* position: fixe; */
+  right: 0;
+}
+.cart-panel.active ~ #cartOverlay {
+  opacity: 1;
+  transform: scale(1);
+}
+#cartOverlay {
+  transition-duration: 600ms;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgb(0 0 0 / 50%);
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  transform: scale(0);
+}
+/* Cart Panel */
+
+/* Cart Header */
+.cart-panel .cart-header {
+  padding: 15px 10px;
+  background: #262e38;
+  color: white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-header #closeCartPanel {
+  background: transparent;
+  color: white;
+  font-size: 22px;
+  border: none;
+}
+/* Cart Header */
+
+/* Cart Footer */
+.cart-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: white;
+}
+.cart-footer span.info {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+/* Cart Footer */
+
+/* Cart Empty */
+.cart-empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+/* Cart Empty */
+
+/* Cart Offer */
+.cart-offer {
+  background: white;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 10px;
+}
+/* Cart Offer */
+
+/* Cart Item Group */
+.cart-items-group {
+  height: calc(100% - 126px - 58px);
+  overflow-y: auto;
+}
+.cart-item {
+  width: 100%;
+  background: white;
+}
+.cart-item .control-wrapper {
+  width: 100%;
+  font-size: 16px;
+}
+.cart-item .cart-btn {
+  padding: 2px 12px;
+  text-align: center;
+  border: none;
+  background: var(--primary);
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.cart-item .cart-btn:hover {
+  transform: scale(1.12);
+}
+/* Cart Item Group */

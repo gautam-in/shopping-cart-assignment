@@ -4,12 +4,64 @@
   "description": "This is a shopping cart coding exercise",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "test": "react-scripts test",
+    "start": "concurrently \"npm run build && serve -s build\" \"canned -p 8000 ./server/api\"",
+    "production": "concurrently \"npm run build && serve -s build -p 5000\" \"canned -p 8000 ./server/api\"",
+    "dev": "concurrently \"canned -p 8000 ./server/api\" \"npm run react-start\"",
+    "build": "react-scripts build",
+    "react-start": "react-scripts start",
+    "eject": "react-scripts eject"
   },
-  "author": "",
+  "author": "Raj Ghosh",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "babel-plugin-macros": "^3.1.0",
+    "bcryptjs": "^2.4.3",
+    "canned": "^0.3.12",
+    "crypto": "^1.0.1",
+    "crypto-browserify": "^3.12.0",
+    "formik": "^2.2.9",
+    "izitoast": "^1.4.0",
+    "jest-sonar": "^0.2.12",
+    "node-uuid": "^1.4.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1",
+    "serve": "^13.0.2",
+    "swiper": "^8.2.4",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.2.1",
+    "concurrently": "^7.2.2",
+    "jest-dom": "^4.0.0",
+    "react-test-renderer": "^18.2.0"
+  },
+  "browser": {
+    "crypto": false
+  },
+  "engines": {
+    "node": "16.15.1",
+    "npm": "8.12.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

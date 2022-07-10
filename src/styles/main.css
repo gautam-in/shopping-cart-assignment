@@ -1,0 +1,55 @@
+@import url("./bootstrap/bootstrap-grid.min.css");
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
+
+:root {
+  --primary: #d10256;
+  --secondary: #007179;
+  --bg-color: #e0e0e0;
+  --link-color: #292929;
+  --link-hover: #d10256;
+  --link-font-size: 16px;
+  --link-font-size-large: 20px;
+  --link-font-size-small: 14px;
+  --shadow: 0px 6px 6px 0px rgb(0 0 0 / 8%);
+  --bottom-shadow: 0px 10px 10px -12px rgba(0, 0, 0, 0.8);
+}
+
+/* Default */
+@import url("./default.css");
+/* Default */
+
+/* header */
+@import url("./header.css");
+/* header */
+
+/* form */
+@import url("./form.css");
+/* form */
+
+/* Footer */
+@import url("./footer.css");
+/* Footer */
+
+/* Banner */
+@import url("./banner.css");
+/* Banner */
+
+/* Category Section */
+@import url("./category.css");
+/* Category Section */
+
+/* Product Section */
+@import url("./products-product-card.css");
+/* Product Section */
+
+/* Cart */
+@import url("./cart.css");
+/* Cart */
+
+/* Print */
+@import url("./print.css");
+/* Print */
+
+/* Responsive */
+@import url("./responsive.css");
+/* Responsive */

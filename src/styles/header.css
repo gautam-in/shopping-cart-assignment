@@ -1,0 +1,84 @@
+/* Header */
+header {
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  background: white;
+  box-shadow: var(--shadow);
+  z-index: 1;
+}
+.navbar {
+  margin-left: 50px;
+  padding: 10px;
+}
+.guestbar {
+  padding: 10px 0px;
+}
+ul.nav-links > li,
+ul.guest-links > li {
+  display: inline;
+}
+ul.nav-links > li:not(:last-child) {
+  margin-right: 10px;
+}
+ul.guest-links > li:not(:first-child) {
+  margin-left: 10px;
+}
+.nav-links li > a,
+.guest-links li > a {
+  color: var(--link-color);
+  font-size: var(--link-font-size-large);
+  padding: 5px 10px;
+  display: inline-block;
+  font-weight: 600;
+  border-radius: 4px;
+}
+a.active {
+  background: var(--link-hover);
+  color: white !important;
+}
+.nav-links li > a:hover,
+.guest-links li > a:hover {
+  background: var(--link-hover);
+  color: white !important;
+}
+.fs-large {
+  font-size: var(--link-font-size-large) !important;
+}
+.fs-small {
+  font-size: var(--link-font-size-small) !important;
+}
+.logo {
+  display: block;
+  max-width: max-content;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  padding: 5px;
+}
+
+button.cart {
+  border: none;
+  width: 120px;
+  height: 100%;
+  padding: 5px 10px;
+  background: var(--bg-color);
+  color: var(--link-color);
+}
+button.cart svg {
+  width: 30px;
+  height: 30px;
+}
+button.cart svg path {
+  fill: var(--link-hover);
+}
+button.cart span {
+  display: inline-block;
+  font-size: 14px;
+  color: var(--link-color);
+  font-weight: 600;
+}
+button.cart span.counter {
+  margin-right: 5px;
+}
+/* Header */

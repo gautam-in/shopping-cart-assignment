@@ -1,0 +1,93 @@
+/* Form */
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+label {
+  display: block;
+  width: 100%;
+  color: var(--link-color);
+  font-weight: bold;
+  position: relative;
+  padding: 10px 0px;
+}
+label:not(:last-child) {
+  margin-bottom: 30px;
+}
+label input ~ span.label {
+  position: absolute;
+  top: -5px;
+  display: block;
+}
+label input:focus ~ span.label {
+  top: -25px;
+  color: var(--secondary);
+}
+label .input-fields:focus {
+  outline: none;
+  background: #f7f7f7;
+  border-radius: 4px;
+  padding-left: 10px;
+  box-shadow: 0px 2px 0px 0px var(--secondary);
+}
+
+/* If there is error */
+label.is-invalid input ~ span.label {
+  left: 10px;
+  background: white;
+  padding: 5px;
+}
+label.is-invalid input:focus ~ span.label {
+  left: 0px;
+  padding: 0px;
+}
+label.is-invalid .input-fields {
+  outline: 2px solid var(--bs-danger);
+  background: none;
+  box-shadow: 0px 2px 0px 0px var(--bs-danger);
+  border-radius: 4px;
+}
+label.is-invalid span.error-message {
+  display: block;
+  color: var(--bs-danger);
+}
+label.is-invalid span.label {
+  color: var(--bs-danger);
+}
+/* If there is error */
+.input-fields {
+  width: 100%;
+  padding: 10px 0px;
+  border: none;
+  box-shadow: 0px 2px 0px 0px var(--link-color);
+}
+.btn {
+  width: 100%;
+  padding: 10px 10px;
+  border: none;
+  background: var(--link-hover);
+  color: white;
+  font-weight: bold;
+  font-size: var(--link-font-size-large);
+}
+.link-btn {
+  display: block;
+  width: fit-content;
+  padding: 10px 10px;
+  border: none;
+  background: var(--link-hover);
+  color: white;
+  font-weight: bold;
+  white-space: nowrap;
+  font-size: var(--link-font-size-small);
+}
+.btn:hover,
+.link-btn:hover {
+  transform: scale(1.04);
+}
+/* Form */
