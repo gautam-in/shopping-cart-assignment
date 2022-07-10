@@ -27,7 +27,7 @@ const LoginForm = () => {
       validationSchema={validate}
       onSubmit={(value) => {
         let data = value;
-
+        const resetButton = document.getElementById("resetButton");
         // Authenticated Data
         function _authenticate() {
           // checking weather email is present in the system
@@ -61,8 +61,8 @@ const LoginForm = () => {
             toast.error({ message: "User not found!" });
           }
         }
-
         _authenticate();
+        resetButton.click();
       }}
     >
       {(_formik) => (
@@ -77,6 +77,9 @@ const LoginForm = () => {
             />
             <button className="btn" type="submit" role={"button"}>
               Login
+            </button>
+            <button type="reset" id="resetButton" hidden={true}>
+              Reset
             </button>
           </Form>
           <h5 className="text-center mt-2">
