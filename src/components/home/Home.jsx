@@ -14,23 +14,22 @@ const Home = () => {
     const bannerRightArrowHandler = bannerToggleRightBtn(currentBannerIndex, bannerData, setCurrentBannerIndex)
   return (
     <main className = "bg-color" data-testid = "home-page">
-        <h1>Welcome to Sabka bazar</h1>
         <div className = "home-banner-wrapper box-shadow">
             <div>
                 <picture>
                     <source srcSet= {`${bannerData[currentBannerIndex]?.bannerImageUrl}`} media="(min-width: 1200px)" className = "home-banner-image"/>
                     <source srcSet= {`${bannerData[currentBannerIndex]?.bannerImageUrlSmall}`} media="(max-width: 1200px)" className = "home-banner-image"/>
-                    <img src = {`${bannerData[currentBannerIndex]?.bannerImageUrlSmall}`} alt = "offer banner" className = "home-banner-image"/>
+                    <img src = {`${bannerData[currentBannerIndex]?.bannerImageUrl}`} alt = "offer banner" className = "home-banner-image"/>
                 </picture>
             </div>
            
             {
                 bannerData.map((banner, index) => {
-                    return <i className = {`fa-solid fa-circle banner-index-btn ${currentBannerIndex === index ? "banner-active" : ""}`} key = {banner.id} onClick = { () => changeBannerHandler(index) }></i>
+                    return <i className = {`fa-solid fa-circle banner-index-btn ${currentBannerIndex === index ? "banner-active" : ""}`} key = {banner.id} onClick = { () => changeBannerHandler(index) } data-testid = "banner"></i>
                 })
             }
-            <i className = "fa-solid fa-angle-left banner-left-arrow" onClick = { bannerLeftArrowHandler}></i>
-            <i className = "fa-solid fa-angle-right banner-right-arrow" onClick = { bannerRightArrowHandler }></i>
+            <i className = "fa-solid fa-angle-left banner-left-arrow" onClick = { bannerLeftArrowHandler} data-testid = "left-slider"></i>
+            <i className = "fa-solid fa-angle-right banner-right-arrow" onClick = { bannerRightArrowHandler } data-testid = "right-slider"></i>
         </div>
         <div className = "flex home-cat-wrapper">
             {
@@ -45,7 +44,7 @@ const Home = () => {
 
 export default Home
 
-function bannerToggleRightBtn(currentBannerIndex, bannerData, setCurrentBannerIndex) {
+export function bannerToggleRightBtn(currentBannerIndex, bannerData, setCurrentBannerIndex) {
     return () => {
         if (currentBannerIndex === bannerData.length - 1) {
             setCurrentBannerIndex(() => 0)
@@ -57,7 +56,7 @@ function bannerToggleRightBtn(currentBannerIndex, bannerData, setCurrentBannerIn
     }
 }
 
-function bannerToggleLeftBtn(currentBannerIndex, setCurrentBannerIndex, bannerData) {
+export function bannerToggleLeftBtn(currentBannerIndex, setCurrentBannerIndex, bannerData) {
     return () => {
         if (currentBannerIndex === 0) {
             setCurrentBannerIndex(() => bannerData.length - 1)

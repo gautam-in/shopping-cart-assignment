@@ -18,8 +18,8 @@ const Navbar = () => {
         <nav className = "navbar-wrapper">
         <div className = "navbar-inner-first">
             <Link to = "/">
-                {/* <img src = {isDesktopOrLaptop ? logoLarge : logo} alt = "sabka bazar logo" className = "navbar-logo"/> */}
                 <img src = {logo} srcSet = {`${logo} 480w, ${logoLarge} 1080w`} sizes = "40vw" alt = "sabka bazar logo" className = "navbar-logo"/>
+
             </Link>
             <div className = "navbar-first-links">
                 <NavLink to = "/" className = "nav-links">Home</NavLink>
@@ -31,7 +31,7 @@ const Navbar = () => {
                 <NavLink to = "/login" className = "nav-links">SignIn</NavLink>
                 <NavLink to = "/signup" className = "nav-links">Register</NavLink>
             </div>
-            <Link to = {`${isDesktopOrLaptop ? "/products/cart":"/cart"}`} className = "nav-cart-items" onClick = { toggleCarModelView }>
+            <Link to = {`${isDesktopOrLaptop ? "/products/cart":"/cart"}`} className = "nav-cart-items" onClick = { toggleCarModelView } data-testid = "cart-link">
                 
             Cart:<span><b>{cartData.length < 2 ? `${cartData.length}  item` :  `${cartData.length}  items`}</b></span>
             </Link>

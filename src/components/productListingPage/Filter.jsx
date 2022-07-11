@@ -12,7 +12,7 @@ const Filter = () => {
     const categoryChangeHandler = categoryFilterHandler(categoryValue, clearFilterHandler, serverData, dispatch)
     
   return (
-    <main>
+    <main data-testid = "filter">
         <section className = "flex product-filter-wrapper">
             <select onChange = { categoryChangeHandler } value = { categoryValue } className = "product-filter-select">
                 <option value = "default">Select Category</option>

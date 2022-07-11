@@ -4,7 +4,7 @@ import { productReducer } from './productReducer';
 import { useMediaQuery } from 'react-responsive'
 
 
-const ProductsContext = createContext()
+export const ProductsContext = createContext()
 const useProducts = () => useContext(ProductsContext)
 const ProductsProvider = ({children}) => {
     const [productState, dispatch] = useReducer(productReducer, { serverData:[], productsData:[],bannerData: [], categoryData: [], categoryValue:"", cartData: [], closeCartModel: true })

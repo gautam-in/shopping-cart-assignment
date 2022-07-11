@@ -13,7 +13,7 @@ const QuantityButton = ( { product }) => {
   return (
     <section className = "flex qty-btn-wrapper" data-testid = "quantity-button">
         <button onClick = { () => modifyCartQuantityHandler(decrement, "decrement") } className = "qty-btn">-</button>
-        <p>Qty: {cartItem?.quantity}</p>
+        <p data-testid = "qty-display">Qty: {cartItem?.quantity}</p>
         <button onClick = { () => modifyCartQuantityHandler (increment, "increment")} className = "qty-btn">+</button>
     </section>
   )

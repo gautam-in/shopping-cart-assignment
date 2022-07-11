@@ -1,9 +1,8 @@
-import React from 'react'
 import { Outlet } from 'react-router-dom'
 import { useProducts } from '../../context/productContext'
 import { SingleProduct, Filter } from "./../index-components"
 import "./Product.css"
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { getFetch } from '../../customHooks/getFetch';
 const Products = () => {
     const { productState, isDesktopOrLaptop, dispatch } = useProducts()
@@ -11,6 +10,7 @@ const Products = () => {
     useEffect(() => {
       getFetch("http://localhost:4000/productsJSON").then((res) => dispatch({type:"GET_PRODUCTS_DATA", payload: res})).catch((e) => console.log(e))
     },[])
+    
   return (
     <div className = "product-details-container">
       <div className = "flex product-main-container bg-color">
@@ -22,7 +22,7 @@ const Products = () => {
         </div>
         
     </div>
-    { isDesktopOrLaptop && (!closeCartModel && <div className = "cart-model-wrapper">
+    { isDesktopOrLaptop && (!closeCartModel && <div className = "cart-model-wrapper" data-testid = "cart-outlet">
       <div className = "cart-model-parentWrapper">
         <Outlet />
       </div>
