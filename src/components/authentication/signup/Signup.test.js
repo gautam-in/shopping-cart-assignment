@@ -4,6 +4,8 @@ import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event';
+import React from "react"
+
 describe("test login component render", () => {
     
     test("should contain firstName, lastName, email, password and Login button in the component", () => {

@@ -1,4 +1,5 @@
 import { productReducer } from "./productReducer"
+import React from "react"
 
 // testing cart data
 test("should test the reducer for default", () => {

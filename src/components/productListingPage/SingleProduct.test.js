@@ -4,6 +4,7 @@ import { ProductsProvider, ProductsContext } from '../../context/productContext'
 import "@testing-library/jest-dom";
 import { BrowserRouter } from 'react-router-dom';
 import  userEvent  from '@testing-library/user-event';
+import React from "react"
 
 describe("test single product component", () => {
     test("should render all the product elements", async () => {

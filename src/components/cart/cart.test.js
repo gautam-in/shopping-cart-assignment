@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import '@testing-library/jest-dom'
 import Cart, { extractTotalPrice } from './Cart';
 import { ProductsProvider } from '../../context/productContext';
+import React from "react"
 
 describe("should return the sum of the cart values", () => {
     test("should return total sum of cart values", () => {

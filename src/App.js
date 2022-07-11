@@ -19,7 +19,7 @@ function App() {
 
   return (
     <Suspense fallback = {<Loader type = {"spin"} color = {"blue"} className = {"loader-align"}/>}>
-      <div className="App">
+      <div className="App" data-testid = "app">
         <Routes>
           <Route path = "/" element = {<HomePage />} />
           <Route path = "login" element = {<LoginPage />} />

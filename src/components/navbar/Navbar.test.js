@@ -4,6 +4,7 @@ import {  ProductsProvider, ProductsContext } from '../../context/productContext
 import "@testing-library/jest-dom";
 import { BrowserRouter, history } from 'react-router-dom';
 import  userEvent  from '@testing-library/user-event';
+import React from "react"
 
 describe("test navbar component", () => {
     test("should render logo, links on UI", () => {

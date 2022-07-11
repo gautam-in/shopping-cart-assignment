@@ -4,6 +4,8 @@ import { ProductsContext } from '../../context/productContext';
 import "@testing-library/jest-dom";
 import { BrowserRouter } from 'react-router-dom';
 import  userEvent  from '@testing-library/user-event';
+import React from "react"
+
 describe("test product component", () => {
     test("should have filter, products components", () => {
         const productState = {productsData: [{category: "5b6899683d1a866534f516e0",

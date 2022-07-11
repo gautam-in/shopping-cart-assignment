@@ -1,6 +1,8 @@
 import { getFetch } from "./getFetch"
+import React from "react"
 import  axios from "axios";
 jest.mock("axios")
+
 
 describe("get server data",  () => {
     test("should return server data", async() => {

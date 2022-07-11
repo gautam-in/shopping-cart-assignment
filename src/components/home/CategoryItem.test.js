@@ -4,6 +4,8 @@ import {  ProductsProvider } from '../../context/productContext';
 import "@testing-library/jest-dom";
 import { BrowserRouter } from 'react-router-dom';
 import  userEvent  from '@testing-library/user-event';
+import React from "react"
+
 
 describe("test Category item ", () => {
     test("should render all the elements of category item", () => {

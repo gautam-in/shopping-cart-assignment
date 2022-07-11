@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { ProductsContext, ProductsProvider } from '../../context/productContext';
 import "@testing-library/jest-dom";
 import { BrowserRouter } from 'react-router-dom';
+import React from "react"
 
 jest.mock("axios")
 

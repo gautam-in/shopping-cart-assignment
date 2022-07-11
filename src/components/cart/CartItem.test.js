@@ -2,6 +2,7 @@ import { CartItem } from "../index-components"
 import { render, screen } from '@testing-library/react';
 import { ProductsProvider } from '../../context/productContext';
 import "@testing-library/jest-dom";
+import React from "react"
 
 describe("test single cart item", () => {
     test("should have all the product details", () => {

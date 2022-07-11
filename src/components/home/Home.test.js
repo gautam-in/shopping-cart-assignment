@@ -5,6 +5,7 @@ import { ProductsContext } from '../../context/productContext';
 import "@testing-library/jest-dom";
 import { BrowserRouter } from 'react-router-dom';
 import  userEvent  from '@testing-library/user-event';
+import React from "react"
 
 describe("test Home component", () => {
     test("should have five banners if there are five banners", async() => {
