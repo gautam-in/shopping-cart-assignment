@@ -1,0 +1,206 @@
+//category carousel css
+.photo_slider {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+  height: 60vh;
+  max-height: 100%;
+  margin: 0 auto;
+  & input {
+    display: none;
+  }
+}
+
+.slider {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 0;
+  transition: transform 1600ms;
+  transform: scale(1);
+}
+
+/* Slider images */
+
+.slide_img_01 {
+  background: url("../static/images/offers/offer1.jpg") no-repeat center;
+  background-size: contain;
+  left: 0;
+}
+
+.slide_img_02 {
+  background: url("../static/images/offers/offer2.jpg") no-repeat center;
+  background-size: contain;
+  left: 100%;
+}
+
+.slide_img_03 {
+  background: url("../static/images/offers/offer3.jpg") no-repeat center;
+  background-size: contain;
+  left: 100%;
+}
+
+.slide_img_04 {
+  background: url("../static/images/offers/offer4.jpg") no-repeat center;
+  background-size: contain;
+  left: 100%;
+}
+
+.slide_img_05 {
+  background: url("../static/images/offers/offer5.jpg") no-repeat center;
+  background-size: contain;
+  left: 100%;
+}
+/* Next and Prev arrow */
+
+.control {
+  position: absolute;
+  top: 50%;
+  margin-top: -24px;
+  z-index: 55;
+  & label {
+    z-index: 0;
+    display: none;
+    cursor: pointer;
+    opacity: 0.6;
+    color: $color-white;
+    background: rgb(188, 188, 188);
+    padding: 0.5rem;
+    &:hover {
+      opacity: 1;
+      background: rgb(181, 181, 181);
+    }
+  }
+}
+
+.next {
+  right: 1%;
+}
+
+.previous {
+  left: 1%;
+}
+
+/* Slider Pagger */
+
+.slider-pagination {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  z-index: 1000;
+  & label {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #dfdcdc;
+    margin: 0 2px;
+    cursor: pointer;
+  }
+}
+
+/* Slider Pagger arrow event */
+
+.slide-radio1:checked ~ .next .numb2,
+.slide-radio2:checked ~ .next .numb1,
+.slide-radio2:checked ~ .previous .numb1,
+.slide-radio1:checked ~ .previous .numb2 {
+  display: block;
+  z-index: 1;
+}
+
+/* Slider Pagger event */
+
+.slide-radio1:checked ~ .slider-pagination .page1,
+.slide-radio2:checked ~ .slider-pagination .page2 {
+  background: rgb(171, 166, 166);
+}
+
+/* Slide effect */
+
+.slide-radio1:checked ~ .slider {
+  transform: translateX(0%);
+}
+
+.slide-radio2:checked ~ .slider {
+  transform: translateX(-100%);
+}
+
+//category carousel for mobiles and tablets
+@media only screen and (max-width: 767px) {
+  .photo_slider {
+    position: relative;
+    width: 100%;
+    height: 400px;
+  }
+
+  .slider > div {
+    padding: 0 2%;
+  }
+
+  .control {
+    position: absolute;
+    top: 60%;
+    margin-top: -24px;
+    z-index: 55;
+  }
+
+  .control label svg {
+    width: 32px;
+    height: 32px;
+    fill: #fff;
+    stroke: currentColor;
+    stroke-width: 0;
+  }
+}
+
+//Categories display css
+.catg-list {
+  &-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: inset 0px 6px 15px -3px rgba(224, 219, 219, 0.75);
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    &:nth-child(even) {
+      .catg-image {
+        order: 2;
+      }
+      .catg-content {
+        order: 1;
+      }
+    }
+  }
+}
+.catg-image {
+  flex: 1 1 100px;
+  img {
+    max-width: 100%;
+  }
+}
+.catg-content {
+  flex: 1 1 auto;
+  text-align: center;
+}
+.catg-header {
+  margin-bottom: 0.8rem;
+}
+.catg-action {
+  font-size: 0.8rem;
+  padding: 0.5rem 1.2rem;
+  margin-top: 1.3rem;
+}

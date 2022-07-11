@@ -1,0 +1,64 @@
+.navbar {
+  box-shadow: 3px 3px 8px #e4e4e4;
+  padding: 0 8px;
+  &-container {
+    display: flex;
+  }
+  &-links-left {
+    display: flex;
+    align-items: center;
+    margin-left: 4rem;
+  }
+  &-list-items {
+    display: flex;
+    &--light {
+      a {
+        &:link,
+        &:visited {
+          color: $color-dark;
+          font-weight: 600;
+        }
+      }
+    }
+    li {
+      &:nth-child(1) {
+        margin-right: 20px;
+      }
+    }
+    &--dark {
+      a {
+        &:link,
+        &:visited {
+          color: $color-dark;
+        }
+      }
+    }
+  }
+  &-links-right {
+    margin-left: auto;
+    & a {
+      &:link,
+      &:visited {
+        color: $color-dark;
+      }
+      &.cart-items {
+        @include flexCenter;
+        padding: 18px 12px;
+        background: $color-light;
+        margin-top: 14px;
+      }
+      i {
+        color: $color-primary;
+        font-size: 20px;
+      }
+    }
+  }
+}
+//for mobiles
+@media (max-width: 600px) {
+  .navbar {
+    &-list-items {
+      display: none;
+    }
+  }
+}

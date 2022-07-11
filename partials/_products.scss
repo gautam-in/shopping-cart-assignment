@@ -1,0 +1,329 @@
+// Side Menu css
+.prod-wrapper {
+  display: flex;
+  height: 100%;
+  aside {
+    flex: 1 0 20%;
+    background-color: $color-light;
+    & .prod-menu {
+      &-items {
+        li {
+          border-bottom: 2px solid rgba($color: $color-gray, $alpha: 0.2);
+          a {
+            display: block;
+            padding: 0.8rem;
+            color: $color-dark;
+          }
+        }
+      }
+    }
+  }
+  select {
+    display: none;
+  }
+  main {
+    overflow-y: auto;
+    flex: 1 0 80%;
+    margin: 0px auto;
+  }
+}
+//side menu for mobiles
+@media (max-width: 600px) {
+  .prod-wrapper {
+    flex-direction: column;
+    aside {
+      display: none;
+    }
+  }
+}
+
+//products display for larger screens
+.card-wrapper {
+  margin: 10px;
+  & .cards {
+    display: grid;
+    grid-column-gap: 14px;
+    grid-row-gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    &-item {
+      border-bottom: 1px dashed $color-gray;
+    }
+    & .card-header {
+      margin-bottom: 1rem;
+    }
+    & .card {
+      display: flex;
+      flex-direction: column;
+      background-color: $color-white;
+      &-image {
+        img {
+          max-width: 100%;
+          object-fit: cover;
+        }
+      }
+      &-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        & .card-text {
+          color: $color-dark;
+          font-size: 1rem;
+          font-weight: 400;
+          padding: 0.4rem 0.6rem;
+          background: $color-light;
+          flex: 1 0 auto;
+        }
+      }
+      &-footer {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 1.2rem 0 0.8rem 0.6rem;
+        &-left {
+          align-self: center;
+        }
+      }
+      &-btn {
+        font-size: 0.8rem;
+        padding: 0.5rem 1.2rem;
+        &-sm,
+        &-md {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+//products display for tablet devices
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .prod-wrapper {
+    aside {
+      flex: 1 0 30%;
+    }
+    select {
+      display: none;
+    }
+    main {
+      flex: 1 0 70%;
+    }
+  }
+  .card-wrapper {
+    & .cards {
+      display: grid;
+      grid-column-gap: 14px;
+      grid-row-gap: 30px;
+      grid-template-columns: 1fr 1fr;
+      & .card {
+        display: flex;
+        flex-direction: row;
+        &-header {
+          margin-bottom: 1rem;
+        }
+        &-top {
+          flex-basis: 50%;
+        }
+        &-content {
+          flex-basis: 50%;
+        }
+        &-footer {
+          display: none;
+          &-left {
+            display: none;
+          }
+        }
+        &-btn {
+          display: none;
+          &-sm {
+            display: none;
+          }
+          &-md {
+            display: block;
+            font-size: 0.8rem;
+            padding: 0.5rem 1.2rem;
+            margin: 0.5rem 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+//products display for mobile devices
+@media (max-width: 600px) {
+  .prod-wrapper {
+    select {
+      display: block;
+      padding: 0.6rem;
+      background: $color-primary;
+      color: $color-white;
+      font: inherit;
+      font-size: 0.9rem;
+      margin: 1rem 0;
+    }
+  }
+  .card-wrapper {
+    & .cards {
+      display: grid;
+      grid-gap: 14px;
+      grid-template-columns: 1fr;
+      & .card-header {
+        margin-top: 0px;
+      }
+      & .card {
+        display: flex;
+        flex-direction: row;
+        &-top {
+          flex-basis: 50%;
+        }
+        &-content {
+          flex-basis: 50%;
+        }
+        &-footer {
+          padding: 2rem 0 0;
+          &-left {
+            display: none;
+          }
+        }
+        &-btn {
+          display: none;
+          &-md {
+            display: none;
+          }
+          &-sm {
+            display: block;
+            font-size: 0.8rem;
+            padding: 0.5rem 1.2rem;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+//add to cart popup css
+.addToCartPopup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  &:target {
+    visibility: visible;
+    opacity: 1;
+    z-index: 999;
+  }
+}
+
+.popup {
+  margin: 70px auto;
+  background: $color-light;
+  width: 50%;
+  position: relative;
+  transition: all 5s ease-in-out;
+  & .close {
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 4rem;
+    text-decoration: none;
+    color: #474747 !important;
+  }
+  &-header {
+    padding: 1.6rem;
+    background: $color-white;
+    h3 {
+      margin: 0;
+    }
+  }
+  &-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    background: $color-white;
+    margin: 1rem 0;
+    padding: 1rem 1.4rem;
+    h3 {
+      margin: 0;
+    }
+    .item-img {
+      height: 80px;
+      width: 80px;
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+    .item-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h3 {
+        margin-bottom: 0.8rem;
+      }
+    }
+    .item-count {
+      display: flex;
+      & .decrement,
+      & .increment {
+        height: 24px;
+        line-height: 24px;
+        width: 24px;
+        font-size: 1.4em;
+        border-radius: 50%;
+        background: $color-primary;
+        color: $color-white;
+        text-align: center;
+        cursor: pointer;
+      }
+      .number {
+        margin: 0 1rem;
+      }
+      .cross {
+        margin: 0 1rem;
+      }
+    }
+    .item-total-price {
+      align-self: center;
+      margin-left: auto;
+    }
+  }
+  &-disclaimer {
+    background: $color-white;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 1.4rem;
+    }
+  }
+  &-footer {
+    padding: 1rem;
+    background: $color-white;
+    p {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+  }
+  &-btn {
+    width: 100%;
+    padding: 0.8rem 1.4rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .popup {
+    width: 80%;
+  }
+}

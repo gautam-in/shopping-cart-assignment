@@ -1,0 +1,14 @@
+.footer-container {
+  background: #f0f0f0;
+  p {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    p {
+      text-align: center;
+    }
+  }
+}
