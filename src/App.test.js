@@ -8,5 +8,5 @@ import "@testing-library/jest-dom";
 
 test('renders app', async() => {
   render(<Router><ProductsProvider><App /></ProductsProvider></Router>);
-  expect(await screen.findByTestId("app")).toMatchSnapshot()
+  expect(await screen.findByTestId("app")).toBeInTheDocument()
 });

@@ -45,6 +45,7 @@
     background-color: var(--app-btn-color);
     color: var(--whitesmoke-color);
     margin: auto;
+    font-weight: bold;
 }
 .home-cat-wrapper {
     flex-direction: column;

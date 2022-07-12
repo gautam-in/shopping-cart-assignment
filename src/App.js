@@ -1,6 +1,5 @@
 import './App.css';
-// import {  HomePage, LoginPage, ProductListingPage, SignupPage } from './pages/index-page';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import React, { Suspense, lazy } from 'react';
 import Loader from './components/loading/Loader';
 
@@ -10,11 +9,7 @@ const LoginPage = lazy(() => import("./pages/LoginPage"))
 const ProductListingPage = lazy(() => import("./pages/ProductListingPage"))
 const SignupPage = lazy(() => import("./pages/SignupPage"))
 
-export const LocationDisplay = () => {
-  const location = useLocation()
 
-  return <div data-testid="location-display">{location.pathname}</div>
-}
 function App() {
 
   return (
@@ -29,7 +24,6 @@ function App() {
             <Route path = "cart" element = {<CartPage />} />
           </Route>
         </Routes>
-        <LocationDisplay />
 
       </div>
     </Suspense>

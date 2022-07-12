@@ -28,16 +28,17 @@ const Login = () => {
           <p>Get access to your Orders, Wishlist and Recommendations</p>
         </div>
         <form className = "flex login-form-wrapper" onSubmit={(e) => e.preventDefault()}>
+            <p>All fields marked with an asterisk(*) are required</p>
             <label htmlFor = "email" className = "login-input">
-                <p>Email</p>
-                <input type = "email" id = "email" className = "login-form-input" onChange = {(e) => setFormaData((prev) => ({...prev, email:e.target.value}))} placeholder = "Enter your email"/>
+                <p>Email <span aria-hidden = "true"className = "error-message">*</span></p>
+                <input type = "email" id = "email" data-testid = "email" className = "login-form-input" onChange = {(e) => setFormaData((prev) => ({...prev, email:e.target.value}))} required/>
                 {error.email && <p className = "error-message" data-testid = "email-error"><span className = "warning-sign">&#9888;</span> {error.email}</p>}
 
             </label>
             
             <label htmlFor = "password" className = "login-input">
-                <p>Password</p>
-                <input type = "password" id = "password" className = "login-form-input" onChange = {(e) => setFormaData((prev) => ({...prev, password:e.target.value}))} placeholder = "Enter your password"/>
+                <p>Password<span aria-hidden = "true" className = "error-message">*</span></p>
+                <input type = "password" id = "password" data-testid = "password" className = "login-form-input" onChange = {(e) => setFormaData((prev) => ({...prev, password:e.target.value}))} required/>
                 {error.pwd && <p className = "error-message" data-testid = "pwd-error"><span className = "warning-sign">&#9888;</span> {error.pwd}</p>}
             </label>
             <button className = "btn login-form-btn" onClick = { loginClickHandler}>Login</button>

@@ -10,17 +10,17 @@ describe("test login component render", () => {
     
     test("should contain firstName, lastName, email, password and Login button in the component", () => {
         render(<BrowserRouter><Signup /></BrowserRouter>)
-        const labelElement =  screen.getByLabelText("Email")
-        const firstInput = screen.getByPlaceholderText("Enter your email")
-        const secondLabelElement = screen.getByLabelText("Password")
-        const secondInput = screen.getByPlaceholderText("Enter your password")
-        const firstNameElement = screen.getByLabelText("First Name")
-        const firstNameInput = screen.getByPlaceholderText("Enter your first name")
-        const lastNameElement = screen.getByLabelText("Last Name")
-        const lastNameInput = screen.getByPlaceholderText("Enter your last name")
-        const confirmPasswordElement = screen.getByLabelText("Confirm Password")
-        const confirmPasswordInput = screen.getByPlaceholderText("Re-enter your password")
-        const loginButton = screen.getByRole("button")
+        const labelElement =  screen.getByLabelText(/Email/i)
+        const firstInput = screen.getByTestId("email")
+        const secondLabelElement = screen.getByLabelText("Password*")
+        const secondInput = screen.getByTestId("password")
+        const firstNameElement = screen.getByLabelText(/First Name/i)
+        const firstNameInput = screen.getByTestId("first-name")
+        const lastNameElement = screen.getByLabelText(/Last Name/i)
+        const lastNameInput = screen.getByTestId("last-name")
+        const confirmPasswordElement = screen.getByLabelText(/Confirm Password/i)
+        const confirmPasswordInput = screen.getByTestId("confirm-password")
+        const loginButton = screen.getByRole("button", {name: "Signup"})
 
         expect( labelElement).toBeInTheDocument()
         expect( secondLabelElement).toBeInTheDocument()
@@ -43,11 +43,11 @@ describe("test login component render", () => {
     })
     test("should display error messages on empty form submission", async() => {
         render(<BrowserRouter><Signup /></BrowserRouter>)
-        await userEvent.type(screen.getByPlaceholderText(/Enter your first name/i), "ra")
-        await userEvent.type(screen.getByPlaceholderText(/Enter your last name/i), "a")
-        await userEvent.type(screen.getByPlaceholderText(/Enter your email/i), "ram")
-        await userEvent.type(screen.getByPlaceholderText(/Enter your password/), "a")
-        await userEvent.type(screen.getByPlaceholderText(/Re-enter your password/i), "ram")
+        await userEvent.type(screen.getByTestId("first-name"), "ra")
+        await userEvent.type(screen.getByTestId("last-name"), "a")
+        await userEvent.type(screen.getByTestId("email"), "ram")
+        await userEvent.type(screen.getByTestId("password"), "a")
+        await userEvent.type(screen.getByTestId("confirm-password"), "ram")
 
         const button = screen.getByRole("button", {name: "Signup"})
         await userEvent.click(button)
@@ -65,27 +65,13 @@ describe("test login component render", () => {
     })
     test("should display no error for password match on both match case", async () => {
         render(<BrowserRouter><Signup /></BrowserRouter>)
-        await userEvent.type(screen.getByPlaceholderText(/Enter your password/), "ram123")
-        await userEvent.type(screen.getByPlaceholderText(/Re-enter your password/i), "ram123")
+        await userEvent.type(screen.getByTestId("password"), "ram123")
+        await userEvent.type(screen.getByTestId("confirm-password"), "ram123")
 
         expect(screen.queryByTestId("cfPwd-error")).not.toBeInTheDocument()
 
     })
-    // test("should redirect to home page on successful form submission", async () => {
-    //     render(<BrowserRouter><Signup /></BrowserRouter>)
 
-    //     const user = userEvent.setup()
-    //     await userEvent.type(screen.getByPlaceholderText(/Enter your first name/i), "rama")
-    //     await userEvent.type(screen.getByPlaceholderText(/Enter your last name/i), "linga")
-    //     await userEvent.type(screen.getByPlaceholderText(/Enter your email/i), "rama@gmail.com")
-    //     await userEvent.type(screen.getByPlaceholderText(/Enter your password/), "ram123")
-    //     await userEvent.type(screen.getByPlaceholderText(/Re-enter your password/i), "ram123")
-
-    //     const button = screen.getByRole("button", {name: "Signup"})
-    //     await user.click(button)
-
-    //     expect (await screen.findByTestId("home-page")).toBeInTheDocument()
-    // })
    
 
 })

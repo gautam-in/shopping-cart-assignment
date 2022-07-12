@@ -26,6 +26,7 @@
     background-color:  var(--app-btn-color);
     color: var(--whitesmoke-color);
     border: 0;
+    font-weight: bold;
 }
 .login-form-input {
     border: 0;
@@ -49,7 +50,7 @@
 }
 .login-input:focus-within > p:first-child {
     color: var(--form-active-color);
-    top: -0.5rem;
+    top: -0.3rem;
 }
 .login-input:focus-within > input {
     border-bottom: 2px solid var(--form-active-color);

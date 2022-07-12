@@ -37,10 +37,10 @@ describe("test login component render", () => {
     
     test("should contain email, password and button fields in Login component", () => {
         render(<BrowserRouter><Login /></BrowserRouter>)
-        const labelElement =  screen.getByLabelText("Email")
-        const firstInput = screen.getByRole("textbox")
-        const secondLabelElement = screen.getByLabelText("Password")
-        const secondInput = screen.getByPlaceholderText("Enter your password")
+        const labelElement =  screen.getByLabelText(/Email/i)
+        const firstInput = screen.getByTestId("email")
+        const secondLabelElement = screen.getByLabelText(/Password/i)
+        const secondInput = screen.getByTestId("password")
         const loginButton = screen.getByRole("button")
         expect( labelElement).toBeInTheDocument()
         expect( secondLabelElement).toBeInTheDocument()
@@ -56,8 +56,8 @@ describe("test login component render", () => {
     })
     test("should display error messages on empty form submission", async() => {
         render(<BrowserRouter><Login /></BrowserRouter>)
-        await userEvent.type(screen.getByPlaceholderText(/Enter your email/i), "ram")
-        await userEvent.type(screen.getByPlaceholderText(/Enter your password/i), "a")
+        await userEvent.type(screen.getByTestId("email"), "ram")
+        await userEvent.type(screen.getByTestId("password"), "a")
         const button = screen.getByRole("button", {name: "Login"})
         userEvent.click(button)
         expect(await screen.findByTestId("email-error")).toHaveTextContent("Please enter a valid email")
@@ -66,8 +66,8 @@ describe("test login component render", () => {
    
     test("should not have any error messages on valid form data submission", async() => {
         render(<BrowserRouter><Login /></BrowserRouter>)
-        await userEvent.type(screen.getByPlaceholderText(/Enter your email/i), "ram@gmail.com")
-        await userEvent.type(screen.getByPlaceholderText(/Enter your password/i), "one123")
+        await userEvent.type(screen.getByTestId("email"), "ram@gmail.com")
+        await userEvent.type(screen.getByTestId("password"), "one123")
         const button = screen.getByRole("button", {name: "Login"})
         await userEvent.click(button)
         expect( screen.queryByTestId("email-error")).not.toBeInTheDocument()

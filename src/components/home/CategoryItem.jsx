@@ -19,9 +19,9 @@ const CategoryItem = ({item}) => {
             <img srcSet = {`${item.imageUrlSmall} 80w, ${item.imageUrl} 1080w`} sizes = "(max-width:600px) 80px, 1080px" src = {item.imageUrl} alt = {item.key} className = "home-cat-image"/>
         </div>
         <div className = "flex cat-text-wrapper">
-            <h4>{item.name}</h4>
+            <h4 >{item.name}</h4>
             <p>{item.description}</p>
-            <button className = "btn explore-deals-btn" onClick = { redirectToProductPageHandler }>Explore deals</button>
+            <button className = "btn explore-deals-btn" onClick = { redirectToProductPageHandler } aria-label = {`${item.name} Explore deals`}>Explore deals</button>
         </div>
     </section>
   )

@@ -11,7 +11,7 @@ const Signup = () => {
   const validateEmail =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
  
   const loginClickHandler = () => {
-    const condition = Object.values(formData).length === 5 && Object.values(error).every((item) => item === "") 
+    const condition = Object.keys(formData).length === 5 && Object.values(error).every((item) => item === "") 
     if(condition){
       navigate("/")
     }
@@ -46,34 +46,34 @@ const Signup = () => {
         </div>
         <form className = "flex login-form-wrapper signup-form-wrapper" onSubmit={(e) => e.preventDefault()}>
         {noValuesError && <p className = "error-message" data-testid = "default-error"><span className = "warning-sign">&#9888;</span> {noValuesError}</p>}
-
+            <p>All fields marked with an asterisk(*) are required</p>
             <label htmlFor = "first-name" className = "login-input">
-                <p>First Name</p>
-                <input type = "text" id = "first-name" name = "firstName"className = "login-form-input" onChange = {(e) => firstNameHandler(e, e.target.value.length < 3 || e.target.value[0]=== " ", "Enter valid first name")} placeholder = "Enter your first name"/>
+                <p>First Name<span aria-hidden = "true" className = "error-message">*</span></p>
+                <input type = "text" data-testid = "first-name" id = "first-name" name = "firstName"className = "login-form-input" onChange = {(e) => firstNameHandler(e, e.target.value.length < 3 || e.target.value[0]=== " ", "Enter valid first name")} required/>
             </label>
             {error?.firstName && <p className = "error-message" data-testid = "firstName-error"><span className = "warning-sign">&#9888;</span> {error?.firstName}</p>}
 
             <label htmlFor = "last-name" className = "login-input">
-                <p>Last Name</p>
-                <input type = "text" id = "last-name" name = "lastName" className = "login-form-input" onChange = {(e) => firstNameHandler(e, e.target.value.length < 3 || e.target.value[0]=== " ", "Enter valid last name")} placeholder = "Enter your last name"/>
+                <p>Last Name<span aria-hidden = "true" className = "error-message">*</span></p>
+                <input type = "text" data-testid = "last-name" id = "last-name"name = "lastName" className = "login-form-input" onChange = {(e) => firstNameHandler(e, e.target.value.length < 3 || e.target.value[0]=== " ", "Enter valid last name")} required/>
             </label>
             {error?.lastName && <p className = "error-message" data-testid = "lastName-error"><span className = "warning-sign">&#9888;</span> {error?.lastName}</p>}
 
             <label htmlFor = "email" className = "login-input">
-                <p>Email</p>
-                <input type = "email" id = "email" name = "email"className = "login-form-input" onChange = {(e) => firstNameHandler(e, !validateEmail.test(e.target.value), "Please enter a valid email")} placeholder = "Enter your email"/>
+                <p>Email<span aria-hidden = "true" className = "error-message">*</span></p>
+                <input type = "email" data-testid = "email" id = "email" name = "email"className = "login-form-input" onChange = {(e) => firstNameHandler(e, !validateEmail.test(e.target.value), "Please enter a valid email")} required/>
             </label>
             {error?.email && <p className = "error-message" data-testid = "email-error"><span className = "warning-sign">&#9888;</span> {error?.email}</p>}
 
             <label htmlFor = "password" className = "login-input relative">
-                <p>Password</p>
-                <TogglePasswordDisplay  id = {"password"}  placeholder = "Enter your password" name = "password" firstNameHandler = {firstNameHandler} errorMsg = "Password must contain one character and a number and at least six characters with no space"/>
+                <p>Password<span aria-hidden = "true" className = "error-message">*</span></p>
+                <TogglePasswordDisplay  id = {"password"}  name = "password" firstNameHandler = {firstNameHandler} errorMsg = "Password must contain one character and a number and at least six characters with no space"/>
             </label>
             {error?.password && <p className = "error-message" data-testid = "pwd-error"><span className = "warning-sign">&#9888;</span> {error?.password}</p>}
 
             <label htmlFor = "confirm-password" className = "login-input">
-                <p>Confirm Password</p>
-                <TogglePasswordDisplay  id = {"confirm-password"}  placeholder = "Re-enter your password" name = "confirmPassword" firstNameHandler = {firstNameHandler} errorMsg = "Passwords should match"/>
+                <p>Confirm Password<span aria-hidden = "true" className = "error-message">*</span></p>
+                <TogglePasswordDisplay  id = {"confirm-password"}  name = "confirmPassword" firstNameHandler = {firstNameHandler} errorMsg = "Passwords should match"/>
             </label>
             {error?.confirmPassword && <p className = "error-message" data-testid = "cfPwd-error"><span className = "warning-sign">&#9888;</span> {error?.confirmPassword}</p>}
 

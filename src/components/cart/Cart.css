@@ -41,6 +41,7 @@
     font-size: 1rem;
     border-radius: 0.2rem;
     cursor: pointer;
+    font-weight: bold;
 }
 .checkout-text-wrapper {
     position: fixed;

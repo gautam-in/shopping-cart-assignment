@@ -13,6 +13,11 @@ const Products = () => {
     
   return (
     <div className = "product-details-container">
+       { isDesktopOrLaptop && (!closeCartModel && <div className = "cart-model-wrapper" data-testid = "cart-outlet">
+      <div className = "cart-model-parentWrapper">
+        <Outlet />
+      </div>
+     </div>)}
       <div className = "flex product-main-container bg-color">
         <Filter />
         <div className = "single-product-container">
@@ -22,11 +27,7 @@ const Products = () => {
         </div>
         
     </div>
-    { isDesktopOrLaptop && (!closeCartModel && <div className = "cart-model-wrapper" data-testid = "cart-outlet">
-      <div className = "cart-model-parentWrapper">
-        <Outlet />
-      </div>
-     </div>)}
+   
     </div>
   )
 }

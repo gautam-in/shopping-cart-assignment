@@ -3,4 +3,15 @@
 }
 .signup-form-btn {
     margin-top: 1rem;
+    font-weight: bold;
+}
+.toggle-display-btn {
+    background-color: transparent;
+    border: 0;
+    margin-left: -1rem;
+}
+@media screen and (min-width: 768px){
+    .signup-form-wrapper {
+        gap: 0.9rem;
+    }
 }

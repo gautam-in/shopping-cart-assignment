@@ -23,6 +23,7 @@
     color: var(--whitesmoke-color);
     border: 0;
     padding: 0.5rem 1rem;
+    font-weight: bold;
 }
 .buy-btn {
     display: none;
@@ -136,6 +137,7 @@
     .qty-btn { 
         width: 1.7rem;
         height:1.7rem;
+        font-weight: bold;
     }
 }
 

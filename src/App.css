@@ -25,6 +25,7 @@
   padding: 0.5rem 1rem;
   cursor: pointer;
   border: 0;
+  font-weight: bold;
 }
 button:hover, a:hover {
   opacity: 0.8;
@@ -39,6 +40,7 @@ button:hover, a:hover {
 .btn-color {
   color: var(--whitesmoke-color);
   background-color: var(--app-btn-color);
+  font-weight: bold;
 }
 .relative {
   position: relative;
