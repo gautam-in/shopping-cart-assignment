@@ -1,0 +1,25 @@
+header{
+    box-shadow: 0px 0 5px 1px lightgrey;
+    clip-path: inset(0px 0px -5px 1px);
+}
+.header-center ul{
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+}
+.header-center ul>li{
+    display: inline-block;
+    margin: 4px 8px;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+}
+footer span{
+    position: relative;
+    left: 18%;
+}
+@media only screen and (min-width: 768px) {
+
+}
