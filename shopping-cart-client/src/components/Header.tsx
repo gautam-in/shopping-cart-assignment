@@ -7,7 +7,7 @@ return (<header className='mx-5'>
             <Col className='header-left'>
             <img src='/static/images/logo_2x.png' alt='logo' className='w-50 float-lg-right'/>
             </Col >
-            <Col xl={6} className='header-center position-relative'>
+            <Col xl={6} lg={6} className='header-center position-relative'>
               <ul className='my-0 ml-2'>
                 <li>Home</li>
                 <li>Product</li>
