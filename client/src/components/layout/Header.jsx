@@ -30,7 +30,7 @@ function Header() {
                   </Link>
                 </Col>
                 <Col className="col-6">
-                  <Link to="#" className="customLink">
+                  <Link to="/products" className="customLink">
                     Products
                   </Link>
                 </Col>

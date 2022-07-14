@@ -38,25 +38,23 @@ const Home = () => {
     navigate(`/products/${categoryId}`);
   };
   const displayCategory = (item) => {
-    if (item && item.order > 0) {
+    const { order, id, name, description, imageUrl } = item;
+    if (item && order > 0) {
       return (
-        <Row key={item.id} className="rowCategory mt-1">
-          {item.order % 2 === 0 ? (
+        <Row key={id} className="rowCategory mt-1">
+          {order % 2 === 0 ? (
             <>
               <Col>
-                <h1>{item.name}</h1>
-                <p>{item.description}</p>
-                <Button
-                  onClick={() => exploreCategory(item.id)}
-                  id="categoryButton"
-                >
-                  Explore {item.name}
+                <h1>{name}</h1>
+                <p>{description}</p>
+                <Button onClick={() => exploreCategory(id)} id="categoryButton">
+                  Explore {name}
                 </Button>
               </Col>
               <Col>
                 <img
-                  src={process.env.PUBLIC_URL + `${item.imageUrl}`}
-                  alt={"Category" + `${item.name} `}
+                  src={process.env.PUBLIC_URL + `${imageUrl}`}
+                  alt={"Category" + `${name} `}
                   height="200"
                 />
               </Col>
@@ -65,19 +63,16 @@ const Home = () => {
             <>
               <Col>
                 <img
-                  src={process.env.PUBLIC_URL + `${item.imageUrl}`}
-                  alt={"Category" + `${item.name} `}
+                  src={process.env.PUBLIC_URL + `${imageUrl}`}
+                  alt={"Category" + `${name} `}
                   height="200"
                 />
               </Col>
               <Col>
-                <h1>{item.name}</h1>
-                <p>{item.description}</p>
-                <Button
-                  onClick={() => exploreCategory(item.id)}
-                  id="categoryButton"
-                >
-                  Explore {item.name}
+                <h1>{name}</h1>
+                <p>{description}</p>
+                <Button onClick={() => exploreCategory(id)} id="categoryButton">
+                  Explore {name}
                 </Button>
               </Col>
             </>
@@ -90,13 +85,13 @@ const Home = () => {
   return (
     <Container>
       <Carousel>
-        {bannersData.map((data) => {
+        {bannersData.map(({ id, bannerImageUrl, bannerImageAlt }) => {
           return (
             <Carousel.Item>
-              <div key={data.id}>
+              <div key={id}>
                 <img
-                  src={process.env.PUBLIC_URL + `${data.bannerImageUrl}`}
-                  alt={data.bannerImageAlt}
+                  src={process.env.PUBLIC_URL + `${bannerImageUrl}`}
+                  alt={bannerImageAlt}
                   height="200"
                 />
               </div>

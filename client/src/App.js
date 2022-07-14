@@ -6,6 +6,7 @@ import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
+import Products from "./components/products/Products";
 function App() {
   return (
     <Router>
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Register />} />
         <Route path="*" exact={true} element={<Home />} />
+        <Route exact path="/products" element={<Products />} />
       </Routes>
       <Footer />
     </Router>
