@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
+
+body,
+html {
+  font-family: "Dosis", sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+code {
+  font-family: "Dosis", monospace;
+}

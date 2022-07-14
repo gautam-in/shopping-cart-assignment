@@ -22,7 +22,7 @@
     "key": "beauty-hygiene",
     "description": "Buy beauty and personal care products online in India at best prices.",
     "enabled": true,
-    "order": 4,
+    "order": 5,
     "imageUrl": "/static/images/category/beauty.png",
     "id": "5b68994e3d1a866534f516df"
   },
@@ -31,7 +31,7 @@
     "key": "baby",
     "description": "Shop online for Baby Products, Diapers, Skin Care Products,etc.",
     "enabled": true,
-    "order": 5,
+    "order": 4,
     "imageUrl": "/static/images/category/baby.png",
     "id": "5b6899683d1a866534f516e0"
   },

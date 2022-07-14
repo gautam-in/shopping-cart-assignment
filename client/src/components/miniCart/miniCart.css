@@ -1,0 +1,32 @@
+.cartHeader {
+  color: white;
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+  background-color: black;
+  border-radius: 0 !important;
+}
+.emptyCartContent {
+  position: absolute;
+  top: 170px;
+  left: 40px;
+}
+.modal-content {
+  border-radius: 0 !important;
+  border: none !important;
+  width: 300px !important;
+  height: 500px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+.modal-footer {
+  border-top: none !important;
+  position: relative !important;
+}
+#shopingCartButton {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(225, 12, 97, 0.957);
+  color: white;
+  border-color: rgba(225, 12, 97, 0.957);
+}

@@ -1,0 +1,47 @@
+.cartIcon {
+  position: absolute;
+  cursor: pointer;
+  width: 20%;
+  height: 100%;
+  left: 10%;
+  top: 0;
+  background-color: "#d3d3d3";
+}
+.customLink {
+  text-decoration: none;
+  color: black;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around !important;
+  align-items: center;
+  box-shadow: rgb(204 204 204) 0px 0px 5px 1px;
+  top: 0px;
+  position: sticky !important;
+  left: 0px;
+  z-index: 100;
+}
+#headerContainer {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+div a:first-child {
+  margin-right: 10px;
+}
+.customFooter {
+  background: #eaeaea;
+  padding: 10px 12%;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    p {
+      font-size: 10px;
+    }
+  }
+}
+p {
+  font-size: 12px;
+}
+.userOptions {
+  margin-left: auto;
+}
