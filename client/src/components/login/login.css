@@ -1,0 +1,22 @@
+#loginFormInput {
+  border-bottom-style: solid;
+  border-bottom-color: rgba(236, 226, 226, 0.813);
+  border-right: none;
+  border-left: none;
+  border-top: none;
+}
+#loginFormInput:focus {
+  outline: 0;
+  border-bottom-style: solid;
+  border-bottom-color: #18cdcd;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-color: none;
+}
+#customSubmit {
+  background-color: rgba(225, 12, 97, 0.957);
+  border-radius: 0px;
+  width: 100%;
+  border-color: rgba(225, 12, 97, 0.957);
+}

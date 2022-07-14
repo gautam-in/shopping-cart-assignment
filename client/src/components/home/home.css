@@ -1,0 +1,13 @@
+#categoryButton {
+  background-color: rgba(225, 12, 97, 0.957);
+  border-radius: 0px;
+  border-color: rgba(225, 12, 97, 0.957);
+}
+.rowCategory {
+  box-shadow: 0 10px 10px -16px #000000;
+}
+.container {
+  width: 800px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
