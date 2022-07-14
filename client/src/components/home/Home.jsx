@@ -2,25 +2,33 @@ import React, { useEffect, useState } from "react";
 import { Button, Carousel, Col, Row, Container } from "react-bootstrap";
 import "./home.css";
 import { useNavigate } from "react-router-dom";
-
+import axios from "axios";
 const Home = () => {
   const navigate = useNavigate();
   const [categoriesData, setCategoriesData] = useState([]);
   const [bannersData, setBannersData] = useState([]);
 
   const getBannersAndCategories = async () => {
-    try {
-      const res = await Promise.all([
-        fetch("http://localhost:5000/banners"),
-        fetch("http://localhost:5000/categories"),
-      ]);
-
-      const jsonData = await Promise.all([res[0].json(), res[1].json()]);
-      setBannersData(jsonData[0]);
-      setCategoriesData(jsonData[1]);
-    } catch (error) {
-      console.error(error);
-    }
+    await axios
+      .get("http://localhost:5000/banners")
+      .then(({ data }) => {
+        if (data) {
+          setBannersData(data);
+        }
+      })
+      .catch((error) => {
+        console.log("Error in getting banner data", error);
+      });
+    await axios
+      .get("http://localhost:5000/categories")
+      .then(({ data }) => {
+        if (data) {
+          setCategoriesData(data);
+        }
+      })
+      .catch((error) => {
+        console.log("Error in getting category data", error);
+      });
   };
   useEffect(() => {
     getBannersAndCategories();
