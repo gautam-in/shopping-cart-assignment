@@ -1,0 +1,146 @@
+@import '../../variable.scss';
+
+.carousel {
+    width: 100%;
+    height: 20vh;
+    overflow: hidden;
+    box-shadow: 0 6px 10px -8px rgb(0 0 0 / 57%);
+    position: relative;
+
+    &_slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        z-index: 1;
+        display: flex;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+    }
+
+    &_history {
+        position: absolute;
+        z-index: 2;
+        bottom: 10px;
+        width: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            height: 3px;
+
+            li {
+                width: 15%;
+                box-sizing: border-box;
+                height: inherit;
+                position: relative;
+
+                &:not(:last-of-type) {
+                    margin-right: 5%;
+                }
+
+                button {
+                    border: none;
+                    outline: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: black;
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                    transition: background-color 300ms ease;
+
+                    &.active {
+                        background-color: gray;
+                    }
+                }
+            }
+        }
+    }
+
+    &_control {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        display: block;
+        border: 0;
+        padding: 0 5px;
+        overflow: hidden;
+        transition: background-color 300ms ease;
+        cursor: pointer;
+        padding: 1rem;
+
+        @media only screen and (max-width: $bp-smallest) {
+            padding: .5rem;
+        }
+
+        span {
+            display: inline-block;
+            position: relative;
+            box-sizing: border-box;
+            opacity: 0.65;
+            transition: opacity 300ms ease;
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+
+            span {
+                opacity: 0.95;
+            }
+        }
+
+        &__prev {
+            left: 1rem;
+        }
+
+        &__next {
+            right: 1rem;
+        }
+    }
+
+}
+
+// animation for slide
+.leave {
+    transform: translateX(0);
+}
+
+.enter-active.enter-next,
+.enter-active.enter-prev {
+    transform: translateX(0);
+    transition: transform 500ms linear;
+}
+
+.enter-next {
+    transform: translateX(100%);
+}
+
+.enter-prev {
+    transform: translateX(-100%);
+    transition: transform 500ms linear;
+}
+
+.leave-active-next {
+    transform: translateX(-100%);
+    transition: transform 500ms linear;
+    ;
+}
+
+.leave.leave-active-prev {
+    transform: translateX(100%);
+    transition: transform 500ms linear;
+}

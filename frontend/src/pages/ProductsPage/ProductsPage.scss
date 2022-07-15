@@ -1,0 +1,14 @@
+@import '../../variable.scss';
+
+.product-page {
+  display: flex;
+  max-width: 120rem;
+  margin: 1rem auto;
+  position: relative;
+  width: 100%;
+
+  @media (max-width: $bp-smallest) {
+    flex-direction: column;
+  }
+
+}

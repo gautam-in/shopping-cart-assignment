@@ -1,0 +1,41 @@
+@import './variable.scss';
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.container {
+  // max-width: 120rem;
+  // margin: 8rem auto;
+  background-color: var(--color-grey-light-1);
+  box-shadow: var(--shadow-dark);
+
+  // min-height: 50rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    .tabletonly {
+      display: none;
+    }
+  }
+}
+
+
+.content {
+  display: flex;
+  position: relative;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+  }
+}

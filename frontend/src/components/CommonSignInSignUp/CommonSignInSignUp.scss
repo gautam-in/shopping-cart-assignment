@@ -1,0 +1,52 @@
+.auth-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .title {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        margin-top: 5rem;
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        span {
+            font-size: 1.3rem;
+        }
+    }
+
+    .form-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 60%;
+
+        .auth-form {
+            width: 100%;
+            max-width: 428px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        .title {
+            width: 100%;
+        }
+
+        .form-container {
+            justify-content: center;
+            width: 100%;
+        }
+    }
+
+}

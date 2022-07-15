@@ -1,0 +1,174 @@
+@import '../../variable.scss';
+
+.card {
+    position: relative;
+    width: calc(30% - 20px);
+    margin: 10px auto;
+    min-height: 350px;
+    background: #fff;
+    box-sizing: border-box;
+    border-bottom: #e6e4e4 dotted 3px;
+    min-width: 300px;
+
+
+    .card-head {
+        h2 {
+            font-size: 1.8rem;
+            padding: 1rem
+        }
+    }
+
+    .card-content {
+        -webkit-box-shadow: 6px 0px 11px 0px rgba(62, 66, 66, 0.22);
+        -moz-box-shadow: 6px 0px 11px 0px rgba(62, 66, 66, 0.22);
+        box-shadow: 6px 0px 11px 0px rgba(62, 66, 66, 0.22);
+
+        .imgBx {
+            position: relative;
+            width: 100%;
+            height: 200px;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .details {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+
+            .description {
+
+                span {
+                    font-size: 1.2rem;
+                    background-color: #e6e4e4;
+                    display: inline-block;
+                    padding: 0.5rem;
+                    margin: 0.5rem;
+                }
+            }
+
+            .action-details-md {
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding: 1rem 0rem;
+
+            }
+        }
+
+        .action-details-lg {
+            display: none !important;
+        }
+
+        @media only screen and (min-width: 360px) and (max-width: $bp-large) {
+            display: flex;
+            align-items: flex-start;
+            min-height: 150px;
+
+            .action-details-md {
+                display: none !important;
+            }
+
+            .action-details-lg {
+                display: flex !important;
+            }
+
+
+            .imgBx {
+                object-fit: cover;
+                min-height: 150px;
+
+                img {
+                    object-fit: contain;
+                }
+            }
+
+            .details {
+                min-height: 150px;
+
+                .description {
+                    flex-grow: 2;
+
+                    span {
+                        font-size: 1.5rem;
+
+                        &::after {
+                            content: "";
+                            display: inline-block;
+                            width: 100%;
+                        }
+                    }
+
+
+                }
+
+                .action-details-lg {
+                    flex-grow: 1;
+                }
+            }
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: $bp-large) {
+            min-height: 200px;
+
+
+            .imgBx {
+                object-fit: cover;
+                height: 150px;
+                min-height: 150px;
+            }
+
+            .details {
+                height: 150px;
+                min-height: 150px;
+
+                .description {
+                    overflow: auto;
+                    padding: 1rem;
+                }
+
+                .action-details-lg {
+                    width: 100%;
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+        }
+
+        @media (max-width: $bp-smallest) {
+
+            display: flex;
+            align-items: flex-start;
+
+            .imgBx {
+                object-fit: cover;
+            }
+
+
+        }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: $bp-large) {
+        min-height: 200px;
+    }
+
+    @media only screen and (min-width: $bp-smallest) and (max-width: $bp-large) {
+        min-height: 250px;
+    }
+
+    @media (max-width: $bp-smallest) {
+        min-height: 250px;
+    }
+}

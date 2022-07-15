@@ -1,0 +1,71 @@
+@import "../../variable.scss";
+
+.shop-button {
+    width: 100%;
+
+    .custom-button {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        border: 1px solid;
+        padding: 10px 15px;
+        background-color: $primary-color;
+        border-color: $primary-color;
+        cursor: pointer;
+
+        -webkit-transition: ease-in-out .2s;
+        -moz-transition: ease-in-out .2s;
+        -o-transition: ease-in-out .2s;
+        transition: ease-in-out .2s;
+    }
+
+    .primary {
+        color: #fff;
+        background-color: $primary-color;
+        border-color: $primary-color;
+
+    }
+
+    .success {
+        background-color: $success-color;
+    }
+
+    .warning {
+        background-color: #db3236;
+    }
+
+    .block {
+        display: block;
+        width: 100%;
+    }
+
+    .large {
+        padding: 0.5rem 1rem;
+        font-size: 1.25rem;
+        line-height: 1.5;
+        width: 100%;
+    }
+
+    .medium {
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        width: auto;
+    }
+
+    .small {
+        padding: 0.25rem 0.5rem;
+        font-size: .875rem;
+        line-height: 1.5;
+        width: auto;
+    }
+
+
+
+    .outline-primary {
+        color: $primary-color;
+        background-color: transparent;
+        background-image: none;
+    }
+
+}

@@ -1,0 +1,92 @@
+@import '../../variable.scss';
+
+.cart-item {
+    width: 100%;
+    display: flex;
+    min-height: 100px;
+    border-bottom: 1px solid darkgrey;
+    padding: 1rem;
+    font-size: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    margin: 0.5rem 0rem;
+
+    img {
+        width: 20%;
+        object-fit: contain;
+        height: 50%;
+        width: 10%;
+    }
+
+    .quantity {
+        width: 20%;
+    }
+
+    .mul-items {
+        font-size: .7rem;
+        font-weight: bold;
+        margin: 0rem 1rem;
+    }
+
+    .price {
+        width: 10%;
+    }
+
+    .quantity {
+        display: flex;
+
+        .arrow {
+            cursor: pointer;
+        }
+
+        .value {
+            margin: 0 10px;
+        }
+
+        .sub-price {
+            white-space: nowrap;
+        }
+    }
+
+    .remove-button {
+        padding-left: 12px;
+        cursor: pointer;
+    }
+
+    .item-details {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 10px 20px;
+
+        .name {
+            width: 100%;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    }
+
+    @media only screen and (min-width: 300px) and (max-width: $bp-large) {
+        img {
+            height: 100%;
+        }
+
+        .price {
+            font-size: 1.7rem;
+        }
+
+        .quantity {
+            font-size: 1.4rem;
+            align-items: center;
+        }
+
+        .item-details {
+            .name {
+                font-size: 1.7rem;
+            }
+        }
+    }
+}
