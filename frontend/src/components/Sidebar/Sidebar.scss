@@ -1,0 +1,58 @@
+@import '../../variable.scss';
+
+.product-sidebar {
+    position: relative;
+    width: 20%;
+    padding: 1%;
+    background-color: #e6e4e4;
+    z-index: 400;
+
+    #nav-btn {
+        fill: white;
+        height: 40px;
+        position: absolute;
+        right: 10px;
+        top: 7px;
+        display: none;
+    }
+
+    .vertical-line {
+        display: none;
+    }
+
+
+    .product-nav {
+        display: block;
+
+        ul {
+            list-style: none;
+
+            li {
+                font-size: 1.5rem;
+                border-bottom: 2px solid #a2a2a2;
+                padding: 1rem;
+                font-weight: bold;
+
+                &.active {
+                    background-color: #a2a2a2ed;
+                }
+
+                .change-cat-btn {
+                    background: none !important;
+                    border: none;
+                    padding: 0 !important;
+                    cursor: pointer;
+                    color: #565252;
+                }
+            }
+        }
+    }
+
+
+
+    @media (max-width: $bp-smallest) {
+        display: none;
+
+    }
+
+}
