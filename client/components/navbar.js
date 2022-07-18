@@ -34,15 +34,17 @@ const Navbar = () => {
                 </div>
                 <div className={styles.cartWrapper}>
                     <div className={styles.loginLinks}>
-                    <small><Link href="/auth/login">SignIn</Link></small>
-                    <small><Link href="/auth/register">Register</Link></small>
+                        <small><Link href="/auth/login">SignIn</Link></small>
+                        <small><Link href="/auth/register">Register</Link></small>
                     </div>
-                    <div className={styles.cartIcon}>
-                        <div className={styles.cartIconImg}>
-                        <Image src="/cart.svg"  layout={'fill'} alt={'Cart Icon SVG'}/>
-                        </div>
+                    <Link href={'/cart'}>
+                        <div className={styles.cartIcon}>
+                            <div className={styles.cartIconImg}>
+                                <Image src="/cart.svg" layout={'fill'} alt={'Cart Icon SVG'}/>
+                            </div>
                             <span>{cartQuantity} items</span>
-                    </div>
+                        </div>
+                    </Link>
 
                 </div>
             </div>
