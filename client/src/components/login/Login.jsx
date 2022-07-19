@@ -7,42 +7,32 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   return (
-    <Container className="d-flex justify-content mt-4">
-      <Col>
+    <div className="auth-container">
+      <div className="login-container">
         <h1>Login</h1>
         <p>Get access to your Orders, Wishlist and Recommendations</p>
-      </Col>
-      <Col>
-        <Form className="col-sm-6">
-          <div className="mb-3">
-            <label class="form-label" for="inputEmail">
-              Email
-            </label>
-            <input
-              type="email"
-              className="form-control "
-              id="loginFormInput"
-              required
-            />
+      </div>
+      <div className="login-container">
+        <Form>
+          <div className="group">
+            <label className="form-input-label">Email</label>
+            <input type="email" className="form-input" required name="email" />
           </div>
-          <div className="mb-1">
-            <label class="form-label" for="inputPassword">
-              Password
-            </label>
+          <div className="group">
+            <label className="form-input-label">Password</label>
             <input
               type="password"
-              className="form-control"
-              id="loginFormInput"
+              className="form-input"
               required
+              name="password"
             />
           </div>
-
-          <Button id="customSubmit" type="submit" className="mt-4" size="sm">
+          <Button id="customSubmit" className="mt-3" size="sm" type="submit">
             Login
           </Button>
         </Form>
-      </Col>
-    </Container>
+      </div>
+    </div>
   );
 };
 

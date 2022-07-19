@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Navbar, Container, Nav, Col, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import logo from "../../static/images/logo.png";
-import Cart from "../../static/images/cart.svg";
+import { ReactComponent as Cart } from "../../static/images/cart.svg";
 import "./layout.css";
 import MiniCart from "../miniCart/MiniCart";
+import Footer from "./Footer";
 function Header() {
   const [showCart, setShowCart] = useState(false);
   const [itemCount] = useState(0);
@@ -12,7 +13,7 @@ function Header() {
     setShowCart(true);
   };
   return (
-    <>
+    <React.Fragment>
       <Navbar expand="lg" bg="light" id="headerContainer">
         <Container>
           <Col className="col-3">
@@ -57,7 +58,8 @@ function Header() {
                   }}
                   onClick={navigateToCart}
                 >
-                  <img className="cartIcon" src={Cart} alt="Cart" />
+                  {/* <img className="cartIcon" src={Cart} alt="Cart" /> */}
+                  <Cart className="cartIcon" />
                   {itemCount} items
                 </Button>
                 {showCart ? (
@@ -70,7 +72,9 @@ function Header() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </>
+      <Outlet />
+      <Footer />
+    </React.Fragment>
   );
 }
 export default Header;

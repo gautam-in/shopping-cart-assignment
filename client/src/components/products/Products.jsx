@@ -42,7 +42,7 @@ const Products = () => {
               <img src={imageURL} alt={name} style={{ margin: "10px" }} />
               <p>{description.substring(0, 50)}</p>
               <div className="product-price">
-                <div>MRP Rs.{price}</div>
+                <div>MRP Rs{price}</div>
                 <Button className="buyItem">Buy Now</Button>
               </div>
             </div>
