@@ -20,13 +20,13 @@ const SingleProduct = ({product}) => {
   },[cartData])
   
   return (
-    <section className = "product-wrapper" data-testid = "single-product">
+    <section className = "flex column product-wrapper" data-testid = "single-product">
       <h3>{product.name}</h3>
-      <div className = "flex productInfo-wrapper">
+      <div className = "flex align-center productInfo-wrapper">
         <div className = "product-img-wrapper">
           <img src = {`/${product.imageURL}`} alt = { product.name} className = "product-image"/>
         </div>
-        <div className = "flex product-text-wrapper">
+        <div className = "flex column product-text-wrapper">
           <p className = "product-description" data-testid = "description">{product.description.split("").slice(0, 90).join("")}</p>
           {itemInCart ? <div className = "product-buy-btn quat-comp-wrapper" data-testid = "qty-btn"><QuantityButton product = { product }/></div> : <button className = "product-buy-btn" onClick = { addToCartHandler } data-testid = "buy-btn">BuyNow @ MRP RS.{product.price}</button> }
         </div>

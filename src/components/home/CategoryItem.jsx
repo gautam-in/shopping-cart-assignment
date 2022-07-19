@@ -14,11 +14,11 @@ const CategoryItem = ({item}) => {
       navigate("/products")
   }
   return (
-    <section className = "flex cat-wrapper box-shadow">
+    <section className = "flex align-center cat-wrapper box-shadow">
         <div className = "cat-image-wrapper">
             <img srcSet = {`${item.imageUrlSmall} 80w, ${item.imageUrl} 1080w`} sizes = "(max-width:600px) 80px, 1080px" src = {item.imageUrl} alt = {item.key} className = "home-cat-image"/>
         </div>
-        <div className = "flex cat-text-wrapper">
+        <div className = "flex column cat-text-wrapper">
             <h4 >{item.name}</h4>
             <p>{item.description}</p>
             <button className = "btn explore-deals-btn" onClick = { redirectToProductPageHandler } aria-label = {`${item.name} Explore deals`}>Explore deals</button>

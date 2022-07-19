@@ -1,7 +1,7 @@
 import React from 'react'
 import { useProducts } from '../../context/productContext'
 import { CartItem } from "./../index-components"
-import "./Cart.css"
+import "../../styles/cart/Cart.css"
 import priceLabel from "./../../lowest-price.png"
 import { useNavigate } from 'react-router-dom'
 
@@ -22,11 +22,15 @@ const Cart = () => {
   return (
     <section className = {`${isDesktopOrLaptop? "bg-color cart-wrapper" :""}`} data-testid = "cart-page">
       
-        <div className = {`flex cart-header-wrapper ${isDesktopOrLaptop ? "header-larger-bg" :""}`}>
+        <div className = {`flex align-center cart-header-wrapper ${isDesktopOrLaptop ? "header-larger-bg" :""}`}>
           <h2 className = "cart-title">My Cart <span className = "cart-title-small">[{cartData.length === 1 ? `${cartData.length}item` : `${cartData.length}items`}]</span></h2>
           {isDesktopOrLaptop && <button onClick = { modelToggleHandler } className = "close-btn">Close</button>}
         </div>
-        <div className = {`flex cart-items-wrapper ${isDesktopOrLaptop ? "singleItem-wrapper" :""}`}>
+        <div className = "flex align-center price-banner-wrapper bg-color">
+          <img src = {priceLabel} alt = "least price guaranteed" className = "best-priceImg"/>
+          <p>You won't find it cheaper anywhere</p>
+        </div>
+        <div className = {`flex column cart-items-wrapper ${isDesktopOrLaptop ? "singleItem-wrapper" :""}`}>
           {
             cartData.length < 1 && <p className = "empty-cart-description">You have not added anything to the Cart</p>
            }
@@ -36,10 +40,7 @@ const Cart = () => {
             })
           }
         </div>
-        <div className = "flex price-banner-wrapper bg-color">
-          <img src = {priceLabel} alt = "least price guaranteed" />
-          <p>You won't find it cheaper anywhere</p>
-        </div>
+       
         <div className =  {`bg-color checkout-text-wrapper`}>
           <p>Promo code can be applied on payment page</p>
           <button className = "flex cart-checkout-btn btn-color">

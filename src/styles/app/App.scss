@@ -1,0 +1,51 @@
+@use "./../shared/Shared";
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  *:focus {
+    outline: 3px solid Shared.$form-active-color
+  }
+  .flex {
+    display: flex;
+  }
+  .btn {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: 0;
+    font-weight: bold;
+  }
+  button:hover, a:hover {
+    opacity: 0.8;
+  }
+  .App {
+    min-height: max-content;
+  }
+  .bg-color {
+    background-color: Shared.$white-color;
+  }
+  .btn-color {
+    color: Shared.$whitesmoke-color;
+    background-color: Shared.$app-btn-color;
+    font-weight: bold;
+  }
+  .relative {
+    position: relative;
+  }
+  .box-shadow {
+    -webkit-box-shadow: 0 12px 6px -6px Shared.$white-color;
+    -moz-box-shadow: 0 12px 6px -6px Shared.$white-color;
+    box-shadow: 0 12px 6px -6px Shared.$box-shadow-color;
+    margin-bottom: 1rem;
+  } 
+  .cart-bg-color {
+    background-color: Shared.$whitesmoke-color;
+  }
+  .loader-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+  }

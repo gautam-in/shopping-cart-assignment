@@ -1,19 +1,15 @@
 import React from 'react'
 import { useProducts } from '../../context/productContext'
-import { categoryFilterHandler } from './categoryFilterHandler.jsx';
+import { categoryFilterHandler, clearFilters } from './../index-components';
 
 const Filter = () => {
     const { productState, dispatch } = useProducts()
     const { categoryData, serverData, categoryValue } = productState
-    const clearFilterHandler = () => {
-        dispatch({type:"SET_PRODUCTS_DATA", payload: serverData})
-        dispatch({type:"SET_CATEGORY_VALUE", payload: ""})
-    }
+    const clearFilterHandler = clearFilters(dispatch, serverData)
     const categoryChangeHandler = categoryFilterHandler(categoryValue, clearFilterHandler, serverData, dispatch)
-    
   return (
     <main data-testid = "filter">
-        <section className = "flex product-filter-wrapper">
+        <section className = "product-filter-wrapper">
             <select onChange = { categoryChangeHandler } value = { categoryValue } className = "product-filter-select">
                 <option value = "default">Select Category</option>
                 {
@@ -25,7 +21,7 @@ const Filter = () => {
             </select>
             <button onClick = { clearFilterHandler } className = "filter-clear-btn">Clear</button>
         </section>
-        <section className = "flex product-filter-sidebar">
+        <section className = "product-filter-sidebar">
                 {
                     categoryData.map((item) => {
                         return <button value = {item.id} key = {item.id} onClick = { categoryChangeHandler } className = {`filter-btn ${categoryValue === item.id ? "active" : ""}`}>{item.name}</button>
@@ -37,5 +33,6 @@ const Filter = () => {
 }
 
 export default Filter
+
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import "./../../App.css"
-import "./Footer.css"
+import "../../styles/footer/Footer.css"
 const Footer = () => {
   return (
     <footer className = "footer-wrapper" data-testid = "footer"> 

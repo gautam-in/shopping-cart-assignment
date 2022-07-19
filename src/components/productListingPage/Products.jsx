@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import { useProducts } from '../../context/productContext'
 import { SingleProduct, Filter } from "./../index-components"
-import "./Product.css"
+import "../../styles/product/Product.css"
 import React, { useEffect } from 'react';
 import { getFetch } from '../../customHooks/getFetch';
 const Products = () => {

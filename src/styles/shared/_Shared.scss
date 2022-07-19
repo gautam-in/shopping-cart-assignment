@@ -1,0 +1,37 @@
+
+    $white-color: white;
+    $grey-color: grey;
+    $whitesmoke-color: whitesmoke;
+    $box-shadow-color: rgb(221, 220, 220);
+    $app-btn-color: #D90467;
+    $app-bg-color: rgb(209, 209, 209);
+    $form-active-color: #4ED9D9;
+    $error-msg-color: red;
+    $banner-active-color: #333;
+    $model-bg-color: rgb(221, 220, 220, 0.5);
+
+.flex {
+    display: flex;
+}
+.column {
+    flex-direction: column;
+}
+.align-center {
+    align-items: center
+}
+
+%text-center {
+    text-align: center;
+}
+%cursor-pointer {
+    cursor: pointer;
+}
+%flex {
+    display: flex;
+}
+%column {
+    flex-direction: column;
+}
+%align-center {
+    align-items: center
+}

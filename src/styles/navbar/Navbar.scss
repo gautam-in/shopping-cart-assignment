@@ -1,11 +1,9 @@
+@use "./../shared/Shared";
 
 .navbar-wrapper {
-    display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
-    margin: 0.5rem 0.5rem 0 0.5rem;
 } 
- 
 a {
     text-decoration: none;
     color: inherit;
@@ -14,50 +12,49 @@ a {
     padding: 0.5rem;
 }
 .navbar-inner-first {
-    display: flex;
     gap: 1rem;
     align-items:flex-end;
-}
-.navbar-first-links {
-    display: flex;
-    gap: 1rem;
-    align-items:baseline;
-}
-.navbar-inner-second {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    
 }
 .navbar-logo {
     height:2rem;
     width: 4rem;
 }
+
+.navbar-first-links {
+    gap: 0.7rem;
+    align-items:baseline;
+}
+.navbar-inner-second {
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
 .navbar-cart-logo {
     font-size: 1rem;
 }
 .navbar-authlinks-wrapper {
-    display: flex;
     gap: 1rem;
     justify-content: center;
     font-size: 0.8rem;
 }
 .nav-cart-items {
-    display: flex;
     gap: 1rem;
     align-items: center;
-    background-color: var(--app-bg-color);
-    padding: 0.2rem 0.2rem 0.2rem 0.5rem;
+    background-color: Shared.$app-bg-color;
+    padding: 0.5rem;
     font-size: inherit;
 }
 .footer-wrapper {
     margin: auto;
     padding: 1rem;
 }
-.nav-cart-items > .fa-solid {
-    display: flex;
-    align-items: center;
-}
 @media only screen and (min-width: 450px){
+    .navbar-wrapper {
+        font-size: 1rem;
+        width: 90%;
+        margin: 1rem auto 0 auto;
+    } 
     .navbar-inner-first {
         gap: 2rem;
     }
@@ -69,11 +66,7 @@ a {
         height: 2rem;
         width: 2rem;
     }
-    .navbar-wrapper { 
-        font-size: 1rem;
-        width: 90%;
-        margin: 1rem auto 0 auto;
-    }
+
     .footer-wrapper > p{
         width: 90%;
         margin: auto;
@@ -126,5 +119,8 @@ a {
     }
     .nav-cart-items {
         padding: 1rem 1.5rem;
+    }
+    .navbar-authlinks-wrapper {
+        font-size: 1rem;
     }
 }

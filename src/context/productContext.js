@@ -7,7 +7,7 @@ import { useMediaQuery } from 'react-responsive'
 export const ProductsContext = createContext()
 const useProducts = () => useContext(ProductsContext)
 const ProductsProvider = ({children}) => {
-    const [productState, dispatch] = useReducer(productReducer, { serverData:[], productsData:[],bannerData: [], categoryData: [], categoryValue:"", cartData: [], closeCartModel: true })
+    const [productState, dispatch] = useReducer(productReducer, { serverData:[], productsData:[],bannerData: [], categoryData: [], categoryValue:"default", cartData: [], closeCartModel: true })
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 1224px)'
       })

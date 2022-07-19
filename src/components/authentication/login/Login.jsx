@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import  "./Login.css"
+import  "../../../styles/authentication/Login.css"
 import { useNavigate } from 'react-router-dom'
 import { validateLoginForm } from './validateLoginForm.jsx'
 
@@ -22,12 +22,12 @@ const Login = () => {
   }
   
   return (
-    <main className = "flex login-wrapper bg-color" data-testid = "login-form">
-        <div className = "flex login-header-wrapper">
+    <main className = "login-wrapper bg-color" data-testid = "login-form">
+        <div className = "flex column align-center login-header-wrapper">
           <h2>Login</h2>
           <p>Get access to your Orders, Wishlist and Recommendations</p>
         </div>
-        <form className = "flex login-form-wrapper" onSubmit={(e) => e.preventDefault()}>
+        <form className = "flex column align-center login-form-wrapper" onSubmit={(e) => e.preventDefault()}>
             <p>All fields marked with an asterisk(*) are required</p>
             <label htmlFor = "email" className = "login-input">
                 <p>Email <span aria-hidden = "true"className = "error-message">*</span></p>

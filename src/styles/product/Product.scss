@@ -1,14 +1,14 @@
+@use "./../shared/Shared" ;
+
+
 .productInfo-wrapper {
     padding: 0.5rem;
     gap: 0.3rem;
-    align-items: center;
 }
 .product-text-wrapper {
-    flex-direction: column;
     justify-content: space-between;
     margin:0 auto;
 }
-
 .product-image {
     width: 8rem;
     height: auto;
@@ -16,11 +16,11 @@
 }
 .product-description {
     padding: 0.4rem;
-    background-color: var(--whitesmoke-color);
+    background-color: Shared.$whitesmoke-color;
 }
 .product-buy-btn, .buy-btn{
-    background-color: var(--app-btn-color);
-    color: var(--whitesmoke-color);
+    background-color: Shared.$app-btn-color;
+    color: Shared.$whitesmoke-color;
     border: 0;
     padding: 0.5rem 1rem;
     font-weight: bold;
@@ -30,15 +30,14 @@
 }
 .product-wrapper {
     padding: 1rem;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
     height: 12rem;
 }
 .product-filter-wrapper {
+    @extend %flex;  
     justify-content: space-between;
     padding: 0.5rem;
-    background-color: var(--app-btn-color);
+    background-color: Shared.$app-btn-color;
 }
 .filter-clear-btn {
     padding: 0.5rem;
@@ -46,13 +45,13 @@
     border: 0;
     text-decoration: underline;
     font-size: 1.2rem;
-    color: var(--whitesmoke-color);
+    color: Shared.$whitesmoke-color;
 }
 .product-filter-select {
     border: 0;
-    background-color: var(--app-btn-color);
+    background-color: Shared.$app-btn-color;
     outline: 0;
-    color: var(--whitesmoke-color);
+    color: Shared.$whitesmoke-color;
     font-size: 1.2rem;
 }
 .product-filter-sidebar {
@@ -63,23 +62,25 @@
 }
 .qty-btn-wrapper {
     gap: 1rem;
-    align-items: center;
     justify-content: center;
 }
-.qty-btn-wrapper > button {
+.qty-btn-wrapper {
+    button {
     padding: 0.3rem;
+    }
 }
+
 .quat-comp-wrapper {
     padding: 0.2rem 0;
 }
 .qty-btn {
-    background-color: var(--app-btn-color);
-    border: 1px solid var(--whitesmoke-color);
+    background-color: Shared.$app-btn-color;
+    border: 1px solid Shared.$whitesmoke-color;
     width: 1.5rem;
     height:1.5rem;
     border-radius: 1.5rem;
-    cursor: pointer;
-    color: var(--whitesmoke-color);
+    color: Shared.$whitesmoke-color;
+    @extend %cursor-pointer 
 }
 .cart-model-wrapper {
     position: fixed;
@@ -87,7 +88,7 @@
     top: 0;
     bottom: -20%;
     width: 100%;
-    background-color: var(--model-bg-color);
+    background-color: Shared.$model-bg-color;
 }
 
 .cart-model-parentWrapper {
@@ -110,7 +111,7 @@
         display: flex;
         flex-direction: column;
         min-width: 10rem;
-        background-color: var(--app-bg-color);
+        background-color: Shared.$app-bg-color;
         height: max-content;
     }
     .product-main-container {
@@ -120,8 +121,8 @@
     .filter-btn {
         padding: 1rem;
         border: 0;
-        border-bottom: 1px solid var(--grey-color);
-        background-color: var(--app-bg-color);
+        border-bottom: 1px solid Shared.$grey-color;
+        background-color: Shared.$app-bg-color;
         cursor: pointer;
     }
     .single-product-container {
@@ -158,6 +159,6 @@
 
 }
 .active {
-    background-color: var(--app-btn-color);
-    color: var(--whitesmoke-color)
+    background-color: Shared.$app-btn-color;
+    color: Shared.$whitesmoke-color;
   }

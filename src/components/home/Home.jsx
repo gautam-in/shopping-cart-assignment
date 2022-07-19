@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "./Home.css"
+import "../../styles/home/Home.css"
 import { CategoryItem } from "./../index-components"
 import { useProducts } from '../../context/productContext'
 
@@ -31,7 +31,7 @@ const Home = () => {
             <i className = "fa-solid fa-angle-left banner-left-arrow" onClick = { bannerLeftArrowHandler} data-testid = "left-slider"></i>
             <i className = "fa-solid fa-angle-right banner-right-arrow" onClick = { bannerRightArrowHandler } data-testid = "right-slider"></i>
         </div>
-        <div className = "flex home-cat-wrapper">
+        <div className = "flex column home-cat-wrapper">
             {
                 categoryData.map((item) => {
                     return <CategoryItem key = {item.id} item = {item}/>

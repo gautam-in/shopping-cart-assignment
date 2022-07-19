@@ -1,0 +1,136 @@
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.home-banner-wrapper, .cat-wrapper {
+  text-align: center;
+}
+
+.banner-index-btn, .banner-left-arrow, .banner-right-arrow {
+  cursor: pointer;
+}
+
+.banner-index-btn {
+  margin: 1rem;
+  color: rgb(209, 209, 209);
+}
+
+.home-banner-image {
+  width: 20rem;
+  height: 5rem;
+}
+
+.home-banner-wrapper {
+  position: relative;
+}
+
+.banner-active {
+  color: #333;
+}
+
+.banner-left-arrow, .banner-right-arrow {
+  position: absolute;
+  top: 35%;
+}
+
+.banner-left-arrow {
+  left: 0.1rem;
+}
+
+.banner-right-arrow {
+  right: 0.1rem;
+}
+
+.cat-wrapper {
+  gap: 2rem;
+  margin: 1rem;
+}
+
+.cat-text-wrapper {
+  width: 70%;
+  gap: 1rem;
+}
+
+.cat-image-wrapper {
+  width: 30%;
+}
+
+.explore-deals-btn {
+  width: 70%;
+  background-color: #D90467;
+  color: whitesmoke;
+  margin: auto;
+  font-weight: bold;
+}
+
+.home-cat-wrapper {
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.home-cat-image {
+  width: 5rem;
+  height: 3rem;
+}
+
+@media only screen and (min-width: 650px) {
+  .home-banner-wrapper {
+    width: 80%;
+    margin: auto;
+  }
+  .banner-left-arrow, .banner-right-arrow {
+    font-size: 1.5rem;
+  }
+  .cat-wrapper {
+    width: 80%;
+    margin: auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .home-banner-image {
+    width: 40rem;
+  }
+  .home-cat-image {
+    width: 8rem;
+    height: 6rem;
+  }
+  .home-banner-image {
+    width: 30rem;
+    height: 8rem;
+  }
+}
+@media only screen and (min-width: 950px) {
+  .home-banner-wrapper {
+    width: 75%;
+  }
+  .banner-left-arrow, .banner-right-arrow {
+    font-size: 2rem;
+  }
+  .cat-wrapper {
+    width: 75%;
+  }
+  .cat-text-wrapper {
+    gap: 2.5rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .home-banner-image {
+    width: 60rem;
+  }
+  .home-cat-image {
+    width: 11rem;
+    height: 9rem;
+  }
+  .home-banner-image {
+    width: 40rem;
+    height: 10rem;
+  }
+}/*# sourceMappingURL=Home.css.map */

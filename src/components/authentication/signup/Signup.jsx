@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import  "../login/Login.css"
-import  "./Signup.css"
+import  "../../../styles/authentication/Login.css"
 import { TogglePasswordDisplay } from "./../../index-components"
+
 const Signup = () => {
     const [formData, setFormaData] = useState({})
     const [error, setError] = useState({})
@@ -39,12 +39,12 @@ const Signup = () => {
     }
   }
   return (
-    <main className = "flex login-wrapper bg-color" data-testid = "signup-form">
-        <div className = "flex login-header-wrapper">
+    <main className = "login-wrapper bg-color" data-testid = "signup-form">
+        <div className = "flex column align-center login-header-wrapper">
           <h2>Signup</h2>
           <p>We do not share your personal details with anyone</p>
         </div>
-        <form className = "flex login-form-wrapper signup-form-wrapper" onSubmit={(e) => e.preventDefault()}>
+        <form className = "flex column align-center login-form-wrapper signup-form-wrapper" onSubmit={(e) => e.preventDefault()}>
         {noValuesError && <p className = "error-message" data-testid = "default-error"><span className = "warning-sign">&#9888;</span> {noValuesError}</p>}
             <p>All fields marked with an asterisk(*) are required</p>
             <label htmlFor = "first-name" className = "login-input">

@@ -1,3 +1,8 @@
 {
-    "terminal.integrated.defaultLocation": "view"
+    "terminal.integrated.defaultLocation": "view",
+    "cSpell.words": [
+        "authlinks",
+        "signup",
+        "testid"
+    ]
 }

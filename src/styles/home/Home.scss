@@ -1,23 +1,25 @@
+@use "./../shared//Shared";
+
 .banner-index-btn {
     margin: 1rem;
-    color: var(--app-bg-color);
-    cursor: pointer;
+    color: Shared.$app-bg-color;
+    @extend %cursor-pointer
 }
 .home-banner-image {
     width: 20rem;
     height: 5rem;
 }
 .home-banner-wrapper {
-    text-align: center;
+    @extend %text-center;
     position: relative;
 }
 .banner-active {
-    color: var(--banner-active-color)
+    color: Shared.$banner-active-color
 }
 .banner-left-arrow, .banner-right-arrow {
     position: absolute;
     top: 35%;
-    cursor: pointer;
+    @extend %cursor-pointer
 }
 .banner-left-arrow {
     left: 0.1rem;
@@ -26,15 +28,13 @@
     right: 0.1rem;
 }
 .cat-wrapper {
-    align-items: center;
-    text-align: center;
+    @extend %text-center;
     gap: 2rem;
     margin: 1rem;
     
 }
 .cat-text-wrapper {
     width: 70%;
-    flex-direction: column;
     gap: 1rem;
 }
 .cat-image-wrapper {
@@ -42,13 +42,12 @@
 }
 .explore-deals-btn {
     width: 70%;
-    background-color: var(--app-btn-color);
-    color: var(--whitesmoke-color);
+    background-color: Shared.$app-btn-color;
+    color: Shared.$whitesmoke-color;
     margin: auto;
     font-weight: bold;
 }
 .home-cat-wrapper {
-    flex-direction: column;
     gap: 2rem;
     margin-top: 1rem;
 }

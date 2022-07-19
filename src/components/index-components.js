@@ -11,4 +11,6 @@ import QuantityButton from './productListingPage/QuantityButton.jsx';
 import CartItem from './cart/CartItem.jsx';
 import TogglePasswordDisplay from './authentication/signup/TogglePasswordDisplay.jsx';
 import Footer from './footer/Footer.jsx';
-export { Navbar, Login, Signup, Home, CategoryItem, Products, Filter, SingleProduct, Cart, QuantityButton, CartItem, TogglePasswordDisplay, Footer }
+import { clearFilters } from './productListingPage/clearFilters';
+import { categoryFilterHandler } from './productListingPage/categoryFilterHandler';
+export { Navbar, Login, Signup, Home, CategoryItem, Products, Filter, SingleProduct, Cart, QuantityButton, CartItem, TogglePasswordDisplay, Footer, clearFilters, categoryFilterHandler }
