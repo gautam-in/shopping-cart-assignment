@@ -1,0 +1,85 @@
+@use 'variables';
+@font-face {
+  font-family: 'slick';
+  font-display: swap !important;
+}
+
+
+body {
+  background: #f2f2f2;
+  color: #333;
+  font-family: "Nunito", sans-serif;
+
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+.content {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align:center;
+}
+.container{
+  width:80%;
+  margin: 0 auto;
+}
+nav {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+footer {
+  display: block;
+  padding:5px 0;
+  text-align: left;
+  margin-top: 60px;
+  background: #d3d3d3;
+  p{
+    margin: 2% auto;
+    text-align: center;
+  }
+}
+.not-found{
+  a{
+    color:blue;
+    text-decoration: underline;
+  }
+}
+button{
+  color:#fff;
+  background: variables.$button-color;
+  outline: none;
+  border:0;
+  font-size: 15px;
+  padding:12px 10px;
+}
+@media (max-width:960px){
+  .container{
+    width:100%
+  }
+
+}
+@media (max-width:480px){
+  .container{
+    width:100%
+  }
+
+}
+.categoryNavbar{
+  height: 100vh;
+  width: 232px;
+  background-color: #d3d3d3;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  .navLink{
+    padding:5px;
+    border-bottom: 1px solid darkgrey;
+    margin-bottom:10px;
+    display: block;
+  }
+}
+.errorTxt{
+  color: red;
+}

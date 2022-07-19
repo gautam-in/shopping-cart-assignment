@@ -1,0 +1,50 @@
+@use 'variables';
+.loginPage{
+  display: flex;
+  margin:5% auto;
+  .loginText{
+    flex:40%;
+    justify-content: flex-end;
+    text-align: left;
+    align-items: flex-end;
+  }
+  .loginForm{
+    flex:50%;
+    align-items: flex-start;
+    .inputField {
+      margin-bottom: 60px;
+      position: relative;
+      display: inline-block;
+      width: 60%;
+      label{
+        display: inline;
+        text-align: left;
+        float: left;
+        width:100%;
+        order: -1;
+        transition: all 0.3s ease-in;
+        transform: translateY(20px);
+      }
+
+    }
+    .loginBtn{
+      width: 60%;
+    }
+  }
+}
+.inputText{
+  border:0;
+  border-bottom:1px solid #333333;
+  background: transparent;
+  width:100%;
+  outline: none;
+}
+
+.inputText:focus{
+  border-bottom: 1px solid #7cd1d6;
+}
+
+label + label .inputText:focus {
+  color:#7cd1d6;
+  transform: translateY(-20px);
+}
