@@ -34,7 +34,8 @@ const Login = () => {
     return (
         <div className={styles.loginPage}>
             <Head>
-                <meta name="keywords" content=""/>
+                <meta name="keywords" content="login,signin"/>
+                <meta name="description" content="login page"/>
                 <title>Login</title>
             </Head>
             <div className={styles.loginText}>

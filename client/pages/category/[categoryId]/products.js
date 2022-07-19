@@ -46,7 +46,8 @@ const Index = () => {
     return (
         <div className={styles.flexContainer}>
             <Head>
-                <meta name="keywords" content=""/>
+                <meta name="keywords" content="products,products by category, page, list"/>
+                <meta name="description" content="Products by Categories"/>
                 <title>Products</title>
             </Head>
             <CategoryNavbar categories={categories}/>

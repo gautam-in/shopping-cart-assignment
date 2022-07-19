@@ -43,7 +43,8 @@ const Register = () => {
     return (
         <div className={styles.loginPage}>
             <Head>
-                <meta name="keywords" content=""/>
+                <meta name="keywords" content="register,signup"/>
+                <meta name="description" content="signup page"/>
                 <title>Signup</title>
             </Head>
             <div className={styles.loginText}>

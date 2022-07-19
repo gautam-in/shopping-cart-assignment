@@ -54,7 +54,8 @@ export default function Home() {
   return (
       <>
       <Head>
-          <meta name="keywords" content=""/>
+          <meta name="keywords" content="categories list,products,products by category, page, list"/>
+          <meta name="description" content="Categories List"/>
           <title>Categories List</title>
       </Head>
     <div>
