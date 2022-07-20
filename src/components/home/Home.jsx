@@ -18,7 +18,7 @@ const Home = () => {
             <div>
                 <picture>
                     <source srcSet= {`${bannerData[currentBannerIndex]?.bannerImageUrl}`} media="(min-width: 768px)" className = "home-banner-image"/>
-                    <source srcSet= {`${bannerData[currentBannerIndex]?.bannerImageUrlSmall}`} media="(max-width: 767px)" className = "home-banner-image"loading='eager'/>
+                    <source srcSet= {`${bannerData[currentBannerIndex]?.bannerImageUrlSmall}`} media="(max-width: 767px)" className = "home-banner-image"/>
                     <img src = {`${bannerData[currentBannerIndex]?.bannerImageUrl}`} alt = "offer banner" className = "home-banner-image" loading='eager'/>
                 </picture>
             </div>

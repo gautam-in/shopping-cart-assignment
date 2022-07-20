@@ -16,7 +16,6 @@ const ProductsProvider = ({children}) => {
         getFetch("http://localhost:4000/categoriesJSON").then((res) => dispatch({type:"SET_CATEGORY_DATA", payload: res})).catch((e) => console.log(e))
         getFetch("http://localhost:4000/productsJSON").then((res) => dispatch({type:"GET_PRODUCTS_DATA", payload: res})).catch((e) => console.log(e))
 
-
     },[])
    
     return (
