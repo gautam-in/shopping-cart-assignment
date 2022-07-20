@@ -19,10 +19,6 @@
   outline: 3px solid #4ED9D9;
 }
 
-.flex {
-  display: flex;
-}
-
 .btn {
   padding: 0.5rem 1rem;
   cursor: pointer;
@@ -38,6 +34,7 @@ button:hover, a:hover {
   min-height: -webkit-max-content;
   min-height: -moz-max-content;
   min-height: max-content;
+  content-visibility: auto;
 }
 
 .bg-color {

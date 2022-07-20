@@ -6,17 +6,17 @@ const CategoryItem = ({item}) => {
   const navigate = useNavigate()
   const { productState, dispatch } = useProducts()
   const { serverData } = productState
-  const redirectToProductPageHandler = () => {
+  const redirectToProductPageHandler = async() => {
       const filterCategoryData = serverData.filter((cat) => cat.category === item.id);
-      dispatch({ type: "SET_PRODUCTS_DATA", payload: filterCategoryData });
-      dispatch({type:"SET_CATEGORY_VALUE", payload: item.id});
+      await dispatch({ type: "SET_PRODUCTS_DATA", payload: filterCategoryData });
+      await dispatch({type:"SET_CATEGORY_VALUE", payload: item.id});
 
       navigate("/products")
   }
   return (
     <section className = "flex align-center cat-wrapper box-shadow">
         <div className = "cat-image-wrapper">
-            <img srcSet = {`${item.imageUrlSmall} 80w, ${item.imageUrl} 1080w`} sizes = "(max-width:600px) 80px, 1080px" src = {item.imageUrl} alt = {item.key} className = "home-cat-image"/>
+            <img srcSet = {`${item.imageUrlSmall} 80w, ${item.imageUrl} 1080w`} sizes = "(max-width:600px) 80px, 1080px" src = {item.imageUrl} alt = {item.key} className = "home-cat-image" loading='lazy'/>
         </div>
         <div className = "flex column cat-text-wrapper">
             <h4 >{item.name}</h4>

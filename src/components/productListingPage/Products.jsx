@@ -2,15 +2,11 @@ import { Outlet } from 'react-router-dom'
 import { useProducts } from '../../context/productContext'
 import { SingleProduct, Filter } from "./../index-components"
 import "../../styles/product/Product.css"
-import React, { useEffect } from 'react';
-import { getFetch } from '../../customHooks/getFetch';
+import React from 'react';
 const Products = () => {
-    const { productState, isDesktopOrLaptop, dispatch } = useProducts()
+    const { productState, isDesktopOrLaptop } = useProducts()
     const { productsData, closeCartModel } = productState
-    useEffect(() => {
-      getFetch("http://localhost:4000/productsJSON").then((res) => dispatch({type:"GET_PRODUCTS_DATA", payload: res})).catch((e) => console.log(e))
-    },[])
-    
+
   return (
     <div className = "product-details-container">
        { isDesktopOrLaptop && (!closeCartModel && <div className = "cart-model-wrapper" data-testid = "cart-outlet">

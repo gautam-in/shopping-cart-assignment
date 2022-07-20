@@ -17,9 +17,9 @@ const Home = () => {
         <div className = "home-banner-wrapper box-shadow">
             <div>
                 <picture>
-                    <source srcSet= {`${bannerData[currentBannerIndex]?.bannerImageUrl}`} media="(min-width: 1200px)" className = "home-banner-image"/>
-                    <source srcSet= {`${bannerData[currentBannerIndex]?.bannerImageUrlSmall}`} media="(max-width: 1200px)" className = "home-banner-image"/>
-                    <img src = {`${bannerData[currentBannerIndex]?.bannerImageUrl}`} alt = "offer banner" className = "home-banner-image"/>
+                    <source srcSet= {`${bannerData[currentBannerIndex]?.bannerImageUrl}`} media="(min-width: 768px)" className = "home-banner-image"/>
+                    <source srcSet= {`${bannerData[currentBannerIndex]?.bannerImageUrlSmall}`} media="(max-width: 767px)" className = "home-banner-image"loading='eager'/>
+                    <img src = {`${bannerData[currentBannerIndex]?.bannerImageUrl}`} alt = "offer banner" className = "home-banner-image" loading='eager'/>
                 </picture>
             </div>
            

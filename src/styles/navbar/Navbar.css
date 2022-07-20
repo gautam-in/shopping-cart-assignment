@@ -60,6 +60,7 @@ a {
   background-color: rgb(209, 209, 209);
   padding: 0.5rem;
   font-size: inherit;
+  justify-content: center;
 }
 
 .footer-wrapper {
@@ -114,7 +115,7 @@ a {
   }
   .nav-cart-items {
     padding: 0.4rem 0.5rem;
-    gap: 0;
+    gap: 0.5rem;
   }
 }
 @media only screen and (min-width: 950px) {

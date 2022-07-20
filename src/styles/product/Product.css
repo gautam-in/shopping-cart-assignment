@@ -14,10 +14,6 @@
   cursor: pointer;
 }
 
-.product-filter-wrapper {
-  display: flex;
-}
-
 .productInfo-wrapper {
   padding: 0.5rem;
   gap: 0.3rem;
@@ -59,6 +55,7 @@
 }
 
 .product-filter-wrapper {
+  display: flex;
   justify-content: space-between;
   padding: 0.5rem;
   background-color: #D90467;
@@ -121,7 +118,8 @@
 }
 
 .cart-model-parentWrapper {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   left: 70%;
   top: 60%;
   transform: translate(-50%, -50%);

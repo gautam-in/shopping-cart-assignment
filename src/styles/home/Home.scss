@@ -70,9 +70,7 @@
     }
 }
 @media only screen and (min-width: 768px){
-    .home-banner-image {
-        width: 40rem;
-    }
+ 
     .home-cat-image {
         width: 8rem;
         height: 6rem;
@@ -80,6 +78,9 @@
     .home-banner-image {
         width: 30rem;
         height: 8rem;
+    }
+    .home-cat-wrapper {
+        margin-bottom: 5rem;
     }
 }
 @media only screen and (min-width: 950px){
@@ -98,9 +99,7 @@
 
 }
 @media only screen and (min-width: 1200px){
-    .home-banner-image {
-        width: 60rem;
-    }
+   
     .home-cat-image {
         width: 11rem;
         height: 9rem;

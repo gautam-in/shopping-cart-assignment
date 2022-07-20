@@ -34,7 +34,7 @@
     height: 12rem;
 }
 .product-filter-wrapper {
-    @extend %flex;  
+   display: flex;  
     justify-content: space-between;
     padding: 0.5rem;
     background-color: Shared.$app-btn-color;
@@ -92,7 +92,7 @@
 }
 
 .cart-model-parentWrapper {
-    position: fixed;
+    position: sticky;
     left: 70%;
     top:60%;
     transform: translate(-50%, -50%);

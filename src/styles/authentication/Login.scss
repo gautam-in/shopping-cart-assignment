@@ -1,8 +1,8 @@
 @use "../shared//Shared";
 
 .login-wrapper {
-    @extend %flex;
-    @extend %column;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 1rem;
     padding: 2rem 0;
@@ -38,14 +38,13 @@
     padding: 0.5rem 1rem 0.2rem 0.3rem;
     font-size: 1rem;
 }
-.login-input {
-    @extend %text-center
-}
+
 .warning-sign {
     font-size: 1.5rem;
     top:0;
 }
 .login-input {
+    @extend %text-center;
     p {
         position: relative;
         top: 0.5rem;
@@ -57,12 +56,11 @@
         color: Shared.$form-active-color;
         top: -0.3rem;
     }
-} 
-.login-input:focus-within {
     input {
         border-bottom: 2px solid Shared.$form-active-color;
     }
 } 
+
 .error-message {
     color: Shared.$error-msg-color;
     margin-top: 0.5rem;
