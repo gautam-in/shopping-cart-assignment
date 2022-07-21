@@ -1,0 +1,11 @@
+main {
+  display: flex;
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+  align-items: center;
+}
+
+main > div,
+main > form {
+  flex: 1;
+}/*# sourceMappingURL=login.css.map */

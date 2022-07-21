@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart - Sabka Bazar</title>
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/form.css" />
+    <link rel="stylesheet" href="../styles/login.css" />
+  </head>
+
+  <body>
+    <header class="app-header">
+      <div class="container">
+        <picture>
+          <source
+            srcset="../static/images/logo_2x.png"
+            media="(min-width: 720px)"
+          />
+          <img src="../static/images/logo.png" alt="logo" />
+        </picture>
+        <nav>
+          <ul>
+            <li>
+              <a href="home.html">Home</a>
+            </li>
+            <li>
+              <a href="products.html">Products</a>
+            </li>
+          </ul>
+        </nav>
+        <section>
+          <nav>
+            <ul>
+              <li>
+                <a href="login.html">SignIn</a>
+              </li>
+              <li>
+                <a href="register.html">Register</a>
+              </li>
+            </ul>
+          </nav>
+          <button class="cart-view">
+            <div>
+              <span class="sr-only">View Shopping Cart</span>
+              <svg
+                version="1.1"
+                id="Layer_1"
+                focusable="false"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 24 24"
+                xml:space="preserve"
+              >
+                <path
+                  d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+                />
+              </svg>
+            </div>
+            <span>0 item</span>
+          </button>
+        </section>
+      </div>
+    </header>
+    <main class="container">
+      <div>
+        <h1>Login</h1>
+        <p>Get access to your Orders. Wishlist and RecommendationsLogin</p>
+      </div>
+      <form>
+        <div class="form-field">
+          <input
+            type="email"
+            class="form-field__input"
+            name="email"
+            id="email"
+            placeholder=" "
+          />
+          <label for="email" class="form-field__label">Email</label>
+          <div class="form-field__bar"></div>
+        </div>
+        <div class="form-field">
+          <input
+            type="password"
+            class="form-field__input"
+            name="password"
+            id="password"
+            placeholder=" "
+          />
+          <label for="password" class="form-field__label">Password</label>
+          <div class="form-field__bar"></div>
+        </div>
+        <button class="btn btn--full">Login</button>
+      </form>
+    </main>
+    <footer>
+      <div class="container">
+        Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+      </div>
+    </footer>
+  </body>
+</html>

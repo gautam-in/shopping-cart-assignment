@@ -1,0 +1,93 @@
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template: "header header" "main main" "footer footer";
+}
+@media screen and (min-width: 768px) {
+  body {
+    grid-template: "header header" "main main" 1fr "footer footer" 50px/20% 1fr;
+  }
+}
+
+.container {
+  padding: 0 10%;
+}
+
+main {
+  display: flex;
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+  align-items: center;
+}
+
+main > div,
+main > form {
+  flex: 1;
+}
+
+form {
+  display: block;
+}
+form .form-field {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+form .form-field__label {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 0 0;
+  font-size: 0.75rem;
+  transform: translateY(-1rem);
+  transition: all 0.4s;
+}
+form .form-field__bar {
+  border-bottom: 2px solid dodgerblue;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  width: 1%;
+  margin: 0 auto;
+  display: block;
+  transform: scaleX(0);
+  transition: all 0.4s;
+}
+form .form-field__input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: transparent;
+  border: 0;
+  font-size: 1.2rem;
+  outline: 0;
+  width: 100%;
+  padding: 0 0.75rem 0.625rem 0;
+  border-bottom: 1px solid #999;
+  margin-top: 1.5rem;
+}
+form .form-field__input:-moz-placeholder-shown ~ .form-field__label {
+  font-size: 1.2rem;
+  transform: translateY(0);
+}
+form .form-field__input:-ms-input-placeholder ~ .form-field__label {
+  font-size: 1.2rem;
+  transform: translateY(0);
+}
+form .form-field__input:placeholder-shown ~ .form-field__label {
+  font-size: 1.2rem;
+  transform: translateY(0);
+}
+form .form-field__input:focus ~ .form-field__label {
+  font-size: 0.75rem;
+  transform: translateY(-1rem);
+}
+form .form-field__input:focus ~ .form-field__bar {
+  transform: scaleX(150);
+}/*# sourceMappingURL=form.css.map */

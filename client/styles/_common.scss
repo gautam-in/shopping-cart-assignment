@@ -1,0 +1,91 @@
+@mixin container($screen-size: lg) {
+    margin: 0 auto;
+    @if $screen-size == sm {
+        max-width: 320px
+    } @else if $screen-size == md {
+        max-width: 720px
+    } @else if $screen-size == lg {
+        max-width: 1024px
+    } @else {
+        max-width: 1280px
+    }
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template: 
+    "header header"
+    "main main"
+    "footer footer";
+
+    @media screen and (min-width: 768px) {
+        grid-template: 
+        "header header"
+        "aside main" 1fr 
+        "footer footer" 50px / 20% 1fr;
+    }
+    
+}
+
+aside {
+    grid-area: aside;
+    display: none;
+    background-color: #EBECEC;
+    
+    @media screen and (min-width: 768px) {
+        grid-template: 
+        "header header"
+        "aside main" 1fr 
+        "footer footer" 50px / 20% 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+main {
+    grid-area: main;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.5rem
+}
+
+ul > li > a {
+    padding: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+.btn {
+    height: 46px;
+    border: none;
+    background-color: #A81444;
+    color: #fff;
+    padding: 0 1rem;
+}
+
+.btn--full {
+    width: 100%;
+}
+
+
+
