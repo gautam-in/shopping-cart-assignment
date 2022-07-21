@@ -1,21 +1,16 @@
 import React from 'react';
-import {  Container } from 'react-bootstrap';
 import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import AddCarousel from './components/Carousel';
-import Categories from './components/Categories';
+import Layout from './components/Layout';
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/home';
 
 function App() {
   return (
-      <Container fluid className='mx-0 p-0'>
-        <Header />
-        <main>
-          <AddCarousel />
-          <Categories />
-        </main>
-        <Footer />
-      </Container>
+    <Routes>
+      <Route path='/' element={<Layout/>}>
+        <Route index element={<Home />} />
+      </Route>
+     </Routes>      
   );
 }
 

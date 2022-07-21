@@ -2,7 +2,7 @@ import React from 'react'
 import { Col, Row } from 'react-bootstrap';
 
 const Header = () => {
-return (<header className='mx-lg-5 mx-md-0 w-100'>
+return (<header className='px-lg-5 mx-md-0 w-100'>
           <Row className='header-container pt-1 px-1 pt-md-2 pt-xs-0 mx-lg-5 mx-md-0'>
             <Col xs={3}  className='header-left'>
             <img src='/static/images/logo_2x.png' alt='logo' className='mt-lg-0 mb-1 float-lg-right'/>
