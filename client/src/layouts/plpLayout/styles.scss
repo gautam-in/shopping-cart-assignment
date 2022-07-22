@@ -1,0 +1,23 @@
+@import "../../styles/mixins.scss";
+
+
+.plplayout-wrapper{
+  display: grid;
+  grid-template-columns: 1fr;
+
+
+  @include onDesktop(){
+    margin: 1rem 0;
+    grid-template-columns: 0.5fr 1.5fr;
+    gap: 0.5rem;
+    margin-bottom: 0;
+
+  }
+
+
+  @include onTab(){
+    margin: 1rem 0;
+    grid-template-columns:0.5fr 1.5fr;
+    gap: 0.5rem;
+  }
+}

@@ -1,0 +1,73 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+@import "./styles/mixins.scss";
+body {
+  font-family: "Dosis", sans-serif !important;
+  font-size: 1rem !important;
+  scroll-behavior: smooth !important;
+  figure,
+  p,
+  h3 {
+    margin: 0;
+  }
+
+  button:focus{
+    font-weight: 600;
+  }   
+  
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .root {
+    background: #f4f4f4;
+
+    button {
+      font-family: "Dosis", sans-serif !important;
+    }
+
+    .slick-arrow {
+      z-index: 1;
+      opacity:  0.6;
+    }
+
+    .slick-prev {
+      left: 0.25rem;
+      &:before {
+        color: black;
+        font-size: 1.5rem;
+      }
+    }
+
+    .slick-next {
+      right: 0.25rem;
+      &:before {
+        color: black;
+        font-size: 1.5rem;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 0.5rem 0.25rem;
+    }
+
+    @include onDesktop() {
+      .main-container {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+
+    @include onTab() {
+      .main-container {
+       width: 100%;
+       margin: 0;
+      }
+    }
+
+
+  }
+}

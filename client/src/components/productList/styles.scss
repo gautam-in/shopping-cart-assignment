@@ -1,0 +1,24 @@
+@import "../../styles/mixins.scss";
+
+.productlist-wrapper{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+
+
+
+
+
+
+  @include onDesktop(){
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+
+
+
+
+
+
+}

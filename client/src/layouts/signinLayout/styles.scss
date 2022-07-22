@@ -1,0 +1,27 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.signinlayout-wrapper{
+  background: $white;
+  margin: 0.5rem 0;
+  display: grid;
+  text-align: center;
+  grid-template-columns: 1fr;
+  padding: 2rem 0;
+
+  h3,h6{
+    padding-bottom: 0.75rem;
+  }
+
+  @include onDesktop(){
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 70%;
+    margin:  0.5rem auto;
+  }
+
+  @include onTab(){
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
