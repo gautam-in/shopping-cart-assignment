@@ -1,0 +1,29 @@
+@import "../../../styles/mixins.scss";
+
+@import "../../../styles/variables.scss";
+
+
+
+.scroll-to-top-link {
+  bottom: 1rem;
+  right: 1rem;
+  background: $primaryRed;
+  color: $white;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  justify-content: center;
+  transition: 2s all ease;
+  &:hover{
+    background: $primaryRed100;
+  }
+
+  @include onDesktop(){
+    position: fixed;
+    border-radius: 1.5rem;
+  }
+
+  @include onTab(){
+    position: fixed;
+    border-radius: 1.5rem;
+  }
+}

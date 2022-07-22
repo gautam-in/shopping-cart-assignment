@@ -1,0 +1,26 @@
+@import "../../styles/mixins.scss";
+
+.signinform-container{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  button{
+    margin-top: 3rem;
+  }
+
+
+  @include onDesktop(){
+    .MuiTextField-root{
+    }
+    button{
+      margin-top: 3rem;
+      height: 3rem;
+      font-size: 1.2rem;
+    }
+  }
+
+
+  @include onTab(){
+  }
+}

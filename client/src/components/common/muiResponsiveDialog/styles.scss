@@ -1,0 +1,33 @@
+@import "../../../styles/mixins.scss";
+
+.responsive-wrapper-class{
+  .MuiPaper-root{
+		width: 100%;
+		max-width: 100%;
+
+    #responsive-dialog-title{
+      background: black;
+      color: white;
+    }
+  }
+
+  @include onDesktop(){
+		.MuiPaper-root{
+			width: 100%;
+			max-width: 30rem;
+			height: calc(100% - 396px);
+		}
+	}
+
+
+	@include onTab(){
+		.MuiPaper-root{
+			width: 100%;
+			max-width: 100%;
+			height: 100%;
+
+		}
+	}
+}
+
+

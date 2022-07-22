@@ -1,0 +1,122 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.productcard-wrapper {
+  background: white;
+  padding: 1rem;
+  h6 {
+    margin-bottom: 1.5rem;
+  }
+  .productcard-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    figure {
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+      }
+    }
+    article {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      div {
+        padding: 0.5rem;
+        background: $grey100;
+        p {
+          @include verticalEllipsis(3);
+        }
+      }
+    }
+  }
+
+  .button-container{
+    &-one{
+      display: none;
+    }
+  }
+
+
+  @include onDesktop(){
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    h6{
+      // @include horizontalEllipsis(200px);
+    }
+    .productcard-container {
+      figure {
+        img {
+         object-fit: contain;
+        }
+      }
+      article {
+        display: block;
+        div {
+          padding: 0.5rem;
+          background: $grey100;
+          height: 100%;
+          p {
+            @include verticalEllipsis(10);
+            font-weight: 500;
+            font-family: "Dosis",sans-serif;
+            line-height: 1.4;
+          }
+        }
+      }
+  
+    }
+   .button-container{
+      display: none;
+      &-one {
+        display: block;
+        width: 100%;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+
+
+
+
+  @include onTab(){
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h6{
+      object-fit: contain;
+      // @include horizontalEllipsis(248px);
+    }
+    .productcard-container {
+      article {
+        display: block;
+        div {
+          padding: 0.5rem;
+          background: $grey100;
+          height: 100%;
+          p {
+            @include verticalEllipsis(10);
+            font-weight: 500;
+            font-family: "Dosis",sans-serif;
+            line-height: 1.4;
+          }
+        }
+      }
+  
+    }
+   .button-container{
+      display: none;
+      &-one {
+        display: block;
+        width: 100%;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,30 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+
+.mobilecatfilter-wrapper{
+  .MuiOutlinedInput-root{
+    background: $primaryRed !important;
+    color: $white;
+    height: 2rem;
+    font-size: 1rem;
+    svg{
+      fill: $white;
+    }
+  }
+
+
+  @include onTab(){
+    display: none;
+  }
+
+
+  @include onDesktop(){
+    display: none;
+  }
+
+
+
+
+
+}
