@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+
+<body>
+    {{> ./partials/header }}
+    <main id="content">
+        <div class="container">
+            <h1 class="page-title">Products</h1>
+            <section id="product-category" class="category">
+                <aside class="dropdown">
+                    <a href="#" class="category__link dropbtn" aria-expanded="false">
+                        Categories <span>></span>
+                    </a>
+                    <ul class="dropdown-content category__dropdown-content">
+                        <li>
+                            <a href="#">Fruits &amp; Vegitables</a>
+                        </li>
+                        <li>
+                            <a href="#">Beverages</a>
+                        </li>
+                    </ul>
+                </aside>
+                <div id="product-list">
+                    <div class="s_product">
+                        <div class="s_product__image">
+                            <a href="#">
+                                <img src="./images/products/baby/pampers.jpg" alt="baby" loading="lazy" width="300" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        {{> ./partials/footer }}
+    </footer>
+</body>
+
+</html>

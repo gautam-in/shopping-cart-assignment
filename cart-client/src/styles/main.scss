@@ -1,0 +1,288 @@
+@import 'colors';
+@import 'media-queries';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, sans-serif;
+
+  :focus {
+    outline: 4px solid $font-color;
+  }
+}
+
+body {
+  font-size: 1rem;
+  color: $font-color;
+
+  &.cart-open {
+    overflow: hidden;
+  }
+}
+
+.btn-danger {
+  background-color: $danger;
+  color: #fff;
+  border: 1px solid $danger;
+}
+
+button {
+  cursor: pointer;
+}
+
+.d-flex {
+  display: flex;
+}
+
+%align-center {
+  display: flex;
+  align-items: center;
+}
+
+@import 'navbar';
+
+.page-title {
+  font-size: 1.5rem;
+}
+
+.container {
+  padding: 0.5rem;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include small-desktop-up {
+    max-width: 1140px;
+  }
+}
+
+@import 'slider';
+
+.catagories {
+  margin-top: 15px;
+
+  &__single {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $light;
+    padding: 0.5rem 0;
+    column-gap: 1rem;
+
+    &--image {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &--content {
+      h2 {
+        font-size: 1rem;
+        margin-bottom: 0.2rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+        margin-bottom: 0.3rem;
+      }
+
+      a {
+        background-color: $primary;
+        color: #fff;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        display: inline-block;
+        font-size: 0.8rem;
+      }
+    }
+
+    @include tablet-up {
+      &--image {
+        text-align: center;
+
+        img {
+          max-width: 200px;
+        }
+      }
+
+      &--content {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.show {
+  display: block;
+}
+
+.cart_area {
+  position: fixed;
+  top: 74px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 75px);
+  overflow: hidden;
+  padding: 0.5rem;
+  z-index: 10;
+
+  @include tablet-up {
+    position: absolute;
+    width: 390px;
+    top: 40px;
+    right: 0;
+    left: auto;
+    max-height: 400px;
+    box-shadow: none;
+  }
+
+  &__header {
+    @extend %align-center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 0.5rem;
+
+    h2 {
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.2rem;
+    }
+  }
+
+  ul {
+    padding-left: 0;
+    list-style: none;
+    height: calc(100% - 70px);
+    overflow: auto;
+  }
+
+  &__details {
+    flex-grow: 1;
+
+    .np-x {
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__product {
+    margin-top: 10px;
+    padding: 0.5rem;
+    background-color: #fff;
+    display: flex;
+    gap: 10px;
+  }
+
+  &__name {
+    font-size: 0.9rem;
+  }
+
+  &__price {
+    font-size: 0.8rem;
+  }
+
+  &__btn-action {
+    padding: 0.2rem 0.3rem;
+    font-size: 0.7rem;
+  }
+
+  &__actions {
+    @extend %align-center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  &__checkout {
+    a {
+      display: block;
+      background-color: $primary;
+      color: #fff;
+      padding: 0.5rem;
+      margin-top: 3px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+#product-category {
+  margin-top: 1rem;
+
+  .category {
+    &__link {
+      background-color: $primary;
+      display: flex;
+      justify-content: space-between;
+      color: #fff;
+      padding: 0.5rem;
+      text-decoration: none;
+    }
+
+    &__dropdown-content {
+      position: relative;
+      margin-top: 0.3rem;
+      background-color: $light;
+      box-shadow: none;
+
+      li {
+        padding: 0.5rem;
+        border-bottom: 1px solid #d9d9d9;
+
+        a {
+          color: $font-color;
+          font-size: 0.8rem;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  #product-list {
+    margin-top: 0.5rem;
+    .s_product{
+      
+    }
+  }
+}
+
+footer {
+  background-color: $light;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+@include mobile-up {
+  #overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+  }
+}

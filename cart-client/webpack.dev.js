@@ -4,6 +4,14 @@ const { merge } = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+let htmlPageNames = ['products'];
+let multipleHtmlPlugins = htmlPageNames.map(name => {
+    return new HtmlWebpackPlugin({
+        template: `./src/${name}.handlebars`, // relative path to the handlebars files
+        filename: `${name}.html`, // output HTML files
+    })
+});
+
 module.exports = merge(common, {
     mode: "development",
     devServer: {
@@ -14,20 +22,8 @@ module.exports = merge(common, {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./src/template.html"
+            template: "./src/template.handlebars"
         }),
         new MiniCssExtractPlugin()
-    ],
-    module: {
-        rules: [
-            {
-                test: /\.s[ac]ss$/i,
-                use: [
-                    MiniCssExtractPlugin.loader, // 3. Generate Css file
-                    "css-loader", // 2. Turns css into commonjs
-                    "sass-loader", // 1. Turns sass into css
-                ],
-            }
-        ]
-    }
+    ].concat(multipleHtmlPlugins),
 });

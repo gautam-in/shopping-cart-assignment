@@ -1,3 +1,5 @@
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 module.exports = {
     entry: "./src/index.js",
     module: {
@@ -10,6 +12,25 @@ module.exports = {
                 test: /\.(svg|png|jpg|gif)$/,
                 type: "asset/resource",
             },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    MiniCssExtractPlugin.loader, // 3. Generate Css file
+                    "css-loader", // 2. Turns css into commonjs
+                    "sass-loader", // 1. Turns sass into css
+                ],
+            },
+            {
+                test: /\.handlebars$/,
+                use: [
+                    {
+                        loader: "handlebars-loader",
+                        options: {
+                            inlineRequires: "/images/",
+                        }
+                    },
+                ]
+            }
         ]
     },
 };

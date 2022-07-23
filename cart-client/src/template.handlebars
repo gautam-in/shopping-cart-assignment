@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Application</title>
+</head>
+
+<body>
+    {{> ./partials/header }}
+    <main id="content">
+        <div class="container">
+            <h1 class="page-title">Welcome</h1>
+            <section>
+                <div class="slider">
+                    <div class="slider__slide">
+                        <img src="./images/offers/offer1.jpg" alt="offer 1" loading="lazy" />
+                    </div>
+                    <div class="slider__slide">
+                        <img src="./images/offers/offer2.jpg" alt="offer 2" loading="lazy" />
+                    </div>
+                    <div class="slider__slide">
+                        <img src="./images/offers/offer3.jpg" alt="offer 3" loading="lazy" />
+                    </div>
+                </div>
+                <div class="slider-btn">
+                    <button class="btn btn-prev" aria-label="previous slide">&lt;</button>
+                    <button class="btn btn-next" aria-label="next slide">&gt;</button>
+                </div>
+            </section>
+            <section class="catagories">
+                <div class="catagories__single">
+                    <div class="catagories__single--image">
+                        <img src="./images/category/fruits.png" alt="fruits" loading="lazy" width="156" height="77" />
+                    </div>
+                    <div class="catagories__single--content">
+                        <h2>Fruits &amp; Vegitables</h2>
+                        <p>A variety of fresh and vegitables.</p>
+                        <a href="#">Explore Vegitables</a>
+                    </div>
+                </div>
+                <div class="catagories__single">
+                    <div class="catagories__single--image">
+                        <img src="./images/category/bakery.png" alt="bakery" loading="lazy" width="156" height="77" />
+                    </div>
+                    <div class="catagories__single--content">
+                        <h2>Fruits &amp; Vegitables</h2>
+                        <p>A variety of fresh and vegitables.</p>
+                        <a href="#">Explore Vegitables</a>
+                    </div>
+                </div>
+                <div class="catagories__single">
+                    <div class="catagories__single--image">
+                        <img src="./images/category/baby.png" alt="baby" loading="lazy" width="156" height="77" />
+                    </div>
+                    <div class="catagories__single--content">
+                        <h2>Fruits &amp; Vegitables</h2>
+                        <p>A variety of fresh and vegitables.</p>
+                        <a href="#">Explore Vegitables</a>
+                    </div>
+                </div>
+            </section>
+    </main>
+    <footer>
+        {{> ./partials/footer }}
+    </footer>
+</body>
+
+</html>

@@ -1,3 +1,3 @@
 export default function () {
-    console.log("other");
+    console.log("cart");
 }

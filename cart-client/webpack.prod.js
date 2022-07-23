@@ -8,6 +8,19 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
+let htmlPageNames = ['products'];
+let multipleHtmlPlugins = htmlPageNames.map(name => {
+    return new HtmlWebpackPlugin({
+        template: `./src/${name}.handlebars`, // relative path to the handlebars files
+        filename: `${name}.html`, // output HTML files
+        minify: {
+            removeAttributeQuotes: true,
+            collapseWhitespace: true,
+            removeComments: true
+        }
+    })
+});
+
 module.exports = merge(common, {
     mode: "production",
     output: {
@@ -22,29 +35,17 @@ module.exports = merge(common, {
             new CssMinimizerPlugin(),
             new TerserPlugin(),
             new HtmlWebpackPlugin({
-                template: "./src/template.html",
+                template: "./src/template.handlebars",
                 minify: {
                     removeAttributeQuotes: true,
                     collapseWhitespace: true,
                     removeComments: true
                 }
             })
-        ]
+        ].concat(multipleHtmlPlugins)
     },
     plugins: [
         new MiniCssExtractPlugin({ filename: "[name].[contenthash].css" }),
         new CleanWebpackPlugin()
-    ],
-    module: {
-        rules: [
-            {
-                test: /\.s[ac]ss$/i,
-                use: [
-                    MiniCssExtractPlugin.loader, // 3. Generate Css file
-                    "css-loader", // 2. Turns css into commonjs
-                    "sass-loader", // 1. Turns sass into css
-                ],
-            }
-        ]
-    }
+    ]
 });
