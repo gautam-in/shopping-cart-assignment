@@ -7,6 +7,10 @@ header{
     width: 160px;
 }
 
+footer{
+    background-color: #eaeaea;
+}
+
 .cart-button{
     position: absolute;
     bottom: 0;
@@ -63,15 +67,32 @@ footer span{
 .visually-hidden {
     display: none;
 }
-@media only screen and (min-width: 768px) and (max-device-width: 1024px) {
+
+.description  {
+    height: 60px;
+    overflow: hidden;
+}
+
+@media only screen and (min-width: 601px) and (max-device-width: 768px) {
 
     .header-left > img{
         width: 126px;
     }
 
+    .description  {
+        height: 128px;
+        overflow: hidden;
+    }
+
+    .product{
+        margin: 0;
+    }
+    .product-container{
+        width: 100vw;
+    }
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 600px){
 
     .header {
         height: 44px;
@@ -110,5 +131,17 @@ footer span{
     }
     button{
         font-size: x-small;
+    }
+
+    .description{   
+        height: 50%;
+    }
+
+    .price-button{
+        position: absolute;
+        right: 1rem;
+        bottom: 27px;
+        height: 40px;
+        width: 45%;
     }
 }

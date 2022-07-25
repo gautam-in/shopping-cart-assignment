@@ -4,10 +4,11 @@ import Categories from "../../components/Categories";
 
 const Home  = () =>{
     return (
-    <main>
-        <AddCarousel />
-        <Categories />
-    </main>)
+        <>
+            <AddCarousel />
+            <Categories />
+        </>
+    )
 }
 
 export default Home;

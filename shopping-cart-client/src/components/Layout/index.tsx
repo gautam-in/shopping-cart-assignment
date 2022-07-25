@@ -8,7 +8,9 @@ const Layout  = () => {
     return (
         <Container fluid className='mx-0 p-0'>
             <Header />
-                <Outlet/>
+                <main>
+                    <Outlet/>
+                </main>
             <Footer />
         </Container>
   )

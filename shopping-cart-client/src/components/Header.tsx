@@ -2,8 +2,8 @@ import React from 'react'
 import { Col, Row } from 'react-bootstrap';
 
 const Header = () => {
-return (<header className='px-lg-5 mx-md-0 w-100'>
-          <Row className='header-container pt-1 px-1 pt-md-2 pt-xs-0 mx-lg-5 mx-md-0'>
+return (<header className='mx-md-0 w-100'>
+          <Row className='header-container pt-1 px-1 pt-md-2 pt-xs-0 mx-md-0'>
             <Col xs={3}  className='header-left'>
             <img src='/static/images/logo_2x.png' alt='logo' className='mt-lg-0 mb-1 float-lg-right'/>
             </Col >
@@ -13,7 +13,7 @@ return (<header className='px-lg-5 mx-md-0 w-100'>
                 <li>Product</li>
               </ul>
             </Col>
-            <Col xs={3} className='header-right'>
+            <Col xs={3} className='header-right pl-5'>
               <div className='d-flex flex-column float-md-right float-lg-none'>
                 <div className='d-none d-md-block px-3'>
                   <small className='mr-2'>SignIn</small>

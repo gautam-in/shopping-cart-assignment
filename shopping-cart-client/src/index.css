@@ -5,6 +5,13 @@
   /* overflow-x: hidden; */
 }
 
+a{
+  color: gray;
+}
+a:hover{
+  text-decoration: none;
+  color: darkgray;
+}
 
 body {
   margin: 0;
