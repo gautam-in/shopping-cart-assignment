@@ -1,3 +1,4 @@
+const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
@@ -27,9 +28,20 @@ module.exports = {
                         loader: "handlebars-loader",
                         options: {
                             inlineRequires: "/images/",
+                            helperDirs: [path.join(__dirname, './src/helpers')],
                         }
                     },
                 ]
+            },
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
             }
         ]
     },

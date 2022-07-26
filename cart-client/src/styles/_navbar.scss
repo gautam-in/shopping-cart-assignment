@@ -39,11 +39,10 @@
         background-color: $light;
         border: 1px solid transparent;
         color: $font-color;
+        width: 85px;
 
-        img {
-            width: 20px;
+        svg {
             margin-right: 0.2rem;
-            pointer-events: none;
         }
     }
 

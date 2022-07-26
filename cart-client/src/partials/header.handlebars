@@ -1,4 +1,7 @@
 <header>
+    <div class="skip">
+        <a href="#content">Skip to main content</a>
+    </div>
     <div class="container">
         <nav class="navbar">
             <div class="navbar__logo">
@@ -16,115 +19,22 @@
             </ul>
             <div class="navbar__cart_area dropdown">
                 <button class="navbar__cart dropbtn" id="s-cart-btn" aria-expanded="false" type="button">
-                    <img src="../images/cart.svg" alt="Cart" width="20" height="20" tabindex="-1">
-                    0 items
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" aria-hidden="true"
+                        class="bi bi-cart-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg>
+                    <span id="cart_item"></span>&nbsp;items
                 </button>
-                <div class="dropdown-content cart_area">
+                <div class="dropdown-content cart_area" id="header_cart">
                     <div class="cart_area__header">
-                        <h2>My Cart</h2>
-                        <button type="button" class="btn-danger cart_area__close">Close</button>
+                        <h2>My Cart ($<span id="cart_total_amount"></span>)</h2>
+                        <div>
+                            <button type="button" class="btn-danger cart_area__clear">Clear</button>
+                            <button type="button" class="btn-danger cart_area__close">Close</button>
+                        </div>
                     </div>
-                    <ul>
-                        <li class="cart_area__product">
-                            <div class="cart_area__image">
-                                <img src="../images/products/baby/baby-dove.jpg" alt="product 1" width="90"
-                                    loading="lazy">
-                            </div>
-                            <div class="cart_area__details">
-                                <div class="np-x d-flex">
-                                    <div>
-                                        <h3 class="cart_area__name">Product Name</h3>
-                                        <span class="cart_area__price">$25.99</span>
-                                    </div>
-                                    <button type="button" class="btn-danger cart_area__btn-action"
-                                        aria-label="Remove Product">X</button>
-                                </div>
-                                <div class="cart_area__actions">
-                                    <button type="button" class="btn-danger cart_area__btn-action"
-                                        aria-label="Decrease Quantity">-</button>
-                                    <div>1</div>
-                                    <button type="button" class="btn-danger cart_area__btn-action"
-                                        aria-label="Increase Quantity">+</button>
-                                    <span class="cart_area__total-price">$100.00</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="cart_area__product">
-                            <div class="cart_area__image">
-                                <img src="../images/products/baby/baby-dove.jpg" alt="product 1" width="90"
-                                    loading="lazy">
-                            </div>
-                            <div class="cart_area__details">
-                                <div class="np-x d-flex">
-                                    <div>
-                                        <h3 class="cart_area__name">Product Name</h3>
-                                        <span class="cart_area__price">$25.99</span>
-                                    </div>
-                                    <button type="button" class="btn-danger cart_area__btn-action"
-                                        aria-label="Remove Product">X</button>
-                                </div>
-                                <div class="cart_area__actions">
-                                    <button type="button" class="btn-danger cart_area__btn-action"
-                                        aria-label="Decrease Quantity">-</button>
-                                    <div>1</div>
-                                    <button type="button" class="btn-danger cart_area__btn-action"
-                                        aria-label="Increase Quantity">+</button>
-                                    <span class="cart_area__total-price">$100.00</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="cart_area__product">
-                            <div class="cart_area__image">
-                                <img src="../images/products/baby/baby-dove.jpg" alt="product 1" width="90"
-                                    loading="lazy">
-                            </div>
-                            <div class="cart_area__details">
-                                <div class="np-x d-flex">
-                                    <div>
-                                        <h3 class="cart_area__name">Product Name</h3>
-                                        <span class="cart_area__price">$25.99</span>
-                                    </div>
-                                    <button type="button" class="btn-danger cart_area__btn-action"
-                                        aria-label="Remove Product">X</button>
-                                </div>
-                                <div class="cart_area__actions">
-                                    <button type="button" class="btn-danger cart_area__btn-action"
-                                        aria-label="Decrease Quantity">-</button>
-                                    <div>1</div>
-                                    <button type="button" class="btn-danger cart_area__btn-action"
-                                        aria-label="Increase Quantity">+</button>
-                                    <span class="cart_area__total-price">$100.00</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="cart_area__product">
-                            <div class="cart_area__image">
-                                <img src="../images/products/baby/baby-dove.jpg" alt="product 1" width="90"
-                                    loading="lazy">
-                            </div>
-                            <div class="cart_area__details">
-                                <div class="np-x d-flex">
-                                    <div>
-                                        <h3 class="cart_area__name">Product Name</h3>
-                                        <span class="cart_area__price">$25.99</span>
-                                    </div>
-                                    <button type="button" class="btn-danger cart_area__btn-action"
-                                        aria-label="Remove Product">X</button>
-                                </div>
-                                <div class="cart_area__actions">
-                                    <button type="button" class="btn-danger cart_area__btn-action"
-                                        aria-label="Decrease Quantity">-</button>
-                                    <div>1</div>
-                                    <button type="button" class="btn-danger cart_area__btn-action"
-                                        aria-label="Increase Quantity">+</button>
-                                    <span class="cart_area__total-price">$100.00</span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="cart_area__checkout">
-                        <a href="#">Checkout</a>
-                    </div>
+                    <div id="cart_area_body"></div>
                 </div>
             </div>
         </nav>

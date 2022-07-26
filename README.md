@@ -1,15 +1,40 @@
-# XT Shopping Cart Assignment
+# Sabka Bazar Grocery Store
+## _Online Grocery Store_
 
-This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.
+Sabka Bazar is a web-application which is built in javascript.
 
-## Getting Started
+## Installation - Client
 
-Clone this repo and run following command for starting the mock server:
+Install the dependencies and devDependencies and start the server.
 
+```sh
+cd cart-client
+npm i
+npm start
 ```
-npm install
-npm run start
-# or
-yarn install
-yarn start
+
+For production build...
+
+```sh
+npm run build
 ```
+Once done, open below url in the browser:
+
+```sh
+localhost:8080
+```
+
+## Installation - Server (Nodejs)
+
+Install the dependencies and devDependencies and start the server.
+
+```sh
+cd cart-server
+npm i
+npm start
+```
+
+## License
+
+MIT
+**Free Software, Hell Yeah!**

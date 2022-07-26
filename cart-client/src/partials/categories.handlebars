@@ -1,0 +1,15 @@
+{{#each categories}}
+<div class="catagories__single">
+    <div class="catagories__single--image">
+        <picture>
+            <source srcset="{{ ../server }}{{ this.imageUrlWebp }}" type="image/webp">
+            <img src="{{ ../server }}{{ this.imageUrl }}" alt="{{this.name}}" loading="lazy" width="156" height="77">
+        </picture>
+    </div>
+    <div class="catagories__single--content">
+        <h2>{{this.name}}</h2>
+        <p>{{this.description}}</p>
+        <a href="/products.html?category_id={{this.id}}">{{this.name}}</a>
+    </div>
+</div>
+{{/each}}

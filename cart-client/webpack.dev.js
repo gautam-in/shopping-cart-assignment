@@ -19,6 +19,9 @@ module.exports = merge(common, {
     },
     output: {
         assetModuleFilename: "images/[name][ext]",
+        environment: {
+            dynamicImport: true,   // Note you need to enable `dynamicImport ` here
+        },
     },
     plugins: [
         new HtmlWebpackPlugin({

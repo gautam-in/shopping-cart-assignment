@@ -28,6 +28,9 @@ module.exports = merge(common, {
         path: path.resolve(__dirname, "dist"),
         assetModuleFilename: "images/[name].[hash][ext]",
         publicPath: "./",
+        environment: {
+            dynamicImport: true,   // Note you need to enable `dynamicImport ` here
+        },
     },
     optimization: {
         minimize: true,
