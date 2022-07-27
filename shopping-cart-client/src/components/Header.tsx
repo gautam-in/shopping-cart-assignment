@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap';
 
-const Header = () => {
+const Header = ({handleShow}:{handleShow:()=>void}) => {
 return (<header className='mx-md-0 w-100'>
           <Row className='header-container pt-1 px-1 pt-md-2 pt-xs-0 mx-md-0'>
             <Col xs={3}  className='header-left'>
@@ -19,7 +19,7 @@ return (<header className='mx-md-0 w-100'>
                   <small className='mr-2'>SignIn</small>
                   <small>Register</small>
                 </div>
-                <div>
+                <div onClick={handleShow}>
                   <button className='px-1 px-md-3 py-md-1 py-lg-2 border-0 cart-button'>
                   <img src='/static/images/cart.svg' alt='cart' height='20px'/>
                   <small className='ml-2'>1 items</small>

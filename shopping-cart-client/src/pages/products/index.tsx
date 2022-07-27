@@ -261,7 +261,7 @@ const ProductItem = ({product}:any) =>{
     return (
         <Col md={6} lg={3} className='mb-2'>
             <div style={{height:'72px', overflow:"hidden"}}>
-                <p><strong>{name}</strong></p>
+                <p style={{fontSize:'large'}}><strong>{name}</strong></p>
             </div>
             <div className="d-lg-block d-flex">
                 <div className="my-1 mr-1" style={{flex:1}}><img src={imageURL} alt={sku} className='w-100' /></div>
@@ -278,7 +278,7 @@ const ProductItem = ({product}:any) =>{
 const ProductList = ({products}:{products:ProductInterface[]}) =>{
     return (
         <Col className="py-lg-2">
-            <Row>
+            <Row className="my-3">
                 {
                     products.length && products.map((product:ProductInterface)=>{
                         return <ProductItem key={product.id} product={product} />
@@ -299,7 +299,7 @@ const Products = () =>{
     },[category, setProducts])
 
     return (
-        <Container className="px-lg-5 product">
+        <Container className="px-lg-5 mx-md-0 product">
             <Row className="px-lg-5 product-container">
                 <ProductSideBar filterProduct={filterProduct} />
                 <ProductList products={products}/>
