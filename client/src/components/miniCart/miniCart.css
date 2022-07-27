@@ -19,7 +19,6 @@
   margin-right: auto;
 }
 .modal-footer {
-  border-top: none !important;
   position: relative !important;
 }
 #shopingCartButton {
@@ -29,4 +28,67 @@
   background-color: rgba(225, 12, 97, 0.957);
   color: white;
   border-color: rgba(225, 12, 97, 0.957);
+}
+.item-count {
+  font-size: medium;
+}
+.modal-body {
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  padding: 0rem !important;
+
+  overflow: auto;
+}
+.cart-container {
+  background-color: white;
+  display: flex;
+  margin-top: 5px;
+  flex-direction: row;
+}
+.cartitem-item-details {
+  display: flex;
+  position: relative;
+  flex: 1;
+  flex-direction: column;
+  margin: 0px 5px;
+}
+.cartitem-product-name {
+  position: absolute;
+  font-weight: bold;
+  font-size: small;
+  top: 2px;
+  left: 5px;
+}
+.cartitem-product-quantity {
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-text {
+  font-size: small;
+}
+.cartitem-product-price {
+  position: absolute;
+  bottom: 0px;
+  left: 60;
+}
+.cartitem-product-quantity .cartitem-qty-btn {
+  background-color: rgba(225, 12, 97, 0.957);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  margin: 0px 5px;
+}
+.cartitem-product-quantity .cartitem-qty-btn:hover {
+  background-color: rgba(225, 12, 97, 0.957);
+  border-color: rgba(225, 12, 97, 0.957);
+}
+.btn-sm {
+  padding: 0rem 0.25rem;
 }

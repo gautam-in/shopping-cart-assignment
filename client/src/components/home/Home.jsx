@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Carousel, Col, Row, Container } from "react-bootstrap";
+import { Button, Carousel, Col, Row } from "react-bootstrap";
 import "./home.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -21,11 +21,14 @@ const Home = () => {
       });
     await axios
       .get("http://localhost:5000/categories")
-      .then(({ data }) => {
-        if (data) {
-          setCategoriesData(data);
+      .then(
+        ({ data }) => {
+          if (data) {
+            setCategoriesData(data);
+          }
         }
-      })
+        //dispatch an action to set the category data in the store to access it in the products component
+      )
       .catch((error) => {
         console.log("Error in getting category data", error);
       });
@@ -34,8 +37,8 @@ const Home = () => {
     getBannersAndCategories();
   }, []);
 
-  const exploreCategory = (categoryId) => {
-    navigate(`/products/${categoryId}`);
+  const exploreCategory = () => {
+    navigate(`/products`);
   };
   const displayCategory = (item) => {
     const { order, id, name, description, imageUrl } = item;
@@ -47,7 +50,7 @@ const Home = () => {
               <Col>
                 <h1>{name}</h1>
                 <p>{description}</p>
-                <Button onClick={() => exploreCategory(id)} id="categoryButton">
+                <Button onClick={() => exploreCategory()} id="categoryButton">
                   Explore {name}
                 </Button>
               </Col>
@@ -71,7 +74,7 @@ const Home = () => {
               <Col>
                 <h1>{name}</h1>
                 <p>{description}</p>
-                <Button onClick={() => exploreCategory(id)} id="categoryButton">
+                <Button onClick={() => exploreCategory()} id="categoryButton">
                   Explore {name}
                 </Button>
               </Col>
@@ -83,27 +86,31 @@ const Home = () => {
     return;
   };
   return (
-    <Container>
-      <Carousel>
-        {bannersData.map(({ id, bannerImageUrl, bannerImageAlt }) => {
-          return (
-            <Carousel.Item>
-              <div key={id}>
-                <img
-                  src={process.env.PUBLIC_URL + `${bannerImageUrl}`}
-                  alt={bannerImageAlt}
-                  height="200"
-                />
-              </div>
-            </Carousel.Item>
-          );
-        })}
-      </Carousel>
+    <div className="home-container">
+      <div className="carosel-container">
+        <Carousel variant="dark">
+          {bannersData.map(({ id, bannerImageUrl, bannerImageAlt }) => {
+            return (
+              <Carousel.Item interval={2000}>
+                <div key={id}>
+                  <img
+                    src={process.env.PUBLIC_URL + `${bannerImageUrl}`}
+                    alt={bannerImageAlt}
+                    height="200"
+                  />
+                </div>
+              </Carousel.Item>
+            );
+          })}
+        </Carousel>
+      </div>
 
-      {categoriesData.map((item) => {
-        return displayCategory(item);
-      })}
-    </Container>
+      <div className="categories-container">
+        {categoriesData.map((item) => {
+          return displayCategory(item);
+        })}
+      </div>
+    </div>
   );
 };
 

@@ -9,6 +9,20 @@
   width: 78%;
   margin-left: auto;
   margin-right: auto;
+  align-items: center;
+}
+.product-types {
+  flex: 1;
+  align-self: flex-start;
+}
+.product-sidebar {
+  padding: 10px;
+  color: #676767;
+  border-bottom: 1px solid #d0d0d0;
+  cursor: pointer;
+}
+.product-sidebar:active {
+  background-color: #fff7f7c4;
 }
 .products-lists {
   width: 78%;
@@ -28,9 +42,9 @@
   margin-left: 10px;
   margin-top: 30px;
   cursor: pointer;
-  box-shadow: 0px 9px 8px rgb(0 0 4 / 3%);
+  box-shadow: 5px 9px 8px #d0d0d0;
 }
-p:first-child {
+.products-lists p {
   font-weight: bold;
 }
 .products-lists p {
