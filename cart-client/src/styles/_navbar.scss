@@ -14,7 +14,7 @@
         }
     }
 
-    &__menu {
+    &__menu, &__links {
         display: none;
         flex-wrap: wrap;
         padding-left: 0;
@@ -54,6 +54,11 @@
         &__menu {
             display: flex;
             flex: 4 1 auto;
+        }
+
+        &__links {
+            display: flex;
+            margin-right: 0.3rem;
         }
     }
 }
