@@ -1,0 +1,8 @@
+<li>
+    <a href="/products.html">All Products</a>
+</li>
+{{#each categories}}
+<li>
+    <a href="/products.html?category_id={{this.id}}">{{this.name}}</a>
+</li>
+{{/each}}

@@ -1,0 +1,22 @@
+{{#each products}}
+<div class="s_product">
+    <div class="s_product__image">
+        <picture>
+            <source srcset="{{ ../server }}{{ this.imageURLWebp }}" type="image/webp">
+            <img src="{{ ../server }}{{ this.imageURL }}" alt="{{this.name}}" width="250" height="250" loading="lazy" />
+        </picture>
+    </div>
+    <div class="s_product__title">
+        <h2><a href="#">{{this.name}}</a></h2>
+    </div>
+    <div class="s_product__description">
+        <p>{{this.description}}</p>
+    </div>
+    <div class="s_product__actions">
+        <div class="s_product__price"><strong>${{this.price}}</strong></div>
+        <div class="s_product__buynow">
+            <button type="button" data-id="{{this.id}}" class="incrementQty buyNow">Buy Now</button>
+        </div>
+    </div>
+</div>
+{{/each}}

@@ -1,0 +1,16 @@
+<div class="slider">
+    {{#each banners}}
+    <div class="slider__slide">
+        <picture>
+            <source media="(max-width: 499px)" srcset="{{ ../server }}{{ this.bannerMobileImageUrlWebp }}">
+            <source media="(min-width: 500px)" srcset="{{ ../server }}{{ this.bannerImageUrlWebp }}">
+            <img src="{{ ../server }}{{ this.bannerImageUrl }}" alt="{{this.bannerImageAlt}}" height="100"
+                width="300" />
+        </picture>
+    </div>
+    {{/each}}
+</div>
+<div class="slider-btn">
+    <button class="btn btn-prev" aria-label="previous slide">&lt;</button>
+    <button class="btn btn-next" aria-label="next slide">&gt;</button>
+</div>

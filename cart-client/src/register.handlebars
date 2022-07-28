@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Sabka Bazar Grocery Store</title>
+    <meta name="description"
+        content="Whether you work from home or office or other workplaces, daily grocery items are a requisite for everybody.">
+    <meta name="keywords"
+        content="grocery, supermarket, online, price, store, online groceries,online grocery delivery">
+</head>
+
+<body>
+    {{> ./partials/header }}
+    <main id="content">
+        <div class="container">
+            <div class="alert" role="alert"></div>
+            <section id="register-page">
+                <div>
+                    <h1 class="page-title">Register</h1>
+                    <p>Get access to your orders, Wishlist and many more.</p>
+                </div>
+                <div>
+                    <form>
+                        <div class="mb-1">
+                            <label for="first_name" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="first_name" />
+                        </div>
+                        <div class="mb-1">
+                            <label for="last_name" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="last_name" />
+                        </div>
+                        <div class="mb-1">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" />
+                        </div>
+                        <div class="mb-1">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password">
+                        </div>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        {{> ./partials/footer }}
+    </footer>
+</body>
+
+</html>

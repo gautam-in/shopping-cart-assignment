@@ -1,0 +1,34 @@
+{{#if products}}
+<ul>
+    {{#each products}}
+    <li class="cart_area__product">
+        <div class="cart_area__image">
+            <img src="{{ ../server }}{{ this.imageURL }}" alt="{{this.name}}" width="90" height="90" loading="lazy">
+        </div>
+        <div class="cart_area__details">
+            <div class="np-x d-flex">
+                <div>
+                    <h3 class="cart_area__name">{{ this.name }}</h3>
+                    <strong class="cart_area__price">${{ this.price }}</strong>
+                </div>
+                <button type="button" class="btn-danger cart_area__btn-action removeCartItem"
+                    aria-label="Remove Product" data-id="{{this.id}}">X</button>
+            </div>
+            <div class="cart_area__actions">
+                <button type="button" class="btn-danger cart_area__btn-action decrementQty"
+                    aria-label="Decrease Quantity" data-id="{{this.id}}">-</button>
+                <div>{{ this.item }}</div>
+                <button type="button" class="btn-danger cart_area__btn-action incrementQty"
+                    aria-label="Increase Quantity" data-id="{{this.id}}">+</button>
+                <span class="cart_area__total-price">${{multiply this.price this.item }}</span>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</ul>
+<div class="cart_area__checkout">
+    <a href="#">Checkout</a>
+</div>
+{{else}}
+<div class="cart_area__empty">Cart is empty!</div>
+{{/if}}

@@ -1,0 +1,64 @@
+.navbar {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #cacaca;
+    @extend %align-center;
+    justify-content: space-between;
+
+    &__logo {
+        img {
+            max-width: 100px;
+            height: auto;
+        }
+        a {
+            display: inline-block;
+        }
+    }
+
+    &__menu, &__links {
+        display: none;
+        flex-wrap: wrap;
+        padding-left: 0;
+        list-style: none;
+
+        .nav-link {
+            display: block;
+            padding: 0.5rem;
+            color: $font-color;
+            text-decoration: none;
+
+            &:hover,
+            &.active {
+                color: $primary;
+            }
+        }
+    }
+
+    &__cart {
+        @extend %align-center;
+        padding: 0.5rem;
+        background-color: $light;
+        border: 1px solid transparent;
+        color: $font-color;
+        width: 85px;
+
+        svg {
+            margin-right: 0.2rem;
+        }
+    }
+
+    @include tablet-up {
+        &__logo {
+            flex: 1 1 auto;
+        }
+
+        &__menu {
+            display: flex;
+            flex: 4 1 auto;
+        }
+
+        &__links {
+            display: flex;
+            margin-right: 0.3rem;
+        }
+    }
+}

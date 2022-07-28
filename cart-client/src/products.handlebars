@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Sabka Bazar Grocery Store</title>
+    <meta name="description"
+        content="Whether you work from home or office or other workplaces, daily grocery items are a requisite for everybody.">
+    <meta name="keywords"
+        content="grocery, supermarket, online, price, store, online groceries,online grocery delivery">
+</head>
+
+<body>
+    {{> ./partials/header }}
+    <main id="content">
+        <div class="container">
+            <h1 class="page-title">Products</h1>
+            <div class="alert" role="alert"></div>
+            <section id="product-category" class="category">
+                <aside class="dropdown">
+                    <a href="#" class="category__link dropbtn" aria-expanded="false">
+                        Categories <span>></span>
+                    </a>
+                    <ul class="dropdown-content category__dropdown-content" id="product-page-category"></ul>
+                </aside>
+                <div id="product-list"></div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        {{> ./partials/footer }}
+    </footer>
+</body>
+
+</html>
