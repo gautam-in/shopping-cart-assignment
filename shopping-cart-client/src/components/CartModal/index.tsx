@@ -13,7 +13,7 @@ function CartModal({children, show, handleClose}:{children:any, show:boolean, ha
         contentClassName='cart-content-modal border-0'
         backdropClassName='backdrop-container'
       >
-        <Modal.Header className='cart-modal-header p-2 align-items-center d-none d-lg-block'>
+        <Modal.Header className='cart-modal-header p-2 align-items-center d-none d-lg-flex'>
           <Modal.Title><strong>My Cart</strong>  (1 item)</Modal.Title>
           <div role="button" onClick={handleClose}>X</div>
         </Modal.Header>

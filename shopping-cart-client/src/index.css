@@ -13,6 +13,14 @@ a:hover{
   color: darkgray;
 }
 
+input:focus{
+  outline: none;
+}
+
+button:focus{
+  outline: none;
+}
+
 body {
   margin: 0;
   font-family:Dosis, sans-serif;
