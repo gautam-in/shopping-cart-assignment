@@ -1,0 +1,6 @@
+@use "./../shared/Shared";
+
+.footer-wrapper {
+    margin-top: 1rem;
+    background-color: Shared.$app-bg-color;
+}

@@ -1,0 +1,16 @@
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.footer-wrapper {
+  margin-top: 1rem;
+  background-color: rgb(209, 209, 209);
+}/*# sourceMappingURL=Footer.css.map */

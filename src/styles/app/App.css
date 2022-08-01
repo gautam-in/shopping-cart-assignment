@@ -1,0 +1,69 @@
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline: 3px solid #4ED9D9;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: 0;
+  font-weight: bold;
+}
+
+button:hover, a:hover {
+  opacity: 0.8;
+}
+
+.App {
+  min-height: -webkit-max-content;
+  min-height: -moz-max-content;
+  min-height: max-content;
+  content-visibility: auto;
+}
+
+.bg-color {
+  background-color: white;
+}
+
+.btn-color {
+  color: whitesmoke;
+  background-color: #D90467;
+  font-weight: bold;
+}
+
+.relative {
+  position: relative;
+}
+
+.box-shadow {
+  box-shadow: 0 12px 6px -6px rgb(221, 220, 220);
+  margin-bottom: 1rem;
+}
+
+.cart-bg-color {
+  background-color: whitesmoke;
+}
+
+.loader-align {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}/*# sourceMappingURL=App.css.map */

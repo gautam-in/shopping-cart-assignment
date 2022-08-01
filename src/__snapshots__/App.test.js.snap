@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders app 1`] = `
+<div
+  class="App"
+  data-testid="app"
+>
+  <div
+    class="bg-color"
+  >
+    <header
+      class="header-nav-wrapper bg-color box-shadow"
+    >
+      <nav
+        class="navbar-wrapper"
+      >
+        <div
+          class="navbar-inner-first"
+        >
+          <a
+            href="/"
+          >
+            <img
+              alt="sabka bazar logo"
+              class="navbar-logo"
+              sizes="40vw"
+              src="logo.png"
+              srcset="logo.png 480w, logo_2x.png 1080w"
+            />
+          </a>
+          <div
+            class="navbar-first-links"
+          >
+            <a
+              aria-current="page"
+              class="nav-links active"
+              href="/"
+            >
+              Home
+            </a>
+            <a
+              class="nav-links"
+              href="/products"
+            >
+              Products
+            </a>
+          </div>
+        </div>
+        <div
+          class="navbar-inner-second"
+        >
+          <div
+            class="navbar-authlinks-wrapper"
+          >
+            <a
+              class="nav-links"
+              href="/login"
+            >
+              SignIn
+            </a>
+            <a
+              class="nav-links"
+              href="/signup"
+            >
+              Register
+            </a>
+          </div>
+          <a
+            class="nav-cart-items"
+            data-testid="cart-link"
+            href="/cart"
+          >
+            Cart:
+            <span>
+              <b>
+                0  item
+              </b>
+            </span>
+          </a>
+        </div>
+      </nav>
+    </header>
+    <main
+      class="bg-color"
+      data-testid="home-page"
+    >
+      <div
+        class="home-banner-wrapper box-shadow"
+      >
+        <div>
+          <picture>
+            <source
+              class="home-banner-image"
+              media="(min-width: 1200px)"
+              srcset="undefined"
+            />
+            <source
+              class="home-banner-image"
+              media="(max-width: 1200px)"
+              srcset="undefined"
+            />
+            <img
+              alt="offer banner"
+              class="home-banner-image"
+              src="undefined"
+            />
+          </picture>
+        </div>
+        <i
+          class="fa-solid fa-angle-left banner-left-arrow"
+          data-testid="left-slider"
+        />
+        <i
+          class="fa-solid fa-angle-right banner-right-arrow"
+          data-testid="right-slider"
+        />
+      </div>
+      <div
+        class="flex home-cat-wrapper"
+      />
+    </main>
+    <footer
+      class="footer-wrapper"
+      data-testid="footer"
+    >
+      <p>
+        Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd
+      </p>
+    </footer>
+  </div>
+  <div
+    data-testid="location-display"
+  >
+    /
+  </div>
+</div>
+`;
