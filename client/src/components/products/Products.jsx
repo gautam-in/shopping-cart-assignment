@@ -5,9 +5,11 @@ import axios from "axios";
 import { ShopContext } from "../../contexts/shoppingContext";
 
 const Products = () => {
-  const { addItemToCart } = useContext(ShopContext);
+  const { addItemToCart, shopCategories } = useContext(ShopContext);
   const [productLists, setProductLists] = useState([]);
-  const categoryList = ["bakery", "beverage", "fruits", "beauty", "babycare"];
+  console.log("shopCategories------------", shopCategories);
+  const categoryLists = ["bakery", "beverage", "fruits", "beauty", "babycare"];
+  const [categoryList, setCategoryList] = useState([]);
   const loadProductsInfo = async () => {
     await axios
       .get("http://localhost:5000/products")
@@ -23,20 +25,38 @@ const Products = () => {
   };
   useEffect(() => {
     loadProductsInfo();
+    if (shopCategories) {
+      const categories = shopCategories.filter((item) => item.enabled === true);
+      setCategoryList(categories);
+    }
   }, []);
   const searchProducts = () => {
     console.log("when category is clicked");
   };
-  const handleItemToCart = (product) => {
-    addItemToCart(product);
+  const handleItemToCart = async (e, productToAdd) => {
+    e.preventDefault();
+
+    await axios
+      .post("http://localhost:5000/addToCart", productToAdd.id)
+      .then(({ data }) => {
+        if (data.response === "Success") {
+          addItemToCart(productToAdd);
+        }
+      })
+      .catch((error) => console.log("Error in adding products to cart", error));
   };
+  console.log("categoryLists", categoryList);
   return (
     <div className="products-container">
       <div className="product-types">
         {categoryList.map((item) => {
           return (
-            <div className="product-sidebar" onClick={searchProducts}>
-              {item}
+            <div
+              className="product-sidebar"
+              onClick={searchProducts}
+              key={item.order}
+            >
+              {item.name}
             </div>
           );
         })}
@@ -58,7 +78,7 @@ const Products = () => {
                 <div>MRP Rs.{product.price}</div>
                 <Button
                   className="buyItem"
-                  onClick={() => addItemToCart(product)}
+                  onClick={(e) => handleItemToCart(e, product)}
                 >
                   Buy Now
                 </Button>

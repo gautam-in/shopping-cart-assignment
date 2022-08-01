@@ -1,17 +1,13 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "./miniCart.css";
 import { ShopContext } from "../../contexts/shoppingContext";
 import CartItems from "./CartItems";
+import lowestPriceTag from "../../static/images/lowest-price.png";
 function MiniCart() {
-  // console.log("props.show", props.show);
   const { showCart, setShowCart, cartItems, itemCount } =
     useContext(ShopContext);
-  const toggleMiniCart = () => {
-    setShowCart(!showCart);
-  };
-  //const [show, setShow] = useState(props.show);
   const navigate = useNavigate();
   const handleStartShopping = (e) => {
     e.preventDefault();
@@ -19,9 +15,10 @@ function MiniCart() {
     setShowCart(!showCart);
     navigate("/products");
   };
-  // useEffect(() => {
-  //   setShow(props.show);
-  // }, [props.show, props.onHide]);
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
   return (
     <Modal
       show={showCart}
@@ -49,22 +46,38 @@ function MiniCart() {
             {cartItems.map((item) => (
               <CartItems cartItem={item} key={item.id} />
             ))}
+            <div className="footer-tag">
+              <img
+                src={lowestPriceTag}
+                alt="lowest-price"
+                width="80"
+                height="50"
+              />
+              <h6 className="text-nowrap price-tagline">
+                You won't find it cheaper anywhere
+              </h6>
+            </div>
           </>
         )}
       </Modal.Body>
       <Modal.Footer>
         {cartItems.length === 0 ? (
           <Button
-            id="shopingCartButton"
+            className="shopingCartButton"
             onClick={(e) => handleStartShopping(e)}
           >
             Start Shopping
           </Button>
         ) : (
-          <>
-            Promo code can be applied on payment page
-            <Button id="shopingCartButton">Proceed to Checkout</Button>
-          </>
+          <div className="w-100">
+            <h6 className="text-nowrap price-tagline">
+              Promo code can be applied on payment page
+            </h6>
+            <Button className="shopingCartButton shopingCartFooter">
+              <div>Proceed to Checkout</div>
+              <div>{`Rs.${totalPrice}`}</div>
+            </Button>
+          </div>
         )}
       </Modal.Footer>
     </Modal>

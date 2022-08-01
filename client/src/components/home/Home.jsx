@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { Button, Carousel, Col, Row } from "react-bootstrap";
-import "./home.css";
+import React, { useEffect, useState, useContext } from "react";
+import { Carousel, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./home.css";
+import { ShopContext } from "../../contexts/shoppingContext";
 const Home = () => {
   const navigate = useNavigate();
+  const { setShopCategories } = useContext(ShopContext);
   const [categoriesData, setCategoriesData] = useState([]);
   const [bannersData, setBannersData] = useState([]);
 
@@ -21,14 +23,13 @@ const Home = () => {
       });
     await axios
       .get("http://localhost:5000/categories")
-      .then(
-        ({ data }) => {
-          if (data) {
-            setCategoriesData(data);
-          }
+      .then(({ data }) => {
+        if (data) {
+          setCategoriesData(data);
+          //dispatch an action to set the category data in the store to access it in the products component
+          setShopCategories(data);
         }
-        //dispatch an action to set the category data in the store to access it in the products component
-      )
+      })
       .catch((error) => {
         console.log("Error in getting category data", error);
       });
@@ -44,43 +45,51 @@ const Home = () => {
     const { order, id, name, description, imageUrl } = item;
     if (item && order > 0) {
       return (
-        <Row key={id} className="rowCategory mt-1">
+        <div className="rowCategory" key={id}>
           {order % 2 === 0 ? (
             <>
-              <Col>
+              <div className="category-descriptions">
                 <h1>{name}</h1>
-                <p>{description}</p>
-                <Button onClick={() => exploreCategory()} id="categoryButton">
+                <p className="text-wrap">{description}</p>
+                <Button
+                  className="categoryButton"
+                  onClick={() => exploreCategory()}
+                >
                   Explore {name}
                 </Button>
-              </Col>
-              <Col>
+              </div>
+              <div>
                 <img
                   src={process.env.PUBLIC_URL + `${imageUrl}`}
                   alt={"Category" + `${name} `}
                   height="200"
+                  width="310"
                 />
-              </Col>
+              </div>
             </>
           ) : (
             <>
-              <Col>
+              <div>
                 <img
                   src={process.env.PUBLIC_URL + `${imageUrl}`}
                   alt={"Category" + `${name} `}
                   height="200"
+                  width="310"
                 />
-              </Col>
-              <Col>
+              </div>
+              <div className="category-descriptions">
                 <h1>{name}</h1>
                 <p>{description}</p>
-                <Button onClick={() => exploreCategory()} id="categoryButton">
+                <Button
+                  className="categoryButton"
+                  onClick={() => exploreCategory()}
+                >
                   Explore {name}
                 </Button>
-              </Col>
+              </div>
             </>
           )}
-        </Row>
+        </div>
       );
     }
     return;

@@ -1,8 +1,3 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 .cartIcon {
   position: absolute;
   cursor: pointer;
@@ -18,11 +13,7 @@
 }
 .navbar {
   box-shadow: 0px 0px 5px rgb(204 204 204);
-  z-index: 1000 !important;
   padding: 0px 0px !important;
-  position: sticky !important;
-  top: 0px;
-  left: 0px;
 }
 
 div a:first-child {
@@ -37,9 +28,8 @@ div a:first-child {
   .customFooter {
     justify-content: center;
   }
-  .nav-header {
-    position: absolute;
-    left: 50px;
+  .userOptions {
+    justify-content: left;
   }
 }
 p {
@@ -48,12 +38,9 @@ p {
 .userOptions {
   display: flex;
   flex-direction: column;
-  justify-content: right;
+  align-items: flex-end;
 }
 .navbar-collapse {
   align-items: center;
   justify-content: space-between;
-}
-.navbar-collapse .header-text {
-  left: 50px;
 }

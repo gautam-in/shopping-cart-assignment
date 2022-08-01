@@ -8,14 +8,13 @@ import MiniCart from "../miniCart/MiniCart";
 import Footer from "./Footer";
 import { ShopContext } from "../../contexts/shoppingContext";
 function Header() {
-  const { showCart, setShowCart, cartItems, itemCount } =
-    useContext(ShopContext);
+  const { showCart, setShowCart, itemCount } = useContext(ShopContext);
   const navigateToCart = () => {
     setShowCart(true);
   };
   return (
     <React.Fragment>
-      <Navbar expand="lg" bg="light">
+      <Navbar expand="lg" bg="light" fixed="top">
         <Container>
           <Col className="col-4">
             <div>
@@ -25,7 +24,7 @@ function Header() {
             </div>
           </Col>
           <Navbar.Toggle />
-          <Navbar.Collapse className="justify-content-between">
+          <Navbar.Collapse className="col-8 justify-content-between">
             <Nav>
               <Link to="/home" className="customLink">
                 Home

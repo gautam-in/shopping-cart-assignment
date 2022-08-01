@@ -20,8 +20,9 @@
 }
 .modal-footer {
   position: relative !important;
+  flex-direction: column;
 }
-#shopingCartButton {
+.modal-footer .shopingCartButton {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -29,6 +30,11 @@
   color: white;
   border-color: rgba(225, 12, 97, 0.957);
 }
+.shopingCartButton.shopingCartFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
 .item-count {
   font-size: medium;
 }
@@ -89,6 +95,16 @@
   background-color: rgba(225, 12, 97, 0.957);
   border-color: rgba(225, 12, 97, 0.957);
 }
-.btn-sm {
+.cartitem-qty-btn.btn-sm {
   padding: 0rem 0.25rem;
+}
+.footer-tag {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 10px 10px;
+}
+.price-tagline {
+  font-size: small;
 }

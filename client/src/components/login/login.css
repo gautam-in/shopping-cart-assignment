@@ -2,11 +2,13 @@
   display: flex;
   justify-content: space-between;
   width: 760px;
-  margin: 10px auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 70px;
 }
 .login-container {
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
   width: 275px;
 }
 .group {
@@ -32,7 +34,7 @@
 .group .form-input:focus {
   outline: none;
 }
-#customSubmit {
+.login-container .customSubmit {
   background-color: rgba(225, 12, 97, 0.957);
   border-radius: 0px;
   width: 100%;

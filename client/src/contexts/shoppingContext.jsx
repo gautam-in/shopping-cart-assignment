@@ -1,5 +1,6 @@
-import { createContext, useState, useEffect } from "react";
-
+import { createContext, useReducer } from "react";
+import { INITIAL_STATE, shopReducer } from "../reducers/shopReducer";
+import { updateCartItemsAction, shopActions } from "../actions/shopActions";
 const initialState = {
   showCart: false,
   setShowCart: () => {},
@@ -7,6 +8,8 @@ const initialState = {
   addItemToCart: () => {},
   itemCount: 0,
   removeItemFromCart: () => {},
+  shopCategories: [],
+  setShopCategories: () => {},
 };
 export const addCartItem = (cartItem, productsToAdd) => {
   const isItemExists = cartItem.find((item) => item.id === productsToAdd.id);
@@ -34,18 +37,21 @@ export const removeCartItem = (cartItem, cartItemToRemove) => {
 export const ShopContext = createContext(initialState);
 
 export const ShopProvider = ({ children }) => {
-  const [showCart, setShowCart] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
-  const [itemCount, setItemCount] = useState(0);
-  useEffect(() => {
-    const count = cartItems.reduce((total, cart) => total + cart.quantity, 0);
-    setItemCount(count);
-  }, [cartItems]);
+  const [{ showCart, cartItems, itemCount, shopCategories }, dispatch] =
+    useReducer(shopReducer, INITIAL_STATE);
   const addItemToCart = (productsToAdd) => {
-    setCartItems(addCartItem(cartItems, productsToAdd));
+    const newCartItems = addCartItem(cartItems, productsToAdd);
+    updateCartItemsAction(newCartItems, dispatch);
   };
   const removeItemFromCart = (cartItemToRemove) => {
-    setCartItems(removeCartItem(cartItems, cartItemToRemove));
+    const newCartItems = removeCartItem(cartItems, cartItemToRemove);
+    updateCartItemsAction(newCartItems, dispatch);
+  };
+  const setShowCart = (bool) => {
+    dispatch({ type: shopActions.SHOW_MINICART, payload: bool });
+  };
+  const setShopCategories = (categories) => {
+    dispatch({ type: shopActions.SET_CATEGORIES, payload: categories });
   };
   const value = {
     showCart,
@@ -54,6 +60,8 @@ export const ShopProvider = ({ children }) => {
     addItemToCart,
     itemCount,
     removeItemFromCart,
+    shopCategories,
+    setShopCategories,
   };
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;
 };

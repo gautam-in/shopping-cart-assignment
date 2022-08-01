@@ -51,7 +51,7 @@ const Login = () => {
               pattern="^[a-zA-Z0-9]*$"
             />
           </div>
-          <Button id="customSubmit" className="mt-3" size="sm" type="submit">
+          <Button className="customSubmit mt-3" size="sm" type="submit">
             Login
           </Button>
         </Form>
