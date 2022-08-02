@@ -1,0 +1,142 @@
+.copyright {
+  background-color: #f7f7f7;
+  padding: 1rem 0;
+}
+/* .main {
+  margin-top: 4.8rem 0 12.8rem;
+} */
+.slider {
+  position: relative;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-shadow: 0px 15px 10px -15px #111; */
+  box-shadow: 0px 15px 10px -15px #111;
+  width: 50rem;
+  margin-left: 15rem;
+}
+
+.image {
+  width: 550px;
+  height: 145px;
+  border-radius: 10px;
+}
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  font-size: 1rem;
+  color: white;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  background-color: #adb5bd;
+  transform: translate(78%, 18%);
+}
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  font-size: 1rem;
+  color: white;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  background-color: #adb5bd;
+  transform: translate(-97%, 18%);
+  box-shadow: 0px 15px 10px -15px #111;
+}
+
+.slide {
+  opacity: 0;
+  transition: 1s ease;
+}
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+}
+
+.dots {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 2px);
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.dot {
+  /* height: 12px;
+  width: 12px; */
+  background-color: #fff;
+  border: 2px solid grey;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dot--fill {
+  background-color: #000;
+}
+/* .category {
+  display: flex;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+} */
+.container {
+  /**1140px*/
+  /* max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem; */
+}
+
+.outer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5rem;
+  margin-top: 5rem;
+}
+.inner {
+  display: flex;
+  justify-content: space-around;
+  column-gap: 12rem;
+  align-items: center;
+}
+
+.inner:nth-child(even) {
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+.categoryFlex {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.categoryDescription {
+  font-size: 12px;
+  font-weight: 600;
+}
+.mr-bt-2rem {
+  margin-bottom: 1.8rem;
+}
+
+.btnBuyNow {
+  background: #c2255c;
+  border-width: 2px;
+  padding: 7px;
+  padding-right: 13px;
+  padding-left: 13px;
+  color: white;
+  text-decoration: none;
+  border: none;
+}
+.inner {
+  box-shadow: 0px 15px 10px -15px #111;
+  width: 50rem;
+  margin-left: 15rem;
+}
+.categoryImage {
+  width: 250px;
+  height: 100px;
+}
