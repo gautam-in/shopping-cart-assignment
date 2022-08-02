@@ -86,9 +86,11 @@
   background-color: #c2255c;
   padding: 0 1rem;
   gap: 5rem;
+  color: white;
 }
 .promoCodeText {
   text-align: center;
+  color: white;
 }
 .cartFooter {
   justify-content: center;
@@ -97,6 +99,8 @@
 }
 .cartForwardIcon {
   margin-top: 0.5rem;
+
+  stroke: white;
 }
 .startShopping {
   color: white;
