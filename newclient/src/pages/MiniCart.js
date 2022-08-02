@@ -81,24 +81,39 @@ const MiniCart = () => {
             </>
           ) : (
             <>
-              <h2>Nothing in your cart</h2>
-              <div>your favourite items are just click away!</div>
+              <div className="emptyCart">
+                <h2>Nothing in your cart</h2>
+                <div>your favourite items are just click away!</div>
+              </div>
             </>
           )}
         </Modal.Body>
         <Modal.Footer className="cartFooter">
-          <div>
-            <p className="promoCodeText">
-              Promo code can be applied on payment page
-            </p>
-          </div>
-          <div class="CartTotalItemDetail" onClick={handleClose}>
-            <p>Proceed to Checkout </p>
-            <span>
-              {cart.reduce((total, item) => total + item.price * item.qty, 0)}
-            </span>
-            <GrFormNext className="cartForwardIcon" />
-          </div>
+          {cartTotalQuantity ? (
+            <>
+              <div>
+                <p className="promoCodeText">
+                  Promo code can be applied on payment page
+                </p>
+              </div>
+              <div class="CartTotalItemDetail" onClick={handleClose}>
+                <p>Proceed to Checkout </p>
+                <span>
+                  {cart.reduce(
+                    (total, item) => total + item.price * item.qty,
+                    0
+                  )}
+                </span>
+                <GrFormNext className="cartForwardIcon" />
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="startShopping" onClick={handleClose}>
+                Start Shopping
+              </div>
+            </>
+          )}
         </Modal.Footer>
       </Modal>
     </>

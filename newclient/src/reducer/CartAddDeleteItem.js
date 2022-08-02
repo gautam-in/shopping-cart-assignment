@@ -27,9 +27,14 @@ const cartadddeleteitem = (state = defaultState, action) => {
     case DELETE_ITEMS:
       return {
         ...state,
-        cart: state.cart.map((c) =>
-          c.id === action.payload.id ? { ...c, qty: c.qty - 1 } : c
-        ),
+        cart: state.cart
+          .map((item) =>
+            item.id === action.payload.id
+              ? { ...item, qty: item.qty - 1 }
+              : item
+          )
+          .filter((item) => item.qty > 0),
+
         cartTotalQuantity: state.cartTotalQuantity - 1,
       };
     default:
@@ -37,3 +42,6 @@ const cartadddeleteitem = (state = defaultState, action) => {
   }
 };
 export default cartadddeleteitem;
+// state.cart.map((c) =>
+//           c.id === action.payload.id ? { ...c, qty: c.qty - 1 } : c
+//         ),
