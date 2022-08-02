@@ -99,7 +99,7 @@ const Home = () => {
             <div className="inner">
               <div className="category">
                 <img
-                  src={category.imageURL}
+                  src={category.imageUrl}
                   alt="category image"
                   className="categoryImage"
                 />
