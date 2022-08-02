@@ -7,11 +7,13 @@
 
 a{
   color: gray;
+  display: block
 }
 a:hover{
   text-decoration: none;
   color: darkgray;
 }
+
 
 input:focus{
   outline: none;

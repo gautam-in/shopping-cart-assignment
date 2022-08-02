@@ -1,11 +1,11 @@
-import { ProductInterface } from "../../../pages/products"
+import { Product} from "../../../pages/products"
 import CartItem from "../CartItems"
 
-const CartList = ({products}:{products:ProductInterface[]}) =>{
+const CartList = ({products}:{products:Product[]}) =>{
     return (
         <>
             {
-                products.length && products.map((product:ProductInterface)=><CartItem product={product} />)
+                products.length && products.map((product:Product)=><CartItem product={product} />)
             }
         </>
         

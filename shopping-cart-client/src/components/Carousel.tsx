@@ -1,48 +1,34 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Carousel } from 'react-bootstrap'
+import axios from 'axios'
+import { walkUpBindingElementsAndPatterns } from 'typescript'
 
-const banners = [
-    {
-      "bannerImageUrl": "/static/images/offers/offer1.jpg",
-      "bannerImageAlt": "Independence Day Deal - 25% off on shampoo",
-      "isActive": true,
-      "order": 1,
-      "id": "5b6c38156cb7d770b7010ccc"
-    },
-    // {
-    //   "bannerImageUrl": "/static/images/offers/offer2.jpg",
-    //   "bannerImageAlt": "Independence Day Deal - Rs120 off on surf",
-    //   "isActive": true,
-    //   "order": 2,
-    //   "id": "5b6c38336cb7d770b7010ccd"
-    // },
-    // {
-    //   "bannerImageUrl": "/static/images/offers/offer3.jpg",
-    //   "bannerImageAlt": "Independence Day Deal - Rs99 off on domex",
-    //   "isActive": true,
-    //   "order": 3,
-    //   "id": "5b6c38456cb7d770b7010cce"
-    // },
-    // {
-    //   "bannerImageUrl": "/static/images/offers/offer4.jpg",
-    //   "bannerImageAlt": "Independence Day Deal - Rs99 off on bodywash",
-    //   "isActive": true,
-    //   "order": 4,
-    //   "id": "5b6c38576cb7d770b7010ccf"
-    // },
-    // {
-    //   "bannerImageUrl": "/static/images/offers/offer5.jpg",
-    //   "bannerImageAlt": "Independence Day Deal - Rs70 off on tea",
-    //   "isActive": true,
-    //   "order": 5,
-    //   "id": "5b6c386b6cb7d770b7010cd0"
-    // }
-  ]
+export interface Banner {
+      bannerImageUrl: string,
+      bannerImageAlt: string,
+      isActive: boolean,
+      order: number,
+      id: string
+    }
 
 const AddCarousel = () => {
 
+    const [banners, setBanners] = useState<Banner[]>([])
+
+    const getCarousel = () =>{
+      axios.get('http://localhost:5000/banners')
+      .then(res=>{
+        setBanners(res.data)
+      })
+    }
+
+    useEffect(()=>{
+      getCarousel()
+    }, [])
+
     return (
-          <div className='px-md-5 px-1'>
+      <>
+      {banners.length&&<div className='px-md-5 px-1'>
             <Carousel interval={3000} className='mx-lg-5 my-1 mx-sm-0 px-md-5 effect1'>
           {
               banners.map((banner)=>{
@@ -57,7 +43,8 @@ const AddCarousel = () => {
               })
           }    
       </Carousel>
-      </div>
+      </div>}
+      </>
     );
   }
 export default AddCarousel

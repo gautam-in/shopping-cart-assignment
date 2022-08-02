@@ -83,7 +83,7 @@ footer span{
 .cart-content-modal{
     position: fixed;
     right: 0;
-    width: 40%;
+    width: 35%;
     top: 84px;
     height:calc(100% - 84px);
 }
@@ -182,10 +182,6 @@ footer span{
     .product{
         margin: 0;
     }
-    .product-container{
-        width: 100vw;
-    }
-
 
 }
 
