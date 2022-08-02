@@ -1,0 +1,100 @@
+.body {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 15rem;
+  background-color: #e9ecef;
+}
+.cart-header {
+  background-color: black;
+  color: white;
+  margin-bottom: 10px;
+}
+.modal-content {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 70vh;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1pxsolidrgba (0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  height: calc(100vh - 2rem);
+  margin-top: 5rem;
+  right: 0;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2px;
+  margin-bottom: 20px;
+  background-color: white;
+  width: 100%;
+}
+.totalCartItem {
+  font-size: 14px;
+}
+.cartItemImg {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+.cartDetail {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.cartProductName {
+  font-size: 14px;
+  font-weight: 600;
+}
+.cartProductPrice {
+  font-size: 12px;
+  font-weight: 500;
+}
+.cartItemDetail {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 0.5rem;
+}
+.cartMinusButton {
+  fill: #c2255c;
+}
+.cartPlusButton {
+  fill: #c2255c;
+}
+
+.lowestPriceConatiner {
+  display: flex;
+  background-color: white;
+  gap: 0.5rem;
+  align-items: center;
+}
+.cheaperContainerText {
+  margin-top: 15px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.CartTotalItemDetail {
+  display: flex;
+  justify-content: space-between;
+  background-color: #c2255c;
+  padding: 0 1rem;
+  gap: 5rem;
+}
+.promoCodeText {
+  text-align: center;
+}
+.cartFooter {
+  justify-content: center;
+  flex-direction: column;
+}
+.cartForwardIcon {
+  margin-top: 0.5rem;
+}

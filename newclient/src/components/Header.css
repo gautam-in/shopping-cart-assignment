@@ -1,0 +1,59 @@
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  flex: 1;
+}
+.div-1 {
+  flex: 1;
+}
+.div-2 {
+  flex: 2;
+}
+.div-3 {
+  flex: 1;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  /* because we want header to be sticky later */
+  height: 5rem;
+  padding: 0 48px;
+  flex: 1;
+  border: 2px solid #f8f9fa;
+}
+.logo {
+  height: 3.2rem;
+}
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #767676;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+.main-nav-link:hover {
+  color: #c2255c;
+}
+.cart-icon {
+  color: red;
+}
+.item-container {
+  background-color: #f8f9fa;
+  height: 2rem;
+  width: 6rem;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.m-t-5 {
+  margin-top: 0.72rem;
+}
+
+.label {
+  color: #767676;
+}
