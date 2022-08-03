@@ -14,7 +14,7 @@ const Header = ({handleShow}:{handleShow:()=>void}) => {
                 <img src='/static/images/logo_2x.png' alt='logo' className='mt-lg-0 mb-1 float-lg-right'/>
                 </Col >
                 <Col xs={6}  className='header-center position-relative'>
-                  <ul className='my-0 ml-2 d-none d-md-block'>
+                  <ul className='my-0 ml-2  d-md-block'>
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/products'>Product</Link></li>
                   </ul>

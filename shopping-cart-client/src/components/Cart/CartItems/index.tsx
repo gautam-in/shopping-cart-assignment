@@ -5,12 +5,12 @@ const CartItem = ({product}:any) =>{
     const dispatch = useDispatch()
 
     return (
-        <div className="d-flex align-items-center justify-content-around mb-3" style={{height:'85px', background: 'white'}}>
-            <div>
+        <div className="d-flex justify-content-between px-2 mb-3" style={{height:'85px', background: 'white'}}>
+            <div className="align-self-center">
                 <img src={product.imageURL} width='80px'/>
             </div>
-            <div className="d-flex flex-column">
-                <div><p><strong>{product.name}</strong></p></div>
+            <div className="d-flex flex-column flex-fill px-2 justify-content-around">
+                <div><p className="mb-0"><strong>{product.name}</strong></p></div>
                 <div className="d-flex">
                     <div className="d-flex align-items-baseline">
                         <button 
@@ -20,7 +20,7 @@ const CartItem = ({product}:any) =>{
                                 dispatch({ type: "DELETE_PRODUCTS", payload: product })
                               }
                             >-</button>
-                        <p className="mx-1">{product.qty}</p>
+                        <small className="mx-1">{product.qty}</small>
                         <button 
                             className="mx-1 pb-1 border-0 d-inline-flex align-items-center justify-content-center" 
                             style={{width:'15px', height:'15px', borderRadius:'25px'}}
@@ -29,11 +29,11 @@ const CartItem = ({product}:any) =>{
                               }
                             >+</button>
                     </div>
-                    <div> X {product.price}</div>
+                    <small> X {product.price}</small>
                 </div>
             </div>
-            <div>
-                <p>Rs. {product.qty * product.price}</p>
+            <div className="align-self-center">
+                <small>Rs. {product.qty * product.price}</small>
             </div>
         </div>
     )
