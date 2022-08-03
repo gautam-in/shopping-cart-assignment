@@ -2,6 +2,7 @@ import { Row, Col, Container } from "react-bootstrap"
 import ProductSideBar from "./ProductSideBar"
 import { useCallback, useEffect, useState } from "react"
 import axios from "axios";
+import { useDispatch } from "react-redux";
 
 export interface Product {
       name:string,
@@ -15,7 +16,19 @@ export interface Product {
     }
 
 const ProductItem = ({product}:any) =>{
-    const {id,name, imageURL, description, price, sku} = product;
+    const {name, imageURL, description, price, sku} = product;
+    const dispatch = useDispatch()
+    const addToCart= async(product: Product) => {
+        let productId = product.id;
+        await axios
+          .post("http://localhost:5000/addToCart", productId)
+          .then((response) => {
+            if (response.status == 200) {
+              dispatch({ type: "ADD_PRODUCTS", payload: product });
+            }
+          });
+      }
+
     return (
         <Col md={6} lg={3} className='mb-2'>
             <div style={{height:'84px', overflow:"hidden"}}>
@@ -27,7 +40,11 @@ const ProductItem = ({product}:any) =>{
             </div>
             <div className="d-flex justify-content-between align-items-center py-2 pl-2 mb-2" style={{fontSize:'small', borderBottom:' dotted lightgray' }}>
                 <span className="price-tag d-lg-block d-none">MRP Rs.{price}</span>
-                <button className="price-button px-3 py-1 border-0 flex-md-grow-1 flex-lg-grow-0" style={{backgroundColor:'#d80454', color:'white'}}>Buy Now <span className="d-lg-none">@ Rs.{price}</span></button>
+                <button 
+                    className="price-button px-3 py-1 border-0 flex-md-grow-1 flex-lg-grow-0" 
+                    style={{backgroundColor:'#d80454', color:'white'}}
+                    onClick={()=>{addToCart(product)}}
+                    >Buy Now <span className="d-lg-none">@ Rs.{price}</span></button>
             </div>
         </Col>
     )

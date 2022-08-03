@@ -1,7 +1,11 @@
+import { useDispatch } from "react-redux"
+
 const CartItem = ({product}:any) =>{
-    console.log(product)
+
+    const dispatch = useDispatch()
+
     return (
-        <div className="d-flex align-items-center justify-content-around" style={{height:'85px', background: 'white'}}>
+        <div className="d-flex align-items-center justify-content-around mb-3" style={{height:'85px', background: 'white'}}>
             <div>
                 <img src={product.imageURL} width='80px'/>
             </div>
@@ -9,15 +13,27 @@ const CartItem = ({product}:any) =>{
                 <div><p><strong>{product.name}</strong></p></div>
                 <div className="d-flex">
                     <div className="d-flex align-items-baseline">
-                        <button className="mx-1 pb-1 border-0 d-inline-flex align-items-center justify-content-center" style={{width:'15px', height:'15px', borderRadius:'25px'}}>-</button>
-                        <p className="mx-1">{product.quantity||0}</p>
-                        <button className="mx-1 pb-1 border-0 d-inline-flex align-items-center justify-content-center" style={{width:'15px', height:'15px', borderRadius:'25px'}}>+</button>
+                        <button 
+                            className="mx-1 pb-1 border-0 d-inline-flex align-items-center justify-content-center" 
+                            style={{width:'15px', height:'15px', borderRadius:'25px'}}
+                            onClick={() =>
+                                dispatch({ type: "DELETE_PRODUCTS", payload: product })
+                              }
+                            >-</button>
+                        <p className="mx-1">{product.qty}</p>
+                        <button 
+                            className="mx-1 pb-1 border-0 d-inline-flex align-items-center justify-content-center" 
+                            style={{width:'15px', height:'15px', borderRadius:'25px'}}
+                            onClick={() =>
+                                dispatch({ type: "ADD_PRODUCTS", payload: product })
+                              }
+                            >+</button>
                     </div>
                     <div> X {product.price}</div>
                 </div>
             </div>
             <div>
-                <p>totalPrice</p>
+                <p>Rs. {product.qty * product.price}</p>
             </div>
         </div>
     )
