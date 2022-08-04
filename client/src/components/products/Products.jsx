@@ -1,27 +1,21 @@
 import { useState, useEffect, useContext } from "react";
 import { Button } from "react-bootstrap";
 import "./products.css";
-import axios from "axios";
 import { ShopContext } from "../../contexts/shoppingContext";
+import { getAxiosData, postAxiosData } from "../../utils/axiosData";
 
 const Products = () => {
   const { addItemToCart, shopCategories } = useContext(ShopContext);
   const [productLists, setProductLists] = useState([]);
-  console.log("shopCategories------------", shopCategories);
-  const categoryLists = ["bakery", "beverage", "fruits", "beauty", "babycare"];
+  const [searchedProducts, setSearchedProducts] = useState([]);
   const [categoryList, setCategoryList] = useState([]);
+  const [isProductSearch, setIsProductSearch] = useState(false);
+  const [selectedCategoryId, setSelectedCategoryId] = useState("");
   const loadProductsInfo = async () => {
-    await axios
-      .get("http://localhost:5000/products")
-      .then(({ data }) => {
-        console.log("products information", data);
-        if (data) {
-          setProductLists(data);
-        }
-      })
-      .catch((error) => {
-        console.log("Error in getting Products information", error);
-      });
+    const productInfo = await getAxiosData("http://localhost:5000/products");
+    if (productInfo) {
+      setProductLists(productInfo);
+    }
   };
   useEffect(() => {
     loadProductsInfo();
@@ -30,62 +24,111 @@ const Products = () => {
       setCategoryList(categories);
     }
   }, []);
-  const searchProducts = () => {
-    console.log("when category is clicked");
+  const searchProducts = async (e) => {
+    e.preventDefault();
+    if (selectedCategoryId === e.target.id) {
+      setIsProductSearch(false);
+      setSelectedCategoryId("");
+    } else {
+      setIsProductSearch(true);
+      setSelectedCategoryId(e.target.id);
+      let searchedProduct = productLists.filter(
+        (p) => p.category === e.target.id
+      );
+
+      setSearchedProducts([...searchedProduct]);
+    }
   };
   const handleItemToCart = async (e, productToAdd) => {
     e.preventDefault();
-
-    await axios
-      .post("http://localhost:5000/addToCart", productToAdd.id)
-      .then(({ data }) => {
-        if (data.response === "Success") {
-          addItemToCart(productToAdd);
-        }
-      })
-      .catch((error) => console.log("Error in adding products to cart", error));
+    const { response } = await postAxiosData(
+      "http://localhost:5000/addToCart",
+      productToAdd.id
+    );
+    if (response === "Success") {
+      addItemToCart(productToAdd);
+    }
   };
-  console.log("categoryLists", categoryList);
   return (
     <div className="products-container">
       <div className="product-types">
-        {categoryList.map((item) => {
-          return (
-            <div
-              className="product-sidebar"
-              onClick={searchProducts}
-              key={item.order}
-            >
-              {item.name}
-            </div>
-          );
-        })}
+        <div className="sticky-sidebar">
+          {categoryList.map((item) => {
+            return (
+              <div
+                className={
+                  selectedCategoryId === item.id
+                    ? "product-sidebar-active"
+                    : "product-sidebar"
+                }
+                onClick={(e) => searchProducts(e)}
+                key={item.id}
+                id={item.id}
+              >
+                {item.name}
+              </div>
+            );
+          })}
+        </div>
       </div>
       <div className="products-lists">
-        {productLists.map((product) => {
-          return (
-            <div className="product-container" key={product.id}>
-              <h6>
-                <strong>{product.name}</strong>
-              </h6>
-              <img
-                src={product.imageURL}
-                alt={product.name}
-                style={{ margin: "10px" }}
-              />
-              <p>{product.description.substring(0, 50)}</p>
-              <div className="product-price">
-                <div>MRP Rs.{product.price}</div>
-                <Button
-                  className="buyItem"
-                  onClick={(e) => handleItemToCart(e, product)}
-                >
-                  Buy Now
-                </Button>
-              </div>
-            </div>
-          );
-        })}
+        {isProductSearch ? (
+          <>
+            {searchedProducts.map((product) => {
+              return (
+                <div className="product-container" key={product.id}>
+                  <h6>
+                    <strong>{product.name}</strong>
+                  </h6>
+                  <img
+                    src={product.imageURL}
+                    alt={product.name}
+                    style={{ margin: "10px" }}
+                    className="product-image"
+                  />
+                  <p>{product.description.substring(0, 50)}</p>
+                  <div className="product-price">
+                    <div>MRP Rs.{product.price}</div>
+                    <Button
+                      className="buyItem"
+                      onClick={(e) => handleItemToCart(e, product)}
+                    >
+                      Buy Now
+                    </Button>
+                  </div>
+                </div>
+              );
+            })}
+          </>
+        ) : (
+          <>
+            {productLists.map((product) => {
+              return (
+                <div className="product-container" key={product.id}>
+                  <h6>
+                    <strong>{product.name}</strong>
+                  </h6>
+                  <img
+                    src={product.imageURL}
+                    alt={product.name}
+                    style={{ margin: "10px" }}
+                    className="product-image"
+                  />
+                  <p>{product.description.substring(0, 50)}</p>
+                  <div className="product-price">
+                    <div>MRP Rs.{product.price}</div>
+                    <Button
+                      className="buyItem"
+                      onClick={(e) => handleItemToCart(e, product)}
+                    >
+                      Buy Now
+                    </Button>
+                  </div>
+                </div>
+              );
+            })}
+          </>
+        )}
       </div>
     </div>
   );

@@ -11,7 +11,6 @@ function MiniCart() {
   const navigate = useNavigate();
   const handleStartShopping = (e) => {
     e.preventDefault();
-    console.log("strt shopping");
     setShowCart(!showCart);
     navigate("/products");
   };

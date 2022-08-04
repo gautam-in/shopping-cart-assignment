@@ -17,11 +17,9 @@ function Header() {
       <Navbar expand="lg" bg="light" fixed="top">
         <Container>
           <Col className="col-4">
-            <div>
-              <Navbar.Brand href="/">
-                <img src={logo} alt="Sabka Bazar" width="150" />
-              </Navbar.Brand>
-            </div>
+            <Navbar.Brand href="/">
+              <img src={logo} alt="Sabka Bazar" width="150" />
+            </Navbar.Brand>
           </Col>
           <Navbar.Toggle />
           <Navbar.Collapse className="col-8 justify-content-between">
@@ -33,8 +31,8 @@ function Header() {
                 Products
               </Link>
             </Nav>
-            <section className="w-50 userOptions">
-              <div>
+            <section className="w-50 userOptionsContainer">
+              <div className="userOptions">
                 <Link to="/login" className="customLink">
                   Login
                 </Link>
@@ -43,13 +41,14 @@ function Header() {
                 </Link>
               </div>
               <Button
-                className="w-50"
                 style={{
                   background: "#d3d3d3",
                   border: "none",
                   borderRadius: 0,
                   color: "black",
                   position: "relative",
+                  width: "33%",
+                  alignSelf: "end",
                 }}
                 onClick={navigateToCart}
               >

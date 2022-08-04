@@ -24,23 +24,45 @@ div a:first-child {
   padding: 10px 12%;
 }
 
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .customFooter {
     justify-content: center;
   }
+  .navbar-collapse {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .navbar-nav {
+    width: 154%;
+  }
+  .userOptionsContainer {
+    align-self: flex-start;
+  }
   .userOptions {
-    justify-content: left;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 207px;
   }
 }
 p {
   font-size: 12px;
 }
-.userOptions {
+.userOptionsContainer {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
 }
 .navbar-collapse {
   align-items: center;
   justify-content: space-between;
+}
+.navbar-nav {
+  flex: 1 !important;
+  position: relative !important;
+  left: 140px !important;
+}
+.userOptions {
+  align-self: end;
 }

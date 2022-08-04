@@ -13,6 +13,13 @@
   display: flex;
   justify-content: space-between;
 }
+.category-Image {
+  cursor: pointer;
+  transition: all 2s;
+}
+.category-Image:hover {
+  transform: scale(1.1);
+}
 .home-container {
   flex-wrap: wrap;
   display: flex;
@@ -36,4 +43,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+@media only screen and (max-width: 768px) {
+  .home-container {
+    flex-wrap: nowrap;
+  }
+  .carosel-container {
+    max-width: fit-content;
+  }
+  .carosel-image {
+    max-width: 580px;
+  }
 }
