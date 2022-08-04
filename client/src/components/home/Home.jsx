@@ -40,10 +40,7 @@ const Home = () => {
               <div className="category-descriptions">
                 <h1>{name}</h1>
                 <p className="text-wrap">{description}</p>
-                <Button
-                  className="categoryButton"
-                  onClick={() => exploreCategory()}
-                >
+                <Button className="categoryButton" onClick={exploreCategory}>
                   Explore {name}
                 </Button>
               </div>
@@ -71,10 +68,7 @@ const Home = () => {
               <div className="category-descriptions">
                 <h1>{name}</h1>
                 <p>{description}</p>
-                <Button
-                  className="categoryButton"
-                  onClick={() => exploreCategory()}
-                >
+                <Button className="categoryButton" onClick={exploreCategory}>
                   Explore {name}
                 </Button>
               </div>
@@ -94,7 +88,7 @@ const Home = () => {
               <Carousel.Item interval={2000}>
                 <div key={id}>
                   <img
-                    src={process.env.PUBLIC_URL + `${bannerImageUrl}`}
+                    src={bannerImageUrl}
                     alt={bannerImageAlt}
                     height="200"
                     className="carosel-image"
