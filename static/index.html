@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabka Bazaar - Online Shopping Portal</title>
+    <link rel="stylesheet" href="index.css">
+    
+    <style>
+        *[border] {
+            border: 1px solid black;
+        }
+    </style>
+    <script src="index.js"></script>
+</head>
+
+<body class="text-color-default bg-color-default">
+    <header>
+        <div  class="flex-content row">
+            <div class="log" ><img src="../static/images/logo.png" alt="logo"></div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+            </nav>
+            <div class="cart-btn">
+                <div class="user-control">
+                    <a href="">Register</a>
+                    <a href="">SignIn</a>
+                </div>
+                <div class="cart-link">
+                    <a href="#cart"> [c] 0 Items</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <main id="main">
+            <section aria-label="slide view of offers">
+                <div id="offers"></div>
+            </section>
+            <section aria-label="shopping" id="categories">
+                <div class="item-tile">
+                    <img src="../static/images/category/fruits.png" alt="fruit-and-veg">
+                    <div >
+                        <div>
+                            <h2 class="desc-item">Fruits & Vegetables</h2>
+                            <p class="desc-item">A variety of fresh fruits and vegetables.</p>
+                            <a aria-colspan="desc-item" href="#" class="button">Explore fruit-and-veg</a></div>
+                    </div>
+                </div>
+                <div class="item-tile item-alt">
+                    <img src="../static/images/category/fruits.png" alt="fruit-and-veg">
+                    <div >
+                        <div>
+                            <h2 class="desc-item">Fruits & Vegetables</h2>
+                            <p class="desc-item">A variety of fresh fruits and vegetables.</p>
+                            <a aria-colspan="desc-item" href="#" class="button">Explore fruit-and-veg</a></div>
+                    </div>
+                </div>
+                <div class="item-tile-alt">
+                </div>
+            </section>
+            <section class="cart"></section>
+        </main>
+        <footer class="bg-color-alt text-color-default">
+            <div>
+                <span>Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd.</span>
+            </div>
+        </footer>
+</body>
+
+</html>
