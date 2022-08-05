@@ -4,7 +4,7 @@ const { verify } = require("jsonwebtoken");
 exports.isValidToken = async (req, res, next) => {
     try {
         const token = req.get("auth_token");
-
+        console.log(req.cookies);
         if (!token) {
             return res.status(401).send("token missing..");
         } else {
