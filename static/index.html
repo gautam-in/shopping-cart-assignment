@@ -19,7 +19,9 @@
 <body class="text-color-default bg-color-default">
     <header>
         <div  class="flex-content row">
-            <div class="log" ><img src="../static/images/logo.png" alt="logo"></div>
+            <div class="log" >
+                <img src="../static/images/logo.png" alt="logo">
+            </div>
             <nav>
                 <a href="#home">Home</a>
                 <a href="#products">Products</a>
@@ -41,26 +43,16 @@
                 <div id="offers"></div>
             </section>
             <section aria-label="shopping" id="categories">
-                <div class="item-tile">
+                <div class="item-tile" template>
                     <img src="../static/images/category/fruits.png" alt="fruit-and-veg">
-                    <div >
+                    <div>
                         <div>
-                            <h2 class="desc-item">Fruits & Vegetables</h2>
-                            <p class="desc-item">A variety of fresh fruits and vegetables.</p>
-                            <a aria-colspan="desc-item" href="#" class="button">Explore fruit-and-veg</a></div>
+                            <h2 class="desc-item"><!--Fruits & Vegetables--></h2>
+                            <p class="desc-item"><!--A variety of fresh fruits and vegetables.--></p>
+                            <a class="desc-item button" href="#"><!--Explore fruit-and-veg--></a>
+                        </div>
                     </div>
-                </div>
-                <div class="item-tile item-alt">
-                    <img src="../static/images/category/fruits.png" alt="fruit-and-veg">
-                    <div >
-                        <div>
-                            <h2 class="desc-item">Fruits & Vegetables</h2>
-                            <p class="desc-item">A variety of fresh fruits and vegetables.</p>
-                            <a aria-colspan="desc-item" href="#" class="button">Explore fruit-and-veg</a></div>
-                    </div>
-                </div>
-                <div class="item-tile-alt">
-                </div>
+                </div>                
             </section>
             <section class="cart"></section>
         </main>

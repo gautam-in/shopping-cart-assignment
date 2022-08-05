@@ -140,6 +140,7 @@ main {
     align-items: center;
 }
 
+
 .item-tile {
     margin-top: 1rem;
     display: flex;
@@ -151,6 +152,10 @@ main {
     height: 250px;
     position: relative;
     background: white;
+}
+
+div.item-tile[template] {
+    display: none;
 }
 
 .item-tile img {
@@ -173,7 +178,7 @@ main {
     border-radius: 50%;
 }
 
-.item-alt {
+.item-tile:nth-child(even) {
     flex-direction: row-reverse;
 }
 
@@ -190,6 +195,7 @@ main {
 
 .item-tile div .desc-item {
     margin: 1rem;
+    text-align: center;
 }
 
 .categories {
