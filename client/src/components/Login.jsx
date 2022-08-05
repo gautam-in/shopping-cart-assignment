@@ -1,32 +1,39 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { LoginAction } from '../redux/Action_creators/LoginActions';
 const loginModel = {
-    email: '',
+    userName: '',
     password: ''
 }
 const Login = () => {
     const [user, setUser] = useState({ ...loginModel });
+    const isLogin=useSelector(state=>state?.login?.user)
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const registeredUsers = useSelector(state => state.register.registeredUsers)
     const handleChange = (type, value) => {
         let obj = user;
         obj[type] = value;
         setUser(obj)
     }
 
+    useEffect(()=>{
+        if(localStorage.auth_token) navigate('products');
+    },[isLogin])
+
     const handleSubmit = async () => {
-        const existedUser = registeredUsers.filter(item => (item.email == user.email) && (item.password == user.password))
-        if (existedUser.length > 0) {
+        // const existedUser = registeredUsers.filter(item => (item.email == user.email) && (item.password == user.password))
+        // if (existedUser.length > 0) {
             dispatch(LoginAction(user));
-            navigate('/');
-        }
-        else {
-            alert('Username or Password does not match')
-        }
+            // navigate('/');
+        // }
+        // else {
+        //     alert('Username or Password does not match')
+        // }
     }
+
+    
     return (
         <div className='react-container p-2' style={{ marginTop: '120px' }}>
             <div className='row justify-content-center ' >
@@ -37,14 +44,14 @@ const Login = () => {
                 <div className='col-sm-4 '>
                     <form onSubmit={(e) => { e.preventDefault(); handleSubmit() }}>
                         <div className='sec'>
-                            <input type="text" onChange={(e) => { handleChange('email', e.target.value) }} className="inputText" required />
+                            <input type="text" data-testid='userName' onChange={(e) => { handleChange('userName', e.target.value) }} className="inputText" required />
                             <span className="floating-label">Email</span>
                         </div>
                         <div className='sec mt-4'>
-                            <input type="password" onChange={(e) => { handleChange('password', e.target.value) }} required />
+                            <input type="password"  data-testid='password' onChange={(e) => { handleChange('password', e.target.value) }} required />
                             <span className="floating-label">Password</span>
                         </div>
-                        <button className='btn btn-danger  mt-4 w-100'  >Login</button>
+                        <button  data-testid='login' className='btn btn-danger  mt-4 w-100'  >Login</button>
                     </form>
                 </div>
             </div>

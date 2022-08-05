@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { getBannerDetails } from '../redux/Action_creators/BannerActions';
+import axios from '../utils/axios';
 const Banner = () => {
     const banners = useSelector(state => state.banner.bannerDetails)
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(getBannerDetails())
+        axios.get('api').then(res=>{
+            console.log(res);
+        })
+        // dispatch(getBannerDetails())
     }, [])
     return (
         <div>

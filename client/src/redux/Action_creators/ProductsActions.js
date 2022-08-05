@@ -1,34 +1,49 @@
-import axios from "axios";
+import axios from "../../utils/axios";
 import { ProductActions } from "../constants/productsAction_types";
 
-export  const getAllProducts=()=>{
-    return async(dispatch)=>{
-        const products=await axios.get('http://localhost:5000/products').catch(err=>{
-            alert(err)
-        })
-        dispatch(setProducts(products.data))
+export const getAllProducts = () => {
+    return async (dispatch) => {
+        try {
+            const products = await axios.get('products')
+            dispatch(setProducts(products.data))
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 
-export const getFilterByCategory=(category)=>{
-    return async(dispatch)=>{
-        const products=await axios.get('http://localhost:5000/products').catch(err=>{
-            alert(err)
+export const getFilterByCategory = (category) => {
+    return async (dispatch) => {
+        const products = await axios.get('http://localhost:5000/products').catch(err => {
         })
-        const filterProducts=products.data.filter(item=>item.category==category)
+        const filterProducts = products.data.filter(item => item.category == category)
         dispatch(setProducts(filterProducts))
     }
 }
 
-const setProducts=(data)=>{
-    return {
-        type:ProductActions.GET_ALL_PRODUCTS,
-        payload:data
+export const getProductById = (id) => {
+    return async (dispatch) => {
+        try {
+            const product = await axios.get(`product/${id}`)
+            dispatch({
+                type: ProductActions.GET_PRODUCT_BY_ID,
+                payload: product.data
+            })
+        } catch (error) {
+
+        }
     }
 }
 
-export const removeStoredProducts=()=>{
+const setProducts = (data) => {
     return {
-        type:ProductActions.REMOVE_STORED_PRODUCTS
+        type: ProductActions.GET_ALL_PRODUCTS,
+        payload: data
+    }
+}
+
+export const removeStoredProducts = () => {
+    return {
+        type: ProductActions.REMOVE_STORED_PRODUCTS
     }
 }

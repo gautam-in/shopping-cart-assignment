@@ -10,7 +10,6 @@ export default function Home() {
         <ProductCategory />
       </div>
         <Footer />
-
     </div>
   )
 }

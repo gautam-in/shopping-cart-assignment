@@ -19,16 +19,16 @@ const getWidth = () => window.innerWidth
   const dispatch = useDispatch();
   const [width, setWidth] = useState(getWidth());
   const getProducts=()=>{
-    if(searchParams.has('filter')){
-     dispatch(getFilterByCategory(searchParams.get('filter')))
-    }
-    else{
+    // if(searchParams.has('filter')){
+    //  dispatch(getFilterByCategory(searchParams.get('filter')))
+    // }
+    // else{
       dispatch(getAllProducts());
-    }
+    // }
   }
 
   useEffect(() => {
-    dispatch(getProductCategories())
+    // dispatch(getProductCategories())
     let timeoutId = null;
     const resizeListener = () => {
       clearTimeout(timeoutId);
@@ -50,14 +50,13 @@ const getWidth = () => window.innerWidth
   return (
     <>
     <div className='react-container content'>
-      {
+      {/* {
         width <= 500 ? <MobileSidebar /> : <Sidebar />
-      }
+      } */}
       <div className='sidebar-content'>
         {
           width <= 1240 ? <MobiletabProductList /> : <ProductsList />
         }
-
       </div>
     </div>
     <Footer/>

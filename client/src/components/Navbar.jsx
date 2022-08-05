@@ -35,6 +35,11 @@ const Navbar = () => {
         }
     }, [])
 
+    const logout = () => {
+        localStorage.clear();
+        navigate('/')
+    }
+
     useEffect(() => {
         handleOpenCart()
         // window.$('#myModal').on('hidden.bs.modal', function (e) {
@@ -45,46 +50,48 @@ const Navbar = () => {
         <div>
             <nav className="navbar navbar-expand-md bg-white navbar-light fixed-top" >
                 <div className='container'>
-
                     <NavLink to='/' className="navbar-brand" ><img src='/static/images/logo.png' alt='logo' /></NavLink>
-
                     <div className="collapse navbar-collapse" id="collapsibleNavbar">
                         <ul className="navbar-nav ">
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <NavLink to="/">
                                     Home
                                 </NavLink>
-                            </li>
+                            </li> */}
                             <li className="nav-item ml-2">
-                                <NavLink to="products">
-                                    Products
-                                </NavLink>
-
+                                {
+                                    localStorage.getItem('auth_token') && (
+                                        <NavLink to="products">
+                                            Products
+                                        </NavLink>
+                                    )
+                                }
                             </li>
                         </ul>
                     </div>
                     {
-                        !items.login.user?.email && (
-                            <div  className="d-flex auth-sec">
-                                    <NavLink to="login" className='mr-2'>
-                                        Signin
-                                    </NavLink>
-                                    <NavLink to="register" className='mr-2'>
-                                        Register
-                                    </NavLink>
+                        !localStorage.getItem('auth_token') ? (
+                            <div className="d-flex auth-sec">
+                                <NavLink to="/" className='mr-2'>
+                                    Signin
+                                </NavLink>
+                                <NavLink to="register" className='mr-2'>
+                                    Register
+                                </NavLink>
                             </div>
+                        ) : (
+                            <h6 className='mr-3' onClick={() => { logout() }}>Log out</h6>
                         )
 
                     }
-
-                    <a onClick={() => { cartClick = true; handleOpenCart() }} className="navbar-brand navbar-cart "><img src='/static/images/cart.svg' alt='cart' /> <span>{items.cart.cartItems.length} Items</span></a>
+                    <a onClick={() => { cartClick = true; handleOpenCart() }} className="navbar-brand navbar-cart "><img src='/static/images/cart.svg' alt='cart' /> <span>{items?.cart?.cartItems?.length} Items</span></a>
                 </div>
             </nav>
             <div className="modal" id="myModal">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header bg-dark text-white">
-                            <h6 className="modal-title">My Cart <small>({items.cart.cartItems.length} items)</small></h6>
+                            <h6 className="modal-title">My Cart <small>({items?.cart?.cartItems?.length} items)</small></h6>
                             <button type="button" className="close text-white" onClick={() => { cartClick = false }} data-dismiss="modal">&times;</button>
                         </div>
 

@@ -111,7 +111,10 @@
     box-shadow: 3px 0px 3px 0px #cccccc42;
     border-bottom: 3px dotted #ccc;
     border-radius: 0;
-
+    &:hover{
+      cursor: pointer;
+      box-shadow: 1px 5px 17px 0px #ddd;
+    }
     .card-header {
       height: 100px;
       border: none;
@@ -252,3 +255,4 @@ input:not(:focus):valid~.floating-label {
     color:rgba(0, 0, 0, .7) ;
   }
 }
+

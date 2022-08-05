@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom';
 import { ADDED_TO_CART, REMOVE_FROM_CART } from '../redux/Action_creators/CartActions';
 const Cart = () => {
-    const cartItems = useSelector(state => state.cart.cartItems);
+    const cartItems = useSelector(state => state?.cart?.cartItems);
     const dispatch = useDispatch()
     const total = () => {
         const sumall = cartItems.map(item => item.quantity * item.price).reduce((prev, curr) => prev + curr, 0);

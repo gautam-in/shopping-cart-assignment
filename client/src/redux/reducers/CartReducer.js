@@ -5,6 +5,7 @@ const initialState = {
 }
 export const CartReducer = (state = initialState, { type, payload }) => {
     let index=null;
+    console.log(payload);
     switch (type) {
         case CartActionTypes.ADDED_TO_CART:
             index=state.cartItems.findIndex(item=>item.id===payload.id);
@@ -16,12 +17,10 @@ export const CartReducer = (state = initialState, { type, payload }) => {
                    return{...state,cartItems:[...state.cartItems]}
                }
                else{
-                   payload['quantity']=1;
                    return{...state,cartItems:[...state.cartItems,{...payload}]}
                }
             }
             else{
-                payload['quantity']=1
                 return {...state,cartItems:[{...payload}]}
             }
             case CartActionTypes.REMOVE_FROM_CART:
