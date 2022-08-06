@@ -36,7 +36,10 @@ const Navbar = () => {
     }, [])
 
     const logout = () => {
+        // Instead of this. Create logout action which will clear user redux state.
+        // Based on that use can use your redirection logic.
         localStorage.clear();
+
         navigate('/')
     }
 
