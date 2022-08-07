@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./home.css";
 import { ShopContext } from "../../contexts/shoppingContext";
 import { getAxiosData } from "../../utils/axiosData";
+import { Helmet } from "react-helmet";
 const Home = () => {
   const navigate = useNavigate();
   const { setShopCategories } = useContext(ShopContext);
@@ -81,6 +82,12 @@ const Home = () => {
   };
   return (
     <div className="home-container">
+      <Helmet>
+        <meta
+          name="description"
+          content="Buy wide variety of household products."
+        />
+      </Helmet>
       <div className="carosel-container">
         <Carousel variant="dark">
           {bannersData.map(({ id, bannerImageUrl, bannerImageAlt }) => {

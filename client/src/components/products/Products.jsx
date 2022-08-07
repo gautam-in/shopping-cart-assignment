@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import "./products.css";
 import { ShopContext } from "../../contexts/shoppingContext";
 import { getAxiosData, postAxiosData } from "../../utils/axiosData";
+import { Helmet } from "react-helmet";
 
 const Products = () => {
   const { addItemToCart, shopCategories } = useContext(ShopContext);
@@ -51,6 +52,12 @@ const Products = () => {
   };
   return (
     <div className="products-container">
+      <Helmet>
+        <meta
+          name="description"
+          content="Buy home products, vegetables, babycare, hygiene products, beverages, cakes and diary products."
+        />
+      </Helmet>
       <div className="product-types">
         <div className="sticky-sidebar">
           {categoryList.map((item) => {
