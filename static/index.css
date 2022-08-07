@@ -12,6 +12,8 @@
     --accent-text-clr: white;
 
     --accent-bg-clr-alt: #cecece;
+
+    --accent-clr-login:#2CAEBA;
 }
 
 * {
@@ -214,9 +216,17 @@ div.item div:last-child {
     padding: 1rem;
 }
 
-a.button {
+a.button, button.button,input[type="submit"].button {
     padding: .5rem 1.5rem;
     text-decoration: none;
     background-color: var(--accent-bg-clr);
     color: var(--accent-text-clr);
+    border: none;
+    outline: none;
+}
+button.button,input[type="submit"].button{
+    border-radius: 3px;
+}
+.hidden{
+    display: none!important;
 }

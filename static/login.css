@@ -1,0 +1,78 @@
+section.login {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+section.login .desc h2 {
+    padding: 1rem 0;
+}
+
+section.login .login-box {
+    min-width: 325px;
+    width: 20%;
+    margin-left: 1rem;
+}
+
+section.login .login-box form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 2rem;
+}
+
+section.login .login-box form input {
+    width: 100%;
+}
+
+section.login .login-box form input {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+div.m-control {
+    padding: .5rem 0;
+    display: block;
+    position: relative;
+}
+
+div.m-control label[for].m-label {
+    font-size: 1em;
+}
+
+div.m-control input.m-input,
+div.m-control input.m-input:focus,
+div.m-control input.m-input:active {
+    border: none;
+    outline: none;
+}
+
+div.m-control input.m-input {
+    padding: .4rem;
+    border-bottom: 2px solid #cecece;
+}
+
+div.m-control label[for].m-label {
+    position: absolute;
+    top: 45%;
+    left: 2%;
+    font-size: 1rem;
+    transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    color: #cecece;
+}
+
+div.m-control input.m-input:focus,
+div.m-control input.m-input[hasValue] {
+    border-bottom: 2px solid var(--accent-clr-login);
+}
+
+div.m-control input.m-input:focus+label.m-label,
+div.m-control input.m-input[hasValue]+label.m-label {
+    top: 0%;
+    left: 0%;
+    color: var(--accent-clr-login);
+    font-size: 1.2rem;
+}

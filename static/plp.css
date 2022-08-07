@@ -1,0 +1,79 @@
+section.plp {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: stretch;
+    height: 100%;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+aside {
+    width: 20%;
+    min-width: 280px;
+}
+
+ul.product-category {
+    margin: 0;
+    padding: 0;
+    background: #eaeaea;
+}
+
+ul.product-category li {
+    padding: 1rem 2rem;
+    list-style: none;
+    border-bottom: 1px solid #d2d2d2;
+    margin-left: .4rem;
+}
+
+ul.product-category li a {
+    color: #757575;
+}
+
+ul.product-category li a:hover {
+    cursor: pointer;
+    color: inherit;
+}
+
+ul.product-category li:last-child {
+    border-bottom: none;
+}
+
+section.plp div.item-list {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: white;
+}
+
+section.plp div.item-list .item {
+    background: white;
+    display: flex;
+    flex-flow: column nowrap;
+    flex-basis: 250px;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    margin-right: .4rem;
+    padding: 1rem;
+}
+
+section.plp div.item-list .item img {
+    width: 100%;
+}
+
+section.plp div.item-list .item p {
+    padding: .5rem;
+    background-color: #eaeaea;
+    border-radius: .2rem;
+    margin-right: .3rem;
+}
+
+section.plp div.item-list .item div.bottom {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    border-bottom: 1px dotted;
+    margin-top: 1rem;
+}

@@ -2,65 +2,196 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabka Bazaar - Online Shopping Portal</title>
-    <link rel="stylesheet" href="index.css">
-    
-    <style>
-        *[border] {
-            border: 1px solid black;
-        }
-    </style>
-    <script src="index.js"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sabka Bazaar - Online Shopping Portal</title>
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="login.css">
+	<link rel="stylesheet" href="plp.css">
+
+	<style>
+		*[border] {
+			border: 1px solid black;
+		}
+	</style>
+
 </head>
 
 <body class="text-color-default bg-color-default">
-    <header>
-        <div  class="flex-content row">
-            <div class="log" >
-                <img src="../static/images/logo.png" alt="logo">
-            </div>
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#products">Products</a>
-            </nav>
-            <div class="cart-btn">
-                <div class="user-control">
-                    <a href="">Register</a>
-                    <a href="">SignIn</a>
-                </div>
-                <div class="cart-link">
-                    <a href="#cart"> [c] 0 Items</a>
-                </div>
-            </div>
-        </div>
-    </header>
+	<header>
+		<div class="flex-content row">
+			<div class="log">
+				<img src="images/logo.png" alt="logo">
+			</div>
+			<nav>
+				<a href="#home" onclick="UI('home')">Home</a>
+				<a href="#products" onclick="UI('products')">Products</a>
+			</nav>
+			<div class="cart-btn">
+				<div class="user-control">
+					<a href="#login" onclick="UI('signup')">Register</a>
+					<a href="#singup" onclick="UI('login')">SignIn</a>
+				</div>
+				<div class="cart-link">
+					<a href="#cart"> [c] 0 Items</a>
+				</div>
+			</div>
+		</div>
+	</header>
 
-        <main id="main">
-            <section aria-label="slide view of offers">
-                <div id="offers"></div>
-            </section>
-            <section aria-label="shopping" id="categories">
-                <div class="item-tile" template>
-                    <img src="../static/images/category/fruits.png" alt="fruit-and-veg">
-                    <div>
-                        <div>
-                            <h2 class="desc-item"><!--Fruits & Vegetables--></h2>
-                            <p class="desc-item"><!--A variety of fresh fruits and vegetables.--></p>
-                            <a class="desc-item button" href="#"><!--Explore fruit-and-veg--></a>
-                        </div>
-                    </div>
-                </div>                
-            </section>
-            <section class="cart"></section>
-        </main>
-        <footer class="bg-color-alt text-color-default">
-            <div>
-                <span>Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd.</span>
-            </div>
-        </footer>
+	<main id="main">
+		<section class="cart"></section>
+		<section class="plp" id="page-category" class="hidden">
+			<aside>
+				<ul class="product-category">
+					<li><a href="#link">Fruits & Vegetables</a></li>
+					<li><a href="#link">Fruits & Vegetables</a></li>
+					<li><a href="#link">Fruits & Vegetables</a></li>
+					<li><a href="#link">Fruits & Vegetables</a></li>
+					<li><a href="#link">Fruits & Vegetables</a></li>
+					<li><a href="#link">Fruits & Vegetables</a></li>
+				</ul>
+			</aside>
+			<div class="item-list">
+				<div class="item" template>
+					<h3> Coca Cola Soft Drink, 2x1.75 L</h3>
+					<img src="images/products/fruit-n-veg/kiwi-green.jpg" alt="kiwi">
+					<p>Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny,
+						edible
+						black seeds.</p>
+					<div class="bottom">
+						<span class="price">MRP Rs. 175</span>
+						<button class="button">Buy Now</button>
+					</div>
+				</div>
+				<div class="item" template>
+					<h3> Coca Cola Soft Drink, 2x1.75 L</h3>
+					<img src="images/products/fruit-n-veg/kiwi-green.jpg" alt="kiwi">
+					<p>Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny,
+						edible
+						black seeds.</p>
+					<div class="bottom">
+						<span class="price">MRP Rs. 175</span>
+						<button class="button">Buy Now</button>
+					</div>
+				</div>
+				<div class="item" template>
+					<h3> Coca Cola Soft Drink, 2x1.75 L</h3>
+					<img src="images/products/fruit-n-veg/kiwi-green.jpg" alt="kiwi">
+					<p>Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny,
+						edible
+						black seeds.</p>
+					<div class="bottom">
+						<span class="price">MRP Rs. 175</span>
+						<button class="button">Buy Now</button>
+					</div>
+				</div>
+				<div class="item" template>
+					<h3> Coca Cola Soft Drink, 2x1.75 L</h3>
+					<img src="images/products/fruit-n-veg/kiwi-green.jpg" alt="kiwi">
+					<p>Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny,
+						edible
+						black seeds.</p>
+					<div class="bottom">
+						<span class="price">MRP Rs. 175</span>
+						<button class="button">Buy Now</button>
+					</div>
+				</div>
+				<div class="item" template>
+					<h3> Coca Cola Soft Drink, 2x1.75 L</h3>
+					<img src="images/products/fruit-n-veg/kiwi-green.jpg" alt="kiwi">
+					<p>Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny,
+						edible
+						black seeds.</p>
+					<div class="bottom">
+						<span class="price">MRP Rs. 175</span>
+						<button class="button">Buy Now</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="offers-area" aria-label="slide view of offers">
+			<div id="offers"></div>
+		</section>
+		<section aria-label="Shopping" id="categories">
+			<div class="item-tile" template>
+				<img src="images/category/fruits.png" alt="fruit-and-veg">
+				<div>
+					<div>
+						<h2 class="desc-item">
+							<!--Fruits & Vegetables-->
+						</h2>
+						<p class="desc-item">
+							<!--A variety of fresh fruits and vegetables.-->
+						</p>
+						<a class="desc-item button" href="#">
+							<!--Explore fruit-and-veg-->
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="login hidden">
+			<div class="desc">
+				<h2>Login</h2>
+				<p>Get Access to your Orders, Whishlist and Recommendations</p>
+			</div>
+			<div class="login-box">
+				<form>
+					<div class="m-control">
+						<input class="m-input" type="email" name="email" id="email" required>
+						<label class="m-label" for="email">eMail</label>
+					</div>
+					<div class="m-control">
+						<input class="m-input" type="password" name="password" id="password" required>
+						<label class="m-label" for="password">Password</label>
+					</div>
+					<!-- <label for="password" aria-placeholder="Password" placeholder="Password">Password</label>
+					<input type="password" name="password" id="password"> -->
+					<input type="submit" class="button" value="Login">
+				</form>
+			</div>
+		</section>
+		<section class="login hidden">
+			<div class="desc">
+				<h2>Signup</h2>
+				<p>We do not share your personal details with anyone</p>
+			</div>
+			<div class="login-box">
+				<form>
+					<div class="m-control">
+						<input class="m-input" type="Firstname" name="Firstname" id="Firstname" required>
+						<label class="m-label" for="Firstname">First Name</label>
+					</div>
+					<div class="m-control">
+						<input class="m-input" type="LastName" name="LastName" id="LastName" required>
+						<label class="m-label" for="LastName">Last Name</label>
+					</div>
+					<div class="m-control">
+						<input class="m-input" type="email" name="nemail" id="nemail" required>
+						<label class="m-label" for="nemail">eMail</label>
+					</div>
+					<div class="m-control">
+						<input class="m-input" type="password" name="npassword" id="npassword" required>
+						<label class="m-label" for="npassword">Password</label>
+					</div>
+					<div class="m-control">
+						<input class="m-input" type="password" autocomplete="off" name="confirmpassword"
+							id="confirmpassword" required>
+						<label class="m-label" for="confirmpassword">Confirm Password</label>
+					</div>
+					<input type="submit" class="button" value="SignUp">
+				</form>
+			</div>
+		</section>
+	</main>
+	<footer class="bg-color-alt text-color-default">
+		<div>
+			<span>Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd.</span>
+		</div>
+	</footer>
 </body>
+<script src="index.js" defer></script>
 
 </html>
