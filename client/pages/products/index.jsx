@@ -53,7 +53,6 @@ export default function Product({ products, categories }) {
         <main className='product-view-container'>
             <SideBar categories={categories} onSelect={onSelect} selectedMenu={selectedMenu} />
             <ProductTable products={productData} />
-
         </main>
     )
 }

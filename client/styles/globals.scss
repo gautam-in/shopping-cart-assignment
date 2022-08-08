@@ -79,9 +79,7 @@ header {
   -moz-box-shadow: 0px 10px 10px -15px #111;
   box-shadow: 0px 10px 10px -15px #111;
 
-  img {
-    width: 500px;
-    height: 90%;
+  .image {
     background-color: red;
     order: 2;
   }
@@ -101,9 +99,7 @@ header {
   }
 
 
-  img {
-    width: 500px;
-    height: 90%;
+  .image {
     background-color: red;
     order: 1;
   }
@@ -134,7 +130,7 @@ header {
   }
 
   .product-list-container {
-    width: 80%;
+    // width: 80%;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
@@ -150,10 +146,13 @@ header {
     }
 
     .product-cell {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       height: 500px;
       width: 310px;
       margin-top: 30px;
-      position: relative;
+      padding-bottom: 10px;
       box-shadow: 1px 0px 3px $secondary-color;
       border-bottom: 0.12em dashed $secondary-color;
 
@@ -163,8 +162,6 @@ header {
 
       .desc-view {
         padding: 10px;
-        position: absolute;
-        bottom: 0;
 
         p {
           display: -webkit-box;
@@ -186,17 +183,27 @@ header {
           }
         }
       }
-
-      img {
-        height: 50%;
-        width: 100%;
-      }
     }
   }
 }
 
-@media only screen and (min-width: 300px) and (max-width: 648px) {
+@media only screen and (max-width: 600px) {
   .sidebar {
     display: none;
+  }
+
+  .product-cell {
+    height: 220px !important;
+    width: 100vw !important;
+
+    .product-mobile {
+      display: flex;
+      justify-content: space-between;
+
+      .primary {
+        width: 100%;
+      }
+    }
+
   }
 }
