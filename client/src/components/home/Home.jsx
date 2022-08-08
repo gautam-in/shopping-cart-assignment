@@ -47,7 +47,7 @@ const Home = () => {
               </div>
               <div>
                 <img
-                  src={process.env.PUBLIC_URL + `${imageUrl}`}
+                  src={imageUrl}
                   alt={"Category" + `${name} `}
                   height="200"
                   width="310"
@@ -59,7 +59,7 @@ const Home = () => {
             <>
               <div>
                 <img
-                  src={process.env.PUBLIC_URL + `${imageUrl}`}
+                  src={imageUrl}
                   alt={"Category" + `${name} `}
                   height="200"
                   width="310"
