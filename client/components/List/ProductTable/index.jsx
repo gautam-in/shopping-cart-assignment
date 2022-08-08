@@ -46,7 +46,7 @@ export default function ProductTable({ products = [] }) {
                     return (
                         <div key={`prod_${idx}`} className='product-cell'>
                             <h5>{name}</h5>
-                            <div class="product-mobile">
+                            <div className="product-mobile">
                                 <NextImage src={Logo} alt={name} width={596} height={196} />
                                 <section className='desc-view'>
                                     <p>{description}</p>

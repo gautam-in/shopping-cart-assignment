@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Helmet } from "react-helmet";
 import Container from 'react-bootstrap/Container';
 
 import Layout from '../components/Layout'
@@ -13,14 +14,18 @@ function MyApp({ Component, pageProps }) {
     }
   }, [])
 
-
-
   return (
-    // <Container>
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-    // </Container >
+    <>
+      <Helmet>
+        <html lang="en" ></html>
+      </Helmet>
+      <Container>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </Container>
+    </>
+
   )
 }
 
