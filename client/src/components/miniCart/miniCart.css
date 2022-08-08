@@ -1,0 +1,110 @@
+.cartHeader {
+  color: white;
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+  background-color: black;
+  border-radius: 0 !important;
+}
+.emptyCartContent {
+  position: absolute;
+  top: 170px;
+  left: 40px;
+}
+.modal-content {
+  border-radius: 0 !important;
+  border: none !important;
+  width: 300px !important;
+  height: 500px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+.modal-footer {
+  position: relative !important;
+  flex-direction: column;
+}
+.modal-footer .shopingCartButton {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(225, 12, 97, 0.957);
+  color: white;
+  border-color: rgba(225, 12, 97, 0.957);
+}
+.shopingCartButton.shopingCartFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-count {
+  font-size: medium;
+}
+.modal-body {
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  padding: 0rem !important;
+
+  overflow: auto;
+}
+.cart-container {
+  background-color: white;
+  display: flex;
+  margin-top: 5px;
+  flex-direction: row;
+}
+.cartitem-item-details {
+  display: flex;
+  position: relative;
+  flex: 1;
+  flex-direction: column;
+  margin: 0px 5px;
+}
+.cartitem-product-name {
+  position: absolute;
+  font-weight: bold;
+  font-size: small;
+  top: 2px;
+  left: 5px;
+}
+.cartitem-product-quantity {
+  position: absolute;
+  bottom: 10px;
+  left: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-text {
+  font-size: small;
+}
+.cartitem-product-price {
+  position: absolute;
+  bottom: 0px;
+  left: 60;
+}
+.cartitem-product-quantity .cartitem-qty-btn {
+  background-color: rgba(225, 12, 97, 0.957);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  margin: 0px 5px;
+}
+.cartitem-product-quantity .cartitem-qty-btn:hover {
+  background-color: rgba(225, 12, 97, 0.957);
+  border-color: rgba(225, 12, 97, 0.957);
+}
+.cartitem-qty-btn.btn-sm {
+  padding: 0rem 0.25rem;
+}
+.footer-tag {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 10px 10px;
+}
+.price-tagline {
+  font-size: small;
+}

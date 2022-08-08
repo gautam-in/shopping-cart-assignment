@@ -1,0 +1,47 @@
+.auth-container {
+  display: flex;
+  justify-content: space-between;
+  width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 70px;
+}
+.login-container {
+  display: flex;
+  flex-direction: column;
+  width: 275px;
+}
+.group {
+  position: relative;
+  margin: 30px 0;
+}
+.group .form-input-label {
+  position: absolute;
+  pointer-events: none;
+  bottom: 35px;
+}
+.group .form-input {
+  background: none;
+  background-color: white;
+  padding: 10px 10px 1px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(236, 226, 226, 0.813);
+  margin: 25px 0;
+}
+.group .form-input:focus {
+  outline: none;
+}
+.login-container .customSubmit {
+  background-color: rgba(225, 12, 97, 0.957);
+  border-radius: 0px;
+  width: 100%;
+  border-color: rgba(225, 12, 97, 0.957);
+}
+@media only screen and (max-width: 768px) {
+  .auth-container {
+    width: 500px;
+  }
+}
