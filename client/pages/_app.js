@@ -1,10 +1,12 @@
-import { useEffect } from 'react';
+import { createContext, useEffect } from 'react';
 import { Helmet } from "react-helmet";
 import Container from 'react-bootstrap/Container';
 
 import Layout from '../components/Layout'
 import { createDB, } from '../lib/indexDB';
 import '../styles/globals.scss'
+import { AppContext } from '../Context/cart-context';
+import CartState from '../Context/cart-state';
 
 
 function MyApp({ Component, pageProps }) {
@@ -15,7 +17,7 @@ function MyApp({ Component, pageProps }) {
   }, [])
 
   return (
-    <>
+    <CartState>
       <Helmet>
         <html lang="en" ></html>
       </Helmet>
@@ -24,8 +26,7 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </Layout>
       </Container>
-    </>
-
+    </CartState>
   )
 }
 

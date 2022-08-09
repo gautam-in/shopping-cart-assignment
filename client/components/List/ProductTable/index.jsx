@@ -1,23 +1,26 @@
 import React from 'react'
 import NextImage from 'next/image';
 import { addToCart } from '../../../lib/AJAX'
-import { addCartIndex, RetreiveCartIndex, updateCartIndex } from '../../../lib/indexDB'
+import { addCountCartIndex, addProductCartIndex, RetreiveCartIndex, updateCartIndex } from '../../../lib/indexDB'
 import { PrimaryButton } from '../../Button'
 import { Logo } from '../../../lib/Constant';
 import { useWindowSize } from '../../../hooks/useWindowSize';
+import { useContext } from 'react';
+import { CartContext } from '../../../Context/cart-state';
 
 export default function ProductTable({ products = [] }) {
     let { isMobile } = useWindowSize()
+    const context = useContext(CartContext)
 
     const onBuyNow = async (product) => {
         let { id, name, imageURL, price } = product
 
-        let res = await addToCart(id)
-        // alert(res?.responseMessage)
+        await addToCart(id)
+        context.increaseCartCount()
 
         RetreiveCartIndex(id, (data) => {
             if (data) {
-                updateCartIndex(id)
+                addCountCartIndex(id)
             } else {
                 let cartObj = {
                     c_id: id,
@@ -27,12 +30,9 @@ export default function ProductTable({ products = [] }) {
                     product_count: 1,
                     total_price: price
                 }
-                addCartIndex(cartObj)
+                addProductCartIndex(cartObj)
             }
         })
-
-
-
     }
 
     return (
@@ -47,7 +47,7 @@ export default function ProductTable({ products = [] }) {
                         <div key={`prod_${idx}`} className='product-cell'>
                             <h5>{name}</h5>
                             <div className="product-mobile">
-                                <NextImage src={Logo} alt={name} width={596} height={196} />
+                                <NextImage src={imageURL} alt={name} width={596} height={196} />
                                 <section className='desc-view'>
                                     <p>{description}</p>
                                     {isMobile ?

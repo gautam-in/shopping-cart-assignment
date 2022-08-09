@@ -1,9 +1,5 @@
 
 import Head from 'next/head'
-import Image from 'next/image'
-import { useEffect, useState } from 'react';
-import API from '../api';
-import { Action } from '../api/action';
 import Banner from '../components/Banner';
 import CategoryTable from '../components/List/CategoryTable';
 import { getBanners, getCategories } from '../lib/AJAX';

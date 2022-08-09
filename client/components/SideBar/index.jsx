@@ -6,13 +6,6 @@ export default function SideBar({ categories = [], onSelect = () => { }, selecte
     }
 
     return (
-
-        // <table>
-        //     <tr>a</tr>
-        //     <tr>a</tr>
-        //     <tr>a</tr>
-        //     <tr>a</tr>
-        // </table>
         <nav className='sidebar'>
             {
                 categories?.map(({ name, key, id }) => {

@@ -1,17 +1,34 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 import ProductTable from '../../components/List/ProductTable'
 import SideBar from '../../components/SideBar'
+import Cart from '../../components/Cart'
 
 import { getCategories, getProducts } from '../../lib/AJAX'
+import { RetriveCartList } from '../../lib/indexDB'
+import { CartContext } from '../../Context/cart-state'
 
 export default function Product({ products, categories }) {
+    let context = useContext(CartContext)
     const [selectedMenu, setSelectedMenu] = useState('')
     const [productData, setProductData] = useState(products)
+    const [cartProducts, setCartProducts] = useState([])
+
     const router = useRouter()
+
+    useEffect(() => {
+        setTimeout(() => {
+            RetriveCartList((result) => {
+                setCartProducts(result)
+            })
+        }, 1000);
+
+    })
+
 
     useEffect(() => {
         if (router?.query?.category) {
@@ -50,10 +67,21 @@ export default function Product({ products, categories }) {
     }
 
     return (
-        <main className='product-view-container'>
-            <SideBar categories={categories} onSelect={onSelect} selectedMenu={selectedMenu} />
-            <ProductTable products={productData} />
-        </main>
+        <>
+            <Head>
+                <title>Products</title>
+            </Head>
+            <main className='product-view-container'>
+                <SideBar categories={categories} onSelect={onSelect} selectedMenu={selectedMenu} />
+                <ProductTable products={productData} />
+                {context.cartOpened &&
+                    <Cart
+                        data={cartProducts}
+                        onHide={() => context.toggleCart(false)}
+                        onProceed={() => context.toggleCart(false)} />
+                }
+            </main>
+        </>
     )
 }
 

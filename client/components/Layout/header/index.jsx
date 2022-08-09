@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { createContext, memo, useContext } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import NextImage from 'next/image';
@@ -7,18 +7,20 @@ import Button from 'react-bootstrap/Button';
 import { RetriveCartList } from '../../../lib/indexDB';
 import { SecondaryButton } from '../../Button';
 import { Logo } from '../../../lib/Constant';
+import { CartContext } from '../../../Context/cart-state';
+
 
 const Header = memo((props) => {
-    const [cartItem, setCartItem] = useState(0)
+    // const [cartItem, setCartItem] = useState(0)
+
+    const [toggleCart, setToggleCart] = useState(false)
+    const context = useContext(CartContext)
+    const cartItem = context.cartCount || 0
 
     useEffect(() => {
-        setTimeout(() => {
-            RetriveCartList((result) => {
-                setCartItem(result.length)
-            })
-        }, 1000);
+        context.toggleCart(toggleCart)
+    }, [toggleCart])
 
-    })
 
     return (
         <header>
@@ -32,9 +34,9 @@ const Header = memo((props) => {
                     <a>Signin</a>
                     <a>Register</a>
                 </div>
-                <SecondaryButton title={`${cartItem} Items`}></SecondaryButton>
+                <SecondaryButton title={`${cartItem} Items`} onClick={() => setToggleCart(!toggleCart)} ></SecondaryButton>
             </section>
-        </header >
+        </header>
     );
 });
 

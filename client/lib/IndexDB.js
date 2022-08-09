@@ -38,7 +38,7 @@ function createIndex(cartOS) {
     cartOS.createIndex("total_price", "total_price", { unique: false })
 }
 
-export function addCartIndex(cartObj) {
+export function addProductCartIndex(cartObj) {
     // let id = Math.floor((Math.random() * 1000000) + 1);
     let txn = db.transaction(["cart"], "readwrite");
     let store = txn.objectStore("cart");
@@ -67,11 +67,11 @@ export function RetriveCartList(callback) {
     };
 }
 
-export function updateCartIndex(id) {
+export function addCountCartIndex(id) {
     let txn = db.transaction(["cart"], "readwrite");
     let store = txn.objectStore("cart");
 
-    store.openCursor().onsuccess = (event) => {
+    store.openCursor(id).onsuccess = (event) => {
         const cursor = event.target.result;
         if (cursor) {
             let cartObj = { ...cursor.value }
@@ -83,5 +83,45 @@ export function updateCartIndex(id) {
             };
         }
     }
+}
 
+
+export function removeCountCartIndex(id) {
+    debugger
+
+    let txn = db.transaction(["cart"], "readwrite");
+    let store = txn.objectStore("cart");
+
+    store.openCursor(id).onsuccess = (event) => {
+        const cursor = event.target.result
+        if (cursor) {
+            let cartObj = { ...cursor.value }
+            debugger
+            if (cartObj.product_count === 1) {
+                let req = store.delete(id); // inserting data in DB !
+                txn.oncomplete = () => {
+                    console.log('success');
+                };
+            } else {
+                cartObj['product_count'] = cartObj.product_count - 1
+                cartObj['total_price'] = (cartObj.product_count * cartObj.product_price)
+                const req = cursor.update(cartObj);
+                req.onsuccess = function (e) {
+                    console.log(e.target.result);
+                };
+            }
+
+        }
+    }
+}
+
+
+
+export function deleteCartIndex(id) {
+    let txn = db.transaction(["cart"], "readwrite");
+    let store = txn.objectStore("cart");
+    let req = store.delete(id); // inserting data in DB !
+    req.onsuccess = function (e) {
+        callback(e.target.result);
+    };
 }

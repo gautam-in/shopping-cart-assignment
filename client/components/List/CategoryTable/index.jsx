@@ -15,7 +15,7 @@ export default function CategoryTable({ categories = [] }) {
         categories?.map(({ name, description, key, imageUrl }, idx) => {
             return (
                 <section key={`cat_${idx}`} className={'category-cell'}>
-                    <div className='image'> <NextImage src={Logo} alt={name} width={500} height={252} /></div>
+                    <div className='image'> <NextImage src={imageUrl} alt={name} width={500} height={252} /></div>
                     <div className={'right-view'}>
                         <h3 className='text-center'>{name}</h3>
                         <p className='text-center'>{description}</p>
