@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }) {
       </Container>
       <footer>
         <div>
-          <p>Copyright 2011-2018 Sabka Bazaar Grocery Supplies Pvt. Ltd.</p>
+          <p>Copyright 2011-2018 Sabka Bazaar Grocery Supplies Pvt.</p>
         </div>
       </footer>
     </CartState>

@@ -42,6 +42,11 @@ footer {
 }
 
 header {
+  background-color: white;
+  position: fixed;
+  height: 100px;
+  width: 75%;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
@@ -57,7 +62,7 @@ header {
   }
 
   a {
-    padding: 10px;
+    padding: 0.3em;
 
     .active {
       color: $primary-color;
@@ -69,6 +74,13 @@ header {
     flex-direction: column;
     justify-content: space-around;
   }
+}
+
+.wrapper {
+  margin-top: 120px;
+  position: absolute;
+  top: 0px;
+  width: 75%;
 }
 
 .primary {
@@ -277,7 +289,6 @@ header {
           margin-left: 10px;
         }
 
-
         .primary {
           height: 30px;
           width: 30px;
@@ -357,6 +368,12 @@ header {
 
 
 @media only screen and (max-width: 600px) {
+
+  .wrapper,
+  header {
+    width: 95% !important;
+  }
+
   .product-view-container {
     display: grid;
 

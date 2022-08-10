@@ -6,16 +6,14 @@ import { getBanners, getCategories } from '../lib/AJAX';
 
 export default function Home({ categories, banners }) {
   return (
-    <div >
+    <main className='category-body'>
       <Head>
         <title>Sabka Bazar E-commerce App</title>
       </Head>
+      <Banner banners={banners} />
+      <CategoryTable categories={categories} />
+    </main>
 
-      <main className='category-body'>
-        <Banner banners={banners} />
-        <CategoryTable categories={categories} />
-      </main>
-    </div >
   )
 }
 
