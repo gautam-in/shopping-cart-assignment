@@ -2,7 +2,6 @@ import React from 'react'
 import NextImage from 'next/image'
 import { PrimaryButton } from '../../Button'
 import { useRouter } from 'next/router'
-import { Logo } from '../../../lib/Constant'
 
 export default function CategoryTable({ categories = [] }) {
     const router = useRouter()
@@ -20,7 +19,7 @@ export default function CategoryTable({ categories = [] }) {
                         <h3 className='text-center'>{name}</h3>
                         <p className='text-center'>{description}</p>
                         <div className='text-center'>
-                            <PrimaryButton title={` Explore ${key}`} onClick={() => onRedirectProduct(key)} />
+                            <PrimaryButton onClick={() => onRedirectProduct(key)}>{` Explore ${key}`}</PrimaryButton>
                         </div>
                     </div>
                 </section>

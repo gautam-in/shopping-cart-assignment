@@ -25,6 +25,22 @@ a {
   height: 300px;
 }
 
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+
+  div {
+    background-color: $secondary-color;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+
+  }
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -42,6 +58,10 @@ header {
 
   a {
     padding: 10px;
+
+    .active {
+      color: $primary-color;
+    }
   }
 
   .login-box {
@@ -66,6 +86,10 @@ header {
   border-radius: 5px;
   border: none;
   height: 40px;
+}
+
+.category-body {
+  margin-top: 20px;
 }
 
 .category-cell {
@@ -235,6 +259,15 @@ header {
       justify-content: space-between;
       overflow: auto;
 
+      .empty-cart {
+        display: grid;
+        place-items: center;
+        position: absolute;
+        left: 30%;
+        top: 50%;
+        align-content: center;
+      }
+
       .cart-cell {
         padding: 10px;
         display: flex;
@@ -244,9 +277,6 @@ header {
           margin-left: 10px;
         }
 
-        .counter {
-          display: block;
-        }
 
         .primary {
           height: 30px;
@@ -273,23 +303,90 @@ header {
       height: 50px;
     }
   }
+
 }
 
-@media only screen and (max-width: 600px) {
-  .sidebar {
-    display: none;
+.auth-layout {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 50px;
+
+  h1 {
+    margin-bottom: 30px;
   }
 
-  .product-cell {
-    height: 220px !important;
-    width: 100vw !important;
+  .register-form {
+    width: 40%;
 
-    .product-mobile {
+    .input-group {
+      display: grid;
+      margin-top: 20px;
+
+      label {
+        position: relative;
+        bottom: 35px;
+      }
+
+      input {
+        outline: 0;
+        border-width: 0 0 2px;
+        border-color: $secondary-color;
+        width: 100%;
+      }
+
+      input:focus {
+        border-color: $primary-color;
+      }
+
+      input:focus~label {
+        bottom: 55px;
+        color: $primary-color;
+      }
+
+      input:valid~label {
+        bottom: 55px;
+        color: $primary-color;
+      }
+    }
+  }
+
+
+
+}
+
+
+@media only screen and (max-width: 600px) {
+  .product-view-container {
+    display: grid;
+
+    .dropdown-toggle {
+      background-color: $primary-color;
+      width: 100%;
       display: flex;
       justify-content: space-between;
+      align-items: center;
 
-      .primary {
-        width: 100%;
+      button:focus {
+        outline: 0px;
+      }
+    }
+
+    .sidebar {
+      display: none;
+    }
+
+    .product-cell {
+      height: 220px !important;
+      width: 100vw !important;
+
+      .product-mobile {
+        display: flex;
+        justify-content: space-between;
+
+        .primary {
+          width: 100%;
+        }
       }
     }
   }

@@ -2,19 +2,18 @@ import React, { createContext, memo, useContext } from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import NextImage from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import Button from 'react-bootstrap/Button';
-import { RetriveCartList } from '../../../lib/indexDB';
 import { SecondaryButton } from '../../Button';
-import { Logo } from '../../../lib/Constant';
 import { CartContext } from '../../../Context/cart-state';
 
 
-const Header = memo((props) => {
-    // const [cartItem, setCartItem] = useState(0)
-
+const Header = memo(() => {
     const [toggleCart, setToggleCart] = useState(false)
     const context = useContext(CartContext)
+    const router = useRouter()
+
     const cartItem = context.cartCount || 0
 
     useEffect(() => {
@@ -24,17 +23,17 @@ const Header = memo((props) => {
 
     return (
         <header>
-            <NextImage src={Logo} alt="Sabka Bazar" width={190} height={86} />
+            <NextImage src={"/static/images/logo.png"} alt="Sabka Bazar" width={190} height={86} />
             <nav>
-                <a href="/">Home</a>
-                <a href="/products">Products</a>
+                <Link href="/"><a>Home</a></Link>
+                <Link href="/products"><a className={router.asPath.includes('product') ? 'active' : ''}>Products</a></Link>
             </nav>
             <section className='login-box'>
                 <div>
-                    <a>Signin</a>
-                    <a>Register</a>
+                    <Link href="/signin"><a>Signin</a></Link>
+                    <Link href="/register"><a>Register</a></Link>
                 </div>
-                <SecondaryButton title={`${cartItem} Items`} onClick={() => setToggleCart(!toggleCart)} ></SecondaryButton>
+                <SecondaryButton onClick={() => setToggleCart(!toggleCart)}>{`${cartItem} Items`}</SecondaryButton>
             </section>
         </header>
     );

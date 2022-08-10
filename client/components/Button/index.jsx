@@ -1,13 +1,24 @@
 import React from 'react';
 
-export function PrimaryButton({ title = "button", className = "", onClick = () => { } }) {
+export function PrimaryButton({ children = "button", type = "button", className = "", onClick = () => { } }) {
     return (
-        <button className={`primary ${className}`} onClick={onClick}>{title}</button>
+        <button
+            type={type}
+            className={`primary ${className}`}
+            onClick={onClick}
+        >
+            {children}
+        </button>
     )
 }
 
-export function SecondaryButton({ title = "button", className = "", onClick = () => { } }) {
+export function SecondaryButton({ children = "button", type = "button", className = "", onClick = () => { } }) {
     return (
-        <button className={`secondary ${className}`} onClick={onClick}>{title}</button>
+        <button
+            type={type}
+            className={`secondary ${className}`}
+            onClick={onClick}>
+            {children}
+        </button>
     )
 }

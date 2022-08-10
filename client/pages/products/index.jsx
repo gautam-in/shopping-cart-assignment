@@ -11,10 +11,16 @@ import Cart from '../../components/Cart'
 import { getCategories, getProducts } from '../../lib/AJAX'
 import { RetriveCartList } from '../../lib/indexDB'
 import { CartContext } from '../../Context/cart-state'
+import DropDown from '../../components/DropDown'
+import { useWindowSize } from '../../hooks/useWindowSize'
 
 export default function Product({ products, categories }) {
     let context = useContext(CartContext)
+    const { isMobile } = useWindowSize()
+
     const [selectedMenu, setSelectedMenu] = useState('')
+    const [selectedMenuItem, setSelectedMenuItem] = useState('All')
+
     const [productData, setProductData] = useState(products)
     const [cartProducts, setCartProducts] = useState([])
 
@@ -35,6 +41,7 @@ export default function Product({ products, categories }) {
             let category = categories.find((c) => c.key === router.query.category)
             filterProducts(category?.id)
             setSelectedMenu(category?.id)
+            setSelectedMenuItem(category?.name)
         }
     }, [router.query.category])
 
@@ -52,16 +59,17 @@ export default function Product({ products, categories }) {
     }
 
     const onSelect = (id) => {
+        let category = categories.find((c) => c.id === id)
         if (window.history.pushState) {
-            let category = categories.find((c) => c.id === id)
             var newurl = router.pathname + `/?category=${category.key}`;
             window.history.pushState({ path: newurl }, "", newurl)
         }
+
         if (selectedMenu === id) {
             setSelectedMenu('')
-
         } else {
             setSelectedMenu(id)
+            setSelectedMenuItem(category?.name)
 
         }
     }
@@ -69,10 +77,14 @@ export default function Product({ products, categories }) {
     return (
         <>
             <Head>
-                <title>Products</title>
+                <title>Sabka Bazar E-commerce App</title>
             </Head>
             <main className='product-view-container'>
                 <SideBar categories={categories} onSelect={onSelect} selectedMenu={selectedMenu} />
+                {isMobile
+                    &&
+                    <DropDown categories={categories} onSelect={onSelect} selectedMenu={selectedMenu} selectedMenuItem={selectedMenuItem} />
+                }
                 <ProductTable products={productData} />
                 {context.cartOpened &&
                     <Cart

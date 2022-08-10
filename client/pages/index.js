@@ -5,50 +5,16 @@ import CategoryTable from '../components/List/CategoryTable';
 import { getBanners, getCategories } from '../lib/AJAX';
 
 export default function Home({ categories, banners }) {
-  // const [categories, setCategories] = useState([])
-  // const [banners, setBanners] = useState([])
-
-  // useEffect(() => {
-  //   getCategories()
-  //   getBanners()
-  // }, [])
-
-  // let getCategories = async () => {
-  //   const api = new API(categories)
-  //   try {
-  //     let categories = await api.get(Action.categories)
-  //     setCategories(categories)
-  //   } catch (error) {
-  //     alert('Something went wrong !!')
-  //   }
-
-  // }
-
-  // let getBanners = async () => {
-  //   const api = new API(banners)
-  //   try {
-  //     let banners = await api.get(Action.banners)
-  //     setBanners(banners)
-  //   } catch (error) {
-  //     alert('Something went wrong !!')
-  //   }
-
-  // }
-
   return (
     <div >
       <Head>
         <title>Sabka Bazar E-commerce App</title>
       </Head>
 
-      <main>
+      <main className='category-body'>
         <Banner banners={banners} />
         <CategoryTable categories={categories} />
       </main>
-
-      <footer>
-
-      </footer>
     </div >
   )
 }

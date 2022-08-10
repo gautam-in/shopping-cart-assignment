@@ -3,7 +3,6 @@ import NextImage from 'next/image';
 import { addToCart } from '../../../lib/AJAX'
 import { addCountCartIndex, addProductCartIndex, RetreiveCartIndex, updateCartIndex } from '../../../lib/indexDB'
 import { PrimaryButton } from '../../Button'
-import { Logo } from '../../../lib/Constant';
 import { useWindowSize } from '../../../hooks/useWindowSize';
 import { useContext } from 'react';
 import { CartContext } from '../../../Context/cart-state';
@@ -47,7 +46,7 @@ export default function ProductTable({ products = [] }) {
                         <div key={`prod_${idx}`} className='product-cell'>
                             <h5>{name}</h5>
                             <div className="product-mobile">
-                                <NextImage src={imageURL} alt={name} width={596} height={196} />
+                                <NextImage src={imageURL} alt={name} width={310} height={236} />
                                 <section className='desc-view'>
                                     <p>{description}</p>
                                     {isMobile ?
@@ -55,7 +54,7 @@ export default function ProductTable({ products = [] }) {
                                         :
                                         <div className='price-view'>
                                             <span>MRP RS. <b>{price}</b></span>
-                                            <PrimaryButton className='buy-now' title={"Buy Now"} onClick={() => onBuyNow(product)}></PrimaryButton>
+                                            <PrimaryButton className='buy-now' onClick={() => onBuyNow(product)}>{"Buy Now"}</PrimaryButton>
                                         </div>}
                                 </section>
                             </div>
