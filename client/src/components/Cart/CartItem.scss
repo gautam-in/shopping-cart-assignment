@@ -1,0 +1,120 @@
+@import "../../scss-responsive/Mixins.scss";
+.cart-item {
+  display: flex;
+  padding: 20px 30px;
+  align-items: center;
+  background: #fff;
+  margin-top: 20px;
+  position: relative;
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 15px;
+  }
+  .image {
+    max-width: 100px;
+    max-height: 100px;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+  .remove-item {
+    background: #fab8b8;
+    border: 0;
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 20px;
+    color: #424242;
+    font-weight: bold;
+  }
+  .cart-item-desc {
+    flex: 1;
+    text-align: left;
+    .cart-text {
+      .counter {
+        display: flex;
+        input[type="number"] {
+          text-align: center;
+          max-width: 50px;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        .quantity,
+        .price-per-item {
+          line-height: 40px;
+          font-size: 20px;
+        }
+        .price-per-item {
+          .multiply {
+            margin: 0 20px;
+          }
+        }
+        .btn {
+          background: #bf2957;
+          border-radius: 5px;
+          color: #fff;
+          width: 26px;
+          height: 26px;
+          line-height: 19px;
+          display: inline-block;
+          padding: 0 0 4px 0;
+          font-size: 19px;
+          margin: 8px 15px 11px 15px;
+        }
+      }
+      display: flex;
+      .total {
+        margin-left: auto;
+        line-height: 40px;
+        font-size: 20px;
+      }
+    }
+    .input-validation {
+      padding: 0 0 0 16px;
+      color: red;
+    }
+  }
+}
+@include devices(mobile) {
+  .cart-item {
+    padding: 15px;
+    h3 {
+      margin-left: 8px;
+    }
+    .image {
+      flex: 0 0 70px;
+    }
+    .remove-item {
+      right: 15px;
+      font-size: 14px;
+    }
+    .cart-item-desc {
+      .cart-text {
+        .counter {
+          input[type='number']{
+            max-height: 28px;
+            align-self: center;
+            margin-top: -3px;
+          }
+          .price-per-item {
+            font-size: 15px;
+            .multiply {
+              margin: 0 5px;
+            }
+          }
+          .btn {
+            margin: 8px 8px 11px 8px;
+          }
+          input[type="number"] {
+            max-width: 30px;
+          }
+        }
+      }
+    }
+  }
+}

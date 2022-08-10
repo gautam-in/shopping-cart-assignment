@@ -1,0 +1,327 @@
+{
+  "categories": [
+    {
+      "id": 0,
+      "photo": "https://cdn.mos.cms.futurecdn.net/BdFw3fQfAcVKkHgsyu4JCN-1024-80.jpg.webp",
+      "name": "Fruits & vegitables",
+      "description": "A variety of fruits and vegetables",
+      "button": "Explore fruit-and-veg"
+    },
+    {
+      "id": 1,
+      "photo": "https://cdn.mos.cms.futurecdn.net/BdFw3fQfAcVKkHgsyu4JCN-1024-80.jpg.webp",
+      "name": "Bakery Cakes and Dairy",
+      "description": "The best cupcakes cookies, cakes, pies, cheesecakes, fresh bread, biscotti,muffins, bagels, fresh coffe, milk amd more.",
+      "button": "Explore bakery-cakes-dairy"
+    },
+    {
+      "id": 2,
+      "photo": "https://cdn.mos.cms.futurecdn.net/BdFw3fQfAcVKkHgsyu4JCN-1024-80.jpg.webp",
+      "name": "Beverages",
+      "description": "Our beverage department will ensure your fridge is always fully stocked. Shop for soda,juice,beer and more.",
+      "button": "Explore beverages"
+    },
+    {
+      "id": 3,
+      "photo": "https://cdn.mos.cms.futurecdn.net/BdFw3fQfAcVKkHgsyu4JCN-1024-80.jpg.webp",
+      "name": "Beauty and Hygiene",
+      "description": "Buy beauty and personal care products online in India at best prices",
+      "button": "Explore buauty-hygiene"
+    },
+    {
+      "id": 4,
+      "photo": "https://cdn.mos.cms.futurecdn.net/BdFw3fQfAcVKkHgsyu4JCN-1024-80.jpg.webp",
+      "name": "Baby Care",
+      "description": "Shop online for Baby Products, Diapers, Skin Care products, etc.",
+      "button": "Explore baby"
+    }
+  ],
+  "products": [
+    {
+      "id": 0,
+      "name": "Apples",
+      "photo": "https://www.bigbasket.com/media/uploads/p/l/30005030_9-fresho-grape-fruit-indian.jpg",
+      "detail": "3 pc (270-300g)",
+      "categoryId": 0,
+      "price": 87,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 1,
+      "name": "Fresh Kiwi",
+      "photo": "https://www.bigbasket.com/media/uploads/p/l/30005030_9-fresho-grape-fruit-indian.jpg",
+      "detail": "3 pc (270-300g)",
+      "categoryId": 0,
+      "price": 87,
+      "tag": "Regular",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 2,
+      "name": "Pomegranates",
+      "photo": "https://www.bigbasket.com/media/uploads/p/l/30005030_9-fresho-grape-fruit-indian.jpg",
+      "detail": "No Preservatives",
+      "categoryId": 0,
+      "price": 87,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 3,
+      "name": "Capsicum - Green 1 Kg",
+      "photo": "https://www.bigbasket.com/media/uploads/p/l/30005030_9-fresho-grape-fruit-indian.jpg",
+      "detail": "",
+      "categoryId": 0,
+      "price": 87,
+      "tag": "Demanding",
+      "available": "false",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 4,
+      "name": "Apples",
+      "photo": "https://www.bigbasket.com/media/uploads/p/l/30005030_9-fresho-grape-fruit-indian.jpg",
+      "detail": "",
+      "categoryId": 0,
+      "price": 87,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 5,
+      "name": "Chocolate Cake",
+      "photo": "https://www.janespatisserie.com/wp-content/uploads/2020/05/IMG_1062_1-scaled.jpg",
+      "detail": "No Eggs",
+      "categoryId": 1,
+      "price": 450,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 6,
+      "name": "Red valvet Cake",
+      "photo": "https://www.janespatisserie.com/wp-content/uploads/2020/05/IMG_1062_1-scaled.jpg",
+      "detail": "",
+      "categoryId": 1,
+      "price": 500,
+      "tag": "Regular",
+      "available": "false",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 7,
+      "name": "Cookies",
+      "photo": "https://www.janespatisserie.com/wp-content/uploads/2020/05/IMG_1062_1-scaled.jpg",
+      "detail": "10 pcs",
+      "categoryId": 1,
+      "price": 80,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 8,
+      "name": "Toast",
+      "photo": "https://www.janespatisserie.com/wp-content/uploads/2020/05/IMG_1062_1-scaled.jpg",
+      "detail": "20 pcs (No Rusk)",
+      "categoryId": 1,
+      "price": 60,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 9,
+      "name": "Cupcakes",
+      "photo": "https://www.janespatisserie.com/wp-content/uploads/2020/05/IMG_1062_1-scaled.jpg",
+      "detail": "4 pcs",
+      "categoryId": 1,
+      "price": 200,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 10,
+      "name": "Soda",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuEHCqZoUCOGWvE5sk3aXZeR-74lqVS1OEig&usqp=CAU",
+      "detail": "6 bottles",
+      "categoryId": 2,
+      "price": 60,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 11,
+      "name": "Lemonade",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuEHCqZoUCOGWvE5sk3aXZeR-74lqVS1OEig&usqp=CAU",
+      "detail": "1 bottle",
+      "categoryId": 2,
+      "price": 20,
+      "tag": "Regular",
+      "available": "false",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 12,
+      "name": "Real Juice (Orange)",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuEHCqZoUCOGWvE5sk3aXZeR-74lqVS1OEig&usqp=CAU",
+      "detail": "1 pcs Tetrapack",
+      "categoryId": 2,
+      "price": 80,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 13,
+      "name": "Kingfisher beer",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuEHCqZoUCOGWvE5sk3aXZeR-74lqVS1OEig&usqp=CAU",
+      "detail": "6 pcs",
+      "categoryId": 2,
+      "price": 600,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 14,
+      "name": "Budwiser",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuEHCqZoUCOGWvE5sk3aXZeR-74lqVS1OEig&usqp=CAU",
+      "detail": "6 pcs",
+      "categoryId": 2,
+      "price": 700,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 15,
+      "name": "Body Lotion (100g)",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9Ota7ouAzx589x_ikDJi5OLs9Y6PNqIFrc6Li2ryKln4u7w1oTrkBkfY9GPtpyGPOwv0&usqp=CAU",
+      "detail": "Dry",
+      "categoryId": 3,
+      "price": 60,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 16,
+      "name": "Sunscereen Lotion",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9Ota7ouAzx589x_ikDJi5OLs9Y6PNqIFrc6Li2ryKln4u7w1oTrkBkfY9GPtpyGPOwv0&usqp=CAU",
+      "detail": "No smell",
+      "categoryId": 3,
+      "price": 100,
+      "tag": "Regular",
+      "available": "false",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 17,
+      "name": "Hand Sanitizer 1 Ltr",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9Ota7ouAzx589x_ikDJi5OLs9Y6PNqIFrc6Li2ryKln4u7w1oTrkBkfY9GPtpyGPOwv0&usqp=CAU",
+      "detail": "",
+      "categoryId": 3,
+      "price": 120,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 18,
+      "name": "Nail paint remover 50g",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9Ota7ouAzx589x_ikDJi5OLs9Y6PNqIFrc6Li2ryKln4u7w1oTrkBkfY9GPtpyGPOwv0&usqp=CAU",
+      "detail": "1 pcs",
+      "categoryId": 3,
+      "price": 70,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 19,
+      "name": "Facepack",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9Ota7ouAzx589x_ikDJi5OLs9Y6PNqIFrc6Li2ryKln4u7w1oTrkBkfY9GPtpyGPOwv0&usqp=CAU",
+      "detail": "3 sachets",
+      "categoryId": 3,
+      "price": 30,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 20,
+      "name": "Pampers Diapers (180 pcs)",
+      "photo": "https://rukminim1.flixcart.com/image/612/612/l12h1u80/diaper/6/7/4/-original-imagcpvzrghqdwhs.jpeg?q=70",
+      "detail": "Premium",
+      "categoryId": 4,
+      "price": 2000,
+      "tag": "Regular",
+      "available": "false",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 21,
+      "name": "Body shower (Liquied)",
+      "photo": "https://rukminim1.flixcart.com/image/612/612/l12h1u80/diaper/6/7/4/-original-imagcpvzrghqdwhs.jpeg?q=70",
+      "detail": "700g",
+      "categoryId": 4,
+      "price": 300,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 22,
+      "name": "Hiegen Pack (5 items)",
+      "photo": "https://rukminim1.flixcart.com/image/612/612/l12h1u80/diaper/6/7/4/-original-imagcpvzrghqdwhs.jpeg?q=70",
+      "detail": "complete hyegene",
+      "categoryId": 4,
+      "price": 70,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    },
+    {
+      "id": 23,
+      "name": "Nail cutter (1 pc)",
+      "photo": "https://rukminim1.flixcart.com/image/612/612/l12h1u80/diaper/6/7/4/-original-imagcpvzrghqdwhs.jpeg?q=70",
+      "detail": "Baby size",
+      "categoryId": 4,
+      "price": 30,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "name": "Nail cutter (1 pc)",
+      "photo": "https://www.bigbasket.com/media/uploads/p/l/30005030_9-fresho-grape-fruit-indian.jpg",
+      "detail": "Baby size",
+      "categoryId": 4,
+      "quantity": 1,
+      "price": 30,
+      "tag": "",
+      "available": "true",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget aliquam lorem. Mauris tempor sagittis est, at interdum odio auctor suscipit. Morbi ac lectus eget purus scelerisque congue et nec velit. Aliquam quis commodo mi. Phasellus facilisis, diam pulvinar varius viverra, tortor augue tempor magna, in suscipit magna urna nec libero. Morbi quis tempus magna. Proin in dolor velit. Fusce tempor massa purus, et commodo mauris tempor eget."
+    }
+  ],
+  "users": [
+    {
+      "firstName": "Hiren",
+      "lastName": "Chauhan",
+      "email": "hirenc544@gmail.com",
+      "password": "test"
+    }
+  ]
+}
