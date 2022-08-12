@@ -68,9 +68,7 @@ export default function TextBox({ title = "textbox", id = "textbox", type = "tex
                 }
             </div>
         )
-    }
-
-    if (id === "confirmPassword") {
+    } else if (id === "confirmPassword") {
         return (
             <div className='input-group'>
                 <input
@@ -84,12 +82,12 @@ export default function TextBox({ title = "textbox", id = "textbox", type = "tex
                 <p>{confirmPassErr}</p>
             </div>
         )
+    } else {
+        return (
+            <div className='input-group'>
+                <input id={id} type={type} required aria-required />
+                <label htmlFor={id}>{title}</label>
+            </div>
+        )
     }
-
-    return (
-        <div className='input-group'>
-            <input id={id} type={type} required aria-required />
-            <label htmlFor={id}>{title}</label>
-        </div>
-    )
 }

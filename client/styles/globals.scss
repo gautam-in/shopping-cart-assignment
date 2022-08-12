@@ -9,6 +9,8 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow: hidden;
+  height: 100vh;
 
 }
 
@@ -29,16 +31,13 @@ footer {
   position: fixed;
   bottom: 0px;
   width: 100%;
-
-  div {
-    background-color: $secondary-color;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: flex-end;
-
-  }
+  background-color: $secondary-color;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  padding: 10px;
 }
 
 header {
@@ -81,6 +80,8 @@ header {
   position: absolute;
   top: 0px;
   width: 75%;
+  overflow-y: auto;
+  height: 80vh;
 }
 
 .primary {
@@ -141,6 +142,9 @@ header {
 
 .product-view-container {
   display: flex;
+  // display: grid;
+  // grid-template-columns: 30% 70%;
+  // grid-template-rows: 100%;
 
   .sidebar {
     width: 25%;
@@ -170,7 +174,7 @@ header {
     gap: 15px;
     margin-left: 10px;
     overflow: auto;
-    height: 100vh;
+    height: 80vh;
 
     .not-found {
       height: 100%;
@@ -361,9 +365,6 @@ header {
       }
     }
   }
-
-
-
 }
 
 
@@ -372,6 +373,10 @@ header {
   .wrapper,
   header {
     width: 95% !important;
+  }
+
+  footer {
+    display: none;
   }
 
   .product-view-container {
@@ -383,6 +388,8 @@ header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      z-index: 1;
+      margin-bottom: 10px;
 
       button:focus {
         outline: 0px;

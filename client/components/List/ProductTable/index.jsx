@@ -50,12 +50,13 @@ export default function ProductTable({ products = [] }) {
                                 <section className='desc-view'>
                                     <p>{description}</p>
                                     {isMobile ?
-                                        <PrimaryButton className='buy-now' title={`Buy Now @ RS.${price}`} onClick={() => onBuyNow(product)}></PrimaryButton>
+                                        <PrimaryButton className='buy-now' onClick={() => onBuyNow(product)}>{`Buy Now @ RS.${price}`}</PrimaryButton>
                                         :
                                         <div className='price-view'>
                                             <span>MRP RS. <b>{price}</b></span>
                                             <PrimaryButton className='buy-now' onClick={() => onBuyNow(product)}>{"Buy Now"}</PrimaryButton>
-                                        </div>}
+                                        </div>
+                                    }
                                 </section>
                             </div>
                         </div>

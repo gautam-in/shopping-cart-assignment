@@ -13,10 +13,7 @@ export default function Signin() {
                 <title>Sign In</title>
             </Head>
             <AuthLayout>
-                <form onSubmit={() => {
-                    debugger
-                    router.push("/")
-                }}>
+                <form action='/'>
                     <TextBox
                         title="Email"
                         type="email"
