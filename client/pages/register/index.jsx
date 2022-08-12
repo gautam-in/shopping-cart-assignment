@@ -13,7 +13,7 @@ export default function Rsgiter() {
                 <title>Register</title>
             </Head>
             <AuthLayout>
-                <form onSubmit={() => router.push("/")}>
+                <form action="/">
                     <TextBox
                         title="First Name"
                         id="firstname" />

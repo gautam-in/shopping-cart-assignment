@@ -1,5 +1,13 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
+@font-face {
+  font-family: "Dosis";
+  src: url("https://fonts.googleapis.com/css?family=Dosis:400,600,700");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 $primary-color: rgb(175, 66, 88);
 $secondary-color: rgb(238, 238, 238);
 
@@ -7,8 +15,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Dosis";
   overflow: hidden;
   height: 100vh;
 
@@ -287,10 +294,10 @@ header {
       .cart-cell {
         padding: 10px;
         display: flex;
-        padding: 10px;
 
         .right-view {
           margin-left: 10px;
+          width: 100%;
         }
 
         .primary {
@@ -408,6 +415,10 @@ header {
         display: flex;
         justify-content: space-between;
 
+        .desc-view {
+          width: 180%;
+        }
+
         .primary {
           width: 100%;
         }
@@ -424,5 +435,10 @@ header {
     .body {
       height: 87vh;
     }
+  }
+
+  .register-form {
+    width: 100% !important;
+    margin-top: 30px;
   }
 }
