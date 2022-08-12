@@ -4,6 +4,7 @@
   "description": "This is a shopping cart coding exercise",
   "main": "index.js",
   "scripts": {
+    "preinstall": "npm install --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "canned -p 5000 ./server",
     "client": "npm run dev --prefix client",
