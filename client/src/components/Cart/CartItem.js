@@ -63,7 +63,7 @@ function CartItem({ cartItem }) {
   return (
     <div className="cart-item">
       <div className="image">
-        <img src={cartItem.photo} alt="" />
+        <img src={cartItem.photo} alt={cartItem.name} />
       </div>
       <div className="cart-item-desc">
         <h3>{cartItem.name}</h3>

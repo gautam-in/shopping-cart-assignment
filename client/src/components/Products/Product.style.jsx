@@ -12,8 +12,8 @@ export const ProductSection = styled.div`
         text-align:left;
     }
     img{
-        max-width:100%;
-        max-height:199px;
+        width:100%;
+        height:199px;
         min-height: 199px;
         object-fit: contain;
     }

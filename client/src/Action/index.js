@@ -17,12 +17,17 @@ export const BASE_URL = "http://127.0.0.1:5000";
 // export const BASE_URL_ASSETS = "http://localhost:5000";
 export const fetchBannerAction = () => async (dispatch) => {
   const banners = await axios.get(BASE_URL + "/banners");
+  // console.log("banners",banners);
   dispatch({
     type: actionTypes.FETCH_BANNERS,
     payload: banners.data
   })
+  // return {
+  //   type: actionTypes.FETCH_BANNERS,
+  //   payload: banners.data
+  // }
   // console.log("banners",banners);
-}
+};
 export const fetchCategoriesAction = () => async (dispatch) => {
   const categories = await axios.get(BASE_URL + "/categories");
   dispatch({

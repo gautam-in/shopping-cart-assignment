@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 export const LinkCss = styled(NavLink)`
     text-decoration: none;
-    color: #989898;
+    color: #4e4e4e;
     background: none;
     padding: 10px 10px 10px 30px;
     border-bottom: 1px solid #bebebe;

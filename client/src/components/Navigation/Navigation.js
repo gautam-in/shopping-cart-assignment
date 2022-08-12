@@ -41,14 +41,14 @@ function Navigation() {
       <div className="container">
         <div className="main-nav d-flex w-100">
           <Link className="Logo" to="/">
-            <img src={Logo} />
+            <img src={Logo} alt="Sabka bazaar logo"/>
           </Link>
           <div className="menu">
             <Link to="/">Home</Link>
             <Link to="/products">Products</Link>
           </div>
           <div className="cart " ref={cartRef} onClick={toggleSidebar}>
-            <img src={Cart} />{" "}
+            <img src={Cart} alt="cart"/>{" "}
             <span>
               {cartTotalItems()} {cartTotalItems() <= 1 ? "Item" : "Items"}
             </span>

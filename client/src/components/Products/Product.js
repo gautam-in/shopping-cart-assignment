@@ -25,7 +25,7 @@ function Product({ product }) {
   return (
     <ProductSection className="product" key={product.id}>
       <h3>{product.name}</h3>
-      <img src={product.imageURL} />
+      <img src={product.imageURL} alt={product.name}/>
       <p className="description">{product.description}</p>
       <div className="d-flex justify-content-between price-action">
         <span>MRP Rs {product.price}</span>

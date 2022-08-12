@@ -20,7 +20,7 @@ function HomeCarousel() {
   return (
     <CarouselItem className="banners">
         <Carousel>
-          {bannersSelect.map((banner) => <Carousel.Item>
+          {bannersSelect.map((banner) => <Carousel.Item key={banner.id}>
               <img
                 className="d-block w-100"
                 src={banner.bannerImageUrl}

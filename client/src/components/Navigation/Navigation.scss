@@ -34,7 +34,8 @@
     text-align: left;
     align-self: center;
     img {
-      max-width: 173px;
+      width: 173px;
+      height: 80px;
     }
   }
   .menu {
@@ -53,7 +54,8 @@
     position: relative;
     cursor: pointer;
     img {
-      max-width: 30px;
+      width: 30px;
+      height: 30px;
     }
   }
   .sidebar {

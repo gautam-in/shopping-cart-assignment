@@ -46,7 +46,7 @@ function Category({ category, index }) {
             <div className="category-desc">
               <h3>{category.name}</h3>
               <p>{category.description}</p>
-              <ButtonPink className="category-button">
+              <ButtonPink className="category-button" onClick={redirectToCategory}>
                 {"Explore " + convertCaegoryHyphened(category.name)}
               </ButtonPink>
             </div>
