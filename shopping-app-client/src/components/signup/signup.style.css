@@ -1,0 +1,31 @@
+.signup{
+    display: flex;
+    padding: 2px 120px;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+}
+
+.sign-up_text{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    margin-top: 60px;
+}
+
+.sign-up_form{
+    margin-top: 60px;
+}
+
+
+
+@media only screen and (max-width: 890px) {
+    .signup{
+        gap: 1px;
+        
+    }   
+    .sign-up_form{
+        margin-top: 1px;
+    }
+    
+}

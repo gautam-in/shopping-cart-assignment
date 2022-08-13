@@ -1,13 +1,24 @@
-import logo from './logo.svg';
+import  Header  from "./components/header/Header";
+import Register from "./components/signup/Register";
 import './App.css';
-import { BrowserRouter as Router , Route  } from "react-router-dom";
-import  Register  from './components/Register';
-
-function App() {
+import { Routes , Route  } from 'react-router-dom'
+import Home from "./components/home/Home";
+import Footer from "./components/footer/Footer";
+import PLP from "./components/plp/PLP";
+function  App() {
   return (
-    <Router>
-      <Route path='/register' component={Register} />
-    </Router>
+    <>
+    <Header/>
+    <Routes>
+      <Route path='/register' element={<Register/>} />
+      <Route path='/products' element={<PLP/>} />
+      
+      <Route path='/' element={<Home/>} />
+    </Routes>
+    <Footer/>
+    </>
+    
+    
   );
 }
 

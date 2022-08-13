@@ -1,0 +1,37 @@
+
+.product_category{
+    display: flex;
+    margin-bottom: 3px;
+    box-shadow: 5px 5px 5px gray;
+    padding:  5rem  2rem ;
+    gap: 8rem;
+    
+}
+
+
+
+.product_details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.category_description{
+    max-width: 300px;
+}
+
+.product__image_container{
+    height: 200px;
+    width: 200px;
+}
+@media screen and (max-width:638px) {
+    .product_category{
+        gap: 5px;
+        
+    }
+    .product__image_container{
+        height: 150px;
+        width: 150px;
+    }   
+}
