@@ -57,33 +57,33 @@ export const sliceGenerator: PlopGeneratorConfig = {
 
     actions.push({
       type: 'add',
-      path: `${slicePath}/index.ts`,
+      path: `${slicePath}/index.tsx`,
       templateFile: './slice/index.ts.hbs',
       abortOnFail: true,
     });
 
     actions.push({
       type: 'add',
-      path: `${slicePath}/Loadable.ts`,
+      path: `${slicePath}/Loadable.tsx`,
       templateFile: './slice/Loadable.ts.hbs',
       abortOnFail: true,
     });
 
     actions.push({
       type: 'add',
-      path: `${slicePath}/slice.ts`,
+      path: `${slicePath}/slice.tsx`,
       templateFile: './slice/slice.ts.hbs',
       abortOnFail: true,
     });
     actions.push({
       type: 'add',
-      path: `${slicePath}/selectors.ts`,
+      path: `${slicePath}/selectors.tsx`,
       templateFile: './slice/selectors.ts.hbs',
       abortOnFail: true,
     });
     actions.push({
       type: 'add',
-      path: `${slicePath}/types.ts`,
+      path: `${slicePath}/types.tsx`,
       templateFile: './slice/types.ts.hbs',
       abortOnFail: true,
     });
@@ -104,7 +104,7 @@ export const sliceGenerator: PlopGeneratorConfig = {
     if (answers.wantSaga) {
       actions.push({
         type: 'add',
-        path: `${slicePath}/saga.ts`,
+        path: `${slicePath}/saga.tsx`,
         templateFile: './slice/saga.ts.hbs',
         abortOnFail: true,
       });
