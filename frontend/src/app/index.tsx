@@ -12,8 +12,12 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import { GlobalStyle } from 'styles/global-styles';
 
-import { HomePage } from './pages/HomePage/Loadable';
-import { NotFoundPage } from './components/NotFoundPage/Loadable';
+import { HomePage } from 'app/pages/HomePage/Loadable';
+import { SignUp } from 'app/pages/SignUp/Loadable';
+import { NotFoundPage } from 'app/components/NotFoundPage/Loadable';
+import { NavBar } from 'app/components/NavBar/Loadable';
+import { Footer } from 'app/components/Footer/Loadable';
+
 import { useTranslation } from 'react-i18next';
 
 export function App() {
@@ -21,17 +25,20 @@ export function App() {
   return (
     <BrowserRouter>
       <Helmet
-        titleTemplate="%s - React Boilerplate"
-        defaultTitle="React Boilerplate"
+        prioritizeSeoTags
+        titleTemplate="%s - Sabka Bazaar Grocery Supplies"
+        defaultTitle="Sabka Bazaar Grocery Supplies"
         htmlAttributes={{ lang: i18n.language }}
       >
-        <meta name="description" content="A React Boilerplate application" />
+        <meta name="description" content="A Sabka Bazaar Grocery Supplies Application" />
       </Helmet>
-
+      <NavBar />
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/signUp" component={SignUp} />
         <Route component={NotFoundPage} />
       </Switch>
+      <Footer />
       <GlobalStyle />
     </BrowserRouter>
   );

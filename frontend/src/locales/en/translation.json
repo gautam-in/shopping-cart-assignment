@@ -1,3 +1,12 @@
 {
-  "title": "welcome"
+  "title": "welcome",
+  "home":"Home",
+  "product": "Products",
+  "signIn":"SignIn",
+  "register":"Register",
+  "items":"items",
+  "signUp":"Signup",
+  "signUpDesc":"We donot share your personal details with anyone.",
+  "footer":"Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Pvt. Ltd",
+  "altText": "Sabka Bazaar Grocery Supplies"
 }

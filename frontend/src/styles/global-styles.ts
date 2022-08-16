@@ -1,4 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
+import { fontFace, between } from 'polished'
+
 
 export const GlobalStyle = createGlobalStyle`
   html,
@@ -8,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Dosis;
   }
 
   #root {
@@ -18,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
 
   p,
   label {
-    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-family: Dosis;
     line-height: 1.5em;
   }
 
