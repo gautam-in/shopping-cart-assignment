@@ -4,13 +4,15 @@ import axios from 'axios'
 import { useState } from 'react'
 import './plp.style.css'
 import CustomButton from '../customButton/CustomButton'
+import { useDispatch } from 'react-redux'
+import { addItemToCart } from '../../actions/cart'
 const PLP = () => {
 
     const [ categories , setCategories ] = useState([]);
     const [ products , setProducts ] = useState([]);
     const [filteredProducts,setFilteredproducts] = useState([]);
     const [selectedCategory,setSelectedCategory] = useState('')
-
+    const dispatch = useDispatch();
 
     
 
@@ -67,14 +69,12 @@ const PLP = () => {
                         </div>
 
                     <div className='add-to-cart_button--container'>
-                    <CustomButton>Buy Now</CustomButton>
+                    <CustomButton handleClick={dispatch(addItemToCart(product))}>Buy Now</CustomButton>
                     </div>
 
                     </div>   
 
-                    {/* <CustomButton>
-                        Add to Cart
-                    </CustomButton> */}
+                    
 
                 </div>
             })
