@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "11.10.0",
+    "@emotion/styled": "11.10.0",
+    "@mui/material": "5.10.0",
     "@reduxjs/toolkit": "1.7.1",
     "@testing-library/jest-dom": "5.16.1",
     "@testing-library/react": "12.1.2",
@@ -26,6 +29,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react-hooks": "4.3.0",
     "fontfaceobserver": "2.1.0",
+    "formik": "2.2.9",
     "husky": "7.0.4",
     "i18next": "21.6.6",
     "i18next-browser-languagedetector": "6.1.2",
@@ -60,7 +64,8 @@
     "stylelint-processor-styled-components": "1.10.0",
     "ts-node": "10.4.0",
     "typescript": "4.5.4",
-    "web-vitals": "2.1.2"
+    "web-vitals": "2.1.2",
+    "yup": "0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",
