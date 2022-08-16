@@ -1,0 +1,10 @@
+/**
+ * Asynchronously loads the component for {{ properCase sliceName }}
+ */
+
+import { lazyLoad } from 'utils/loadable';
+
+export const {{ properCase sliceName }} = lazyLoad(
+  () => import('./index'),
+  module => module.{{ properCase sliceName }},
+);

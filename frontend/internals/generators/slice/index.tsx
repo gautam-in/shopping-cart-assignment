@@ -48,7 +48,7 @@ export const sliceGenerator: PlopGeneratorConfig = {
   actions: data => {
     const answers = data as Answers;
 
-    const slicePath = `${baseGeneratorPath}/${answers.path}/slice`;
+    const slicePath = `${baseGeneratorPath}/${answers.path}/${answers.sliceName}`;
 
     if (pathExists(slicePath)) {
       throw new Error(`Slice '${answers.sliceName}' already exists`);
@@ -59,6 +59,20 @@ export const sliceGenerator: PlopGeneratorConfig = {
       type: 'add',
       path: `${slicePath}/index.ts`,
       templateFile: './slice/index.ts.hbs',
+      abortOnFail: true,
+    });
+
+    actions.push({
+      type: 'add',
+      path: `${slicePath}/Loadable.ts`,
+      templateFile: './slice/Loadable.ts.hbs',
+      abortOnFail: true,
+    });
+
+    actions.push({
+      type: 'add',
+      path: `${slicePath}/slice.ts`,
+      templateFile: './slice/slice.ts.hbs',
       abortOnFail: true,
     });
     actions.push({
