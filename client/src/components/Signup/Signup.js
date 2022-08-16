@@ -69,7 +69,7 @@ function Signup() {
                 <Form.Control
                   type="text"
                   placeholder=""
-                  defaultValue="Hiren"
+                  defaultValue=""
                   name="firstname"
                   required
                 />
@@ -83,7 +83,7 @@ function Signup() {
               <Form.Group className="form-group mb-4" controlId="lastname">
                 <Form.Control
                   type="text"
-                  defaultValue="Chauhan"
+                  defaultValue=""
                   placeholder=""
                   name="lastname"
                   required
@@ -143,7 +143,7 @@ function Signup() {
                 <Form.Control
                   type="password"
                   placeholder=""
-                  defaultValue="Hiren"
+                  defaultValue=""
                   name="confirmPassword"
                   onBlur={validatePassword}
                   required

@@ -93,10 +93,10 @@ export const addToCartAction =
   }
   export const addRandomProductsAction = (cartItems, productToUpdate, quantity) => {
     let cartItemsUpdated;
-    const updateProduct = {
-      ...productToUpdate,
-      quantity
-    }
+    // const updateProduct = {
+    //   ...productToUpdate,
+    //   quantity
+    // }
     cartItemsUpdated = cartItems.map(
       (cartItem) => cartItem.id === productToUpdate.id ? {...cartItem,quantity} : cartItem
     );

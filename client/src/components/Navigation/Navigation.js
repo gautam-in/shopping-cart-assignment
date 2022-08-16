@@ -1,39 +1,26 @@
 import React, { useRef, useState } from "react";
-import { shallowEqual, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/images/logo.png";
 import Cart from "../../assets/images/cart.png";
 import Sidebar from "../Cart/Sidebar";
 import "./Navigation.scss";
-const cartStore = (state) => state.cartItems.cartItems;
+import { cartTotalItemsSelect } from "../../Selectors/Cart.selector";
+
+// const cartStore = (state) => state.cartItems.cartItems;
 
 function Navigation() {
-  const cartSelect = useSelector(cartStore, shallowEqual);
+  // const cartSelect = useSelector(cartStore);
+  const cartTotalItems = useSelector(cartTotalItemsSelect);
   const [openSidebar, setOpenSidebar] = useState(false);
-  // const [sidebarClick,setSidebarClick] = useState(false)
-  const [x, setX] = useState();
-  const [y, setY] = useState();
+
   const cartRef = useRef();
-  const getPosition = () => {
-    const x = cartRef.current.offsetLeft;
-    setX(x);
-    const y = cartRef.current.offsetTop;
-    setY(y);
-  };
-  const cartTotalItems = () => {
-    const totalItems = cartSelect.reduce(
-      (total, cartItem) =>
-        total + cartItem.quantity,
-      0
-    );
-    return totalItems;
-  };
+
   function toggleSidebar() {
     setOpenSidebar(!openSidebar);
     document.getElementsByTagName("BODY")[0].style.overflow = openSidebar
       ? "auto"
       : "hidden";
-    getPosition();
   }
 
   return (
@@ -50,7 +37,7 @@ function Navigation() {
           <div className="cart " ref={cartRef} onClick={toggleSidebar}>
             <img src={Cart} alt="cart"/>{" "}
             <span>
-              {cartTotalItems()} {cartTotalItems() <= 1 ? "Item" : "Items"}
+              {cartTotalItems} {cartTotalItems <= 1 ? "Item" : "Items"}
             </span>
           </div>
         </div>

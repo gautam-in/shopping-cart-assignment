@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Navigation from './components/Navigation/Navigation';
+import "./App.scss"
 // import Products from './components/Products/Products';
 // import Signup from './components/Signup/Signup';
 // import Signin from './components/Signin/Signin';

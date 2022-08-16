@@ -6,7 +6,7 @@ const getCategoriesReducer = (state = [], action) => {
   switch (action.type) {
     case actionTypes.FETCH_CATEGORIES:
       return action.payload;
-    //   return { ...state, categories: action.payload };
+      // return { ...state, categories: action.payload };
     default:
       return state;
   }

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export const LinkCss = styled(NavLink)`
     text-decoration: none;
     color: #4e4e4e;
@@ -8,7 +8,7 @@ export const LinkCss = styled(NavLink)`
     border-bottom: 1px solid #bebebe;
     &:hover{
         background: #ddd;
-        color: #a4a2a2;
+        color: #4e4e4e;
     }
     &.active{
         background: #aaa;

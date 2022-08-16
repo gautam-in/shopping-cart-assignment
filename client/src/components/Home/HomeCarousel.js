@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBannerAction } from "../../Action";
-import Banner1 from "../../assets/images/diwali-banner1.webp";
-import Banner2 from "../../assets/images/diwali-banner2.webp";
-import Banner3 from "../../assets/images/diwali-banner3.webp";
-import { store } from "../../store";
+// import Banner1 from "../../assets/images/diwali-banner1.webp";
+// import Banner2 from "../../assets/images/diwali-banner2.webp";
+// import Banner3 from "../../assets/images/diwali-banner3.webp";
+// import { store } from "../../store";
 import { CarouselItem } from "../Home/HomeCarousel.styles";
 const bannersStore = (state) => state.banners.map((banner) => banner);
 
@@ -14,8 +14,8 @@ function HomeCarousel() {
   // console.log("bannersSelect >>>", bannersSelect);
   const dispatch = useDispatch();
   useEffect(() => {
-    store.dispatch(fetchBannerAction());
-  }, []);
+    dispatch(fetchBannerAction());
+  }, [dispatch]);
 
   return (
     <CarouselItem className="banners">

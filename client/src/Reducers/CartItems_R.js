@@ -10,6 +10,7 @@ const cartReducer = (state = CART_INITIAL_STATE, action) => {
         ...state,
         cartItems: action.payload,
       };
+      // return action.payload;
     case actionTypes.REMOVE_FROM_CART:
       return {
         ...state,
