@@ -45,12 +45,11 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     overflow-x: auto;
-    position: relative;
     --max-width: 85%;
+    position: relative;
 }
 
 header {
-
     width: 100%;
     box-shadow: 3px 2px 4px rgba(0, 0, 0, .25);
     position: relative;
@@ -108,23 +107,35 @@ nav a:hover {
 }
 
 .cart-link {
-    padding: .5rem 2rem;
     background-color: #cecece;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .cart-link>a {
-
-    display: inline-block;
-    /* padding: .5rem; */
-    padding: 1rem;
-    color: black;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 2.5rem;
 }
-
+.cart-link>a svg{
+    height: 24px;
+    width: 24px;
+    fill: var(--accent-bg-clr);
+}
+.cart-link>a span:last-child{
+    padding-left: .3rem;
+}
 footer {
     background-color: var(--accent-bg-clr-alt);
     color: var(--text-color-txt-clr);
     padding: .5rem 0;
-    margin-top: 2rem;
 }
 
 footer>div {
@@ -140,18 +151,19 @@ main {
 #categories {
     flex-flow: column nowrap;
     align-items: center;
+    margin-top: 4px;
 }
 
 
 .item-tile {
-    margin-top: 1rem;
+    margin-bottom: 1rem;
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 250px;
+    min-height: 250px;
     position: relative;
     background: white;
 }
@@ -162,6 +174,7 @@ div.item-tile[template] {
 
 .item-tile img {
     height: 100%;
+    max-height: 250px;
     padding: 1rem;
 }
 
@@ -185,7 +198,7 @@ div.item-tile[template] {
 }
 
 .item-tile div {
-    width: 60%;
+    /* width: 60%; */
     display: flex;
     flex-flow: column nowrap;
     flex-direction: column;
@@ -223,6 +236,7 @@ a.button, button.button,input[type="submit"].button {
     color: var(--accent-text-clr);
     border: none;
     outline: none;
+    cursor: pointer;
 }
 button.button,input[type="submit"].button{
     border-radius: 3px;

@@ -43,6 +43,18 @@ div.m-control label[for].m-label {
     font-size: 1em;
 }
 
+.m-input::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-clr-login);
+    transition: .3s ease-in-out;
+    transform: scale(0);
+}
 div.m-control input.m-input,
 div.m-control input.m-input:focus,
 div.m-control input.m-input:active {

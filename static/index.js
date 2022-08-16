@@ -1,26 +1,58 @@
+let currentCategory;
+const ServerURL = "http://192.168.0.111:5000";
+const sectionCallbacks = {
+    products: () => {
+        ShowCategories().then(() => {
+            if (currentCategory) {
+                //load and show items from selected category
+                let url = ServerURL + "/products?id=" + currentCategory.id;
+                fetch(url).then((resp) => {
+                    resp.json().then(data => {//server does not filter so we can filter
+                        ShowProducts(data.filter((item => item.category == currentCategory.id)));
+                    })
+                })
 
-const UI = Model('hidden')
-document.addEventListener('DOMContentLoaded', () => {
-    //(alert,0,'Loaded');
-    UI('home');
-    fetch('http://localhost:5000/categories').then((resp) => {
-        resp.json().then(data => {
-            ShowBanners(data);
+            } else {
+                let url = ServerURL + "/products";
+                fetch(url).then((resp) => {
+                    resp.json().then(data => {
+                        ShowProducts(data)
+                    })
+                })
+            }
+        });
+    },
+    home: () => {
+        let url = ServerURL + "/categories";
+        fetch(url).then((resp) => {
+            resp.json().then(data => {
+                ShowBanners(data);
+            })
         })
-    })
-    HandleInputAttribute();
+        HandleInputAttribute();
+    },
+};
+const ShowSection = Model('hidden');
+document.addEventListener('DOMContentLoaded', () => {
+    ShowSection('home');
 });
-
+function FilterAndSortCategories(items) {
+    return items.sort((a, b) => b.order < a.order ? 1 : -1).filter(item => item.order >= 0);
+}
 function ShowBanners(categories) {
 
-    let filtered = categories.filter((item => item.order >= 0));
-    filtered.sort(function (a, b) {
-        return b.order < a.order ? 1 : -1;
-    });
+    let filtered = FilterAndSortCategories(categories);
 
     let template = document.querySelector("#categories div[template]");
+    let list = template.parentElement;
+
+    //clear previous items if any
+    while (list.firstChild && list.lastChild != template) {
+        list.removeChild(list.lastChild);
+    }
+
     for (let i = 0; i < filtered.length; i++) {
-        const jsonItem = filtered[i];
+        let jsonItem = filtered[i];
         let item = template.cloneNode(true);
         item.removeAttribute('template');
 
@@ -39,11 +71,53 @@ function ShowBanners(categories) {
         let link = item.querySelector('img+div>div a.desc-item');
 
         //not sure about, may need to change according the approach of navigating different page
-        link.setAttribute('href', "Categories/" + jsonItem.key);
-
+        link.setAttribute('href', "#products?key=" + jsonItem.key);
+        link.addEventListener('click', () => {
+            currentCategory = jsonItem;
+            ShowSection('products');
+        });
         link.append("Explore " + jsonItem.key);
 
         template.parentElement.appendChild(item);
+    }
+}
+
+function ShowProducts(products) {
+    let template = document.querySelector('section.plp div.item-list div.item[template]')
+    let list = template.parentElement;
+
+    //clear previous items if any
+    while (list.firstChild && list.lastChild != template) {
+        list.removeChild(list.lastChild);
+    }
+
+    for (let i = 0; i < products.length; i++) {
+        let product = products[i];
+        let viewItem = template.cloneNode(true);
+
+        viewItem.removeAttribute('template');
+
+        let element = viewItem.querySelector('h3');
+        element.append(product.name);
+
+        element = viewItem.querySelector('h3+img');
+        element.setAttribute('src', product.imageURL);
+        element.setAttribute('alt', product.name);
+
+        element = viewItem.querySelector('h3+img+p');
+        element.append(product.description);
+
+        element = viewItem.querySelector('div.bottom span.price');
+        element.append('MRP Rs. ' + product.price);
+
+        element = viewItem.querySelector('div.bottom button.button');
+
+        element.addEventListener('click', () => {
+            //handle buy now click
+            AddToCart(product);
+        })
+
+        list.append(viewItem);
     }
 }
 
@@ -99,6 +173,11 @@ function Model(css) {
     }
 
     function Show(name) {
+        let cb = sectionCallbacks[name];
+        if (typeof cb == "function") {
+            queueMicrotask(cb);
+        }
+
         let items = elements[name.toLowerCase()];
         if (items) {
             if (Array.isArray(items) && items.length) {
@@ -111,6 +190,35 @@ function Model(css) {
                 console.assert(flase, "unsopported format")
             }
         }
+
     }
     return Show;
 }
+
+async function ShowCategories() {
+    let url = ServerURL + "/categories";
+    let categories = await (await fetch(url)).json();
+    let filtered = FilterAndSortCategories(categories);
+
+    let ul = document.querySelector('section#page-category aside ul.product-category');
+
+    while (ul.firstChild) {
+        ul.removeChild(ul.lastChild);
+    }
+
+    for (let i = 0; i < filtered.length; i++) {
+        let category = filtered[i];
+
+        let li = document.createElement('li');
+        let a = document.createElement('a');
+        a.setAttribute('href', "#products?key=" + category.key);
+        a.addEventListener('click', () => { currentCategory = category; ShowSection('products'); });
+        a.append(category.name);
+        li.append(a);
+        ul.append(li);
+        if (currentCategory && category.id == currentCategory.id) {
+            a.style.fontWeight = "bold";
+        }
+    }
+}
+
