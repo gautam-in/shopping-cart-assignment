@@ -1,4 +1,5 @@
 import { SignUpState } from 'app/pages/SignUp/types';
+import { HomePageState } from 'app/pages/HomePage/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
 /* 
@@ -7,5 +8,6 @@ import { SignUpState } from 'app/pages/SignUp/types';
 */
 export interface RootState {
   signUp?: SignUpState;
+  homePage?: HomePageState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }

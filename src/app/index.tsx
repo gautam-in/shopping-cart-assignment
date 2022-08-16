@@ -12,7 +12,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import { GlobalStyle } from 'styles/global-styles';
 
-import { HomePage } from 'app/pages/HomePage/Loadable';
+import { HomePage } from 'app/pages/HomePage/index';
 import { SignUp } from 'app/pages/SignUp/Loadable';
 import { NotFoundPage } from 'app/components/NotFoundPage/Loadable';
 import { NavBar } from 'app/components/NavBar/Loadable';
@@ -30,7 +30,10 @@ export function App() {
         defaultTitle="Sabka Bazaar Grocery Supplies"
         htmlAttributes={{ lang: i18n.language }}
       >
-        <meta name="description" content="A Sabka Bazaar Grocery Supplies Application" />
+        <meta
+          name="description"
+          content="A Sabka Bazaar Grocery Supplies Application"
+        />
       </Helmet>
       <NavBar />
       <Switch>
