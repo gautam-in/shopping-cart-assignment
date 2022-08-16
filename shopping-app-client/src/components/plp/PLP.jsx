@@ -64,7 +64,7 @@ const PLP = () => {
                     </article>
                     <div className='product__price-details'>
                         <div className='product_price'>
-                        <strong>MRP RS 100</strong>
+                        <strong>MRP RS {product.price}</strong>
                     
                         </div>
 
