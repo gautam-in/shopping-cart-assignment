@@ -3,12 +3,18 @@
     display: flex;
     margin-bottom: 3px;
     box-shadow: 5px 5px 5px gray;
-    padding:  5rem  2rem ;
+    padding:  1rem  1rem ;
+    padding-botton:4.8rem;
     gap: 8rem;
     
 }
 
 
+
+.home_container{
+    position: relative;
+    top:95px;
+}
 
 .product_details{
     display: flex;

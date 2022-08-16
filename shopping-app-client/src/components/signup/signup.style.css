@@ -1,8 +1,9 @@
 .signup{
     display: flex;
-    padding: 2px 120px;
+    padding: 50px 120px 60px 120px;
     gap: 2rem;
     flex-wrap: wrap;
+    
 
 }
 
@@ -17,7 +18,10 @@
     margin-top: 60px;
 }
 
-
+.sign-up__button--container{
+    min-width: 165px;
+    width: 260px;
+}
 
 @media only screen and (max-width: 890px) {
     .signup{

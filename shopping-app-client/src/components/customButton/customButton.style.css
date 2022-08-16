@@ -1,6 +1,4 @@
 .button-container {
-    min-width: 165px;
-    width: auto;
     height: 50px;
     letter-spacing: 0.5px;
     line-height: 50px;
@@ -12,10 +10,17 @@
     cursor: pointer;
     display: flex;
     justify-content: center;
+}
+.button-large{
+    min-width: 165px;
     width: 276px;
 }
 .button-container:hover{
     background-color: white;
     color: rgb(210, 9, 56);
     border: 1px solid rgb(210, 9, 56);
+}
+.add-to-cart_button--container{
+    width: 100px;
+    padding: 5px;
 }

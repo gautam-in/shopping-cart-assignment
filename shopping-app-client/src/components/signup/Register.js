@@ -144,9 +144,12 @@ const Register = ( ) => {
         onChange={handleInputChange}
         errorMessage={confirmPasswordErrorMessage}
         />
-        <CustomButton>
+        <div className='sign-up__button--container'>
+        <CustomButton isLargeButton={true}>
           Signup
         </CustomButton>
+        </div>
+        
 
         </form>
         </div>

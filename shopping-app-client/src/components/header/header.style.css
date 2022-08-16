@@ -8,6 +8,7 @@
     box-shadow: 2px 2px 2px gray;
     background-color: antiquewhite;
     z-index: 2;
+    
 }
 .heder_links{
     display: flex;

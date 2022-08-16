@@ -4,6 +4,8 @@
     margin-bottom: 160px;
 }
 
+
+
 .left_nav{
     position: fixed;
     display: flex;
@@ -21,6 +23,7 @@
     cursor: pointer;
     padding: 6px 0;
     border-bottom: 1px solid gray;
+    text-decoration:none;
 
 }
 
@@ -36,17 +39,28 @@
 .product_card{
     border-radius: 5px;
     box-shadow: 2px 2px 2px gray;
-    padding: 5px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     width: 250px;
 }
 .product_card--image{
-    width: 150px;
-    flex: 3 1 0;
-    height: 250px;
+    width: 200px;
+    height: 200px;
 }
 .product_description{
     background-color: rgb(214, 212, 212);
     padding: 8px;
+}
+.last_product{
+    margin-bottom: 70px;
+}
+
+.product__price-details{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+}
+.product_price{
+    margin-top: 20px;
 }
