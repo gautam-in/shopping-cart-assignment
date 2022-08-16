@@ -69,7 +69,7 @@ const PLP = () => {
                         </div>
 
                     <div className='add-to-cart_button--container'>
-                    <CustomButton handleClick={dispatch(addItemToCart(product))}>Buy Now</CustomButton>
+                    <CustomButton handleClick={()=>dispatch(addItemToCart(product))}>Buy Now</CustomButton>
                     </div>
 
                     </div>   

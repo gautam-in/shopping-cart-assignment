@@ -1,3 +1,9 @@
+import {
+  ADD_ITEM_TO_CART,
+  CLEAR_ITEM_FROM_CART,
+  EMPTY_CART,
+  REMOVE_ITEM_FROM_CART
+} from '../actions/types'
 const initialState ={
     cartItems:[]
 }
@@ -8,15 +14,13 @@ export default function cartReducer(state=initialState , action ){
         case ADD_ITEM_TO_CART:
       const itemToAdd = payload;
       const existingItem = state.cartItems.find(
-        (item) => item._id === itemToAdd._id
+        (item) => item.id === itemToAdd.id
       );
       if (existingItem) {
         return {
           ...state,
           cartItems: state.cartItems.map((cartItem) =>
-            cartItem._id === itemToAdd._id &&
-            cartItem.quantity_available !== cartItem.quantity
-              ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            cartItem.id === itemToAdd.id  ? { ...cartItem, quantity: cartItem.quantity + 1 }
               : cartItem
           ),
         };

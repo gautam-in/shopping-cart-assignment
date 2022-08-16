@@ -4,9 +4,14 @@ import SabkaBazzar from "../../public/assets/logo.png";
 import  './header.style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { useSelector } from "react-redux";
+import { getTotalPriceAndQuantityOfCartItems } from "../../utils/cart.util";
 const Header = () => {
   const navigate = useNavigate();
- 
+  const { cartItems=[] } = useSelector((state) => state.cart);
+
+  const { totalQuantity = 0 } = getTotalPriceAndQuantityOfCartItems(cartItems)
+  
   return (
     <header className='header'>
     <div className='heder_links'>
@@ -36,7 +41,7 @@ const Header = () => {
         </Link>
 <div className='shopping-cart'>
 <FontAwesomeIcon icon={faShoppingCart}/>
-<span className='cart_item-count'> 0 items</span>
+<span className='cart_item-count'> {`${totalQuantity} items`}</span>
 </div>        
 
       
