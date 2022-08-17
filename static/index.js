@@ -62,13 +62,13 @@ function ShowBanners(categories) {
         img.src = jsonItem.imageUrl;
         img.setAttribute('alt', jsonItem.name)
 
-        let name = item.querySelector('img+div>div>h2.desc-item');
+        let name = item.querySelector('h2.desc-item');
         name.append(jsonItem.name)
 
-        let desc = item.querySelector('img+div>div p.desc-item');
+        let desc = item.querySelector('p.desc-item');
         desc.append(jsonItem.description)
 
-        let link = item.querySelector('img+div>div a.desc-item');
+        let link = item.querySelector('a.desc-item');
 
         //not sure about, may need to change according the approach of navigating different page
         link.setAttribute('href', "#products?key=" + jsonItem.key);
