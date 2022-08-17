@@ -2,10 +2,12 @@ import {
   ADD_ITEM_TO_CART,
   CLEAR_ITEM_FROM_CART,
   EMPTY_CART,
-  REMOVE_ITEM_FROM_CART
+  REMOVE_ITEM_FROM_CART,
+  TOGGLE_DISPLAY_CART_MODAL
 } from '../actions/types'
 const initialState ={
-    cartItems:[]
+    cartItems:[],
+    shouldDisplayCartModal:false
 }
 
 export default function cartReducer(state=initialState , action ){
@@ -65,6 +67,13 @@ export default function cartReducer(state=initialState , action ){
         ...state,
         cartItems: [],
       }
+    case TOGGLE_DISPLAY_CART_MODAL:
+      return{
+        ...state,
+        shouldDisplayCartModal:!state.shouldDisplayCartModal
+
+      }  
+      
     default:  
     return state;
     }

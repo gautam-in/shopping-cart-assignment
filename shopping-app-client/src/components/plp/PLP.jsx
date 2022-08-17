@@ -4,10 +4,13 @@ import axios from 'axios'
 import { useState } from 'react'
 import './plp.style.css'
 import CustomButton from '../customButton/CustomButton'
-import { useDispatch } from 'react-redux'
-import { addItemToCart } from '../../actions/cart'
-const PLP = () => {
+import { useDispatch , useSelector } from 'react-redux'
+import { addItemToCart , handleDisplayCartModal } from '../../actions/cart'
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
+const PLP = () => {
+    const { shouldDisplayCartModal = false } = useSelector(state=>state.cart)
     const [ categories , setCategories ] = useState([]);
     const [ products , setProducts ] = useState([]);
     const [filteredProducts,setFilteredproducts] = useState([]);
@@ -43,7 +46,6 @@ const PLP = () => {
         })}
 
     </aside>
-    
     <div className='products_container'>
         {
             filteredProducts.map((product,index)=>{
@@ -53,7 +55,6 @@ const PLP = () => {
                 const imgPath = `../../assets/products/${selectedCategory}/${imageUrl}`;
                 
                 const isLastRow =  [filteredProducts.length-1,filteredProducts.length-2,filteredProducts.length-3,filteredProducts.length-4].includes(index);
-                console.log(isLastRow)
     
                 return  <div className={`${isLastRow?'last_product':''} product_card`}>
                     <strong>{product.name}</strong>

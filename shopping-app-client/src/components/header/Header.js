@@ -6,7 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from "react-redux";
 import { getTotalPriceAndQuantityOfCartItems } from "../../utils/cart.util";
+import { useDispatch  } from "react-redux";
+import { handleDisplayCartModal } from "../../actions/cart";
+
 const Header = () => {
+  const dispatch = useDispatch()
   const navigate = useNavigate();
   const { cartItems=[] } = useSelector((state) => state.cart);
 
@@ -39,7 +43,11 @@ const Header = () => {
         <Link className='nav_link' to='/register'>
         Register
         </Link>
-<div className='shopping-cart'>
+<div className='shopping-cart' onClick={()=>{
+dispatch(
+  handleDisplayCartModal()
+)
+}}>
 <FontAwesomeIcon icon={faShoppingCart}/>
 <span className='cart_item-count'> {`${totalQuantity} items`}</span>
 </div>        
