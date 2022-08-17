@@ -1,18 +1,16 @@
-import { take, call, put, select, takeLatest, delay } from 'redux-saga/effects';
+import { call, put, takeLatest, delay } from 'redux-saga/effects';
 import { request } from 'utils/request';
 import { homePageActions as actions } from './slice';
 import { BannerItem } from 'types/banners';
 
 function* handleGetBanners() {
-  console.log(process.env);
   yield delay(500);
-  const requestURL = `${process.env.API}/banners`;
+  const requestURL = `${process.env.REACT_APP_API}/banners`;
   try {
-    // Call our request helper (see 'utils/request')
-    const repos: BannerItem = yield call(request, requestURL);
-    console.log(repos);
+    const bannersList: BannerItem[] = yield call(request, requestURL);
+    yield put(actions.getBannersData(bannersList));
   } catch (err: any) {
-    // do nothing
+    yield put(actions.getBannersDataError(err));
   }
 }
 

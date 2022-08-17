@@ -27,7 +27,7 @@ export const Footer = memo(() => {
 const Wrapper = styled.footer`
   position: absolute;
   bottom: 0;
-  width:100%;
+  width: 100%;
   background-color: ${rgbToColorString({
     red: 128,
     blue: 128,

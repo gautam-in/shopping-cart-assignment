@@ -7,6 +7,6 @@ import { translations } from 'locales/translations';
 import { _t } from 'utils/messages';
 
 export const messages = {
-  home: () => _t(translations.home,'Home'),
-  product: () => _t(translations.product,'Product'),
+  home: () => _t(translations.home, 'Home'),
+  product: () => _t(translations.product, 'Product'),
 };

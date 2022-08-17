@@ -1,6 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { fontFace, between } from 'polished'
-
 
 export const GlobalStyle = createGlobalStyle`
   html,

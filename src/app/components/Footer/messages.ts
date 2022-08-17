@@ -7,5 +7,5 @@ import { translations } from 'locales/translations';
 import { _t } from 'utils/messages';
 
 export const messages = {
-  footerText: () => _t(translations.footer,'Footer'),
+  footerText: () => _t(translations.footer, 'Footer'),
 };

@@ -4,21 +4,28 @@
  *
  */
 
-import React, { memo, useEffect } from 'react';
+import React, { memo, useCallback, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Helmet } from 'react-helmet-async';
 import { useHomePageSlice } from './slice';
+import { selectHomePageBanners, selectHomePageLoading } from './selectors';
 
-interface Props {}
-
-export const HomePage = memo((props: Props) => {
+export const HomePage = memo(() => {
   const { actions } = useHomePageSlice();
   const dispatch = useDispatch();
+  const bannerList = useSelector(selectHomePageBanners);
+  const loading = useSelector(selectHomePageLoading);
+  console.log(bannerList, loading);
+
+  const getBannerList = useCallback(
+    () => dispatch(actions.getBanners()),
+    [actions, dispatch],
+  );
 
   useEffect(() => {
-    dispatch(actions.getBanners());
-  }, []);
+    getBannerList();
+  }, [getBannerList]);
 
   return (
     <div>
