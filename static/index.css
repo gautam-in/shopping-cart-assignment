@@ -202,12 +202,17 @@ section#offers-area {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    transition: 1s;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .slider-container .slider .slides .slide img{
     height: 100%;
     width: 100%;
 }
-.slider-container .slider .slides .slide .active{
+.slider-container .slider .slides .slide.active{
     opacity: 1;
 }
 .slider .slider-nav{
@@ -230,6 +235,7 @@ section#offers-area {
     color: white;
     padding: 10px 15px;
     cursor: pointer;
+    user-select: none;
 }
 .slide-next:hover,.slide-prev:hover{
     background-color: rgba(0, 0, 0, .6);
@@ -255,6 +261,7 @@ section#offers-area {
 }
 .slide-pos .pos.active{
     background-color: black;
+    opacity: 1;
 }
 
 /**End Slider Style**/
@@ -351,6 +358,7 @@ input[type="submit"].button {
     border: none;
     outline: none;
     cursor: pointer;
+    user-select: none;
 }
 
 button.button,

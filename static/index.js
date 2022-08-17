@@ -1,5 +1,5 @@
 let currentCategory;
-const ServerURL = "http://192.168.0.111:5000";
+
 const sectionCallbacks = {
     products: () => {
         ShowCategories().then(() => {
