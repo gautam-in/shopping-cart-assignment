@@ -30,18 +30,18 @@ export default function cartReducer(state=initialState , action ){
 
       return {
         ...state,
-        cartItems: [...state.cartItems, { ...itemToAdd, quantity: 1 }],
+        cartItems: [ { ...itemToAdd, quantity: 1 },...state.cartItems],
       };
     case REMOVE_ITEM_FROM_CART:
       const itemToRemove = payload;
       const foundItem = state.cartItems.find(
-        (item) => item._id === itemToRemove._id
+        (item) => item.id === itemToRemove.id
       );
       if (foundItem.quantity === 1) {
         return {
           ...state,
           cartItems: state.cartItems.filter(
-            (cartItem) => cartItem._id !== payload._id
+            (cartItem) => cartItem.id !== payload.id
           ),
         };
       }
@@ -49,7 +49,7 @@ export default function cartReducer(state=initialState , action ){
       return {
         ...state,
         cartItems: state.cartItems.map((cartItem) =>
-          cartItem._id === payload._id
+          cartItem.id === payload.id
             ? { ...cartItem, quantity: cartItem.quantity - 1 }
             : cartItem
         ),

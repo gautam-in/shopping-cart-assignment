@@ -1,0 +1,49 @@
+.cart-items{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cart_button--text{
+    display: flex;
+    justify-content: space-between;
+}
+.cart-item{
+    display: flex;
+    box-shadow: 5px 5px 5px gray;
+    padding: 0.5rem;
+    gap:4px;
+}
+
+.lowest_price{
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    box-shadow: 5px 5px 5px gray;
+    
+}
+.cheap-price-text{
+    margin-top: 1rem;
+}
+.total_price{
+    box-shadow: 5px 5px 5px gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+
+.cartItem_image{
+    width: 90px;
+    height: 90px;
+}
+.arrow{
+    background-color: rgba(154, 30, 30, 0.313);
+    color: white;
+    padding: 2px;
+}
+.cart-item__quantity--price{
+    display: flex;
+    gap: 3px;
+}

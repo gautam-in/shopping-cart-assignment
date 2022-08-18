@@ -4,19 +4,18 @@ import axios from 'axios'
 import { useState } from 'react'
 import './plp.style.css'
 import CustomButton from '../customButton/CustomButton'
-import { useDispatch , useSelector } from 'react-redux'
-import { addItemToCart , handleDisplayCartModal } from '../../actions/cart'
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import { useDispatch , useSelector  } from 'react-redux'
+import { addItemToCart  } from '../../actions/cart'
+import { setProductsData  } from '../../actions/products'
+
 
 const PLP = () => {
-    const { shouldDisplayCartModal = false } = useSelector(state=>state.cart)
     const [ categories , setCategories ] = useState([]);
-    const [ products , setProducts ] = useState([]);
-    const [filteredProducts,setFilteredproducts] = useState([]);
     const [selectedCategory,setSelectedCategory] = useState('')
     const dispatch = useDispatch();
-
+    const { products = [] } = useSelector(state=>state.products)
+    const [ filteredProducts , setFilteredproducts ] = useState([]);
+    
     
 
     useEffect(()=>{ 
@@ -25,7 +24,7 @@ const PLP = () => {
         const promise2 = await axios.get("http://localhost:5000/products");
         const [categories,products] = await Promise.all([promise1,promise2]);
         setCategories(categories?.data)
-        setProducts(products?.data)
+        dispatch(setProductsData(products?.data))
         setFilteredproducts(products?.data)
         
        } 
