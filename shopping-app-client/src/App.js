@@ -1,5 +1,7 @@
 import  Header  from "./components/header/Header";
 import Register from "./components/signup/Register";
+import SignIn from "./components/signin/SignIn";
+
 import './App.css';
 import { Routes , Route  } from 'react-router-dom'
 import Home from "./components/home/Home";
@@ -14,7 +16,7 @@ function  App() {
     <Routes>
       <Route path='/register' element={<Register/>} />
       <Route path='/products' element={<PLP/>} />
-      
+      <Route path='/signin' element={<SignIn/>}/>
       <Route path='/' element={<Home/>} />
     </Routes>
     <Footer/>

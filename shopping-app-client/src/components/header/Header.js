@@ -37,7 +37,7 @@ const Header = () => {
       </div>
       <nav className='auth_links'>
 
-      <Link className='nav_link' to='/'>
+      <Link className='nav_link' to='/signin'>
         SignIn
         </Link>
         <Link className='nav_link' to='/register'>
