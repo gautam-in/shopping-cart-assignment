@@ -11,10 +11,11 @@ import 'react-app-polyfill/stable';
 import * as React from 'react';
 import * as ReactDOMClient from 'react-dom/client';
 import { Provider } from 'react-redux';
-
+import { BrowserRouter } from 'react-router-dom';
 // Use consistent styling
 import 'sanitize.css/sanitize.css';
-
+// MuiClassNameSetup.js
+import { unstable_ClassNameGenerator as ClassNameGenerator } from '@mui/material/className';
 // Import root app
 import { App } from 'app';
 
@@ -30,12 +31,16 @@ import './locales/i18n';
 const store = configureAppStore();
 const MOUNT_NODE = document.getElementById('root') as HTMLElement;
 
+ClassNameGenerator.configure(componentName => componentName.replace('Mui', ''));
+
 ReactDOMClient.createRoot(MOUNT_NODE!).render(
   <Provider store={store}>
     <HelmetProvider>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+      <BrowserRouter>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </BrowserRouter>
     </HelmetProvider>
   </Provider>,
 );

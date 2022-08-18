@@ -8,7 +8,7 @@
 
 import * as React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 
 import { GlobalStyle } from 'styles/global-styles';
 
@@ -23,7 +23,7 @@ import { useTranslation } from 'react-i18next';
 export function App() {
   const { i18n } = useTranslation();
   return (
-    <BrowserRouter>
+    <>
       <Helmet
         prioritizeSeoTags
         titleTemplate="%s - Sabka Bazaar Grocery Supplies"
@@ -36,6 +36,7 @@ export function App() {
         />
       </Helmet>
       <NavBar />
+      <Link to="/signUp">SignUp</Link>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/signUp" component={SignUp} />
@@ -43,6 +44,6 @@ export function App() {
       </Switch>
       <Footer />
       <GlobalStyle />
-    </BrowserRouter>
+    </>
   );
 }
