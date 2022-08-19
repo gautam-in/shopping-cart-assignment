@@ -1,0 +1,357 @@
+:root {
+    --page-min-width: 320px;
+    --page-min-height: 100vh;
+
+    --default-font-size: 14px;
+    --default-bg-clr: white;
+    --default-txt-clr: black;
+    --default-font: Arial, Helvetica, sans-serif;
+
+    --accent-bg-clr: #be2957;
+    --accent-text-clr: white;
+
+    --accent-bg-clr-alt: #cecece;
+
+    --accent-clr-login: #2caeba;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    font-size: var(--default-font-size);
+    font-family: var(--default-font);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: auto;
+    --max-width: 1200px;
+    position: relative;
+    min-width: var(--page-min-width);
+}
+
+header {
+    width: 100%;
+    box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.flex-content {
+    margin: 0 calc(calc(100% - var(--max-width)) / 2);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.row {
+    flex-direction: row;
+}
+
+div.log {
+    margin: 0.2rem 0 0 0;
+    margin-right: 10%;
+}
+
+nav {
+    padding: 0;
+}
+
+nav a {
+    padding: 1rem 2rem;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--default-txt-clr);
+}
+
+nav a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.cart-btn {
+    position: absolute;
+    margin-right: calc(calc(100% - var(--max-width)) / 2);
+    right: 0;
+    height: 100%;
+    border-bottom: 1px solid #cecece;
+}
+
+.user-control {
+    background-color: white;
+    height: 2rem;
+    text-align: right;
+    margin-top: 0.4rem;
+}
+
+.cart-link {
+    background-color: #cecece;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-link > a {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 2.5rem;
+}
+
+.cart-link > a svg {
+    height: 24px;
+    width: 24px;
+    fill: var(--accent-bg-clr);
+}
+
+.cart-link > a span:last-child {
+    padding-left: 0.3rem;
+}
+
+footer {
+    background-color: var(--accent-bg-clr-alt);
+    color: var(--text-color-txt-clr);
+    padding: 0.5rem 0;
+}
+
+footer > div {
+    margin: 0 auto;
+    width: var(--max-width);
+}
+
+main {
+    margin: 0 auto;
+    width: var(--max-width);
+}
+
+/**Slider**/
+section#offers-area {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    user-select: none;
+    -moz-user-select: none;
+}
+
+.slider-container {
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: 300px;
+    width: 100%;
+    position: relative;
+    background: white;
+}
+.slider-container::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    bottom: 0;
+    right: 15%;
+    left: 15%;
+    width: 70%;
+    height: 10%;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+.slider-container .slider {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.slider-container .slider .slides {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 1s;
+    /* opacity: 0; */
+    top: 0;
+    left: 0;
+}
+.slider-container .slider .slides .slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 1s;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.slider-container .slider .slides .slide img {
+    height: 100%;
+    width: 100%;
+}
+.slider-container .slider .slides .slide.active {
+    opacity: 1;
+}
+.slider .slider-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translate(0, -50%);
+
+    display: flex;
+    justify-content: space-between;
+}
+.slide-next,
+.slide-prev {
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    user-select: none;
+}
+.slide-next:hover,
+.slide-prev:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.slide-pos {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.slide-pos .pos {
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border: 1px solid transparent;
+    background-color: #cecece;
+    border-radius: 50%;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+.slide-pos .pos:hover {
+    background-color: gray;
+}
+.slide-pos .pos.active {
+    background-color: black;
+    opacity: 1;
+}
+
+/**End Slider Style**/
+
+#categories {
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-top: 4px;
+}
+
+#categories .item-tile {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 280px;
+    width: 100%;
+    position: relative;
+    background: white;
+}
+
+.item-tile .IMG {
+    height: 100%;
+    /* width:50%; */
+    padding: 1rem;
+}
+#categories .item-tile .IMG img {
+    height: 100%;
+}
+
+#categories .item-tile::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    bottom: 0;
+    right: 15%;
+    left: 15%;
+    width: 70%;
+    height: 10%;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+#categories .item-tile:nth-child(even) {
+    flex-direction: row;
+}
+
+#categories .item-tile div {
+    /* width: 60%; */
+    display: flex;
+    flex-flow: column nowrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    /* width: 50%; */
+}
+
+#categories .item-tile div .desc-item {
+    margin: 1rem;
+    text-align: center;
+}
+
+a.button,
+button.button,
+input[type="submit"].button {
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    background-color: var(--accent-bg-clr);
+    color: var(--accent-text-clr);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+button.button,
+input[type="submit"].button {
+    border-radius: 3px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.prefix {
+    position: relative;
+}
+.prefix::before {
+    position: absolute;
+    top: 0;
+    height: 100%;
+}

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sabka Bazaar - Online Shopping Portal</title>
+
+	<link rel="stylesheet" href="css/index.css">
+
+	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" href="css/plp.css">
+	<link rel="stylesheet" href="css/cart.css">
+
+	<link rel="stylesheet" href="css/index.desktop.css" media="only screen and (max-width:1365px)">
+	<link rel="stylesheet" href="css/index.tablet.css" media="only screen and (max-width: 1021px)">
+	<link rel="stylesheet" href="css/plp.tablet.css" media="only screen and (max-width: 1021px)">
+
+	<link rel="stylesheet" href="css/index.mobile.css" media="only screen and (max-width: 499px)">
+	<link rel="stylesheet" href="css/plp.mobile.css" media="only screen and (max-width: 499px)">
+
+	<style>
+		*[border] {
+			border: .1rem solid black;
+		}
+
+		div[template] {
+			display: none !important;
+		}
+	</style>
+
+</head>
+
+<body class="text-color-default bg-color-default">
+
+	<header>
+		<div class="flex-content row">
+			<div class="log">
+				<img src="images/logo.png" alt="logo" onclick="ShowSection('home')">
+			</div>
+			<nav>
+				<a href="#" onclick="ShowSection('home')">Home</a>
+				<a href="#products" onclick="currentCategory=null;ShowSection('products')">Products</a>
+			</nav>
+			<div class="cart-btn">
+				<div class="user-control">
+					<a href="#login" onclick="ShowSection('signup')">Register</a>
+					<a href="#singup" onclick="ShowSection('login')">SignIn</a>
+				</div>
+				<div class="cart-link" onclick="ShowCartClick()">
+					<a href="#cart">
+						<svg version="1.1" id="Layer_1" focusable="false" xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24"
+							style="enable-background:new 0 0 24 24;" xml:space="preserve">
+							<path
+								d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" />
+						</svg>
+						<span class="count-cart-items">0 Items<span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main id="main">
+		<div class="cart-parent hidden">
+			<div class="cart-area">
+				<div class="cart-container">
+					<div class="cart-header">
+						<span><strong>My Cart </span><span class="count"></span></strong>
+						<span class="close-icon" onclick="CloseCartClick()">X</span>
+					</div>
+					<div class="cart-items" items="empty">
+						<div class="empty-message">
+							<h3>No items in your cart</h3>
+							<p>Your favourite items are just a click away</p>
+						</div>
+						<div class="cart-item" template>
+							<div class="left">
+								<img src="" alt="">
+							</div>
+							<div class="right">
+								<div class="name">
+									<span>
+										<!-- Apple - Washington, Regular, 4pcs -->
+									</span>
+								</div>
+								<div class="item-action">
+									<div class="action">
+										<span class="icon decrease-qty">-</span>
+										<span class="qty">1</span>
+										<span class="icon increase-qty">+</span>
+										<span class="into">x</span>
+										<span class="mrp"><span class="cart-item-price  prefix prefix-rs"></span></span>
+									</div>
+									<div class="price">
+										<span class="amount"><span
+												class="cart-item-amount  prefix prefix-rs"></span></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tag">
+						<div class="item">
+							<img src="images/lowest-price.png" alt="lowest-price">
+							<span class="text">You won't find it cheaper anywhere</span>
+						</div>
+					</div>
+					<div class="start-shoping">
+						<div class="button" onclick="CloseCartClick();currentCategory=null;ShowSection('home')">
+							Start Shopping
+						</div>
+					</div>
+					<div class="checkout">
+						<div class="info">
+							<span>Promo code can be applied on payment page</span>
+						</div>
+						<div class="action">
+							<div class="button">
+								<div>
+									<span>Proceed to Checkout</span>
+								</div>
+								<div class="cart-amount">
+									<span class="amount prefix prefix-rs"></span>
+									<span class="caret">></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<section class="plp" id="page-category" class="hidden">
+			<aside>				
+				<input class="hidden" type="checkbox" name="selector" id="selector">
+				<label for="selector">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+					</svg>
+				</label>
+				<ul class="product-category">
+					<!--
+						<li>
+							<a href="#link">
+								 Fruits & Vegetables
+							</a>
+						</li>
+					-->
+				</ul>
+			</aside>
+			<div class="item-list">
+				<div class="item" template>
+					<h3>
+						<!-- Coca Cola Soft Drink, 2x1.75 L -->
+					</h3>
+					<div class="mid">
+						<img src="" alt="">
+						<div class="p">
+							<p>
+								<!--
+									Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny,
+									edible
+									black seeds.
+								-->
+							</p>
+						</div>
+					</div>
+					<div class="bottom">
+						<span class="price prefix prefix-mrp">
+							<!-- MRP Rs. 175 -->
+						</span>
+						<button class="button">Buy Now</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="offers-area">
+			<div class="slider-container">
+				<div class="slider">
+					<div class="slides">
+						<!-- <div class="slide"><img src="images/offers/offer5.jpg" alt=""></div> -->
+					</div>
+					<div class="slider-nav">
+						<div class="slide-prev">PREV</div>
+						<div class="slide-next">NEXT</div>
+					</div>
+				</div>
+				<div class="slide-pos">
+					<!-- <div class="pos"></div>
+					<div class="pos"></div>
+					<div class="pos"></div>
+					<div class="pos active"></div>
+					<div class="pos"></div> -->
+				</div>
+			</div>
+		</section>
+		<section id="categories">
+			<div class="item-tile" template>
+				<div class="IMG"><img src="" alt=""></div>
+				<div>
+					<div>
+						<h2 class="desc-item">
+							<!--Fruits & Vegetables-->
+						</h2>
+						<p class="desc-item">
+							<!--A variety of fresh fruits and vegetables.-->
+						</p>
+						<a class="desc-item button" href="#">
+							<!--Explore fruit-and-veg-->
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="login hidden">
+			<div class="desc">
+				<h2>Login</h2>
+				<p>Get Access to your Orders, Whishlist and Recommendations</p>
+			</div>
+			<div class="login-box">
+				<form>
+					<div class="m-control">
+						<input class="m-input" type="email" name="email" id="email" required>
+						<label class="m-label" for="email">eMail</label>
+					</div>
+					<div class="m-control">
+						<input class="m-input" type="password" name="password" id="password" required>
+						<label class="m-label" for="password">Password</label>
+					</div>
+					<!-- <label for="password" aria-placeholder="Password" placeholder="Password">Password</label>
+					<input type="password" name="password" id="password"> -->
+					<input type="submit" class="button" value="Login">
+				</form>
+			</div>
+		</section>
+		<section class="login hidden">
+			<div class="desc">
+				<h2>Signup</h2>
+				<p>We do not share your personal details with anyone</p>
+			</div>
+			<div class="login-box">
+				<form>
+					<div class="m-control">
+						<input class="m-input" type="Firstname" name="Firstname" id="Firstname" required>
+						<label class="m-label" for="Firstname">First Name</label>
+					</div>
+					<div class="m-control">
+						<input class="m-input" type="LastName" name="LastName" id="LastName" required>
+						<label class="m-label" for="LastName">Last Name</label>
+					</div>
+					<div class="m-control">
+						<input class="m-input" type="email" name="nemail" id="nemail" required>
+						<label class="m-label" for="nemail">eMail</label>
+					</div>
+					<div class="m-control">
+						<input class="m-input" type="password" name="npassword" id="npassword" required>
+						<label class="m-label" for="npassword">Password</label>
+					</div>
+					<div class="m-control">
+						<input class="m-input" type="password" autocomplete="off" name="confirmpassword"
+							id="confirmpassword" required>
+						<label class="m-label" for="confirmpassword">Confirm Password</label>
+					</div>
+					<input type="submit" class="button" value="SignUp">
+				</form>
+			</div>
+		</section>
+	</main>
+	<footer class="bg-color-alt text-color-default">
+		<div>
+			<span>Copyright &copy; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd.</span>
+		</div>
+	</footer>
+	<div class="cart-shadow  hidden"></div>
+</body>
+
+<script src="js/web-service.js" defer></script>
+<script src="js/local-service.js" defer></script>
+
+<script src="js/offers.js" defer></script>
+<script src="js/cart.js" defer></script>
+<script src="js/index.js" defer></script>
+
+</html>

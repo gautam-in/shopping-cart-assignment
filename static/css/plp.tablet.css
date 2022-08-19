@@ -1,0 +1,59 @@
+
+/* @media screen and (max-width: 1024px) { */
+    aside {
+        width: 12%;
+        min-width: 200px;
+    }
+    section.plp div.item-list .item {
+        flex-basis: 300px;
+    }
+    section.plp div.item-list .item .mid {
+        display: flex;
+        flex-flow: row nowrap;
+        max-height: 10rem;
+        overflow: hidden;
+    }
+    section.plp div.item-list .item img {
+        width: 50%;
+        padding: .2rem;
+    }
+    section.plp div.item-list .item p {
+        padding: 5px;
+        padding: 5px;
+        height: 100%;
+    }
+    section.plp div.item-list .item div.bottom {
+        display: flex;
+
+        align-items: center;
+        width: 100%;
+        text-decoration: none;
+        background-color: var(--accent-bg-clr);
+        color: var(--accent-text-clr);
+        border: none;
+        outline: none;
+        cursor: pointer;
+        user-select: none;
+        border-radius: 3px;
+        position: relative;
+        padding-left: 4rem;
+        padding-top: 0.4rem;
+        /* margin-bottom: 1rem; */
+    }
+    section.plp div.item-list .item div.bottom .price {
+        position: absolute;
+        padding-left: 6rem;
+    }
+    section.plp div.item-list .item div.bottom .button {
+        text-align: left;
+        width: 100%;
+    }
+    .prefix-mrp {
+        margin-left: 4rem;
+    }
+    .prefix-mrp::before {
+        content: "@ Rs. ";
+        right: 1rem;
+        width: 4rem;
+    }
+/* } */

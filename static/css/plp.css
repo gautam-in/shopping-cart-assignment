@@ -1,0 +1,104 @@
+section.plp {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    justify-content: stretch;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+aside {
+    width: 20%;
+    min-width: 280px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    background-color: #eaeaea;
+}
+aside label,aside input{
+    display: none;
+}
+ul.product-category {
+    margin: 0;
+    padding: 0;
+}
+
+ul.product-category li {
+    padding: 1rem 2rem;
+    list-style: none;
+    border-bottom: 1px solid #d2d2d2;
+    margin-left: 0.4rem;
+}
+
+ul.product-category li a {
+    color: #757575;
+}
+
+ul.product-category li a:hover {
+    cursor: pointer;
+    color: inherit;
+}
+
+ul.product-category li:last-child {
+    border-bottom: none;
+}
+
+section.plp div.item-list {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: white;
+}
+
+section.plp div.item-list .item {
+    background: white;
+    display: flex;
+    flex-flow: column nowrap;
+    flex-basis: 220px;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    margin-right: 0.4rem;
+    padding: .5rem;
+}
+section.plp div.item-list .item .mid {
+    display: flex;
+    flex-flow: column nowrap;
+}
+section.plp div.item-list .item img {
+    width: 100%;
+}
+
+section.plp div.item-list .item p {
+    padding: 0.5rem;
+    background-color: #eaeaea;
+    border-radius: 0.2rem;
+    margin-right: 0.3rem;
+    height: 5.2rem;
+    overflow: hidden;
+}
+section.plp div.item-list .item h3 {
+    height: 4rem;
+    overflow: hidden;
+}
+section.plp div.item-list .item div.bottom {
+    width: 100%;
+    border-bottom: 1px dotted;
+    margin-top: 1rem;
+    padding-bottom: 0.5rem;
+
+    display: flex;
+    align-items: center;
+}
+.prefix-mrp {
+    margin-left: 4.7rem;
+    margin-right: 1rem;
+}
+.prefix-mrp::before {
+    content: "MRP Rs. ";
+    right: 2rem;
+    width: 4rem;
+}

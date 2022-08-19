@@ -1,0 +1,39 @@
+div.log img {
+    width: 60%;
+}
+header nav{
+    display: none;
+}
+header .user-control{
+    display: none;   
+}
+.cart-link > a {
+    padding: 1rem;
+}
+.slider-container{
+    height: 110px;
+}
+.slider-container .slide-next,
+.slider-container .slide-prev {
+    padding: 4px 8px;
+}
+.slider-container .slide-pos .pos {
+    height: 5px;
+    width: 5px;
+}
+
+#categories  .item-tile{
+    height: 100px;    
+}
+
+#categories .button {
+    padding: 0.2rem .5rem;
+}
+#categories  .item-tile h2{
+    font-size: 16px;
+}
+#categories .item-tile div .desc-item{
+    margin: 0 .2rem;
+    font-size: .8rem;
+    max-height: 2rem;
+}
