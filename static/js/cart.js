@@ -97,7 +97,7 @@ const CartModule = (function () {
             return amnt;
         },
         _updateAmount:function(){
-            document.querySelector('.cart-area .checkout .action .button .amount').innerHTML = "Rs. "+this.getAmount();
+            document.querySelector('.cart-area .checkout .action .button .amount').innerHTML = +this.getAmount();
         }
     }
 
@@ -112,14 +112,14 @@ const CartModule = (function () {
         this.Quantity++;
         let amnt = this.getAmount();
         this.ViewItem.querySelector(selctorQty).innerHTML = this.Quantity;
-        this.ViewItem.querySelector(selectorAmount).innerHTML = "Rs. "+amnt;
+        this.ViewItem.querySelector(selectorAmount).innerHTML = +amnt;
     }
     CartItem.prototype.HandleDecreaseQty = function (selctorQty, selectorAmount) {
         if (this.Quantity <= 0) return;
         this.Quantity--;
         let amnt = this.getAmount();
         this.ViewItem.querySelector(selctorQty).innerHTML = this.Quantity;
-        this.ViewItem.querySelector(selectorAmount).innerHTML = "Rs. "+amnt;
+        this.ViewItem.querySelector(selectorAmount).innerHTML = +amnt;
     }
 
     return { getInstance: () => { return instance != null ? instance : instance = new Cart() } }

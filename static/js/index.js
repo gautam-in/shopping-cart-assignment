@@ -103,7 +103,7 @@ function ShowProducts(products) {
         element.append(product.description);
 
         element = viewItem.querySelector('div.bottom span.price');
-        element.append('MRP Rs. ' + product.price);
+        element.append(+ product.price);
 
         element = viewItem.querySelector('div.bottom button.button');
 

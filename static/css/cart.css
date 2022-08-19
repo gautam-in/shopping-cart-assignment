@@ -224,6 +224,30 @@ For small screen, change width to 1000%
 .cart-items[items="empty"]>.empty-message{
     display: block;
 }
+.prefix{
+    position: relative;									
+}
+.prefix::before{
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+.prefix-mrp{
+    margin-left:4rem;
+}
+.prefix-mrp::before{
+    content: "MRP Rs. ";   
+    right: 1.5rem;
+    width: 4rem;
+}
+.prefix-rs{
+    margin-left: 2rem;
+}
+.prefix-rs::before{
+    content: "Rs. ";   
+    width: 2rem;
+    right: 1.5rem;
+}
 @media screen and (max-width:1024px){
     .cart-parent .cart-area {
         box-sizing: border-box;
