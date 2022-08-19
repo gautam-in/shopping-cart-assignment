@@ -219,6 +219,13 @@ async function ShowCategories() {
 const ShowSection = Model('hidden');
 document.addEventListener('DOMContentLoaded', () => {
     ShowSection('home');
-    Service = new MyLocalService(window.location.host, 80, true);
+    
+    // //use this when using LiveServer VSCode extension
+    // //port 80 make sures that we are using the port which is assigned by live server
+    // Service = new MyLocalService(window.location.host, 80, true);
+
+    //use this when using canned Server to serve json
+    Service = new MyLocalService('127.0.0.1', '5000');
+
     SlideNav.buildSlides();
 });
