@@ -23,7 +23,6 @@ For small screen, change width to 1000%
     bottom: 0;
     right: 0;
     z-index: 10001;
-    margin-right: 1rem;
 }
 
 .cart-container {
@@ -224,4 +223,21 @@ For small screen, change width to 1000%
 }
 .cart-items[items="empty"]>.empty-message{
     display: block;
+}
+@media screen and (max-width:1024px){
+    .cart-parent .cart-area {
+        box-sizing: border-box;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 10001;
+    }
+    .cart-parent .cart-area .cart-header{
+        background-color: white;
+        color: black;
+        border-top: 2px solid gray;
+    }
+    
 }

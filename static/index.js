@@ -100,11 +100,11 @@ function ShowProducts(products) {
         let element = viewItem.querySelector('h3');
         element.append(product.name);
 
-        element = viewItem.querySelector('h3+img');
+        element = viewItem.querySelector('img');
         element.setAttribute('src', product.imageURL);
         element.setAttribute('alt', product.name);
 
-        element = viewItem.querySelector('h3+img+p');
+        element = viewItem.querySelector('p');
         element.append(product.description);
 
         element = viewItem.querySelector('div.bottom span.price');

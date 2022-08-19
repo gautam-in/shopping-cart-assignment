@@ -49,6 +49,7 @@ body {
     position: relative;
 }
 
+
 header {
     width: 100%;
     box-shadow: 3px 2px 4px rgba(0, 0, 0, .25);
@@ -107,7 +108,6 @@ nav a:hover {
 
 .cart-link {
     background-color: #cecece;
-
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -368,4 +368,61 @@ input[type="submit"].button {
 
 .hidden {
     display: none !important;
+}
+
+@media screen and (max-width:1024px){
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        min-height: 100vh;
+        overflow-x: hidden;
+        overflow-x: auto;
+        --max-width: 100%;
+        position: relative;
+    }
+    div.log {
+        margin: .2rem 0 0 0;
+        margin-right: 5%;
+    }
+    div.log img{
+        width: 85%;
+    }
+    .slider-container {
+        display: block;
+        margin: 0;
+        padding: 0;
+        height: 200px;
+        width: 100%;
+        position: relative;
+        background: white;
+    }
+
+    .item-tile {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        height: 200px;
+        width: 100%;
+        position: relative;
+        background: white;
+    }
+    .user-control {
+        background-color: white;
+        height: 1.5rem;
+        text-align: right;
+        margin-top: .4rem;
+    }
+    .cart-link>a {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1rem;
+        padding-left: 1rem;
+        padding-right: 2.5rem;
+    }
 }

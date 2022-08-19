@@ -62,7 +62,10 @@ section.plp div.item-list .item {
     margin-right: .4rem;
     padding: 1rem;
 }
-
+section.plp div.item-list .item .mid{
+    display: flex;
+    flex-flow: column nowrap;
+}
 section.plp div.item-list .item img {
     width: 100%;
 }
@@ -88,4 +91,29 @@ section.plp div.item-list .item div.bottom {
 }
 .button{
     cursor: pointer;
+}
+
+@media screen and (max-width:1024px) {
+    aside {
+        width: 15%;
+        min-width: 200px;
+    }
+    section.plp div.item-list .item {
+        flex-basis: 350px;
+    }
+    section.plp div.item-list .item .mid{
+        display: flex;
+        flex-flow: row nowrap;
+        max-height: 12rem;
+        overflow: hidden;
+    }
+    section.plp div.item-list .item img {
+        width: 50%;
+        padding: 5px;
+    }
+    section.plp div.item-list .item p {
+        padding: 5px;
+        padding: 5px;
+        height: 100%;
+    }
 }
