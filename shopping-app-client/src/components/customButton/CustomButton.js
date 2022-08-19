@@ -1,9 +1,9 @@
 import React from 'react'
 import './customButton.style.css'
 
-const CustomButton = ({children,handleClick , isLargeButton}) => {
+const CustomButton = ({children,handleClick , type='button', isLargeButton}) => {
   return (
-    <button className={`${isLargeButton ? 'button-large':''} button-container`} onClick={handleClick}>{children}</button>
+    <button type={type} className={`${isLargeButton ? 'button-large':''} button-container`} onClick={handleClick}>{children}</button>
   )
 }
 

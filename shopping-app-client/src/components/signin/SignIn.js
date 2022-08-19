@@ -4,6 +4,7 @@ import CustomButton from '../customButton/CustomButton'
 import { useNavigate } from 'react-router-dom'
 
 import './signin.style.css'
+import Metatitlewrapper from '../metatitlewrapper/Metatitlewrapper'
 
 const SignIn = ( ) => {
 
@@ -48,8 +49,8 @@ const SignIn = ( ) => {
     e.preventDefault();
       setErrorDataState({
         ...errorDataState,
-        emailErrorMessage:!isValidEmail(email)?'Please enter valid email':'',
-        passwordErrorMessage:!isValidPassword(password)?'Please enter atleast 6 digits alphanumeric passord':'',
+        emailErrorMessage:isValidEmail(email)?'Please enter valid email':'',
+        passwordErrorMessage:isValidPassword(password)?'Please enter atleast 6 digits alphanumeric passord':'',
       })
       let isInvalidDataPresent = false
       for(let key in errorDataState){
@@ -58,6 +59,7 @@ const SignIn = ( ) => {
           break;
         }
       }
+      console.log(isInvalidDataPresent,'hh')
       if(!isInvalidDataPresent){
         navigate('/')
 
@@ -71,6 +73,7 @@ const SignIn = ( ) => {
   const {  emailErrorMessage , passwordErrorMessage   } = errorDataState;
 
   return (
+    <Metatitlewrapper title={'Sabka Bazzar | Login'} description={'ecommerce,grocery,login page'}>
     <main>
       <div className='signup'>
         <div className='sign-up_text'>
@@ -104,7 +107,7 @@ const SignIn = ( ) => {
         />
         
         <div className='sign-up__button--container'>
-        <CustomButton isLargeButton={true}>
+        <CustomButton type='submit' isLargeButton={true}>
           SignIn
         </CustomButton>
         </div>
@@ -114,6 +117,7 @@ const SignIn = ( ) => {
         </div>
       </div>
     </main>
+    </Metatitlewrapper>
   )
 }
 

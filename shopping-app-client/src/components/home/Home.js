@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import CustomButton from '../customButton/CustomButton'
 import './home.style.css'
 import Carousel from "react-bootstrap/Carousel";
+import Metatitlewrapper from '../metatitlewrapper/Metatitlewrapper';
 
 
 const Home = () => {
@@ -26,17 +27,20 @@ useEffect(()=>{
 },[])
 
   return (
+    <Metatitlewrapper title={'Sabka Bazzar Home'} description={'fruits, bakery,beverages,beauty and hygiene,baby care'}>
+  
     <div className='home_container'>
 
     
 <Carousel>
 {bannerData.map(({ id, bannerImageUrl, bannerImageAlt }) => {
+  console.log(bannerData,'bd')
 
-console.log(bannerImageUrl)
 const bannerImagePath = bannerImageUrl.split('/')[4]
 const imgSrc = `../../assets/offers/${bannerImagePath}`
 
 return (
+    
 
   <Carousel.Item interval={2000}>
 
@@ -86,6 +90,7 @@ return (
         })
       }
     </div>
+    </Metatitlewrapper>
   )
 }
 

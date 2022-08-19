@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import FormInput from '../formInput/FormInput'
 import CustomButton from '../customButton/CustomButton'
 import { useNavigate } from 'react-router-dom'
+import Metatitlewrapper from "../metatitlewrapper/Metatitlewrapper";
 
 import './signup.style.css'
 
@@ -85,6 +86,8 @@ const Register = ( ) => {
   const { firstNameErrorMessage , lastNameErrorMessage , emailErrorMessage , passwordErrorMessage , confirmPasswordErrorMessage  } = errorDataState;
 
   return (
+    <Metatitlewrapper title={'Register'} description={'signup,register'}>
+  
     <main>
       <div className='signup'>
         <div className='sign-up_text'>
@@ -145,7 +148,7 @@ const Register = ( ) => {
         errorMessage={confirmPasswordErrorMessage}
         />
         <div className='sign-up__button--container'>
-        <CustomButton isLargeButton={true}>
+        <CustomButton type='submit' isLargeButton={true}>
           Signup
         </CustomButton>
         </div>
@@ -155,6 +158,7 @@ const Register = ( ) => {
         </div>
       </div>
     </main>
+    </Metatitlewrapper>
   )
 }
 

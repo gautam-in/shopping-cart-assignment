@@ -7,6 +7,7 @@ import CustomButton from '../customButton/CustomButton'
 import { useDispatch , useSelector  } from 'react-redux'
 import { addItemToCart  } from '../../actions/cart'
 import { setProductsData  } from '../../actions/products'
+import  Metatitlewrapper  from "../metatitlewrapper/Metatitlewrapper";
 
 
 const PLP = () => {
@@ -32,7 +33,7 @@ const PLP = () => {
     },[])
           
   return (
-    <>
+    <Metatitlewrapper title={'Products List'} description={'categories, products , ecommerce'}>
     <aside className='left_nav'>
         {categories.map(({name,id})=>{
             return<a onClick={()=>{
@@ -82,7 +83,7 @@ const PLP = () => {
        
 
     </div>
-    </>
+    </Metatitlewrapper>
   )
 }
 
