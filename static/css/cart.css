@@ -33,7 +33,7 @@ For small screen, change width to 1000%
     border: none;
     box-sizing: border-box;
     position: relative;
-    background-color: #ededed;
+    background-color: #ededed;    
 }
 
 .cart-parent .cart-area .cart-header {
@@ -67,10 +67,10 @@ For small screen, change width to 1000%
 .cart-parent .cart-area .cart-items {
     display: flex;
     flex-flow: column nowrap;
-    width: 100%;
+    max-height: 100%;
     padding: 0;
     margin: 0;
-
+    overflow-y: auto;
 }
 
 .cart-parent .cart-area .cart-items .cart-item {
@@ -224,22 +224,7 @@ For small screen, change width to 1000%
 .cart-items[items="empty"]>.empty-message{
     display: block;
 }
-.prefix{
-    position: relative;									
-}
-.prefix::before{
-    position: absolute;
-    top: 0;
-    height: 100%;
-}
-.prefix-mrp{
-    margin-left:4rem;
-}
-.prefix-mrp::before{
-    content: "MRP Rs. ";   
-    right: 1.5rem;
-    width: 4rem;
-}
+
 .prefix-rs{
     margin-left: 2rem;
 }
@@ -262,6 +247,9 @@ For small screen, change width to 1000%
         background-color: white;
         color: black;
         border-top: 2px solid gray;
-    }
-    
+	}
+    .cart-items .cart-item .right .item-action .icon {
+		padding: .1rem 1.3rem;
+		border-radius:7rem;
+	}
 }

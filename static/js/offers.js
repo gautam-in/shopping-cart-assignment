@@ -17,7 +17,9 @@ function addslideSelector(slidePos) {
     let pos = document.createElement('div');
     pos.classList.add('pos')
     pos.addEventListener('click', () => {
+        SlideNav._stopAutoScroll();
         PosClick(slidePos);
+        SlideNav._startAutoScroll();
     })
     slide_selector.append(pos);
 }
@@ -41,24 +43,30 @@ const SlideNav = {
     timer_h: 0,
     SlideCount: function () { return slides_p.querySelectorAll('.slide').length },
     NextClick: function (e) {
+        this._stopAutoScroll();
+
         let count = this.SlideCount();
-        if(this.Position>=count){
-            this.Position=1;
-        } else{
+        if (this.Position >= count) {
+            this.Position = 1;
+        } else {
             this.Position++;
         }
         PosClick(this.Position);
+
+        this._startAutoScroll();
     },
     PrevClick: function (e) {
+        this._stopAutoScroll();
         let count = this.SlideCount();
         if (this.Position <= 1) {
             this.Position = count;
-        } else {this.Position--;}
+        } else { this.Position--; }
         PosClick(this.Position);
         // if (this.Position < count) {
         //     let i = --this.Position;
         //     PosClick(i);
         // }
+        this._startAutoScroll();
     },
     buildSlides: function () {
 
@@ -74,7 +82,7 @@ const SlideNav = {
 
                 if (active_offers.length > 0) {
                     this.Position = 1;
-                    PosClick(this.Position); 
+                    PosClick(this.Position);
                 }
                 setTimeout(() => {
                     this._startAutoScroll();
@@ -82,12 +90,12 @@ const SlideNav = {
             })
         });
     },
-    _startAutoScroll:function(){
-        this.timer_h = setInterval(()=>{
+    _startAutoScroll: function () {
+        this.timer_h = setInterval(() => {
             this.NextClick();
-        },3000);
+        }, 3000);
     },
-    _stopAutoScroll:function(){
+    _stopAutoScroll: function () {
         clearInterval(this.timer_h);
     }
 }

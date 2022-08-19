@@ -6,14 +6,23 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Sabka Bazaar - Online Shopping Portal</title>
+
 	<link rel="stylesheet" href="css/index.css">
+
 	<link rel="stylesheet" href="css/login.css">
 	<link rel="stylesheet" href="css/plp.css">
 	<link rel="stylesheet" href="css/cart.css">
 
+	<link rel="stylesheet" href="css/index.desktop.css" media="only screen and (max-width:1365px)">
+	<link rel="stylesheet" href="css/index.tablet.css" media="only screen and (max-width: 1021px)">
+	<link rel="stylesheet" href="css/plp.tablet.css" media="only screen and (max-width: 1021px)">
+
+	<link rel="stylesheet" href="css/index.mobile.css" media="only screen and (max-width: 499px)">
+	<link rel="stylesheet" href="css/plp.mobile.css" media="only screen and (max-width: 499px)">
+
 	<style>
 		*[border] {
-			border: 1px solid black;
+			border: .1rem solid black;
 		}
 
 		div[template] {
@@ -86,7 +95,8 @@
 										<span class="mrp"><span class="cart-item-price  prefix prefix-rs"></span></span>
 									</div>
 									<div class="price">
-										<span class="amount"><span class="cart-item-amount  prefix prefix-rs"></span></span>
+										<span class="amount"><span
+												class="cart-item-amount  prefix prefix-rs"></span></span>
 									</div>
 								</div>
 							</div>
@@ -123,7 +133,13 @@
 			</div>
 		</div>
 		<section class="plp" id="page-category" class="hidden">
-			<aside>
+			<aside>				
+				<input class="hidden" type="checkbox" name="selector" id="selector">
+				<label for="selector">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+					</svg>
+				</label>
 				<ul class="product-category">
 					<!--
 						<li>
@@ -160,7 +176,7 @@
 				</div>
 			</div>
 		</section>
-		<section id="offers-area" aria-label="slide view of offers">
+		<section id="offers-area">
 			<div class="slider-container">
 				<div class="slider">
 					<div class="slides">
@@ -180,7 +196,7 @@
 				</div>
 			</div>
 		</section>
-		<section aria-label="Shopping" id="categories">
+		<section id="categories">
 			<div class="item-tile" template>
 				<div class="IMG"><img src="" alt=""></div>
 				<div>

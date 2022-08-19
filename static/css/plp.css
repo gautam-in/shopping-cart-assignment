@@ -17,7 +17,9 @@ aside {
     align-items: stretch;
     background-color: #eaeaea;
 }
-
+aside label,aside input{
+    display: none;
+}
 ul.product-category {
     margin: 0;
     padding: 0;
@@ -27,7 +29,7 @@ ul.product-category li {
     padding: 1rem 2rem;
     list-style: none;
     border-bottom: 1px solid #d2d2d2;
-    margin-left: .4rem;
+    margin-left: 0.4rem;
 }
 
 ul.product-category li a {
@@ -55,14 +57,14 @@ section.plp div.item-list .item {
     background: white;
     display: flex;
     flex-flow: column nowrap;
-    flex-basis: 250px;
+    flex-basis: 220px;
     flex-grow: 0;
     flex-shrink: 0;
 
-    margin-right: .4rem;
-    padding: 1rem;
+    margin-right: 0.4rem;
+    padding: .5rem;
 }
-section.plp div.item-list .item .mid{
+section.plp div.item-list .item .mid {
     display: flex;
     flex-flow: column nowrap;
 }
@@ -71,49 +73,32 @@ section.plp div.item-list .item img {
 }
 
 section.plp div.item-list .item p {
-    padding: .5rem;
+    padding: 0.5rem;
     background-color: #eaeaea;
-    border-radius: .2rem;
-    margin-right: .3rem;
+    border-radius: 0.2rem;
+    margin-right: 0.3rem;
     height: 5.2rem;
     overflow: hidden;
 }
-section.plp div.item-list .item h3{
+section.plp div.item-list .item h3 {
     height: 4rem;
     overflow: hidden;
 }
 section.plp div.item-list .item div.bottom {
-    display: flex;
-    flex-flow: row nowrap;
     width: 100%;
     border-bottom: 1px dotted;
     margin-top: 1rem;
-}
-.button{
-    cursor: pointer;
-}
+    padding-bottom: 0.5rem;
 
-@media screen and (max-width:1024px) {
-    aside {
-        width: 15%;
-        min-width: 200px;
-    }
-    section.plp div.item-list .item {
-        flex-basis: 350px;
-    }
-    section.plp div.item-list .item .mid{
-        display: flex;
-        flex-flow: row nowrap;
-        max-height: 12rem;
-        overflow: hidden;
-    }
-    section.plp div.item-list .item img {
-        width: 50%;
-        padding: 5px;
-    }
-    section.plp div.item-list .item p {
-        padding: 5px;
-        padding: 5px;
-        height: 100%;
-    }
+    display: flex;
+    align-items: center;
+}
+.prefix-mrp {
+    margin-left: 4.7rem;
+    margin-right: 1rem;
+}
+.prefix-mrp::before {
+    content: "MRP Rs. ";
+    right: 2rem;
+    width: 4rem;
 }

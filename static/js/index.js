@@ -102,7 +102,7 @@ function ShowProducts(products) {
         element = viewItem.querySelector('p');
         element.append(product.description);
 
-        element = viewItem.querySelector('div.bottom span.price');
+        element = viewItem.querySelector('div.bottom .price');
         element.append(+ product.price);
 
         element = viewItem.querySelector('div.bottom button.button');
