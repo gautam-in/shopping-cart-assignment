@@ -61,8 +61,8 @@ const SlideNav = {
         // }
     },
     buildSlides: function () {
-        let url = ServerURL + "/banners";
-        fetch(url).then((res) => {
+
+        Service.GetOffers().then((res) => {
             res.json().then((items) => {
                 let active_offers = FilterAndSortCategories(items).filter((item) => { return item.isActive });
 
@@ -93,4 +93,3 @@ const SlideNav = {
 }
 offers_p.querySelector('.slider-nav .slide-next').addEventListener('click', () => { SlideNav.NextClick() })
 offers_p.querySelector('.slider-nav .slide-prev').addEventListener('click', () => { SlideNav.PrevClick() })
-SlideNav.buildSlides();

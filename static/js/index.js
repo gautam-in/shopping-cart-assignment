@@ -1,20 +1,20 @@
 let currentCategory;
+/**@type {MyLocalService}*/
+let Service = null;
 
 const sectionCallbacks = {
     products: () => {
         ShowCategories().then(() => {
             if (currentCategory) {
                 //load and show items from selected category
-                let url = ServerURL + "/products?id=" + currentCategory.id;
-                fetch(url).then((resp) => {
-                    resp.json().then(data => {//server does not filter so we can filter
+                //server does not filter so we can filter after response is received
+                Service.GetProducts().then((resp) => {
+                    resp.json().then(data => {
                         ShowProducts(data.filter((item => item.category == currentCategory.id)));
                     })
                 })
-
             } else {
-                let url = ServerURL + "/products";
-                fetch(url).then((resp) => {
+                Service.GetProducts().then((resp) => {
                     resp.json().then(data => {
                         ShowProducts(data)
                     })
@@ -23,8 +23,7 @@ const sectionCallbacks = {
         });
     },
     home: () => {
-        let url = ServerURL + "/categories";
-        fetch(url).then((resp) => {
+        Service.GetCategories().then((resp) => {
             resp.json().then(data => {
                 ShowBanners(data);
             })
@@ -32,10 +31,7 @@ const sectionCallbacks = {
         HandleInputAttribute();
     },
 };
-const ShowSection = Model('hidden');
-document.addEventListener('DOMContentLoaded', () => {
-    ShowSection('home');
-});
+
 function FilterAndSortCategories(items) {
     return items.sort((a, b) => b.order < a.order ? 1 : -1).filter(item => item.order >= 0);
 }
@@ -81,7 +77,6 @@ function ShowBanners(categories) {
         template.parentElement.appendChild(item);
     }
 }
-
 function ShowProducts(products) {
     let template = document.querySelector('section.plp div.item-list div.item[template]')
     let list = template.parentElement;
@@ -120,7 +115,6 @@ function ShowProducts(products) {
         list.append(viewItem);
     }
 }
-
 function HandleInputAttribute() {
     document.querySelectorAll('.m-control input.m-input').forEach(input => {
         input.addEventListener('input', (e) => {
@@ -133,7 +127,6 @@ function HandleInputAttribute() {
         })
     });
 }
-
 function Model(css) {
     let _ = document.querySelector.bind(document);
     const elements = {
@@ -194,10 +187,9 @@ function Model(css) {
     }
     return Show;
 }
-
 async function ShowCategories() {
-    let url = ServerURL + "/categories";
-    let categories = await (await fetch(url)).json();
+
+    let categories = await (await Service.GetCategories()).json();
     let filtered = FilterAndSortCategories(categories);
 
     let ul = document.querySelector('section#page-category aside ul.product-category');
@@ -222,3 +214,11 @@ async function ShowCategories() {
     }
 }
 
+//Entry
+/*************************************************************/
+const ShowSection = Model('hidden');
+document.addEventListener('DOMContentLoaded', () => {
+    ShowSection('home');
+    Service = new MyLocalService(window.location.host, 80, true);
+    SlideNav.buildSlides();
+});
