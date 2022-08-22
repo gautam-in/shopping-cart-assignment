@@ -24,7 +24,7 @@ import { useTranslation } from 'react-i18next';
 export function App() {
   const { i18n } = useTranslation();
   return (
-    <div style={{ height: 100 }}>
+    <div>
       <Helmet
         prioritizeSeoTags
         titleTemplate="%s - Sabka Bazaar Grocery Supplies"

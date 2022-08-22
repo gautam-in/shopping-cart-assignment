@@ -19,3 +19,12 @@ export const selectHomePageError = createSelector(
   [selectSlice],
   state => state.error,
 );
+
+export const selectCategoryLoading = createSelector(
+  [selectSlice],
+  state => state.categoryLoading,
+);
+export const selectHomePageCategoryItems = createSelector(
+  [selectSlice],
+  state => state.categoryItems,
+);

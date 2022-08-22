@@ -6,3 +6,13 @@ export interface BannerItem {
   order: number;
   id: string;
 }
+
+export interface CategoryItem {
+  description: string;
+  enabled: boolean;
+  id: string;
+  imageUrl: string;
+  key: string;
+  name: string;
+  order: number;
+}

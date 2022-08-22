@@ -9,6 +9,8 @@ export const initialState: HomePageState = {
   banners: [],
   loading: true,
   error: 'null',
+  categoryLoading: true,
+  categoryItems: [],
 };
 
 const slice = createSlice({
@@ -24,6 +26,17 @@ const slice = createSlice({
     },
     getBannersDataError(state, actions: PayloadAction<string>) {
       state.loading = false;
+      state.error = actions.payload;
+    },
+    getCategory(state) {
+      state.categoryLoading = true;
+    },
+    getCategoryData(state, actions: PayloadAction<[]>) {
+      state.categoryLoading = false;
+      state.categoryItems = actions.payload;
+    },
+    getCategoryDataError(state, actions: PayloadAction<string>) {
+      state.categoryLoading = false;
       state.error = actions.payload;
     },
   },
