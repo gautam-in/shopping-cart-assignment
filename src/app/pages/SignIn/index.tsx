@@ -104,7 +104,7 @@ const Wrapper = styled.div`
 const Row = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   margin-top: 40px;
   justify-content: space-between;
