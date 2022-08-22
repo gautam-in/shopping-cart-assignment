@@ -19,16 +19,28 @@ import { TextField } from 'app/components/TextField';
 interface Props {}
 
 interface FormValues {
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
+  confirmPassword: string;
 }
 
 // the Formik component supports yup validation out-of-the-box via the `validationSchema` prop
 const validationSchema = yup.object().shape({
   firstName: yup.string().required('Required'),
   lastName: yup.string().required('Required'),
-  email: yup.string().required('Required'),
-  password: yup.string().required('Required'),
+  email: yup.string().email().required('Required'),
+  password: yup
+    .string()
+    .required('No password provided.')
+    .min(6, 'Password is too short - should be 8 chars minimum.')
+    .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.')
+    .matches(/[0-9]/, 'Password can only contain number.'),
+  confirmPassword: yup
+    .string()
+    .required('No password provided.')
+    .oneOf([yup.ref('password')], 'Your passwords do not match.'),
 });
 
 interface Props {}
@@ -50,8 +62,11 @@ export const SignUp = memo((props: Props) => {
           </Span>
           <Formik
             initialValues={{
+              firstName: '',
+              lastName: '',
               email: '',
               password: '',
+              confirmPassword: '',
             }}
             validationSchema={validationSchema}
             onSubmit={(
@@ -112,7 +127,6 @@ export const SignUp = memo((props: Props) => {
                   <Grid item xs={12}>
                     <Button
                       type="submit"
-                      variant="outlined"
                       size="large"
                       color="primary"
                       disabled={formikProps.isSubmitting}

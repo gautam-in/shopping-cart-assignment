@@ -23,8 +23,10 @@ export const Button = memo((props: Props) => {
   const { label, ...rest } = props;
 
   return (
-    <ThemeProvider theme={theme} {...rest}>
-      <CustomButton variant="contained">{label}</CustomButton>
+    <ThemeProvider theme={theme}>
+      <CustomButton variant="contained" {...rest}>
+        {label}
+      </CustomButton>
     </ThemeProvider>
   );
 });
