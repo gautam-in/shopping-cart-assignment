@@ -3,4 +3,5 @@ import { styled as mStyled } from '@mui/material/styles';
 
 export const CustomContainer = mStyled(Container)({
   // your custom styles go here
+  height: '100%',
 }) as typeof Container;
