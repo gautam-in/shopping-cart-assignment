@@ -1,0 +1,93 @@
+.group{
+    position: relative;
+    margin: 38px 0;
+}
+
+.group .form-input{
+background: none;
+font-size: 18px;
+padding: 10px 10px 10px 5px;
+display: block;
+width: 100%;
+border: none;
+border-radius: 0;
+border-bottom: 1px solid grey;
+margin: 25px 0;
+
+}
+.form-input-error{
+background: none;
+font-size: 18px;
+padding: 10px 10px 10px 5px;
+display: block;
+width: 100%;
+border: none;
+border-radius: 0;
+border-bottom: 1px solid red;
+margin: 45px 0 ;
+
+
+}
+.group .form-input:focus{
+outline: none;
+border-color: rgb(0, 204, 255) ;
+}
+.group .form-input-error:focus{
+    outline: none;
+    border-color: red ;
+    }
+    .group .form-input-error:focus ~ .form-input-label {
+        top: -14px;
+        font-size: 12px;
+        color: red;
+    }
+.group .form-input:focus ~ .form-input-label {
+    top: -14px;
+    font-size: 12px;
+    color: rgb(0, 204, 255);
+}
+
+.group .form-input-error:focus ~ .form-input-error-label {
+    top: -14px;
+    font-size: 12px;
+    color: red;
+}
+
+.group .form-input-label{
+    color: grey;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left :5px;
+    top: 10px;
+    transition: 300ms ease all;
+
+}
+.group .form-input-error-label{
+    color: red;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left :5px;
+    top: 10px;
+    transition: 300ms ease all;
+
+}
+
+.group .form-input-label.shrink {
+    top: -14px;
+    font-size: 12px;
+    color: rgb(0, 204, 255);
+}
+
+.group .form-input-error-label.shrink {
+    top: -14px;
+    font-size: 12px;
+    color: red;
+}
+.error-message{
+    color: red;
+}
+
