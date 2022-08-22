@@ -1,6 +1,8 @@
 /* --- STATE --- */
 export interface ProductListingState {
     loading: boolean;
-    data: object;
+    data: {
+        categoriesRes: [], productsRes: []
+    };
     error: string;
 }

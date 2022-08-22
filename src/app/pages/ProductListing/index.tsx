@@ -9,8 +9,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Helmet } from 'react-helmet-async';
 import { CustomContainer } from 'app/components/Container';
 import { ProductItem } from 'app/components/ProductItem';
-import { ProductListingStyle  } from 'styles/product-listing-styles';
+import { ProductListingStyle } from 'styles/product-listing-styles';
+import renderProducts from 'utils/renderProductList';
+
 import map from 'lodash/map';
+import get from 'lodash/get';
+import isEmpty from 'lodash/isEmpty';
+
 import { useProductListingSlice } from './slice';
 import {
   selectProductListingLoading,
@@ -18,10 +23,14 @@ import {
   selectProductListingProducts,
 } from './selectors';
 
-
-interface Props {}
+interface Props {
+  match: {
+    params: object;
+  };
+}
 
 export const ProductListing = memo((props: Props) => {
+  const { match } = props;
   const { actions } = useProductListingSlice();
   const dispatch = useDispatch();
   const categoriesList = useSelector(selectProductListingCategories);
@@ -31,20 +40,34 @@ export const ProductListing = memo((props: Props) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const getData = useCallback(
-    () => dispatch(actions.getData()),
-    [actions, dispatch],
+    () =>  {
+      if(isEmpty(categoriesList)) {
+        dispatch(actions.getData())
+      }
+    },
+    [actions, dispatch, categoriesList],
   );
 
   useEffect(() => {
     getData();
   }, [getData]);
 
+  useEffect(() => {
+    const { params } = match;
+    const id = get(params, 'categoryId');
+    if(!isEmpty(id)) {
+      setSelectedCategory(id);
+    }
+  }, [match]);
+
   const changeCategory = event => {
     const { value } = event.target;
-    console.log(value);
+    setSelectedCategory(value);
   };
 
-  const setResetCategory = id => {};
+  const setResetCategory = id => {
+    setSelectedCategory(id);
+  };
 
   return (
     <div>
@@ -60,7 +83,7 @@ export const ProductListing = memo((props: Props) => {
           <select
             name="SelectCategory"
             id="category-selection-dropdown"
-            onChange={changeCategory}
+            onSelect={changeCategory}
             value={'default'}
           >
             <option value="default" disabled>
@@ -92,7 +115,7 @@ export const ProductListing = memo((props: Props) => {
             </aside>
             <article className="products-list">
               <div className="product-list-container">
-                {map(productsList, val => (
+                {map(renderProducts(productsList, selectedCategory), val => (
                   <ProductItem key={val.id} {...val}></ProductItem>
                 ))}
               </div>

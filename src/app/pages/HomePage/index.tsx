@@ -8,7 +8,7 @@ import React, { memo, useCallback, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Helmet } from 'react-helmet-async';
-
+import isEmpty from 'lodash/isEmpty';
 import { CustomContainer } from 'app/components/Container';
 import { Banner } from 'app/components/Banner';
 import { Categories } from 'app/components/Categories';
@@ -31,10 +31,11 @@ export const HomePage = memo(() => {
   const categoriesLoading = useSelector(selectCategoryLoading);
   const categoryItems = useSelector(selectHomePageCategoryItems);
 
-  const getBannerList = useCallback(
-    () => dispatch(actions.getBanners()),
-    [actions, dispatch],
-  );
+  const getBannerList = useCallback(() => {
+    if (isEmpty(categoryItems)) {
+      dispatch(actions.getBanners());
+    }
+  }, [actions, dispatch, categoryItems]);
 
   useEffect(() => {
     getBannerList();

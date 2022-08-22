@@ -6,7 +6,7 @@ import { ProductListingState } from './types';
 
 export const initialState: ProductListingState = {
   loading: true,
-  data: {},
+  data: {  categoriesRes: [], productsRes: [] },
   error: '',
 };
 
@@ -20,7 +20,8 @@ const slice = createSlice({
     },
     getDataSuccess(state, action: PayloadAction<any>) {
       state.loading = false;
-      state.data = action.payload;
+      state.data.categoriesRes = action.payload.categoriesRes;
+      state.data.productsRes = action.payload.productsRes;
     },
     getDataFail(state, action: PayloadAction<any>) {
       state.loading = false;
