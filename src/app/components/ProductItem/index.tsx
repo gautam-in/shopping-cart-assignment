@@ -23,7 +23,7 @@ export const ProductItem = memo((props: Props) => {
 
   const { id, name, imageURL, description, price } = props;
 
-  const addToCart =  useCallback( (data) => {
+  const addToCart = data => {
     const { actions } = slice;
     dispatch(
       actions.addItem({
@@ -31,7 +31,7 @@ export const ProductItem = memo((props: Props) => {
         newItem: data,
       }),
     );
-  }, [dispatch]);
+  };
 
   return (
     <article className="product-item" key={id}>

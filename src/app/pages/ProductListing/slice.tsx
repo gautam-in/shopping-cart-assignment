@@ -1,7 +1,8 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from 'utils/@reduxjs/toolkit';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
-
+import { myCartSaga } from 'app/components/MyCart/saga';
+import { slice as myCartSlice } from 'app/components/MyCart/slice';
 import { productListingSaga } from './saga';
 import { ProductListingState } from './types';
 
@@ -17,6 +18,7 @@ const slice = createSlice({
   reducers: {
     getData(state) {
       state.loading = true;
+      state.error = '';
     },
     getDataSuccess(state, action: PayloadAction<any>) {
       state.loading = false;
@@ -35,6 +37,9 @@ export const { actions: productListingActions } = slice;
 export const useProductListingSlice = () => {
   useInjectReducer({ key: slice.name, reducer: slice.reducer });
   useInjectSaga({ key: slice.name, saga: productListingSaga });
+
+  useInjectReducer({ key: 'myCart', reducer: myCartSlice.reducer });
+  useInjectSaga({ key: 'myCart', saga: myCartSaga });
 
   return { actions: slice.actions };
 };

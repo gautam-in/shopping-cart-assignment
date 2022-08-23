@@ -18,7 +18,7 @@ export const CartItem = memo((props: Props) => {
 
   const cart = useSelector(selectMyCart);
 
-  const manageQty = useCallback((type, id) => {
+  const manageQty = (type, id) => {
     const isDecrease = type === 'decrease';
     let tempCart = [...cart];
     const index = tempCart.findIndex(item => item.id === id);
@@ -47,7 +47,7 @@ export const CartItem = memo((props: Props) => {
       tempCart.splice(index, 1);
     }
     dispatch(myCartActions.addItemSuccess(tempCart));
-  }, [dispatch]);
+  };
 
   const getTotal = () => {
     return cart.reduce(
