@@ -8,3 +8,11 @@ import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
 
 import 'jest-styled-components';
+
+window.matchMedia = window.matchMedia || function() {
+  return {
+  matches : false,
+  addListener : function() {},
+  removeListener: function() {}
+  };
+  };

@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Banner  /> should match snapshot 1`] = `
+.c0 {
+  margin-top: 5px;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="slick-slider slick-initialized"
+    dir="ltr"
+  >
+    <button
+      class="slick-arrow slick-prev"
+      data-role="none"
+      style="display: block;"
+      type="button"
+    >
+       
+      Previous
+    </button>
+    <div
+      class="slick-list"
+    >
+      <div
+        class="slick-track"
+        style="opacity: 1; transform: translate3d(0px, 0px, 0px);"
+      >
+        <div
+          aria-hidden="true"
+          class="slick-slide slick-cloned"
+          data-index="-1"
+          style="width: 0px;"
+          tabindex="-1"
+        />
+        <div
+          aria-hidden="false"
+          class="slick-slide slick-active slick-current"
+          data-index="0"
+          style="outline: none; width: 0px;"
+          tabindex="-1"
+        >
+          <div>
+            <img
+              alt="Independence Day Deal - 25% off on shampoo"
+              src="/static/images/offers/offer1.jpg"
+              style="width: 100%; display: inline-block;"
+              tabindex="-1"
+            />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          class="slick-slide"
+          data-index="1"
+          style="outline: none; width: 0px;"
+          tabindex="-1"
+        />
+        <div
+          aria-hidden="true"
+          class="slick-slide"
+          data-index="2"
+          style="outline: none; width: 0px;"
+          tabindex="-1"
+        />
+        <div
+          aria-hidden="true"
+          class="slick-slide"
+          data-index="3"
+          style="outline: none; width: 0px;"
+          tabindex="-1"
+        />
+        <div
+          aria-hidden="true"
+          class="slick-slide"
+          data-index="4"
+          style="outline: none; width: 0px;"
+          tabindex="-1"
+        />
+        <div
+          aria-hidden="true"
+          class="slick-slide slick-cloned"
+          data-index="5"
+          style="width: 0px;"
+          tabindex="-1"
+        >
+          <div>
+            <img
+              alt="Independence Day Deal - 25% off on shampoo"
+              src="/static/images/offers/offer1.jpg"
+              style="width: 100%; display: inline-block;"
+              tabindex="-1"
+            />
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          class="slick-slide slick-cloned"
+          data-index="6"
+          style="width: 0px;"
+          tabindex="-1"
+        />
+        <div
+          aria-hidden="true"
+          class="slick-slide slick-cloned"
+          data-index="7"
+          style="width: 0px;"
+          tabindex="-1"
+        />
+        <div
+          aria-hidden="true"
+          class="slick-slide slick-cloned"
+          data-index="8"
+          style="width: 0px;"
+          tabindex="-1"
+        />
+        <div
+          aria-hidden="true"
+          class="slick-slide slick-cloned"
+          data-index="9"
+          style="width: 0px;"
+          tabindex="-1"
+        />
+      </div>
+    </div>
+    <button
+      class="slick-arrow slick-next"
+      data-role="none"
+      style="display: block;"
+      type="button"
+    >
+       
+      Next
+    </button>
+    <ul
+      class="slick-dots"
+      style="display: block;"
+    >
+      <li
+        class="slick-active"
+      >
+        <button>
+          1
+        </button>
+      </li>
+      <li
+        class=""
+      >
+        <button>
+          2
+        </button>
+      </li>
+      <li
+        class=""
+      >
+        <button>
+          3
+        </button>
+      </li>
+      <li
+        class=""
+      >
+        <button>
+          4
+        </button>
+      </li>
+      <li
+        class=""
+      >
+        <button>
+          5
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
