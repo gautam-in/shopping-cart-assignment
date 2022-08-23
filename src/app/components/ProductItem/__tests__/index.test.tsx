@@ -16,7 +16,15 @@ jest.mock('react-i18next', () => ({
 
 describe('<ProductItem  />', () => {
   it('should match snapshot', () => {
-    const loadingIndicator = render(<ProductItem />);
+    const loadingIndicator = render(
+      <ProductItem
+        id="1"
+        name="test"
+        imageURL="/test"
+        description="desc"
+        price={1}
+      />,
+    );
     expect(loadingIndicator.container.firstChild).toMatchSnapshot();
   });
 });
