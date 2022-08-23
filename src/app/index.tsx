@@ -25,7 +25,7 @@ import { useTranslation } from 'react-i18next';
 export function App() {
   const { i18n } = useTranslation();
   return (
-    <div>
+    <>
       <Helmet
         prioritizeSeoTags
         titleTemplate="%s - Sabka Bazaar Grocery Supplies"
@@ -48,6 +48,6 @@ export function App() {
       </Switch>
       <Footer />
       <GlobalStyle />
-    </div>
+    </>
   );
 }

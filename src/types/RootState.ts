@@ -2,6 +2,7 @@ import { SignUpState } from 'app/pages/SignUp/types';
 import { HomePageState } from 'app/pages/HomePage/types';
 import { SignInState } from 'app/pages/SignIn/types';
 import { ProductListingState } from 'app/pages/ProductListing/types';
+import { MyCartState } from 'app/components/MyCart/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
 /* 
@@ -13,5 +14,6 @@ export interface RootState {
   homePage?: HomePageState;
   signIn?: SignInState;
   productListing?: ProductListingState;
+  myCart?: MyCartState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }
