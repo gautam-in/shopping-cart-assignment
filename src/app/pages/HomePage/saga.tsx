@@ -1,10 +1,9 @@
-import { call, put, takeLatest, delay } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { request } from 'utils/request';
 import { homePageActions as actions } from './slice';
 import { BannerItem } from 'types/banners';
 
 function* handleGetBanners() {
-  yield delay(500);
   const requestURL = `${process.env.REACT_APP_API}/banners`;
   try {
     const bannersList: BannerItem[] = yield call(request, requestURL);
@@ -16,7 +15,6 @@ function* handleGetBanners() {
 }
 
 function* handleGetCategory() {
-  yield delay(500);
   const requestURL = `${process.env.REACT_APP_API}/categories`;
   try {
     const categoriesRes = yield call(request, requestURL);

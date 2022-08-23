@@ -4,13 +4,24 @@ import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { myCartSaga } from './saga';
 import { MyCartState } from './types';
 
-export const initialState: MyCartState = {};
+export const initialState: MyCartState = {
+  cart: [],
+  error: {},
+};
 
-const slice = createSlice({
+export const slice = createSlice({
   name: 'myCart',
   initialState,
   reducers: {
-    someAction(state, action: PayloadAction<any>) {},
+    addItem(state, action: PayloadAction<any>) {
+      state.error = {};
+    },
+    addItemSuccess(state, action: PayloadAction<any>) {
+      state.cart = action.payload;
+    },
+    addItemError(state, action: PayloadAction<any>) {
+      state.error = action.payload;
+    },
   },
 });
 

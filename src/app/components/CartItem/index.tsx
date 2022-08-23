@@ -3,9 +3,11 @@
  * CartItem
  *
  */
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import map from 'lodash/map';
 import { selectMyCart } from 'app/components/MyCart/selectors';
+import { myCartActions } from 'app/components/MyCart/slice';
 
 interface Props {
   handleClose: Function;
@@ -16,23 +18,36 @@ export const CartItem = memo((props: Props) => {
 
   const cart = useSelector(selectMyCart);
 
-  const manageQty = (type, id) => {
+  const manageQty = useCallback((type, id) => {
     const isDecrease = type === 'decrease';
-    const tempCart = [...cart];
+    let tempCart = [...cart];
     const index = tempCart.findIndex(item => item.id === id);
+
     if (tempCart[index]['quantity'] <= tempCart[index]['stock']) {
-      tempCart[index]['quantity'] =
-        tempCart[index]['quantity'] + (isDecrease ? -1 : 1);
+      tempCart = map(tempCart, item => {
+        if (item.id === id && isDecrease) {
+          const updateItem = {
+            ...item,
+            quantity: item.quantity - 1,
+          };
+          return updateItem;
+        }
+        if (item.id === id && !isDecrease) {
+          const updateItem = {
+            ...item,
+            quantity: item.quantity + 1,
+          };
+          return updateItem;
+        }
+        return item;
+      });
     }
 
     if (tempCart[index]['quantity'] <= 0) {
       tempCart.splice(index, 1);
     }
-    // dispatch({
-    //   type: CART_ACTION_TYPES.UPDATE_QUANTITY,
-    //   payload: tempCart,
-    // });
-  };
+    dispatch(myCartActions.addItemSuccess(tempCart));
+  }, [dispatch]);
 
   const getTotal = () => {
     return cart.reduce(
@@ -92,7 +107,7 @@ export const CartItem = memo((props: Props) => {
       </div>
       <footer className="cart-footer">
         <p>Promo code can be applied on payment page</p>
-        <button className="shopping" onClick={clickHandler}>
+        <button className="shopping" onClick={clickHandler()}>
           <div className="checkout-title">Proceed to Checkout</div>
           <div className="cart-total-price">Rs.{getTotal()} &gt;</div>
         </button>

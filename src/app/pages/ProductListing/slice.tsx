@@ -1,12 +1,13 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from 'utils/@reduxjs/toolkit';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
+
 import { productListingSaga } from './saga';
 import { ProductListingState } from './types';
 
 export const initialState: ProductListingState = {
   loading: true,
-  data: {  categoriesRes: [], productsRes: [] },
+  data: { categoriesRes: [], productsRes: [] },
   error: '',
 };
 
@@ -16,7 +17,6 @@ const slice = createSlice({
   reducers: {
     getData(state) {
       state.loading = true;
-      state.error = '';
     },
     getDataSuccess(state, action: PayloadAction<any>) {
       state.loading = false;
@@ -35,6 +35,7 @@ export const { actions: productListingActions } = slice;
 export const useProductListingSlice = () => {
   useInjectReducer({ key: slice.name, reducer: slice.reducer });
   useInjectSaga({ key: slice.name, saga: productListingSaga });
+
   return { actions: slice.actions };
 };
 

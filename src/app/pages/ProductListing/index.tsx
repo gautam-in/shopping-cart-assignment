@@ -18,7 +18,6 @@ import isEmpty from 'lodash/isEmpty';
 
 import { useProductListingSlice } from './slice';
 import {
-  selectProductListingLoading,
   selectProductListingCategories,
   selectProductListingProducts,
 } from './selectors';
@@ -31,22 +30,18 @@ interface Props {
 
 export const ProductListing = memo((props: Props) => {
   const { match } = props;
-  const { actions } = useProductListingSlice();
+  const  { actions } = useProductListingSlice();
   const dispatch = useDispatch();
   const categoriesList = useSelector(selectProductListingCategories);
   const productsList = useSelector(selectProductListingProducts);
-  const loading = useSelector(selectProductListingLoading);
 
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  const getData = useCallback(
-    () =>  {
-      if(isEmpty(categoriesList)) {
-        dispatch(actions.getData())
-      }
-    },
-    [actions, dispatch, categoriesList],
-  );
+  const getData = useCallback(() => {
+    if (isEmpty(categoriesList)) {
+      dispatch(actions.getData());
+    }
+  }, [actions, dispatch, categoriesList]);
 
   useEffect(() => {
     getData();
@@ -55,18 +50,22 @@ export const ProductListing = memo((props: Props) => {
   useEffect(() => {
     const { params } = match;
     const id = get(params, 'categoryId');
-    if(!isEmpty(id)) {
+    if (!isEmpty(id)) {
       setSelectedCategory(id);
     }
   }, [match]);
 
   const changeCategory = event => {
     const { value } = event.target;
-    setSelectedCategory(value);
+    setResetCategory(value);
   };
 
   const setResetCategory = id => {
-    setSelectedCategory(id);
+    if (selectedCategory === id) {
+      setSelectedCategory(null);
+    } else {
+      setSelectedCategory(id);
+    }
   };
 
   return (
@@ -83,8 +82,8 @@ export const ProductListing = memo((props: Props) => {
           <select
             name="SelectCategory"
             id="category-selection-dropdown"
-            onSelect={changeCategory}
-            value={'default'}
+            onChange={changeCategory}
+            value={selectedCategory ? selectedCategory : 'default'}
           >
             <option value="default" disabled>
               Select Category
@@ -104,7 +103,8 @@ export const ProductListing = memo((props: Props) => {
                       <a
                         className={selectedCategory === item.id ? 'active' : ''}
                         key={item.id}
-                        onClick={() => setResetCategory(item.id)}
+                        onClick={(e) => { e.stopPropagation(); e.preventDefault(); setResetCategory(item.id)}}
+                        href="!#"
                       >
                         {item.name}
                       </a>
@@ -115,9 +115,10 @@ export const ProductListing = memo((props: Props) => {
             </aside>
             <article className="products-list">
               <div className="product-list-container">
-                {map(renderProducts(productsList, selectedCategory), val => (
-                  <ProductItem key={val.id} {...val}></ProductItem>
-                ))}
+                {!isEmpty(productsList) &&
+                  map(renderProducts(productsList, selectedCategory), val => (
+                    <ProductItem key={val.id} {...val}></ProductItem>
+                  ))}
               </div>
             </article>
           </div>
@@ -127,3 +128,4 @@ export const ProductListing = memo((props: Props) => {
     </div>
   );
 });
+

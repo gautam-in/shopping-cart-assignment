@@ -1,10 +1,11 @@
 import { createSelector } from '@reduxjs/toolkit';
+import get from 'lodash/get';
 import { ProductListingState } from './types';
 
 export const initialState = {};
 
 const selectSlice = (state: ProductListingState) =>
-  state['productListing'] || initialState;
+  get(state,'productListing', initialState);
 
 export const selectProductListing = createSelector(
   [selectSlice],
@@ -18,10 +19,10 @@ export const selectProductListingLoading = createSelector(
 
 export const selectProductListingCategories = createSelector(
   [selectSlice],
-  state => state.data.categoriesRes,
+  state => get(state,'data.categoriesRes', []),
 );
 
 export const selectProductListingProducts = createSelector(
   [selectSlice],
-  state => state.data.productsRes,
+  state => get(state,'data.productsRes',[]),
 );

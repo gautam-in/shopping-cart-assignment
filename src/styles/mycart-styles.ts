@@ -23,9 +23,9 @@ export const MyCartStyle = createGlobalStyle`
   flex-basis: 1rem;
   background: black;
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: bold;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
 }
 
 .cart footer {
@@ -112,14 +112,14 @@ export const MyCartStyle = createGlobalStyle`
 
 .item-name {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
 }
 
 .btn-group {
   display: flex;
   align-items: center;
   margin: 1.2rem;
-  font-size: 1.4rem;
+  font-size: 0/5rem;
 }
 
 .inc-btn,
@@ -150,8 +150,8 @@ export const MyCartStyle = createGlobalStyle`
   display: flex;
   justify-content: space-between;
   font-weight: bold;
-  font-size: 1.8rem;
-  padding: 2.2rem;
+  font-size: 0.8rem;
+  padding: 1.2rem;
 }
 
 @media only screen and (max-width: 1023px) {

@@ -3,10 +3,11 @@
  * ProductItem
  *
  */
-import React, { memo } from 'react';
-import styled from 'styled-components/macro';
-import { useTranslation } from 'react-i18next';
-import { ProductItemStyle } from 'styles/product-item-styles'
+import React, { memo, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { ProductItemStyle } from 'styles/product-item-styles';
+import { slice } from 'app/components/MyCart/slice';
+import { selectMyCart } from 'app/components/MyCart/selectors';
 
 interface Props {
   id: string;
@@ -17,13 +18,20 @@ interface Props {
 }
 
 export const ProductItem = memo((props: Props) => {
-  const { id, name, imageURL, description, price } = props;
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { t, i18n } = useTranslation();
+  const dispatch = useDispatch();
+  const cart = useSelector(selectMyCart);
 
-  const addToCart = data => {
-    console.log(data);
-  };
+  const { id, name, imageURL, description, price } = props;
+
+  const addToCart =  useCallback( (data) => {
+    const { actions } = slice;
+    dispatch(
+      actions.addItem({
+        cart,
+        newItem: data,
+      }),
+    );
+  }, [dispatch]);
 
   return (
     <article className="product-item" key={id}>
@@ -55,5 +63,3 @@ export const ProductItem = memo((props: Props) => {
     </article>
   );
 });
-
-const Div = styled.div``;

@@ -1,9 +1,8 @@
-import { take, call, put, select, takeLatest, delay } from 'redux-saga/effects';
+import { call, put, takeLatest, delay } from 'redux-saga/effects';
 import { request } from 'utils/request';
 import { productListingActions as actions } from './slice';
 
 function* handleGetData() {
-  yield delay(500);
   const categoryRequestURL = `${process.env.REACT_APP_API}/categories`;
   const productRequestURL = `${process.env.REACT_APP_API}/products`;
   try {

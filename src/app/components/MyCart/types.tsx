@@ -1,2 +1,5 @@
 /* --- STATE --- */
-export interface MyCartState {}
+export interface MyCartState {
+    cart: Array<[]>,
+    error: object,
+}
