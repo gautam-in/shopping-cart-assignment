@@ -14,7 +14,6 @@ function* handleBannersData() {
 function* handleCategoriesData() {
   try {
     const data = yield call(fetchCategoriesFromServer);
-    console.log(data);
     yield put(getCategories(data));
   } catch (error) {
     console.log("er : ", error);

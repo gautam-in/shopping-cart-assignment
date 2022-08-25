@@ -1,16 +1,14 @@
 import "./button.styles.scss";
 import PropTypes from "prop-types";
 
-export const Button = ({ children, ...otherProps }) => {
+export const Button = ({ title, ...otherProps }) => {
   return (
-    <div className="button-container">
-      <button className="button" {...otherProps}>
-        {children}
-      </button>
-    </div>
+    <button className="button" {...otherProps}>
+      {title}
+    </button>
   );
 };
 
 Button.propTypes = {
-  children: PropTypes.array,
+  title: PropTypes.string,
 };

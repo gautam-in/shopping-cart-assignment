@@ -32,6 +32,11 @@
   align-items: flex-end;
   .nav-link {
     padding: 0 5px;
+    &:not(.nav-second-container .nav-link) {
+      color: $grey-color;
+      font-size: 16px;
+      font-weight: 600;
+    }
   }
 }
 li {
@@ -45,7 +50,7 @@ li {
 
 //main section css
 .main-container {
-  padding: 120px 100px 0 100px;
+  padding: 120px 100px 120px 100px;
 }
 
 //footer section

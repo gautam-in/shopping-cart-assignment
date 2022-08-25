@@ -1,0 +1,56 @@
+@import "../../variables.module";
+
+@mixin shrinkLabel {
+  top: -14px;
+  font-size: 12px;
+  color: $secondary-color;
+}
+
+.group {
+  position: relative;
+  margin: 45px 0;
+
+  .text-input {
+    background: none;
+    background-color: $white_color;
+    color: $grey-color;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid $secondary-color;
+    margin: 25px 0;
+    &:not(:focus) {
+      border-bottom: 1px solid $grey-color;
+    }
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ .text-input-label {
+      @include shrinkLabel();
+    }
+  }
+
+  input[type="password"] {
+    letter-spacing: 0.3em;
+  }
+
+  .text-input-label {
+    color: $grey-color;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 300ms ease all;
+
+    &.shrink {
+      @include shrinkLabel();
+    }
+  }
+}

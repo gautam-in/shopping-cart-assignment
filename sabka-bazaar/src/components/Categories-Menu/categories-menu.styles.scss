@@ -1,0 +1,17 @@
+@import "../../variables.module";
+.categories-menu-container {
+  background-color: $back_color;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  .category-menu-item {
+    p {
+      border-bottom: 1px solid #c1b4b4;
+      padding: 10px;
+      color: #7b7575;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import "../../variables.module";
+.product-list-container {
+  display: grid;
+  grid-template-columns: 24% 24% 24% 24%;
+  grid-row-gap: 50px;
+  justify-content: space-between;
+  .product-container {
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 8px 0px 6px -8px $back_color;
+    border-bottom-style: dashed;
+    border-bottom-color: $back_color;
+    .product-second-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .button-container {
+        padding-top: 10px;
+      }
+    }
+    .product-title {
+      font-weight: bold;
+      height: 5rem;
+    }
+    .product-desc {
+      background-color: $back_color;
+      height: 9rem;
+      padding: 5px;
+      p {
+        font-size: 0.8rem;
+      }
+    }
+    .product-img-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .product-img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .buy-now {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
