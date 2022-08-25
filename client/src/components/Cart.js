@@ -12,8 +12,12 @@ const Cart = ({ setShowCart , isDesktop =false}) => {
 	// close the modal when clicking outside the modal.
 	const cartRef = useRef();
 	const cartContext = useContext(CartContext);
+
+	const numberOfItems = cartContext.items.reduce((curNum, item) => {
+		return curNum + item.amount;
+	}, 0);
 	const totalAmount = `Rs.${cartContext.totalAmount.toFixed(2)}`;
-	const hasItems = cartContext.items.length > 0;
+	const hasItems = numberOfItems > 0;
 	
 	const closeCart = (e) => {
 	if (e.target === cartRef.current) {
@@ -46,7 +50,7 @@ const Cart = ({ setShowCart , isDesktop =false}) => {
 					<div className="cart__modal">
 						<div className="cart__head">
 							<div>
-								<h2>My Cart(<small>1 item</small>)</h2>
+								<h2>My Cart(<small>{numberOfItems} item</small>)</h2>
 							</div>
 							<div className="cart__close_button">
 								<button onClick={() => setShowCart(false)}>X</button>

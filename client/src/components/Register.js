@@ -6,21 +6,36 @@ import ButtonComponent from './UI/ButtonComponent'
 const Register = () => {
 	document.title = "Register"
 	const [userCreated, setUserCreated] = useState(false);
-	// const [formErrors,setFormErrors] = useState(null);
+	const [formErrors,setFormErrors] = useState(false);
 	const firstName = useRef();
 	const lastName = useRef();
 	const email = useRef();
 	const password = useRef();
 	const confirmPassword = useRef();
-	const successRef = useRef();
 	const handleRegister =(e) => {
 		e.preventDefault();
 		if(password.current.value !== confirmPassword.current.value)
 		{
 			confirmPassword.current.focus();
-			confirmPassword.current.style.border = "1px solid red";
+			confirmPassword.current.style.border = "2px solid red";
+			password.current.focus();
+			password.current.style.border= "2px solid red";
 			
-			// setFormErrors({confirmPassword:'Password and Confirm Password should match'});
+			setFormErrors('Password and Confirm Password should match');
+			return false;
+		}
+		if(password.current.value.length < 6 || confirmPassword.current.value.length < 6)
+		{
+			password.current.focus();
+			password.current.style.border = "2px solid red";
+			setFormErrors('Password length must be minimum 6 characters');
+			return false;
+		}
+		if(password.current.value.includes(" ") ||confirmPassword.current.value.includes(" "))
+		{
+			password.current.focus();
+			password.current.style.border = "2px solid red";
+			setFormErrors('No spaces allowed in password');
 			return false;
 		}
 		const requestData = {
@@ -53,14 +68,13 @@ const Register = () => {
 		password.current.value='';
 		confirmPassword.current.value='';
 	}
-
+	
   return (
 	<div className='lr-container'>
 	  <div className='lr__form__text'>
 		<h1>Signup</h1>
 		<p>We do not share your personal details with anyone.</p>
 		{userCreated && <p>User Registered successfully!!! </p>}
-		{/* <p>{errorRef.current.value} </p> */}
 	  </div>
 	  <div className='lr__form'>
 		<form onSubmit={handleRegister}>
@@ -69,6 +83,7 @@ const Register = () => {
 			<InputField type='email' name='email' ref={email} label='Email'/>
 			<InputField type='password' name='password' ref={password} label='Password'/>
 			<InputField type='password' name='confirmpassword' ref={confirmPassword} label='Confirm Password'/>
+			{formErrors && <h3 style={{color:'red'}}>{formErrors}</h3>}
 			<ButtonComponent buttonText='Register' value='register' name='register' type='submit' />
 		</form>
 	  </div>
