@@ -1,0 +1,16 @@
+@import "../../variables.module";
+.button-container {
+  padding-top: 10px;
+}
+.button {
+  min-width: 165px;
+  width: auto;
+  letter-spacing: 0.5px;
+  padding: 10px;
+  background-color: $primary_color;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}

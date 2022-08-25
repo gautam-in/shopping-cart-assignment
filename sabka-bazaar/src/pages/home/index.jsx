@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { getCarouselData, getCategoriesData } from "./store/actionCreators";
 import { selectBanners, selectCategories } from "./store/selectors";
-import "./home.styles.scss";
-import { Slider } from "../../components/Slider";
+import { Slider } from "../../components/Slider/Slider";
 import { CategoryList } from "../../components/Category/CategoryList";
 const Home = () => {
   const banners = useSelector(selectBanners);
