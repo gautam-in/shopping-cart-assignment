@@ -1,0 +1,224 @@
+@use 'variables';
+.cart__container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 100vh;
+	z-index:999;
+	display: flex;
+	align-items: flex-end;
+	justify-content: right;
+	padding-right: 250px;
+	background: rgba(0, 0, 0, 0.7);
+	@media screen and (max-width: variables.$medium) {
+		padding :0;
+		z-index: 0;
+		height: 100vh;
+	}
+	.cart__modal {
+		z-index: 1;
+		width: 600px;
+		height: calc(100% - 120px);
+		background: #eeeeee;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		border-radius: 5px;
+		position: relative;
+		animation: animate 0.3s;
+		@media screen and (max-width: variables.$medium) {
+			
+			width: 100%;
+			z-index: -2;
+			height: calc(100% - 100px);
+		}
+		@media screen and (max-width: variables.$small) {
+			height: calc(100% - 45px);
+		}
+		
+		.cart__head{
+			height : 80px;
+			width :100%;
+			background-color: #1e2124;
+			justify-content: space-between;
+			display: flex;
+			padding: 0 20px;
+			h2{
+				color:white;
+			}
+			@media screen and (max-width: variables.$medium) {
+				background-color: white;
+				h2{
+					color:black;
+				}
+			}
+			.cart__close_button{
+				align-self: center;
+				button {
+					font-size: large;
+					padding: 8px 11px;
+					background-color: inherit;
+					color: white;
+					font-weight: bold;
+					border: none;
+					outline: none;
+					border-radius: 2px;
+					cursor: pointer;
+				  }
+			}
+		}
+		.empty__cart{
+			text-align: center;
+			position:absolute;
+			top: calc(50% - 85px);
+			width: 100%;
+		}
+		.cart__body{
+			width: 100%;
+			height: calc(100% - 220px);
+    		overflow: scroll;
+			.cheaper_rates{
+				background-color:white;
+				margin-left : 10px;
+				width:97%;
+				height:60px;
+				display: flex;
+				align-items: center;
+				padding: 0 15px;
+				margin-bottom: 10px;
+				.cheaper_rates__text{
+					margin-left:20px;
+				}
+				@media screen and (max-width: variables.$small) {
+					font-size: small;
+					width: 93%;
+					margin: 10px;
+				}
+			}
+			button{
+				border-radius: 50%;
+			}
+			.cart-items{
+				padding:0;
+				li{
+					padding: 0 20px;
+					margin-bottom: 10px;
+					list-style: none;
+					height:130px;
+					display: flex;
+					flex-direction: row;
+					background-color: white;
+					.cart__image{
+						width: 100px;
+						height: 100px;
+						margin-top:20px;
+						img{
+							width: 100%;
+							height: 100%
+						}
+					}
+					.cart__product__details{
+						margin-left:20px;
+						width:100%;
+						.cart__item{
+							display: flex;
+							display: flex;
+    						justify-content: space-between;
+							.cart__item__sorting{
+								span{
+									padding: 0 10px;
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			
+		}
+		.empty__footer{
+			bottom:0;
+			position: absolute;
+			width:100%;
+			height: 70px;
+			margin-bottom:15px;
+			@media screen and (max-width: variables.$small) {
+				width: 95%;
+				bottom:10px;
+				height:100px;
+			}
+			button{
+				margin-left: 15px;
+				height: 70px;
+				width: 95%;
+				border-radius: 4px;
+				@media screen and (max-width: variables.$small) {
+					height: 50px;
+				}
+			}
+		}
+		.cart__footer{
+			bottom:0;
+			position: absolute;
+			width:100%;
+			height:140px;
+			background-color: white;
+			p{
+				text-align: center;
+			}
+			@media screen and (max-width: variables.$small) {
+				bottom:10px;
+				height:180px;
+			}
+			.cart_button{
+				button{
+					margin-left: 15px;
+					height: 70px;
+					width: 95%;
+					border-radius: 4px;
+					@media screen and (max-width: variables.$small) {
+						height: 50px;
+					}
+					.cart__checkout_button
+					{
+						display: flex;
+						padding : 0 30px;
+						justify-content: space-between;
+						@media screen and (max-width: variables.$small) {
+							padding:0 10px;
+							font-size: smaller;
+						}
+					}
+				}
+				@media screen and (max-width: variables.$small) {
+					width: 95%
+				}
+			}
+			
+		}
+		
+	  }
+  }
+
+.bump {
+    animation: bump 300ms ease-out;
+  }
+  @keyframes bump {
+    0% {
+      transform: scale(1);
+    }
+    10% {
+      transform: scale(0.9);
+    }
+    30% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

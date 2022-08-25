@@ -1,0 +1,78 @@
+@use 'variables';
+.carousel {
+	overflow: hidden;
+	position: relative;
+	box-shadow: 0 8px 6px -6px #cacaca;
+	@media screen and (max-width: variables.$small) {
+		.prev__button{
+			display: none;
+		}
+		.next__button{
+			display: none;
+		}
+	}
+	.prev__button{
+		z-index:1;
+		top:50%;
+		left :0;
+		position: absolute;
+		background-color: #828282;
+		opacity: 0.3;
+		width:54px;
+		height:40px
+
+	}
+	.next__button{
+		top:50%;
+		right:0;
+		position: absolute;
+		background-color: #828282;
+		opacity: 0.3;
+		width:54px;
+		height:40px
+	}
+	.inner {
+		white-space: nowrap;
+		transition: transform 0.3s;
+	}
+	.carousel-item {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		color:#fff;
+		@media screen and (max-width: variables.$medium) {
+			img{
+				width: 100%;
+			}
+		}
+	}
+	.indicators {
+		display: flex;
+		justify-content: center;
+		position: absolute;
+		bottom:0;
+		left: calc(100% - 775px);
+		@media screen and (max-width: variables.$small) {
+			left:25% !important;
+			.paginate{
+				height: 10px;
+				width: 10px;
+				margin: 5px;
+			}
+		}
+		@media screen and (max-width: variables.$medium) {
+			left:40%;
+		}
+
+		.paginate{
+			height: 20px;
+			width:20px;
+			background-color: #828282;
+			border-radius: 50%;
+			margin: 10px;
+			transform: scale(0.4);
+			outline: none;
+			cursor: pointer;
+		}
+	}
+}

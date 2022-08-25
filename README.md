@@ -4,12 +4,16 @@ This is the base folder for the shopping cart exercise. You will have all the st
 
 ## Getting Started
 
-Clone this repo and run following command for starting the mock server:
+change folder path to client
 
-```
-npm install
-npm run start
-# or
-yarn install
-yarn start
-```
+cd client
+
+Start Json server to use API's for Categories, Products, banners etc with following command
+
+npx json-server --watch db.json --port 3010
+
+now API's are accessible using localhost:3010/{apiroute}
+
+Start the devleopment server of react using command
+
+npm start

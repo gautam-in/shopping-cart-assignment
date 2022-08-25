@@ -1,0 +1,28 @@
+@use './styles/variables' as m;
+
+
+*{
+  box-sizing: border-box;
+  font-family: 'Dosis';
+  font-weight: 600;
+}
+footer{
+	height: 50px;
+	background-color: m.$color-grey;
+	padding: 0 12%;
+	display: flex;
+  align-items: center;
+  @media screen and (max-width: m.$small) {
+		padding :0 5px;
+    font-size: 80%;
+    justify-content: center;
+
+	}
+}
+
+button{
+	border:0;
+	background-color: m.$button-color;
+	color: white;
+  cursor: pointer;
+}
