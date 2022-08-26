@@ -55,6 +55,7 @@ const Register = () => {
 		.then(response => response.json())
 		.then(data => {
 			setUserCreated(true);
+			setFormErrors(false)
 			const timer = setTimeout(() => {
 				setUserCreated(false);
 			  }, 3000);
