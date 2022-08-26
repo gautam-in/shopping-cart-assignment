@@ -1,0 +1,74 @@
+
+@use 'variables';
+.home__container{
+	padding: 0 12%;
+
+	@media screen and (max-width: variables.$medium) {
+		padding :0;
+	}
+	
+	.categories__list{
+		margin-bottom: 10px;
+		margin-top:10px;
+		padding: 25px 0;
+		display: flex;
+		justify-content: space-around;
+		box-shadow: 0 8px 6px -6px #cacaca;
+		
+		align-items: center;
+		.categories__image{
+			height: 250px;
+			@media screen and (max-width: variables.$medium) {
+				height:100px;
+			}
+			img{
+				height: 100%;
+			}
+		}
+		.categories_description{
+			text-align: center;
+			button{
+				width:170px;
+				height: 40px;
+				@media screen and (max-width: variables.$medium) {
+					height:30px;
+				}
+			}
+			
+			.navigate_button{
+                width:170px;
+                height: 40px;
+                border:0;
+                background-color: variables.$button-color;
+                cursor: pointer;
+                a{
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+		}
+		&:nth-last-child(even) {
+			flex-direction: row-reverse;
+		}
+		&:last-child {
+			box-shadow: none;
+		}
+	}
+	.carousal__container
+	{
+		margin-bottom: 10px;
+		margin-top:10px;
+	}
+}
+
+
+
+  @keyframes animate {
+	from {
+	  transform: scale(0.5);
+	}
+	to {
+	  transform: scale(1);
+	}
+  }
