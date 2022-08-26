@@ -1,4 +1,5 @@
 @import "../../variables.module";
+$category_text_color: #544361;
 .categories-menu-container {
   background-color: $back_color;
   padding-bottom: 20px;
@@ -9,7 +10,7 @@
     p {
       border-bottom: 1px solid #c1b4b4;
       padding: 10px;
-      color: #7b7575;
+      color: $category_text_color;
       font-weight: 500;
       cursor: pointer;
     }

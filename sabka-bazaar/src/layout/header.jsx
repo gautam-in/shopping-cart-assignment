@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import Cart from "../pages/cart";
 const Header = () => {
   return (
     <nav className="nav-bar">
@@ -6,8 +7,10 @@ const Header = () => {
         <div className="logo-container">
           <NavLink to="/">
             <img
-              src="/static/images/logo.png"
-              className="nav-logo-img"
+              src="/static/images/logo_2x.png"
+              srcSet="/static/images/logo_2x.png, /static/images/logo_2x.png"
+              width="190"
+              height="86"
               alt="Sabka Bazaar"
             />
           </NavLink>
@@ -40,15 +43,7 @@ const Header = () => {
             </NavLink>
           </li>
         </ul>
-        <div className="cart-container">
-          <NavLink to="/">
-            <img
-              src="/static/images/cart.svg"
-              className="cart-img"
-              alt="Go to cart"
-            />
-          </NavLink>
-        </div>
+        <Cart />
       </div>
     </nav>
   );

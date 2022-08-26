@@ -8,6 +8,7 @@ export const CategoriesMenu = ({ data, isLoading, selectCategoryId }) => {
           return (
             <div
               role="button"
+              tabIndex="0"
               key={id}
               className="category-menu-item"
               onClick={() => selectCategoryId(id)}
