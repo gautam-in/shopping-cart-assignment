@@ -2,13 +2,20 @@ import { useState } from "react";
 import { FormInfo } from "../../components/Form-Info/FormInfo";
 import { SignUpForm } from "../../components/Form/SignUpForm";
 import styles from "./register.module.scss";
+import { useNavigate } from "react-router-dom";
+
 const defaultFormFields = {
   email: "",
   password: "",
+  firstName: "",
+  lastName: "",
+  confirmPassword: "",
 };
 const Register = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
-  const { email, password } = formFields;
+  const { email, password, firstName, lastName, confirmPassword } = formFields;
+  const navigate = useNavigate();
+
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -16,6 +23,7 @@ const Register = () => {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
+    navigate("/", { state: formFields });
   };
   return (
     <div className={styles.container}>
@@ -32,6 +40,9 @@ const Register = () => {
           handleSubmit={handleSubmit}
           email={email}
           password={password}
+          firstName={firstName}
+          lastName={lastName}
+          confirmPassword={confirmPassword}
         />
       </section>
     </div>

@@ -1,17 +1,11 @@
-import axios from "axios";
-
-export const postCartItemToServer = async (productId) => {
-  console.log("PROD ID :", productId);
-  const data = {
-    id: productId,
-  };
+export const postCartItemToServer = async (options) => {
   try {
-    const response = await axios.post(
+    const response = await fetch(
       `${process.env.REACT_APP_BASEURL}/addToCart`,
-      data
+      options
     );
     return response.data;
   } catch (error) {
-    console.log(error);
+    console.log("API ERRRRRR :", error);
   }
 };

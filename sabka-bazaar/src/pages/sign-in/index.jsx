@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FormInfo } from "../../components/Form-Info/FormInfo";
 import { SignInForm } from "../../components/Form/SignInForm";
+import { useNavigate } from "react-router-dom";
 
 import styles from "./sign-in.module.scss";
 const defaultFormFields = {
@@ -10,6 +11,7 @@ const defaultFormFields = {
 const SignIn = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
+  const navigate = useNavigate();
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -17,6 +19,7 @@ const SignIn = () => {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
+    navigate("/", { state: formFields });
   };
   return (
     <div className={styles.container}>

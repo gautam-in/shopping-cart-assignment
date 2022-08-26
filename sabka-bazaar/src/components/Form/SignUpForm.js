@@ -18,6 +18,7 @@ export const SignUpForm = ({
         type="text"
         required
         onChange={handleChange}
+        id="firstName"
         name="firstName"
         value={firstName}
       />
@@ -26,6 +27,7 @@ export const SignUpForm = ({
         type="text"
         required
         onChange={handleChange}
+        id="lastName"
         name="lastName"
         value={lastName}
       />
@@ -34,6 +36,7 @@ export const SignUpForm = ({
         type="email"
         required
         onChange={handleChange}
+        id="email"
         name="email"
         value={email}
       />
@@ -42,14 +45,16 @@ export const SignUpForm = ({
         type="password"
         required
         onChange={handleChange}
+        id="password"
         name="password"
         value={password}
       />
       <TextInput
         label="Confirm Password"
-        type="confirmPassword"
+        type="password"
         required
         onChange={handleChange}
+        id="confirmPassword"
         name="confirmPassword"
         value={confirmPassword}
       />

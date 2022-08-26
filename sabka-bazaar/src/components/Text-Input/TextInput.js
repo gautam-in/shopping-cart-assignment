@@ -7,6 +7,7 @@ export const TextInput = ({ label, ...otherProps }) => {
       <input className="text-input" {...otherProps} />
       {label && (
         <label
+          htmlFor={otherProps.id}
           className={`${
             otherProps?.value?.length ? "shrink" : ""
           } text-input-label`}

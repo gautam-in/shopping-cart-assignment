@@ -10,14 +10,18 @@ export const SignInForm = ({ handleSubmit, handleChange, email, password }) => {
         type="email"
         required
         onChange={handleChange}
+        id="email"
         name="email"
         value={email}
       />
       <TextInput
         label="Password"
         type="password"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+        title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
         required
         onChange={handleChange}
+        id="password"
         name="password"
         value={password}
       />
