@@ -10,3 +10,8 @@ export const selectIsAddingToCartLoading = createSelector(
   [selectSlice],
   (state) => state.addToCartLoading
 );
+
+export const selectCartItems = createSelector(
+  [selectSlice],
+  (state) => state.cart
+);

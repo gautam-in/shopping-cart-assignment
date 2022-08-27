@@ -3,11 +3,12 @@ import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { useCallback } from "react";
 import { addToCart } from "../../pages/cart/store/actionCreators";
-
+import React from "react";
 export const Product = ({ name, id, imageURL, description, price }) => {
   const dispatch = useDispatch();
+
   const addToCartHandler = useCallback(() => {
-    dispatch(addToCart(id));
+    dispatch(addToCart({ name, id, imageURL, description, price }));
   }, []);
   return (
     <div key={id} className="product-container">

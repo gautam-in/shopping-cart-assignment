@@ -22,20 +22,18 @@ import { request } from "../../../utils/request";
 //   }
 // }
 
-function* handleCartData(data) {
-  const { payload } = data;
-
+function* handleCartData({ payload }) {
   const addToCartURL = `${process.env.REACT_APP_BASEURL}/addToCart`;
 
   const options = {
     method: "POST",
-    data: { id: payload },
+    data: { id: payload.id },
   };
 
   try {
     const response = yield call(request, addToCartURL, options);
     if (response) {
-      yield put(addToCartSuccess(true));
+      yield put(addToCartSuccess(payload));
       yield put(addToCartLoading(false));
     }
   } catch (error) {

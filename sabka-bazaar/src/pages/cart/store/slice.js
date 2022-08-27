@@ -4,6 +4,7 @@ const initialState = {
   isAddToCartSuccess: false,
   addToCartLoading: true,
   error: "",
+  cart: [],
 };
 
 export const cartSlice = createSlice({
@@ -14,7 +15,8 @@ export const cartSlice = createSlice({
       state.addToCartLoading = action.payload;
     },
     addToCartSuccess: (state, action) => {
-      state.isAddToCartSuccess = action.payload;
+      state.isAddToCartSuccess = true;
+      state.cart.push(action.payload);
     },
     addToCartError: (state, action) => {
       state.error = action.payload;

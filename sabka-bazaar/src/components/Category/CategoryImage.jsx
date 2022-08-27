@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 export const CategoryImage = ({ name, imageUrl, evenIndex }) => {
   const alignImgClass = evenIndex ? "align-img-left" : "align-img-right";
   return (
-    <div className={`category-img-container ${alignImgClass}`}>
-      <img src={imageUrl} alt={name} className="category-img" />
+    <div className={`${alignImgClass}`}>
+      <img src={imageUrl} alt={name} width="319" height="199" />
     </div>
   );
 };

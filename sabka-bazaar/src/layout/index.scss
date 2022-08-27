@@ -1,19 +1,15 @@
 @import "../_variables.module";
-$nav_link_color: #2a2a2a;
+$nav_link_color: #575757;
 .nav-bar {
   display: flex;
   justify-content: space-between;
   padding: 0 100px 0 100px;
   box-shadow: 0 8px 6px -6px $back_color;
-  z-index: 1;
+  z-index: 998;
   position: fixed;
   width: 100%;
   box-sizing: border-box;
   background-color: $white_color;
-}
-.cart-img {
-  width: 30px;
-  height: 30px;
 }
 .nav-first-container {
   display: flex;
@@ -40,7 +36,6 @@ li {
 }
 .cart-container {
   background-color: $back_color;
-  padding-top: 8px;
   padding-left: 8px;
 }
 

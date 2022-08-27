@@ -14,6 +14,7 @@ const defaultFormFields = {
 const Register = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password, firstName, lastName, confirmPassword } = formFields;
+  const [passwordMatchError, setPasswordMatchError] = useState("");
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -23,6 +24,10 @@ const Register = () => {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (password !== confirmPassword) {
+      setPasswordMatchError("Passwords do not match!");
+      return;
+    }
     navigate("/", { state: formFields });
   };
   return (
@@ -43,6 +48,7 @@ const Register = () => {
           firstName={firstName}
           lastName={lastName}
           confirmPassword={confirmPassword}
+          passwordMatchError={passwordMatchError}
         />
       </section>
     </div>

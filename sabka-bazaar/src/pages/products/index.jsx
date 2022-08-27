@@ -13,9 +13,6 @@ import { useMemo } from "react";
 const Products = () => {
   const categories = useSelector(selectCategories);
   const [selectedCategoryId, setSelectedCategoryId] = useState("");
-  // const filteredProducts = useSelector((state) =>
-  //   selectFilteredProducts(state, selectedCategoryId)
-  // );
   const products = useSelector(selectProducts);
   const isCategoriesLoading = useSelector(selectIsCategoriesLoading);
 

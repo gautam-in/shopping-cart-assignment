@@ -10,6 +10,7 @@ export const SignUpForm = ({
   email,
   password,
   confirmPassword,
+  passwordMatchError,
 }) => {
   return (
     <form onSubmit={handleSubmit}>
@@ -58,6 +59,11 @@ export const SignUpForm = ({
         name="confirmPassword"
         value={confirmPassword}
       />
+      {passwordMatchError && (
+        <div>
+          <p>{passwordMatchError}</p>
+        </div>
+      )}
       <Button title="Login" type="submit" style={{ width: "100%" }} />
     </form>
   );
@@ -70,4 +76,5 @@ SignUpForm.propTypes = {
   email: PropTypes.string,
   password: PropTypes.string,
   confirmPassword: PropTypes.string,
+  passwordMatchError: PropTypes.string,
 };

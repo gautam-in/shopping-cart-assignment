@@ -1,0 +1,10 @@
+.open-cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .cart-count-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+}
