@@ -16,3 +16,16 @@ $category_text_color: #544361;
     }
   }
 }
+.categories-menu-select-drop-down {
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+  .categories-menu-container {
+    display: none;
+  }
+  .categories-menu-select-drop-down {
+    display: block;
+    padding-bottom: 20px;
+    padding-top: 120px;
+  }
+}

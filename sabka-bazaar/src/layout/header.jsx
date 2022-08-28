@@ -12,6 +12,7 @@ const Header = () => {
               width="190"
               height="86"
               alt="Sabka Bazaar"
+              className="logo"
             />
           </NavLink>
         </div>
@@ -31,7 +32,7 @@ const Header = () => {
       </div>
 
       <div className="nav-second-container">
-        <ul className="nav-links-container">
+        <ul className="nav-links-container nav-links-second-container">
           <li>
             <NavLink className="nav-link" to="/sign-in">
               SignIn

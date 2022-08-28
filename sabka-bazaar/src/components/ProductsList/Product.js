@@ -22,17 +22,17 @@ export const Product = ({ name, id, imageURL, description, price }) => {
           height="184"
         />
       </div>
-      <div className="product-second-child">
-        <div className="product-desc">
-          <p>{description}</p>
-        </div>
-        <div className="buy-now">
-          <p>Mrp Rs. {price}</p>
-          <div className="button-container">
-            <Button title="Buy Now" onClick={addToCartHandler} />
-          </div>
+      {/* <div className="product-second-child"> */}
+      <div className="product-desc">
+        <p>{description}</p>
+      </div>
+      <div className="buy-now">
+        <p>Mrp Rs. {price}</p>
+        <div className="button-container">
+          <Button title="Buy Now" onClick={addToCartHandler} />
         </div>
       </div>
+      {/* </div> */}
     </div>
   );
 };

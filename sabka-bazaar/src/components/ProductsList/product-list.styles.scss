@@ -6,22 +6,17 @@
   justify-content: space-between;
   padding-top: 120px;
   .product-container {
-    justify-content: flex-start;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+
     padding: 10px;
     box-shadow: 8px 0px 6px -8px $back_color;
     border-bottom-style: dashed;
     border-bottom-color: $back_color;
-    .product-second-child {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      .button-container {
-        padding-top: 10px;
-      }
+
+    .button-container {
+      padding-top: 10px;
     }
+
     .product-title {
       font-weight: bold;
       height: 5rem;
@@ -38,10 +33,70 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      .product-img {
+        width: 100%;
+        object-fit: contain;
+      }
     }
     .buy-now {
       display: flex;
       justify-content: space-between;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .product-list-container {
+    grid-template-columns: 1fr;
+    padding-top: 0;
+    .product-container {
+      display: grid;
+      grid-column-gap: 10px;
+      .product-title {
+        grid-column: 1/4;
+      }
+      .product-img-container {
+        grid-row: 2/4;
+      }
+      .buy-now {
+        grid-column: 3/2;
+        p {
+          display: none;
+        }
+        .button-container {
+          display: flex;
+          flex-grow: 1;
+          button {
+            flex-grow: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  .product-list-container {
+    grid-template-columns: 1fr 1fr;
+    .product-container {
+      display: grid;
+      grid-column-gap: 10px;
+      .product-title {
+        grid-column: 1/4;
+      }
+      .buy-now {
+        p {
+          display: none;
+        }
+        grid-column: 1/4;
+        .button-container {
+          display: flex;
+          flex-grow: 1;
+          button {
+            flex-grow: 1;
+          }
+        }
+      }
     }
   }
 }
