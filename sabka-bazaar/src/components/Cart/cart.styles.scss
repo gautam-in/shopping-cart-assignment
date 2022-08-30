@@ -1,0 +1,25 @@
+@import "../../variables.module";
+.cart-items-list {
+  width: 100%;
+}
+.cart-item-container {
+  display: grid;
+  grid-template-columns: 5fr 16fr 1fr;
+}
+.cart-item-img {
+  width: 100%;
+  object-fit: contain;
+}
+.cart-item-info {
+  display: grid;
+  grid-template-columns: 20fr 1fr;
+}
+.cart-item-name {
+  font-weight: bold;
+}
+.cart-item-desc {
+  display: grid;
+}
+.quantity {
+  padding: 0 12px;
+}

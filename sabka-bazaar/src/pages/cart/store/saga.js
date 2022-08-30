@@ -21,19 +21,34 @@ import { request } from "../../../utils/request";
 //     console.log("er : ", error);
 //   }
 // }
+const addToCartHelper = ({ cartItems, productToAdd }) => {
+  const existingCartItemIndex = cartItems.findIndex((cartItem) => {
+    return cartItem.id === productToAdd.id;
+  });
+  if (existingCartItemIndex != -1) {
+    return cartItems.map((cartItem) =>
+      cartItem.id === productToAdd.id
+        ? { ...cartItem, quantity: cartItem.quantity + 1 }
+        : cartItem
+    );
+  }
+
+  return [...cartItems, { ...productToAdd, quantity: 1 }];
+};
 
 function* handleCartData({ payload }) {
   const addToCartURL = `${process.env.REACT_APP_BASEURL}/addToCart`;
 
   const options = {
     method: "POST",
-    data: { id: payload.id },
+    data: { id: payload.productToAdd.id },
   };
 
   try {
     const response = yield call(request, addToCartURL, options);
     if (response) {
-      yield put(addToCartSuccess(payload));
+      const cartItems = addToCartHelper(payload);
+      yield put(addToCartSuccess(cartItems));
       yield put(addToCartLoading(false));
     }
   } catch (error) {

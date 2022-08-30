@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Product } from "./Product";
+import Product from "./Product";
 import "./product-list.styles.scss";
 export const ProductsList = ({ data }) => {
   return (

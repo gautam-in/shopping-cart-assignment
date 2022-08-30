@@ -1,9 +1,12 @@
 import "./button.styles.scss";
 import PropTypes from "prop-types";
 
-export const Button = ({ title, ...otherProps }) => {
+const BUTTON_TYPE_CLASSES = {
+  circularBtn: "circular-btn",
+};
+export const Button = ({ title, type, ...otherProps }) => {
   return (
-    <button className="button" {...otherProps}>
+    <button className={`button ${BUTTON_TYPE_CLASSES[type]}`} {...otherProps}>
       {title}
     </button>
   );
@@ -11,4 +14,5 @@ export const Button = ({ title, ...otherProps }) => {
 
 Button.propTypes = {
   title: PropTypes.string,
+  type: PropTypes.string,
 };

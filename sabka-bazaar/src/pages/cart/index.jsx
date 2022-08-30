@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Modal } from "../../components/Modal/Modal";
 import ReactPortal from "../../components/ReactPortal/ReactPortal";
-import { selectCartItems } from "./store/selectors";
+import { selectCartCount, selectCartItems } from "./store/selectors";
 import "./cart.styles.scss";
 import { FilledCart } from "../../components/Cart/FilledCart";
 const EmptyCart = () => (
@@ -18,6 +18,7 @@ const EmptyCart = () => (
 const Cart = () => {
   const [isOpen, setIsOpen] = useState(false);
   const cartItems = useSelector(selectCartItems);
+  const cartCount = useSelector(selectCartCount);
   const toogleCart = () => setIsOpen(!isOpen);
   return (
     <div className="cart-container">
@@ -29,12 +30,12 @@ const Cart = () => {
           alt="Go to cart"
         />
         <div className="cart-count-container">
-          <p>{cartItems?.length} items</p>
+          <p>{cartCount} items</p>
         </div>
       </div>
       <ReactPortal wrapperId="react-portal-modal-container">
         <Modal handleClose={toogleCart} isOpen={isOpen}>
-          {cartItems?.length === 0 ? (
+          {cartCount === 0 ? (
             <EmptyCart />
           ) : (
             <FilledCart cartItems={cartItems} />
