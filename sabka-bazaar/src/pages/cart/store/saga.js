@@ -22,10 +22,10 @@ import { request } from "../../../utils/request";
 //   }
 // }
 const addToCartHelper = ({ cartItems, productToAdd }) => {
-  const existingCartItemIndex = cartItems.findIndex((cartItem) => {
+  const existingCartItem = cartItems.find((cartItem) => {
     return cartItem.id === productToAdd.id;
   });
-  if (existingCartItemIndex != -1) {
+  if (existingCartItem) {
     return cartItems.map((cartItem) =>
       cartItem.id === productToAdd.id
         ? { ...cartItem, quantity: cartItem.quantity + 1 }

@@ -1,6 +1,7 @@
 @import "../../variables.module";
 .cart-items-list {
-  width: 100%;
+  display: grid;
+  grid-gap: 20px;
 }
 .cart-item-container {
   display: grid;
@@ -22,4 +23,9 @@
 }
 .quantity {
   padding: 0 12px;
+}
+.cart-item-total {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 16px;
 }
