@@ -33,6 +33,7 @@ const Wrapper = styled.footer`
     green: 128,
     alpha: 0.3,
   })};
+  margin-top: 5%;
 `;
 
 const Div = styled.title`

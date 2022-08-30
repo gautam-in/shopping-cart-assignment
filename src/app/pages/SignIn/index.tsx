@@ -10,12 +10,14 @@ import { Formik, FormikHelpers, FormikProps, Form, Field } from 'formik';
 import * as yup from 'yup';
 
 import { Helmet } from 'react-helmet-async';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components/macro';
 
 import { CustomContainer } from 'app/components/Container';
 import { Button } from 'app/components/Button';
 
 import { TextField } from 'app/components/TextField';
+
 interface Props {}
 
 interface FormValues {
@@ -35,6 +37,7 @@ const validationSchema = yup.object().shape({
 });
 
 export const SignIn = memo((props: Props) => {
+  const history = useHistory();
   return (
     <Wrapper>
       <CustomContainer>
@@ -59,7 +62,7 @@ export const SignIn = memo((props: Props) => {
               values: FormValues,
               formikHelpers: FormikHelpers<FormValues>,
             ) => {
-              alert(JSON.stringify(values, null, 2));
+              history.push('/');
               formikHelpers.setSubmitting(false);
             }}
           >
