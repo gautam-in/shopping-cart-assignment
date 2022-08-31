@@ -1,0 +1,49 @@
+.sidebar-container {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.sidebar-header {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.sidebar-close {
+  padding: 0 10px;
+}
+
+ul {
+  margin: 0;
+  padding: 10px;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+.signin {
+  margin: 0 auto;
+  padding: 1rem;
+  width: 80%;
+  color: white;
+  background-color: #d00156;
+  font-size: 1rem;
+  border: 0;
+}
+
+.signin-container {
+  position: absolute;
+  bottom: 0;
+  margin: 1rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.signup {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: underline;
+}
