@@ -8,3 +8,20 @@
     justify-content: center;
   }
 }
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .empty-cart-header {
+    font-weight: bold;
+  }
+  .empty-cart-body {
+    font-size: small;
+  }
+}
+.start-shopping-btn-container {
+  display: grid;
+  padding: 0 10px 10px;
+}

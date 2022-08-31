@@ -2,23 +2,30 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Modal } from "../../components/Modal/Modal";
 import ReactPortal from "../../components/ReactPortal/ReactPortal";
-import { selectCartCount, selectCartItems } from "./store/selectors";
+import { selectCartItemsCount } from "./store/selectors";
 import "./cart.styles.scss";
 import { FilledCart } from "../../components/Cart/FilledCart";
-const EmptyCart = () => (
+import { Button } from "../../components/Button/Button";
+import PropTypes from "prop-types";
+const EmptyCart = ({ handleClose }) => (
   <>
-    <div>
-      <p>No items in your cart</p>
+    <div className="empty-cart">
+      <div className="empty-cart-header">
+        <p>No items in your cart</p>
+      </div>
+      <div className="empty-cart-body">
+        <p>Your favorite items are just a click away</p>
+      </div>
     </div>
-    <div>
-      <p>Your favorite items are just a click away</p>
+    <div className="start-shopping-btn-container">
+      <Button title="Start Shopping" type="baseBtn" onClick={handleClose} />
     </div>
   </>
 );
 const Cart = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const cartItems = useSelector(selectCartItems);
-  const cartCount = useSelector(selectCartCount);
+  const cartCount = useSelector(selectCartItemsCount);
+
   const toogleCart = () => setIsOpen(!isOpen);
   return (
     <div className="cart-container">
@@ -34,16 +41,20 @@ const Cart = () => {
         </div>
       </div>
       <ReactPortal wrapperId="react-portal-modal-container">
-        <Modal handleClose={toogleCart} isOpen={isOpen}>
+        <Modal handleClose={toogleCart} isOpen={isOpen} cartCount={cartCount}>
           {cartCount === 0 ? (
-            <EmptyCart />
+            <EmptyCart handleClose={toogleCart} />
           ) : (
-            <FilledCart cartItems={cartItems} />
+            <FilledCart handleClose={toogleCart} />
           )}
         </Modal>
       </ReactPortal>
     </div>
   );
+};
+
+EmptyCart.propTypes = {
+  handleClose: PropTypes.func,
 };
 
 export default Cart;

@@ -26,11 +26,12 @@
 
   .modal-content {
     width: 30%;
-    height: 70%;
-    background-color: $white_color;
+    height: 60%;
+    background-color: $back_color;
     padding-top: 10px;
     box-sizing: border-box;
-    padding-bottom: 10px;
-    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }

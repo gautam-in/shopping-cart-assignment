@@ -1,6 +1,11 @@
 // import { postCartItemToServer } from "./api";
-import { ADD_TO_CART } from "./types";
-import { addToCartLoading, addToCartSuccess, addToCartError } from "./slice";
+import { ADD_TO_CART, UPDATE_CART } from "./types";
+import {
+  addToCartLoading,
+  addToCartSuccess,
+  addToCartError,
+  updateCart,
+} from "./slice";
 import { call, put, takeLatest } from "redux-saga/effects";
 import { request } from "../../../utils/request";
 
@@ -58,8 +63,13 @@ function* handleCartData({ payload }) {
   }
 }
 
+function* updateCartHandler({ payload }) {
+  yield put(updateCart(payload));
+}
+
 function* cartSaga() {
   yield takeLatest(ADD_TO_CART, handleCartData);
+  yield takeLatest(UPDATE_CART, updateCartHandler);
 }
 
 export default cartSaga;

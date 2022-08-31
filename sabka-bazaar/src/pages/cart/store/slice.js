@@ -21,9 +21,16 @@ export const cartSlice = createSlice({
     addToCartError: (state, action) => {
       state.error = action.payload;
     },
+    updateCart: (state, action) => {
+      state.cart = action.payload;
+    },
   },
 });
 
-export const { addToCartLoading, addToCartSuccess, addToCartError } =
-  cartSlice.actions;
+export const {
+  addToCartLoading,
+  addToCartSuccess,
+  addToCartError,
+  updateCart,
+} = cartSlice.actions;
 export default cartSlice.reducer;
