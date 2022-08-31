@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "./modal.styles.scss";
 import PropTypes from "prop-types";
+import { Button } from "../Button/Button";
 export const Modal = ({ children, isOpen, handleClose, cartCount }) => {
   useEffect(() => {
     const closeOnEscapeKey = (e) => (e.key === "Escape" ? handleClose() : null);
@@ -17,9 +18,12 @@ export const Modal = ({ children, isOpen, handleClose, cartCount }) => {
         <div>
           <p>My Cart {itemsCount}</p>
         </div>
-        <button onClick={handleClose} className="close-btn" tabIndex={0}>
-          &#10005;
-        </button>
+        <Button
+          onClick={handleClose}
+          className="close-btn"
+          tabIndex={0}
+          title="&#10005;"
+        />
       </div>
       <div className="modal-content">{children}</div>
     </div>

@@ -8,6 +8,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 767px) {
+    align-items: unset;
+    justify-content: unset;
+    width: unset;
+  }
+  /*ipads portrait*/
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    /* Styles */
+    align-items: unset;
+    justify-content: unset;
+    width: unset;
+  }
   .modal-header {
     width: 30%;
     display: flex;
@@ -15,12 +27,55 @@
     justify-content: space-between;
     padding-left: 10px;
     box-sizing: border-box;
+    @media only screen and (max-width: 767px) {
+      width: unset;
+      background-color: $white_color;
+    }
+    /*ipads portrait*/
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      /* Styles */
+      width: unset;
+      background-color: $white_color;
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      width: 50%;
+      background-color: $white_color;
+    }
     p {
       color: $white_color;
+      @media only screen and (max-width: 767px) {
+        color: $black_color;
+      }
+      /*ipads portrait*/
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+        /* Styles */
+        color: $black_color;
+      }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+        color: $black_color;
+      }
     }
     .close-btn {
       background-color: $black_color;
       color: $white_color;
+      border-color: $black_color;
+      @media only screen and (max-width: 767px) {
+        color: $black_color;
+        background-color: $white_color;
+        border-color: $white_color;
+      }
+      /*ipads portrait*/
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+        /* Styles */
+        color: $black_color;
+        background-color: $white_color;
+        border-color: $white_color;
+      }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+        color: $black_color;
+        background-color: $white_color;
+        border-color: $white_color;
+      }
     }
   }
 
@@ -33,5 +88,24 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /*small phones*/
+    @media only screen and (max-width: 767px) {
+      width: unset;
+      height: unset;
+      flex-grow: 1;
+    }
+    /*ipads portrait*/
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      /* Styles */
+      width: unset;
+      height: unset;
+      flex-grow: 1;
+    }
+    /* iPads (landscape) ----------- */
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+      /* Styles */
+      width: 50%;
+      height: 70%;
+    }
   }
 }

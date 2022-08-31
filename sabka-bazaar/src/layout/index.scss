@@ -39,8 +39,8 @@ $nav_link_color: #575757;
   }
 }
 /*till small phones */
-@media only screen and (max-width: 768px) {
-  .nav-links-second-container {
+@media only screen and (max-width: 600px) {
+  .nav-links-container {
     display: none;
   }
   .nav-second-container {

@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 const BUTTON_TYPE_CLASSES = {
   circularBtn: "circular-btn",
   checkoutBtn: "checkout-btn",
-  baseBtn: "button",
 };
 export const Button = ({ title, type, price, ...otherProps }) => {
   return (

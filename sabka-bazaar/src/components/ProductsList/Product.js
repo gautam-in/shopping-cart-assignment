@@ -37,6 +37,7 @@ const Product = ({ name, id, imageURL, description, price }) => {
         <div className="button-container">
           <Button
             title="Buy Now"
+            price={price}
             onClick={() =>
               addToCartHandler({ name, id, imageURL, description, price })
             }
