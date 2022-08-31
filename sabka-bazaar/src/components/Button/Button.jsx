@@ -27,5 +27,5 @@ export const Button = ({ title, type, price, ...otherProps }) => {
 Button.propTypes = {
   title: PropTypes.string,
   type: PropTypes.string,
-  price: PropTypes.string,
+  price: PropTypes.number,
 };
