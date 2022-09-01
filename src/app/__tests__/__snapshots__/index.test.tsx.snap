@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> should render and match the snapshot 1`] = `
+<React.Fragment>
+  <Helmet
+    defaultTitle="Sabka Bazaar Grocery Supplies"
+    defer={true}
+    encodeSpecialCharacters={true}
+    htmlAttributes={
+      Object {
+        "lang": undefined,
+      }
+    }
+    prioritizeSeoTags={true}
+    titleTemplate="%s - Sabka Bazaar Grocery Supplies"
+  >
+    <meta
+      content="A Sabka Bazaar Grocery Supplies Application"
+      name="description"
+    />
+  </Helmet>
+  <Unknown />
+  <Switch>
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "compare": null,
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/signUp"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/signIn"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/products"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/products/:categoryId"
+    />
+    <Route
+      component={[Function]}
+    />
+  </Switch>
+  <Unknown />
+  <Memo(l) />
+</React.Fragment>
+`;

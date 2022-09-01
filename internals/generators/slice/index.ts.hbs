@@ -1,0 +1,22 @@
+/**
+*
+* {{ properCase componentName }}
+*
+*/
+
+import React, { memo } from 'react';
+import { Helmet } from 'react-helmet-async';
+
+interface Props {}
+
+export const {{ properCase sliceName }} = memo((props: Props) => {
+  return (
+     <div>
+      <Helmet>
+        <title>{{ properCase sliceName }}</title>
+        <meta name="description" content="A Boilerplate application {{ properCase sliceName }}" />
+      </Helmet>
+      <span>My {{ properCase sliceName }}</span>
+    </div>
+  )
+});

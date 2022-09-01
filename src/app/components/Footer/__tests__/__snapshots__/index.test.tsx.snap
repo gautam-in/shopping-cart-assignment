@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer  /> should match snapshot 1`] = `
+.c0 {
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(128,128,128,0.3);
+}
+
+.c1 {
+  height: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<footer
+  class="c0"
+>
+  <div
+    class="MuiContainer-root MuiContainer-maxWidthLg MuiContainer-fixed css-72z5yw-MuiContainer-root"
+  >
+    <title
+      class="c1"
+    >
+      _NOT_TRANSLATED_
+       
+    </title>
+  </div>
+</footer>
+`;
