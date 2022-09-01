@@ -1,25 +1,20 @@
-import { useState } from "react";
 import { FormInfo } from "../../components/Form-Info/FormInfo";
 import { SignInForm } from "../../components/Form/SignInForm";
-import { useNavigate } from "react-router-dom";
+import formHOC from "../../hocs/formHoc";
+import PropTypes from "prop-types";
 
 import styles from "./sign-in.module.scss";
+import { useNavigate } from "react-router-dom";
 const defaultFormFields = {
   email: "",
   password: "",
 };
-const SignIn = () => {
-  const [formFields, setFormFields] = useState(defaultFormFields);
-  const { email, password } = formFields;
+const SignIn = ({ formFields, handleChange }) => {
   const navigate = useNavigate();
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-
-    setFormFields({ ...formFields, [name]: value });
-  };
+  const { email, password } = formFields;
   const handleSubmit = async (event) => {
     event.preventDefault();
-    navigate("/", { state: formFields });
+    navigate("/", { replace: true, state: formFields });
   };
   return (
     <div className={styles.container}>
@@ -41,5 +36,8 @@ const SignIn = () => {
     </div>
   );
 };
-
-export default SignIn;
+SignIn.propTypes = {
+  formFields: PropTypes.object,
+  handleChange: PropTypes.func,
+};
+export default formHOC(SignIn, defaultFormFields);
