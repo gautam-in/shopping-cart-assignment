@@ -27,7 +27,6 @@ function ReactPortal({ children, wrapperId = "react-portal-wrapper" }) {
     };
   }, [wrapperId]);
 
-  // wrapperElement state will be null on the very first render.
   if (wrapperElement === null) return null;
   return createPortal(children, document.getElementById(wrapperId));
 }

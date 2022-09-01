@@ -4,7 +4,7 @@ export const postCartItemToServer = async (options) => {
       `${process.env.REACT_APP_BASEURL}/addToCart`,
       options
     );
-    return response.data;
+    return response.json();
   } catch (error) {
     console.log("API ERRRRRR :", error);
   }

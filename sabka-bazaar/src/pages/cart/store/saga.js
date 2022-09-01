@@ -1,4 +1,3 @@
-// import { postCartItemToServer } from "./api";
 import { ADD_TO_CART, UPDATE_CART } from "./types";
 import {
   addToCartLoading,
@@ -7,25 +6,8 @@ import {
   updateCart,
 } from "./slice";
 import { call, put, takeLatest } from "redux-saga/effects";
-import { request } from "../../../utils/request";
+import { postCartItemToServer } from "./api";
 
-// function* handleCartData(action) {
-//   const options = {
-//     method: "POST",
-//     data: { id: action.payload },
-//   };
-//   try {
-//     const response = yield call(postCartItemToServer, options);
-//     if (response) {
-//       yield put(addToCartSuccess(true));
-//       yield put(addToCartLoading(false));
-//     }
-//   } catch (error) {
-//     yield put(addToCartError(error.code));
-//     yield put(addToCartLoading(false));
-//     console.log("er : ", error);
-//   }
-// }
 const addToCartHelper = ({ cartItems, productToAdd }) => {
   const existingCartItem = cartItems.find((cartItem) => {
     return cartItem.id === productToAdd.id;
@@ -42,15 +24,13 @@ const addToCartHelper = ({ cartItems, productToAdd }) => {
 };
 
 function* handleCartData({ payload }) {
-  const addToCartURL = `${process.env.REACT_APP_BASEURL}/addToCart`;
-
   const options = {
     method: "POST",
     data: { id: payload.productToAdd.id },
   };
 
   try {
-    const response = yield call(request, addToCartURL, options);
+    const response = yield call(postCartItemToServer, options);
     if (response) {
       const cartItems = addToCartHelper(payload);
       yield put(addToCartSuccess(cartItems));
@@ -59,7 +39,6 @@ function* handleCartData({ payload }) {
   } catch (error) {
     yield put(addToCartError(error.code));
     yield put(addToCartLoading(false));
-    console.log("er : ", error);
   }
 }
 
