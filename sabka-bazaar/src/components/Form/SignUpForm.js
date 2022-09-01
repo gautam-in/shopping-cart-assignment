@@ -64,7 +64,7 @@ export const SignUpForm = ({
           <p>{passwordMatchError}</p>
         </div>
       )}
-      <Button title="Login" type="submit" style={{ width: "100%" }} />
+      <Button title="Signup" type="submit" style={{ width: "100%" }} />
     </form>
   );
 };
