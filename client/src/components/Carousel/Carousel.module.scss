@@ -1,0 +1,13 @@
+.carousel-container {
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+@media only screen and (min-width: 1200px) {
+  .carousel-container {
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
