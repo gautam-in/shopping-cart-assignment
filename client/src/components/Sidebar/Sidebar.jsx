@@ -22,11 +22,11 @@ const Sidebar = ({ onClose }) => {
           </li>
         </ul>
         <div className={styles['signin-container']}>
-          <Link to="/signin">
+          <Link to="/sign-in">
             <button className={styles.signin}>Sign In</button>
           </Link>
           <div className={styles.signup}>
-            <Link to="/signup">Don&rsquo;t have a account? SignUp.</Link>
+            <Link to="/sign-up">Don&rsquo;t have a account? SignUp.</Link>
           </div>
         </div>
       </div>

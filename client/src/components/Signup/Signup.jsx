@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import styles from './Signup.module.scss';
 
 const formInitialValues = {
   firstName: '',
@@ -20,14 +19,24 @@ const Signup = () => {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      alert('Password mismatch!');
+      return;
+    }
+    setFormValues(formInitialValues);
+    alert('SignUp Successfull');
+  };
+
   return (
-    <div className={styles['signup-container']}>
-      <div>
+    <div className="flex-container">
+      <div className="center-box">
         <h1>Signup</h1>
         <p>We do not share your personal details with anyone.</p>
       </div>
-      <div>
-        <form method="post" action="/">
+      <div className="center-box">
+        <form method="post" action="/" onSubmit={handleSubmit}>
           <div className="group">
             <label className="form-input-label">First Name</label>
             <input
@@ -87,6 +96,9 @@ const Signup = () => {
               pattern="^[a-zA-Z0-9]*$"
             />
           </div>
+          <button className="form-btn" type="submit">
+            Signup
+          </button>
         </form>
       </div>
     </div>
