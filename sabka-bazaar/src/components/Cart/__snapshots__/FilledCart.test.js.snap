@@ -36,7 +36,7 @@ Object {
           class="checkout-btn-container"
         >
           <button
-            class="button checkout-btn"
+            class="checkout-btn"
           >
             <div>
               Proceed to Checkout
@@ -89,7 +89,7 @@ Object {
         class="checkout-btn-container"
       >
         <button
-          class="button checkout-btn"
+          class="checkout-btn"
         >
           <div>
             Proceed to Checkout

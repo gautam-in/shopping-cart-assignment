@@ -2,7 +2,12 @@ import PropTypes from "prop-types";
 import "./categories-menu.styles.scss";
 import Select from "react-select";
 import variables from "../../_variables.module.scss";
-export const CategoriesMenu = ({ data, isLoading, selectCategoryId }) => {
+export const CategoriesMenu = ({
+  data,
+  isLoading,
+  selectCategoryId,
+  selectedCategoryId,
+}) => {
   const options = data.map(({ name, id }) => {
     return { value: name, label: name, id: id };
   });
@@ -50,10 +55,14 @@ export const CategoriesMenu = ({ data, isLoading, selectCategoryId }) => {
                 role="button"
                 tabIndex="0"
                 key={id}
-                className="category-menu-item"
+                className={
+                  selectedCategoryId === id
+                    ? "category-menu-item active"
+                    : "category-menu-item"
+                }
                 onClick={() => selectCategoryId(id)}
               >
-                <p>{name}</p>
+                {name}
               </div>
             );
           })
@@ -76,4 +85,5 @@ CategoriesMenu.propTypes = {
   data: PropTypes.array,
   isLoading: PropTypes.bool,
   selectCategoryId: PropTypes.func,
+  selectedCategoryId: PropTypes.string,
 };

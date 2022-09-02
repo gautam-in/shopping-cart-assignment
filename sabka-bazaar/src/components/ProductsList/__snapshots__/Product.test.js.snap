@@ -1,62 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CartItem component should match snapshot 1`] = `
+exports[`Product component should match snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="cart-item-container"
+        class="product-container"
       >
         <div
-          class="cart-item-img-container"
+          class="product-title"
+        />
+        <div
+          class="product-img-container"
         >
           <img
-            class="cart-item-img"
-            height="60"
-            width="60"
+            class="product-img"
+            height="184"
+            width="184"
           />
         </div>
         <div
-          class="cart-item-info"
+          class="product-desc"
         >
+          <p />
+        </div>
+        <div
+          class="buy-now"
+        >
+          <p>
+            Mrp Rs. 
+          </p>
           <div
-            class="cart-item-desc"
+            class="button-container"
           >
-            <div
-              class="cart-item-name"
-            />
-            <div>
-              <button
-                class="circular-btn"
-              >
-                <div>
-                  -
-                </div>
-              </button>
-              <span
-                class="quantity"
-              />
-              <button
-                class="circular-btn"
-              >
-                <div>
-                  +
-                </div>
-              </button>
-              <span
-                class="quantity"
-              >
-                x
-              </span>
-               Rs.
-            </div>
-          </div>
-          <div
-            class="cart-item-total"
-          >
-            Rs.
-            NaN
+            <button
+              class="button"
+            >
+              <div>
+                Buy Now
+              </div>
+            </button>
+            <button
+              class="button-with-price"
+            >
+              Buy Now
+               @ Rs.
+            </button>
           </div>
         </div>
       </div>
@@ -64,57 +54,47 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="cart-item-container"
+      class="product-container"
     >
       <div
-        class="cart-item-img-container"
+        class="product-title"
+      />
+      <div
+        class="product-img-container"
       >
         <img
-          class="cart-item-img"
-          height="60"
-          width="60"
+          class="product-img"
+          height="184"
+          width="184"
         />
       </div>
       <div
-        class="cart-item-info"
+        class="product-desc"
       >
+        <p />
+      </div>
+      <div
+        class="buy-now"
+      >
+        <p>
+          Mrp Rs. 
+        </p>
         <div
-          class="cart-item-desc"
+          class="button-container"
         >
-          <div
-            class="cart-item-name"
-          />
-          <div>
-            <button
-              class="circular-btn"
-            >
-              <div>
-                -
-              </div>
-            </button>
-            <span
-              class="quantity"
-            />
-            <button
-              class="circular-btn"
-            >
-              <div>
-                +
-              </div>
-            </button>
-            <span
-              class="quantity"
-            >
-              x
-            </span>
-             Rs.
-          </div>
-        </div>
-        <div
-          class="cart-item-total"
-        >
-          Rs.
-          NaN
+          <button
+            class="button"
+          >
+            <div>
+              Buy Now
+            </div>
+          </button>
+          <button
+            class="button-with-price"
+          >
+            Buy Now
+             @ Rs.
+          </button>
         </div>
       </div>
     </div>

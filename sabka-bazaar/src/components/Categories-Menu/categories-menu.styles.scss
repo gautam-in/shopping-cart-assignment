@@ -1,21 +1,23 @@
 @import "../../variables.module";
-$category_text_color: #544361;
+$category_text_color: #342a3c;
 .categories-menu-container {
   background-color: $back_color;
   padding-bottom: 20px;
   padding-top: 120px;
-  padding-left: 10px;
   box-sizing: border-box;
   position: fixed;
   height: 100%;
+
   .category-menu-item {
-    p {
-      border-bottom: 1px solid #c1b4b4;
-      padding: 10px;
-      color: $category_text_color;
-      font-weight: 500;
-      cursor: pointer;
-    }
+    border-bottom: 1px solid #c1b4b4;
+    padding: 20px;
+    color: $category_text_color;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .active {
+    background-color: #585858;
+    color: $white_color;
   }
 }
 .categories-menu-select-drop-down {

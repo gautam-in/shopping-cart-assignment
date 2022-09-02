@@ -34,6 +34,7 @@ const Products = () => {
         data={categories}
         isLoading={isCategoriesLoading}
         selectCategoryId={selectCategoryId}
+        selectedCategoryId={selectedCategoryId}
       />
       <ProductsList data={selectedCategoryId ? filteredProducts : products} />
     </>
