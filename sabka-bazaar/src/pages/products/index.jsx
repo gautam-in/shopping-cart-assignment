@@ -8,7 +8,6 @@ import {
   selectProducts,
 } from "./store/selectors";
 import { ProductsList } from "../../components/ProductsList/ProductsList";
-import "./products.styles.scss";
 import { useMemo } from "react";
 const Products = () => {
   const categories = useSelector(selectCategories);
@@ -30,14 +29,14 @@ const Products = () => {
     );
   }, [selectedCategoryId]);
   return (
-    <div className="plp-container">
+    <>
       <CategoriesMenu
         data={categories}
         isLoading={isCategoriesLoading}
         selectCategoryId={selectCategoryId}
       />
       <ProductsList data={selectedCategoryId ? filteredProducts : products} />
-    </div>
+    </>
   );
 };
 

@@ -1,9 +1,0 @@
-.plp-container {
-  display: grid;
-  grid-template-columns: 20% 80%;
-}
-@media only screen and (max-width: 600px) {
-  .plp-container {
-    grid-template-columns: 1fr;
-  }
-}

@@ -1,17 +1,41 @@
 @import "../../variables.module";
-
-.button {
+@mixin btn {
   padding: 10px;
   background-color: $primary_color;
   color: white;
   border: none;
   cursor: pointer;
 }
+
+.button {
+  @include btn;
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
+  @media only screen and (min-width: 600px) and (max-width: 1024px) {
+    display: none;
+  }
+}
+.start-shopping {
+  @include btn;
+}
+.button-with-price {
+  @include btn;
+  display: none;
+  @media only screen and (max-width: 600px) {
+    display: block;
+  }
+  @media only screen and (min-width: 600px) and (max-width: 1024px) {
+    display: block;
+  }
+}
 .circular-btn {
+  @include btn;
   border-radius: 100%;
   padding: revert;
 }
 .checkout-btn {
+  @include btn;
   display: flex;
   justify-content: space-between;
   flex-grow: 1;

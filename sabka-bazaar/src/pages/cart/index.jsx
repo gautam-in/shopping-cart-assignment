@@ -18,7 +18,11 @@ const EmptyCart = ({ handleClose }) => (
       </div>
     </div>
     <div className="start-shopping-btn-container">
-      <Button title="Start Shopping" type="baseBtn" onClick={handleClose} />
+      <Button
+        title="Start Shopping"
+        type="startShopping"
+        onClick={handleClose}
+      />
     </div>
   </>
 );

@@ -1,3 +1,4 @@
+@import "../../variables.module";
 .open-cart-btn {
   display: flex;
   align-items: center;
@@ -18,7 +19,7 @@
     font-weight: bold;
   }
   .empty-cart-body {
-    font-size: small;
+    font-size: $font-size-normal;
   }
 }
 .start-shopping-btn-container {

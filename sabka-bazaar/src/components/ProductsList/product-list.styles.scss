@@ -5,6 +5,7 @@
   grid-row-gap: 50px;
   justify-content: space-between;
   padding-top: 120px;
+  padding-left: 180px;
   .product-container {
     display: grid;
 
@@ -26,7 +27,7 @@
       height: 9rem;
       padding: 5px;
       p {
-        font-size: 0.8rem;
+        font-size: $font-size-small;
       }
     }
     .product-img-container {
@@ -49,6 +50,8 @@
   .product-list-container {
     grid-template-columns: 1fr;
     padding-top: 0;
+    padding-left: 0;
+
     .product-container {
       display: grid;
       grid-column-gap: 10px;

@@ -25,7 +25,7 @@ export const SignInForm = ({ handleSubmit, handleChange, email, password }) => {
         name="password"
         value={password}
       />
-      <Button title="Login" type="submit" style={{ width: "100%" }} />
+      <Button title="Login" style={{ width: "100%" }} />
     </form>
   );
 };

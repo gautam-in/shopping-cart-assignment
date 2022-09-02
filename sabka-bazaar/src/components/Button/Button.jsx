@@ -4,10 +4,12 @@ import PropTypes from "prop-types";
 const BUTTON_TYPE_CLASSES = {
   circularBtn: "circular-btn",
   checkoutBtn: "checkout-btn",
+  baseBtn: "button",
+  startShopping: "start-shopping",
 };
-export const Button = ({ title, type, price, ...otherProps }) => {
+export const Button = ({ title, type = "baseBtn", price, ...otherProps }) => {
   return (
-    <button className={`button ${BUTTON_TYPE_CLASSES[type]}`} {...otherProps}>
+    <button className={`${BUTTON_TYPE_CLASSES[type]}`} {...otherProps}>
       {type !== "checkoutBtn" ? (
         <div>{title}</div>
       ) : (

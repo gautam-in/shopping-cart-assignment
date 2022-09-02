@@ -2,7 +2,7 @@
 
 @mixin shrinkLabel {
   top: -14px;
-  font-size: 12px;
+  font-size: $font-size-small;
   color: $secondary-color;
 }
 
@@ -14,7 +14,7 @@
     background: none;
     background-color: $white_color;
     color: $grey-color;
-    font-size: 18px;
+    font-size: $font-size-normal;
     padding: 10px 10px 10px 5px;
     display: block;
     width: 100%;
@@ -40,7 +40,7 @@
 
   .text-input-label {
     color: $grey-color;
-    font-size: 16px;
+    font-size: $font-size-normal;
     font-weight: normal;
     position: absolute;
     pointer-events: none;

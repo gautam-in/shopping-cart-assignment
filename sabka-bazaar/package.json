@@ -17,6 +17,7 @@
     "react-select": "^5.4.0",
     "redux-saga": "^1.2.1",
     "sass": "^1.54.5",
+    "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

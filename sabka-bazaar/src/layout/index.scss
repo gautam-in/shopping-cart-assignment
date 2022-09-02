@@ -33,7 +33,7 @@ $nav_link_color: #575757;
     padding: 0 5px;
     &:not(.nav-second-container .nav-link) {
       color: $nav_link_color;
-      font-size: 16px;
+      font-size: $font-size-normal;
       font-weight: 600;
     }
   }
@@ -83,6 +83,7 @@ li {
 .footer {
   padding: 20px 100px 20px 100px;
   background-color: $back_color;
+  position: sticky;
 }
 @media only screen and (min-width: 320px) and (max-width: 1024px) {
   .footer {

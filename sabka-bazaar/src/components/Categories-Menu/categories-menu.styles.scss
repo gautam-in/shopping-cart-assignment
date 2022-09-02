@@ -6,6 +6,8 @@ $category_text_color: #544361;
   padding-top: 120px;
   padding-left: 10px;
   box-sizing: border-box;
+  position: fixed;
+  height: 100%;
   .category-menu-item {
     p {
       border-bottom: 1px solid #c1b4b4;

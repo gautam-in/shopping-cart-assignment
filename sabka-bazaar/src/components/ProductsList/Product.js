@@ -5,6 +5,7 @@ import { useCallback } from "react";
 import { addToCart } from "../../pages/cart/store/actionCreators";
 import React from "react";
 import { selectCartItems } from "../../pages/cart/store/selectors";
+import { ButtonWithPrice } from "../Button/ButtonWithPrice";
 const Product = ({ name, id, imageURL, description, price }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
@@ -36,6 +37,13 @@ const Product = ({ name, id, imageURL, description, price }) => {
         <p>Mrp Rs. {price}</p>
         <div className="button-container">
           <Button
+            title="Buy Now"
+            price={price}
+            onClick={() =>
+              addToCartHandler({ name, id, imageURL, description, price })
+            }
+          />
+          <ButtonWithPrice
             title="Buy Now"
             price={price}
             onClick={() =>
