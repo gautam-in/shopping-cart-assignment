@@ -20,7 +20,7 @@ export const CategoryList = ({ data }) => {
           <div className="category-desc">{description}</div>
 
           <Button
-            type="exploreBtn"
+            type="primaryBtn"
             title={`Explore ${key}`}
             onClick={navigateToProductsPage}
           />

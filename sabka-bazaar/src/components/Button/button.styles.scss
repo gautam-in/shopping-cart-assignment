@@ -16,10 +16,7 @@
     display: none;
   }
 }
-.start-shopping {
-  @include btn;
-}
-.explore-btn {
+.primary-btn {
   @include btn;
 }
 .button-with-price {

@@ -5,8 +5,7 @@ const BUTTON_TYPE_CLASSES = {
   circularBtn: "circular-btn",
   checkoutBtn: "checkout-btn",
   baseBtn: "button",
-  startShopping: "start-shopping",
-  exploreBtn: "explore-btn",
+  primaryBtn: "primary-btn",
 };
 export const Button = ({ title, type = "baseBtn", price, ...otherProps }) => {
   return (

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Modal } from "../../components/Modal/Modal";
 import ReactPortal from "../../components/ReactPortal/ReactPortal";
@@ -18,18 +18,18 @@ const EmptyCart = ({ handleClose }) => (
       </div>
     </div>
     <div className="start-shopping-btn-container">
-      <Button
-        title="Start Shopping"
-        type="startShopping"
-        onClick={handleClose}
-      />
+      <Button title="Start Shopping" type="primaryBtn" onClick={handleClose} />
     </div>
   </>
 );
 const Cart = () => {
   const [isOpen, setIsOpen] = useState(false);
   const cartCount = useSelector(selectCartItemsCount);
-
+  useLayoutEffect(() => {
+    isOpen
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "unset");
+  }, [isOpen]);
   const toogleCart = () => setIsOpen(!isOpen);
   return (
     <div className="cart-container">
