@@ -54,6 +54,7 @@ li {
 .cart-container {
   background-color: $back_color;
   padding-left: 8px;
+  cursor: pointer;
 }
 /*till small phones */
 @media only screen and (max-width: 768px) {

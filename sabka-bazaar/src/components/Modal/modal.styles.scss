@@ -59,6 +59,7 @@
       background-color: $black_color;
       color: $white_color;
       border-color: $black_color;
+      cursor: pointer;
       @media only screen and (max-width: 767px) {
         color: $black_color;
         background-color: $white_color;
