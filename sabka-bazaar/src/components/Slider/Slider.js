@@ -18,6 +18,8 @@ export const Slider = ({ data }) => {
               src={bannerImageUrl}
               alt={bannerImageAlt}
               className="banner-img"
+              width="1063"
+              height="266"
             />
           </div>
         );

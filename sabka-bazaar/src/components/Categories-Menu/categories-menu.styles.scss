@@ -3,7 +3,6 @@ $category_text_color: #342a3c;
 .categories-menu-container {
   background-color: $back_color;
   padding-bottom: 20px;
-  padding-top: 120px;
   box-sizing: border-box;
   position: fixed;
   height: 100%;
@@ -30,6 +29,5 @@ $category_text_color: #342a3c;
   .categories-menu-select-drop-down {
     display: block;
     padding-bottom: 20px;
-    padding-top: 120px;
   }
 }

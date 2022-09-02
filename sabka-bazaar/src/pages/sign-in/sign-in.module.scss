@@ -1,7 +1,7 @@
 .container {
   display: grid;
   grid-template-columns: 50% 50%;
-  padding-top: 120px;
+  padding-top: 50px;
   padding-bottom: 20px;
   @media only screen and (min-width: 600px) and (max-width: 992px) {
     padding-left: 20px;

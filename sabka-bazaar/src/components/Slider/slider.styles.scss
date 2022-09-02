@@ -2,12 +2,17 @@
 
 .banner-img-container {
   width: 100%;
-  padding-top: 120px;
 }
 .banner-img {
   width: 100%;
-  height: 100%;
+  object-fit: contain;
 }
 .carousel-root {
   box-shadow: 0 8px 6px -6px rgb(156, 150, 150);
+  .control-dots {
+    .dot {
+      background-color: black;
+      margin: 0 20px;
+    }
+  }
 }

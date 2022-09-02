@@ -7,8 +7,8 @@ const Header = () => {
         <div className="logo-container">
           <NavLink to="/">
             <img
-              src="/static/images/logo_2x.png"
-              srcSet="/static/images/logo_2x.png, /static/images/logo_2x.png"
+              src="/static/images/logo_2x.webp"
+              srcSet="/static/images/logo_2x.webp, /static/images/logo.webp"
               width="190"
               height="86"
               alt="Sabka Bazaar"
