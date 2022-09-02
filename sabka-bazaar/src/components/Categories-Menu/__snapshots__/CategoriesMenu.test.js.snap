@@ -13,27 +13,21 @@ Object {
           role="button"
           tabindex="0"
         >
-          <p>
-            Beverages
-          </p>
+          Beverages
         </div>
         <div
           class="category-menu-item"
           role="button"
           tabindex="0"
         >
-          <p>
-            Bakery Cakes and Dairy
-          </p>
+          Bakery Cakes and Dairy
         </div>
         <div
           class="category-menu-item"
           role="button"
           tabindex="0"
         >
-          <p>
-            Beauty and Hygiene
-          </p>
+          Beauty and Hygiene
         </div>
       </aside>
       <div
@@ -121,27 +115,21 @@ Object {
         role="button"
         tabindex="0"
       >
-        <p>
-          Beverages
-        </p>
+        Beverages
       </div>
       <div
         class="category-menu-item"
         role="button"
         tabindex="0"
       >
-        <p>
-          Bakery Cakes and Dairy
-        </p>
+        Bakery Cakes and Dairy
       </div>
       <div
         class="category-menu-item"
         role="button"
         tabindex="0"
       >
-        <p>
-          Beauty and Hygiene
-        </p>
+        Beauty and Hygiene
       </div>
     </aside>
     <div
