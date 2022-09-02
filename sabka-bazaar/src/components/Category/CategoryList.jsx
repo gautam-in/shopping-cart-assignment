@@ -19,7 +19,11 @@ export const CategoryList = ({ data }) => {
           <div className="category-title">{name}</div>
           <div className="category-desc">{description}</div>
 
-          <Button title={`Explore ${key}`} onClick={navigateToProductsPage} />
+          <Button
+            type="exploreBtn"
+            title={`Explore ${key}`}
+            onClick={navigateToProductsPage}
+          />
         </div>
         {index % 2 !== 0 && <CategoryImage name={name} imageUrl={imageUrl} />}
       </div>

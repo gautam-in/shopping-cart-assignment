@@ -19,6 +19,9 @@
 .start-shopping {
   @include btn;
 }
+.explore-btn {
+  @include btn;
+}
 .button-with-price {
   @include btn;
   display: none;
