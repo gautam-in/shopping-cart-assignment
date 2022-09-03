@@ -13,7 +13,7 @@ import {
 import { Slider } from "../../components/Slider/Slider";
 import { CategoryList } from "../../components/Category/CategoryList";
 import { Loader } from "../../components/Loader/Loader";
-import { ApiError } from "../../ApiError/ApiError";
+import { ApiError } from "../../components/ApiError/ApiError";
 const Home = () => {
   const banners = useSelector(selectBanners);
   const categories = useSelector(selectCategories);

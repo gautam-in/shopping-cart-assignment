@@ -13,7 +13,7 @@ import {
 import ProductsList from "../../components/ProductsList/ProductsList";
 import { useMemo } from "react";
 import { Loader } from "../../components/Loader/Loader";
-import { ApiError } from "../../ApiError/ApiError";
+import { ApiError } from "../../components/ApiError/ApiError";
 const Products = () => {
   const categories = useSelector(selectCategories);
   const [selectedCategoryId, setSelectedCategoryId] = useState("");
