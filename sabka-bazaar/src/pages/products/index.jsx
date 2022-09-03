@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategoriesData, getProductsData } from "./store/actions";
-import { CategoriesMenu } from "../../components/Categories-Menu/CategoriesMenu";
+import CategoriesMenu from "../../components/Categories-Menu/CategoriesMenu";
 import {
   selectCategories,
   selectCategoriesError,
@@ -10,7 +10,7 @@ import {
   selectProducts,
   selectProductsError,
 } from "./store/selectors";
-import { ProductsList } from "../../components/ProductsList/ProductsList";
+import ProductsList from "../../components/ProductsList/ProductsList";
 import { useMemo } from "react";
 import { Loader } from "../../components/Loader/Loader";
 import { ApiError } from "../../ApiError/ApiError";

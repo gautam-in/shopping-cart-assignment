@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { ProductsList } from "./ProductsList";
+import ProductsList from "./ProductsList";
 
 describe("Products list component", () => {
   it("should match snapshot", () => {

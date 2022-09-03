@@ -2,69 +2,54 @@ import PropTypes from "prop-types";
 import "./categories-menu.styles.scss";
 import Select from "react-select";
 import variables from "../../_variables.module.scss";
-export const CategoriesMenu = ({
-  data,
-  selectCategoryId,
-  selectedCategoryId,
-}) => {
+import { memo } from "react";
+import SideBar from "./SideBar";
+const customStyles = {
+  control: (styles) => ({
+    ...styles,
+    backgroundColor: variables.primary_color,
+    display: "grid",
+    gridTemplateColumns: "18fr 1fr",
+  }),
+  option: (styles) => {
+    return { ...styles, color: variables.white_color };
+  },
+  placeholder: () => ({
+    color: variables.white_color,
+  }),
+  dropdownIndicator: () => ({
+    color: variables.white_color,
+  }),
+  indicatorSeparator: () => ({
+    display: "none",
+  }),
+  menuList: () => ({
+    backgroundColor: variables.primary_color,
+  }),
+  singleValue: () => ({
+    color: variables.white_color,
+  }),
+  valueContainer: () => ({
+    display: "flex",
+    paddingLeft: "20px",
+    alignitems: "center",
+  }),
+};
+const CategoriesMenu = ({ data, selectCategoryId, selectedCategoryId }) => {
   const options = data.map(({ name, id }) => {
     return { value: name, label: name, id: id };
   });
-  const customStyles = {
-    control: (styles) => ({
-      ...styles,
-      backgroundColor: variables.primary_color,
-      display: "grid",
-      gridTemplateColumns: "18fr 1fr",
-    }),
-    option: (styles) => {
-      return { ...styles, color: variables.white_color };
-    },
-    placeholder: () => ({
-      color: variables.white_color,
-    }),
-    dropdownIndicator: () => ({
-      color: variables.white_color,
-    }),
-    indicatorSeparator: () => ({
-      display: "none",
-    }),
-    menuList: () => ({
-      backgroundColor: variables.primary_color,
-    }),
-    singleValue: () => ({
-      color: variables.white_color,
-    }),
-    valueContainer: () => ({
-      display: "flex",
-      paddingLeft: "20px",
-      alignitems: "center",
-    }),
-  };
+
   const selectCategory = (selectedOption) => {
     selectCategoryId(selectedOption.id);
   };
   return (
     <>
-      <aside className="categories-menu-container">
-        {data?.map(({ name, id }) => {
-          return (
-            <div
-              role="button"
-              tabIndex="0"
-              key={id}
-              className={
-                selectedCategoryId === id
-                  ? "category-menu-item active"
-                  : "category-menu-item"
-              }
-              onClick={() => selectCategoryId(id)}
-            >
-              {name}
-            </div>
-          );
-        })}
-      </aside>
+      <SideBar
+        data={data}
+        selectCategoryId={selectCategoryId}
+        selectedCategoryId={selectedCategoryId}
+      />
       <Select
         placeholder="Select category"
         options={options}
@@ -75,7 +60,7 @@ export const CategoriesMenu = ({
     </>
   );
 };
-
+export default memo(CategoriesMenu);
 CategoriesMenu.propTypes = {
   data: PropTypes.array,
   isLoading: PropTypes.bool,

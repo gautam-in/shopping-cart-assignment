@@ -7,6 +7,7 @@ import "./cart.styles.scss";
 import { FilledCart } from "../../components/Cart/FilledCart";
 import { Button } from "../../components/Button/Button";
 import PropTypes from "prop-types";
+import OpenCartBtn from "../../components/Cart/OpenCartBtn";
 const EmptyCart = ({ handleClose }) => (
   <>
     <div className="empty-cart">
@@ -30,30 +31,20 @@ const Cart = () => {
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "unset");
   }, [isOpen]);
-  const toogleCart = () => setIsOpen(!isOpen);
+  const toggleCart = () => setIsOpen(!isOpen);
   return (
     <div className="cart-container">
-      <div role="button" onClick={toogleCart} className="open-cart-btn">
-        <img
-          src="/static/images/cart.svg"
-          width="30"
-          height="30"
-          alt="Go to cart"
-        />
-        <div className="cart-count-container">
-          <p>{cartItemsCount} items</p>
-        </div>
-      </div>
+      <OpenCartBtn toggleCart={toggleCart} cartItemsCount={cartItemsCount} />
       <ReactPortal wrapperId="react-portal-modal-container">
         <Modal
-          handleClose={toogleCart}
+          handleClose={toggleCart}
           isOpen={isOpen}
           cartItemsCount={cartItemsCount}
         >
           {cartItemsCount === 0 ? (
-            <EmptyCart handleClose={toogleCart} />
+            <EmptyCart handleClose={toggleCart} />
           ) : (
-            <FilledCart handleClose={toogleCart} />
+            <FilledCart handleClose={toggleCart} />
           )}
         </Modal>
       </ReactPortal>

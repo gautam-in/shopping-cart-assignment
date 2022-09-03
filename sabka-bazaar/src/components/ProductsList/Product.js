@@ -32,7 +32,7 @@ const Product = ({ name, id, imageURL, description, price }) => {
           height="184"
         />
       </div>
-      {/* <div className="product-second-child"> */}
+
       <div className="product-desc">
         <p>{description}</p>
       </div>
@@ -55,7 +55,6 @@ const Product = ({ name, id, imageURL, description, price }) => {
           />
         </div>
       </div>
-      {/* </div> */}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { CategoriesMenu } from "./CategoriesMenu";
+import CategoriesMenu from "./CategoriesMenu";
 describe("CategoriesMenu component", () => {
   it("should match snapshot", () => {
     const mockProps = {
