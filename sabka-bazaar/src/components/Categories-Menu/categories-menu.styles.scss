@@ -1,0 +1,33 @@
+@import "../../variables.module";
+$category_text_color: #342a3c;
+.categories-menu-container {
+  background-color: $back_color;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  position: fixed;
+  height: 100%;
+
+  .category-menu-item {
+    border-bottom: 1px solid #c1b4b4;
+    padding: 20px;
+    color: $category_text_color;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .active {
+    background-color: #585858;
+    color: $white_color;
+  }
+}
+.categories-menu-select-drop-down {
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+  .categories-menu-container {
+    display: none;
+  }
+  .categories-menu-select-drop-down {
+    display: block;
+    padding-bottom: 20px;
+  }
+}

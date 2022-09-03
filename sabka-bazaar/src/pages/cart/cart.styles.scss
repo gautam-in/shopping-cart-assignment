@@ -1,0 +1,28 @@
+@import "../../variables.module";
+.open-cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .cart-count-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .empty-cart-header {
+    font-weight: bold;
+  }
+  .empty-cart-body {
+    font-size: $font-size-normal;
+  }
+}
+.start-shopping-btn-container {
+  display: grid;
+  padding: 0 10px 10px;
+}

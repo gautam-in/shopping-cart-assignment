@@ -1,0 +1,96 @@
+@import "../_variables.module";
+$nav_link_color: #575757;
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 100px 0 100px;
+  box-shadow: 0 8px 6px -6px $back_color;
+  z-index: 998;
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: $white_color;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 320px) and (max-width: 992px) {
+  .nav-bar {
+    padding: 0;
+  }
+}
+.nav-first-container {
+  display: flex;
+}
+.nav-second-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.nav-links-container {
+  display: flex;
+  align-items: flex-end;
+  .nav-link {
+    padding: 0 5px;
+    &:not(.nav-second-container .nav-link) {
+      color: $nav_link_color;
+      font-size: $font-size-normal;
+      font-weight: 600;
+    }
+  }
+}
+/*till small phones */
+@media only screen and (max-width: 600px) {
+  .nav-links-container {
+    display: none;
+  }
+  .nav-second-container {
+    flex-direction: row;
+  }
+}
+
+li {
+  list-style: none;
+}
+.cart-container {
+  background-color: $back_color;
+  padding-left: 8px;
+  cursor: pointer;
+}
+/*till small phones */
+@media only screen and (max-width: 768px) {
+  .cart-container {
+    display: grid;
+    padding-right: 8px;
+  }
+}
+.logo {
+  width: 100%;
+  object-fit: contain;
+}
+
+//main section css
+.main-container {
+  padding: 0 100px 0 100px;
+  position: relative;
+  top: 100px;
+  margin-bottom: 100px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 320px) and (max-width: 992px) {
+  .main-container {
+    padding: 0;
+  }
+}
+
+//footer section
+.footer {
+  padding: 20px 100px 20px 100px;
+  background-color: $back_color;
+  position: sticky;
+}
+@media only screen and (min-width: 320px) and (max-width: 1024px) {
+  .footer {
+    padding: 20px;
+  }
+}
