@@ -4,7 +4,6 @@ import Select from "react-select";
 import variables from "../../_variables.module.scss";
 export const CategoriesMenu = ({
   data,
-  isLoading,
   selectCategoryId,
   selectedCategoryId,
 }) => {
@@ -48,27 +47,23 @@ export const CategoriesMenu = ({
   return (
     <>
       <aside className="categories-menu-container">
-        {!isLoading ? (
-          data?.map(({ name, id }) => {
-            return (
-              <div
-                role="button"
-                tabIndex="0"
-                key={id}
-                className={
-                  selectedCategoryId === id
-                    ? "category-menu-item active"
-                    : "category-menu-item"
-                }
-                onClick={() => selectCategoryId(id)}
-              >
-                {name}
-              </div>
-            );
-          })
-        ) : (
-          <div>Loading...</div>
-        )}
+        {data?.map(({ name, id }) => {
+          return (
+            <div
+              role="button"
+              tabIndex="0"
+              key={id}
+              className={
+                selectedCategoryId === id
+                  ? "category-menu-item active"
+                  : "category-menu-item"
+              }
+              onClick={() => selectCategoryId(id)}
+            >
+              {name}
+            </div>
+          );
+        })}
       </aside>
       <Select
         placeholder="Select category"

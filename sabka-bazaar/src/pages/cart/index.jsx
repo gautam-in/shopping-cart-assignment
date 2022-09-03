@@ -24,7 +24,7 @@ const EmptyCart = ({ handleClose }) => (
 );
 const Cart = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const cartCount = useSelector(selectCartItemsCount);
+  const cartItemsCount = useSelector(selectCartItemsCount);
   useLayoutEffect(() => {
     isOpen
       ? (document.body.style.overflow = "hidden")
@@ -41,12 +41,16 @@ const Cart = () => {
           alt="Go to cart"
         />
         <div className="cart-count-container">
-          <p>{cartCount} items</p>
+          <p>{cartItemsCount} items</p>
         </div>
       </div>
       <ReactPortal wrapperId="react-portal-modal-container">
-        <Modal handleClose={toogleCart} isOpen={isOpen} cartCount={cartCount}>
-          {cartCount === 0 ? (
+        <Modal
+          handleClose={toogleCart}
+          isOpen={isOpen}
+          cartItemsCount={cartItemsCount}
+        >
+          {cartItemsCount === 0 ? (
             <EmptyCart handleClose={toogleCart} />
           ) : (
             <FilledCart handleClose={toogleCart} />

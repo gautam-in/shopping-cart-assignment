@@ -1,14 +1,25 @@
-import reducer, { getBanners, getCategories } from "./slice";
+import reducer, { setCategories, setBanners } from "./slice";
 describe("home slice", () => {
   it("should return initial state", () => {
     expect(reducer(undefined, { type: undefined })).toEqual({
       banners: [],
       categories: [],
+      isBannersLoading: true,
+      isCategoriesLoading: true,
+      bannersError: "",
+      categoriesError: "",
     });
   });
 
   it("should get categories and add it to existing state", () => {
-    const previousState = {};
+    const previousState = {
+      banners: [],
+      categories: [],
+      isBannersLoading: true,
+      isCategoriesLoading: true,
+      bannersError: "",
+      categoriesError: "",
+    };
     const mockCategories = [
       {
         name: "Beverages",
@@ -42,14 +53,21 @@ describe("home slice", () => {
       },
     ];
 
-    expect(reducer(previousState, getCategories(mockCategories))).toEqual({
+    expect(reducer(previousState, setCategories(mockCategories))).toEqual({
       ...previousState,
       categories: mockCategories,
     });
   });
 
   it("should get banners and add it to existing state", () => {
-    const previousState = {};
+    const previousState = {
+      banners: [],
+      categories: [],
+      isBannersLoading: true,
+      isCategoriesLoading: true,
+      bannersError: "",
+      categoriesError: "",
+    };
     const mockBanners = [
       {
         bannerImageUrl: "/static/images/offers/offer1.webp",
@@ -74,7 +92,7 @@ describe("home slice", () => {
       },
     ];
 
-    expect(reducer(previousState, getBanners(mockBanners))).toEqual({
+    expect(reducer(previousState, setBanners(mockBanners))).toEqual({
       ...previousState,
       banners: mockBanners,
     });

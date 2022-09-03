@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
-import { updateCartItems } from "../../pages/cart/store/actionCreators";
+import { updateCartItems } from "../../pages/cart/store/actions";
 import {
   selectCartItems,
   selectCartTotal,

@@ -6,6 +6,6 @@ export const postCartItemToServer = async (options) => {
     );
     return response.json();
   } catch (error) {
-    console.log("API ERRRRRR :", error);
+    throw new Error(error.message);
   }
 };

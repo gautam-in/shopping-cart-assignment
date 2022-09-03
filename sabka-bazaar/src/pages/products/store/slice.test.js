@@ -1,4 +1,4 @@
-import reducer, { getProducts, getCategories } from "./slice";
+import reducer, { setProducts, setCategories } from "./slice";
 describe("products slice", () => {
   it("should return initial state", () => {
     expect(reducer(undefined, { type: undefined })).toEqual({
@@ -6,11 +6,20 @@ describe("products slice", () => {
       categories: [],
       isCategoriesLoading: true,
       isProductsLoading: true,
+      productsError: "",
+      categoriesError: "",
     });
   });
 
   it("should get products and add it to existing state", () => {
-    const previousState = {};
+    const previousState = {
+      products: [],
+      categories: [],
+      isCategoriesLoading: true,
+      isProductsLoading: true,
+      productsError: "",
+      categoriesError: "",
+    };
     const mockProducts = [
       {
         name: "Fresho Kiwi - Green, 3 pcs",
@@ -35,14 +44,21 @@ describe("products slice", () => {
         id: "5b6c6aeb01a7c38429530884",
       },
     ];
-    expect(reducer(previousState, getProducts(mockProducts))).toEqual({
+    expect(reducer(previousState, setProducts(mockProducts))).toEqual({
       ...previousState,
       products: mockProducts,
     });
   });
 
   it("should get categories and add it to existing state", () => {
-    const previousState = {};
+    const previousState = {
+      products: [],
+      categories: [],
+      isCategoriesLoading: true,
+      isProductsLoading: true,
+      productsError: "",
+      categoriesError: "",
+    };
     const mockCategories = [
       {
         name: "Beverages",
@@ -76,7 +92,7 @@ describe("products slice", () => {
       },
     ];
 
-    expect(reducer(previousState, getCategories(mockCategories))).toEqual({
+    expect(reducer(previousState, setCategories(mockCategories))).toEqual({
       ...previousState,
       categories: mockCategories,
     });

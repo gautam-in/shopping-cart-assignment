@@ -2,7 +2,7 @@ import { Button } from "../Button/Button";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { useCallback } from "react";
-import { addToCart } from "../../pages/cart/store/actionCreators";
+import { addToCart } from "../../pages/cart/store/actions";
 import React from "react";
 import { selectCartItems } from "../../pages/cart/store/selectors";
 import { ButtonWithPrice } from "../Button/ButtonWithPrice";
@@ -12,7 +12,10 @@ const Product = ({ name, id, imageURL, description, price }) => {
   const addToCartHandler = useCallback(
     ({ name, id, imageURL, description, price }) => {
       dispatch(
-        addToCart(cartItems, { name, id, imageURL, description, price })
+        addToCart({
+          cartItems,
+          productToAdd: { name, id, imageURL, description, price },
+        })
       );
     },
     [{ name, id, imageURL, description, price }]

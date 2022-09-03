@@ -7,7 +7,7 @@ export const fetchProductsFromServer = async () => {
 
     return response.data;
   } catch (error) {
-    console.log(error);
+    throw new Error(error.message);
   }
 };
 
@@ -18,6 +18,6 @@ export const fetchCategoriesFromServer = async () => {
     );
     return response.data;
   } catch (error) {
-    console.log(error);
+    throw new Error(error.message);
   }
 };

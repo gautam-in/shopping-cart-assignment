@@ -3,7 +3,6 @@ import reducer, { addToCartSuccess, updateCart } from "./slice";
 describe("cart slice", () => {
   it("should return initial state", () => {
     expect(reducer(undefined, { type: undefined })).toEqual({
-      isAddToCartSuccess: false,
       addToCartLoading: true,
       error: "",
       cart: [],
@@ -34,7 +33,6 @@ describe("cart slice", () => {
     expect(reducer(previousState, addToCartSuccess(mockCartItems))).toEqual({
       ...previousState,
       cart: mockCartItems,
-      isAddToCartSuccess: true,
     });
   });
 

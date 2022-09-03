@@ -34,10 +34,10 @@ function* handleCartData({ payload }) {
     if (response) {
       const cartItems = addToCartHelper(payload);
       yield put(addToCartSuccess(cartItems));
-      yield put(addToCartLoading(false));
     }
   } catch (error) {
-    yield put(addToCartError(error.code));
+    yield put(addToCartError(error.message));
+  } finally {
     yield put(addToCartLoading(false));
   }
 }

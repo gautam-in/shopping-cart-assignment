@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  isAddToCartSuccess: false,
   addToCartLoading: true,
   error: "",
   cart: [],
@@ -15,7 +14,6 @@ export const cartSlice = createSlice({
       state.addToCartLoading = action.payload;
     },
     addToCartSuccess: (state, action) => {
-      state.isAddToCartSuccess = true;
       state.cart = action.payload;
     },
     addToCartError: (state, action) => {

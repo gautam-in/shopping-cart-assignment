@@ -16,3 +16,17 @@ export const selectIsCategoriesLoading = createSelector(
   [selectSlice],
   (state) => state.isCategoriesLoading
 );
+
+export const selectIsProductsLoading = createSelector(
+  [selectSlice],
+  (state) => state.isProductsLoading
+);
+
+export const selectProductsError = createSelector(
+  [selectSlice],
+  (state) => state.productsError
+);
+export const selectCategoriesError = createSelector(
+  [selectSlice],
+  (state) => state.categoriesError
+);

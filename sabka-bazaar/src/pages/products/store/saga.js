@@ -1,24 +1,33 @@
 import { fetchCategoriesFromServer, fetchProductsFromServer } from "./api";
 import { GET_PRODUCTS, GET_CATEGORIES } from "./types";
-import { getProducts, getCategories, setCategoriesLoading } from "./slice";
+import {
+  setProducts,
+  setCategories,
+  setCategoriesLoading,
+  setProductsError,
+  setProductsLoading,
+  setCategoriesError,
+} from "./slice";
 import { call, put, takeLatest } from "redux-saga/effects";
 
 function* handleProductsData() {
   try {
     const data = yield call(fetchProductsFromServer);
-    yield put(getProducts(data));
-    yield put(setCategoriesLoading(false));
+    yield put(setProducts(data));
   } catch (error) {
-    yield put(setCategoriesLoading(false));
-    console.log("er : ", error);
+    yield put(setProductsError(error.message));
+  } finally {
+    yield put(setProductsLoading(false));
   }
 }
 function* handleCategoriesData() {
   try {
     const data = yield call(fetchCategoriesFromServer);
-    yield put(getCategories(data));
+    yield put(setCategories(data));
   } catch (error) {
-    console.log("er : ", error);
+    yield put(setCategoriesError(error.message));
+  } finally {
+    yield put(setCategoriesLoading(false));
   }
 }
 

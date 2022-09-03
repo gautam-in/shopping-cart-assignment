@@ -3,20 +3,43 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   banners: [],
   categories: [],
+  isBannersLoading: true,
+  isCategoriesLoading: true,
+  bannersError: "",
+  categoriesError: "",
 };
 
 export const homeSlice = createSlice({
   name: "home",
   initialState,
   reducers: {
-    getBanners: (state, action) => {
+    setBanners: (state, action) => {
       state.banners = action.payload;
     },
-    getCategories: (state, action) => {
+    setCategories: (state, action) => {
       state.categories = action.payload;
+    },
+    setCategoriesLoading: (state, action) => {
+      state.isCategoriesLoading = action.payload;
+    },
+    setBannersLoading: (state, action) => {
+      state.isBannersLoading = action.payload;
+    },
+    setBannersError: (state, action) => {
+      state.bannersError = action.payload;
+    },
+    setCategoriesError: (state, action) => {
+      state.categoriesError = action.payload;
     },
   },
 });
 
-export const { getBanners, getCategories } = homeSlice.actions;
+export const {
+  setBanners,
+  setCategories,
+  setBannersError,
+  setBannersLoading,
+  setCategoriesError,
+  setCategoriesLoading,
+} = homeSlice.actions;
 export default homeSlice.reducer;
