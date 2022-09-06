@@ -1,0 +1,91 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+*{
+  box-sizing: border-box;
+}
+*:focus{
+  outline: 4px solid lime;
+}
+
+body {
+  margin: 0;
+  font-family: 'Dosis', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+ul{
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  background-color: #d00156;
+  color: white;
+  padding: 1rem;
+  border: none;
+}
+
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+
+}
+.center-box{
+  margin: 0 20%;
+}
+
+.group{
+  margin-bottom: 20px;;
+}
+
+.form-input-label{
+  display: block;
+}
+
+form{
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.form-input{
+  width: 200px;
+  padding: 5px;
+}
+
+.form-btn{
+  width: 200px;
+}
+
+@media only screen and (min-width: 768px) {
+  .flex-container {
+    flex-wrap: nowrap;
+    margin-top: 3rem;
+  }
+
+  .center-box{
+    margin: 0 2rem;
+  }
+
+  .form-input{
+    width: 300px;
+  }
+  
+  .form-btn{
+    width: 300px;
+  }
+}
+
+.required-star{
+  color: red;
+}
