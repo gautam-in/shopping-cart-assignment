@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const formInitialValues = {
   email: '',
@@ -6,6 +7,7 @@ const formInitialValues = {
 };
 
 const Signin = () => {
+  const navigate = useNavigate();
   const [formValues, setFormValues] = useState(formInitialValues);
   const { email, password } = formValues;
 
@@ -20,7 +22,7 @@ const Signin = () => {
     e.preventDefault();
 
     setFormValues(formInitialValues);
-    alert('SignUp Successfull');
+    navigate('/');
   };
 
   return (

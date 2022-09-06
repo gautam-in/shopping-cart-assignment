@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const formInitialValues = {
   firstName: '',
@@ -9,6 +10,7 @@ const formInitialValues = {
 };
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [formValues, setFormValues] = useState(formInitialValues);
   const { firstName, lastName, email, password, confirmPassword } = formValues;
 
@@ -27,6 +29,7 @@ const Signup = () => {
     }
     setFormValues(formInitialValues);
     alert('SignUp Successfull');
+    navigate('/');
   };
 
   return (

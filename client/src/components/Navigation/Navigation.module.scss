@@ -1,6 +1,7 @@
 .navigation-container {
   height: 60px;
   box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
 }
 
 .navigations-items {
@@ -70,7 +71,7 @@
   font-weight: 600;
 }
 
-li {
+.flex li {
   margin-right: 2rem;
   font-weight: 600;
 }

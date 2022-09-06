@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { BASE_URL } from '../../constants';
 
-const useHomeData = () => {
-  const [banners, setBanners] = useState([]);
+const useProductsData = () => {
+  const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const fetchBanner = async () => {
     try {
-      const response = await fetch(`${BASE_URL}/banners`);
+      const response = await fetch(`${BASE_URL}/products`);
       const data = await response.json();
-      setBanners(data);
+      setProducts(data);
       console.log(data);
     } catch (error) {
       console.log(error);
@@ -31,9 +31,9 @@ const useHomeData = () => {
   }, []);
 
   return {
-    banners,
+    products,
     categories
   };
 };
 
-export default useHomeData;
+export default useProductsData;

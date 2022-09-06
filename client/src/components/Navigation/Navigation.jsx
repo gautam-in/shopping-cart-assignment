@@ -1,15 +1,16 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import Footer from '../Footer/Footer';
 import Sidebar from '../Sidebar/Sidebar';
 import styles from './Navigation.module.scss';
+import ShopContext from '../../contexts/ShopContext';
 
 const Navigation = () => {
+  const Shop = useContext(ShopContext);
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
   const [isOpenCart, setIsOpenCart] = useState(false);
   const handleSideBar = () => {
-    console.log('side bar open');
     setIsOpenSidebar(true);
   };
   return (
@@ -40,7 +41,7 @@ const Navigation = () => {
               </button>
               <div className={styles['cart-container']} onClick={() => setIsOpenCart(true)}>
                 <img className={styles['cart-icon']} src="./static/images/cart.svg" alt="kart" />
-                <span className={styles['cart-items']}>0 item</span>
+                <span className={styles['cart-items']}>{`${Shop.count} items`}</span>
               </div>
             </div>
           </div>

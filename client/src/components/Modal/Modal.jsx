@@ -8,7 +8,6 @@ const Backdrop = (props) => {
 };
 
 const ModalOverlay = (props) => {
-  console.log(props.type);
   return (
     <div className={`${props.type === 'sidebar' ? classes.sideBar : classes.cartModal}`}>
       <div className={classes.content}>{props.children}</div>

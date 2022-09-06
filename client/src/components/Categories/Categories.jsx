@@ -3,7 +3,6 @@ import styles from './Categories.module.scss';
 import { Link } from 'react-router-dom';
 
 const Categories = ({ data }) => {
-  console.log(data, 'cat');
   const sortedCategories = data.sort((a, b) => a.order - b.order);
   return (
     <div className={styles['categories-container']}>
