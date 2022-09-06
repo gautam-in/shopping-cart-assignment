@@ -13,7 +13,7 @@ const network = async (uri, options = {}) => {
     const response = await axios(`${domain_port}${uri}`, newOptions);
     return response.data;
   } catch (error) {
-    console.error(error);
+    console.log(error);
     throw new Error(error.response.status);
   }
 };
