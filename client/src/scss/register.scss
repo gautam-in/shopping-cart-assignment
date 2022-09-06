@@ -1,0 +1,54 @@
+@import "variables.scss";
+.register {
+  display: grid;
+  grid-template-areas:
+    "menu menu header"
+    "menu menu header";
+  gap: 5px;
+  background-color: $white;
+  padding: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  &-header {
+    grid-area: menu;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+
+  &-fsection {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  &-input:focus {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    outline: none;
+  }
+
+  &-input {
+    width: 100%;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-color: $light-grey;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  &-signup-css {
+    width: 100%;
+    background: $pink-shade;
+    height: 40px;
+    border: none;
+    color: $white;
+    cursor: pointer;
+  }
+  &-error{
+    color:$error
+  }
+}

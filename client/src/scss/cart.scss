@@ -1,0 +1,125 @@
+@import "variables.scss";
+.cart {
+  color: $white;
+  background-color: $black;
+  display: flex;
+  align-items: center;
+  height: 35px;
+  padding: 10px;
+  &-section-1 {
+    width: 90em;
+  }
+
+  &-section-2 {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+#cart-item {
+  height: calc(100% - 98px);
+  overflow: auto;
+  width: auto;
+}
+.cart-promo {
+  text-align: center;
+  padding: 5px;
+}
+.no-cart-div{
+  position: absolute;
+  left: 0%;
+  right: 0;
+  top: 40%;
+  bottom: 0;
+  text-align: center;
+}
+.no-cart{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.low-price {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  background: $white;
+}
+.item1 {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.item2 {
+  grid-area: menu;
+}
+.item3 {
+  grid-area: first;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+.item3 button:hover {
+  background: transparent;
+}
+.item4 {
+  grid-area: second;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item5 {
+  grid-area: third;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+.item6 {
+  grid-area: fourth;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item7 {
+  grid-area: fifth;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item8 {
+  grid-area: sixth;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "menu header header header header header header"
+    "menu first second third fourth fifth sixth";
+  gap: 5px;
+  background-color: $white;
+  padding: 5px;
+  margin: 10px;
+}
+
+#promo-text {
+  background-color: $white;
+}
+
+#next-step {
+  cursor: pointer;
+  height: 50px;
+  width: 100%;
+  font-size: 16px;
+  background: $pink-shade;
+  border: none;
+  color: $white;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+}

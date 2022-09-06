@@ -1,0 +1,52 @@
+@import 'variables.scss';
+.navbar{
+    box-shadow: 3px 3px 8px $light-grey;
+    li{
+        list-style: none;
+        margin: 0 0.5rem 0 0;
+    }
+    &-container{
+        display: grid;
+        padding: 0 5rem 0 5rem;
+        grid-template-columns: auto 70% auto;
+        &-section{
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+        &-cart{
+            background-color: $light-grey;
+            & li{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+    &-list-items-middle{
+        display: flex;
+        justify-content: left;
+        &--light{
+            a{
+                text-decoration: none;
+                &:link,
+                &:visited{
+                    color:$black;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    &-list-items-end{
+        display: flex;
+        &--dark{
+            a{
+                text-decoration: none;
+                &:link,
+                &:visited{
+                    color:$black;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

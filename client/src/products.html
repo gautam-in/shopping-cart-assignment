@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Load Meta Information-->
+    <meta charset="UTF-8">
+    <meta name="description" content="SABKA BAZAAR - One common marketplace for all your daily needs">
+    <!--Load Meta Information-->
+
+    <!--Load Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Dosis:400,600,700&display=swap">
+    <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Dosis:400,600,700&display=swap">
+    <!--Load Google Fonts-->
+    
+    <!--Load Scripts-->
+    <script type="module" src="./js/products/index.js" defer></script>
+    <!--Load Scripts-->
+    
+  </head>
+  <title>SABKAA BAZAAR</title>
+  <body>
+      <style>
+          *{font-family: 'Dosis';}
+      </style>
+      <header-component></header-component>
+        <section>
+          <!--Side Navigation-->
+          <aside class="aside-container"></aside>
+          <!--Product List-->
+          <div class="content">
+            <div class="content-grid-container" id="grid-container"></div>
+          </div>
+        </section>
+        <!--Cart Container-->
+        <section id="cart-container" class="product-cart">
+          <cart-component></cart-component>
+        </section>
+        <footer-component></footer-component>
+  </body>
+</html>

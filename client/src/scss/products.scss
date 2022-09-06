@@ -1,0 +1,141 @@
+@import 'variables.scss';
+.aside-container {
+  padding: 0;
+  margin: 0;
+  width: 200px;
+  background-color: $shadow-grey;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+
+  & button {
+    display: block;
+    color: $black;
+    padding: 16px;
+    text-decoration: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid $grey;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  & button:active {
+    background-color: $grey;
+    color: $white;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid $grey;
+  }
+
+  & button:hover:not(.active) {
+    background-color: $grey;
+    color: $white;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid $grey;
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  aside {
+    width: 100%;
+    padding: 60px 0 30px 0;
+    height: auto;
+    position: fixed;
+    & button {
+      float: left;
+    }
+    .content {
+      margin-left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  aside {
+    padding: 60px 0 30px 0;
+    button {
+      text-align: center;
+      float: none;
+    }
+  }
+}
+
+.container {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  &-heading {
+    grid-column: 1 / span 5;
+    grid-row: 1;
+  }
+  &-product-image {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    max-width: 100%;
+  }
+  &-article {
+    grid-column: 3 / span 3;
+    grid-row: 2;
+    background-color: $light-grey;
+    font-size: 12px;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: auto;
+    margin-bottom: 24px;
+    max-height: 100px;
+  }
+  &-price {
+    grid-column: 1 / span 5;
+    grid-row: 4;
+  }
+}
+
+.content {
+  margin-left: 200px;
+  position: fixed;
+  width: calc(100% - 200px);
+  height: calc(100% - 130px);
+  overflow: auto;
+
+  &-grid-container {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    &-grid-child-el {
+      position: relative;
+      box-shadow: 0 4px 8px 0px #e4e4e4;
+    }
+  }
+  .buy-now {
+    width: 100%;
+    background: $pink-shade;
+    height: 40px;
+    border: none;
+    color: $white;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left:0;
+  }
+}
+.product-cart {
+  position: fixed;
+  height: calc(100% - 160px);
+  right: 0;
+  width: 450px;
+  background: #f1f1f1;
+  display: none;
+}
