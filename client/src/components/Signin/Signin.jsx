@@ -22,6 +22,7 @@ const Signin = () => {
     e.preventDefault();
 
     setFormValues(formInitialValues);
+    alert('Sign In successfull');
     navigate('/');
   };
 
@@ -34,8 +35,14 @@ const Signin = () => {
       <div className="center-box">
         <form method="post" action="/" onSubmit={handleSubmit}>
           <div className="group">
-            <label className="form-input-label">Email</label>
+            <label className="form-input-label" htmlFor="email">
+              Email{' '}
+              <span aria-hidden="true" className="required-star">
+                *
+              </span>
+            </label>
             <input
+              id="email"
               type="email"
               className="form-input"
               required
@@ -45,8 +52,14 @@ const Signin = () => {
             />
           </div>
           <div className="group">
-            <label className="form-input-label">Password</label>
+            <label className="form-input-label" htmlFor="password">
+              Password{' '}
+              <span aria-hidden="true" className="required-star">
+                *
+              </span>
+            </label>
             <input
+              id="password"
               type="password"
               className="form-input"
               required

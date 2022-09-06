@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import Modal from '../Modal/Modal';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import styles from './Sidebar.module.scss';
 
 const Sidebar = ({ onClose }) => {
+  const navigate = useNavigate();
   return (
     <Modal type="sidebar" onClose={onClose}>
       <div className={styles['sidebar-container']}>
@@ -22,11 +23,16 @@ const Sidebar = ({ onClose }) => {
           </li>
         </ul>
         <div className={styles['signin-container']}>
-          <Link to="/sign-in">
-            <button className={styles.signin}>Sign In</button>
-          </Link>
-          <div className={styles.signup}>
-            <Link to="/sign-up">Don&rsquo;t have a account? SignUp.</Link>
+          <button
+            className={styles.signin}
+            onClick={() => {
+              navigate('/sign-in');
+              onClose();
+            }}>
+            Sign In
+          </button>
+          <div className={styles.signup} onClick={() => onClose()}>
+            <Link to="/sign-up">Don&rsquo;t have a account? Sign Up.</Link>
           </div>
         </div>
       </div>

@@ -51,28 +51,36 @@ const Cart = ({ onClose }) => {
                   <h6>{item.name}</h6>
                   <div className={styles['price-row']}>
                     <div className={styles['price-row-left']}>
-                      <button onClick={() => Shop.removeCartItem(item)}>-</button>
+                      <button onClick={() => Shop.removeCartItem(item)} aria-label="Remove item">
+                        -
+                      </button>
                       <span>{item.quantity}</span>
-                      <button onClick={() => Shop.updateCartItems(item)}>+</button>
+                      <button onClick={() => Shop.updateCartItems(item)} aria-label="Add item">
+                        +
+                      </button>
                       <span>x</span>
-                      <span>{`Rs.${item.price}`}</span>
+                      <span aria-label="Base price of item">{`Rs.${item.price}`}</span>
                     </div>
-                    <span>{`Rs.${item.price * item.quantity}`}</span>
+                    <span aria-label="Total price">{`Rs.${item.price * item.quantity}`}</span>
                   </div>
                 </div>
               </div>
             ))}
-          </div>
-          <div className={styles['discount-container']}>
-            <img src="static/images/lowest-price.png" alt="lowest price banner" />
-            <p>You won&lsquo;t find it cheaper anywhere</p>
+            <div className={styles['discount-container']}>
+              <img src="static/images/lowest-price.png" alt="lowest price banner" />
+              <p>You won&lsquo;t find it cheaper anywhere</p>
+            </div>
           </div>
           <div className={styles['checkout-container']}>
             <p>Promo Code can be applied on payment page</p>
-            <div className={styles['checkout-btn']} onClick={() => onClose()}>
+            <div
+              className={styles['checkout-btn']}
+              onClick={() => onClose()}
+              role="button"
+              tabIndex="0">
               <div>Procced to checkout</div>
               <div>
-                Rs.{Shop.cartTotal} <span>{'>'}</span>
+                Rs.{Shop.cartTotal} <span aria-hidden="true">{'>'}</span>
               </div>
             </div>
           </div>

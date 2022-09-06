@@ -28,7 +28,7 @@ const Signup = () => {
       return;
     }
     setFormValues(formInitialValues);
-    alert('SignUp Successfull');
+    alert('Sign Up Successfull');
     navigate('/');
   };
 
@@ -41,8 +41,14 @@ const Signup = () => {
       <div className="center-box">
         <form method="post" action="/" onSubmit={handleSubmit}>
           <div className="group">
-            <label className="form-input-label">First Name</label>
+            <label className="form-input-label" htmlFor="firstName">
+              First Name{' '}
+              <span aria-hidden="true" className="required-star">
+                *
+              </span>
+            </label>
             <input
+              id="firstName"
               type="text"
               className="form-input"
               required
@@ -52,8 +58,14 @@ const Signup = () => {
             />
           </div>
           <div className="group">
-            <label className="form-input-label">Last Name</label>
+            <label className="form-input-label" htmlFor="lastName">
+              Last Name{' '}
+              <span aria-hidden="true" className="required-star">
+                *
+              </span>
+            </label>
             <input
+              id="lastName"
               type="text"
               className="form-input"
               required
@@ -63,8 +75,14 @@ const Signup = () => {
             />
           </div>
           <div className="group">
-            <label className="form-input-label">Email</label>
+            <label className="form-input-label" htmlFor="email">
+              Email{' '}
+              <span aria-hidden="true" className="required-star">
+                *
+              </span>
+            </label>
             <input
+              id="email"
               type="email"
               className="form-input"
               required
@@ -74,8 +92,14 @@ const Signup = () => {
             />
           </div>
           <div className="group">
-            <label className="form-input-label">Password</label>
+            <label className="form-input-label" htmlFor="password">
+              Password{' '}
+              <span aria-hidden="true" className="required-star">
+                *
+              </span>
+            </label>
             <input
+              id="password"
               type="password"
               className="form-input"
               required
@@ -87,8 +111,14 @@ const Signup = () => {
             />
           </div>
           <div className="group">
-            <label className="form-input-label">Confirm Password</label>
+            <label className="form-input-label" htmlFor="password">
+              Confirm Password{' '}
+              <span aria-hidden="true" className="required-star">
+                *
+              </span>
+            </label>
             <input
+              id="password"
               type="password"
               className="form-input"
               required
@@ -100,7 +130,7 @@ const Signup = () => {
             />
           </div>
           <button className="form-btn" type="submit">
-            Signup
+            Sign Up
           </button>
         </form>
       </div>

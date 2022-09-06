@@ -32,16 +32,31 @@ const Navigation = () => {
           </div>
           <div className={styles['signin-and-cart-container']}>
             <div className={styles['signin-container']}>
-              <Link to="/sign-in">SignIn</Link>
+              <Link to="/sign-in">Sign In</Link>
               <Link to="/sign-up">Register</Link>
             </div>
             <div className={`${styles.flex} ${styles['height-100']}`}>
-              <button className={styles['sidebar-btn']} onClick={handleSideBar}>
+              <button
+                className={styles['sidebar-btn']}
+                onClick={handleSideBar}
+                aria-label="sidebar">
                 ☰
               </button>
-              <div className={styles['cart-container']} onClick={() => setIsOpenCart(true)}>
-                <img className={styles['cart-icon']} src="./static/images/cart.svg" alt="kart" />
-                <span className={styles['cart-items']}>{`${Shop.count} items`}</span>
+              <div
+                className={styles['cart-container']}
+                onClick={() => setIsOpenCart(true)}
+                role="button"
+                tabIndex="0">
+                <img
+                  className={styles['cart-icon']}
+                  src="./static/images/cart.svg"
+                  alt="Shopping Cart"
+                  aria-hidden
+                />
+                <span
+                  className={styles['cart-items']}
+                  role="status"
+                  aria-label={`Shopping Cart`}>{`${Shop.count} items`}</span>
               </div>
             </div>
           </div>

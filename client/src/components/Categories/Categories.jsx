@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import styles from './Categories.module.scss';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Categories = ({ data }) => {
+  const navigate = useNavigate();
   const sortedCategories = data.sort((a, b) => a.order - b.order);
   return (
     <div className={styles['categories-container']}>
@@ -18,9 +19,9 @@ const Categories = ({ data }) => {
           <div className={styles.dataBox}>
             <h2>{category.name}</h2>
             <p className={styles['categories-description']}>{category.description}</p>
-            <Link to="/products">
-              <button>Explore {category.key}</button>
-            </Link>
+            <button aria-hidden="true" onClick={() => navigate('/products')}>
+              Explore {category.key}
+            </button>
           </div>
         );
         return (

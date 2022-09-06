@@ -16,7 +16,7 @@ const ProductsCategories = ({ categories }) => {
   };
 
   return (
-    <div className={styles['categories-container']}>
+    <aside className={styles['categories-container']} tabIndex="0">
       <div className={styles['dropdown-container']}>
         <select className={styles['dropdown']} onChange={handleCategory}>
           <option key="empty" value="">
@@ -35,7 +35,10 @@ const ProductsCategories = ({ categories }) => {
       <div>
         <ul className={styles['sidebar-container']}>
           <li
-            className={styles['sidebar-items']}
+            role="menuitem"
+            className={`${styles['sidebar-items']} ${
+              Shop.selectedCategory === '' ? styles['activeCategory'] : ''
+            }`}
             key="empty"
             onClick={() => handleCategoryList('')}>
             Select All
@@ -53,19 +56,23 @@ const ProductsCategories = ({ categories }) => {
           )}
         </ul>
       </div>
-    </div>
+    </aside>
   );
 };
 
 const ListItem = ({ id, children, handleCategoryList }) => {
+  const Shop = useContext(ShopContext);
   return (
-    <div
-      className={styles['sidebar-items']}
+    <li
+      role="menuitem"
+      className={`${styles['sidebar-items']} ${
+        Shop.selectedCategory === id ? styles['activeCategory'] : ''
+      }`}
       value={id}
       key={id}
       onClick={() => handleCategoryList(id)}>
       {children}
-    </div>
+    </li>
   );
 };
 

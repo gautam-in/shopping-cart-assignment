@@ -3,6 +3,9 @@
 *{
   box-sizing: border-box;
 }
+*:focus{
+  outline: 4px solid lime;
+}
 
 body {
   margin: 0;
@@ -81,4 +84,8 @@ form{
   .form-btn{
     width: 300px;
   }
+}
+
+.required-star{
+  color: red;
 }
