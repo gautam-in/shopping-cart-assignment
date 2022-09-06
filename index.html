@@ -7,7 +7,9 @@
       content="width=device-width,user-scalable=no,initial-scale=1"
     />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="./index.css" type="text/css" />
+    <link rel="stylesheet" href="./static/css/index.css" type="text/css" />
+    <script type="application/javascript" src="./static/js/utils.js"></script>
+    <script type="application/javascript" src="./static/js/index.js"></script>
   </head>
   <body>
     <div id="Main" class="-main">
@@ -23,13 +25,23 @@
               <div
                 class="-flex-row -sign-in-register-links -flex -right-aligned"
               >
-                <a href="#SignIn" role="button">SignIn</a>
-                <a href="#SignUp" role="button">Register</a>
+                <a href="#SignIn" role="button" class="-sign-in-button"
+                  >SignIn</a
+                >
+                <a href="#SignUp" role="button" class="-sign-up-button"
+                  >Register</a
+                >
               </div>
               <div class="-flex-row -resize -flex -left-to-right -site-nav">
                 <ul class="-flex-column -resize -flex -left-to-right -main-nav">
-                  <li class="-flex-column"><a href="#Home">Home</a></li>
-                  <li class="-flex-column"><a href="#Products">Products</a></li>
+                  <li class="-flex-column">
+                    <a href="#Home" data-name="Home" class="-nav-item">Home</a>
+                  </li>
+                  <li class="-flex-column">
+                    <a href="#Products" data-name="Products" class="-nav-item"
+                      >Products</a
+                    >
+                  </li>
                 </ul>
                 <div class="-flex-column -cart-button -flex" role="button">
                   <a href="#Cart" class="-flex -cart-link">
@@ -57,7 +69,7 @@
             </nav>
           </header>
         </div>
-        <main class="-main-content -flex-row -resize"></main>
+        <main id="MainContent" class="-main-content -flex-row -resize"></main>
         <footer class="-footer -flex-row -padding-one">
           <div class="-footer-copy">
             Copyright &#169; 2022 Sabka Bazar Grocery Supplies Pvt Ltd
@@ -66,4 +78,9 @@
       </div>
     </div>
   </body>
+  <script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", (event) => {
+      new initWebsite();
+    });
+  </script>
 </html>
