@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Load Meta Information-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SABKA BAZAAR - One common marketplace for all your daily needs">
+    <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-eval';img-src 'self' http://localhost:3000;object-src 'none'">
+    <!--Load Meta Information-->
+
+    <!--Load Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Dosis:400,600,700&display=swap">
+    <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Dosis:400,600,700&display=swap">
+    <!--Load Google Fonts-->
+
+    <!--Preload images-->
+    <link rel="preload" as="image" href="static/images/cart.svg">
+    <link rel="preload" as="image" href="static/images/logo.png">
+    <link rel="preload" as="image" href="static/images/logo_2x.png">
+    <link rel="preload" as="image" href="static/images/lowest-price.png">
+    <link rel="preload" as="image" href="static/images/minus.png">
+    <link rel="preload" as="image" href="static/images/plus.png">
+    <!--Preload images-->
+
+    <!--Load Scripts-->
+    <script type="module" src="./index.js" defer></script>
+    <!--Load Scripts-->
+    
+  </head>
+  <title>SABKAA BAZAAR</title>
+  <body>
+      <style>
+          *{font-family: 'Dosis';}
+      </style>
+      <header-component></header-component>
+      <section class="main-content">
+        <div class="main-content-banner"></div>
+        <div class="main-content-category"></div>
+        <div class="main-content-cart" id="cart-container">
+          <cart-component></cart-component>
+        </div>
+      </main>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+@import 'mixin.scss';
+@import 'variables.scss';
+
+.main-content-category {
+  margin: 0 5rem 0 5rem;
+  padding: 10px;
+  .gridEl {
+    display: grid;
+    grid-template-columns: auto 70% auto;
+    padding: 10px;
+    background: $arch;
+    &-gridElChild {
+      max-width: 100%;
+    }
+    &-explore {
+      background: $pink-shade;
+      border: none;
+      height: 45px;
+      width: auto;
+      color: $white;
+      cursor:pointer;
+    }
+  }
+  .gridEl:nth-child(even) {
+    direction: rtl;
+  }
+}

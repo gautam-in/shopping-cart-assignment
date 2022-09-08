@@ -1,0 +1,18 @@
+@import "mixin.scss";
+@import 'variables.scss';
+
+.main-content {
+  position: fixed;
+  height: calc(100% - 130px);
+  overflow: auto;
+
+  &-cart{
+    position: fixed;
+    height: calc(100% - 160px);
+    top: 8rem;
+    right: 0;
+    width: 450px;
+    background: $light-grey;
+    display: none;
+  }
+}

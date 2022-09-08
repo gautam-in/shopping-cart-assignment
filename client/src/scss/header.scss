@@ -1,0 +1,85 @@
+@import "mixin.scss";
+@import "variables.scss";
+.navbar {
+  box-shadow: 3px 3px 8px #e4e4e4;
+  margin-bottom: 5px;
+  li {
+    list-style: none;
+    margin: 0 0.5rem 0 0;
+  }
+  &-cart-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  &-container {
+    display: grid;
+    grid-template-areas:
+      "first  third four"
+      "first  third four";
+    &-section {
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+    &-cart {
+      background-color: #e4e4e4;
+      & li {
+        @include flex;
+      }
+    }
+  }
+  &-list-items-middle {
+    display: flex;
+    justify-content: left;
+    &--light {
+      a {
+        text-decoration: none;
+        color: $black;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+  }
+  &-list-items-end {
+    display: flex;
+    &--dark {
+      a {
+        text-decoration: none;
+        color: $black;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.block1 {
+  grid-area: first;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  grid-column:2;
+}
+.block2 {
+  grid-area: second;
+  grid-row:1;
+  grid-column:20 / span 1;
+}
+.block3 {
+  grid-area: third;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  grid-row:2;
+  grid-column:3 / span 3;
+}
+.block3 button:hover {
+  background: transparent;
+}
+.block4 {
+  grid-area: four;
+  grid-row:2;
+  grid-column:20 / span 1;
+  display: none;
+}

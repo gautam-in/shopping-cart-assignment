@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <!--Load Meta Information-->
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="SABKA BAZAAR - One common marketplace for all your daily needs">
+     <meta http-equiv="content-security-policy" content="script-src 'self' 'unsafe-eval';img-src 'self' http://localhost:3000;object-src 'none'">
+     <!--Load Meta Information-->
+
+     <!--Load Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Dosis:400,600,700&display=swap">
+    <link rel="stylesheet"  href="https://fonts.googleapis.com/css?family=Dosis:400,600,700&display=swap">
+    <!--Load Google Fonts-->
+
+    <!--Load Scripts-->
+    <script type="module" src="./js/register/index.js" defer></script>
+    <!--Load Scripts-->
+    
+  </head>
+  <title>SABKAA BAZAAR</title>
+  <body>
+      <style>
+          *{font-family: 'Dosis';}
+      </style>
+      <header-component 
+      ></header-component>
+      <main>
+        <div class="register">
+        <section>
+          <h2 class="register-header">SignUp</h2>
+          <article class="register-header">
+            We do not share your personal details with anyone 
+          </article>
+        </section>
+       
+        <section>
+          <section class="register-fsection">
+            <p class="register-error">All field marked with (*) are mandatory</p>
+          </section>
+          <form id="register-form" class="register-fsection">
+            <section class="register-fsection">
+              <strong><label for="fname-label">First name*</label></strong><br>
+              <input class="register-input" type="text" id="firstname">
+              <span class="register-error" id="firstname-error"></span>
+            </section>
+
+            <section class="register-fsection">
+              <strong><label for="lname-label">Last name*</label></strong>
+             <br>
+              <input class="register-input" type="text" id="lastname">
+              <span class="register-error" id="lastname-error"></span>
+            </section>
+
+            <section class="register-fsection">
+              <strong><label for="email-label">Email*</label></strong><br>
+              <input class="register-input" type="email" id="email">
+              <span  class="register-error" id="email-error"></span>
+            </section>
+
+            <section class="register-fsection">
+              <strong><label for="password-label">Password*</label></strong><br>
+              <input class="register-input" type="password" id="password">
+              <span class="register-error" id="password-error"></span>
+            </section>
+           
+            <section class="register-fsection">
+              <strong><label for="cpassword-label">Confirm Password*</label></strong><br>
+              <input class="register-input" type="password" id="confirm_password">
+              <span class="register-error" id="confirm_password-error"></span>
+            </section>
+            <section class="register-fsection">
+              <button class="register-signup-css" type="submit"><strong>Sign Up</strong></button>
+            </section>
+          </form>
+        </section>
+        </div>
+      </main>
+      <footer-component></footer-component>
+  </body>
+</html>
