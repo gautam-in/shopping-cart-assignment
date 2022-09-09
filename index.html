@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="./static/css/index.css" type="text/css" />
     <script type="application/javascript" src="./static/js/utils.js"></script>
     <script type="application/javascript" src="./static/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
   </head>
   <body>
     <div id="Main" class="-main">
-      <div class="-flex -main-page-container -top-to-bottom">
+      <div class="-flex -main-page-container -top-to-bottom -nowrap">
         <div class="-header-block -flex-row">
           <header class="-header -flex -left-to-right -padding-half">
             <div class="-logo -flex-column">
@@ -25,10 +26,18 @@
               <div
                 class="-flex-row -sign-in-register-links -flex -right-aligned"
               >
-                <a href="#SignIn" role="button" class="-sign-in-button"
+                <a
+                  href="#SignIn"
+                  role="button"
+                  class="-sign-in-button -nav-item"
+                  data-name="SignIn"
                   >SignIn</a
                 >
-                <a href="#SignUp" role="button" class="-sign-up-button"
+                <a
+                  href="#SignUp"
+                  role="button"
+                  class="-sign-up-button -nav-item"
+                  data-name="SignUp"
                   >Register</a
                 >
               </div>
@@ -44,7 +53,11 @@
                   </li>
                 </ul>
                 <div class="-flex-column -cart-button -flex" role="button">
-                  <a href="#Cart" class="-flex -cart-link">
+                  <a
+                    href="#Cart"
+                    class="-flex -cart-link -nav-item"
+                    data-name="Cart"
+                  >
                     <svg
                       class="icon -fill-primary"
                       version="1.1"

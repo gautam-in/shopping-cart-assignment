@@ -38,6 +38,85 @@ dom._get = function (selector, root, type, key, fn) {
   return el;
 };
 
+dom._create = function (el, parent, opts) {
+  if (opts) {
+    var prop;
+
+    for (prop in opts) {
+      if (opts[prop] && typeof opts[prop] !== "object") {
+        if (~prop.indexOf("-") || prop === "role") {
+          el.setAttribute(prop, opts[prop]);
+        } else {
+          el[prop] = opts[prop];
+        }
+      } else if (typeof opts[prop] === "object") {
+        if (prop === "style") {
+          dom._setStyles(el, opts[prop]);
+        } else if (opts[prop].ns && opts[prop].attr && opts[prop].value) {
+          el.setAttributeNS(opts[prop].ns, opts[prop].attr, opts[prop].value);
+        }
+      }
+    }
+  }
+
+  if (parent) dom.append(parent, el);
+  return el;
+};
+
+dom.createEl = function (type, parent, opts) {
+  return dom._create(document.createElement(type), parent, opts);
+};
+
+dom.append = function (parent, child) {
+  if (parent) parent.appendChild(child);
+};
+
+dom.findElInTree = function (el, ancestor, selector, ceiling) {
+  if (!selector) return null;
+
+  ancestor = ancestor || ceiling || document;
+
+  var matches = Array.from(dom.getEls(selector, ancestor)).filter(function (
+      res
+    ) {
+      return dom.isElInTree(el, res, ancestor);
+    }),
+    matchArr,
+    match,
+    parent;
+
+  if (matches.length) {
+    if (matches.length === 1) return matches[0];
+
+    parent = el.parentNode;
+    while (!match && parent !== document.body) {
+      matchArr = matches.filter(function (elem) {
+        return elem === parent;
+      });
+
+      if (matchArr.length) {
+        match = matchArr[0];
+      } else {
+        parent = parent.parentNode;
+      }
+    }
+
+    return match;
+  }
+
+  return null;
+};
+dom.isElInTree = function (el, ancestor, ceiling) {
+  ceiling = ceiling || document;
+
+  while (el && el !== ceiling) {
+    if (el === ancestor) return true;
+    el = el.parentNode;
+  }
+
+  return false;
+};
+
 //Ajax methods
 ajax.get = function (url) {
   var req = new Promise(function (resolve, reject) {
@@ -66,4 +145,32 @@ ajax.post = function (url, data) {
     resolve(xhr);
   });
   return req;
+};
+
+//To load the script programitically
+ajax.loadScript = function (opts) {
+  if (typeof opts !== "object") opts = { url: opts };
+  var _opts = {
+    type: "text/javascript",
+  };
+
+  if (opts.async) _opts.async = "async";
+  if (opts.defer) _opts.defer = "defer";
+
+  return new Promise(function (resolve, reject) {
+    var loadedScript = dom.getEl('[src="' + opts.url + '"]');
+
+    if (loadedScript) {
+      resolve(this);
+    } else {
+      var script = dom.createEl("script", null, _opts);
+
+      script.onload = function () {
+        resolve(this);
+      };
+
+      script.src = opts.url;
+      dom.append(document.body, script);
+    }
+  });
 };

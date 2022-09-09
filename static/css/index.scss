@@ -33,9 +33,22 @@ img {
   max-width: 100%;
   max-height: 100%;
 }
+#MainContent {
+  margin-top: 1rem;
+  max-width: $maxwidth;
+  margin: 1rem auto 0 auto;
+  padding-top: 75px;
+}
+.-hidden {
+  display: none;
+}
 
 .-header-block {
   box-shadow: 0px 0px 5px 0px $gray-color;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
   .-header {
     max-width: $maxwidth;
     margin: 0 auto;
@@ -75,6 +88,23 @@ nav {
   flex-wrap: wrap;
 }
 
+.-flex.-middle-aligned {
+  justify-content: center;
+  align-items: center;
+}
+
+.-margin-half-bottom {
+  margin-bottom: 0.5rem;
+}
+
+.-margin-half-horizontal {
+  margin: 0.5rem 0;
+}
+
+.-margin-two-bottom {
+  margin-bottom: 2rem;
+}
+
 .-flex.-right-aligned {
   justify-content: flex-end;
 }
@@ -109,6 +139,12 @@ nav {
   padding: 1rem;
 }
 
+.primary-button {
+  background-color: $primary-color;
+  color: $white-color;
+  padding: 0.5rem 1rem;
+}
+
 .-main-page-container {
   flex: 1 1 auto;
   height: 100%;
@@ -140,5 +176,33 @@ nav {
   }
   .-site-nav {
     margin-top: 0.5rem;
+  }
+}
+
+.-main-content[data-page="Home"] {
+  .-categories {
+    padding: 0;
+    .-item-container.-item-odd {
+      flex-direction: row-reverse;
+      .-item-image-container {
+        justify-content: flex-end;
+      }
+    }
+    .-item-container.-item-even {
+      .-item-image-container {
+        justify-content: flex-start;
+      }
+    }
+
+    .-item-container {
+      box-shadow: 0px 5px 5px -5px;
+      padding: 2.5rem 1rem;
+    }
+    .-item-container {
+      .-item-image-container {
+        width: 25%;
+        max-width: 250px;
+      }
+    }
   }
 }
