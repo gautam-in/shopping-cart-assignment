@@ -1,11 +1,21 @@
 
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/header/Header';
+import Home from './components/home/Home';
+import SignUp from './components/signUp/SignUp';
+import SignIn from './components/signIn/SignIn';
 
 function App() {
   return (
-    <div className="App">
-      Hello world
-    </div>
+    <Routes>
+      <Route path="/" element={<Header />}>
+        <Route index element={<Home />} />
+        <Route path="sign-up" element={<SignUp />} />
+        <Route path="sign-in" element={<SignIn />} />
+        {/* <Route path="products" element={<Products />} /> */}
+      </Route>
+    </Routes>
   );
 }
 
