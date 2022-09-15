@@ -1,9 +1,12 @@
 let initWebsite = function () {
   this.maincontainer = dom.getElById("Main");
   this.contentcontainer = dom.getElById("MainContent");
+  this.cart = dom.getElsByClass("-cart", document.body)[0];
+  this.cartoverly = dom.getElsByClass("-cart-overlay", document.body)[0];
   this.navigationItems = Array.from(
     dom.getElsByClass("-nav-item", this.maincontainer)
   );
+  this.cartbutton = dom.getElsByClass("-cart-button", this.maincontainer)[0];
   // this.signInButton = dom.getElsByClass(
   //   "-sign-in-button",
   //   this.maincontainer
@@ -35,15 +38,22 @@ initWebsite.prototype = {
         : null;
     });
     if (_active_nav && _active_nav[0]) _active_nav[0].click();
+
+    if (this.cartbutton) {
+      this.cartbutton.addEventListener("click", this.init_Cart.bind(this));
+    }
   },
   activateTheNav: function (event) {
     let _target = event.target,
       _name;
-    this.contentcontainer.innerHTML = "";
+
     if (!_target.classList.contains("-nav-item")) {
       _target = dom.findElInTree(_target, this.maincontainer, ".-nav-item");
     }
     _name = _target.getAttribute("data-name");
+    if (_name == "Cart") return this.init_Cart();
+    this.contentcontainer.innerHTML = "";
+    this.contentcontainer.setAttribute("data-page", _name);
     if (this["init_" + _name]) {
       this["init_" + _name]();
     } else {

@@ -3,6 +3,7 @@
 //Global objects
 window.dom = {};
 window.ajax = {};
+window.utils = {};
 
 //Dom methods to get an element
 dom.getElById = function (id) {
@@ -127,6 +128,7 @@ ajax.get = function (url) {
         const status = xhr.status;
         if (status === 0 || (status >= 200 && status < 400)) {
           resolve(xhr);
+          if (status === 0) alert("Something went wrong, server not available");
         } else {
           reject(xhr);
         }
@@ -173,4 +175,52 @@ ajax.loadScript = function (opts) {
       dom.append(document.body, script);
     }
   });
+};
+
+dom.createForm = function (o) {
+  if (!o) return;
+  let _form = dom.createEl("form", null, {
+    className: "-flex -top-to-bottom -nowrap " + (o.formclass || ""),
+  });
+  if (o && o.fields) {
+    o.fields.forEach((el) => {
+      let _field_container = dom.createEl("div", _form, {
+        className: "-flex-column -flex -top-to-bottom -field-container",
+      });
+      let _field = dom.createEl("input", _field_container, {
+        className: "-flex-column -field",
+        type: el.type,
+        required: el.required,
+      });
+      let _field_label = dom.createEl("label", _field_container, {
+        className: "-flex-column -label ",
+        innerText: el.label,
+      });
+    });
+    let _button_container = dom.createEl("button", _form, {
+      className: "-flex-column primary-button",
+      innerText: o.buttonlabel,
+    });
+    return _form;
+  }
+};
+
+dom.previousSiblingEl = function (el) {
+  var prev = el.previousSibling;
+
+  while (prev && prev.nodeType !== 1) {
+    prev = prev.previousSibling;
+  }
+
+  return prev;
+};
+
+dom.nextSiblingEl = function (el) {
+  var next = el.nextSibling;
+
+  while (next && next.nodeType !== 1) {
+    next = next.nextSibling;
+  }
+
+  return next;
 };
