@@ -1,10 +1,9 @@
-
-import './App.css';
-import { Routes, Route } from 'react-router-dom';
-import Header from './components/header/Header';
-import Home from './components/home/Home';
-import SignUp from './components/signUp/SignUp';
-import SignIn from './components/signIn/SignIn';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/header/Header";
+import Home from "./components/home/Home";
+import SignUp from "./components/signUp/SignUp";
+import SignIn from "./components/signIn/SignIn";
 
 function App() {
   return (

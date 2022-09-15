@@ -1,29 +1,30 @@
-*{
+* {
   box-sizing: border-box;
 }
 
-*:focus{
+*:focus {
   outline: 4px solid lime;
 }
 
 body {
-  margin: 0;
-  font-family: 'Dosis', sans-serif;
+  margin: 20px 100px !important;
+  font-family: "Dosis", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-a{
-  text-decoration: none;
-  color: black;
+a {
+  text-decoration: none !important;
+  color: black !important;
+  font-weight: 500;
 }
 
-ul{
+ul {
   list-style-type: none;
 }
 

@@ -1,0 +1,33 @@
+.categoryContainer {
+  width: 100%;
+  .categoryItems {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 6px -6px black;
+  }
+
+  .imageSection {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    img {
+      width: 80%;
+    }
+  }
+
+  .dataSection {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .categoryDescription {
+    text-align: center;
+    margin-top: 0px;
+  }
+}

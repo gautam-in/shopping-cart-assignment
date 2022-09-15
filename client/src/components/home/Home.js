@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
+import BannerCarousal from "../carousal/BannerCarousal";
+import Categories from "../categories/Categories";
+import useHttp from "../hooks/useHttp";
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+  const { banners, categories } = useHttp();
 
-export default Home
+  console.log(banners, "bannersss");
+  console.log(categories, "categories");
+
+  return (
+    <div>
+      {banners.length > 0 && <BannerCarousal banners={banners} />}
+      {categories.length > 0 && <Categories categories={categories} />}
+    </div>
+  );
+};
+
+export default Home;
