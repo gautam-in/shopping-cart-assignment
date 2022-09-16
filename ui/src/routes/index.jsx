@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import URLS from "../constants/urls";
 import Home from "../pages/Home";
 
 const Home1 = () => <div>Home</div>;
@@ -8,11 +10,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/login" element={<About />} />
-        <Route path="/sign-up" element={<Home1 />} />
-        <Route path="/products" element={<About />} />
-        <Route path="/cart" element={<About />} />
+        <Route exact path={URLS.HOME} element={<Home />} />
+        <Route path={URLS.PRODUCT_LIST} element={<About />} />
+        <Route path={URLS.SIGN_IN} element={<Home1 />} />
+        <Route path={URLS.REGISTER} element={<About />} />
+        <Route path={URLS.CART} element={<About />} />
       </Routes>
     </BrowserRouter>
   );

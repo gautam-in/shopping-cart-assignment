@@ -1,19 +1,21 @@
+import PAGE_URL from "./urls";
+
 const NAV_INFO = {
   HOME: {
     text: "Home",
-    url: "/",
+    url: PAGE_URL.HOME,
   },
   PRODUCTS: {
     text: "Products",
-    url: "/products",
+    url: PAGE_URL.PRODUCT_LIST,
   },
   SIGN_IN: {
     text: "SignIn",
-    url: "/sign-in",
+    url: PAGE_URL.SIGN_IN,
   },
   REGISTER: {
     text: "Register",
-    url: "/register",
+    url: PAGE_URL.REGISTER,
   },
 };
 
