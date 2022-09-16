@@ -31,3 +31,18 @@
     margin-top: 0px;
   }
 }
+
+@media only screen and (min-width: 375px) and (max-width: 767px) {
+  .categoryItems {
+    font-size: 10px;
+    height: 150px !important;
+  }
+  .dataSection {
+    button {
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
