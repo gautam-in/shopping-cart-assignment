@@ -58,3 +58,34 @@ nav {
     }
   }
 }
+
+@media screen and (max-width: 1024px) {
+  nav {
+    justify-content: space-between;
+    .navbar-left {
+      gap: 30%;
+      img {
+        width: 25vw;
+      }
+    }
+  }
+  .navbar-right .cart {
+    width: 20vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav {
+    justify-content: space-between;
+    ul {
+      display: none;
+    }
+    .navbar-left img {
+      width: 25vw;
+    }
+  }
+  .navbar-right .cart {
+    width: 40vw;
+    padding: 9% 7%;
+  }
+}
