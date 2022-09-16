@@ -8,7 +8,28 @@
   .productsList {
     flex: 0.8;
   }
+
+  .dropDwnList{
+    display: none;
+  }
+
 }
+
+@media only screen and (min-width: 375px) and (max-width: 767px) {
+
+    .productContainer {
+        display: grid !important;
+        margin: 0px 0px !important;
+      }
+
+    .productsCategories{
+        display: none;
+    }
+
+    .dropDwnList{
+        display: flex !important;
+    }
+  }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .productContainer {

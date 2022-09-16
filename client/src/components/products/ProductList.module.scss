@@ -61,6 +61,31 @@
   }
 }
 
+@media only screen and (min-width: 375px) and (max-width: 767px) {
+    .productContainer{
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0px;
+    }
+
+    .productImg {
+        img {
+            height: 100%;
+        }
+      }
+
+    .productDetails {
+        flex-direction: row !important;
+        justify-content: space-between;
+        height: 200px;
+      }
+
+      .productDetailsPara {
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+      }  
+}
+
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .productContainer {
     grid-template-columns: repeat(2, minmax(180px, 1fr)) !important;

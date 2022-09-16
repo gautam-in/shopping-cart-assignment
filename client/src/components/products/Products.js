@@ -1,6 +1,7 @@
 import React from "react";
 import useHttp from "../hooks/useHttp";
 import CategoryList from "./CategoryList";
+import DropDown from "./DropDown";
 import ProductList from "./ProductList";
 import styles from "./Products.module.scss";
 
@@ -10,6 +11,9 @@ const Products = () => {
     <div className={styles.productContainer}>
       <div className={styles.productsCategories}>
         {categories.length > 0 && <CategoryList categories={categories} />}
+      </div>
+      <div className={styles.dropDwnList}>
+        {categories.length > 0 && <DropDown categories={categories} />}
       </div>
       <div className={styles.productsList}>
         <ProductList products={products} />
