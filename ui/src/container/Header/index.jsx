@@ -1,32 +1,12 @@
-import React from "react";
-
+import NAV_INFO from "../../constants/navInfo";
 import contentString from "../../contentStrings/en.json";
 import "./header.scss";
 
-const navInfo = {
-  home: {
-    text: "Home",
-    url: "/",
-  },
-  products: {
-    text: "Products",
-    url: "/products",
-  },
-  signIn: {
-    text: "SignIn",
-    url: "/sign-in",
-  },
-  register: {
-    text: "Register",
-    url: "/register",
-  },
-};
-
 const Header = () => {
   const { nav } = contentString;
-  const { home, products, signIn, register } = navInfo;
+  const { HOME, PRODUCTS, SIGN_IN, REGISTER } = NAV_INFO;
 
-  const list = [home, products].map((listItem) => (
+  const list = [HOME, PRODUCTS].map((listItem) => (
     <li key={listItem.text}>
       <a href={listItem.url} className="font-bold">
         {listItem.text}
@@ -36,7 +16,7 @@ const Header = () => {
 
   const loginInfo = (
     <ul>
-      {[signIn, register].map((listItem) => (
+      {[SIGN_IN, REGISTER].map((listItem) => (
         <li key={listItem.text}>
           <a href={listItem.url} className="font-bold">
             {listItem.text}
