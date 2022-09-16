@@ -12,24 +12,26 @@ const ProductList = ({ products }) => {
               <img src={product.imageURL} alt={product.name} />
             </div>
             <div className={styles.productDetailsPara}>
-              <p role="article">
-                {product.description}
-              </p>
+              <p role="article">{product.description}</p>
               <div className={styles.bottomSection}>
-              <span aria-label={`MRP Rs.${product.price}`}>{`MRP Rs.${product.price}`}</span>
-              <button
-                className={styles["product-btn-1"]}
-                aria-label="Buy Now"
-                // onClick={() => handleBuy(product)}
-              >Buy Now</button>
+                <span
+                  aria-label={`MRP Rs.${product.price}`}
+                >{`MRP Rs.${product.price}`}</span>
+                <button
+                  className={styles.productBtn1}
+                  aria-label="Buy Now"
+                  // onClick={() => handleBuy(product)}
+                >
+                  Buy Now
+                </button>
               </div>
             </div>
           </div>
-          {/* <button
-            className={styles["product-btn-2"]}
+          <button
+            className={styles.prdoctBtn2}
             aria-label={`Buy Now ${product.name} @ RS.${product.price}`}
             // onClick={() => handleBuy(product)}
-          >{`Buy Now @ RS.${product.price}`}</button> */}
+          >{`Buy Now @ RS.${product.price}`}</button>
         </div>
       ))}
     </div>

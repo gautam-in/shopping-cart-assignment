@@ -9,9 +9,7 @@ const Products = () => {
   return (
     <div className={styles.productContainer}>
       <div className={styles.productsCategories}>
-        {categories.length > 0 && (
-          <CategoryList categories={categories} />
-        )}
+        {categories.length > 0 && <CategoryList categories={categories} />}
       </div>
       <div className={styles.productsList}>
         <ProductList products={products} />
