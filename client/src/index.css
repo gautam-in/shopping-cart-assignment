@@ -7,7 +7,7 @@
 }
 
 body {
-  margin: 20px 100px !important;
+  /* margin: 20px 100px !important; */
   font-family: "Dosis", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

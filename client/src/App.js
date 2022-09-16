@@ -4,6 +4,7 @@ import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import SignUp from "./components/signUp/SignUp";
 import SignIn from "./components/signIn/SignIn";
+import Products from "./components/products/Products";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="sign-up" element={<SignUp />} />
         <Route path="sign-in" element={<SignIn />} />
-        {/* <Route path="products" element={<Products />} /> */}
+        <Route path="products" element={<Products />} />
       </Route>
     </Routes>
   );

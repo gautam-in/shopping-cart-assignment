@@ -1,7 +1,8 @@
 .navigation-container {
-    height: 60px;
+    // height: 60px;
+    padding: 0px 100px;
     box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
   }
   
   .navigations-items {
@@ -80,9 +81,14 @@
     height: 100%;
   }
   
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
     .navigation-container {
       height: 100px;
+      padding: 0px;
+    }
+
+    .home-logo {
+      padding-left: 0px !important;
     }
   
     .cart-container {
