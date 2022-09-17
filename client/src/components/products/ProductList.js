@@ -1,7 +1,18 @@
 import React from "react";
 import styles from "./ProductList.module.scss";
 
+import {useDispatch} from 'react-redux'
+import { actionType } from "../../store/actions/cartActions";
+
 const ProductList = ({ products }) => {
+
+  const dispatch = useDispatch()
+
+
+  const handleBuy = (product) => {
+    dispatch({type: actionType.ADD_TOCART, payload: product})
+  }
+
   return (
     <div className={styles.productContainer}>
       {products.map((product) => (
@@ -20,7 +31,7 @@ const ProductList = ({ products }) => {
                 <button
                   className={styles.productBtn1}
                   aria-label="Buy Now"
-                  // onClick={() => handleBuy(product)}
+                  onClick={() => handleBuy(product)}
                 >
                   Buy Now
                 </button>

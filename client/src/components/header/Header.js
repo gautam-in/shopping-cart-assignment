@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { useSelector } from 'react-redux'
+import Cart from "../cart/Cart";
 import Footer from "../footer/Footer";
 import styles from "./Header.module.scss";
 
 const Header = () => {
+  const [isOpenCart, setIsOpenCart] = useState(false)
+  const state = useSelector((state) => state.cart.cartItems)
   return (
     <div className={styles["flex-col"]}>
       <header className={styles["navigation-container"]}>
@@ -40,7 +44,7 @@ const Header = () => {
               </button>
               <div
                 className={styles["cart-container"]}
-                //   onClick={() => setIsOpenCart(true)}
+                  onClick={() => setIsOpenCart(true)}
                 role="button"
                 tabIndex="0"
               >
@@ -54,13 +58,16 @@ const Header = () => {
                   className={styles["cart-items"]}
                   role="status"
                   aria-label={`Shopping Cart`}
-                >{` 0 items`}</span>
+                >{` ${state.length} items`}</span>
               </div>
             </div>
           </div>
         </div>
       </header>
       <Outlet />
+      {
+        isOpenCart && <Cart onClose={() => setIsOpenCart(false)} />
+      }
       <Footer />
     </div>
   );

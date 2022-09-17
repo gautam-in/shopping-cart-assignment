@@ -1,0 +1,88 @@
+.cartHeader {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span{
+        font-size: 22px;
+        cursor: pointer;
+    }
+}
+
+.cartFooter {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+
+    p{
+        text-align: center;
+    }
+}
+
+.discountContainer {
+    background-color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    img {
+      height: 100%;
+      margin-right: 2rem;
+    }
+  }
+
+ .itemsContainer{
+    background-color: white;
+    margin-top: 10px;
+    height: 271px;
+    overflow-y: scroll;
+ } 
+
+ .itemContainer{
+    height: 100px;
+  display: flex;
+  border-bottom: 1px solid black;
+  img {
+    height: 100%;
+  }
+ }
+
+ .itemDiscription {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+      
+        h6 {
+          margin: 0 1rem;
+          font-size: 1.2rem;
+        }
+ }
+
+ .priceRow{
+    display: flex;
+  justify-content: space-between;
+  margin: 0 1rem;
+ }
+
+ .priceRowLeft{
+        display: flex;
+        display: flex;
+        width: 40%;
+        justify-content: space-around;
+        button {
+          font-size: 1rem;
+          font-weight: 600;
+          border-radius: 50%;
+          padding: 0;
+          width: 2rem;
+          height: 2rem;
+        }
+ }
