@@ -37,7 +37,7 @@ const Cart = ({ onClose }) => {
                   <span aria-label="Base price of item">{`Rs.${item.price}`}</span>
                 </div>
                 <span aria-label="Total price">{`Rs.${
-                  item.price * item.quantity
+                  item.price * item.qty
                 }`}</span>
               </div>
             </div>
