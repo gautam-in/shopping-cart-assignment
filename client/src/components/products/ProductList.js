@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios'
 import styles from "./ProductList.module.scss";
 
 import { useDispatch } from "react-redux";
@@ -7,10 +8,22 @@ import { actionType } from "../../store/actions/cartActions";
 const ProductList = ({ products }) => {
   const dispatch = useDispatch();
 
-  const handleBuy = (product) => {
-    console.log("helloooooo");
-    dispatch({ type: actionType.ADD_TOCART, payload: product });
+  const handleBuy = async (product) => {
+    let productId = product.id;
+    await axios
+      .post("http://localhost:5000/addToCart", productId)
+      .then((response) => {
+        if (response.status === 200) {
+          dispatch({ type: actionType.ADD_TOCART, payload: product });
+        }
+      });
   };
+
+
+  // async function addCart(product) {
+  //   let productId = product.id;
+    
+  // }
 
   return (
     <div className={styles.productContainer}>

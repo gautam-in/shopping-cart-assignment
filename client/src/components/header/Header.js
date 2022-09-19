@@ -7,7 +7,10 @@ import styles from "./Header.module.scss";
 
 const Header = () => {
   const [isOpenCart, setIsOpenCart] = useState(false)
-  const state = useSelector((state) => state.cart.cartItems)
+  // const state = useSelector((state) => state.cart.cartItems)
+  const cartTotalQuantity = useSelector(
+    (state) => state.cart.cartTotalQuantity
+  );
   return (
     <div className={styles["flex-col"]}>
       <header className={styles["navigation-container"]}>
@@ -58,7 +61,7 @@ const Header = () => {
                   className={styles["cart-items"]}
                   role="status"
                   aria-label={`Shopping Cart`}
-                >{` ${state.length} items`}</span>
+                >{` ${cartTotalQuantity} items`}</span>
               </div>
             </div>
           </div>

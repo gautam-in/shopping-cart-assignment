@@ -86,6 +86,17 @@
   }
 }
 
+.cartTotalItemDetail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: #d00156;
+  padding: 0 1rem;
+  color: white;
+  gap: 5rem;
+}
+
 .emptyContainer {
   display: flex;
   justify-content: center;

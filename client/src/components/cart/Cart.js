@@ -1,16 +1,34 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Modal from "./Modal";
 import styles from "./Cart.module.scss";
+import { actionType } from "../../store/actions/cartActions";
 
 const Cart = ({ onClose }) => {
+  const navigate = useNavigate();
+
   const state = useSelector((state) => state.cart.cartItems);
+
+  console.log(state, "statatatata");
+
+  const cartTotalQuantity = useSelector(
+    (state) => state.cart.cartTotalQuantity
+  );
+
+  const dispatch = useDispatch();
+
+  const handleShopping = () => {
+    navigate("/products");
+    onClose();
+  };
+
   return (
     <>
       {state.length > 0 ? (
         <Modal>
           <div className={styles.cartHeader}>
-            <h4>{`My Cart(${state.length} item)`}</h4>
+            <h4>{`My Cart(${cartTotalQuantity} item)`}</h4>
             <span onClick={onClose}>X</span>
           </div>
           <div className={styles.itemsContainer}>
@@ -22,14 +40,24 @@ const Cart = ({ onClose }) => {
                   <div className={styles.priceRow}>
                     <div className={styles.priceRowLeft}>
                       <button
-                        // onClick={() => Shop.removeCartItem(item)}
+                        onClick={() =>
+                          dispatch({
+                            type: actionType.REMOVE_FROM_CART,
+                            payload: item,
+                          })
+                        }
                         aria-label="Remove item"
                       >
                         -
                       </button>
                       <span>{item.qty}</span>
                       <button
-                        // onClick={() => Shop.updateCartItems(item)}
+                        onClick={() =>
+                          dispatch({
+                            type: actionType.ADD_TOCART,
+                            payload: item,
+                          })
+                        }
                         aria-label="Add item"
                       >
                         +
@@ -54,7 +82,16 @@ const Cart = ({ onClose }) => {
           </div>
           <footer className={styles.cartFooter}>
             <p>Promo codes can be applied on payment page</p>
-            <button onClick={onClose}>Proceed to Checkout</button>
+            <div class={styles.cartTotalItemDetail} onClick={onClose}>
+              <p>Proceed to Checkout </p>
+              <span>
+                Rs.
+                {state.reduce(
+                  (total, item) => total + item.price * item.qty,
+                  0
+                )}
+              </span>
+            </div>
           </footer>
         </Modal>
       ) : (
@@ -68,7 +105,7 @@ const Cart = ({ onClose }) => {
             <p>Your favourite items are just a click away</p>
           </div>
           <footer className={styles.emptyCartFooter}>
-            <button onClick={onClose}>Start shopping</button>
+            <button onClick={handleShopping}>Start shopping</button>
           </footer>
         </Modal>
       )}
