@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import styles from "./Categories.module.scss";
 
 const Categories = ({ categories }) => {
@@ -19,7 +19,9 @@ const Categories = ({ categories }) => {
           <div className={styles.dataSection}>
             <h2>{category.name}</h2>
             <p className={styles.categoryDescription}>{category.description}</p>
-            <button aria-hidden="true" onClick={() => navigate('/products')}>Explore {category.key}</button>
+            <button aria-hidden="true" onClick={() => navigate("/products")}>
+              Explore {category.key}
+            </button>
           </div>
         );
 

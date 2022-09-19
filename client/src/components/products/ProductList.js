@@ -1,17 +1,16 @@
 import React from "react";
 import styles from "./ProductList.module.scss";
 
-import {useDispatch} from 'react-redux'
+import { useDispatch } from "react-redux";
 import { actionType } from "../../store/actions/cartActions";
 
 const ProductList = ({ products }) => {
-
-  const dispatch = useDispatch()
-
+  const dispatch = useDispatch();
 
   const handleBuy = (product) => {
-    dispatch({type: actionType.ADD_TOCART, payload: product})
-  }
+    console.log("helloooooo");
+    dispatch({ type: actionType.ADD_TOCART, payload: product });
+  };
 
   return (
     <div className={styles.productContainer}>
@@ -41,7 +40,7 @@ const ProductList = ({ products }) => {
           <button
             className={styles.prdoctBtn2}
             aria-label={`Buy Now ${product.name} @ RS.${product.price}`}
-            // onClick={() => handleBuy(product)}
+            onClick={() => handleBuy(product)}
           >{`Buy Now @ RS.${product.price}`}</button>
         </div>
       ))}

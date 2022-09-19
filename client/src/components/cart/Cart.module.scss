@@ -1,88 +1,105 @@
 .cartHeader {
-    background-color: black;
-    color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    span{
-        font-size: 22px;
-        cursor: pointer;
-    }
+  span {
+    font-size: 22px;
+    cursor: pointer;
+  }
 }
 
 .cartFooter {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-top: 10px;
-    position: fixed;
-    bottom: 0;
-    background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 10px;
+  position: absolute;
+  bottom: 0;
+  background-color: white;
 
-    p{
-        text-align: center;
-    }
+  p {
+    text-align: center;
+  }
 }
 
 .discountContainer {
-    background-color: white;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    margin: 1rem;
-    img {
-      height: 100%;
-      margin-right: 2rem;
-    }
-  }
-
- .itemsContainer{
-    background-color: white;
-    margin-top: 10px;
-    height: 271px;
-    overflow-y: scroll;
- } 
-
- .itemContainer{
-    height: 100px;
+  background-color: white;
   display: flex;
-  border-bottom: 1px solid black;
+  align-items: center;
+  margin: 1rem;
+  img {
+    height: 100%;
+    margin-right: 2rem;
+  }
+}
+
+.itemsContainer {
+  margin-top: 10px;
+  height: 271px;
+  overflow-y: scroll;
+}
+
+.itemContainer {
+  background-color: white;
+  height: 100px;
+  margin-bottom: 10px;
+  display: flex;
   img {
     height: 100%;
   }
- }
+}
 
- .itemDiscription {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        width: 100%;
-      
-        h6 {
-          margin: 0 1rem;
-          font-size: 1.2rem;
-        }
- }
+.itemDiscription {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
 
- .priceRow{
-    display: flex;
+  h6 {
+    margin: 0 1rem;
+    font-size: 1.2rem;
+  }
+}
+
+.priceRow {
+  display: flex;
   justify-content: space-between;
   margin: 0 1rem;
- }
+}
 
- .priceRowLeft{
-        display: flex;
-        display: flex;
-        width: 40%;
-        justify-content: space-around;
-        button {
-          font-size: 1rem;
-          font-weight: 600;
-          border-radius: 50%;
-          padding: 0;
-          width: 2rem;
-          height: 2rem;
-        }
- }
+.priceRowLeft {
+  display: flex;
+  display: flex;
+  width: 40%;
+  justify-content: space-around;
+  button {
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50%;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.emptyContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 185px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.emptyCartFooter {
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  button {
+    width: 100%;
+  }
+}

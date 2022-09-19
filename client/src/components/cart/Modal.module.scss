@@ -9,15 +9,34 @@
 }
 
 .modalStyles {
-    background-color: #e8e8e8;
-    position: absolute;
-    // width: 50%;
-    // height: 80vh;
-    height: 100vh;
-    top: 50%;
-    left: 60%;
-    right: 0;
-    padding: 0px;
-    transform: translate(-21%, -34%);
-    z-index: 1000;
+  background-color: #e8e8e8;
+  position: absolute;
+  height: 85%;
+  width: 40%;
+  top: 15.5%;
+  right: 0;
+  margin-right: 100px;
+  padding: 0px;
+  /* transform: translate(-21%, -46%); */
+  z-index: 1000;
 }
+
+// @media only screen and (min-width: 375px) and (max-width: 767px) {
+//   .bodyContainer {
+//     margin: 20px 0px 0px 0px;
+//   }
+// }
+
+// @media only screen and (min-width: 768px) and (max-width: 1023px) {
+//   .overLayStyles {
+//     // display: none;
+//     background-color: #e8e8e8;
+//   }
+//   .modalStyles {
+//     width: 100%;
+//     top: 50%;
+//     left: 0;
+//     transform: translate(0%, -5%);
+//     height: 100%;
+//   }
+// }
