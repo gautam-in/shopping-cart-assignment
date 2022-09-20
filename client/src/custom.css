@@ -1,0 +1,7 @@
+.carousel-indicators [data-bs-target] {
+  border-radius: 50%;
+  width: 10px !important;
+  height: 10px !important;
+  border: 0px;
+  background-color: black !important;
+}

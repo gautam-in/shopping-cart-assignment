@@ -4,7 +4,10 @@ import Carousel from "react-bootstrap/Carousel";
 const BannerCarousal = ({ banners }) => {
   return (
     <div className={styles.carouselContainer}>
-      <Carousel>
+      <Carousel
+        nextIcon={<p className={styles.nextIcon}>Next</p>}
+        prevIcon={<p className={styles.prevIcon}>Prev</p>}
+      >
         {banners.map((banner) => {
           return (
             <Carousel.Item key={banner.id}>

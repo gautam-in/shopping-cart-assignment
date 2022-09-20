@@ -97,7 +97,7 @@ const Cart = ({ onClose }) => {
       ) : (
         <Modal>
           <div className={styles.cartHeader}>
-            <h4>{`My Cart(${state.length} item)`}</h4>
+            <h3>My Cart</h3>
             <span onClick={onClose}>X</span>
           </div>
           <div className={styles.emptyContainer}>
