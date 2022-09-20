@@ -83,6 +83,9 @@
        display: flex;
        flex-direction: column;
        justify-content: space-between;
+       p{
+        height: 100% !important;
+       }
       }  
 }
 
@@ -96,6 +99,10 @@
   }
   .bottomSection {
     display: none !important;
+  }
+
+  .productImg {
+    margin-bottom: 0px !important;
   }
 
   .prdoctBtn2 {

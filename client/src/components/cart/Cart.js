@@ -82,8 +82,8 @@ const Cart = ({ onClose }) => {
           </div>
           <footer className={styles.cartFooter}>
             <p>Promo codes can be applied on payment page</p>
-            <div class={styles.cartTotalItemDetail} onClick={onClose}>
-              <p>Proceed to Checkout </p>
+            <button  onClick={onClose}>
+              Proceed to Checkout
               <span>
                 Rs.
                 {state.reduce(
@@ -91,7 +91,7 @@ const Cart = ({ onClose }) => {
                   0
                 )}
               </span>
-            </div>
+            </button>
           </footer>
         </Modal>
       ) : (

@@ -33,7 +33,7 @@ const Products = () => {
         )}
       </div>
       <div className={styles.dropDwnList}>
-        {categories.length > 0 && <DropDown categories={categories} />}
+        {categories.length > 0 && <DropDown handleProducts={handleProducts} categories={categories} />}
       </div>
       <div className={styles.productsList}>
         <ProductList
