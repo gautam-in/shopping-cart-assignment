@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import FormInput from "../signUp/FormInput";
-import styles from './SignIn.module.scss';
+import styles from "./SignIn.module.scss";
 
 const formInitialValues = {
   email: "",
@@ -51,6 +51,8 @@ const Signin = () => {
             onChange={handleChange}
             name="password"
             value={password}
+            minLength="6"
+            pattern="^[a-zA-Z0-9]*$"
           />
 
           <button className="form-btn" type="submit">

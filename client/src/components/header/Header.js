@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { useSelector } from 'react-redux'
+import { useSelector } from "react-redux";
 import Cart from "../cart/Cart";
 import Footer from "../footer/Footer";
 import styles from "./Header.module.scss";
 
 const Header = () => {
-  const [isOpenCart, setIsOpenCart] = useState(false)
-  // const state = useSelector((state) => state.cart.cartItems)
+  const [isOpenCart, setIsOpenCart] = useState(false);
   const cartTotalQuantity = useSelector(
     (state) => state.cart.cartTotalQuantity
   );
@@ -38,16 +37,9 @@ const Header = () => {
               <Link to="/sign-up">Register</Link>
             </div>
             <div className={`${styles.flex} ${styles["height-100"]}`}>
-              <button
-                className={styles["sidebar-btn"]}
-                //   onClick={handleSideBar}
-                aria-label="sidebar"
-              >
-                ☰
-              </button>
               <div
                 className={styles["cart-container"]}
-                  onClick={() => setIsOpenCart(true)}
+                onClick={() => setIsOpenCart(true)}
                 role="button"
                 tabIndex="0"
               >
@@ -68,9 +60,7 @@ const Header = () => {
         </div>
       </header>
       <Outlet />
-      {
-        isOpenCart && <Cart onClose={() => setIsOpenCart(false)} />
-      }
+      {isOpenCart && <Cart onClose={() => setIsOpenCart(false)} />}
       <Footer />
     </div>
   );

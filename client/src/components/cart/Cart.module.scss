@@ -24,7 +24,7 @@
   p {
     text-align: center;
   }
-  button{
+  button {
     display: flex;
     justify-content: space-between;
   }
@@ -43,7 +43,7 @@
 
 .itemsContainer {
   margin-top: 10px;
-  height: 271px;
+  // height: 271px;
   overflow-y: scroll;
 }
 
@@ -116,5 +116,39 @@
   width: 100%;
   button {
     width: 100%;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 767px) {
+  .cartHeader {
+    background-color: white;
+    margin-top: 30px;
+    color: black;
+    padding: 10px;
+  }
+
+  .discountContainer {
+    margin-top: 0px !important;
+  }
+
+  .cartFooter {
+    padding: 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .cartHeader {
+    background-color: white;
+    margin-top: 30px;
+    color: black;
+    padding: 10px;
+  }
+
+  .discountContainer {
+    margin-top: 0px !important;
+  }
+
+  .cartFooter {
+    padding: 10px;
   }
 }

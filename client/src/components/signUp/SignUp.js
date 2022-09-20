@@ -17,10 +17,6 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { firstName, lastName, email, password, confirmPassword } = formFields;
 
-  // const resetFormFields = () => {
-  //   setFormFields(defaultFormFields);
-  // };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -76,6 +72,8 @@ const SignUpForm = () => {
           onChange={handleChange}
           name='password'
           value={password}
+          minLength="6"
+          pattern="^[a-zA-Z0-9]*$"
         />
 
         <FormInput
@@ -85,6 +83,8 @@ const SignUpForm = () => {
           onChange={handleChange}
           name='confirmPassword'
           value={confirmPassword}
+          minLength="6"
+          pattern="^[a-zA-Z0-9]*$"
         />
         <button type='submit'>Sign Up</button>
       </form>
