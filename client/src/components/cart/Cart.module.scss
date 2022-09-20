@@ -77,14 +77,15 @@
 
 .priceRowLeft {
   display: flex;
-  display: flex;
   width: 40%;
   justify-content: space-around;
+  align-items: center;
   button {
     font-size: 1rem;
     font-weight: 600;
     border-radius: 50%;
     padding: 0;
+    padding-bottom: 3px;
     width: 2rem;
     height: 2rem;
   }
@@ -171,6 +172,35 @@
     margin-top: 30px;
     color: black;
     padding: 10px;
+  }
+
+  .priceRow {
+    display: flex;
+    margin: 0 1rem;
+    .priceRowLeft {
+      flex: 0.8;
+      justify-content: flex-start;
+      align-items: center;
+      button {
+        font-size: 1.5rem;
+        font-weight: 600;
+        border-radius: 14%;
+        padding-bottom: 6px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+        margin-left: 5px;
+        span {
+          padding: 5px;
+        }
+      }
+      span{
+        padding: 5px;
+        font-weight: 500;
+      }
+    }
   }
 
   .discountContainer {
