@@ -27,6 +27,8 @@ const Products = () => {
       <div className={styles.productsCategories}>
         {categories.length > 0 && (
           <CategoryList
+          showFilterProducts={showFilterProducts}
+          selectedCategory={selectedCategory}
             handleProducts={handleProducts}
             categories={categories}
           />

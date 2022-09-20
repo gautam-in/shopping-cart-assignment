@@ -1,11 +1,17 @@
 .catListContainer {
-  padding-top: 10px;
-
   .catItem {
     border-bottom: 0.5px solid gray;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    margin-bottom: 10px;
+    padding: 10px 0px 10px 20px;
+    margin-bottom: 0px;
+    cursor: pointer;
+  }
+
+  .activeItem {
+    background-color: black;
+    color: white;
+    border-bottom: 0.5px solid black;
+    padding: 10px 0px 20px 10px;
+    margin-bottom: 0px;
     cursor: pointer;
   }
 }

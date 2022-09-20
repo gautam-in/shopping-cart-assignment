@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./CategoryList.module.scss";
 
-const CategoryList = ({ categories, handleProducts }) => {
+const CategoryList = ({ categories, handleProducts, showFilterProducts, selectedCategory }) => {
   const sortList = categories
     .sort((a, b) => a.order - b.order)
     .filter((item) => item.name !== "Seafood");
@@ -11,7 +11,7 @@ const CategoryList = ({ categories, handleProducts }) => {
       {sortList.map((category) => {
         return (
           <p
-            className={styles.catItem}
+            className={selectedCategory === category.id ? styles.activeItem : styles.catItem}
             key={category.id}
             onClick={() => handleProducts(category.id)}
           >
