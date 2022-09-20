@@ -127,6 +127,35 @@
     padding: 10px;
   }
 
+  .priceRow {
+    display: flex;
+    margin: 0 1rem;
+    .priceRowLeft {
+      flex: 0.8;
+      justify-content: flex-start;
+      align-items: center;
+      button {
+        font-size: 1.5rem;
+        font-weight: 600;
+        border-radius: 14%;
+        padding-bottom: 6px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+        margin-left: 5px;
+        span {
+          padding: 5px;
+        }
+      }
+      span{
+        padding: 5px;
+        font-weight: 500;
+      }
+    }
+  }
+
   .discountContainer {
     margin-top: 0px !important;
   }

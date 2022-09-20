@@ -48,7 +48,7 @@ const Cart = ({ onClose }) => {
                         }
                         aria-label="Remove item"
                       >
-                        -
+                        <span>-</span>
                       </button>
                       <span>{item.qty}</span>
                       <button
@@ -60,9 +60,9 @@ const Cart = ({ onClose }) => {
                         }
                         aria-label="Add item"
                       >
-                        +
+                        <span>+</span>
                       </button>
-                      <span>x</span>
+                      <span>X</span>
                       <span aria-label="Base price of item">{`Rs.${item.price}`}</span>
                     </div>
                     <span aria-label="Total price">{`Rs.${
