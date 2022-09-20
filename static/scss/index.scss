@@ -179,6 +179,9 @@ input.-field {
           text-decoration: none;
           color: inherit;
           margin: 0 0.5rem;
+          &.-active {
+            border-bottom: 2px solid red;
+          }
         }
         .-site-nav {
           @media screen and (max-width: $small-screen) {
@@ -199,6 +202,13 @@ input.-field {
   .-cart-button {
     background-color: $lightgray-color;
     color: $black-color;
+    &.-added-item {
+      svg {
+        fill: $white-color;
+      }
+      background-color: $primary-color;
+      color: $white-color;
+    }
   }
   .-cart-button a {
     align-items: center;
@@ -291,6 +301,9 @@ input.-field {
           .-item-image-container {
             width: 25%;
             max-width: 250px;
+            > div {
+              height: 100%;
+            }
           }
           &.-item-odd {
             flex-direction: row-reverse;
@@ -470,6 +483,19 @@ input.-field {
     color: $white-color;
     justify-content: space-between;
   }
+  .-cart-footer {
+    padding: 0.5rem;
+    box-shadow: 0px 0px 5px 0px;
+    .-footer-text {
+      text-align: center;
+      margin-bottom: 0.5rem;
+      font-size: 11px;
+    }
+    .-checkout-button {
+      width: 100%;
+      padding: 1rem;
+    }
+  }
   .-cart-close {
     font-weight: bold;
     background: transparent;
@@ -481,9 +507,58 @@ input.-field {
   &.-expanded {
     right: 0;
   }
+
   @media screen and (max-width: $medium-screen) {
     width: 100%;
     top: 0;
     height: 100%;
+    right: 0 !important;
+  }
+  .-cart-content {
+    .-offer-item {
+      margin: 0 0.5rem;
+      padding: 0.5rem;
+      background-color: white;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .-offer-img {
+      width: 80px;
+    }
+    &.-has-items {
+      background-color: $lightergray-color;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .-cart-item {
+      color: $black-color;
+      padding: 0.5rem;
+      background-color: $white-color;
+      margin: 0.5rem 0;
+      .-img-div {
+        width: 40px;
+        margin-right: 0.5rem;
+      }
+    }
+    .-quantity-button {
+      padding: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      justify-content: center;
+      align-items: center;
+      color: $white-color;
+      font-size: 15px;
+      background-color: $primary-color;
+    }
+    .-quantity-value {
+      margin: 0 1rem;
+    }
+    .-name {
+      font-weight: bold;
+    }
+    .-price {
+      margin-left: 1rem;
+    }
   }
 }

@@ -142,9 +142,19 @@ ajax.get = function (url) {
 ajax.post = function (url, data) {
   var req = new Promise(function (resolve, reject) {
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", url);
-    xhr.send(data);
-    resolve(xhr);
+    xhr.open("POST", url, true);
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        const status = xhr.status;
+        if (status === 0 || (status >= 200 && status < 400)) {
+          resolve(xhr);
+          if (status === 0) alert("Something went wrong, server not available");
+        } else {
+          reject(xhr);
+        }
+      }
+    };
+    xhr.send();
   });
   return req;
 };

@@ -3,6 +3,9 @@ let initWebsite = function () {
   this.contentcontainer = dom.getElById("MainContent");
   this.cart = dom.getElsByClass("-cart", document.body)[0];
   this.cartoverly = dom.getElsByClass("-cart-overlay", document.body)[0];
+  this.cartItems = localStorage.getItem("CartItems")
+    ? JSON.parse(localStorage.getItem("CartItems"))
+    : [];
   this.navigationItems = Array.from(
     dom.getElsByClass("-nav-item", this.maincontainer)
   );
@@ -20,6 +23,19 @@ let initWebsite = function () {
 initWebsite.prototype = {
   init: function () {
     this.initNavigationMenu();
+    this.handleCartCount();
+  },
+  handleCartCount: function () {
+    let _item_count_div = dom.getElsByClass("-item-count", this.cartbutton)[0];
+    let _cart_items = localStorage.getItem("CartItems")
+      ? JSON.parse(localStorage.getItem("CartItems"))
+      : [];
+    let _total_cart_items = 0;
+    _cart_items.forEach((elem) => {
+      _total_cart_items = _total_cart_items + elem.quantity;
+    });
+    _item_count_div.innerHTML = _total_cart_items + " Items";
+    this.cartItems = _cart_items;
   },
   initNavigationMenu: function () {
     let _hash = window.location.hash;
@@ -53,6 +69,10 @@ initWebsite.prototype = {
     _name = _target.getAttribute("data-name");
     if (_name == "Cart") return this.init_Cart();
     this.contentcontainer.innerHTML = "";
+    this.navigationItems.forEach((elem) => {
+      elem.classList.remove("-active");
+    });
+    _target.classList.add("-active");
     this.contentcontainer.setAttribute("data-page", _name);
     if (this["init_" + _name]) {
       this["init_" + _name]();

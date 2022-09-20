@@ -43,7 +43,7 @@ products.prototype = {
     const url = "http://localhost:5000/products";
     ajax.get(url).then(
       function (xhr) {
-        var data = JSON.parse(xhr.responseText);
+        var data = (this.produtsdata = JSON.parse(xhr.responseText));
         this.drawProducts(data);
       }.bind(this)
     );
@@ -97,6 +97,7 @@ products.prototype = {
       className: "-card-image",
       src: "." + (el.imageURL || "static/images/No_Image_Available.jpg"),
       alt: el.description || el.name,
+      loading: "lazy",
     });
     let _card_inner_inner = dom.createEl("div", _card_inner, {
       className: "-flex-row -top-to-bottom -nowrap -flex -card-inner-inner",
@@ -132,9 +133,52 @@ products.prototype = {
           'Buy Now<span class="-button-price"> @ MRP RS.' +
           el.price +
           "</span>",
+        "data-itemid": el.id,
       }
     );
+    _card_footer_button.addEventListener("click", this.addToCart.bind(this));
     return _card;
+  },
+  addToCart: function (e) {
+    let _target = e.target;
+    let _item_id = _target.getAttribute("data-itemid");
+    let _cart_items = localStorage.getItem("CartItems")
+      ? JSON.parse(localStorage.getItem("CartItems"))
+      : [];
+
+    const url = "http://localhost:5000/addToCart";
+    ajax.post(url, JSON.stringify({ item: _item_id })).then(
+      function (xhr) {
+        var data = JSON.parse(xhr.responseText);
+        if (data && data.response) {
+          this.controller.cartbutton.classList.add("-added-item");
+          setTimeout(() => {
+            this.controller.cartbutton.classList.remove("-added-item");
+            alert(data.responseMessage);
+          }, 200);
+          let _item = this.produtsdata.find((el) => {
+            return el.id == _item_id;
+          });
+          _item = _item ? _item : null;
+          if (_item) {
+            let _cart_item = _cart_items.find((el) => {
+              return el.id == _item_id;
+            });
+            if (_cart_item) {
+              _cart_items[_cart_items.indexOf(_cart_item)].quantity =
+                _cart_items[_cart_items.indexOf(_cart_item)].quantity + 1;
+            } else {
+              _item.quantity = 1;
+              _cart_items.push(_item);
+            }
+            localStorage.setItem("CartItems", JSON.stringify(_cart_items));
+            this.controller.handleCartCount();
+          }
+        } else {
+          alert("Something went wrong");
+        }
+      }.bind(this)
+    );
   },
   setCards: function () {
     let _cards = Array.from(
