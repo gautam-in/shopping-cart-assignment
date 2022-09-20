@@ -5,11 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "start": "canned -p 5000 ./server",
+    "scss": "sass --watch ./static/scss/index.scss ./static/css/index.css"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "canned": "^0.3.3",
+    "handlebars": "^4.7.7"
+  },
+  "devDependencies": {
+    "webpack": "^5.74.0"
   }
 }

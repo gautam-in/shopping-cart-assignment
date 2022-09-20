@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sabka Bazar</title>
+    <meta
+      name="viewport"
+      content="width=device-width,user-scalable=no,initial-scale=1"
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="./static/css/index.css" type="text/css" />
+    <script type="application/javascript" src="./static/js/utils.js"></script>
+    <script type="application/javascript" src="./static/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  </head>
+  <body>
+    <div id="Main" class="-main">
+      <div class="-flex -main-page-container -top-to-bottom -nowrap">
+        <div class="-header-block -flex-row">
+          <header class="-header -flex -left-to-right -padding-half">
+            <div class="-logo -flex-column">
+              <a href="./index.html"
+                ><img src="./static/images/logo.png" alt="Home page"
+              /></a>
+            </div>
+            <nav class="-nav -flex-column -resize -flex -top-to-bottom">
+              <div
+                class="-flex-row -sign-in-register-links -flex -right-aligned"
+              >
+                <a
+                  href="#SignIn"
+                  role="button"
+                  class="-sign-in-button -nav-item"
+                  data-name="SignIn"
+                  >SignIn</a
+                >
+                <a
+                  href="#SignUp"
+                  role="button"
+                  class="-sign-up-button -nav-item"
+                  data-name="SignUp"
+                  >Register</a
+                >
+              </div>
+              <div class="-flex-row -resize -flex -left-to-right -site-nav">
+                <ul class="-flex-column -resize -flex -left-to-right -main-nav">
+                  <li class="-flex-column">
+                    <a href="#Home" data-name="Home" class="-nav-item">Home</a>
+                  </li>
+                  <li class="-flex-column">
+                    <a href="#Products" data-name="Products" class="-nav-item"
+                      >Products</a
+                    >
+                  </li>
+                </ul>
+                <div
+                  class="-flex-column -cart-button -flex -transform-all-500ms"
+                  role="button"
+                >
+                  <a
+                    href="javascript:void(0);"
+                    class="-flex -cart-link"
+                    data-name="Cart"
+                  >
+                    <svg
+                      class="icon -fill-primary"
+                      version="1.1"
+                      id="Layer_1"
+                      focusable="false"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      x="0px"
+                      y="0px"
+                      viewBox="0 0 24 24"
+                      style="enable-background: new 0 0 24 24"
+                      xml:space="preserve"
+                    >
+                      <path
+                        d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+                      />
+                    </svg>
+                    <span class="-item-count">0 Items</span>
+                  </a>
+                </div>
+              </div>
+            </nav>
+          </header>
+        </div>
+        <main id="MainContent" class="-main-content -flex-row -resize"></main>
+        <footer class="-footer -flex-row -padding-one">
+          <div class="-footer-copy -color-black">
+            Copyright &#169; 2022 Sabka Bazar Grocery Supplies Pvt Ltd
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    window.addEventListener("DOMContentLoaded", (event) => {
+      new initWebsite();
+    });
+  </script>
+</html>
