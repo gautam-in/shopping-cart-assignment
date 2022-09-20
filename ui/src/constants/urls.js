@@ -1,4 +1,4 @@
-const PAGE_URL = {
+export const PAGE_URL = {
   HOME: "/",
   PRODUCT_LIST: "products",
   SIGN_IN: "sign-in",
@@ -6,4 +6,4 @@ const PAGE_URL = {
   CART: "cart",
 };
 
-export default PAGE_URL;
+export const API_URL = {};

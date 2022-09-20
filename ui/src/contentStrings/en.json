@@ -2,5 +2,18 @@
   "nav": {
     "logoAltText": "Sabka Bazaar logo",
     "cartAltText": "cart logo"
+  },
+  "signIn": {
+    "loginHeading": "Login",
+    "loginDescription": "Get access to your Orders, Whishlist and Recommendations",
+    "email": "Email",
+    "password": "Password",
+    "LoginButtonText": "Login",
+    "copyRight": "Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd"
+  },
+  "errors": {
+    "required": "The feild is required",
+    "invalidEmail": "The feild is required",
+    "passwordLength": "The feild is required"
   }
 }

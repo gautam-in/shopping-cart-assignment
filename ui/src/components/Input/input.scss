@@ -1,0 +1,29 @@
+input {
+  width: 100%;
+  padding: 2%;
+  margin: 2% 0 5% 0;
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid #eee;
+
+  &:focus,
+  &:active,
+  &:focus-visible,
+  &:focus-within {
+    border-bottom: 1px solid green;
+  }
+}
+
+.required {
+  color: red;
+}
+
+.error {
+  border-bottom: 1px solid red;
+  &:focus,
+  &:active,
+  &:focus-visible,
+  &:focus-within {
+    border-bottom: 1px solid #eee;
+  }
+}

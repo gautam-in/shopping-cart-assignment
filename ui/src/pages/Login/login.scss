@@ -1,0 +1,43 @@
+.login-form {
+  margin: 0 25%;
+  .login {
+    display: flex;
+    margin: 5% 0 1% 0;
+    .description {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5%;
+      align-items: flex-start;
+    }
+    form {
+      margin-left: 25%;
+      width: 25vw;
+    }
+    h2 {
+      color: #000;
+      font-weight: bold;
+      font-size: xx-large;
+    }
+  }
+}
+
+.copyright {
+  padding: 1% 20%;
+  background-color: #eee;
+  p {
+    color: #000;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .login-form {
+    margin: 0 5%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .login-form {
+    margin: 0;
+  }
+}

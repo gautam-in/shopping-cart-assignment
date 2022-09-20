@@ -1,4 +1,4 @@
-import PAGE_URL from "./urls";
+import { PAGE_URL } from "./urls";
 
 const NAV_INFO = {
   HOME: {

@@ -1,4 +1,4 @@
-import NAV_INFO from "../../constants/navInfo";
+import { NAV_INFO } from "../../constants";
 import contentString from "../../contentStrings/en.json";
 import "./header.scss";
 
