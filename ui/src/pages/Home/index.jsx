@@ -1,9 +1,17 @@
-import React from "react";
+import { Header, Carousel, HomePageCategories } from "../../container";
 
-import Header from "../../container/Header";
+import categoryData from "./data.json";
 
 const Home = () => {
-  return <Header />;
+  return (
+    <div>
+      <Header />
+      <div className="home">
+        <Carousel />
+        <HomePageCategories categories={categoryData} />
+      </div>
+    </div>
+  );
 };
 
 export default Home;

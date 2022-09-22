@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 import { Input, Button } from "../../components";
-import { FORM_TYPES, ERROR_TYPES } from "../../constants";
+import { FORM_TYPES } from "../../constants";
 import contentString from "../../contentStrings/en.json";
 import "./form.scss";
 
@@ -11,7 +11,7 @@ const Form = ({ formType, error, formFields, onSubmithandler }) => {
     form: { errors, copyRight },
   } = contentString;
 
-  const { heading, description, buttonText, fields } = form[formType];
+  const { heading, description, buttonText } = form[formType];
 
   const errorContainer = error.showError ? (
     <div className="error-message">

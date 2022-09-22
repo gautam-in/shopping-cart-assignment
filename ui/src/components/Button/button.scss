@@ -1,9 +1,11 @@
-button {
+@use "../../variables";
+
+.button {
   width: 100%;
   padding: 2%;
-  color: #fff;
+  color: variables.$color-white;
   outline: none;
-  background-color: #e30052;
-  border: 1px solid #e30052;
+  background-color: variables.$app-red-color;
+  border: 1px solid variables.$app-red-color;
   font-weight: bold;
 }

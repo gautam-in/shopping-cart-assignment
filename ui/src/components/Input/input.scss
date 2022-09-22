@@ -1,7 +1,9 @@
+@use "../../variables";
+
 .show-label {
   display: block;
   .label-name {
-    color: #7bd1d9;
+    color: variables.$input-focus-color;
     font-weight: 600;
   }
 }
@@ -16,26 +18,26 @@ input {
   margin: 2% 0 5% 0;
   outline: none;
   border: 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid variables.$app-grey-color;
 
   &:focus,
   &:active,
   &:focus-visible,
   &:focus-within {
-    border-bottom: 1px solid #7bd1d9;
+    border-bottom: 1px solid variables.$input-focus-color;
   }
 }
 
 .required {
-  color: #e30052;
+  color: variables.$app-red-color;
 }
 
 .error {
-  border-bottom: 1px solid #e30052;
+  border-bottom: 1px solid variables.$app-red-color;
   &:focus,
   &:active,
   &:focus-visible,
   &:focus-within {
-    border-bottom: 1px solid #7bd1d9;
+    border-bottom: 1px solid variables.$input-focus-color;
   }
 }

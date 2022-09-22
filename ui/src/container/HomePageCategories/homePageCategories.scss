@@ -1,0 +1,30 @@
+.homePageCategories {
+  li {
+    list-style: none;
+  }
+  .category-list {
+    height: 30vh;
+    display: flex;
+    justify-content: space-around;
+    gap: 10%;
+    margin-top: 2%;
+    .description {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10%;
+
+      .category-button {
+        width: 10vw;
+        button {
+          padding: 5%;
+        }
+      }
+    }
+  }
+  .toggle-content {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}

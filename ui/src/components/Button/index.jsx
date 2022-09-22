@@ -4,7 +4,7 @@ import { BUTTON_TYPES } from "../../constants";
 import "./button.scss";
 
 const Button = ({ children, buttonType, onClickHandler }) => (
-  <button type={buttonType} onClick={onClickHandler}>
+  <button type={buttonType} onClick={onClickHandler} className="button">
     {children}
   </button>
 );

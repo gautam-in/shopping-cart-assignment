@@ -1,3 +1,5 @@
+@use "variables";
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -18,5 +20,18 @@ code {
   box-sizing: border-box;
   font-family: dosis;
   font-weight: normal;
-  color: #897c73;
+  color: variables.$app-font-color;
+}
+
+.app {
+  position: relative;
+  width: 70vw;
+  margin: 1% auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .app {
+    width: 100vw;
+    margin: 0;
+  }
 }

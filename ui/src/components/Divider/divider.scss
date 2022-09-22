@@ -1,0 +1,10 @@
+hr {
+  border: none;
+  height: 6px;
+  margin-top: 1vh;
+  background-image: radial-gradient(
+    ellipse at top,
+    rgba(207, 207, 207, 255) 0,
+    rgba(0, 0, 0, 0) 70%
+  );
+}

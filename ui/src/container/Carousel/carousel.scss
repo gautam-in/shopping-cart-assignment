@@ -1,0 +1,49 @@
+@use "../../variables";
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  .background-image {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .buttons {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: variables.$color-white;
+    border: none;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  .back {
+    left: -2%;
+  }
+  .next {
+    right: -2%;
+  }
+  .dots {
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    display: flex;
+    gap: 30%;
+    .dot {
+      height: 6px;
+      width: 10px;
+      border: none;
+      background-color: variables.$app-dark-grey-color;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .dot-fill {
+      background-color: variables.$app-red-color;
+    }
+  }
+}
