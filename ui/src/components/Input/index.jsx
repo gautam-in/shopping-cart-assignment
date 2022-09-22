@@ -2,9 +2,10 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 
 import {
-  isNonEmptyOnRequired,
+  isEmpty,
   isValidEmail,
   isValidPassword,
+  isValidName,
 } from "../../utils/input";
 import { INPUT_TYPES, ERROR_TYPES } from "../../constants";
 import "./input.scss";
@@ -12,9 +13,8 @@ import "./input.scss";
 const Input = ({
   labelName,
   type,
-  required,
-  checkLength,
-  getValue,
+  shouldCheckPassword,
+  updateValue,
   placeHolder,
 }) => {
   const [inputValue, onInputChange] = useState("");
@@ -27,29 +27,28 @@ const Input = ({
       errorType: ERROR_TYPES.NONE,
     };
 
-    if (!isNonEmptyOnRequired(inputValue, required)) {
-      result.isError = true;
-      result.errorType = ERROR_TYPES.REQUIRED;
-    } else if (!isValidEmail(inputValue, type)) {
-      result.isError = true;
-      result.errorType = ERROR_TYPES.INVALID_EMAIL;
-    } else if (!isValidPassword(inputValue, type, checkLength)) {
-      result.isError = true;
-      result.errorType = ERROR_TYPES.SMALL_PASSWORD;
-    }
+    result.errorType =
+      isEmpty(inputValue) ||
+      isValidEmail(inputValue, type) ||
+      isValidPassword(inputValue, type, shouldCheckPassword) ||
+      isValidName(inputValue, type);
+
+    result.isError = !(result.errorType === ERROR_TYPES.NONE);
     setError(result.isError);
-    getValue(result);
+    updateValue(result);
   };
 
   return (
     <div>
-      <span>{labelName}</span>
-      <span className="required">{required ? "*" : ""}</span>
+      <div className={`${inputValue ? "show-label" : "hide-label"}`}>
+        <span className="label-name">{labelName}</span>
+        <span className="required">*</span>
+      </div>
       <input
         type={type}
         onChange={(e) => onInputChange(e.target.value)}
         onBlur={checkInput}
-        required={required ? "required" : ""}
+        required
         value={inputValue}
         className={isError ? "error" : ""}
         placeholder={placeHolder}
@@ -61,16 +60,14 @@ const Input = ({
 Input.propTypes = {
   type: PropTypes.oneOf(Object.values(INPUT_TYPES)),
   labelName: PropTypes.string.isRequired,
-  required: PropTypes.bool,
-  getValue: PropTypes.func.isRequired,
-  checkLength: PropTypes.bool,
+  updateValue: PropTypes.func.isRequired,
+  shouldCheckPassword: PropTypes.bool,
   placeHolder: PropTypes.string,
 };
 
 Input.defaultProps = {
   type: "text",
-  required: false,
-  checkLength: false,
+  shouldCheckPassword: true,
   placeHolder: "",
 };
 

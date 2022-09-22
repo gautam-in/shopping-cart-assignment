@@ -1,4 +1,10 @@
-import { INPUT_TYPES, EMAIL_REGEX, PASSWORD_MIN_LENGTH } from "../constants";
+import {
+  INPUT_TYPES,
+  EMAIL_REGEX,
+  PASSWORD_MIN_LENGTH,
+  FIELD_NAMES,
+  ERROR_TYPES,
+} from "../constants";
 
 /**
  * Returns result is the value non-empty if required.
@@ -7,9 +13,8 @@ import { INPUT_TYPES, EMAIL_REGEX, PASSWORD_MIN_LENGTH } from "../constants";
  * @param {boolean} required To test value only if required.
  * @return {boolean} result The result is true if it's empty and  .
  */
-export const isNonEmptyOnRequired = (value, required) => {
-  if (!required) return true;
-  return !!(required && value);
+export const isEmpty = (value) => {
+  return value ? ERROR_TYPES.NONE : ERROR_TYPES.REQUIRED;
 };
 
 /**
@@ -20,8 +25,8 @@ export const isNonEmptyOnRequired = (value, required) => {
  * @return {boolean} result The result is true if it's a valid email else false.
  */
 export const isValidEmail = (value, type) => {
-  if (type !== INPUT_TYPES.EMAIL) return true;
-  return !EMAIL_REGEX.test(value);
+  if (type !== INPUT_TYPES.EMAIL) return ERROR_TYPES.NONE;
+  return EMAIL_REGEX.test(value) ? ERROR_TYPES.NONE : ERROR_TYPES.INVALID_EMAIL;
 };
 
 /**
@@ -33,7 +38,22 @@ export const isValidEmail = (value, type) => {
  * @return {boolean} result The result is true if it's it's a valid password else false.
  */
 export const isValidPassword = (value, type, checkLength = true) => {
-  if (type !== INPUT_TYPES.PASSWORD) return true;
-  if (!checkLength) return true;
-  return value.length < PASSWORD_MIN_LENGTH;
+  if (type !== INPUT_TYPES.PASSWORD) return ERROR_TYPES.NONE;
+  if (!checkLength) return ERROR_TYPES.NONE;
+  // this doesn't allow other characters
+  return value.length >= PASSWORD_MIN_LENGTH && /^\w+\d+$/.test(value)
+    ? ERROR_TYPES.NONE
+    : ERROR_TYPES.INVALID_PASSWORD;
+};
+
+export const isValidName = (value, type, name) => {
+  if (type !== INPUT_TYPES.TEXT) return ERROR_TYPES.NONE;
+  return /^\w+$/.test(value) ? ERROR_TYPES.NONE : ERROR_TYPES.INVALID_NAME;
+};
+
+export const matchConfirmPassword = (confirmPassword, password, name) => {
+  if (FIELD_NAMES.CONFIRM_PASSWORD !== name) return ERROR_TYPES.NONE;
+  return confirmPassword === password
+    ? ERROR_TYPES.NONE
+    : ERROR_TYPES.UN_MATCHED_PASSWORD;
 };

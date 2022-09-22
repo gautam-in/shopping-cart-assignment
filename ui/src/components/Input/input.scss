@@ -1,3 +1,15 @@
+.show-label {
+  display: block;
+  .label-name {
+    color: #7bd1d9;
+    font-weight: 600;
+  }
+}
+
+.hide-label {
+  display: none;
+}
+
 input {
   width: 100%;
   padding: 2%;
@@ -10,20 +22,20 @@ input {
   &:active,
   &:focus-visible,
   &:focus-within {
-    border-bottom: 1px solid green;
+    border-bottom: 1px solid #7bd1d9;
   }
 }
 
 .required {
-  color: red;
+  color: #e30052;
 }
 
 .error {
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #e30052;
   &:focus,
   &:active,
   &:focus-visible,
   &:focus-within {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #7bd1d9;
   }
 }

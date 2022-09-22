@@ -1,13 +1,10 @@
-import Header from "../../container/Header";
-import { Input, Button } from "../../components";
-
-import { INPUT_TYPES } from "../../constants";
-import contentString from "../../contentStrings/en.json";
-import "./login.scss";
 import { useState } from "react";
+import { Header, Form } from "../../container";
+import contentString from "../../contentStrings/en.json";
+import { getSignInFormFields } from "../../utils/form";
+import { FIELD_NAMES, FORM_TYPES, ERROR_TYPES } from "../../constants";
 
 const Login = () => {
-  const { signIn } = contentString;
   /*
     Input format = {
       value: inputValue,
@@ -15,51 +12,48 @@ const Login = () => {
       errorType: ERROR_TYPES.NONE
     } 
   */
-  const [email, setEmail] = useState({});
-  const [password, setPassword] = useState({});
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState({
+    showError: false,
+    errorType: ERROR_TYPES.NONE,
+  });
+
+  const {
+    form: {
+      signIn: { fields },
+    },
+  } = contentString;
+
+  const updateEmail = ({ value, isError, errorType }) => {
+    setEmail(value);
+    setError({ showError: isError, errorType });
+  };
+
+  const updatePassword = ({ value, isError, errorType }) => {
+    setPassword(value);
+    setError({ showError: isError, errorType });
+  };
+
+  const getFieldsInfo = getSignInFormFields(fields, {
+    [FIELD_NAMES.EMAIL]: updateEmail,
+    [FIELD_NAMES.PASSWORD]: updatePassword,
+  });
 
   const onSubmit = (event) => {
     event.preventDefault();
-    if (!email.isError && !password.isError) {
-      // call api for login
-    }
+    // callApi(email, password)
   };
 
   return (
     <div>
       <Header />
-      <div className="login-form">
-        <div className="login">
-          <div className="description">
-            <h2>{signIn.loginHeading}</h2>
-            <p>{signIn.loginDescription}</p>
-          </div>
-          <div>
-            <form>
-              <Input
-                type={INPUT_TYPES.EMAIL}
-                labelName={signIn.email}
-                required
-                getValue={setEmail}
-                placeHolder={signIn.email}
-              />
-              <Input
-                type={INPUT_TYPES.PASSWORD}
-                labelName={signIn.password}
-                required
-                getValue={setPassword}
-                placeHolder={signIn.password}
-              />
-              <Button type="submit" onClickHandler={onSubmit}>
-                {signIn.LoginButtonText}
-              </Button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div className="copyright">
-        <p>{signIn.copyRight}</p>
-      </div>
+      <Form
+        onSubmithandler={onSubmit}
+        formType={FORM_TYPES.LOGIN}
+        error={error}
+        formFields={getFieldsInfo}
+      />
     </div>
   );
 };
