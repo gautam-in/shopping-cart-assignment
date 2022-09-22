@@ -2,5 +2,36 @@
   "nav": {
     "logoAltText": "Sabka Bazaar logo",
     "cartAltText": "cart logo"
+  },
+  "form": {
+    "copyRight": "Copyright © 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd",
+    "signIn": {
+      "heading": "Login",
+      "description": "Get access to your Orders, Whishlist and Recommendations",
+      "buttonText": "Login",
+      "fields": {
+        "email": "Email",
+        "password": "Password"
+      }
+    },
+    "register": {
+      "heading": "Signup",
+      "description": "We do not share your personal details with anyone.",
+      "buttonText": "Signup",
+      "fields": {
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Confirm Password"
+      }
+    },
+    "errors": {
+      "required": "The field is required",
+      "invalidEmail": "Invalid Email",
+      "invalidPassword": "The password should have minimum 6 characters. It Must have a number and alphabets. Should not contain spaces",
+      "invalidName": "Invalid Name",
+      "unMatchedPassword": "Confirm Password should be same as Password."
+    }
   }
 }
