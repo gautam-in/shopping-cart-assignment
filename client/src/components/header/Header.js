@@ -23,10 +23,10 @@ const Header = () => {
             <nav className={styles["nav-list"]}>
               <ul className={styles["flex"]}>
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link to="/" name="Home" >Home</Link>
                 </li>
                 <li>
-                  <Link to="/products">Products</Link>
+                  <Link to="/products" name="Products" >Products</Link>
                 </li>
               </ul>
             </nav>

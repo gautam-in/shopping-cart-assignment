@@ -11,8 +11,11 @@ const CategoryList = ({ categories, handleProducts, showFilterProducts, selected
       {sortList.map((category) => {
         return (
           <p
-            className={selectedCategory === category.id ? styles.activeItem : styles.catItem}
+            className={selectedCategory === category.id && showFilterProducts ? styles.activeItem : styles.catItem}
             key={category.id}
+            role="button"
+            aria-label={category.name}
+            tabIndex="0"
             onClick={() => handleProducts(category.id)}
           >
             {category.name}
