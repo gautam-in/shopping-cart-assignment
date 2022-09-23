@@ -5,6 +5,7 @@ import useHttp from "../hooks/useHttp";
 import styles from "./Home.module.scss"
 
 const Home = () => {
+  document.title = "Home"
   const { banners, categories } = useHttp();
 
   return (

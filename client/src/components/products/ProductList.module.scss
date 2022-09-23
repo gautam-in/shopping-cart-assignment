@@ -11,7 +11,13 @@
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between;
+    box-shadow: 2px 0 5px -4px lightgray;
+
+    &:last-child {
+      border-bottom: none;
+    }
   }
+
 
   .productHheading {
     font-size: 15px;

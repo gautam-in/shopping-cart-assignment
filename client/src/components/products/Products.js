@@ -6,6 +6,7 @@ import ProductList from "./ProductList";
 import styles from "./Products.module.scss";
 
 const Products = () => {
+  document.title = "Products"
   const { products, categories } = useHttp();
   const [showFilterProducts, setShowFilterProducts] = useState(false);
   const [filterProducts, setFilterProducts] = useState([]);

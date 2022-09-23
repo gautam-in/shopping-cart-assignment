@@ -17,6 +17,7 @@ const CategoryList = ({ categories, handleProducts, showFilterProducts, selected
             aria-label={category.name}
             tabIndex="0"
             onClick={() => handleProducts(category.id)}
+            onKeyPress={() => handleProducts(category.id)}
           >
             {category.name}
           </p>
