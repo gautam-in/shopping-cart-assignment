@@ -1,0 +1,16 @@
+@use "../../variables";
+
+.product-listing-page {
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+}
+
+@media screen and (max-width: 480px) {
+  .product-listing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2%;
+  }
+}

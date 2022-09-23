@@ -1,0 +1,60 @@
+@use "../../variables";
+
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  column-gap: 2%;
+  row-gap: 1%;
+  width: 80%;
+  .product {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5%;
+    margin-right: 2%;
+    padding: 2%;
+    box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
+    h3 {
+      margin-top: 1%;
+      color: variables.$color-black;
+      font-weight: bold;
+    }
+    img {
+      width: 100%;
+    }
+    .description {
+      background-color: variables.$app-grey-color;
+      color: variables.$color-black;
+      padding: 2%;
+    }
+    .price {
+      margin: 5% 0 2% 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10%;
+      p {
+        width: 100%;
+        color: variables.$color-black;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .products {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 0;
+    width: 100%;
+  }
+}

@@ -1,0 +1,32 @@
+@use "../../variables";
+
+.categories-list {
+  background-color: variables.$app-grey-color;
+  width: 20%;
+  li {
+    list-style: none;
+    padding: 5% 10%;
+    border-bottom: 1px solid variables.$app-dark-grey-color;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .categories-list {
+    width: 100%;
+    display: relative;
+    li {
+      display: none;
+      &:first-child {
+        background-color: variables.$app-red-color;
+        color: variables.$color-white;
+        display: block;
+      }
+      &::after {
+        content: "\2193";
+        position: absolute;
+        color: variables.$color-white;
+        right: 5%;
+      }
+    }
+  }
+}
