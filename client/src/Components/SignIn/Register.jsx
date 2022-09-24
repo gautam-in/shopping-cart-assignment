@@ -9,7 +9,7 @@ const Register = () => {
           <div className="row">
             <div className="col-md-6">
               <h2>Register</h2>
-              <p>We do not share your personal details with anyone</p>
+              <p>Your Personal Details are Secured with Us</p>
             </div>
             <div className="col-md-6">
               <form>
