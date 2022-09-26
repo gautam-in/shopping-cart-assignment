@@ -1,0 +1,41 @@
+.carouselContainer {
+  width: 100%;
+  position: relative;
+  // margin-top: 20px;
+  box-shadow: 0 5px 6px -6px black;
+}
+
+.nextIcon {
+  background-color: black;
+  opacity: 0.5;
+  text-decoration: none;
+  padding: 0px 10px 0px 10px;
+  margin-left: 76px;
+  color: white;
+}
+
+.prevIcon {
+  background-color: black;
+  opacity: 0.5;
+  text-decoration: none;
+  padding: 0px 10px 0px 10px;
+  margin-right: 80px;
+  color: white;
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .nextIcon {
+    display: none;
+  }
+  .prevIcon {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .carouselContainer {
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

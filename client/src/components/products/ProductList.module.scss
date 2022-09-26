@@ -1,0 +1,128 @@
+.productContainer {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  grid-gap: 10px;
+  padding-left: 20px;
+  padding-top: 25px;
+
+  .productSection {
+    border-bottom: 1px dotted #d0d0d0;
+    padding: 10px;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between;
+    box-shadow: 2px 0 5px -4px lightgray;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+
+  .productHheading {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0;
+    margin: 1rem 0;
+  }
+
+  .productDetails {
+    display: flex;
+    flex-direction: column;
+  }
+  .prdoctBtn2 {
+    display: none;
+  }
+  .productImg {
+    margin-bottom: 10px;
+    img {
+      width: 100%;
+    }
+  }
+
+  .productDetailsPara {
+    font-size: 12px;
+    p {
+      background-color: #e8e8e8;
+      padding: 5px;
+      height: 80px;
+      display: -webkit-box;
+      max-width: 200px;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  .bottomSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 767px) {
+    .productContainer{
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0px;
+    }
+
+    .productImg {
+        img {
+            height: 100%;
+        }
+      }
+
+    .productDetails {
+        flex-direction: row !important;
+        justify-content: space-between;
+        height: 200px;
+      }
+
+      .productDetailsPara {
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       p{
+        height: 100% !important;
+       }
+      }  
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .productContainer {
+    grid-template-columns: repeat(2, minmax(180px, 1fr)) !important;
+  }
+
+  .productDetails {
+    flex-direction: row !important;
+  }
+  .bottomSection {
+    display: none !important;
+  }
+
+  .productImg {
+    margin-bottom: 0px !important;
+  }
+
+  .prdoctBtn2 {
+    display: flex !important;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .productDetailsPara {
+    p {
+      height: 100% !important;
+    }
+  }
+}

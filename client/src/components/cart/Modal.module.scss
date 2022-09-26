@@ -1,0 +1,44 @@
+.overLayStyles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.modalStyles {
+  background-color: #e8e8e8;
+  position: absolute;
+  height: 85%;
+  width: 40%;
+  // top: 15.5%;
+  top: 100px;
+  right: 0;
+  margin-right: 100px;
+  padding: 0px;
+  z-index: 1000;
+}
+
+@media only screen and (min-width: 375px) and (max-width: 767px) {
+  .overLayStyles {
+    display: none;
+  }
+  .modalStyles {
+    width: 100%;
+    height: calc(108vh - 100px);
+    margin: -27px auto;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .overLayStyles {
+    display: none;
+  }
+  .modalStyles {
+    width: 100%;
+    height: calc(100vh - 100px);
+    margin: 13px auto;
+  }
+}

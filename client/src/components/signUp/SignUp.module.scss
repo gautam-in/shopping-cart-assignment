@@ -1,0 +1,28 @@
+.signUpContainer {
+    display: flex;
+    margin-bottom: 10px;
+    width: 100%;
+    margin: 0px 12rem;
+  
+    h2 {
+      margin: 10px 0;
+    }
+    form {
+      width: 300px;
+
+      button{
+        width: 100%;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .headerContainer{
+    display: flex;
+    flex-direction: column;
+    margin-right: 5rem;
+    margin-top: 1rem;
+  }

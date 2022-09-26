@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: 4px solid lime;
+}
+
+body {
+  /* margin: 20px 100px !important; */
+  font-family: "Dosis", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  text-decoration: none !important;
+  color: black !important;
+  font-weight: 500;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  background-color: #d00156;
+  color: white;
+  padding: 1rem;
+  border: none;
+}
