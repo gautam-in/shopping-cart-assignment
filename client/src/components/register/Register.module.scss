@@ -1,0 +1,67 @@
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+input{
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    margin-bottom: 25px;
+    width: 70%;
+    
+}
+input:focus{
+    border-bottom: 1px solid aquamarine
+}
+.signupText{
+    display: flex;
+    justify-self: flex-start;
+  
+    font-size: 30px;
+    font-weight: bold;
+}
+.signupQuote{
+    display: flex;
+}
+input:focus-visible{
+  
+    outline: none;
+}
+.fnmLabel{
+    display: none;
+    // display: flex;
+    // justify-content: flex-start;
+}
+.fnmLabelVisble{
+    display: flex;
+    justify-content: flex-start;
+    color: aquamarine
+}
+.registerWrapper{
+    margin: 50px 200px 0px 200px;
+display: grid;
+grid-template-columns: 350px 400px;
+  grid-auto-flow: row;
+  grid-gap: 80px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .registerWrapper{
+        margin: 50px 50px 0px 200px ;
+grid-template-columns:repeat(1 ,1fr);
+  grid-auto-flow: row;
+  grid-gap: 40px;
+    }
+}
+@media screen and (min-width: 375px) and (max-width: 767px) {
+    .registerWrapper{
+        margin: 50px;
+        grid-template-columns:repeat(1 ,1fr);
+          grid-auto-flow: row;
+          grid-gap: 30px;
+            }
+            input{
+                width: 100%
+            }       
+}

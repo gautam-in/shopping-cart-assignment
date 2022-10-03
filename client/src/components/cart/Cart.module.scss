@@ -1,0 +1,304 @@
+.cartbg{
+  overlay: {
+    background: "#FFFF00"
+  }
+}
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open_button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat_popup {
+  // display: none;
+top:74px;
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 1000;
+  margin: 0px 85px 0px 100px;
+  // height: 87%;
+  background-color: white;
+  // width: 500px;
+}
+.cartCalc {
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+}
+.cartCalcBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Add styles to the form container */
+.form_container {
+  max-width: 500px;
+  background-color: #f0f0f5;
+  height: 490px;
+  // height: 300px;
+}
+
+/* Full-width textarea */
+.form_container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form_container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form_container .btn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form_container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form_container .btn:hover,
+.open_button:hover {
+  opacity: 1;
+}
+.cartHeader {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  padding-left: 20px;
+}
+.myCardText {
+  font-weight: 700;
+}
+.myCardItem {
+  font-size: 13px;
+  font-weight: 100;
+}
+.closeIcon {
+  font-size: 32px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.cartRecord {
+  display: flex;
+
+  margin-top: 10px;
+  padding-left: 15px;
+  background-color: white;
+}
+.cartdelBtn {
+
+  background-color: #e03492;
+  border-radius: 80%;
+  height: 20px;
+  color: white;
+  text-align: center;
+  border: none;
+  display: flex;
+  align-items: center;
+  // margin-right: 50px;
+}
+.cartdelBtnplus {
+
+  background-color: #e03492;
+  border-radius: 80%;
+  height: 20px;
+  color: white;
+  text-align: center;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-left: 20px;
+}
+.decCart {
+  margin-left: 15px;
+}
+.cartCount {
+  margin-left: 20px;
+}
+.cartlog {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  margin-top: 10px;
+  padding: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.checkoutBtn {
+  width: 95%;
+  background-color: #cc0052 !important;
+  border-radius: 0px !important;
+  border: none !important;
+  margin-top: 4px;
+  height: 45px;
+
+  margin-right: 10px;
+  margin-left: 10px;
+
+}
+.checkoutBtn:hover {
+  background-color: #cc0052 !important;
+}
+.cartBottom {
+
+  background-color: white;
+
+}
+.cartTotalBtn {
+  display: flex;
+  justify-content: space-between;
+}
+.checkoutBtnNoItem {
+  margin-top: 28%;
+  width: 96%;
+}
+.noCart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.cartImage {
+  width: 18%;
+  height: 18%;
+}
+.cartTotalValue {
+  margin-bottom: 0px;
+  margin-left: 150px;
+}
+.noCartBtn{
+  margin-top: 35%;
+  padding: 0px 139px 0px 139px;
+}
+.backdrop {
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 0;
+
+  background-color: rgba(0, 0, 0, 0.7);
+
+  z-index: 1000;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .noCartBtn{
+    margin-top: 15%;
+   
+  }
+  .checkoutBtnNoItem{
+    width:98%;
+    margin-top: 24%;
+  }
+  .chat_popup {
+
+    background-color: white;
+
+    width: 96%;
+    margin-right: 0px;
+  }
+  .form_container {
+    max-width: 100%;
+
+    background-color: #f0f0f5;
+    height: 490px;
+  }
+  .cartHeader {
+    color: black;
+    background-color: white;
+  }
+  .cartRecord {
+    height: 80px;
+  }
+  .cartImage {
+    width: 10%;
+    height: 100%;
+  }
+  .cartTotalValue {
+    margin-left: 400px;
+  }
+
+  .cartlog {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .chat_popup {
+
+    background-color: white;
+
+    width: 96%;
+    margin-right: 0px;
+  }
+  .form_container {
+    max-width: 100%;
+
+    background-color: #f0f0f5;
+    height: 509px;
+  }
+  .cartHeader {
+    color: black;
+    background-color: white;
+  }
+  .cartRecord {
+    height: 80px;
+  }
+  .cartImage {
+    width: 12%;
+    height: 100%;
+  }
+  .cartTotalValue {
+    margin-left: 40px;
+  }
+  .noCartBtn{
+  margin-top: 130px;
+    padding: 0px 65px 0px 65px;
+  }
+  .checkoutBtnNoItem{
+    margin-top: 220px;
+    width: 95%;
+  }
+}

@@ -1,0 +1,123 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 100px 0px 100px;
+  margin-top: 7px;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+}
+// .headerBorder {
+//   border-bottom: 5px solid lightgray;
+// }
+.bannerSide {
+
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+}
+.headerLink {
+  display: flex;
+  font-size: 16px;
+  color: black;
+  margin-top: 35px;
+}
+.homeLink {
+
+  text-decoration: none;
+  color: black;
+  margin-left: 100px;
+}
+.homeLink:hover{
+    color: black;
+  }
+  .productLink{
+   
+    color: black;
+text-decoration: none;
+margin-left: 30px;
+  }
+  .productLink:hover{
+    color: black;
+  }
+.authLink {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 16px;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+}
+.authLogin {
+
+  text-decoration: none;
+  color: black;
+
+}
+.cartImage {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+.addCartImage {
+  padding: 5px 0px 5px 5px;
+  background-color: lightgray;
+  cursor: pointer;
+}
+.innerCartImage {
+  background-color: lightgray;
+  padding-right: 30px;
+  padding-left: 20px;
+  cursor: pointer;
+  margin-top: 1px;
+
+}
+.cartItems {
+  font-size: 14px;
+  color: black;
+  
+  background-color: lightgray;
+  font-weight: bold;
+}
+.cartSide {
+  width: 65%;
+  height: 65px;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .header {
+    margin: 0;
+  }
+  .authLink {
+    margin-right: 10px;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 767px) {
+    .header {
+        margin: 0;
+      }
+      .authLink {
+    display: none;
+      }
+      .headerLink{
+        display: none;
+      }
+      .bannerSide {
+        height: 50px;
+      padding-left: 10px;
+      }
+      .cartSide {
+       
+        height: 50px;
+      }
+      .cartImage {
+     
+        margin-top: 0px;
+     
+      }
+      .innerCartImage {
+        background-color: lightgray;
+        padding-right: 30px;
+        padding-left: 20px;
+        padding-top: 10px;
+       
+      }
+  }
