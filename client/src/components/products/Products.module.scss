@@ -1,0 +1,199 @@
+
+.wrapperProduct {
+  margin: 0px 100px 0px 100px;
+  display: flex;
+}
+.categorySection {
+  width: 20%;
+  background-color: #dcdcdc;
+}
+.catItem {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c8c8c8;
+  cursor: pointer;
+  font-size: 13px;
+
+}
+
+.itemCard {
+  width: 80%;
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: row;
+  grid-gap: 20px;
+  margin: 10px 0px 10px 10px;
+}
+.cardDescription {
+  background-color: #e8e8e8;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  // white-space:nowrap;
+  text-overflow: ellipsis;
+  margin-right: 7px;
+  margin-top: 10px;
+  height:80px;
+  font-size: 14px;
+line-height: 0.51cm;
+
+  margin-bottom: 10px;
+
+}
+.cardBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cardPrice {
+  margin-bottom: 2px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.shortDesc {
+  display: -webkit-box;
+
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-weight: 600;
+}
+.cardDescriptionTab {
+  display: none;
+}
+.cardImage {
+  width: 100%;
+}
+.cardBottomTab {
+  display: none;
+}
+.cardDescriptionMob {
+  display: none;
+}
+.activeItem{
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c8c8c8;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+}
+.inActive{
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c8c8c8;
+  cursor: pointer;
+  font-size: 13px;
+  
+}
+.activeItem:first-child{
+padding-top: 8px;
+}
+.inActive:first-child{
+  padding-top:8px;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .itemCard {
+    width: 70%;
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row;
+    grid-gap: 20px;
+    margin: 10px 10px 10px 10px;
+  }
+  .categorySection {
+    width: 30%;
+  }
+  .wrapperProduct {
+    margin: 0px;
+  }
+  .cardDescription {
+    display: none;
+  }
+  .cardDescriptionTab {
+    display: block;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-left: 3px;
+  }
+  .cardImage {
+    width: 50%;
+  }
+  .cardDescTab {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: #e8e8e8;
+    margin-right: 10px;
+  }
+  .shortDesc {
+    margin-bottom: 30px;
+  }
+  .cardBottom {
+    display: none;
+  }
+  .cardBottomTab {
+    display: block;
+  }
+  .cardDescriptionMob {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .itemCard {
+    width: 100%;
+    display: grid;
+
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-flow: row;
+    grid-gap: 20px;
+    margin: 10px 10px 10px 10px;
+  }
+  .categorySection {
+    display: none;
+  }
+  .cardImage {
+    width: 50%;
+  }
+  .cardBottomTab {
+    display: none;
+  }
+  .cardBottom {
+    display: none;
+  }
+  .cardDescription {
+    display: none;
+  }
+  .cardDescriptionTab {
+    display: block;
+    margin-right: 10px;
+    background-color: lightgray;
+    padding: 10px 2px 2px 10px;
+  }
+  .cardDescTab {
+    display: flex;
+    justify-content: space-between;
+  }
+  .wrapperProduct {
+    margin: 0px;
+  }
+  .cardPriceDescMob {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10px;
+  }
+  .shortDesc {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    font-weight: 700;
+  }
+}

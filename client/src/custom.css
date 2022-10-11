@@ -1,0 +1,85 @@
+
+  .carousel-control-prev{
+    text-decoration: none;
+  }
+  .carousel-control-next{
+    text-decoration: none;
+  }
+  
+  .carousel-indicators{
+   top: 86%;
+  }
+
+.carousel-indicators [data-bs-target]{
+  border-radius: 50%;
+  width:10px !important;
+  height: 10px !important;
+  border: 0px;
+  background-color: black !important;
+}
+.custom_bg{
+  background-color: #cc0052 !important;
+  border-radius: 0px !important;
+  border: none !important;
+}
+.signupBtn{
+  width: 70%;
+  
+}
+.card{
+  border-radius: 0 !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-bottom: 1px dotted black !important;
+  box-shadow: 4px 0 5px -2px lightgray;
+}
+.buyButton{
+  background-color: #cc0052 !important;
+  border-radius: 0px !important;
+  border: none !important;
+  margin: 0px 5px 5px 0px !important;
+  width: 50%;
+  font-size: 13px !important;
+}
+.buyButtonTab{
+  background-color: #cc0052 !important;
+  border-radius: 0px !important;
+  border: none !important;
+  margin: 5px 5px 5px 0px !important;
+  width: 95%;
+}
+.buyButtonMob{
+  display: none !important;
+}
+
+.backdrop {
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 0;
+
+  background-color: rgba(0, 0, 0, 0.7);
+
+  z-index: 1000;
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .buyButtonMob{
+    display: block !important;
+    width: 97%;
+    background-color: #cc0052 !important;
+    border-radius: 0px !important;
+    border: none !important;
+    margin: 5px 5px 5px 0px !important;
+   
+  }
+  .signupBtn{
+    width: 100%;
+  }
+}
+

@@ -1,0 +1,41 @@
+.carouselWrapper{
+    margin: 10px 100px 0px 100px;
+}
+.nextIcon{
+    background-color: black;
+    opacity: 0.5;
+    text-decoration: none;
+    padding: 0px 10px 0px 10px;
+    margin-left: 76px;
+}
+.prevIcon{
+    background-color: black;
+    opacity: 0.5;
+    text-decoration: none;
+    padding: 0px 10px 0px 10px;
+    margin-right: 80px;
+}
+.one_edge_shadow {
+    width :70%;
+    margin: auto;
+	-webkit-box-shadow: 0 8px 6px -6px ;
+	   -moz-box-shadow: 0 8px 6px -6px lightgray;
+	        box-shadow: 0 8px 6px -6px lightgray;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .carouselWrapper{
+        margin: 0px;
+    }
+  }
+
+  @media screen and (min-width: 375px) and (max-width: 767px) {
+    .carouselWrapper{
+        margin: 0px;
+    }
+    .nextIcon{
+   display: none;
+    }
+    .prevIcon{
+     display: none;
+    }
+  }
