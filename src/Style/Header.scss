@@ -1,0 +1,67 @@
+header{
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 1px 4px 1px grey;
+    font-size: 12px;
+    margin: auto;
+    justify-content: space-around;
+    z-index: 5;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.HeaderLeftCon{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+ img{
+    padding: 8px 8px;
+ }
+}
+
+.LeftNav{
+    margin: auto 32px;
+    margin-bottom: 16px;
+    a {
+        text-decoration: none;
+        color: black;
+        padding: 0px 16px;
+        justify-items: baseline;
+    }
+}
+
+.HeaderRightCon{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 16vw;
+}
+
+.CartBtn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    border: 0px;
+    font-size: 12px;
+    padding: 12px 16px;
+    align-self: flex-end;
+    img{
+        color: red;
+        margin-right: 8px;
+    }
+}
+
+.RightNav{
+    display: flex;
+    align-self: flex-end;
+    a{
+        text-decoration: none;
+        color: black;
+        padding-left:16px;
+        padding-top: 8px;
+    }
+}

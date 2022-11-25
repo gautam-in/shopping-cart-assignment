@@ -1,0 +1,53 @@
+.LoginCon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 60px;
+}
+.LeftCon{
+    transform: translateX(-80px);
+}
+
+.RightCon{
+    width: 25%
+    
+}
+
+.emailInput, .passwordInput{
+    border: 0px;
+    border-bottom: 2px solid lightgrey;
+}
+
+.emailInput:focus, .passwordInput:focus{
+    outline: 0px;
+    border-bottom: 2px solid lightseagreen;
+}
+.emailLabel, .PasswordLabel, .emailInput, .passwordInput{
+    display: block;
+    width: 100%;
+    padding: 8px 0px;
+}
+
+.emailLabel, .PasswordLabel{
+    font-size: 12px;
+    color: lightseagreen;
+}
+
+.submitBtn{
+    width: 100%;
+    background-color: rgba(186, 2, 79, 0.894);
+    color: white;
+    font-size: 14px;
+    padding: 16px 24px;
+    border: 0px;
+    margin-top: 24px;
+}
+
+.disclaimerTxt{
+    background-color: rgba(211, 211, 211, 0.5);
+    margin-top: 16px;
+    p{
+        padding: 16px 0px;
+        transform: translateX(16%);
+    }
+}

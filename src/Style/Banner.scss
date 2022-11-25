@@ -1,0 +1,41 @@
+.BannerWrapper {
+    position: relative;
+    margin-top: 8px;
+    box-shadow: 0px 4px 3px 1px lightgrey;
+    width: 68%;
+}
+
+.prevButton, .nextButton{
+    border: 0px;
+    background-color: black;
+    opacity: 0.3;
+    color: white;
+    font-size: 10px;
+    padding: 8px 6px;
+}
+.prevButton{
+    position: absolute;
+    left: 0;
+    top: 50%
+}
+
+.nextButton{
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
+.dot{
+    height: 3px;
+    width: 3px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.dotCon{
+    display: flex;
+    // justify-content: center;
+    position: absolute;
+    bottom: 12%;
+    left: 45%;
+}
