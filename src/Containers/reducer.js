@@ -2,7 +2,9 @@ const InitialState = {
     bannerData: [],
     categories: [],
     ProductsList: [],
-    categoryId: ''
+    categoryId: '',
+    showCart: false,
+    cartList: []
 };
 
 const reducer = (state=InitialState, action) =>{
@@ -15,6 +17,18 @@ const reducer = (state=InitialState, action) =>{
         return {...state, ProductsList: action.data};
     case "STORECATEGORYID":
         return {...state, categoryId: action.data};
+    case "SETSHOWCART":
+        return {...state, showCart:action.data};
+    case "STORECARTLIST":
+        let CartList = state.cartList;
+        const addedCartValue =[...CartList, action.cartValue];
+        console.log({addedCartValue});
+        return {...state, cartList:addedCartValue};
+    case "CHANGECARTITEM":
+        let CartListVal = state.cartList;
+        let changeItemIndex = CartListVal.findIndex(ele => ele.id === action.data.id);
+        if(changeItemIndex !== -1) CartListVal[changeItemIndex] = action.data;
+        return {...state, cartList: CartListVal};
     default:
         return state;
     }

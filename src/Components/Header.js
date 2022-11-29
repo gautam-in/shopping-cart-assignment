@@ -3,9 +3,11 @@ import React from 'react';
 import { HOMEURL, LOGINURL, PRODUCTSURL, REGISTERURL } from '../Url';
 import { Link } from 'react-router-dom';
 import '../Style/Header.scss';
-import cartImage from '../static/images/cart.svg'
+import cartImage from '../static/images/cart.svg';
 
-function Header() {
+function Header(props) {
+
+    const {onHandleCart, cartList} = props;
     return (
         <>
             <header>
@@ -21,9 +23,9 @@ function Header() {
                         <Link to={LOGINURL}>SignIn</Link>
                         <Link to={REGISTERURL}>Register</Link>
                     </div>
-                    <button className='CartBtn'>
+                    <button className='CartBtn' onClick={()=> onHandleCart(true)}>
                         <img src={cartImage} width="16px" alt='Cart Icon'/>
-                        0 Items
+                        {cartList.length} Items
                     </button>
                 </div>
             </header>

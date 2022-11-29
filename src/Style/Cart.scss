@@ -1,0 +1,118 @@
+
+.CartHeading{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 16px 8px;
+}
+
+.CartContent{
+    background-color: lightgrey;
+    height: 80vh;
+    padding-top: 1px;
+}
+
+.CartBtnCon{
+    display: flex;
+    flex-direction: column;
+}
+
+.CartButton{
+    background-color: rgba(186, 2, 79, 0.894);
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 8px 16px;
+    margin: 8px 8px;
+    border: 0px;
+    span{
+       margin-left: 16px; 
+    }
+}
+
+.CartBtnLabel{
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.ContentTag{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    // justify-content: space-around;
+    padding: 4px 16px;
+    div{
+        padding-left: 16px;
+    }
+}
+
+.ListCon{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    margin: 8px 0px
+}
+
+.ItemDetails{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.ItemCount{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 35%;
+    align-items: center;
+    :nth-child(1){
+        padding-left: 6px;
+    }
+    :nth-child(3){
+        padding-left: 5px;
+        padding-top: 2px;
+    }
+}
+
+.ItemName{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.ItemValues{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 4px;
+}
+
+.ItemCountChange{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: rgba(186, 2, 79, 0.894);
+    border: 0px;
+    color: white;
+}
+
+.ItemPrice{
+    span{
+        margin-right: 16px;
+    }
+}
+
+.EmptyCartContent{
+    background-color: white;
+    height: 80vh;
+    padding-top: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

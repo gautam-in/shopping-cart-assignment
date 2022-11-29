@@ -1,5 +1,4 @@
 export const getBannerData = () => {
-    console.log('in action')
     return {
         type: "GETDATA",
     };
@@ -18,9 +17,31 @@ export const getProductDetails = () => {
 }
 
 export const filterCategory = (data) => {
-    console.log(data, 'action');
     return{
         type: "STORECATEGORYID",
+        data
+    }
+}
+
+export const setShowCart = (data) => {
+    return{
+        type:"SETSHOWCART",
+        data
+    }
+}
+
+export const addToCart = (data) => {
+    console.log({data}, 'action');
+    return{
+        type: "SETCARTLIST",
+        data
+    }
+}
+
+export const changeCartItems = (data) => {
+    console.log({data}, 'action changeCartItems');
+    return{
+        type: "CHANGECARTITEM",
         data
     }
 }

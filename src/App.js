@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
 import { createBrowserHistory } from '@remix-run/router';
 import { useDispatch, useSelector } from 'react-redux';
-import { getBannerData, getCategories, getProductDetails } from './Containers/action';
+import { changeCartItems, getBannerData, getCategories, getProductDetails, setShowCart } from './Containers/action';
 
 const Header = React.lazy(() => import('./Components/Header'));
 const Home = React.lazy(() => import('./Components/Home'));
@@ -22,19 +22,29 @@ function App() {
     dispatch(getCategories());
     dispatch(getProductDetails());
   }, [dispatch]);
-  // console.log(storeData, 'app.js')
 
+  const onHandleCart = (val) => {
+    dispatch(setShowCart(val));
+  }
+
+  const onChangeItemCount = (val) => {
+    console.log('onChangeItemCount app.js');
+    dispatch(changeCartItems(val))
+  }
+  console.log(storeData, 'app.js')
+  const { showCart, cartList } = storeData;
   return (
     <BrowserRouter history={history} forceRefresh={true}>
       <React.Suspense fallback={<div>Loading...</div>}>
-        <Header />
+        <Header onHandleCart={(val) =>onHandleCart(val)} cartList={cartList}/>
         <Routes>
           <Route path="/home" index element={<Home data={storeData} history={history}/>} />
-          <Route path="/cart" element={<Cart />} />
+          {/* <Route path="/cart" element={<Cart />} /> */}
           <Route path="/products" element={<Products data={storeData}/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
+        {showCart && <Cart showCart={showCart} onHandleCart={(val) =>onHandleCart(val)} cartList={cartList} onChangeItemCount={(val)=> onChangeItemCount(val)}/>}
       </React.Suspense>
     </BrowserRouter>
   );
