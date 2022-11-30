@@ -2,25 +2,39 @@ import SideNav, { Nav, NavItem, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 function SideNavigation(props) {
     const { data, onOptionSelect } = props;
+    const deviceWidth = window.innerWidth;
     const sideNavStyle = {
         backgroundColor: "lightgrey",
         zIndex: "0",
         opacity: "0.6",
-        marginLeft: "275px",
-        paddingBottom: "100%"
+        marginLeft: "14%",
+        paddingBottom: "100%",
+        minWidth: "20vw"
     }
+    const sideNavMobStyle ={
+        ...sideNavStyle,
+        minWidth: "0vw",
+        marginLeft: "0px"
+    }
+
+    const sideNavTabStyle = {
+        ...sideNavStyle,
+        minWidth: "12vw",
+        marginLeft: "0px"
+    }
+
     const navTextStyle = {
         color: "black",
         opacity: "0.8",
         fontWeight: "500", 
         borderBottom: "1px solid #969191",
-        marginLeft: "8px", 
+        marginLeft: deviceWidth < 768 ? "0px" :"8px", 
         paddingLeft: "8px"
     }
-    
+    const sideNavFinalStyle = deviceWidth < 768 ? (deviceWidth <= 400 ? sideNavMobStyle : sideNavTabStyle) : (sideNavStyle);
     return (
         <div>
-            <SideNav defaultExpanded style={sideNavStyle} onSelect={(selected) =>onOptionSelect(selected)}>
+            <SideNav defaultExpanded style={sideNavFinalStyle} onSelect={(selected) =>onOptionSelect(selected)}>
                 <SideNav.Toggle />
                 <Nav style={{ marginTop: "10px" }}>
                     {data?.map((ele, index) => (

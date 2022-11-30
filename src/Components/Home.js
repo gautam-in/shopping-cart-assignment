@@ -10,9 +10,8 @@ function HOME(props) {
     const activeCategories = categories.filter(ele => ele.enabled === true);
     const dispatch = useDispatch();
     const onOptionSelect = (selected => {
-        console.log('onSelectFunc', selected);
-        // dispatch(filterCategory(selected));
-        // push(PRODUCTSURL);
+        dispatch(filterCategory(selected));
+        sessionStorage.setItem('selectedCategoryId', selected)
         window.location.assign(PRODUCTSURL);
     });
     return (

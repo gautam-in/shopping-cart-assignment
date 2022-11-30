@@ -54,3 +54,33 @@
     font-size: 12px;
     padding: 8px 6px;
 }
+
+@media only screen and (max-width: 768px) and (min-width: 401px){
+    .CategoriesList{
+        width: 100%;
+    }
+    .ImageCon{
+        width: 40vw;
+    }
+    .Description{
+        width: 40vw;
+    }
+    .CategoryCon{
+        height: 32vh;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .CategoriesList{
+        width: 100%;
+    }
+    .ImageCon{
+        width: 100vw;
+    }
+    .Description{
+        width: 100vw;
+    }
+    .CategoryCon{
+        height: 32vh;
+    }
+}

@@ -4,8 +4,14 @@ import { HOMEURL, LOGINURL, PRODUCTSURL, REGISTERURL } from '../Url';
 import { Link } from 'react-router-dom';
 import '../Style/Header.scss';
 import cartImage from '../static/images/cart.svg';
+import { useDispatch } from 'react-redux';
+import { filterCategory } from '../Containers/action';
 
 function Header(props) {
+    const dispatch = useDispatch;
+    const onHandleProductClick = () => {
+        dispatch(filterCategory(""));
+    }
 
     const {onHandleCart, cartList} = props;
     return (
@@ -15,7 +21,7 @@ function Header(props) {
                  <img src={logo} alt="company logo" width="125px"/>
                  <div className="LeftNav">
                     <Link to={HOMEURL}>Home</Link>
-                    <Link to={PRODUCTSURL}>Products</Link>
+                    <Link to={PRODUCTSURL} onClick={()=> onHandleProductClick()}>Products</Link>
                  </div>
                 </div>
                 <div className='HeaderRightCon'>

@@ -39,3 +39,9 @@
     bottom: 12%;
     left: 45%;
 }
+
+@media only screen and (max-width: 768px){
+    .BannerWrapper{
+        width: 100%;
+    }
+}

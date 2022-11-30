@@ -82,14 +82,14 @@ function Cart(props) {
                         </div>}
                         {cartListItemCount === 0 ?
                         <div className="CartBtnCon">
-                            <button className='CartButton'>
+                            <button className='CartButton' onClick={() => onHandleCart(false)}>
                                 <div>Start Shopping</div>
                             </button>
                         </div>
                         :
                         <div className="CartBtnCon">
                             <div className='CartBtnLabel'>Promo code can be applied on payment page</div>
-                            <button className='CartButton'>
+                            <button className='CartButton' onClick={() => onHandleCart(false)}>
                                 <div>Proceed to Checkout</div>
                                 <div>Rs.{totalAmt}<span>&gt;</span></div>
                             </button>

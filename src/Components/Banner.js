@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import '../Style/Banner.scss'
 
 function Banner(props) {
@@ -6,6 +6,7 @@ function Banner(props) {
     const { bannerData } = props;
     const activeBannerData = bannerData.filter(ele => ele.isActive === true);
     const visibleBanner = activeBannerData[position];
+    // const setTransition = useRef(null);
 
     const handleBannerPosition = (direction) => {
         let newPositionVal;
@@ -19,14 +20,18 @@ function Banner(props) {
             newPositionVal = position;
         }
         setPosition(newPositionVal);
-    }
+    };
+
     // useEffect(()=>{
-        // const setTransition = setInterval(()=>{
-        //     console.log('in setInterval');
-        //     handleBannerPosition('next');
-        // },5000);
-        // return clearInterval(setTransition);
+    //     const setTransition = setInterval(()=>{
+    //         console.log('in setInterval');
+    //         handleBannerPosition('next');
+    //     },1000);
+    //     console.log('onMount', setTransition);
+    //     return clearInterval(setTransition);
     // },[]);
+
+    // console.log(setTransition.current, 'Banner');
     return(
         <div className="BannerWrapper">
          <button className="prevButton" onClick={()=>handleBannerPosition('prev')}>PREV</button>

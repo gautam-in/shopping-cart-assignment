@@ -65,3 +65,22 @@ header{
         padding-top: 8px;
     }
 }
+
+@media only screen and (max-width: 450px){
+    .CartBtn{
+        padding: 4px 8px;
+        font-size: 10px; 
+    }
+    .LeftNav{
+        margin: 0px;
+        margin-bottom: 16px;
+    }
+    .HeaderLeftCon{
+        img{
+            width: 100px;
+        }
+    }
+    .RightNav{
+        visibility: hidden;
+    }
+}

@@ -14,6 +14,15 @@ function Products(props) {
     const onOptionSelect = selected => {
         dispatch(filterCategory(selected))
     };
+
+    useEffect(() => {
+       const idFromSession = sessionStorage.getItem("selectedCategoryId") || '';
+       onOptionSelect(idFromSession);
+       setTimeout(() => {
+        sessionStorage.removeItem("selectedCategoryId");
+       }, 1000);
+    }, [])
+
     useEffect(() => {
         const filteredVal = categoryId.length !==0 ? ProductsList.filter(ele => ele.category === categoryId): ProductsList;
         setFilteredProductList(filteredVal);

@@ -1,8 +1,7 @@
 .ProductPage{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly
-
+    justify-content: space-around;
 }
 .ProductListCon{
     // margin-left: 90px;
@@ -53,4 +52,24 @@
     color: white;
     font-size: 12px;
     padding: 8px 24px;
+}
+
+@media only screen and (max-width: 768px) and (min-width: 450px){
+    .ProductListCon{
+        grid-template-columns: auto auto;
+        margin-left: 22%;
+    }
+    .ProductName{
+        height: 20%;
+    }
+}
+
+@media only screen and (max-width: 449px){
+    .ProductListCon{
+        grid-template-columns: auto;
+        margin-left: 47%;
+    }
+    .ProductName{
+        height: 15%;
+    }
 }
