@@ -1,39 +1,56 @@
-.LoginCon{
+.LoginCon {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 80px;
 }
-.LeftCon{
+
+.LeftCon {
     transform: translateX(-80px);
 }
 
-.RightCon{
+.RightCon {
     width: 25%
-    
 }
 
-.emailInput, .passwordInput, .FnameInput, .LnameInput{
+.emailInput,
+.passwordInput,
+.FnameInput,
+.LnameInput {
     border: 0px;
     border-bottom: 2px solid lightgrey;
 }
 
-.emailInput:focus, .passwordInput:focus, .FnameInput:focus, .LnameInput:focus{
+.emailInput:focus,
+.passwordInput:focus,
+.FnameInput:focus,
+.LnameInput:focus {
     outline: 0px;
     border-bottom: 2px solid lightseagreen;
 }
-.emailLabel, .PasswordLabel, .emailInput, .passwordInput, .FnameLabel, .FnameInput, .LnameLabel, .LnameInput{
+
+.emailLabel,
+.PasswordLabel,
+.emailInput,
+.passwordInput,
+.FnameLabel,
+.FnameInput,
+.LnameLabel,
+.LnameInput {
     display: block;
     width: 100%;
     padding: 8px 0px;
 }
 
-.emailLabel, .PasswordLabel, .FnameLabel, .LnameLabel{
+.emailLabel,
+.PasswordLabel,
+.FnameLabel,
+.LnameLabel {
     font-size: 12px;
     color: lightseagreen;
 }
 
-.submitBtn{
+.submitBtn {
     width: 100%;
     background-color: rgba(186, 2, 79, 0.894);
     color: white;
@@ -43,10 +60,11 @@
     margin-top: 24px;
 }
 
-.disclaimerTxt{
+.disclaimerTxt {
     background-color: rgba(211, 211, 211, 0.5);
     margin-top: 16px;
-    p{
+
+    p {
         padding: 16px 0px;
         transform: translateX(16%);
     }

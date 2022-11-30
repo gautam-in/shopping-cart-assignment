@@ -3,7 +3,6 @@ import '../Style/Login.scss'
 function Login(props) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    console.log({ email, password })
 
     const onHandlePasswordChange = (e) => {
         const psw = e.target.value || "";

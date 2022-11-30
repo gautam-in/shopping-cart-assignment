@@ -1,4 +1,4 @@
-header{
+header {
     display: flex;
     flex-direction: row;
     box-shadow: 0px 1px 4px 1px grey;
@@ -13,18 +13,20 @@ header{
     left: 0;
 }
 
-.HeaderLeftCon{
+.HeaderLeftCon {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
- img{
-    padding: 8px 8px;
- }
+
+    img {
+        padding: 8px 8px;
+    }
 }
 
-.LeftNav{
+.LeftNav {
     margin: auto 32px;
     margin-bottom: 16px;
+
     a {
         text-decoration: none;
         color: black;
@@ -33,14 +35,14 @@ header{
     }
 }
 
-.HeaderRightCon{
+.HeaderRightCon {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 16vw;
 }
 
-.CartBtn{
+.CartBtn {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -49,38 +51,43 @@ header{
     font-size: 12px;
     padding: 12px 16px;
     align-self: flex-end;
-    img{
+
+    img {
         color: red;
         margin-right: 8px;
     }
 }
 
-.RightNav{
+.RightNav {
     display: flex;
     align-self: flex-end;
-    a{
+
+    a {
         text-decoration: none;
         color: black;
-        padding-left:16px;
+        padding-left: 16px;
         padding-top: 8px;
     }
 }
 
-@media only screen and (max-width: 450px){
-    .CartBtn{
+@media only screen and (max-width: 450px) {
+    .CartBtn {
         padding: 4px 8px;
-        font-size: 10px; 
+        font-size: 10px;
     }
-    .LeftNav{
+
+    .LeftNav {
         margin: 0px;
         margin-bottom: 16px;
     }
-    .HeaderLeftCon{
-        img{
+
+    .HeaderLeftCon {
+        img {
             width: 100px;
         }
     }
-    .RightNav{
+
+    .RightNav {
         visibility: hidden;
     }
 }

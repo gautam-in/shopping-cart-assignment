@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { createBrowserHistory } from '@remix-run/router';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeCartItems, getBannerData, getCategories, getProductDetails, setShowCart } from './Containers/action';
@@ -12,12 +12,11 @@ const Login = React.lazy(() => import('./Components/Login'));
 const Register = React.lazy(() => import('./Components/Register'));
 
 function App() {
-  const history = createBrowserHistory({forceRefresh:true});
+  const history = createBrowserHistory({ forceRefresh: true });
   const dispatch = useDispatch();
-  const storeData = useSelector(state=> state)
+  const storeData = useSelector(state => state)
 
-  useEffect(()=>{
-    console.log('mount');
+  useEffect(() => {
     dispatch(getBannerData());
     dispatch(getCategories());
     dispatch(getProductDetails());
@@ -28,23 +27,20 @@ function App() {
   }
 
   const onChangeItemCount = (val) => {
-    console.log('onChangeItemCount app.js');
     dispatch(changeCartItems(val))
   }
-  console.log(storeData, 'app.js')
   const { showCart, cartList } = storeData;
   return (
     <BrowserRouter history={history} forceRefresh={true}>
       <React.Suspense fallback={<div>Loading...</div>}>
-        <Header onHandleCart={(val) =>onHandleCart(val)} cartList={cartList}/>
+        <Header onHandleCart={(val) => onHandleCart(val)} cartList={cartList} />
         <Routes>
-          <Route path="/home" index element={<Home data={storeData} history={history}/>} />
-          {/* <Route path="/cart" element={<Cart />} /> */}
-          <Route path="/products" element={<Products data={storeData}/>} />
+          <Route path="/home" index element={<Home data={storeData} history={history} />} />
+          <Route path="/products" element={<Products data={storeData} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
-        {showCart && <Cart showCart={showCart} onHandleCart={(val) =>onHandleCart(val)} cartList={cartList} onChangeItemCount={(val)=> onChangeItemCount(val)}/>}
+        {showCart && <Cart showCart={showCart} onHandleCart={(val) => onHandleCart(val)} cartList={cartList} onChangeItemCount={(val) => onChangeItemCount(val)} />}
       </React.Suspense>
     </BrowserRouter>
   );

@@ -1,5 +1,4 @@
-
-.CartHeading{
+.CartHeading {
     display: flex;
     justify-content: space-between;
     background-color: black;
@@ -7,18 +6,18 @@
     padding: 16px 8px;
 }
 
-.CartContent{
+.CartContent {
     background-color: lightgrey;
     height: 80vh;
     padding-top: 1px;
 }
 
-.CartBtnCon{
+.CartBtnCon {
     display: flex;
     flex-direction: column;
 }
 
-.CartButton{
+.CartButton {
     background-color: rgba(186, 2, 79, 0.894);
     color: white;
     display: flex;
@@ -26,30 +25,32 @@
     padding: 8px 16px;
     margin: 8px 8px;
     border: 0px;
-    span{
-       margin-left: 16px; 
+
+    span {
+        margin-left: 16px;
     }
 }
 
-.CartBtnLabel{
+.CartBtnLabel {
     padding: 8px;
     display: flex;
     justify-content: center;
 }
 
-.ContentTag{
+.ContentTag {
     background-color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
     // justify-content: space-around;
     padding: 4px 16px;
-    div{
+
+    div {
         padding-left: 16px;
     }
 }
 
-.ListCon{
+.ListCon {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -58,40 +59,42 @@
     margin: 8px 0px
 }
 
-.ItemDetails{
+.ItemDetails {
     display: flex;
     flex-direction: column;
     width: 60%;
 }
 
-.ItemCount{
+.ItemCount {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 35%;
     align-items: center;
-    :nth-child(1){
+
+    :nth-child(1) {
         padding-left: 6px;
     }
-    :nth-child(3){
+
+    :nth-child(3) {
         padding-left: 5px;
         padding-top: 2px;
     }
 }
 
-.ItemName{
+.ItemName {
     font-size: 14px;
     font-weight: 600;
 }
 
-.ItemValues{
+.ItemValues {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding-top: 4px;
 }
 
-.ItemCountChange{
+.ItemCountChange {
     height: 18px;
     width: 18px;
     border-radius: 50%;
@@ -100,13 +103,13 @@
     color: white;
 }
 
-.ItemPrice{
-    span{
+.ItemPrice {
+    span {
         margin-right: 16px;
     }
 }
 
-.EmptyCartContent{
+.EmptyCartContent {
     background-color: white;
     height: 80vh;
     padding-top: 1px;
@@ -115,4 +118,3 @@
     justify-content: center;
     align-items: center;
 }
-

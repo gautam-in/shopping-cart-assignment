@@ -7,34 +7,24 @@ function SideNavigation(props) {
         backgroundColor: "lightgrey",
         zIndex: "0",
         opacity: "0.6",
-        marginLeft: "14%",
+        marginLeft: deviceWidth < 768 ? (deviceWidth <= 400 ? "0px" : "10px") : ("14%"),
         paddingBottom: "100%",
-        minWidth: "20vw"
-    }
-    const sideNavMobStyle ={
-        ...sideNavStyle,
-        minWidth: "0vw",
-        marginLeft: "0px"
-    }
+        minWidth: deviceWidth < 768 ? (deviceWidth <= 400 ? "0vw" : "12vw") : ("20vw"),
 
-    const sideNavTabStyle = {
-        ...sideNavStyle,
-        minWidth: "12vw",
-        marginLeft: "0px"
-    }
+    };
 
     const navTextStyle = {
         color: "black",
         opacity: "0.8",
-        fontWeight: "500", 
+        fontWeight: "500",
         borderBottom: "1px solid #969191",
-        marginLeft: deviceWidth < 768 ? "0px" :"8px", 
+        marginLeft: deviceWidth < 768 ? "0px" : "8px",
         paddingLeft: "8px"
-    }
-    const sideNavFinalStyle = deviceWidth < 768 ? (deviceWidth <= 400 ? sideNavMobStyle : sideNavTabStyle) : (sideNavStyle);
+    };
+
     return (
         <div>
-            <SideNav defaultExpanded style={sideNavFinalStyle} onSelect={(selected) =>onOptionSelect(selected)}>
+            <SideNav defaultExpanded style={sideNavStyle} onSelect={(selected) => onOptionSelect(selected)}>
                 <SideNav.Toggle />
                 <Nav style={{ marginTop: "10px" }}>
                     {data?.map((ele, index) => (
@@ -45,7 +35,7 @@ function SideNavigation(props) {
                         </NavItem>
                     ))}
                 </Nav>
-                <div style={{height: "80vh"}}></div>
+                <div style={{ height: "80vh" }}></div>
             </SideNav>
         </div>
     )

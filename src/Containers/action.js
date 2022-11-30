@@ -5,42 +5,40 @@ export const getBannerData = () => {
 };
 
 export const getCategories = () => {
-    return{
+    return {
         type: "GETCATEGORIES"
     }
 }
 
 export const getProductDetails = () => {
-    return{
+    return {
         type: "GETPRODUCTDETAILS"
     }
 }
 
 export const filterCategory = (data) => {
-    return{
+    return {
         type: "STORECATEGORYID",
         data
     }
 }
 
 export const setShowCart = (data) => {
-    return{
-        type:"SETSHOWCART",
+    return {
+        type: "SETSHOWCART",
         data
     }
 }
 
 export const addToCart = (data) => {
-    console.log({data}, 'action');
-    return{
+    return {
         type: "SETCARTLIST",
         data
     }
 }
 
 export const changeCartItems = (data) => {
-    console.log({data}, 'action changeCartItems');
-    return{
+    return {
         type: "CHANGECARTITEM",
         data
     }

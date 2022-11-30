@@ -5,7 +5,8 @@
     width: 68%;
 }
 
-.prevButton, .nextButton{
+.prevButton,
+.nextButton {
     border: 0px;
     background-color: black;
     opacity: 0.3;
@@ -13,35 +14,35 @@
     font-size: 10px;
     padding: 8px 6px;
 }
-.prevButton{
+
+.prevButton {
     position: absolute;
     left: 0;
     top: 50%
 }
 
-.nextButton{
+.nextButton {
     position: absolute;
     right: 0;
     top: 50%;
 }
 
-.dot{
+.dot {
     height: 3px;
     width: 3px;
     border-radius: 50%;
     margin-left: 10px;
 }
 
-.dotCon{
+.dotCon {
     display: flex;
-    // justify-content: center;
     position: absolute;
     bottom: 12%;
     left: 45%;
 }
 
-@media only screen and (max-width: 768px){
-    .BannerWrapper{
+@media only screen and (max-width: 768px) {
+    .BannerWrapper {
         width: 100%;
     }
 }

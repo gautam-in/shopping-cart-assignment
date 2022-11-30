@@ -16,27 +16,26 @@ function Products(props) {
     };
 
     useEffect(() => {
-       const idFromSession = sessionStorage.getItem("selectedCategoryId") || '';
-       onOptionSelect(idFromSession);
-       setTimeout(() => {
-        sessionStorage.removeItem("selectedCategoryId");
-       }, 1000);
-    }, [])
+        const idFromSession = sessionStorage.getItem("selectedCategoryId") || '';
+        onOptionSelect(idFromSession);
+        setTimeout(() => {
+            sessionStorage.removeItem("selectedCategoryId");
+        }, 1000);
+    }, []);
 
     useEffect(() => {
-        const filteredVal = categoryId.length !==0 ? ProductsList.filter(ele => ele.category === categoryId): ProductsList;
+        const filteredVal = categoryId.length !== 0 ? ProductsList.filter(ele => ele.category === categoryId) : ProductsList;
         setFilteredProductList(filteredVal);
-    }, [categoryId])
+    }, [categoryId]);
 
     const addToCartList = (val) => {
-        console.log({val})
         dispatch(addToCart(val));
     }
 
     return (
         <div className="ProductPage">
             <SideNavigation data={activeCategories} onOptionSelect={onOptionSelect} />
-            <ProductListCon data={filteredProductList} addToCartList={(val)=> addToCartList(val)}/>
+            <ProductListCon data={filteredProductList} addToCartList={(val) => addToCartList(val)} />
         </div>
     )
 }

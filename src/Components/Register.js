@@ -6,11 +6,10 @@ function Login(props) {
     const [cpassword, setCPassword] = useState("");
     const [fname, setFname] = useState("");
     const [lname, setLname] = useState("");
-    console.log({ email, password })
 
     const onHandlePasswordChange = (e, type) => {
         const psw = e.target.value || "";
-        type === "confirm" ? setCPassword(psw): setPassword(psw);
+        type === "confirm" ? setCPassword(psw) : setPassword(psw);
     }
     return (
         <div>
@@ -21,7 +20,7 @@ function Login(props) {
                 </div>
                 <div className="RightCon">
                     <form>
-                       <label className="FnameLabel" style={{ visibility: fname === "" ? "hidden" : "visible" }}>First Name</label>
+                        <label className="FnameLabel" style={{ visibility: fname === "" ? "hidden" : "visible" }}>First Name</label>
                         <input
                             type={"text"}
                             className="FnameInput"
