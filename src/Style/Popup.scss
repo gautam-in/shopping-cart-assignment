@@ -1,0 +1,20 @@
+.popup-content {
+    padding: 0px;
+    border: 0px;
+    width: 25%;
+    position: fixed !important;
+    bottom: 0;
+    right: 20%;
+}
+
+.popup-overlay {
+    background: rgba(0, 0, 0, .7);
+}
+
+@media only screen and (max-width: 850px) {
+    .popup-content {
+        width: 100%;
+        right: 0;
+        top: 0;
+    }
+}
