@@ -18,8 +18,8 @@ function HOME(props) {
             <Banner bannerData={bannerData} />
             <div className='CategoriesList'>
                 {
-                    activeCategories.map((ele) => (
-                        <div className='CategoryCon'>
+                    activeCategories.map((ele, index) => (
+                        <div className='CategoryCon' key={index}>
                             <div className='ImageCon'>
                                 <img src={ele.imageUrl} alt={ele.name} width="100%" />
                             </div>

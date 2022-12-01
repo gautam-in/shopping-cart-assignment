@@ -8,13 +8,6 @@ import lowPriceImg from "../static/images/lowest-price.png";
 function Cart(props) {
     const { showCart, onHandleCart, cartList, onChangeItemCount } = props;
     const [totalAmt, setTotalAmt] = useState(0);
-    useEffect(() => {
-        let totalAmount = 0;
-        cartList.forEach(element => {
-            totalAmount += element.totalPrice;
-        });
-        setTotalAmt(totalAmount)
-    }, [cartList]);
 
     const onHandleItemCount = (element, type) => {
         let count;
@@ -30,6 +23,15 @@ function Cart(props) {
             onChangeItemCount({ ...element, qnty: count, totalPrice: totalAmount });
         }
     };
+
+    useEffect(() => {
+        let totalAmount = 0;
+        cartList.forEach(element => {
+            totalAmount += element.totalPrice;
+        });
+        setTotalAmt(totalAmount);
+    }, [cartList, onHandleItemCount]);
+
     const cartListItemCount = cartList.length;
     return (
         <div className="CartBackgroud">
@@ -85,7 +87,7 @@ function Cart(props) {
                             :
                             <div className="CartBtnCon">
                                 <div className='CartBtnLabel'>Promo code can be applied on payment page</div>
-                                <button className='CartButton' onClick={() => onHandleCart(false)}>
+                                <button className='ProceedCartButton' onClick={() => onHandleCart(false)}>
                                     <div>Proceed to Checkout</div>
                                     <div>Rs.{totalAmt}<span>&gt;</span></div>
                                 </button>

@@ -24,7 +24,7 @@ function SideNavigation(props) {
 
     return (
         <div>
-            <SideNav defaultExpanded style={sideNavStyle} onSelect={(selected) => onOptionSelect(selected)}>
+            <SideNav defaultExpanded style={sideNavStyle} onSelect={(selected) => onOptionSelect(selected)} role={"button"}>
                 <SideNav.Toggle />
                 <Nav style={{ marginTop: "10px" }}>
                     {data?.map((ele, index) => (

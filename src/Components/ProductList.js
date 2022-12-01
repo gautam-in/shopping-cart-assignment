@@ -4,6 +4,7 @@ import { addToCart, filterCategory } from "../Containers/action";
 import "../Style/ProductList.scss";
 import ProductListCon from "./ProductListCon";
 import SideNavigation from "./SideNavigation";
+import { RotatingLines } from "react-loader-spinner";
 
 function Products(props) {
     const { data: { categories, categoryId, ProductsList } } = props;
@@ -31,12 +32,23 @@ function Products(props) {
     const addToCartList = (val) => {
         dispatch(addToCart(val));
     }
-
-    return (
-        <div className="ProductPage">
-            <SideNavigation data={activeCategories} onOptionSelect={onOptionSelect} />
-            <ProductListCon data={filteredProductList} addToCartList={(val) => addToCartList(val)} />
-        </div>
+    return (<div>
+        {filteredProductList.length !== 0 ?
+            <div className="ProductPage">
+                <SideNavigation data={activeCategories} onOptionSelect={onOptionSelect} />
+                <ProductListCon data={filteredProductList} addToCartList={(val) => addToCartList(val)} />
+            </div>
+            :
+            <div className="LoaderCon">
+                <RotatingLines
+                    strokeColor="green"
+                    strokeWidth="4"
+                    animationDuration="0.75"
+                    width="80"
+                    visible={true}
+                />
+            </div>}
+    </div>
     )
 }
 export default Products;

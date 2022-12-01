@@ -31,7 +31,7 @@ function Header(props) {
                     </div>
                     <button className='CartBtn' onClick={() => onHandleCart(true)}>
                         <img src={cartImage} width="16px" alt='Cart Icon' />
-                        {cartList.length} Items
+                        {cartList.length} {cartList.length <= 1 ? 'item' : 'items'}
                     </button>
                 </div>
             </header>
