@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; // 1rem = 10px; 10px/16px * 100 = 62.5%
+
+}
+
+body {
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-rows: 10vh minmax(85vh, min-content) minmax(5vh, min-content) ;
+  grid-template-columns: [full-start] minmax(6rem,1fr) [center-start]
+  repeat(6, [col-start] minmax(min-content,25rem) [col-end])
+  [center-end] minmax(6rem,1fr) [full-end];
+  
+}
+

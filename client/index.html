@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <title>SabkaBazar</title>
+  </head>
+  <body>
+    <header class="header">
+      <img
+        src="../static/images/logo_2x.png"
+        alt="Sabka bazar logo"
+        class="header__logo"
+      />
+      <nav class="header__nav">
+        <ul class="list">
+          <li class="list__item"><a href="#" class="list__item--1">Home</a></li>
+          <li class="list__item">
+            <a href="#" class="list__item--2">Products</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__user">
+        <div class="user__authentication">
+          <button class="btn btn__user">SignIn</button>
+          <button class="btn btn__user">Register</button>
+        </div>
+        <div class="user__cart">
+          <img
+            src="../static/images/cart.svg"
+            alt="User cart icon"
+            class="user__cart__icon"
+          />
+          <span class="user__cart__text">0 items</span>
+        </div>
+      </div>
+    </header>
+    <main class="main-content">
+      <!-- <div class="slide-show">slide-show</div>
+      <div class="banners">
+        <div class="banner">
+          <img
+            src="../static/images/category/beverages.png"
+            alt="banner image 2"
+            class="banner__img"
+          />
+          <div class="banner__details">
+            <h3 class="heading-h3">Beverages</h3>
+            <p class="paragraph paragraph--p1">
+                Our beverage department will ensure your fridge is always fully stocked. Shop for soda, juice, beer and more.
+            </p>
+            <button class="btn btn--explore">Explore beverages</button>
+          </div>
+        </div>
+        <div class="banner">
+          <img
+            src="../static/images/category/bakery.png"
+            alt="banner image 2"
+            class="banner__img"
+          />
+          <div class="banner__details">
+            <h3 class="heading-h3">Bakery Cakes and Dairy</h3>
+            <p class="paragraph paragraph--p1">
+                The best cupcakes, cookies, cakes, pies, cheesecakes, fresh bread, biscotti, muffins, bagels, fresh coffee, milk and more.
+            </p>
+            <button class="btn btn--explore">Explore bakery-cakes-dairy</button>
+          </div>
+        </div>
+        <div class="banner">
+          <img
+            src="../static/images/category/beauty.png"
+            alt="banner image 2"
+            class="banner__img"
+          />
+          <div class="banner__details">
+            <h3 class="heading-h3">Beauty and Hygiene</h3>
+            <p class="paragraph paragraph--p1">
+                Buy beauty and personal care products online in India at best prices.
+            </p>
+            <button class="btn btn--explore">Explore beauty-hygiene</button>
+          </div>
+        </div>
+        <div class="banner">
+          <img
+            src="../static/images/category/baby.png"
+            alt="banner image 2"
+            class="banner__img"
+          />
+          <div class="banner__details">
+            <h3 class="heading-h3">Baby Cares</h3>
+            <p class="paragraph paragraph--p1">
+                Shop online for Baby Products, Diapers, Skin Care Products,etc.
+            </p>
+            <button class="btn btn--explore">Explore baby</button>
+          </div>
+        </div>
+       
+          <div class="banner">
+            <img
+              src="../static/images/category/fruits.png"
+              alt="banner image 2"
+              class="banner__img"
+            />
+            <div class="banner__details">
+              <h3 class="heading-h3">Fruits & Vegetables</h3>
+              <p class="paragraph paragraph--p1">
+                A variety of fresh fruits and vegetables.
+              </p>
+              <button class="btn btn--explore">Explore fruit-and-veg</button>
+            </div>
+          </div>
+      </div> -->
+
+      <!-- Login & sign up pages -->
+      <!-- <div class="user-signin">
+        <div class="user-signin__text">
+            <h1 class="heading-1">Sign up</h1>
+            <p class="paragraph paragraph--dark">We don't share your personal details with anyone.</p>
+        </div>
+        <div class="user-signin__form">
+            <form action="#" class="form">
+                <div class="form__group">
+                    <input type="text" class="form__input" placeholder="First name" id="fname" required> 
+                    <label for="fname" class="form__label">Full name</label>
+                </div>
+                <div class="form__group">
+                    <input type="text" class="form__input" placeholder="Last name" id="lname" required> 
+                    <label for="lname" class="form__label">Last name</label>
+                </div>
+                <div class="form__group">
+                    <input type="email" class="form__input" placeholder="Email" id="email" required> 
+                    <label for="email" class="form__label">Email</label>
+                </div>
+                <div class="form__group">
+                    <input type="password" class="form__input" placeholder="Password" id="password" required> 
+                    <label for="password" class="form__label">Password</label>
+                </div>
+                <div class="form__group">
+                    <input type="password" class="form__input" placeholder="Confirm password" id="confirmpwd" required> 
+                    <label for="confirmpwd" class="form__label">Confirm password</label>
+                </div>
+                <div class="form__group">
+                  <buttom class="btn btn--signin">Sign Up</buttom>
+              </div>
+            </form>
+        </div>
+      </div> -->
+      <!--login-->
+      <div class="user-signin">
+        <div class="user-signin__text">
+            <h1 class="heading-1">Login</h1>
+            <p class="paragraph paragraph--dark">Get access to your Orders, Wishlist and Recommendations.</p>
+        </div>
+        <div class="user-signin__form">
+            <form action="#" class="form">
+                <div class="form__group">
+                    <input type="text" class="form__input" placeholder="Email" id="login-email" required> 
+                    <label for="login-email" class="form__label">Email</label>
+                </div>
+                <div class="form__group">
+                    <input type="password" class="form__input" placeholder="Password" id="login-pwd" required> 
+                    <label for="login-pwd" class="form__label">Password</label>
+                </div>
+                <div class="form__group">
+                  <buttom class="btn btn--signin">Login</buttom>
+              </div>
+            </form>
+        </div>
+      </div>
+
+
+    </main>
+    <footer class="footer">
+      <p class="footer__text">
+        Copyright &copy; 2011 - 2018 sabka bazar Grocery supplies Pvt. Ltd
+      </p>
+    </footer>
+  </body>
+</html>
