@@ -10,6 +10,7 @@
 
 @import "pages/home";
 @import "pages/signIn";
+@import "pages/products";
 
 
 
@@ -17,9 +18,13 @@
 @import "layout/footer";
 @import "layout/navigation";
 @import "layout/content";
+@import "layout/product_details";
+@import "layout/cart";
 
 @import "components/button";
 @import "components/form";
+@import "components/navbar";
+@import "components/gallery";
 
 
 

@@ -1,0 +1,8 @@
+.product-content{
+    display: grid;
+    grid-template-columns: [nav-start] minmax(min-content, 30rem) [nav-end] repeat(4,[pr-start] minmax(min-content,30rem) [pr-start] );
+    
+    @include respond(phone){
+        grid-template-columns: repeat(4,[pr-start] minmax(min-content,30rem) [pr-start] );
+    }
+}

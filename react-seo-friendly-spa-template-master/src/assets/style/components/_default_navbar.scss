@@ -1,0 +1,123 @@
+﻿//@use '../abstracts/variables' as *;
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  z-index: 30;
+  height: $navbar-height;
+  background-color: $color-nav-bar;
+  padding-left: 11rem;
+  padding-right: 11rem;
+  box-shadow: 0 4px 6px 0 rgb(0 0 0 / 5%);
+
+  @include reduceNavBarPadding {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
+
+  @include removeNavBarPadding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @include renderMobileDevice {
+    padding-right: 0rem;
+  }
+
+  .navbar-wrapper {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    height: 100%;
+
+    .brand-wrapper {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      width: 46%;
+      margin: auto;
+
+      @include renderMobileNavView {
+        margin-right: 0.25rem;
+      }
+    }
+
+    .navbar-routes {
+      line-height: 1.2;
+      font-size: 1.2rem;
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+      margin: auto;
+      width: 54%;
+      align-items: center;
+
+      > .seperator {
+        width: 1.5px;
+        margin: 1rem 1.25rem;
+        align-self: stretch;
+        box-sizing: border-box;
+        background-color: rgba(255, 255, 255, 0.13);
+      }
+
+      > .navbar-item {
+        user-select: none;
+        color: white;
+        letter-spacing: 0.01em;
+        background-color: transparent;
+        border-top: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+        transition: color 0.2s ease-out, border-bottom-color 0.2s ease-out;
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        align-items: center;
+        height: 100%;
+        padding: 0.5rem 0.75rem;
+        position: relative;
+        flex-grow: 0;
+        flex-shrink: 0;
+
+        &:hover {
+          color: $color-blue-highlight;
+        }
+
+        &.is-active {
+          color: $color-blue-highlight !important;
+          border-bottom-color: $color-blue-highlight !important;
+        }
+
+        &:nth-child(2) {
+          margin-left: 1.25rem;
+        }
+
+        svg {
+          font-size: 0.75em;
+          margin: .063rem 0 0 .55rem;
+          color: rgba(255,255,255,.5);
+          transition: color 0.2s ease-out;
+        }
+
+        @include renderMobileNavView {
+          font-size: 0.95rem;
+          border-top-width: 4px;
+          padding: 0.75rem 0.2rem 0.75rem 0.2rem;
+
+          &:nth-child(2) {
+            margin-left: 0.5rem;
+          }
+
+          &.is-active {
+            border-bottom-color: $color-blue-highlight !important;
+          }
+        }
+      }
+
+      > .navbar-theme-toggle {
+        display: flex;
+        line-height: 1.25;
+        margin: 0 0 0 1.25rem;
+      }
+    }
+  }
+}

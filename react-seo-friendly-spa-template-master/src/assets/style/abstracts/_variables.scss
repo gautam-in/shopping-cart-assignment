@@ -1,0 +1,79 @@
+$color-primary: #7ed56f;
+$color-primary-light: #55c57a;
+$color-primary-dark: #28b485;
+$color-grey-dark: #777;
+$color-grey-light-1: #f7f7f7;
+$color-white: #ffffff;
+$color-black: #000;
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7730;
+$color-terinary-light: #2998ff;
+$color-terinary-dark: #5643fa;
+$color-light-grey-2: #eee;
+$color-grey-dark-3: #333;
+$color-crimson-pink: #cf0154;
+$color-grey-dark-2: #999;
+
+//Font sizes
+$default-font-size: 1.6rem;
+
+
+//GRID
+
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6rem;
+$gutter-vertical-small: 6rem;
+
+//Default
+
+$color-hero-is-dark: #282c34;
+$color-nav-bar: #20232a;
+$color-blue-highlight: #61dafb;
+$navbar-height: 66px;
+
+$theme-primary-body-bg-color: white;
+$theme-secondary-body-bg-color: #353941;
+$theme-secondary-code-bg-color: $color-nav-bar;
+
+@mixin removeNavBarPadding {
+  @media all and (max-width: 1099px) {
+    @content;
+  }
+}
+
+@mixin reduceNavBarPadding {
+  @media all and (max-width: 1472px) and (min-width: 1100px) {
+    @content;
+  }
+}
+
+@mixin renderMobileDevice {
+  @media all and (max-width: 449px) {
+    @content;
+  }
+}
+
+@mixin renderTabletDevice {
+  @media all and (max-width: 769px) and (min-width: 450px) {
+    @content;
+  }
+}
+
+@mixin renderTabletNavView {
+  @media all and (max-width: 950px) and (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin renderMobileNavView {
+  @media all and (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin centerStackedColumnContent {
+  @media all and (max-width: 769px) {
+    @content;
+  }
+}
