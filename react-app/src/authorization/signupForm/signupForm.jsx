@@ -3,8 +3,8 @@ import "./signupForm.scss";
 
 function SignUpForm() {
   const initialValue = {
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
     confirmpassword: "",
@@ -17,7 +17,6 @@ function SignUpForm() {
     const { name, value } = e.target;
     setFormFields({ ...formFields, [name]: value });
   };
-  console.log(formFields);
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validate(formFields));
@@ -27,11 +26,11 @@ function SignUpForm() {
   const validate = (values) => {
     const errors = {};
     const regx = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (!values.firstname) {
-      errors.firstname = "Firstname is required";
+    if (!values.firstName) {
+      errors.firstName = "Firstname is required";
     }
-    if (!values.lastname) {
-      errors.lastname = "Lastname is required";
+    if (!values.lastName) {
+      errors.lastName = "Lastname is required";
     }
     if (!values.email) {
       errors.email = "Email is required";
@@ -68,7 +67,7 @@ function SignUpForm() {
             <label for="firstName">
               <span>First Name</span>
             </label>
-            <p className="error">{errors.firstname} xxxxx</p>
+            <p className="error">{errors.firstName} xxxxx</p>
           </div>
           <div>
             <input
@@ -81,7 +80,7 @@ function SignUpForm() {
             <label for="lastName">
               <span>Last Name</span>
             </label>
-            <p className="error">{errors.lastname}</p>
+            <p className="error">{errors.lastName}</p>
           </div>
           <div>
             <input
