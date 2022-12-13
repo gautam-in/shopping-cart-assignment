@@ -23,6 +23,16 @@
     ],
     "allowJs": true
   },
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@/*":["src/*"]
+    }
+  },
+  
   "include": [
     "src"
   ],

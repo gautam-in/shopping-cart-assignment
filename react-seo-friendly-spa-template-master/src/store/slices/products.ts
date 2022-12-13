@@ -37,6 +37,51 @@ export const ProductSlice = createSlice({
   name: 'counter',
   initialState,
   reducers: {
+    addToCart: (state, action: PayloadAction<object>) => {
+      const product: any = action?.payload;
+      const checkItem = state.entities.cartItems.find((item: any) => item?.id === product?.id);
+      if(!checkItem && action?.payload){
+        state.entities.cartItems.push({...action.payload, count: 1})
+      }else{
+        state.entities.cartItems = state.entities.cartItems.map((item: any) => {
+          if(item?.id === product?.id){
+            return {...item, count: item?.count + 1};
+          }
+          return item;
+        });
+      }
+      return;
+    },
+    removeCartItem: (state, action: PayloadAction<any>) => {
+      if(action?.payload?.id){
+        state.entities.cartItems = state.entities.cartItems.filter((item: any) => {
+          return item?.id !== action?.payload?.id && item;
+        });
+      }
+      return;
+    },
+    incrementCartItemCount: (state, action: PayloadAction<any>) => {
+      if(action?.payload?.id){
+        state.entities.cartItems = state.entities.cartItems.map((item: any) => {
+          if(item?.id === action?.payload?.id){
+            return {...item, count: item?.count + 1};
+          }
+          return item;
+        });
+      }
+      return;
+    },
+    decrementCartItemCount: (state, action: PayloadAction<any>) => {
+      if(action?.payload?.id){
+        state.entities.cartItems = state.entities.cartItems.map((item: any) => {
+          if(item?.id === action?.payload?.id){
+            return {...item, count: item?.count > 2  ? item?.count - 1 : 1};
+          }
+          return item;
+        });
+      }
+      return;
+    },
     filterby: (state, action: PayloadAction<string>) => {
       if(action?.payload === '0') {
         state.entities.filtered = [];
@@ -84,6 +129,6 @@ export const ProductSlice = createSlice({
 })
 
 
-export const { filterby, clear } = ProductSlice.actions;
+export const { filterby, clear, addToCart, incrementCartItemCount, decrementCartItemCount, removeCartItem } = ProductSlice.actions;
 
 export default ProductSlice.reducer

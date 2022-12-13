@@ -3,9 +3,13 @@ import { MetaInfo } from "../../components";
 import { getRouteMetaInfo } from "../../config/routes.config";
 import { useSelector, useDispatch } from "react-redux";
 import { type RootState, type AppDispatch } from "../../store";
-import { getAllProductsByCategories, filterby } from "../../store/slices/products";
+import { getAllProductsByCategories, filterby, addToCart } from "../../store/slices/products";
+import { useLocation } from "react-router-dom"
 
 const Products: FunctionComponent = () => {
+  const { search } = useLocation();
+  const query = new URLSearchParams(search);
+
   const dispatch = useDispatch<AppDispatch>();
   const [activeElement, setActiveElement] = useState("0");
 
@@ -17,17 +21,30 @@ const Products: FunctionComponent = () => {
     (state: RootState) => state.Products.entities.filtered || []
   );
 
+  const categoryIds: any[] = ['0','5b6899953d1a866534f516e2', '5b6899123d1a866534f516de', '5b675e5e5936635728f9fc30','5b68994e3d1a866534f516df','5b6899683d1a866534f516e0'];
+  
   useEffect(() => {
     fetchApiDetails();
   }, []);
 
   const fetchApiDetails = async () => {
+    const keyString:string = query.get("id") || '';
     await dispatch(getAllProductsByCategories("products"));
+    if(query.get("id")){
+      let selectedElement: string = categoryIds.indexOf(keyString) !== -1 ? categoryIds.indexOf(keyString).toString() : '0';
+      await dispatch(filterby(keyString));
+      setActiveElement(selectedElement)
+    }
   };
 
   const handleFilters = (item: string, filterKey: string) => {
+    const filterVal: string = !filterKey ? categoryIds[Number(item)] : filterKey; 
     setActiveElement(item);
-    dispatch(filterby(filterKey));
+    dispatch(filterby(filterVal));
+  }
+
+  const handleAddToCart =  (item:any) => {
+    dispatch(addToCart(item));
   }
 
   return (
@@ -109,7 +126,10 @@ const Products: FunctionComponent = () => {
           </li>
         </ul>
 
-        <select>
+        <select value={activeElement} onChange={(e) =>  handleFilters(e.target.value,'')}>
+        <option value="0" key="0">
+            All Products
+          </option>
           <option value="1" key="1">
             Fruits & vegetables
           </option>
@@ -133,13 +153,13 @@ const Products: FunctionComponent = () => {
             <div className="card product" key={`card-${i}`}>
               <h4 className="heading-4 product__heading">{item?.name}</h4>
               <img
-                src={require(`.${item?.imageURL}`)}
+                src={require(`src/containers${item?.imageURL}`)}
                 alt={item?.name}
                 className="product__img"
               />
               <p className="product__desc">{item.description}</p>
               <div className="product__cost">MRP ${item?.price}</div>
-              <button className="product__btn btn btn--explore">
+              <button className="product__btn btn btn--explore" onClick={() => handleAddToCart(item)}>
                 Buy Now <span className="product__btn--cost">@$20</span>
               </button>
             </div>

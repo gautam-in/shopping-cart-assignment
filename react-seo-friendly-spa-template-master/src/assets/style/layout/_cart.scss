@@ -166,6 +166,9 @@
     font-size: 1.6rem;
     margin: 0 2rem;
     border-radius: 4px;
+    height: 20rem;
+    position: sticky;
+    top: 12rem;
 
     display: grid;
     grid-template-columns: repeat(2, [checkout-start] 1fr [checkout-end]);
