@@ -1,0 +1,33 @@
+
+
+.btn {
+    border: none;
+    background-color: $color-white;
+    color: $color-grey-dark;
+    padding: 1rem 2rem;
+    text-align: center;
+    
+    &__user{
+        padding: 1rem .5rem;
+        font-size: 1.5rem;
+        font-weight: 400;
+
+        &:hover, &:active{
+         color: $color-primary;
+        }
+    }
+
+    &--explore{
+        background-color: $color-crimson-pink;
+        color: white;
+    }
+
+    &--signin{
+        font-size: 1.5rem;
+        background-color: $color-crimson-pink;
+        color: white;
+        display: block;
+        width: 90%;
+    }
+
+}

@@ -1,0 +1,81 @@
+﻿//@use '../abstracts/variables' as *;
+
+body {
+  background-color: $theme-primary-body-bg-color;
+  transition: background-color 0.2s ease-out;
+
+  &.secondary-theme {
+    background-color: $theme-secondary-body-bg-color;
+
+    .dashboard-content {
+      color: $theme-primary-body-bg-color;
+
+      .title {
+        color: $theme-primary-body-bg-color !important;
+      }
+
+      code {
+        background-color: $theme-secondary-code-bg-color;
+        color: #70E9FF;
+      }
+
+      hr {
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+    }
+  }
+}
+
+svg {
+  max-width: 100%;
+}
+
+.title {
+  color: $color-hero-is-dark;
+  font-weight: 700;
+
+  @include renderTabletDevice {
+    font-size: 1.75em;
+  }
+
+  @include renderMobileDevice {
+    font-size: 1.5em;
+  }
+}
+
+code {
+  background-color: $theme-secondary-code-bg-color;
+  color: #70E9FF;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-size: 87.5%;
+}
+
+.view-wrapper {
+  min-height: 875px;
+  padding-top: $navbar-height;
+}
+
+.is-132x132 {
+  width: 132px;
+  height: 132px;
+}
+
+.subtitle {
+  color: $color-hero-is-dark;
+  font-size: 1.6em;
+  letter-spacing: 0.01em;
+
+  @include renderTabletDevice {
+    font-size: 1.35em;
+  }
+
+  @include renderMobileDevice {
+    font-size: 1.125em;
+  }
+}
+
+.is-horizontal-center {
+  align-items: center;
+  justify-content: center;
+}

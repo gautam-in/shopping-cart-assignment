@@ -1,0 +1,28 @@
+.user-signin{
+    margin: 10rem auto;
+    display: grid;
+    grid-template-columns: minmax(min-content, 1fr) 
+    repeat(8, [signin-start] minmax(min-content, 12rem) [signin-end]) minmax(min-content, 1fr);
+
+    &__text{
+        grid-column: signin-start 1 / signin-end 4;
+        margin-top: 3rem;
+    }
+
+    &__form{
+        grid-column: signin-start 5 / signin-end 8;
+    }
+
+    @include respond(phone){
+        &__text{
+            grid-column: signin-start 1 / -1;
+            margin-top: 3rem;
+            padding: 2rem;
+        }
+    
+        &__form{
+            grid-column: signin-start 1 / -1;
+            padding: 2rem;
+        }
+    }
+}

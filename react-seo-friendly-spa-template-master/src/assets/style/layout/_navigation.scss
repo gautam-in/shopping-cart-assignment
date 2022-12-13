@@ -1,0 +1,26 @@
+.product-nav {
+  background-color: $color-grey-light-1;
+  grid-column: nav-start / nav-end;
+  min-height: 85vh;
+
+  & select {
+    display: none;
+  }
+
+  @include respond(phone) {
+    grid-column: pr-start 1 / -1;
+    background-color: crimson;
+    min-height: 0;
+
+    & select {
+      display: block;
+      width: 100%;
+      padding: 3rem;
+      margin: 1rem 0;
+      background: crimson;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+    }
+  }
+}

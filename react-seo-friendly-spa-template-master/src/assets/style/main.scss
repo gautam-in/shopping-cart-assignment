@@ -1,0 +1,38 @@
+﻿
+
+// node_module imports
+@import 'bulma/bulma';
+
+// custom modules
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/generic";
+@import "base/utilities";
+
+
+@import "components/button";
+@import "components/form";
+@import "components/gallery";
+@import "components/navbar";
+@import "components/default_footer";
+@import "components/default_home";
+@import "components/default_navbar";
+
+@import "layout/cart";
+@import "layout/content";
+@import "layout/footer";
+@import "layout/headers";
+@import "layout/navigation";
+@import "layout/product_details";
+
+@import "pages/home";
+@import "pages/products";
+@import "pages/signIn";
+
+
+
