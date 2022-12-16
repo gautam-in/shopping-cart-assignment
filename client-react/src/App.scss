@@ -1,0 +1,12 @@
+/* Only till tablet devices */
+.app-container.container {
+  @media only screen and (max-width: 768px) {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    max-width: 1010px;
+  }
+
+}
