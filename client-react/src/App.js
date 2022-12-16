@@ -1,8 +1,8 @@
 import React, { Suspense } from 'react';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
-import { BannerView } from './features/banner/BannerView';
-import './App.css';
+import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Homepage } from './pages';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Suspense fallback={<div>Loading...</div>}>
           <Router>
             <Routes>
-              <Route path="/" element={<BannerView />} />
+              <Route path="/" element={<Homepage />} />
               {/* <Route path="/products" component={Products} exact />
             <Route path="/products/:id" component={Products} exact />
             <Route path="/signin" component={Signin} exact />
