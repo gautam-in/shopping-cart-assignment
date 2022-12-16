@@ -1,0 +1,47 @@
+.banner-wrapper {
+    box-shadow: 0px 2px 3px 1px lightgrey;
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        width: auto;
+        text-decoration: none;
+    }
+
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        background-color: black;
+        opacity: 0.3;
+        color: white;
+        font-size: 10px;
+        width: 2.5rem;
+        padding: 8px 6px;
+
+    }
+
+    .carousel-control-next-icon {
+        background-image: none;
+
+        &::after {
+            content: "NEXT";
+        }
+    }
+
+    .carousel-control-prev-icon {
+        background-image: none;
+
+        &::after {
+            content: "PREV";
+        }
+    }
+
+    .carousel-indicators {
+        margin-bottom: 0.5rem;
+    }
+
+    .carousel-indicators [data-bs-target] {
+        width: 3px;
+        border-radius: 50%;
+        margin-left: 10px;
+        background-color: #000;
+    }
+}
