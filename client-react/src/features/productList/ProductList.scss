@@ -1,0 +1,88 @@
+.product-container {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 8px;
+    width: 100%;
+    margin-top: 70px;
+
+    @media only screen and (min-width: 768px) {
+        grid-template-columns: auto auto;
+    }
+
+    @media only screen and (min-width: 1200px) {
+        grid-template-columns: auto auto auto auto;
+    }
+}
+
+.product {
+    margin-top: 24px;
+    padding: 8px;
+    border: 0;
+    justify-content: space-between;
+
+    .card-title {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 4px;
+        height: 10%;
+    }
+
+    .card-text {
+        font-size: 10px;
+        background-color: rgba(233, 230, 230, 0.8);
+        padding: 8px 4px;
+        margin-bottom: 0;
+    }
+
+    .card-layout {
+        display: flex;
+        flex-direction: row;
+
+        @media only screen and (min-width: 1200px) {
+            flex-direction: column;
+        }
+    }
+
+    .card-body {
+        padding: 5px;
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        justify-content: start;
+        width: 50%;
+
+        @media only screen and (min-width: 1200px) {
+            width: 100%;
+            justify-content: end;
+        }
+    }
+
+    .card-img-container {
+        width: 20vw;
+
+        @media only screen and (min-width: 1200px) {
+            width: auto;
+        }
+    }
+
+    .product-pricing {
+        display: flex;
+        border-bottom: 1px dashed lightgrey;
+        padding: 16px 0px 8px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .product-price {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .buy-btn {
+        border: 0px;
+        background-color: rgba(186, 2, 79, 0.894);
+        color: white;
+        font-size: 12px;
+        padding: 8px 24px;
+    }
+}

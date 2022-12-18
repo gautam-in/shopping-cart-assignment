@@ -10,7 +10,7 @@ const initialState = {
 // Generates pending, fulfilled and rejected action types
 export const fetchCategoryList = createAsyncThunk('fetchCategory', () => {
   return axios
-    .get('http://127.0.0.1:5502/server/categories/index.get.json')
+    .get('http://127.0.0.1:5500/server/categories/index.get.json')
     .then(response => response.data)
 })
 

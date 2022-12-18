@@ -1,0 +1,13 @@
+.side-nav {
+    --bs-list-group-bg: #eaeaeb;
+    --bs-list-group-border-radius: 0;
+    --bs-list-group-border-width: 0;
+    border-top: 0;
+
+    .list-group-item {
+        border-bottom: 1px solid #d5d5d5;
+        color: #7b7b7b;
+        font-size: 18px;
+        padding: 10px 20px 10px 30px;
+    }
+}

@@ -5,7 +5,7 @@ import { fetchBanners } from './BannerSlice'
 import './Banner.scss'
 
 export const BannerView = () => {
-  const BASE_URL = "http://127.0.0.1:5502";
+  const BASE_URL = "http://127.0.0.1:5500";
 
   const banner = useSelector(state => state.banner)
   const dispatch = useDispatch()

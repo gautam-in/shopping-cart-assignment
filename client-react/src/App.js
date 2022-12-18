@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Homepage } from './pages';
+import { Homepage, ProductListPage } from './pages';
 
 function App() {
   return (
@@ -12,10 +12,10 @@ function App() {
           <Router>
             <Routes>
               <Route path="/" element={<Homepage />} />
-              {/* <Route path="/products" component={Products} exact />
-            <Route path="/products/:id" component={Products} exact />
-            <Route path="/signin" component={Signin} exact />
-            <Route path="/signup" component={Signup} exact /> */}
+              <Route path="/categories" element={<ProductListPage/>} exact />
+            <Route path="/categories/:id" element={<ProductListPage/>} exact />
+            {/* <Route path="/signin" element={Signin} exact />
+            <Route path="/signup" element={Signup} exact /> */}
             </Routes>
           </Router>
         </Suspense>

@@ -6,16 +6,16 @@ import { fetchCategoryList } from './CategorySlice'
 import './Category.scss'
 
 export const CategoryView = () => {
-    const BASE_URL = "http://127.0.0.1:5502";
+    const BASE_URL = "http://127.0.0.1:5500";
     const category = useSelector(state => state.category)
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchCategoryList())
     }, [])
 
-    const onOptionSelect = selected => {
-        // dispatch(filterCategory(selected))
+    const onCategorySelect = selected => {
     };
+
     return (
         <section className='banner-wrapper'>
             {category.loading && <div>Loading...</div>}
@@ -34,7 +34,7 @@ export const CategoryView = () => {
                                             <Card.Text>
                                                 {ele.description}
                                             </Card.Text>
-                                            <button className='category-btn' onClick={() => onOptionSelect(ele.id)}>Explore {ele.key}</button>
+                                            <button className='category-btn' onClick={() => onCategorySelect(ele.id)}>Explore {ele.key}</button>
                                         </Card.Body>
                                     </Card>
                                     : ""}
