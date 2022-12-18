@@ -1,0 +1,39 @@
+
+.cart-btn {
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    border: 0px;
+    font-size: 12px;
+    width: 100%;
+    img {
+        margin-right: 10px;
+    }
+}
+
+.nav-item {
+    color: #000;
+    padding: 0 10px;
+
+    a {
+        font-size: 12px;
+    }
+}
+
+.page-nav {
+    width: 38%;
+
+    @media only screen and (min-width: 992px) {
+        width: 51%;
+    }
+    .nav-item {
+        font-size: 12px;
+        font-weight: 600;
+        padding: 0 20px;
+        a {
+            padding: 35px 0 0;
+        }
+    }
+}

@@ -7,7 +7,11 @@
     .list-group-item {
         border-bottom: 1px solid #d5d5d5;
         color: #7b7b7b;
-        font-size: 18px;
+        font-size: 14px;
         padding: 10px 20px 10px 30px;
+
+        @media only screen and (min-width: 1200px) {
+            font-size: 16px;
+        }
     }
 }

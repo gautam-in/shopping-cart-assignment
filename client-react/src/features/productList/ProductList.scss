@@ -3,7 +3,6 @@
     grid-template-columns: auto;
     gap: 8px;
     width: 100%;
-    margin-top: 70px;
 
     @media only screen and (min-width: 768px) {
         grid-template-columns: auto auto;
@@ -28,7 +27,7 @@
     }
 
     .card-text {
-        font-size: 10px;
+        font-size: 12px;
         background-color: rgba(233, 230, 230, 0.8);
         padding: 8px 4px;
         margin-bottom: 0;
