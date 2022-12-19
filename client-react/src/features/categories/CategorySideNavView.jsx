@@ -1,5 +1,6 @@
 import React from 'react'
 import ListGroup from 'react-bootstrap/ListGroup';
+
 import './CategorySideNav.scss'
 
 export const CategorySideNavView = (props) => {

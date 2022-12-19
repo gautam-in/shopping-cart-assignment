@@ -1,19 +1,24 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from "react-router-dom";
 
 import { fetchCategoryList } from './CategorySlice'
+
 import './Category.scss'
 
 export const CategoryView = () => {
     const BASE_URL = "http://127.0.0.1:5500";
     const category = useSelector(state => state.category)
     const dispatch = useDispatch()
+    const navigate = useNavigate();
+
     useEffect(() => {
         dispatch(fetchCategoryList())
     }, [])
 
-    const onCategorySelect = selected => {
+    const onCategorySelect = selectedCategoryId => {
+        navigate('/products', { state: { selectedCategoryId: selectedCategoryId } })
     };
 
     return (
@@ -27,7 +32,7 @@ export const CategoryView = () => {
                         category.categoryList.map((ele, index) => (
                             <>
                                 {ele.enabled ?
-                                    <Card>
+                                    <Card key={index}>
                                         <Card.Img src={ele.imageUrl ? BASE_URL + ele.imageUrl : ''} alt={ele.name} width="100%" />
                                         <Card.Body>
                                             <Card.Title>{ele.name}</Card.Title>

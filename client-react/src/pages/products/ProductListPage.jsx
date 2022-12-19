@@ -2,22 +2,21 @@ import React, { useEffect } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useSelector, useDispatch } from 'react-redux'
+import { useLocation } from "react-router-dom";
 
 import { CategorySideNavView } from '../../features/categories/CategorySideNavView';
 import { ProductListView } from '../../features/productList/ProductListView';
-import { fetchProductList, getFilteredData } from '../../features/productList/ProductListSlice';
-import { fetchCategoryList } from '../../features/categories/CategorySlice';
+import { getFilteredData } from '../../features/productList/ProductListSlice';
 
 export const ProductListPage = () => {
-    const dispatch = useDispatch()
-    useEffect(() => {
-        dispatch(fetchProductList());
-        dispatch(fetchCategoryList())
-    }, [])
-    
+    const location = useLocation();
+    const categoryId = location.state?.selectedCategoryId;
     const category = useSelector(state => state.category);
     const list = useSelector(state => state.product);
-
+    const dispatch = useDispatch();
+    useEffect(() => {
+        categoryId && dispatch(getFilteredData(categoryId))
+    }, [categoryId])
 
     const onCategoryClick = (id) => {
         dispatch(getFilteredData(id))

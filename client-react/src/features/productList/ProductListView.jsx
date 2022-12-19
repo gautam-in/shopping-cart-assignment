@@ -1,12 +1,17 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import { useDispatch } from 'react-redux'
+
+import { addToCart } from '../cart/CartSlice';
+
 import './ProductList.scss';
 
 export const ProductListView = (props) => {
   const { list } = props;
+  const dispatch = useDispatch()
 
-  const addToCartList = (itemId) => {
-    console.log(itemId)
+  const addToCartList = (item) => {
+    dispatch(addToCart(item))
   }
 
   const BASE_URL = "http://127.0.0.1:5500";

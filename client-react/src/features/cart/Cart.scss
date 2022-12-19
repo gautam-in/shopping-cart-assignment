@@ -1,0 +1,114 @@
+.cart {
+    .modal-dialog {
+        margin-right: unset;
+        top: 48px;
+        height: calc(100% - 48px);
+        margin-top: 0;
+    }
+
+    .modal-header {
+        background-color: #000;
+        border-radius: 0;
+        color: #fff;
+
+        .btn-close {
+            opacity: 1;
+        }
+    }
+
+    .modal-content {
+        border-radius: 0;
+        height: 100%;
+    }
+
+    .modal-body {
+        padding: 20px 0 0 0;
+    }
+
+    .cart-grey-bg {
+        background-color: #eeeeee;
+    }
+    .modal-footer {
+        background-color: #fff;
+    }
+
+    .cart-adv {
+        margin: 10px;
+
+        .card-img {
+            width: 122px;
+            padding: 10px;
+        }
+    }
+
+    .cart-product {
+        padding: 20px;
+        background-color: #fff;
+        
+    }   
+
+    // opertor
+    .product-operator-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 70%;
+        align-items: center;
+        @media only screen and (min-width: 992px) {
+        width: 38%;
+
+        }
+
+        .product-operator {
+            height: 18px;
+            width: 18px;
+            border-radius: 50%;
+            background-color: rgba(186, 2, 79, 0.894);
+            border: 0px;
+            color: white;
+            position: relative;
+
+            &::after {
+                content: "-";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            &.plus::after {
+                content: "+";
+                top: 40%;
+            }
+        }
+
+        .product-price {
+            span {
+                margin-right: 16px;
+            }
+        }
+
+    }
+
+    // footer
+    .cart-checkout-btn {
+        background-color: rgba(186, 2, 79, 0.894);
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 16px;
+        margin: 8px 8px;
+        border: 0px;
+        width: 100%;
+
+        span {
+            margin-left: 16px;
+        }
+    }
+
+    .cart-footer-title {
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+    }
+}
