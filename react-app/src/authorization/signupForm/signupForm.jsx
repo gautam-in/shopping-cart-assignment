@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
 import "./signupForm.scss";
 
 function SignUpForm() {
@@ -9,8 +10,9 @@ function SignUpForm() {
     password: "",
     confirmpassword: "",
   };
+  // const navigate = useNavigate();
   const [formFields, setFormFields] = useState(initialValue);
-  const [errors, setErrors] = useState(false);
+  const [errors, setErrors] = useState({});
   const [submit, setSubmit] = useState(false);
 
   const handleChange = (e) => {
@@ -22,15 +24,21 @@ function SignUpForm() {
     setErrors(validate(formFields));
     setSubmit(true);
   };
+  useEffect(() => {
+    console.log(errors);
+    if (Object.keys(errors).length === 0 && submit) {
+      // navigate("/");
+    }
+  }, [errors]);
 
   const validate = (values) => {
     const errors = {};
     const regx = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!values.firstName) {
-      errors.firstName = "Firstname is required";
+      errors.firstName = "First Name is required";
     }
     if (!values.lastName) {
-      errors.lastName = "Lastname is required";
+      errors.lastName = "Last Name is required";
     }
     if (!values.email) {
       errors.email = "Email is required";
@@ -40,9 +48,9 @@ function SignUpForm() {
     if (!values.password) {
       errors.password = "Password is required";
     }
-    if (!values.confirmpassword) {
-      errors.confirmpassword = "Confirm password is required";
-    } else if (values.password !== values.confirmpassword) {
+    if (!values.confirmPassword) {
+      errors.confirmPassword = "Confirm password is required";
+    } else if (values.password !== values.confirmPassword) {
       errors.confirmPassword = "Password entered did not match!";
     }
     return errors;
@@ -60,37 +68,29 @@ function SignUpForm() {
             <input
               type="text"
               name="firstName"
-              autocomplete="off"
               required
               onChange={handleChange}
             />
-            <label for="firstName">
+            <label htmlFor="firstName">
               <span>First Name</span>
             </label>
-            <p className="error">{errors.firstName} xxxxx</p>
+            <p className="error">{errors.firstName}</p>
           </div>
           <div>
             <input
               type="text"
               name="lastName"
-              autocomplete="off"
               required
               onChange={handleChange}
             />
-            <label for="lastName">
+            <label htmlFor="lastName">
               <span>Last Name</span>
             </label>
             <p className="error">{errors.lastName}</p>
           </div>
           <div>
-            <input
-              type="email"
-              name="email"
-              autocomplete="off"
-              required
-              onChange={handleChange}
-            />
-            <label for="email">
+            <input type="email" name="email" required onChange={handleChange} />
+            <label htmlFor="email">
               <span>Email</span>
             </label>
             <p className="error">{errors.email}</p>
@@ -99,11 +99,10 @@ function SignUpForm() {
             <input
               type="password"
               name="password"
-              autocomplete="off"
               required
               onChange={handleChange}
             />
-            <label for="password">
+            <label htmlFor="password">
               <span>Password</span>
             </label>
             <p className="error">{errors.password}</p>
@@ -112,18 +111,19 @@ function SignUpForm() {
             <input
               type="password"
               name="confirmPassword"
-              autocomplete="off"
               required
               onChange={handleChange}
             />
-            <label for="confirmPassword">
+            <label htmlFor="confirmPassword">
               <span>Confirm Password</span>
             </label>
             <p className="error">{errors.confirmPassword}</p>
           </div>
-          <button type="submit" className="btn-cls login-btn">
-            Signup
-          </button>
+          <div>
+            <button type="submit" className="butn">
+              Signup
+            </button>
+          </div>
         </form>
       </div>
     </div>
