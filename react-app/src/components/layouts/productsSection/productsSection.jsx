@@ -7,6 +7,8 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 
 import "./productsSection.scss";
+import { isMobile } from "../../../utils";
+import Footer from "../../common/footer/footer";
 
 function ProductsSection() {
   const dispatch = useDispatch();
@@ -32,20 +34,36 @@ function ProductsSection() {
                   alt={prd.name}
                 />
               </div>
-              <div className="desc">{prd?.description}</div>
+              <div className="mobBelowSec">
+                <div className="desc">{prd?.description}</div>
+                {isMobile && (
+                  <div className="belowSec">
+                    <div>MRP Rs. {prd?.price}</div>
+                    <button
+                      onClick={() => dispatch(addItemToCart(prd))}
+                      className="buyBtn"
+                    >
+                      Buy Now
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
-            <div className="belowSec">
-              <div>MRP Rs. {prd?.price}</div>
-              <button
-                onClick={() => dispatch(addItemToCart(prd))}
-                className="buyBtn"
-              >
-                Buy Now
-              </button>
-            </div>
+            {!isMobile && (
+              <div className="belowSec">
+                <div>MRP Rs. {prd?.price}</div>
+                <button
+                  onClick={() => dispatch(addItemToCart(prd))}
+                  className="buyBtn"
+                >
+                  Buy Now
+                </button>
+              </div>
+            )}
           </div>
         ))}
       </div>
+      <Footer />
     </>
   );
 }

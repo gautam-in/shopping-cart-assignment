@@ -4,11 +4,8 @@ import Footer from "../../components/common/footer/footer";
 
 function LoginForm() {
   const initialValue = {
-    firstName: "",
-    lastName: "",
     email: "",
     password: "",
-    confirmpassword: "",
   };
   const navigate = useNavigate();
   const [formFields, setFormFields] = useState(initialValue);

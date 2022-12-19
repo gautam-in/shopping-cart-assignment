@@ -1,6 +1,11 @@
+@import "../../../common_mixin.scss";
+
 .productContainer {
     width: 90%;
     margin: auto;
     display: flex;
     height: 100vh;
+    @include phone {
+        display: block;
+    }
 }

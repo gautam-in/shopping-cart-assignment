@@ -8,17 +8,15 @@ function ImageSlider({ banners, height, width }) {
   });
 
   return (
-    <div>
-      <SimpleImageSlider
-        width={width}
-        height={height}
-        images={images}
-        showBullets={true}
-        showNavs={true}
-        autoPlay={true}
-        autoPlayDelay={2}
-      />
-    </div>
+    <SimpleImageSlider
+      width={width}
+      height={height}
+      images={images}
+      showBullets={true}
+      showNavs={true}
+      // autoPlay={true}
+      autoPlayDelay={2}
+    />
   );
 }
 

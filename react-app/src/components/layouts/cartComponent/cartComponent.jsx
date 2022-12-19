@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
   decreaseItemCount,
   getCartItems,
@@ -8,6 +9,7 @@ import {
 import "./cartComponent.scss";
 
 function CartComponent() {
+  const navigate = useNavigate();
   const cartItems = useSelector(getCartItems);
   const dispatch = useDispatch();
 
@@ -82,13 +84,25 @@ function CartComponent() {
           </div>
         ))}
       </div>
-      <div className={"bottomSec"}>
-        <div>Promo code can be applied on payment page</div>
-        <button className="butn">
-          <div>Proceed to Checkout</div>
-          <div>{totalCartPrice()}</div>
-        </button>
-      </div>
+      {cartItems && cartItems.length > 0 && (
+        <div className={"bottomSec"}>
+          <div>You won't find it cheaper anywhere</div>
+          <button className="butn">
+            <div>Proceed to Checkout</div>
+            <div>{totalCartPrice()}</div>
+          </button>
+        </div>
+      )}
+      {cartItems && cartItems.length === 0 && (
+        <div className="checkout-btn-sec shopping-btn">
+          <span className="promo">
+            Promo code can be applied on payment page.
+          </span>
+          <button className="btn-cls" onClick={() => navigate("/products")}>
+            Start Shopping
+          </button>
+        </div>
+      )}
     </div>
   );
 }

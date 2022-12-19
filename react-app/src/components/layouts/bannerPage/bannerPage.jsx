@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ImageSlider from "../../common/imageSlider/imageSlider";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../common/footer/footer";
+import { isMobile } from "../../../utils";
 
 function BannerPage() {
   const dispatch = useDispatch();
@@ -31,7 +32,11 @@ function BannerPage() {
     <>
       <div className="bannerPageContainer">
         <div className="bannerSliderSection shadow">
-          <ImageSlider banners={banners} height="300px" width="100%" />
+          <ImageSlider
+            banners={banners}
+            height={isMobile ? "100px" : "300px"}
+            width="100%"
+          />
         </div>
         <div className="belowContainer">
           {categories.map((item, index) =>

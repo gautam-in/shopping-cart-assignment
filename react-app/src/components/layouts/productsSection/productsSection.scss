@@ -1,16 +1,32 @@
+@import "../../../common_mixin.scss";
+
 .productsContainer {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* justify-content: space-around; */
     overflow-y: scroll;
     overflow-x: hidden;
+    @include phone {
+        justify-content: space-around;
+        display: unset;
+        flex-direction: unset;
+        flex-wrap: unset;
+        overflow-y: unset;
+        overflow-x: unset;
+    }
     .eachProduct {
         width: 210px;
         padding: 20px;
         box-shadow: 10px 0 10px -14px rgb(115 115 115 / 62%);
         height: 360px;
+        @include phone {
+            box-shadow: rgb(0 0 0 / 9%) 0px 3px 12px;
+            padding: 5px;
+            width: unset;
+            height: unset;
+            margin-bottom: 10px;
+        }
         .productName {
             display: -webkit-box;
             -webkit-line-clamp: 3;
@@ -21,29 +37,48 @@
             font-weight: 800;
             margin-bottom: 10px;
             height: 70px;
+            @include phone {
+                font-size: 15px;
+                font-weight: 600;
+                -webkit-line-clamp: 2;
+                height: 36px;
+            }
         }
         .productImg {
             width: 190px;
             height: 146px;
             margin-bottom: 10px;
+            @include phone {
+                margin-bottom: 0px;
+            }
             .imgStyle {
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
+                @include phone {
+                    width: unset;
+                }
             }
         }
         .imgDescSection {
-            // display: flex;
-            .desc {
-                background: rgb(0 0 0 / 6%);
+            @include phone {
+                display: flex;
+            }
+            .mobBelowSec {
+                .desc {
+                    background: rgb(0 0 0 / 6%);
 
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                white-space: pre-wrap;
-                margin-bottom: 10px;
-                padding: 10px 10px 4px 10px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    white-space: pre-wrap;
+                    margin-bottom: 10px;
+                    padding: 10px 10px 4px 10px;
+                    @include phone {
+                        font-size: 15px;
+                    }
+                }
             }
         }
         .belowSec {
@@ -51,6 +86,10 @@
             justify-content: space-between;
             margin-top: 20px;
             padding-bottom: 20px;
+            @include phone {
+                font-size: 13px;
+                font-weight: 600;
+            }
             .buyBtn {
                 background-color: #e80a79;
                 color: white;
@@ -62,6 +101,9 @@
             }
             border-bottom: 1px solid gray;
             border-bottom-style: dashed;
+            @include phone {
+                border-bottom: none;
+            }
         }
     }
 }

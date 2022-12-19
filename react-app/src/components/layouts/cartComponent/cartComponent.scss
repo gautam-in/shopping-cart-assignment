@@ -10,25 +10,38 @@
         padding: 10px;
     }
     .itemsContainer {
-        height: calc(100% - 300px);
+        // height: calc(100% - 300px);
         .eachItem {
             display: flex;
             width: 100%;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             margin-top: 20px;
             padding: 10px;
+            @include phone {
+                width: 90%;
+            }
             .bannerImage {
                 width: 120px;
                 height: 50px;
                 margin-right: 20px;
+                @include phone {
+                    width: 100%;
+                    height: 70px;
+                }
             }
             .bannerImage img {
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
+                @include phone {
+                    padding-right: 40px;
+                }
             }
             .rightSec {
                 width: 100%;
+                @include phone {
+                    width: unset;
+                }
                 .desc {
                 }
                 .addRemove {
@@ -86,6 +99,10 @@
         padding: 20px;
         text-align: center;
         box-shadow: rgb(14 30 37 / 12%) 0px 2px 4px 0px, rgb(14 30 37 / 32%) 0px 2px 16px 0px;
+
+        @include phone {
+            margin-top: 30px;
+        }
         .butn {
             display: flex;
             justify-content: space-between;
@@ -102,6 +119,28 @@
                 font-size: 11px;
                 padding: 5px;
             }
+        }
+    }
+
+    .checkout-btn-sec {
+        width: 90%;
+        margin: auto;
+        margin-top: 20px;
+        &.shopping-btn {
+            margin-top: 50%;
+        }
+
+        .promo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 5px;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        .btn-cls {
+            width: 100%;
+            text-align: center;
         }
     }
 }

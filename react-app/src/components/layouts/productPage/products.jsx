@@ -14,13 +14,10 @@ function ProductPage() {
     dispatch(loadCategories());
   }, []);
   return (
-    <>
-      <div className="productContainer">
-        <CategoriesSection />
-        <ProductsSection />
-      </div>
-      <Footer />
-    </>
+    <div className="productContainer">
+      <CategoriesSection />
+      <ProductsSection />
+    </div>
   );
 }
 
