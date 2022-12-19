@@ -34,6 +34,30 @@ export const slice = createSlice({
     categoriesRequestFailed: (items, { payload }) => {
       items.categoriesLoading = false;
     },
+    addToCart: (items, { payload }) => {
+      let itemIndexinCart = items.cartItems.findIndex(
+        (item) => item.id === payload.id
+      );
+      if (itemIndexinCart === -1) {
+        items.cartItems.push({ ...payload, itemCount: 1 });
+      } else {
+        items.cartItems[itemIndexinCart].itemCount++;
+      }
+    },
+    decreaseCount: (items, { payload }) => {
+      let itemIndexinCart = items.cartItems.findIndex(
+        (item) => item.id === payload.id
+      );
+      if (items.cartItems[itemIndexinCart].itemCount > 0) {
+        items.cartItems[itemIndexinCart].itemCount -= 1;
+      }
+    },
+    increaseCount: (items, { payload }) => {
+      let itemIndexinCart = items.cartItems.findIndex(
+        (item) => item.id === payload.id
+      );
+      items.cartItems[itemIndexinCart].itemCount += 1;
+    },
   },
 });
 export const searchItem = (value) => (dispatch) => {
@@ -52,7 +76,29 @@ const {
   categoriesRequested,
   categoriesDetailsReceive,
   categoriesRequestFailed,
+  addToCart,
+  increaseCount,
+  decreaseCount,
 } = slice.actions;
+
+export const addItemToCart = (value) => (dispatch) => {
+  dispatch({
+    type: addToCart.type,
+    payload: value,
+  });
+};
+export const decreaseItemCount = (value) => (dispatch) => {
+  dispatch({
+    type: decreaseCount.type,
+    payload: value,
+  });
+};
+export const increaseItemCount = (value) => (dispatch) => {
+  dispatch({
+    type: increaseCount.type,
+    payload: value,
+  });
+};
 
 export const loadProducts = () => (dispatch, getState) => {
   return dispatch(
@@ -84,6 +130,10 @@ export const getCategories = createSelector(
 export const getProducts = createSelector(
   (state) => state.entities.items,
   (categories) => categories.products
+);
+export const getCartItems = createSelector(
+  (state) => state.entities.items,
+  (cartItems) => cartItems?.cartItems
 );
 
 export default slice.reducer;

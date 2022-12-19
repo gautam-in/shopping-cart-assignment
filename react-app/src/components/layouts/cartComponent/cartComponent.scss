@@ -1,0 +1,107 @@
+@import "../../../common_mixin.scss";
+
+.cartContainer {
+    height: 100vh;
+    .heading {
+        font-size: 22px;
+        font-weight: 600;
+        margin-top: 30px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 10px;
+    }
+    .itemsContainer {
+        height: calc(100% - 300px);
+        .eachItem {
+            display: flex;
+            width: 100%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            margin-top: 20px;
+            padding: 10px;
+            .bannerImage {
+                width: 120px;
+                height: 50px;
+                margin-right: 20px;
+            }
+            .bannerImage img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+            .rightSec {
+                width: 100%;
+                .desc {
+                }
+                .addRemove {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .addRemoveLeftSec {
+                        display: flex;
+                        align-items: center;
+                    }
+                    .xbtn {
+                        padding: 10px;
+                    }
+                    .totalPrice {
+                        padding-right: 40px;
+                    }
+                }
+                .addcartbtn {
+                    display: flex;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+            }
+            .parts {
+                border-radius: 20%;
+                width: 30px;
+                border: none;
+                background-color: #d00156;
+                color: white;
+                font-size: 20px;
+
+                @include phone {
+                    width: 20px;
+                    font-size: 14px;
+                    margin: 0 3px;
+                }
+
+                cursor: pointer;
+
+                &.disable {
+                    pointer-events: none;
+                    opacity: 0.5;
+                }
+            }
+            .countTxt {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    }
+    .bottomSec {
+        // position: absolute;
+        // bottom: 0;
+        height: 40px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: rgb(14 30 37 / 12%) 0px 2px 4px 0px, rgb(14 30 37 / 32%) 0px 2px 16px 0px;
+        .butn {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            background-color: #e80a79;
+            color: white;
+            font-size: 14px;
+            padding: 8px 10px;
+            border: none;
+            // display: inline-block;
+            cursor: pointer;
+
+            @include phone {
+                font-size: 11px;
+                padding: 5px;
+            }
+        }
+    }
+}

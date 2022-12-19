@@ -6,6 +6,7 @@ import HeaderLayout from "./components/common/header/headerLayout";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import './App.css';
 import "./App.scss";
+import CartComponent from "./components/layouts/cartComponent/cartComponent";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/signUp" element={<SignupForm />} />
+        {/* <Route path="/products" element={<Products />} /> */}
+        <Route path="/cart" element={<CartComponent />} />
       </Route>
     </Routes>
   );

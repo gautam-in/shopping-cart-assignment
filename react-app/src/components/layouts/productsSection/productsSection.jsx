@@ -1,9 +1,12 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { getProducts } from "../../../store/entities/items";
+import { addItemToCart, getProducts } from "../../../store/entities/items";
+import { useDispatch, useSelector } from "react-redux";
+
 import "./productsSection.scss";
 
 function ProductsSection() {
+  const dispatch = useDispatch();
+  // const cartItems = useSelector(getCartItems);
   const products = useSelector(getProducts);
   console.log(products);
 
@@ -25,7 +28,12 @@ function ProductsSection() {
           </div>
           <div className="belowSec">
             <div>MRP Rs. {prd?.price}</div>
-            <button className="buyBtn">Buy Now</button>
+            <button
+              onClick={() => dispatch(addItemToCart(prd))}
+              className="buyBtn"
+            >
+              Buy Now
+            </button>
           </div>
         </div>
       ))}

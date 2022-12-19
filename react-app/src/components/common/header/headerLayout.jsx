@@ -1,9 +1,20 @@
 import React, { Fragment } from "react";
+import { useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
+import { getCartItems } from "../../../store/entities/items";
 
 import "./header.scss";
 
-function headerNav() {
+function HeaderNav() {
+  const cartItems = useSelector(getCartItems);
+
+  const cartItemCount = () => {
+    let itemcount = 0;
+    cartItems.map((element) => {
+      itemcount = itemcount + element.itemCount;
+    });
+    return `${itemcount} items`;
+  };
   return (
     <div>
       <div className="headerComponent">
@@ -41,7 +52,7 @@ function headerNav() {
               </Link>
             </div>
 
-            <div>{"0 items"}</div>
+            <div>{cartItemCount()}</div>
           </div>
         </div>
       </div>
@@ -52,4 +63,4 @@ function headerNav() {
   );
 }
 
-export default headerNav;
+export default HeaderNav;
