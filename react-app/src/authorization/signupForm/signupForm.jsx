@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Footer from "../../components/common/footer/footer";
-// import { useNavigate } from "react-router-dom";
 import "./signupForm.scss";
 
 function SignUpForm() {
@@ -11,7 +11,7 @@ function SignUpForm() {
     password: "",
     confirmpassword: "",
   };
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [formFields, setFormFields] = useState(initialValue);
   const [errors, setErrors] = useState({});
   const [submit, setSubmit] = useState(false);
@@ -28,7 +28,7 @@ function SignUpForm() {
   useEffect(() => {
     console.log(errors);
     if (Object.keys(errors).length === 0 && submit) {
-      // navigate("/");
+      navigate("/");
     }
   }, [errors]);
 
@@ -61,7 +61,7 @@ function SignUpForm() {
     <>
       <div className="formContainer">
         <div className="leftSection">
-          <h2>Signup</h2>
+          <p>Signup</p>
           <p>We do not share your personal details with anyone</p>
         </div>
         <div className="rightSection">

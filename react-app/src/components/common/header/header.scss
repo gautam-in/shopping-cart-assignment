@@ -16,6 +16,17 @@
         @include desktop {
             width: 35%;
         }
+        .logo {
+            height: 100%;
+            width: 70px;
+        }
+        .logo img {
+            @include phone {
+                height: 100%;
+                width: 100px;
+                object-fit: contain;
+            }
+        }
         .items {
             padding-bottom: 20px;
             display: flex;
@@ -41,11 +52,14 @@
         justify-content: space-between;
         .cartLogo {
             height: 40px;
-            background: gray;
+            // background: gray;
             justify-content: space-around;
             display: flex;
-            align-items: center;
+            // align-items: center;
             padding: 0 20px 0 20px;
+            @include phone {
+                // padding:5px;
+            }
         }
         .loginSec {
             display: flex;
