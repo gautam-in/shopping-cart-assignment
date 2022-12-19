@@ -1,0 +1,23 @@
+@import "../../../common_mixin.scss";
+
+.footer {
+    width: 100%;
+    background-color: #d3d3d3;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    position: fixed;
+    bottom: 2px;
+    margin-top: 20px;
+    @include phone {
+        position: static;
+    }
+    p {
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+        @include phone {
+            font-size: 10px;
+        }
+    }
+}

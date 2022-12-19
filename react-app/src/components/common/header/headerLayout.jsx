@@ -2,11 +2,14 @@ import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import { getCartItems } from "../../../store/entities/items";
+import { useLocation } from "react-router-dom";
 
 import "./header.scss";
 
 function HeaderNav() {
   const cartItems = useSelector(getCartItems);
+  const location = useLocation();
+  const { pathname } = location;
 
   const cartItemCount = () => {
     let itemcount = 0;
@@ -26,19 +29,38 @@ function HeaderNav() {
           </div>
 
           <div className="items">
-            <Link to="/">Home</Link>
-            <Link to="/products">Products</Link>
+            <Link
+              className={"nav-link " + (pathname === "/" ? "active" : "")}
+              to="/"
+            >
+              Home
+            </Link>
+            <Link
+              className={
+                "nav-link " + (pathname === "/products" ? "active" : "")
+              }
+              to="/products"
+            >
+              Products
+            </Link>
           </div>
         </div>
 
         <div className="rightSection">
           <div className="loginSec">
-            <Link to="/login">SignIn</Link>
-            <Link to="/signUp">Register</Link>
+            <Link to="/login" className={pathname === "/login" ? "active" : ""}>
+              Sign In
+            </Link>
+            <Link
+              to="/signUp"
+              className={pathname === "/signUp" ? "active" : ""}
+            >
+              Register
+            </Link>
           </div>
           <div className="cartLogo">
             <div>
-              <Link to="/cart">
+              <Link to="/cart" className={pathname === "/cart" ? "active" : ""}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -56,7 +78,7 @@ function HeaderNav() {
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className="bodyContainer">
         <Outlet />
       </div>
     </div>

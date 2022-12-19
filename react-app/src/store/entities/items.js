@@ -10,6 +10,7 @@ const initialState = {
   productsLoading: false,
   categoriesLoading: false,
   cartItems: [],
+  selectedCategory: null,
 };
 
 export const slice = createSlice({
@@ -70,6 +71,9 @@ export const slice = createSlice({
       );
       items.cartItems[itemIndexinCart].itemCount += 1;
     },
+    updateSelectedCategory: (items, { payload }) => {
+      items.selectedCategory = payload;
+    },
   },
 });
 export const searchItem = (value) => (dispatch) => {
@@ -94,6 +98,7 @@ const {
   bannersRequested,
   bannersRequestFailed,
   bannersDetailsReceive,
+  updateSelectedCategory,
 } = slice.actions;
 
 export const addItemToCart = (value) => (dispatch) => {
@@ -111,6 +116,12 @@ export const decreaseItemCount = (value) => (dispatch) => {
 export const increaseItemCount = (value) => (dispatch) => {
   dispatch({
     type: increaseCount.type,
+    payload: value,
+  });
+};
+export const updateCategory = (value) => (dispatch) => {
+  dispatch({
+    type: updateSelectedCategory.type,
     payload: value,
   });
 };
@@ -163,6 +174,10 @@ export const getProducts = createSelector(
 export const getCartItems = createSelector(
   (state) => state.entities.items,
   (cartItems) => cartItems?.cartItems
+);
+export const getSelectedCategory = createSelector(
+  (state) => state.entities.items,
+  (item) => item?.selectedCategory
 );
 
 export default slice.reducer;

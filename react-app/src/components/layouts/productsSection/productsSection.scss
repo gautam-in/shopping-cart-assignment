@@ -6,13 +6,11 @@
     /* justify-content: space-around; */
     overflow-y: scroll;
     overflow-x: hidden;
-    margin-top: 20px;
     .eachProduct {
         width: 210px;
         padding: 20px;
-        margin-bottom: 20px;
-        border-bottom: 1px solid gray;
-        border-bottom-style: dashed;
+        box-shadow: 10px 0 10px -14px rgb(115 115 115 / 62%);
+        height: 360px;
         .productName {
             display: -webkit-box;
             -webkit-line-clamp: 3;
@@ -52,6 +50,7 @@
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
+            padding-bottom: 20px;
             .buyBtn {
                 background-color: #e80a79;
                 color: white;
@@ -61,6 +60,8 @@
                 display: inline-block;
                 cursor: pointer;
             }
+            border-bottom: 1px solid gray;
+            border-bottom-style: dashed;
         }
     }
 }

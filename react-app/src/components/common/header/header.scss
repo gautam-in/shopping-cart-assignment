@@ -5,10 +5,7 @@
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     justify-content: space-between;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+
     .leftSection {
         display: flex;
         width: 35%;
@@ -19,6 +16,17 @@
             width: 40%;
             justify-content: space-around;
             align-items: flex-end;
+            .nav-link {
+                color: #000;
+
+                &.active {
+                    color: #e80a79;
+                }
+
+                &:hover {
+                    color: #e80a79;
+                }
+            }
         }
     }
     .rightSection {
