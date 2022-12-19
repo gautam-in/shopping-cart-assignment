@@ -5,6 +5,8 @@ import * as action from "../api";
 const initialState = {
   products: [],
   categories: [],
+  banners: [],
+  bannersLoading: false,
   productsLoading: false,
   categoriesLoading: false,
   cartItems: [],
@@ -27,6 +29,16 @@ export const slice = createSlice({
     categoriesDetailsReceive: (items, { payload }) => {
       items.categories = payload.data;
       items.categoriesLoading = false;
+    },
+    bannersRequested: (items, { payload }) => {
+      items.bannersLoading = true;
+    },
+    bannersRequestFailed: (items, { payload }) => {
+      items.bannersLoading = false;
+    },
+    bannersDetailsReceive: (items, { payload }) => {
+      items.banners = payload.data;
+      items.bannersLoading = false;
     },
     categoriesRequested: (items, { payload }) => {
       items.categoriesLoading = true;
@@ -79,6 +91,9 @@ const {
   addToCart,
   increaseCount,
   decreaseCount,
+  bannersRequested,
+  bannersRequestFailed,
+  bannersDetailsReceive,
 } = slice.actions;
 
 export const addItemToCart = (value) => (dispatch) => {
@@ -120,11 +135,25 @@ export const loadCategories = () => (dispatch, getState) => {
     })
   );
 };
+export const loadBanners = () => (dispatch, getState) => {
+  return dispatch(
+    action.apiCallBegan({
+      url: `http://localhost:5000/banners`,
+      onStart: bannersRequested.type,
+      onError: bannersRequestFailed.type,
+      onSuccess: bannersDetailsReceive.type,
+    })
+  );
+};
 
 //selectors
 export const getCategories = createSelector(
   (state) => state.entities.items,
   (products) => products.categories
+);
+export const getBanners = createSelector(
+  (state) => state.entities.items,
+  (products) => products.banners
 );
 
 export const getProducts = createSelector(

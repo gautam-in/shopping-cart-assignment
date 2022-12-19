@@ -1,7 +1,6 @@
-@import "../../../common_mixin.scss";
+@import '../../../common_mixin.scss';
 
-.headerComponent {
-    padding: 0 5%;
+.headerComponent{
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     justify-content: space-between;
@@ -9,11 +8,11 @@
     position: sticky;
     top: 0;
     z-index: 10;
-    .leftSection {
+    .leftSection{
         display: flex;
         width: 35%;
         justify-content: space-between;
-        .items {
+        .items{
             padding-bottom: 20px;
             display: flex;
             width: 40%;
@@ -21,11 +20,11 @@
             align-items: flex-end;
         }
     }
-    .rightSection {
+    .rightSection{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        .cartLogo {
+        .cartLogo{
             height: 40px;
             background: gray;
             justify-content: space-around;
@@ -33,10 +32,13 @@
             align-items: center;
             padding: 0 40px 0 50px;
         }
-        .loginSec {
+        .loginSec{
             display: flex;
             justify-content: space-around;
             padding: 10px;
         }
+
     }
+
+    
 }

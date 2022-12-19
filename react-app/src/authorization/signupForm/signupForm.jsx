@@ -63,7 +63,7 @@ function SignUpForm() {
         <p>We do not share your personal details with anyone</p>
       </div>
       <div className="rightSection">
-        <form onSubmit={handleSubmit} novalidate="novalidate">
+        <form onSubmit={handleSubmit} noValidate="novalidate">
           <div>
             <input
               type="text"
