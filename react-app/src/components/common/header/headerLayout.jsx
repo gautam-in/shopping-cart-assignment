@@ -5,6 +5,7 @@ import { getCartItems } from "../../../store/entities/items";
 import { useLocation } from "react-router-dom";
 
 import "./header.scss";
+import { isMobile } from "../../../utils";
 
 function HeaderNav() {
   const cartItems = useSelector(getCartItems);
@@ -18,6 +19,7 @@ function HeaderNav() {
     });
     return `${itemcount} items`;
   };
+  console.log("isMobile", isMobile);
   return (
     <div>
       <div className="headerComponent">
@@ -28,22 +30,24 @@ function HeaderNav() {
             </Link>
           </div>
 
-          <div className="items">
-            <Link
-              className={"nav-link " + (pathname === "/" ? "active" : "")}
-              to="/"
-            >
-              Home
-            </Link>
-            <Link
-              className={
-                "nav-link " + (pathname === "/products" ? "active" : "")
-              }
-              to="/products"
-            >
-              Products
-            </Link>
-          </div>
+          {!isMobile && (
+            <div className="items">
+              <Link
+                className={"nav-link " + (pathname === "/" ? "active" : "")}
+                to="/"
+              >
+                Home
+              </Link>
+              <Link
+                className={
+                  "nav-link " + (pathname === "/products" ? "active" : "")
+                }
+                to="/products"
+              >
+                Products
+              </Link>
+            </div>
+          )}
         </div>
 
         <div className="rightSection">

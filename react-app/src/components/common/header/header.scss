@@ -8,8 +8,14 @@
 
     .leftSection {
         display: flex;
-        width: 35%;
+
         justify-content: space-between;
+        @include tablet {
+            width: 50%;
+        }
+        @include desktop {
+            width: 35%;
+        }
         .items {
             padding-bottom: 20px;
             display: flex;
@@ -39,7 +45,7 @@
             justify-content: space-around;
             display: flex;
             align-items: center;
-            padding: 0 40px 0 50px;
+            padding: 0 20px 0 20px;
         }
         .loginSec {
             display: flex;

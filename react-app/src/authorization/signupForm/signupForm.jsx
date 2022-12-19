@@ -61,7 +61,7 @@ function SignUpForm() {
     <>
       <div className="formContainer">
         <div className="leftSection">
-          <h1>Signup</h1>
+          <h2>Signup</h2>
           <p>We do not share your personal details with anyone</p>
         </div>
         <div className="rightSection">

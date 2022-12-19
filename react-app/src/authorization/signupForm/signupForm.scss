@@ -2,20 +2,36 @@
 
 .formContainer {
   display: flex;
+  @include phone {
+    display: block;
+  }
   .leftSection {
     width: 20%;
     margin-right: 5%;
     margin-left: 5%;
+    @include phone {
+      width: 90%;
+    }
   }
   .rightSection {
     width: 30%;
     margin-right: 5%;
+    @include phone {
+      width: 90%;
+      margin: auto;
+    }
+    @include tablet {
+      width: 45%;
+    }
     .submitbtn {
       width: 100%;
     }
     form {
       overflow: hidden;
       div {
+        @include phone {
+          margin-top: 6px;
+        }
         margin-top: 2rem;
         font-size: 1rem;
         height: 3rem;
