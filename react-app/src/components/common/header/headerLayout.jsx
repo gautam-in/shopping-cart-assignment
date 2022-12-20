@@ -33,14 +33,14 @@ function HeaderNav() {
           {!isMobile && (
             <div className="items">
               <Link
-                className={"nav-link " + (pathname === "/" ? "active" : "")}
+                className={"link " + (pathname === "/" ? "active" : "")}
                 to="/"
               >
                 Home
               </Link>
               <Link
                 className={
-                  "nav-link " + (pathname === "/products" ? "active" : "")
+                  "link " + (pathname === "/products" ? "active" : "")
                 }
                 to="/products"
               >

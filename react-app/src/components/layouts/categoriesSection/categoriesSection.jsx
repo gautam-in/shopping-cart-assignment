@@ -1,14 +1,20 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCategories, updateCategory } from "../../../store/entities/items";
+import {
+  getCategories,
+  getSelectedCategory,
+  updateCategory,
+} from "../../../store/entities/items";
 import { isMobile } from "../../../utils";
 import Footer from "../../common/footer/footer";
 import "./categoriesSection.scss";
 
 function CategoriesSection() {
   const dispatch = useDispatch();
-
+  const selectedCategory = useSelector(getSelectedCategory);
   const categories = useSelector(getCategories);
+  let categoryName = categories.filter((item) => item.id === selectedCategory);
+  // console.log(categoryName[0].name);
 
   return (
     <>
@@ -19,7 +25,7 @@ function CategoriesSection() {
               name="categories"
               onChange={(e) => dispatch(updateCategory(e.target.value))}
               defaultValue={"Categories"}
-              value={(e) => e.target.name}
+              // value={(e) => categoryName[0]?.name}
             >
               <option value="Categories" disabled>
                 Categories
@@ -34,7 +40,11 @@ function CategoriesSection() {
         ) : (
           categories.map((cat, index) => (
             <div
-              className="eachCategory "
+              className={
+                cat.id === selectedCategory
+                  ? "selectedCategory eachCategory"
+                  : "eachCategory"
+              }
               key={cat?.id}
               onClick={() => dispatch(updateCategory(cat.id))}
             >

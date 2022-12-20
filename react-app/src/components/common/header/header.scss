@@ -5,7 +5,18 @@
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     justify-content: space-between;
+    .link {
+        text-decoration: none;
+        color: #000;
 
+        &.active {
+            color: #e80a79;
+        }
+
+        &:hover {
+            color: #e80a79;
+        }
+    }
     .leftSection {
         display: flex;
 
@@ -34,6 +45,7 @@
             justify-content: space-around;
             align-items: flex-end;
             .nav-link {
+                text-decoration: none;
                 color: #000;
 
                 &.active {
@@ -49,22 +61,30 @@
     .rightSection {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        align-items: center;
         .cartLogo {
             height: 40px;
             // background: gray;
-            justify-content: space-around;
+            // justify-content: space-around;
             display: flex;
             // align-items: center;
             padding: 0 20px 0 20px;
             @include phone {
                 // padding:5px;
             }
+            link {
+                text-decoration: none;
+            }
         }
         .loginSec {
             display: flex;
             justify-content: space-around;
             padding: 10px;
+            width: 160px;
+            @include phone {
+                padding: 10px 0 10p 0;
+                width: 122px;
+            }
         }
     }
 }
