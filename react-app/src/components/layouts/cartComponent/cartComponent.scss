@@ -93,31 +93,31 @@
         }
     }
     .bottomSec {
-        // position: absolute;
-        // bottom: 0;
-        height: 40px;
         padding: 20px;
         text-align: center;
         box-shadow: rgb(14 30 37 / 12%) 0px 2px 4px 0px, rgb(14 30 37 / 32%) 0px 2px 16px 0px;
-
+        margin-bottom: 20px;
+        margin-top: 30px;
         @include phone {
             margin-top: 30px;
         }
         .butn {
+            margin-top: 5px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             width: 100%;
             background-color: #e80a79;
             color: white;
             font-size: 14px;
             padding: 8px 10px;
             border: none;
-            // display: inline-block;
             cursor: pointer;
-
             @include phone {
                 font-size: 11px;
                 padding: 5px;
+            }
+            .proceedText {
+                margin-right: 10px;
             }
         }
     }
@@ -134,7 +134,7 @@
             display: flex;
             justify-content: center;
             margin-bottom: 5px;
-            padding: 5px;
+            padding: 10px;
             font-size: 14px;
         }
 

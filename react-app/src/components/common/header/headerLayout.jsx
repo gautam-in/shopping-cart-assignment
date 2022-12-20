@@ -39,9 +39,7 @@ function HeaderNav() {
                 Home
               </Link>
               <Link
-                className={
-                  "link " + (pathname === "/products" ? "active" : "")
-                }
+                className={"link " + (pathname === "/products" ? "active" : "")}
                 to="/products"
               >
                 Products

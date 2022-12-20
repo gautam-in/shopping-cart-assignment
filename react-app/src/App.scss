@@ -18,7 +18,7 @@ body {
     padding: 8px 10px;
     border: none;
     display: inline-block;
-
+    cursor: pointer;
     @include phone {
         font-size: 11px;
         padding: 5px;

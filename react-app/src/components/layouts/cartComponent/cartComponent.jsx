@@ -88,7 +88,7 @@ function CartComponent() {
         <div className={"bottomSec"}>
           <div>You won't find it cheaper anywhere</div>
           <button className="butn">
-            <div>Proceed to Checkout</div>
+            <div className="proceedText">Proceed to Checkout</div>
             <div>{totalCartPrice()}</div>
           </button>
         </div>
