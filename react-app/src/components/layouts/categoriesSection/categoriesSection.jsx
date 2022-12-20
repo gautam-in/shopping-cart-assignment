@@ -19,7 +19,7 @@ function CategoriesSection() {
               name="categories"
               onChange={(e) => dispatch(updateCategory(e.target.value))}
               defaultValue={"Categories"}
-              // value={id}
+              value={(e) => e.target.name}
             >
               <option value="Categories" disabled>
                 Categories
@@ -43,7 +43,6 @@ function CategoriesSection() {
           ))
         )}
       </div>
-      <Footer />
     </>
   );
 }
