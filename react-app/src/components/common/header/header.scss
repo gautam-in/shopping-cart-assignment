@@ -5,6 +5,12 @@
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    width: 90%;
+    z-index: 10;
+    background: white;
     .link {
         text-decoration: none;
         color: #000;
@@ -87,4 +93,10 @@
             }
         }
     }
+}
+.bodyContainer {
+    height: 90%;
+    position: absolute;
+    width: 100%;
+    top: 90px;
 }

@@ -70,7 +70,7 @@ function CartComponent() {
               </div>
             </div>
             <div className={"rightSec"}>
-              <div className={"desc"}>{item.name} </div>
+              <div className={"itemDescription desc"}>{item.name} </div>
               <div className={"addRemove"}>
                 <div className={"addRemoveLeftSec"}>
                   {itemCount(item)} <span className={"xbtn"}>X</span> Rs.

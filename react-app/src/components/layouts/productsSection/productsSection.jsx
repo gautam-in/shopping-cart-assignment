@@ -63,7 +63,6 @@ function ProductsSection() {
           </div>
         ))}
       </div>
-      <Footer />
     </>
   );
 }
