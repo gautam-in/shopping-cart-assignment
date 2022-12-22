@@ -14,6 +14,7 @@ export const ProductListPage = () => {
     const category = useSelector(state => state.category);
     const list = useSelector(state => state.product);
     const dispatch = useDispatch();
+    
     useEffect(() => {
         categoryId && dispatch(getFilteredData(categoryId))
     }, [categoryId])

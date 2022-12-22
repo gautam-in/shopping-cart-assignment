@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import Col from 'react-bootstrap/esm/Col'
 import Row from 'react-bootstrap/esm/Row'
-import { Form } from "react-bootstrap";
+import { FloatingLabel, Form } from 'react-bootstrap';
+
 import './login.scss';
-import { useState } from 'react';
-import { useEffect } from 'react';
 
 export const Signin = () => {
+  const navigate = useNavigate();
   const [formFields, setFormFields] = useState({
     email: "",
     password: "",
@@ -18,31 +19,55 @@ export const Signin = () => {
   })
 
   const onHandleChange = e => {
-    const nextFormState = {
+    const errors = {
+      ...fieldValidationErrors,
+      [e.target.name]: validateField(e.target.name, e.target.value)
+    }
+    const fields = {
       ...formFields,
-      [e.target.name]: e.target.value,
-    };
-    setFormFields(nextFormState);
-    validateField(e.target.name, e.target.value)
+      [e.target.name]: e.target.value
+    }
+    setFormValidationErrors(errors)
+    setFormFields(fields)
   };
 
   const validateField = (fieldName, value) => {
-    switch(fieldName) {
+    let validateValue;
+    switch (fieldName) {
       case 'email':
         let emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-        fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+        validateValue = emailValid ? '' : 'invalid';
         break;
       case 'password':
         let passwordValid = value.length >= 6;
-        fieldValidationErrors.password = passwordValid ? '': ' is too short';
+        validateValue = passwordValid ? '' : ' is too short';
         break;
       default:
         break;
     }
-    setFormValidationErrors(fieldValidationErrors);
+    return validateValue;
   }
 
-  
+  const onSubmit = e => {
+    e.preventDefault();
+
+    let validationErrors = {};
+    Object.keys(formFields).forEach(name => {
+      const error = validateField(name, formFields[name]);
+      if (error && error.length > 0) {
+        validationErrors[name] = error;
+      }
+    });
+
+    if (Object.keys(validationErrors).length > 0) {
+      setFormValidationErrors({ ...validationErrors });
+      return;
+    }
+    if (formFields.firstname && formFields.lastname && formFields.email && formFields.password && formFields.confirmPassword) {
+      navigate('/home');
+    }
+  };
+
   return (
     <section className='sign-in'>
       <Row>
@@ -52,30 +77,34 @@ export const Signin = () => {
         </Col>
 
         <Col>
-          <Form>
+          <Form onSubmit={onSubmit}>
             <Form.Group
-              className="form-group mb-5">
-              <Form.Control type="email" placeholder=" " required onChange={onHandleChange} name="email" />
-              <Form.Label>
-                <span>Email</span>
-              </Form.Label>
+              className="form-group mb-4">
+              <FloatingLabel
+                controlId="email"
+                label="Email"
+              >
+                <Form.Control type="email" placeholder="Email" name="email" onChange={onHandleChange} />
+              </FloatingLabel>
               {fieldValidationErrors.email ? (
-              <Form.Text className="text-muted">
-                Email is not Valid.
-              </Form.Text>
+                <Form.Text className="text-muted text-red">
+                  Email is not Valid.
+                </Form.Text>
               ) : null}
             </Form.Group>
 
             <Form.Group
               className="form-group mb-5">
-              <Form.Control type="password" placeholder="" required onChange={onHandleChange} name="password"/>
-              <Form.Label>
-                <span>Password</span>
-              </Form.Label>
+              <FloatingLabel
+                controlId="password"
+                label="Password"
+              >
+                <Form.Control type="password" placeholder="Password" name="password" onChange={onHandleChange} />
+              </FloatingLabel>
               {fieldValidationErrors.password ? (
-              <Form.Text className="text-muted">
-                Password is not Valid.
-              </Form.Text>
+                <Form.Text className="text-muted text-red">
+                  Password is not Valid.
+                </Form.Text>
               ) : null}
             </Form.Group>
             <button className='login-btn'>Login</button>

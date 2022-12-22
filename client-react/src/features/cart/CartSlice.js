@@ -11,11 +11,9 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart(state, action) {
-            console.log('action.payload ', action.payload);
             state.loading = true;
             const cartArr = [...state.cart]
             const itemIndex = cartArr.findIndex(item => item.id === action.payload.id);
-            console.log('itemIndex ', itemIndex);
 
             if (itemIndex > -1) {
                 cartArr[itemIndex].qty++;

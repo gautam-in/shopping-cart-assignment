@@ -28,10 +28,10 @@ export const Header = (props) => {
       <div className='d-flex flex-row flex-md-column'>
         <Nav className="flex-row d-none d-md-flex">
           <Nav.Item>
-            <Nav.Link href="/signin">Sign In</Nav.Link>
+            <Nav.Link as={Link} to="/signin">Sign In</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKey="/register">Register</Nav.Link>
+            <Nav.Link as={Link} to="/signup">Register</Nav.Link>
           </Nav.Item>
         </Nav>
         <button className='cart-btn' onClick={() => setModalShow(true)}>

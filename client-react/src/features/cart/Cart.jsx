@@ -18,8 +18,6 @@ export const Cart = (props) => {
         dispatch(getCart())
     }, [])
     const cartList = useSelector(state => state.cart, shallowEqual);
-    console.log(cartList)
-
 
     useEffect(() => {
         let totalAmount = 0;

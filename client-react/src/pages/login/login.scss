@@ -5,12 +5,6 @@
         padding-top: 40px;
     }
 
-    .form-control {
-        &:focus {
-            box-shadow: none;
-        }
-    }
-
     .login-btn {
         border: 0;
         color: #fff;
@@ -18,76 +12,47 @@
         padding: 10px 20px;
         width: 100%;
         background: #bf2957;
-    }
 
-    .form-group {
-
-        input:focus+label>span,
-        input:valid+label>span,
-        input[type="email"]:not(:placeholder-shown)+label>span {
-            top: -55px;
-            font-size: 15px;
-            color: #49cdda;
-        }
-
-        input {
-            font-size: 15px;
-            font-weight: 300;
-            padding-left: 0;
-            border-radius: 0px;
-            margin: 0;
-            border: none;
-            width: 100%;
-            border-bottom: 1px solid #ccc;
-            background: rgba(0, 0, 0, 0);
-            transition: padding-top 0.2s ease, margin-top 0.2s ease;
-            overflow-x: hidden;
-
-            &::-webkit-input-placeholder,
-            &::-ms-input-placeholder,
-            &:-ms-input-placeholder,
-            &::-moz-placeholder,
-            &:-moz-placeholder,
-            &::placeholder {
-                color: transparent;
-                opacity: 1;
-            }
-        }
-
-        input+label>span {
-            font-weight: 300;
-            margin: 0;
-            position: absolute;
-            color: #8f8f8f;
-            font-size: 15px;
-            top: -35px;
-            left: 0px;
-            z-index: -1;
-            -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
-            transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
-        }
-
-        input:focus,
-        input:valid {
-            padding-top: 5px;
+        &:disabled {
+            opacity: 0.8;
         }
     }
-}
 
-.form-group input+label,
-textarea.question+label {
-    display: block;
-    position: relative;
-    white-space: nowrap;
-    padding: 0;
-    margin: 0;
-    width: 400px;
-    -webkit-transition: width 0.4s ease;
-    transition: width 0.4s ease;
-    height: 0px;
-}
+    .form-control {
+        border-radius: 0;
+        border: 0;
+        border-bottom: 1px solid #ced4da;
 
-.form-group input:valid+label,
-textarea.question:valid+label {
-    border-color: green;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .form-floating {
+        >.form-control {
+            padding: 1rem 0;
+        }
+
+        >label {
+            padding: 1rem 0;
+            color: #959fa1;
+            top: 5px;
+        }
+
+        >.form-control-plaintext~label,
+        >.form-control:focus~label,
+        >.form-control:not(:placeholder-shown)~label,
+        >.form-select~label {
+            transform: scale(.85) translateY(-1.3rem) translateX(0.15rem);
+            color: #2db9c3;
+            font-weight: 500;
+        }
+
+        >.form-control-plaintext:focus,
+        >.form-control-plaintext:not(:placeholder-shown),
+        >.form-control:focus,
+        >.form-control:not(:placeholder-shown) {
+            border-bottom: 2px solid #2db9c3;
+        }
+    }
 }
