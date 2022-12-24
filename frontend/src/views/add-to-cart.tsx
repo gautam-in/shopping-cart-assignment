@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-import { getBanners } from "../apis/banner";
+import { AddToCart } from "../apis/add-to-cart";
 
 type Props = {};
 
-export const Banners = (props: Props) => {
+export const Cart = (props: Props) => {
   useEffect(() => {
-    getBanners();
+    AddToCart();
   });
 
   return <div>Banners</div>;

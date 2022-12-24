@@ -1,4 +1,3 @@
-import "./App.scss";
 import Axios from "axios";
 import {
   Route,
@@ -6,9 +5,10 @@ import {
   BrowserRouter as Router,
   Navigate,
 } from "react-router-dom";
-import { Products } from "./views/Products";
-import { Categories } from "./views/Categories";
-import Banners from "./views/Banners";
+import { Products } from "./views/products";
+import { Categories } from "./views/categories";
+import { Banners } from "./views/banners";
+import { Cart } from "./views/add-to-cart";
 
 Axios.defaults.baseURL = process.env.REACT_APP_API;
 
@@ -26,7 +26,8 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/banners" element={<Banners />} />
-        <Route path="*" element={<Navigate to="/baners"></Navigate>} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<Navigate to="/banners"></Navigate>} />
       </Routes>
     </Router>
   );
