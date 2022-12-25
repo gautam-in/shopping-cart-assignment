@@ -1,15 +1,21 @@
 # XT Shopping Cart Assignment
 
-This is the base folder for the shopping cart exercise. You will have all the static assets and mock server responses available in this repo.
+This is the base folder for the shopping cart exercise. 
 
-## Getting Started
+### Steps to start the project:
 
-Clone this repo and run following command for starting the mock server:
+- Clone this repo and run following command for starting the mock server:
 
-```
-npm install
-npm run start
-# or
-yarn install
-yarn start
-```
+    ```cmd
+        npm install
+        npm run start
+    ```
+
+    or
+
+    ```cmd
+        yarn install
+        yarn start
+    ```
+
+- To run the project, please follow steps in [Shopping cart - frontend](/client-react).

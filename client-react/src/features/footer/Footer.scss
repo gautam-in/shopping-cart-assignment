@@ -1,0 +1,11 @@
+@import '../../Variables.scss';
+
+footer {
+    background-color: $grey-1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    .app-container {
+        padding: 20px 0!important;
+    }
+}

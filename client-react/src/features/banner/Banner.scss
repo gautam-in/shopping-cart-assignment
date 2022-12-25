@@ -1,0 +1,53 @@
+@import '../../Variables.scss';
+
+.banner-wrapper {
+    margin-top: 10px;
+    .carousel-control-next,
+    .carousel-control-prev {
+        width: auto;
+        text-decoration: none;
+    }
+
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        background-color: $black;
+        opacity: 0.3;
+        color: $white;
+        font-size: 10px;
+        width: 2.5rem;
+        padding: 8px 6px;
+
+            display: none;
+
+            @media only screen and (min-width: 768px) {
+                display: inline-block;
+            }
+    }
+
+    .carousel-control-next-icon {
+        background-image: none;
+
+        &::after {
+            content: "NEXT";
+        }
+    }
+
+    .carousel-control-prev-icon {
+        background-image: none;
+
+        &::after {
+            content: "PREV";
+        }
+    }
+
+    .carousel-indicators {
+        margin-bottom: 0.5rem;
+    }
+
+    .carousel-indicators [data-bs-target] {
+        width: 3px;
+        border-radius: 50%;
+        margin-left: 10px;
+        background-color: $black;
+    }
+}

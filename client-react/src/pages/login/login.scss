@@ -1,0 +1,60 @@
+@import '../../Variables.scss';
+
+.sign-in {
+    padding-top: 60px;
+
+    .text-align-top {
+        padding-top: 40px;
+    }
+
+    .login-btn {
+        border: 0;
+        color: $white;
+        font-size: 14px;
+        padding: 10px 20px;
+        width: 100%;
+        background: $pink;
+
+        &:disabled {
+            opacity: 0.8;
+        }
+    }
+
+    .form-control {
+        border-radius: 0;
+        border: 0;
+        border-bottom: 1px solid $grey-4;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .form-floating {
+        >.form-control {
+            padding: 1rem 0;
+        }
+
+        >label {
+            padding: 1rem 0;
+            color: $grey-5;
+            top: 5px;
+        }
+
+        >.form-control-plaintext~label,
+        >.form-control:focus~label,
+        >.form-control:not(:placeholder-shown)~label,
+        >.form-select~label {
+            transform: scale(.85) translateY(-1.3rem) translateX(0.15rem);
+            color: $blue;
+            font-weight: 500;
+        }
+
+        >.form-control-plaintext:focus,
+        >.form-control-plaintext:not(:placeholder-shown),
+        >.form-control:focus,
+        >.form-control:not(:placeholder-shown) {
+            border-bottom: 2px solid $blue;
+        }
+    }
+}

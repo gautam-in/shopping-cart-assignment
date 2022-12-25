@@ -1,0 +1,40 @@
+@import './Variables.scss';
+/* Only till tablet devices */
+
+.app-container.container {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    max-width: 1190px;
+  }
+}
+
+.grey-bg {
+  background-color: $grey-1;
+}
+
+.form-text.text-red {
+  color: $red !important;
+  font-weight: bold;
+}
+
+.seperator-img {
+  background-image: url('http://127.0.0.1:5500/static/images/seperator.png');
+  width: 100%;
+  height: 34px;    
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.mb-64 {
+  margin-bottom: 64px;
+}
