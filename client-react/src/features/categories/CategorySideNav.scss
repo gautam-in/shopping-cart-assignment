@@ -1,17 +1,32 @@
+@import '../../Variables.scss';
+
 .side-nav {
-    --bs-list-group-bg: #eaeaeb;
+    --bs-list-group-bg: $grey-1;
     --bs-list-group-border-radius: 0;
     --bs-list-group-border-width: 0;
     border-top: 0;
+    height: 100%;
+    min-height: 100vh;
+    padding: 0 20px;
 
     .list-group-item {
-        border-bottom: 1px solid #d5d5d5;
-        color: #7b7b7b;
+        border-bottom: 1px solid $grey-6;
+        color: $grey-7;
         font-size: 14px;
         padding: 10px 20px 10px 30px;
 
         @media only screen and (min-width: 1200px) {
             font-size: 16px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+    .active {
+        .list-group-item {
+            color: $grey-8;
+            font-weight: bold;
         }
     }
 }

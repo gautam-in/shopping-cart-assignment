@@ -1,3 +1,5 @@
+@import '../../Variables.scss';
+
 .sign-in {
     padding-top: 60px;
 
@@ -7,11 +9,11 @@
 
     .login-btn {
         border: 0;
-        color: #fff;
+        color: $white;
         font-size: 14px;
         padding: 10px 20px;
         width: 100%;
-        background: #bf2957;
+        background: $pink;
 
         &:disabled {
             opacity: 0.8;
@@ -21,7 +23,7 @@
     .form-control {
         border-radius: 0;
         border: 0;
-        border-bottom: 1px solid #ced4da;
+        border-bottom: 1px solid $grey-4;
 
         &:focus {
             box-shadow: none;
@@ -35,7 +37,7 @@
 
         >label {
             padding: 1rem 0;
-            color: #959fa1;
+            color: $grey-5;
             top: 5px;
         }
 
@@ -44,7 +46,7 @@
         >.form-control:not(:placeholder-shown)~label,
         >.form-select~label {
             transform: scale(.85) translateY(-1.3rem) translateX(0.15rem);
-            color: #2db9c3;
+            color: $blue;
             font-weight: 500;
         }
 
@@ -52,7 +54,7 @@
         >.form-control-plaintext:not(:placeholder-shown),
         >.form-control:focus,
         >.form-control:not(:placeholder-shown) {
-            border-bottom: 2px solid #2db9c3;
+            border-bottom: 2px solid $blue;
         }
     }
 }

@@ -14,15 +14,13 @@ export const ProductListView = (props) => {
     dispatch(addToCart(item))
   }
 
-  const BASE_URL = "http://127.0.0.1:5500";
-
   return (
-    <div className='product-container'>
+    <div className='product-container mb-64'>
       {list.map((ele, index) => (
         <Card key={index} className="product">
           <Card.Title>{ele.name}</Card.Title>
           <div className='card-layout'>
-            <div className='card-img-container'><Card.Img src={BASE_URL + ele.imageURL} alt={ele.name} /></div>
+            <div className='card-img-container'><Card.Img src={process.env.REACT_APP_BASE_URL + ele.imageURL} alt={ele.name} /></div>
             <Card.Body>
               <Card.Text>
                 {ele.description}

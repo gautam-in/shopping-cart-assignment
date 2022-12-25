@@ -1,15 +1,21 @@
+@import '../../Variables.scss';
+
 .cart {
     .modal-dialog {
-        margin-right: unset;
-        top: 48px;
-        height: calc(100% - 48px);
-        margin-top: 0;
+        top: 0;
+        height: 100%;
+        margin: 0;
+        @media only screen and (min-width: 768px) {
+            top: 76px;
+            height: calc(100% - 76px);
+            margin-left: auto;
+        }
     }
 
     .modal-header {
-        background-color: #000;
+        background-color: $black;
         border-radius: 0;
-        color: #fff;
+        color: $white;
 
         .btn-close {
             opacity: 1;
@@ -26,10 +32,11 @@
     }
 
     .cart-grey-bg {
-        background-color: #eeeeee;
+        background-color: $grey-2;
     }
+
     .modal-footer {
-        background-color: #fff;
+        background-color: $white;
     }
 
     .cart-adv {
@@ -43,9 +50,9 @@
 
     .cart-product {
         padding: 20px;
-        background-color: #fff;
-        
-    }   
+        background-color: $white;
+
+    }
 
     // opertor
     .product-operator-container {
@@ -54,8 +61,9 @@
         justify-content: space-between;
         width: 70%;
         align-items: center;
+
         @media only screen and (min-width: 992px) {
-        width: 38%;
+            width: 90%;
 
         }
 
@@ -65,20 +73,19 @@
             border-radius: 50%;
             background-color: rgba(186, 2, 79, 0.894);
             border: 0px;
-            color: white;
+            color: $white;
             position: relative;
 
             &::after {
                 content: "-";
                 position: absolute;
-                top: 50%;
+                top: 40%;
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
 
             &.plus::after {
                 content: "+";
-                top: 40%;
             }
         }
 
@@ -93,7 +100,7 @@
     // footer
     .cart-checkout-btn {
         background-color: rgba(186, 2, 79, 0.894);
-        color: white;
+        color: $white;
         display: flex;
         justify-content: space-between;
         padding: 8px 16px;

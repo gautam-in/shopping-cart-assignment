@@ -10,12 +10,11 @@ import './Cart.scss';
 export const CartItem = (props) => {
     const {item} = props;
     const dispatch = useDispatch()
-    const BASE_URL = "http://127.0.0.1:5500";
 
   return (
     <div className='mb-3 cart-product'><Row>
     <Col xs={3} sm={2}>
-        <img src={BASE_URL + item.imageURL} alt="company logo" width="100%" />
+        <img src={process.env.REACT_APP_BASE_URL + item.imageURL} width="100%" alt={item.name}/>
     </Col>
     <Col>
         <h6 className='cart-product-title'>{item.name}</h6>

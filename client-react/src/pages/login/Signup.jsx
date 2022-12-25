@@ -86,7 +86,7 @@ export const Signup = () => {
 
 
   return (
-    <section className='sign-in'>
+    <div className='sign-in mb-64'>
       <Row>
         <Col className='text-align-top'>
           <h3><strong>Login</strong></h3>
@@ -101,11 +101,11 @@ export const Signup = () => {
                 controlId="firstname"
                 label="First name"
               >
-                <Form.Control type="text" placeholder="First name" name="firstname" onChange={onHandleChange} />
+                <Form.Control type="text" placeholder="First name" name="firstname" onChange={onHandleChange} aria-required="true"/>
               </FloatingLabel>
               {fieldValidationErrors.firstname ? (
-                <Form.Text className="text-muted text-red">
-                  First name is not Valid.
+                <Form.Text className="text-muted text-red" aria-invalid="true">
+                  First name is not valid.
                 </Form.Text>
               ) : null}
             </Form.Group>
@@ -116,11 +116,11 @@ export const Signup = () => {
                 controlId="lastname"
                 label="Last name"
               >
-                <Form.Control type="text" placeholder="Last name" name="lastname" onChange={onHandleChange} />
+                <Form.Control type="text" placeholder="Last name" name="lastname" onChange={onHandleChange} aria-required="true"/>
               </FloatingLabel>
               {fieldValidationErrors.lastname ? (
-                <Form.Text className="text-muted text-red">
-                  Last name is not Valid.
+                <Form.Text className="text-muted text-red" aria-invalid="true">
+                  Last name is not valid.
                 </Form.Text>
               ) : null}
             </Form.Group>
@@ -131,11 +131,11 @@ export const Signup = () => {
                 controlId="floatingInput"
                 label="email"
               >
-                <Form.Control type="email" placeholder="Email" name="email" onChange={onHandleChange} />
+                <Form.Control type="email" placeholder="Email" name="email" onChange={onHandleChange} aria-required="true" />
               </FloatingLabel>
               {fieldValidationErrors.email ? (
-                <Form.Text className="text-muted text-red">
-                  Email is not Valid.
+                <Form.Text className="text-muted text-red" aria-invalid="true">
+                  Email is not valid.
                 </Form.Text>
               ) : null}
             </Form.Group>
@@ -146,11 +146,11 @@ export const Signup = () => {
                 controlId="password"
                 label="Password"
               >
-                <Form.Control type="password" placeholder="Password" name="password" onChange={onHandleChange} />
+                <Form.Control type="password" placeholder="Password" name="password" onChange={onHandleChange} aria-required="true"/>
               </FloatingLabel>
               {fieldValidationErrors.password ? (
-                <Form.Text className="text-muted text-red">
-                  Password is not Valid.
+                <Form.Text className="text-muted text-red" aria-invalid="true">
+                  Password is not valid.
                 </Form.Text>
               ) : null}
             </Form.Group>
@@ -161,11 +161,11 @@ export const Signup = () => {
                 controlId="confirmPassword"
                 label="Confirm password"
               >
-                <Form.Control type="password" placeholder="Confirm password" name="confirmPassword" onChange={onHandleChange} />
+                <Form.Control type="password" placeholder="Confirm password" name="confirmPassword" onChange={onHandleChange} aria-required="true"/>
               </FloatingLabel>
               {fieldValidationErrors.confirmPassword ? (
-                <Form.Text className="text-muted text-red">
-                  Confirm password is not Valid.
+                <Form.Text className="text-muted text-red" aria-invalid="true">
+                  Confirm password is not valid.
                 </Form.Text>
               ) : null}
             </Form.Group>
@@ -174,6 +174,6 @@ export const Signup = () => {
           </Form>
         </Col>
       </Row>
-    </section>
+    </div>
   )
 }

@@ -69,7 +69,7 @@ export const Signin = () => {
   };
 
   return (
-    <section className='sign-in'>
+    <div className='sign-in mb-64'>
       <Row>
         <Col className='text-align-top'>
           <h3><strong>Login</strong></h3>
@@ -84,11 +84,11 @@ export const Signin = () => {
                 controlId="email"
                 label="Email"
               >
-                <Form.Control type="email" placeholder="Email" name="email" onChange={onHandleChange} />
+                <Form.Control type="email" placeholder="Email" name="email" onChange={onHandleChange} aria-required="true"/>
               </FloatingLabel>
               {fieldValidationErrors.email ? (
-                <Form.Text className="text-muted text-red">
-                  Email is not Valid.
+                <Form.Text className="text-muted text-red" aria-invalid="true">
+                  Email is not valid.
                 </Form.Text>
               ) : null}
             </Form.Group>
@@ -99,11 +99,11 @@ export const Signin = () => {
                 controlId="password"
                 label="Password"
               >
-                <Form.Control type="password" placeholder="Password" name="password" onChange={onHandleChange} />
+                <Form.Control type="password" placeholder="Password" name="password" onChange={onHandleChange} aria-required="true"/>
               </FloatingLabel>
               {fieldValidationErrors.password ? (
-                <Form.Text className="text-muted text-red">
-                  Password is not Valid.
+                <Form.Text className="text-muted text-red" aria-invalid="true">
+                  Password is not valid.
                 </Form.Text>
               ) : null}
             </Form.Group>
@@ -111,6 +111,6 @@ export const Signin = () => {
           </Form>
         </Col>
       </Row>
-    </section>
+    </div>
   )
 }

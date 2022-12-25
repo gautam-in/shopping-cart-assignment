@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
+import { serverAPI } from '../../utils/URL'
+
 const initialState = {
   loading: false,
   categoryList: [],
@@ -10,7 +12,7 @@ const initialState = {
 // Generates pending, fulfilled and rejected action types
 export const fetchCategoryList = createAsyncThunk('fetchCategory', () => {
   return axios
-    .get('http://127.0.0.1:5500/server/categories/index.get.json')
+    .get(process.env.REACT_APP_BASE_URL + serverAPI.categoryURL)
     .then(response => response.data)
 })
 

@@ -1,5 +1,7 @@
-import axios from 'axios'
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import axios from 'axios';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+
+import { serverAPI } from '../../utils/URL';
 
 const initialState = {
   loading: false,
@@ -11,7 +13,7 @@ const initialState = {
 // Generates pending, fulfilled and rejected action types
 export const fetchProductList = createAsyncThunk('fetchProduct', () => {
   return axios
-    .get('http://127.0.0.1:5500/server/products/index.get.json')
+    .get(process.env.REACT_APP_BASE_URL + serverAPI.productURL)
     .then(response => response.data)
 })
 

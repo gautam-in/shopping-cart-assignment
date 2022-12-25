@@ -3,14 +3,13 @@ import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 
+import { imageURL } from '../../utils/URL';
 import { getCart } from './CartSlice'
 import { CartItem } from './CartItem';
 
 import './Cart.scss';
 
 export const Cart = (props) => {
-    const BASE_URL = "http://127.0.0.1:5500";
-    const LOWEST_PRICE_URL = "/static/images/lowest-price.png"
     const [totalPrice, setTotalPrice] = useState(0);
 
     const dispatch = useDispatch()
@@ -31,7 +30,7 @@ export const Cart = (props) => {
     return (
         <Modal
             {...props}
-            size="lg"
+            size="md"
             aria-labelledby="contained-modal-title-vcenter"
             className='cart'
             centered
@@ -44,12 +43,12 @@ export const Cart = (props) => {
             <Modal.Body className={cartList.cart.length > 0 ? 'cart-grey-bg' : 'd-flex align-items-center'}>
                 {cartList.cart.length > 0 ?
                     <>
-                        {cartList.cart.map(item =>
-                            <CartItem item={item} />
+                        {cartList.cart.map((item, index) =>
+                            <CartItem item={item} key={index}/>
                         )}
 
                         <Card className='cart-adv d-flex flex-row'>
-                            <Card.Img src={BASE_URL + LOWEST_PRICE_URL} width="122px" />
+                            <Card.Img src={process.env.REACT_APP_BASE_URL + imageURL.lowestPriceURL} width="122px" alt="Lowest price image" />
                             <Card.Body>
                                 You won't find it cheaper anywhere
                             </Card.Body>

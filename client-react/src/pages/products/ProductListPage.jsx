@@ -25,7 +25,7 @@ export const ProductListPage = () => {
 
     return (
         <Row>
-            <Col md={4} lg={3} className="grey-bg">
+            <Col md={4} lg={3} >
                 {category.categoryList.length > 0 ? <CategorySideNavView categoryList={category.categoryList} onCategoryClick={onCategoryClick} /> : <span>Loading....</span>}
             </Col>
             <Col md={8} lg={9}>

@@ -10,6 +10,7 @@ import { Header } from './features/header/Header';
 import { getCart } from './features/cart/CartSlice'
 import { fetchProductList } from './features/productList/ProductListSlice';
 import { fetchCategoryList } from './features/categories/CategorySlice';
+import { Footer } from './features/footer/Footer';
 
 function App() {
   const dispatch = useDispatch()
@@ -23,10 +24,10 @@ function App() {
 
   return (
     <div className="App">
-      <div className='container app-container'>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Router>
-            <Header cartList={cart} />
+      <Suspense fallback={<div>Loading...</div>}>
+      <Router>
+        <Header cartList={cart} />
+        <section className='container app-container mb-64'>
             <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="/products" element={<ProductListPage />} exact />
@@ -34,9 +35,10 @@ function App() {
               <Route path="/signin" element={<Signin />} exact />
               <Route path="/signup" element={<Signup />} exact />
             </Routes>
-          </Router>
-        </Suspense>
-      </div>
+        </section>
+        </Router>
+      </Suspense>
+      <Footer/>
     </div>
   );
 }
