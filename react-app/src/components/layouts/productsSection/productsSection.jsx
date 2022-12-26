@@ -20,7 +20,6 @@ function ProductsSection() {
       : products.filter((item) => item.category === selectedCategory);
 
   return (
-    <>
       <div className="productsContainer">
         {filteredProducts?.map((prd, index) => (
           <div className="eachProduct" key={prd?.id}>
@@ -63,7 +62,6 @@ function ProductsSection() {
           </div>
         ))}
       </div>
-    </>
   );
 }
 

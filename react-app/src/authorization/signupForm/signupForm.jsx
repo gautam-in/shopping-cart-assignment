@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Footer from "../../components/common/footer/footer";
 import "./signupForm.scss";
 
 function SignUpForm() {
@@ -58,84 +57,76 @@ function SignUpForm() {
   };
 
   return (
-    <>
-      <div className="formContainer">
-        <div className="leftSection">
-          <p>Signup</p>
-          <p>We do not share your personal details with anyone</p>
-        </div>
-        <div className="rightSection">
-          <form onSubmit={handleSubmit} noValidate="novalidate">
-            <div>
-              <input
-                type="text"
-                name="firstName"
-                required
-                onChange={handleChange}
-              />
-              <label htmlFor="firstName">
-                <span>First Name</span>
-              </label>
-              <p className="error">{errors.firstName}</p>
-            </div>
-            <div>
-              <input
-                type="text"
-                name="lastName"
-                required
-                onChange={handleChange}
-              />
-              <label htmlFor="lastName">
-                <span>Last Name</span>
-              </label>
-              <p className="error">{errors.lastName}</p>
-            </div>
-            <div>
-              <input
-                type="email"
-                name="email"
-                required
-                onChange={handleChange}
-              />
-              <label htmlFor="email">
-                <span>Email</span>
-              </label>
-              <p className="error">{errors.email}</p>
-            </div>
-            <div>
-              <input
-                type="password"
-                name="password"
-                required
-                onChange={handleChange}
-              />
-              <label htmlFor="password">
-                <span>Password</span>
-              </label>
-              <p className="error">{errors.password}</p>
-            </div>
-            <div>
-              <input
-                type="password"
-                name="confirmPassword"
-                required
-                onChange={handleChange}
-              />
-              <label htmlFor="confirmPassword">
-                <span>Confirm Password</span>
-              </label>
-              <p className="error">{errors.confirmPassword}</p>
-            </div>
-            <div>
-              <button type="submit" className="btn-cls submitbtn">
-                Signup
-              </button>
-            </div>
-          </form>
-        </div>
+    <div className="formContainer">
+      <div className="leftSection">
+        <p>Signup</p>
+        <p>We do not share your personal details with anyone</p>
       </div>
-      <Footer />
-    </>
+      <div className="rightSection">
+        <form onSubmit={handleSubmit} noValidate="novalidate">
+          <div>
+            <input
+              type="text"
+              name="firstName"
+              required
+              onChange={handleChange}
+            />
+            <label htmlFor="firstName">
+              <span>First Name</span>
+            </label>
+            <p className="error">{errors.firstName}</p>
+          </div>
+          <div>
+            <input
+              type="text"
+              name="lastName"
+              required
+              onChange={handleChange}
+            />
+            <label htmlFor="lastName">
+              <span>Last Name</span>
+            </label>
+            <p className="error">{errors.lastName}</p>
+          </div>
+          <div>
+            <input type="email" name="email" required onChange={handleChange} />
+            <label htmlFor="email">
+              <span>Email</span>
+            </label>
+            <p className="error">{errors.email}</p>
+          </div>
+          <div>
+            <input
+              type="password"
+              name="password"
+              required
+              onChange={handleChange}
+            />
+            <label htmlFor="password">
+              <span>Password</span>
+            </label>
+            <p className="error">{errors.password}</p>
+          </div>
+          <div>
+            <input
+              type="password"
+              name="confirmPassword"
+              required
+              onChange={handleChange}
+            />
+            <label htmlFor="confirmPassword">
+              <span>Confirm Password</span>
+            </label>
+            <p className="error">{errors.confirmPassword}</p>
+          </div>
+          <div>
+            <button type="submit" className="btn-cls submitbtn">
+              Signup
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 }
 

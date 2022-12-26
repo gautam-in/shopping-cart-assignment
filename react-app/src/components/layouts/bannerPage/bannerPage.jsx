@@ -10,7 +10,6 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import ImageSlider from "../../common/imageSlider/imageSlider";
 import { useNavigate } from "react-router-dom";
-import Footer from "../../common/footer/footer";
 import { isMobile } from "../../../utils";
 
 function BannerPage() {
@@ -86,7 +85,6 @@ function BannerPage() {
           )}
         </div>
       </div>
-      <Footer />
     </>
   );
 }

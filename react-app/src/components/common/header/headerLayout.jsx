@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 
 import "./header.scss";
 import { isMobile } from "../../../utils";
+import Footer from "../footer/footer";
 
 function HeaderNav() {
   const cartItems = useSelector(getCartItems);
@@ -81,6 +82,7 @@ function HeaderNav() {
       </div>
       <div className="bodyContainer">
         <Outlet />
+        <Footer />
       </div>
     </div>
   );
