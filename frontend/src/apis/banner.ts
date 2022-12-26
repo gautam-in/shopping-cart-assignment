@@ -1,6 +1,6 @@
 import Axios from "axios";
 
-interface Banner {
+export interface Banner {
   bannerImageAlt: string;
   bannerImageUrl: string;
   id: string;

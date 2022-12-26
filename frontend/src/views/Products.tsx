@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getProducts, Product } from "../apis/product";
-import { ProductCard } from "../components/product-card";
+import ProductCard from "../components/product-card";
+
 type Props = {};
 
 export const Products = (props: Props) => {
@@ -17,6 +18,7 @@ export const Products = (props: Props) => {
   return (
     <ul
       style={{
+        flexBasis: "80%",
         display: "flex",
         flexWrap: "wrap",
         alignItems: "center",
