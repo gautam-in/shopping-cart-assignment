@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Banner, getBanners } from "../apis/banner";
+import "./banner.scss";
 
 export const Banners: React.FC = () => {
   const [banners, setBanners] = useState<Banner[]>([]);
@@ -19,23 +20,12 @@ export const Banners: React.FC = () => {
           <img
             src={banner.bannerImageUrl}
             alt={banner.bannerImageAlt}
-            style={{
-              width: "100%",
-              height: "400px",
-              border: "1px solid rgba(170, 170, 170, 0.5)",
-            }}
+            className="banner-img"
           />
           <button
+            className="banner-navigation-buttons"
             style={{
-              position: "absolute",
-              top: "50%",
               right: "30px",
-              backgroundColor: "rgba(119, 119, 119, .8)",
-              padding: "5px 25px",
-              cursor: "pointer",
-              borderColor: "transparent",
-              fontSize: "20px",
-              color: "black",
             }}
             onClick={(_) =>
               setCurrent((current) => (current + 1) % banners.length)
@@ -44,16 +34,9 @@ export const Banners: React.FC = () => {
             {">"}
           </button>
           <button
+            className="banner-navigation-buttons"
             style={{
-              position: "absolute",
-              top: "50%",
               left: "30px",
-              backgroundColor: "rgba(119, 119, 119, .8)",
-              padding: "5px 25px",
-              cursor: "pointer",
-              borderColor: "transparent",
-              fontSize: "20px",
-              color: "black",
             }}
             onClick={(_) =>
               setCurrent((current) => banners.length - current - 1)

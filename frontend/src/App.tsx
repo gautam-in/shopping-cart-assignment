@@ -6,8 +6,6 @@ import {
   Navigate,
 } from "react-router-dom";
 import { Products } from "./views/products";
-import { Categories } from "./views/categories";
-import { Banners } from "./views/banners";
 import { Cart } from "./views/add-to-cart";
 import { PrivateRoute } from "./HOC/private-route";
 
@@ -28,13 +26,8 @@ function App() {
           path="/products"
           element={<PrivateRoute component={Products} />}
         />
-        <Route
-          path="/categories"
-          element={<PrivateRoute component={Categories} />}
-        />
-        <Route path="/banners" element={<PrivateRoute component={Banners} />} />
         <Route path="/cart" element={<PrivateRoute component={Cart} />} />
-        <Route path="*" element={<Navigate to="/banners"></Navigate>} />
+        <Route path="*" element={<Navigate to="/products"></Navigate>} />
       </Routes>
     </Router>
   );
