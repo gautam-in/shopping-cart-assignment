@@ -2,14 +2,17 @@ import { useEffect, useState } from "react";
 import { Category } from "../apis/category";
 import { getProducts, Product } from "../apis/product";
 import ProductCard from "../components/product-card";
+import { Banners } from "../layout/banners";
+import { Header } from "../layout/header";
+import { Sidebar } from "../layout/sidebar";
+import "./products.scss";
 
-type Props = {
-  selectedCategories: Category[];
-};
+type Props = {};
 
-export const Products: React.FC<Props> = ({ selectedCategories }) => {
+export const Products: React.FC<Props> = () => {
   const [Products, setProducts] = useState<{ [key: string]: Product[] }>({});
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<Category[]>([]);
 
   useEffect(() => {
     const callAPI = async () => {
@@ -52,19 +55,45 @@ export const Products: React.FC<Props> = ({ selectedCategories }) => {
       );
   }, [selectedCategories, Products]);
 
+  const checkboxClickHandler = (
+    _: React.ChangeEvent<HTMLInputElement>,
+    category: Category
+  ) => {
+    if (_.target.checked) {
+      setSelectedCategories((categories) => [...categories, category]);
+    } else {
+      const newSelectedCategories = [...selectedCategories].filter(
+        (currCategory) => currCategory.id !== category.id
+      );
+      setSelectedCategories(newSelectedCategories);
+    }
+  };
+
   return (
-    <ul
-      style={{
-        width: "80%",
-        display: "flex",
-        flexWrap: "wrap",
-        alignItems: "center",
-        rowGap: "10px",
-      }}
-    >
-      {filteredProducts.map((product) => (
-        <ProductCard product={product} key={product.id} />
-      ))}
-    </ul>
+    <>
+      <Header />
+      <div style={{ width: "90%", margin: "auto", paddingTop: "100px" }}>
+        <main>
+          <Banners />
+          <div className="container">
+            <Sidebar checkboxClickHandler={checkboxClickHandler} />
+
+            <ul
+              style={{
+                width: "80%",
+                display: "flex",
+                flexWrap: "wrap",
+                alignItems: "center",
+                rowGap: "10px",
+              }}
+            >
+              {filteredProducts.map((product) => (
+                <ProductCard product={product} key={product.id} />
+              ))}
+            </ul>
+          </div>
+        </main>
+      </div>
+    </>
   );
 };

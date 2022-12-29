@@ -2,59 +2,13 @@ import { Header } from "../layout/header";
 import { PRODUCT_PAGE } from "../constants/routes";
 import { useNavigate } from "react-router-dom";
 import "./cart.scss";
-import { useState } from "react";
-import { Product } from "../apis/product";
+import { useContext } from "react";
+import { CartContext } from "../context/cart";
 
 type Props = {};
 
 export const Cart = (props: Props) => {
-  const [doesItemsExist, setDoesItemsExist] = useState<boolean>(true);
-  const products: Product[] = [
-    {
-      name: "Fresho Kiwi - Green, 3 pcs",
-      imageURL: "/static/images/products/fruit-n-veg/kiwi-green.jpg",
-      description:
-        "Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny, edible black seeds.",
-      price: 87,
-      stock: 50,
-      category: "5b6899953d1a866534f516e2",
-      sku: "fnw-kiwi-3",
-      id: "5b6c6a7f01a7c38429530883",
-    },
-    {
-      name: "Fresho Kiwi - Green, 3 pcs",
-      imageURL: "/static/images/products/fruit-n-veg/kiwi-green.jpg",
-      description:
-        "Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny, edible black seeds.",
-      price: 87,
-      stock: 50,
-      category: "5b6899953d1a866534f516e2",
-      sku: "fnw-kiwi-3",
-      id: "5b6c6a7f01a7c38429530883",
-    },
-    {
-      name: "Fresho Kiwi - Green, 3 pcs",
-      imageURL: "/static/images/products/fruit-n-veg/kiwi-green.jpg",
-      description:
-        "Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny, edible black seeds.",
-      price: 87,
-      stock: 50,
-      category: "5b6899953d1a866534f516e2",
-      sku: "fnw-kiwi-3",
-      id: "5b6c6a7f01a7c38429530883",
-    },
-    {
-      name: "Fresho Kiwi - Green, 3 pcs",
-      imageURL: "/static/images/products/fruit-n-veg/kiwi-green.jpg",
-      description:
-        "Kiwis are oval shaped with a brownish outer skin. The flesh is bright green and juicy with tiny, edible black seeds.",
-      price: 87,
-      stock: 50,
-      category: "5b6899953d1a866534f516e2",
-      sku: "fnw-kiwi-3",
-      id: "5b6c6a7f01a7c38429530883",
-    },
-  ];
+  const { cartItems } = useContext(CartContext);
   const navigate = useNavigate();
   return (
     <>
@@ -63,7 +17,7 @@ export const Cart = (props: Props) => {
         <div className="card">
           <header>Shopping Cart</header>
           <hr style={{ margin: "20px 0px" }} />
-          {!doesItemsExist ? (
+          {!cartItems.length ? (
             <div
               style={{
                 display: "flex",
@@ -87,7 +41,7 @@ export const Cart = (props: Props) => {
               </button>
             </div>
           ) : (
-            products.map((product) => (
+            cartItems.map((product) => (
               <>
                 <div
                   style={{
@@ -114,12 +68,12 @@ export const Cart = (props: Props) => {
                         {product.description}
                       </p>
                       <p>
-                        <strong>quantity:</strong> 5 &nbsp; | &nbsp;{" "}
-                        <strong>price per item:</strong> 2000
+                        <strong>quantity:</strong> {product.quantity} &nbsp; |
+                        &nbsp; <strong>price per item:</strong> {product.price}
                       </p>
                     </div>
                   </div>
-                  <div>Rs. 10000</div>
+                  <div>Rs. {product.quantity * product.price}</div>
                 </div>
                 <hr />
               </>
