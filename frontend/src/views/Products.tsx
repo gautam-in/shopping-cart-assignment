@@ -55,7 +55,7 @@ export const Products: React.FC<Props> = ({ selectedCategories }) => {
   return (
     <ul
       style={{
-        flexBasis: "80%",
+        width: "80%",
         display: "flex",
         flexWrap: "wrap",
         alignItems: "center",

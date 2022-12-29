@@ -6,8 +6,9 @@ import {
   Navigate,
 } from "react-router-dom";
 import { Products } from "./views/products";
-import { Cart } from "./views/add-to-cart";
+import { Cart } from "./views/cart";
 import { PrivateRoute } from "./HOC/private-route";
+import { CART_PAGE, PRODUCT_PAGE } from "./constants/routes";
 
 Axios.defaults.baseURL = process.env.REACT_APP_API;
 
@@ -23,11 +24,11 @@ function App() {
     <Router>
       <Routes>
         <Route
-          path="/products"
+          path={PRODUCT_PAGE}
           element={<PrivateRoute component={Products} />}
         />
-        <Route path="/cart" element={<PrivateRoute component={Cart} />} />
-        <Route path="*" element={<Navigate to="/products"></Navigate>} />
+        <Route path={CART_PAGE} element={<Cart />} />
+        <Route path="*" element={<Navigate to={PRODUCT_PAGE}></Navigate>} />
       </Routes>
     </Router>
   );
