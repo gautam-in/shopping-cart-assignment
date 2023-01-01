@@ -10,7 +10,7 @@ import "./products.scss";
 type Props = {};
 
 export const Products: React.FC<Props> = () => {
-  const [Products, setProducts] = useState<{ [key: string]: Product[] }>({});
+  const [products, setProducts] = useState<{ [key: string]: Product[] }>({});
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<Category[]>([]);
 
@@ -41,7 +41,7 @@ export const Products: React.FC<Props> = () => {
       setFilteredProducts(
         selectedCategories
           .map((category) => {
-            return Products[category.id];
+            return products[category.id];
           })
           .reduce((acc, currProducts) => {
             return [...acc, ...(currProducts ?? [])];
@@ -49,11 +49,11 @@ export const Products: React.FC<Props> = () => {
       );
     } else
       setFilteredProducts(
-        Object.values(Products).reduce((acc, currProducts) => {
+        Object.values(products).reduce((acc, currProducts) => {
           return [...acc, ...currProducts];
         }, [])
       );
-  }, [selectedCategories, Products]);
+  }, [selectedCategories, products]);
 
   const checkboxClickHandler = (
     _: React.ChangeEvent<HTMLInputElement>,

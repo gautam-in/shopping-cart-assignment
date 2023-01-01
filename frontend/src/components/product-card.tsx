@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router";
 import { AddToCart } from "../apis/add-to-cart";
 import { Product } from "../apis/product";
+import { PRODUCT_DETAIL_PAGE } from "../constants/routes";
 import { CartContext } from "../context/cart";
 import "./product-card.scss";
 
@@ -9,6 +11,7 @@ type Props = {
 };
 
 const ProductCard: React.FC<Props> = ({ product }) => {
+  const navigate = useNavigate();
   const { addCartItem, cartItems } = useContext(CartContext);
   let quantity: number = 0;
   cartItems.every((item) => {
@@ -30,7 +33,10 @@ const ProductCard: React.FC<Props> = ({ product }) => {
 
   return (
     <li className="product-card-item">
-      <div className="product-card">
+      <div
+        className="product-card"
+        onClick={(_) => navigate(`${PRODUCT_DETAIL_PAGE}?id=${product.id}`)}
+      >
         <img
           alt={product.description}
           src={product.imageURL}

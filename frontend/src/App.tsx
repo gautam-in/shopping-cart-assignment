@@ -7,10 +7,15 @@ import {
 } from "react-router-dom";
 import { Products } from "./views/products";
 import { Cart } from "./views/cart";
-import { CART_PAGE, PRODUCT_PAGE } from "./constants/routes";
+import {
+  CART_PAGE,
+  PRODUCT_DETAIL_PAGE,
+  PRODUCT_PAGE,
+} from "./constants/routes";
 import { CartContextItem, CartProvider } from "./context/cart";
 import { useState } from "react";
 import { Product } from "./apis/product";
+import { ProductDetail } from "./views/product-detail";
 
 Axios.defaults.baseURL = process.env.REACT_APP_API;
 
@@ -58,6 +63,7 @@ function App() {
         <Routes>
           <Route path={PRODUCT_PAGE} element={<Products />} />
           <Route path={CART_PAGE} element={<Cart />} />
+          <Route path={PRODUCT_DETAIL_PAGE} element={<ProductDetail />} />
           <Route path="*" element={<Navigate to={PRODUCT_PAGE}></Navigate>} />
         </Routes>
       </Router>
