@@ -26,10 +26,7 @@ function App() {
     [] as CartContextItem[]
   );
 
-  console.log({ cartItems });
-
   const addCartItem = (product: Product, quantityToBeAdded: number) => {
-    console.log("I am called", { product });
     let foundIndex = -1;
     cartItems.every((item: CartContextItem, index) => {
       if (item.id === product.id) {
@@ -39,10 +36,13 @@ function App() {
     });
     const newCartItems = [...cartItems];
     if (foundIndex >= 0) {
-      newCartItems[foundIndex] = {
-        ...cartItems[foundIndex],
-        quantity: cartItems[foundIndex].quantity + quantityToBeAdded,
-      };
+      if (newCartItems[foundIndex].quantity === 1 && quantityToBeAdded === -1) {
+        newCartItems.splice(foundIndex, 1);
+      } else
+        newCartItems[foundIndex] = {
+          ...cartItems[foundIndex],
+          quantity: cartItems[foundIndex].quantity + quantityToBeAdded,
+        };
     } else newCartItems.push({ ...product, quantity: 1 });
     setCartItems(newCartItems);
   };

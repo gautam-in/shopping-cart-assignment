@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { AddToCart } from "../apis/add-to-cart";
 import { Product } from "../apis/product";
 import { CartContext } from "../context/cart";
 import "./product-card.scss";
@@ -17,6 +18,15 @@ const ProductCard: React.FC<Props> = ({ product }) => {
     }
     return true;
   });
+
+  const addItem = async (product: Product, quantity: number) => {
+    try {
+      await AddToCart();
+      addCartItem(product, quantity);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <li className="product-card-item">
@@ -69,10 +79,9 @@ const ProductCard: React.FC<Props> = ({ product }) => {
                   style={{
                     height: "100%",
                     width: "100%",
-
                     padding: "0px 10px",
                   }}
-                  onClick={(_) => addCartItem(product, 1)}
+                  onClick={(_) => addItem(product, 1)}
                 >
                   Add
                 </span>
@@ -81,7 +90,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
                   <div
                     onClick={(_) => {
                       _.stopPropagation();
-                      addCartItem(product, -1);
+                      addItem(product, -1);
                     }}
                   >
                     -
@@ -92,7 +101,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
                     <div
                       onClick={(_) => {
                         _.stopPropagation();
-                        addCartItem(product, 1);
+                        addItem(product, 1);
                       }}
                     >
                       +
