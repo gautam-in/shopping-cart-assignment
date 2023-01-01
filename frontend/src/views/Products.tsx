@@ -72,19 +72,24 @@ export const Products: React.FC<Props> = () => {
   return (
     <>
       <Header />
-      <div style={{ width: "90%", margin: "auto", paddingTop: "100px" }}>
+      <div
+        style={{
+          width: "90%",
+          margin: "auto",
+          paddingTop: "100px",
+        }}
+      >
         <main>
           <Banners />
           <div className="container">
             <Sidebar checkboxClickHandler={checkboxClickHandler} />
-
             <ul
               style={{
-                width: "80%",
+                width: "100%",
                 display: "flex",
                 flexWrap: "wrap",
                 alignItems: "center",
-                rowGap: "10px",
+                justifyContent: "space-between",
               }}
             >
               {filteredProducts.map((product) => (

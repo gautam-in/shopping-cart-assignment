@@ -30,7 +30,6 @@ export const Sidebar: React.FC<Props> = ({ checkboxClickHandler }) => {
       style={{
         flexBasis: "18%",
         border: "1px solid #ccc",
-        margin: "20px 0",
         padding: "20px 0 20px 20px",
       }}
     >

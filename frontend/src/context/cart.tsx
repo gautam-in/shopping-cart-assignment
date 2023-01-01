@@ -7,12 +7,12 @@ export interface CartContextItem extends Product {
 
 export interface CartContextInterface {
   cartItems: CartContextItem[];
-  addCartItem: (product: Product) => void;
+  addCartItem: (product: Product, quantityToBeAdded: number) => void;
 }
 
 export const CartContext: React.Context<CartContextInterface> = createContext({
   cartItems: [] as CartContextItem[],
-  addCartItem: (product: Product) => {},
+  addCartItem: (product: Product, quantityToBeAdded: number) => {},
 });
 
 export const CartProvider = CartContext.Provider;
