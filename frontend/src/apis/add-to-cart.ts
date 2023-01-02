@@ -1,6 +1,6 @@
 import Axios from "axios";
 
-export const AddToCart = (): Promise<Boolean> => {
+export const addToCart = (): Promise<Boolean> => {
   return new Promise(async (resolve, reject) => {
     try {
       await Axios.post("/addToCart");

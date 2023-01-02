@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Category, getCategories } from "../apis/category";
-// import { Categories } from "../views/categories";
 
 interface Props {
   checkboxClickHandler: (

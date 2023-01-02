@@ -30,6 +30,7 @@ function App() {
   const [cartItems, setCartItems] = useState<CartContextItem[]>(
     [] as CartContextItem[]
   );
+  const [loading, setLoading] = useState<boolean>(false);
 
   const addCartItem = (product: Product, quantityToBeAdded: number) => {
     let foundIndex = -1;
@@ -57,8 +58,26 @@ function App() {
       value={{
         cartItems,
         addCartItem,
+        loading,
+        setLoading,
       }}
     >
+      {loading && (
+        <div
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            position: "fixed",
+            backgroundColor: "rgba(0,0,0,.2)",
+            zIndex: 200,
+          }}
+        >
+          <h2>Loading......</h2>
+        </div>
+      )}
       <Router>
         <Routes>
           <Route path={PRODUCT_PAGE} element={<Products />} />

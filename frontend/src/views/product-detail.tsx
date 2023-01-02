@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { AddToCart } from "../apis/add-to-cart";
+import { addToCart } from "../apis/add-to-cart";
 import { getProducts, Product } from "../apis/product";
 import { PRODUCT_PAGE } from "../constants/routes";
 import { CartContext, CartContextItem } from "../context/cart";
@@ -11,7 +11,7 @@ import "./product-detail.scss";
 type Props = {};
 
 export const ProductDetail: React.FC<Props> = () => {
-  const { cartItems, addCartItem } = useContext(CartContext);
+  const { cartItems, addCartItem, setLoading } = useContext(CartContext);
   const [productsOfSameCategory, setProductsOfSameCategory] = useState<
     Product[]
   >([]);
@@ -23,6 +23,7 @@ export const ProductDetail: React.FC<Props> = () => {
   useEffect(() => {
     const callAPI = async () => {
       try {
+        setLoading(true);
         const data = await getProducts();
         data.reduce((acc, currProduct) => {
           acc[currProduct.category] = currProduct;
@@ -42,17 +43,23 @@ export const ProductDetail: React.FC<Props> = () => {
             quantity: foundInCart ? foundInCart.quantity : 0,
           });
         } else navigate(PRODUCT_PAGE);
-      } catch (error) {}
+      } catch (error) {
+      } finally {
+        setLoading(false);
+      }
     };
     callAPI();
-  }, [cartItems, id, navigate]);
+  }, [setLoading, cartItems, id, navigate]);
 
   const addItem = async (product: Product, quantity: number) => {
     try {
-      await AddToCart();
+      setLoading(true);
+      await addToCart();
       addCartItem(product, quantity);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 

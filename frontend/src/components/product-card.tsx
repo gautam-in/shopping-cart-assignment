@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router";
-import { AddToCart } from "../apis/add-to-cart";
+import { addToCart } from "../apis/add-to-cart";
 import { Product } from "../apis/product";
 import { PRODUCT_DETAIL_PAGE } from "../constants/routes";
 import { CartContext } from "../context/cart";
@@ -13,7 +13,7 @@ type Props = {
 
 export const ProductCard: React.FC<Props> = ({ product, charLimit = 25 }) => {
   const navigate = useNavigate();
-  const { addCartItem, cartItems } = useContext(CartContext);
+  const { addCartItem, cartItems, setLoading } = useContext(CartContext);
   let quantity: number = 0;
   cartItems.every((item) => {
     if (item.id === product.id) {
@@ -25,10 +25,13 @@ export const ProductCard: React.FC<Props> = ({ product, charLimit = 25 }) => {
 
   const addItem = async (product: Product, quantity: number) => {
     try {
-      await AddToCart();
+      setLoading(true);
+      await addToCart();
       addCartItem(product, quantity);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 

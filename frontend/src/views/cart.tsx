@@ -5,21 +5,24 @@ import "./cart.scss";
 import { useContext } from "react";
 import { CartContext } from "../context/cart";
 import { Product } from "../apis/product";
-import { AddToCart } from "../apis/add-to-cart";
+import { addToCart } from "../apis/add-to-cart";
 import { PRODUCT_DETAIL_PAGE } from "../constants/routes";
 
 type Props = {};
 
 export const Cart = (props: Props) => {
-  const { cartItems, addCartItem } = useContext(CartContext);
+  const { cartItems, addCartItem, setLoading } = useContext(CartContext);
   const navigate = useNavigate();
 
   const addItem = async (product: Product, quantity: number) => {
     try {
-      await AddToCart();
+      setLoading(true);
+      await addToCart();
       addCartItem(product, quantity);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(true);
     }
   };
 

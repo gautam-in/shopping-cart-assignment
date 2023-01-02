@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Category } from "../apis/category";
 import { getProducts, Product } from "../apis/product";
 import { ProductCard } from "../components/product-card";
+import { CartContext } from "../context/cart";
 import { Banners } from "../layout/banners";
 import { Header } from "../layout/header";
 import { Sidebar } from "../layout/sidebar";
@@ -10,6 +11,7 @@ import "./products.scss";
 type Props = {};
 
 export const Products: React.FC<Props> = () => {
+  const { setLoading } = useContext(CartContext);
   const [products, setProducts] = useState<{ [key: string]: Product[] }>({});
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<Category[]>([]);
@@ -17,6 +19,7 @@ export const Products: React.FC<Props> = () => {
   useEffect(() => {
     const callAPI = async () => {
       try {
+        setLoading(true);
         const data = await getProducts();
         data.reduce((acc, currProduct) => {
           acc[currProduct.category] = currProduct;
@@ -31,10 +34,13 @@ export const Products: React.FC<Props> = () => {
           }, {} as { [key: string]: Product[] })
         );
         setFilteredProducts(data);
-      } catch (error) {}
+      } catch (error) {
+      } finally {
+        setLoading(false);
+      }
     };
     callAPI();
-  }, []);
+  }, [setLoading]);
 
   useEffect(() => {
     if (selectedCategories.length > 0) {

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned --cors=false --headers 'Access-Control-Allow-Headers, *' -p 5000 ./server"
+    "start": "canned --cors=false --headers 'Access-Control-Allow-Headers, *' -p 5000 ./server",
+    "start:delay": "canned --response_delay=1500 --cors=false --headers 'Access-Control-Allow-Headers, *' -p 5000 ./server"
   },
   "author": "",
   "license": "MIT",
