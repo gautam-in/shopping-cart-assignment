@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { CartContext } from "../context/cart";
 import { Product } from "../apis/product";
 import { AddToCart } from "../apis/add-to-cart";
+import { PRODUCT_DETAIL_PAGE } from "../constants/routes";
 
 type Props = {};
 
@@ -66,7 +67,7 @@ export const Cart = (props: Props) => {
                   style={{
                     display: "flex",
                     justifyContent: "space-between",
-                    margin: "30px 0 0 30px",
+                    margin: "30px 0 30px 30px",
                   }}
                   key={product.id}
                 >
@@ -79,11 +80,16 @@ export const Cart = (props: Props) => {
                     <img
                       src={product.imageURL}
                       alt=""
-                      style={{ marginRight: "20px" }}
+                      style={{ marginRight: "20px", cursor: "pointer" }}
+                      onClick={(_) =>
+                        navigate(`${PRODUCT_DETAIL_PAGE}?id=${product.id}`)
+                      }
                     />
-                    <div>
-                      <h3 style={{ marginBottom: "10px" }}>{product.name}</h3>
-                      <p style={{ marginBottom: "5px" }}>
+                    <div style={{ paddingLeft: "40px" }}>
+                      <h3 style={{ marginBottom: "10px", marginTop: "50px" }}>
+                        {product.name}
+                      </h3>
+                      <p style={{ margin: "20px 0px" }}>
                         {product.description}
                       </p>
                       <p style={{ display: "flex" }}>
@@ -130,21 +136,21 @@ export const Cart = (props: Props) => {
                   <div>Rs. {product.quantity * product.price}</div>
                 </div>
                 <hr />
-                <div
-                  style={{
-                    marginTop: "10px",
-                    display: "flex",
-                    justifyContent: "flex-end",
-                  }}
-                >
-                  Total:{" "}
-                  {cartItems.reduce((acc, currValue) => {
-                    return acc + currValue.quantity * currValue.price;
-                  }, 0)}
-                </div>
               </>
             ))
           )}
+          <div
+            style={{
+              marginTop: "10px",
+              display: "flex",
+              justifyContent: "flex-end",
+            }}
+          >
+            Total:{" "}
+            {cartItems.reduce((acc, currValue) => {
+              return acc + currValue.quantity * currValue.price;
+            }, 0)}
+          </div>
           {cartItems.length ? (
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
               <button

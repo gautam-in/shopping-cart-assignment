@@ -5,6 +5,7 @@ import { getProducts, Product } from "../apis/product";
 import { PRODUCT_PAGE } from "../constants/routes";
 import { CartContext, CartContextItem } from "../context/cart";
 import { Header } from "../layout/header";
+import { ProductCard } from "../components/product-card";
 import "./product-detail.scss";
 
 type Props = {};
@@ -30,7 +31,10 @@ export const ProductDetail: React.FC<Props> = () => {
         const foundProduct = data.find((product) => product.id === id);
         if (foundProduct) {
           setProductsOfSameCategory(
-            data.filter(({ category }) => foundProduct.category === category)
+            data.filter(
+              ({ category, id }) =>
+                foundProduct.category === category && foundProduct.id !== id
+            )
           );
           const foundInCart = cartItems.find((cartItem) => cartItem.id === id);
           setProduct({
@@ -53,54 +57,65 @@ export const ProductDetail: React.FC<Props> = () => {
   };
 
   return (
-    <>
-      <Header />
-      <div
-        style={{
-          width: "90%",
-          margin: "auto",
-          paddingTop: "100px",
-        }}
-      >
-        <main>
-          <div className="container">
-            {product && (
-              <>
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    margin: "30px 0 0 30px",
-                  }}
-                  key={product.id}
-                >
-                  <div
-                    style={{
-                      flexBasis: "80%",
-                      display: "flex",
-                    }}
-                  >
-                    <img
-                      src={product.imageURL}
-                      alt=""
-                      style={{ marginRight: "20px" }}
-                    />
-                    <div>
-                      <h3 style={{ marginBottom: "10px" }}>{product.name}</h3>
-                      <p style={{ marginBottom: "5px" }}>
-                        {product.description}
-                      </p>
-                      <div style={{ display: "flex" }}>
-                        <strong>quantity:</strong>{" "}
+    product && (
+      <>
+        <Header />
+        <div
+          style={{
+            width: "90%",
+            margin: "auto",
+            paddingTop: "100px",
+            paddingLeft: "30px",
+          }}
+        >
+          <main>
+            <div className="container">
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  marginTop: "20px",
+                }}
+              >
+                <img
+                  src={product.imageURL}
+                  alt=""
+                  style={{ marginRight: "40px", border: "1px solid #ccc" }}
+                />
+                <div>
+                  <h3>{product.name}</h3>
+                  <p style={{ margin: "20px 0" }}>{product.description}</p>
+                  <strong>price per item: </strong> &nbsp;{product.price}
+                  <br />
+                  <div style={{ display: "inline-block" }}>
+                    <div
+                      style={{
+                        margin: "20px 0",
+                        display: "flex",
+                        textAlign: "center",
+                        backgroundColor: "#F58822",
+                        color: "white",
+                        cursor: "pointer",
+                        padding: "4px 10px",
+                      }}
+                    >
+                      {product.quantity === 0 ? (
+                        <span
+                          style={{
+                            height: "100%",
+                            width: "100%",
+                            padding: "0px 10px",
+                          }}
+                          onClick={(_) => addItem(product, 1)}
+                        >
+                          Add
+                        </span>
+                      ) : (
                         <div
                           style={{
                             display: "flex",
-                            padding: "2px 10px",
-                            margin: "0 5px",
-                            textAlign: "center",
-                            backgroundColor: "#F58822",
-                            color: "white",
-                            cursor: "pointer",
+                            minWidth: "50px",
+                            justifyContent: "space-around",
                           }}
                         >
                           <div
@@ -126,31 +141,36 @@ export const ProductDetail: React.FC<Props> = () => {
                             </div>
                           )}
                         </div>
-                        &nbsp; | &nbsp; <strong>price per item:</strong>{" "}
-                        {product.price}
-                      </div>
+                      )}
                     </div>
                   </div>
-                  <div>Rs. {product.quantity * product.price}</div>
                 </div>
-                <hr />
-                <div
-                  style={{
-                    marginTop: "10px",
-                    display: "flex",
-                    justifyContent: "flex-end",
-                  }}
-                >
-                  Total:{" "}
-                  {cartItems.reduce((acc, currValue) => {
-                    return acc + currValue.quantity * currValue.price;
-                  }, 0)}
-                </div>
-              </>
-            )}
-          </div>
-        </main>
-      </div>
-    </>
+              </div>
+            </div>
+            <div style={{ paddingTop: "50px" }}>
+              <h4 style={{ paddingBottom: "20px" }}>Similar products:</h4>
+              <ul
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  overflowY: "scroll",
+                }}
+              >
+                {productsOfSameCategory.map((product) => (
+                  <div
+                    style={{
+                      marginRight: "10px",
+                    }}
+                    key={product.id}
+                  >
+                    <ProductCard product={product} charLimit={15} />
+                  </div>
+                ))}
+              </ul>
+            </div>
+          </main>
+        </div>
+      </>
+    )
   );
 };

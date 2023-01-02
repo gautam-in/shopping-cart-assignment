@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Category } from "../apis/category";
 import { getProducts, Product } from "../apis/product";
-import ProductCard from "../components/product-card";
+import { ProductCard } from "../components/product-card";
 import { Banners } from "../layout/banners";
 import { Header } from "../layout/header";
 import { Sidebar } from "../layout/sidebar";
@@ -90,6 +90,7 @@ export const Products: React.FC<Props> = () => {
                 flexWrap: "wrap",
                 alignItems: "center",
                 justifyContent: "space-between",
+                paddingLeft: "30px",
               }}
             >
               {filteredProducts.map((product) => (
