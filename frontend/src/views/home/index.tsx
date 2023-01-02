@@ -34,7 +34,6 @@ const Products: React.FC<Props> = () => {
   return (
     <>
       <Banners />
-
       <ul className="categories-container">
         {categories
           .filter(({ enabled }) => enabled)
