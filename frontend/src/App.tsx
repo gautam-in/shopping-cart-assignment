@@ -6,16 +6,16 @@ import {
   BrowserRouter as Router,
   Navigate,
 } from "react-router-dom"
-import { CART_PAGE, HOME_PAGE, PRODUCTS_PAGE } from "./constants/routes"
+import { HOME_PAGE, PRODUCTS_PAGE } from "./constants/routes"
 import { CartContextItem, CartProvider } from "./context/cart"
 import { Suspense, useState } from "react"
 import { Product } from "./apis/product"
 import { Loader } from "./components/Loader"
 import PrivateRoute from "./HOC/PrivateRoute"
+import Cart from "./views/cart"
 
 const LazyHome = React.lazy(() => import("./views/home"))
 const LazyProducts = React.lazy(() => import("./views/products"))
-const LazyCart = React.lazy(() => import("./views/cart"))
 
 Axios.defaults.baseURL = process.env.REACT_APP_API
 
@@ -31,6 +31,7 @@ function App() {
     [] as CartContextItem[],
   )
   const [loading, setLoading] = useState<boolean>(false)
+  const [isCartDisplayed, setIsCartDisplayed] = useState<boolean>(false)
 
   const addCartItem = (product: Product, quantityToBeAdded: number) => {
     let foundIndex = -1
@@ -42,7 +43,7 @@ function App() {
     })
     const newCartItems = [...cartItems]
     if (foundIndex >= 0) {
-      if (newCartItems[foundIndex].quantity === 1 && quantityToBeAdded === -1) {
+      if (newCartItems[foundIndex].quantity + quantityToBeAdded === 0) {
         newCartItems.splice(foundIndex, 1)
       } else
         newCartItems[foundIndex] = {
@@ -60,11 +61,14 @@ function App() {
         addCartItem,
         loading,
         setLoading,
+        isCartDisplayed,
+        setIsCartDisplayed,
       }}
     >
       <Router>
         <Suspense fallback={null}>
           {loading && <Loader />}
+          {isCartDisplayed ? <Cart /> : null}
           <Routes>
             <Route
               path={HOME_PAGE}
@@ -74,7 +78,6 @@ function App() {
               path={PRODUCTS_PAGE}
               element={<PrivateRoute Component={LazyProducts} />}
             />
-            <Route path={CART_PAGE} element={<LazyCart />} />
             <Route
               path="*"
               element={<Navigate to={PRODUCTS_PAGE}></Navigate>}

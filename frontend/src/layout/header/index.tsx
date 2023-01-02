@@ -1,16 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro"
 import { useNavigate } from "react-router"
-import { CART_PAGE, HOME_PAGE } from "../../constants/routes"
+import { HOME_PAGE } from "../../constants/routes"
 import { THEME_COLOR } from "../../constants/colors"
 import "./index.scss"
+import { CartContext } from "../../context/cart"
 
 type Props = {}
 
 export const Header = (props: Props) => {
   const [imgSrc, setImgSrc] = useState("")
   const navigate = useNavigate()
+  const { setIsCartDisplayed } = useContext(CartContext)
   useEffect(() => {
     if (window.innerWidth < 701) setImgSrc("/static/images/logo.png")
     else setImgSrc("/static/images/logo_2x.png")
@@ -30,7 +32,7 @@ export const Header = (props: Props) => {
         <button
           className="cart"
           onClick={(_) => {
-            navigate(CART_PAGE)
+            setIsCartDisplayed(true)
           }}
         >
           <FontAwesomeIcon

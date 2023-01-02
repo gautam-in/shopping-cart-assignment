@@ -10,6 +10,8 @@ export interface CartContextInterface {
   addCartItem: (product: Product, quantityToBeAdded: number) => void
   loading: boolean
   setLoading: (val: boolean) => void
+  isCartDisplayed: boolean
+  setIsCartDisplayed: (val: boolean) => void
 }
 
 const defaultValue: CartContextInterface = {
@@ -17,6 +19,8 @@ const defaultValue: CartContextInterface = {
   addCartItem: (product: Product, quantityToBeAdded: number) => {},
   loading: false,
   setLoading: (val: boolean) => {},
+  isCartDisplayed: false,
+  setIsCartDisplayed: (val: boolean) => {},
 }
 
 export const CartContext: React.Context<CartContextInterface> =

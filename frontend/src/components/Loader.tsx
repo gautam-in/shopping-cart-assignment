@@ -11,7 +11,7 @@ export const Loader = (props: Props) => {
         alignItems: "center",
         position: "fixed",
         backgroundColor: "rgba(0,0,0,.2)",
-        zIndex: 200,
+        zIndex: 400,
       }}
     >
       <h2>Loading......</h2>
