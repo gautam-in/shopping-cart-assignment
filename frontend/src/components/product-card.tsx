@@ -1,43 +1,43 @@
-import React, { useContext } from "react";
-import { useNavigate } from "react-router";
-import { addToCart } from "../apis/add-to-cart";
-import { Product } from "../apis/product";
-import { PRODUCT_DETAIL_PAGE } from "../constants/routes";
-import { CartContext } from "../context/cart";
-import "./product-card.scss";
+import React, { useContext } from "react"
+import { useNavigate } from "react-router"
+import { addToCart } from "../apis/add-to-cart"
+import { Product } from "../apis/product"
+import { PRODUCT_DETAIL_PAGE } from "../constants/routes"
+import { CartContext } from "../context/cart"
+import "./product-card.scss"
 
 type Props = {
-  product: Product;
-  charLimit?: number;
-};
+  product: Product
+  charLimit?: number
+}
 
 const LazySimilarProductImage = React.lazy(
-  () => import("../components/similar-product-image")
-);
+  () => import("../components/similar-product-image"),
+)
 
 export const ProductCard: React.FC<Props> = ({ product, charLimit = 25 }) => {
-  const navigate = useNavigate();
-  const { addCartItem, cartItems, setLoading } = useContext(CartContext);
-  let quantity: number = 0;
+  const navigate = useNavigate()
+  const { addCartItem, cartItems, setLoading } = useContext(CartContext)
+  let quantity: number = 0
   cartItems.every((item) => {
     if (item.id === product.id) {
-      quantity = item.quantity;
-      return false;
+      quantity = item.quantity
+      return false
     }
-    return true;
-  });
+    return true
+  })
 
   const addItem = async (product: Product, quantity: number) => {
     try {
-      setLoading(true);
-      await addToCart();
-      addCartItem(product, quantity);
+      setLoading(true)
+      await addToCart()
+      addCartItem(product, quantity)
     } catch (error) {
-      console.log(error);
+      console.log(error)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <li
@@ -94,8 +94,8 @@ export const ProductCard: React.FC<Props> = ({ product, charLimit = 25 }) => {
                   padding: "0px 10px",
                 }}
                 onClick={(_) => {
-                  _.stopPropagation();
-                  addItem(product, 1);
+                  _.stopPropagation()
+                  addItem(product, 1)
                 }}
               >
                 Add
@@ -104,8 +104,8 @@ export const ProductCard: React.FC<Props> = ({ product, charLimit = 25 }) => {
               <div style={{ display: "flex", padding: "0px 10px" }}>
                 <div
                   onClick={(_) => {
-                    _.stopPropagation();
-                    addItem(product, -1);
+                    _.stopPropagation()
+                    addItem(product, -1)
                   }}
                 >
                   -
@@ -115,8 +115,8 @@ export const ProductCard: React.FC<Props> = ({ product, charLimit = 25 }) => {
                 {product.stock > quantity && (
                   <div
                     onClick={(_) => {
-                      _.stopPropagation();
-                      addItem(product, 1);
+                      _.stopPropagation()
+                      addItem(product, 1)
                     }}
                   >
                     +
@@ -128,5 +128,5 @@ export const ProductCard: React.FC<Props> = ({ product, charLimit = 25 }) => {
         </div>
       </div>
     </li>
-  );
-};
+  )
+}

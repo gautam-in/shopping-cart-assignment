@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
-import { Banner, getBanners } from "../apis/banner";
-import "./banner.scss";
+import { useEffect, useState } from "react"
+import { Banner, getBanners } from "../apis/banner"
+import "./banner.scss"
 
 export const Banners: React.FC = () => {
-  const [banners, setBanners] = useState<Banner[]>([]);
-  const [current, setCurrent] = useState<number>(0);
+  const [banners, setBanners] = useState<Banner[]>([])
+  const [current, setCurrent] = useState<number>(0)
   useEffect(() => {
     getBanners()
       .then((banners) => setBanners(banners))
-      .catch(console.log);
-  }, []);
+      .catch(console.log)
+  }, [])
 
-  const banner = banners && banners[current];
+  const banner = banners && banners[current]
 
   return (
     <>
@@ -47,5 +47,5 @@ export const Banners: React.FC = () => {
         </div>
       )}
     </>
-  );
-};
+  )
+}

@@ -1,75 +1,75 @@
-import React, { Suspense } from "react";
-import { useContext, useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { addToCart } from "../apis/add-to-cart";
-import { getProducts, Product } from "../apis/product";
-import { PRODUCT_PAGE } from "../constants/routes";
-import { CartContext, CartContextItem } from "../context/cart";
-import { Header } from "../layout/header";
-import { ProductCard } from "../components/product-card";
-import "./product-detail.scss";
+import React, { Suspense } from "react"
+import { useContext, useEffect, useState } from "react"
+import { useNavigate, useSearchParams } from "react-router-dom"
+import { addToCart } from "../apis/add-to-cart"
+import { getProducts, Product } from "../apis/product"
+import { PRODUCT_PAGE } from "../constants/routes"
+import { CartContext, CartContextItem } from "../context/cart"
+import { Header } from "../layout/header"
+import { ProductCard } from "../components/product-card"
+import "./product-detail.scss"
 
-type Props = {};
+type Props = {}
 
 const ProductDetail: React.FC<Props> = () => {
-  const { cartItems, addCartItem, setLoading } = useContext(CartContext);
+  const { cartItems, addCartItem, setLoading } = useContext(CartContext)
   const [productsOfSameCategory, setProductsOfSameCategory] = useState<
     Product[]
-  >([]);
-  const [product, setProduct] = useState<CartContextItem | null>(null);
-  const [params] = useSearchParams();
-  const navigate = useNavigate();
-  const id = params.get("id");
+  >([])
+  const [product, setProduct] = useState<CartContextItem | null>(null)
+  const [params] = useSearchParams()
+  const navigate = useNavigate()
+  const id = params.get("id")
 
   useEffect(() => {
     const callAPI = async () => {
       try {
-        const data = await getProducts();
+        const data = await getProducts()
         data.reduce((acc, currProduct) => {
-          acc[currProduct.category] = currProduct;
-          return acc;
-        }, {} as { [key: string]: Product });
-        const foundProduct = data.find((product) => product.id === id);
+          acc[currProduct.category] = currProduct
+          return acc
+        }, {} as { [key: string]: Product })
+        const foundProduct = data.find((product) => product.id === id)
         if (foundProduct) {
           setProductsOfSameCategory(
             data.filter(
               ({ category, id }) =>
-                foundProduct.category === category && foundProduct.id !== id
-            )
-          );
-          const foundInCart = cartItems.find((cartItem) => cartItem.id === id);
+                foundProduct.category === category && foundProduct.id !== id,
+            ),
+          )
+          const foundInCart = cartItems.find((cartItem) => cartItem.id === id)
           setProduct({
             ...foundProduct,
             quantity: foundInCart ? foundInCart.quantity : 0,
-          });
-        } else navigate(PRODUCT_PAGE);
+          })
+        } else navigate(PRODUCT_PAGE)
       } catch (error) {
       } finally {
         // setLoading(false);
       }
-    };
-    callAPI();
-  }, [setLoading, cartItems, id, navigate]);
+    }
+    callAPI()
+  }, [setLoading, cartItems, id, navigate])
 
   useEffect(() => {
-    setLoading(!product);
-  }, [product, setLoading]);
+    setLoading(!product)
+  }, [product, setLoading])
 
   const addItem = async (product: Product, quantity: number) => {
     try {
-      setLoading(true);
-      await addToCart();
-      addCartItem(product, quantity);
+      setLoading(true)
+      await addToCart()
+      addCartItem(product, quantity)
     } catch (error) {
-      console.log(error);
+      console.log(error)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   const LazyProductDetailImage = React.lazy(
-    () => import("../components/product-detail-image")
-  );
+    () => import("../components/product-detail-image"),
+  )
 
   return (
     product && (
@@ -133,8 +133,8 @@ const ProductDetail: React.FC<Props> = () => {
                         >
                           <div
                             onClick={(_) => {
-                              _.stopPropagation();
-                              addItem(product, -1);
+                              _.stopPropagation()
+                              addItem(product, -1)
                             }}
                           >
                             -
@@ -146,8 +146,8 @@ const ProductDetail: React.FC<Props> = () => {
                           {product.stock > product.quantity && (
                             <div
                               onClick={(_) => {
-                                _.stopPropagation();
-                                addItem(product, 1);
+                                _.stopPropagation()
+                                addItem(product, 1)
                               }}
                             >
                               +
@@ -185,7 +185,7 @@ const ProductDetail: React.FC<Props> = () => {
         </div>
       </>
     )
-  );
-};
+  )
+}
 
-export default ProductDetail;
+export default ProductDetail

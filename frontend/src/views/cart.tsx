@@ -1,30 +1,30 @@
-import { Header } from "../layout/header";
-import { PRODUCT_PAGE } from "../constants/routes";
-import { useNavigate } from "react-router-dom";
-import "./cart.scss";
-import { useContext } from "react";
-import { CartContext } from "../context/cart";
-import { Product } from "../apis/product";
-import { addToCart } from "../apis/add-to-cart";
-import { PRODUCT_DETAIL_PAGE } from "../constants/routes";
+import { Header } from "../layout/header"
+import { PRODUCT_PAGE } from "../constants/routes"
+import { useNavigate } from "react-router-dom"
+import "./cart.scss"
+import { useContext } from "react"
+import { CartContext } from "../context/cart"
+import { Product } from "../apis/product"
+import { addToCart } from "../apis/add-to-cart"
+import { PRODUCT_DETAIL_PAGE } from "../constants/routes"
 
-type Props = {};
+type Props = {}
 
 const Cart = (props: Props) => {
-  const { cartItems, addCartItem, setLoading } = useContext(CartContext);
-  const navigate = useNavigate();
+  const { cartItems, addCartItem, setLoading } = useContext(CartContext)
+  const navigate = useNavigate()
 
   const addItem = async (product: Product, quantity: number) => {
     try {
-      setLoading(true);
-      await addToCart();
-      addCartItem(product, quantity);
+      setLoading(true)
+      await addToCart()
+      addCartItem(product, quantity)
     } catch (error) {
-      console.log(error);
+      console.log(error)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <>
@@ -110,8 +110,8 @@ const Cart = (props: Props) => {
                         >
                           <div
                             onClick={(_) => {
-                              _.stopPropagation();
-                              addItem(product, -1);
+                              _.stopPropagation()
+                              addItem(product, -1)
                             }}
                           >
                             -
@@ -123,8 +123,8 @@ const Cart = (props: Props) => {
                           {product.stock > product.quantity && (
                             <div
                               onClick={(_) => {
-                                _.stopPropagation();
-                                addItem(product, 1);
+                                _.stopPropagation()
+                                addItem(product, 1)
                               }}
                             >
                               +
@@ -151,7 +151,7 @@ const Cart = (props: Props) => {
           >
             Total:{" "}
             {cartItems.reduce((acc, currValue) => {
-              return acc + currValue.quantity * currValue.price;
+              return acc + currValue.quantity * currValue.price
             }, 0)}
           </div>
           {cartItems.length ? (
@@ -189,7 +189,7 @@ const Cart = (props: Props) => {
         </div>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default Cart;
+export default Cart

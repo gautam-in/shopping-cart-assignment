@@ -1,28 +1,28 @@
-import { useEffect, useState } from "react";
-import { Category, getCategories } from "../apis/category";
+import { useEffect, useState } from "react"
+import { Category, getCategories } from "../apis/category"
 
 interface Props {
   checkboxClickHandler: (
     event: React.ChangeEvent<HTMLInputElement>,
-    category: Category
-  ) => void;
+    category: Category,
+  ) => void
 }
 
 export const Sidebar: React.FC<Props> = ({ checkboxClickHandler }) => {
-  const [categories, setCategories] = useState<{ [key: string]: Category }>({});
+  const [categories, setCategories] = useState<{ [key: string]: Category }>({})
 
   useEffect(() => {
     getCategories()
       .then((_) => {
         setCategories(
           _.reduce((acc, currCategory) => {
-            acc[currCategory.id] = currCategory;
-            return acc;
-          }, {} as { [key: string]: Category })
-        );
+            acc[currCategory.id] = currCategory
+            return acc
+          }, {} as { [key: string]: Category }),
+        )
       })
-      .catch(console.log);
-  }, []);
+      .catch(console.log)
+  }, [])
 
   return (
     <aside
@@ -37,8 +37,8 @@ export const Sidebar: React.FC<Props> = ({ checkboxClickHandler }) => {
       </ul>
       <form
         onSubmit={(_) => {
-          _.preventDefault();
-          _.stopPropagation();
+          _.preventDefault()
+          _.stopPropagation()
         }}
       >
         {Object.values(categories).map((category) => (
@@ -51,7 +51,7 @@ export const Sidebar: React.FC<Props> = ({ checkboxClickHandler }) => {
               id={category.id}
               style={{ marginRight: "10px" }}
               onChange={(_) => {
-                checkboxClickHandler(_, category);
+                checkboxClickHandler(_, category)
               }}
             />
             <label htmlFor={category.id}>{category.name}</label>
@@ -59,5 +59,5 @@ export const Sidebar: React.FC<Props> = ({ checkboxClickHandler }) => {
         ))}
       </form>
     </aside>
-  );
-};
+  )
+}

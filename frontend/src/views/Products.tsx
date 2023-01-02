@@ -1,79 +1,79 @@
-import { useContext, useEffect, useState } from "react";
-import { Category } from "../apis/category";
-import { getProducts, Product } from "../apis/product";
-import { ProductCard } from "../components/product-card";
-import { CartContext } from "../context/cart";
-import { Banners } from "../layout/banners";
-import { Header } from "../layout/header";
-import { Sidebar } from "../layout/sidebar";
-import "./products.scss";
+import { useContext, useEffect, useState } from "react"
+import { Category } from "../apis/category"
+import { getProducts, Product } from "../apis/product"
+import { ProductCard } from "../components/product-card"
+import { CartContext } from "../context/cart"
+import { Banners } from "../layout/banners"
+import { Header } from "../layout/header"
+import { Sidebar } from "../layout/sidebar"
+import "./products.scss"
 
-type Props = {};
+type Props = {}
 
 const Products: React.FC<Props> = () => {
-  const { setLoading } = useContext(CartContext);
-  const [products, setProducts] = useState<{ [key: string]: Product[] }>({});
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
-  const [selectedCategories, setSelectedCategories] = useState<Category[]>([]);
+  const { setLoading } = useContext(CartContext)
+  const [products, setProducts] = useState<{ [key: string]: Product[] }>({})
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
+  const [selectedCategories, setSelectedCategories] = useState<Category[]>([])
 
   useEffect(() => {
     const callAPI = async () => {
       try {
-        setLoading(true);
-        const data = await getProducts();
+        setLoading(true)
+        const data = await getProducts()
         data.reduce((acc, currProduct) => {
-          acc[currProduct.category] = currProduct;
-          return acc;
-        }, {} as { [key: string]: Product });
+          acc[currProduct.category] = currProduct
+          return acc
+        }, {} as { [key: string]: Product })
         setProducts(
           data.reduce((acc, currProduct) => {
             if (acc[currProduct.category])
-              acc[currProduct.category].push(currProduct);
-            else acc[currProduct.category] = [currProduct];
-            return acc;
-          }, {} as { [key: string]: Product[] })
-        );
-        setFilteredProducts(data);
+              acc[currProduct.category].push(currProduct)
+            else acc[currProduct.category] = [currProduct]
+            return acc
+          }, {} as { [key: string]: Product[] }),
+        )
+        setFilteredProducts(data)
       } catch (error) {
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
-    callAPI();
-  }, [setLoading]);
+    }
+    callAPI()
+  }, [setLoading])
 
   useEffect(() => {
     if (selectedCategories.length > 0) {
       setFilteredProducts(
         selectedCategories
           .map((category) => {
-            return products[category.id];
+            return products[category.id]
           })
           .reduce((acc, currProducts) => {
-            return [...acc, ...(currProducts ?? [])];
-          }, [])
-      );
+            return [...acc, ...(currProducts ?? [])]
+          }, []),
+      )
     } else
       setFilteredProducts(
         Object.values(products).reduce((acc, currProducts) => {
-          return [...acc, ...currProducts];
-        }, [])
-      );
-  }, [selectedCategories, products]);
+          return [...acc, ...currProducts]
+        }, []),
+      )
+  }, [selectedCategories, products])
 
   const checkboxClickHandler = (
     _: React.ChangeEvent<HTMLInputElement>,
-    category: Category
+    category: Category,
   ) => {
     if (_.target.checked) {
-      setSelectedCategories((categories) => [...categories, category]);
+      setSelectedCategories((categories) => [...categories, category])
     } else {
       const newSelectedCategories = [...selectedCategories].filter(
-        (currCategory) => currCategory.id !== category.id
-      );
-      setSelectedCategories(newSelectedCategories);
+        (currCategory) => currCategory.id !== category.id,
+      )
+      setSelectedCategories(newSelectedCategories)
     }
-  };
+  }
 
   return (
     <>
@@ -107,7 +107,7 @@ const Products: React.FC<Props> = () => {
         </main>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Products;
+export default Products

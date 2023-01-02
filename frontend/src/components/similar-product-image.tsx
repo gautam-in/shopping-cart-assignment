@@ -2,10 +2,10 @@ const SimilarProductImage = ({
   description,
   imageURL,
 }: {
-  imageURL: string;
-  description: string;
+  imageURL: string
+  description: string
 }) => {
-  return <img alt={description} src={imageURL} className="product-image" />;
-};
+  return <img alt={description} src={imageURL} className="product-image" />
+}
 
-export default SimilarProductImage;
+export default SimilarProductImage

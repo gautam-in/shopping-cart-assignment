@@ -1,4 +1,4 @@
-type Props = {};
+type Props = {}
 
 export const Loader = (props: Props) => {
   return (
@@ -16,5 +16,5 @@ export const Loader = (props: Props) => {
     >
       <h2>Loading......</h2>
     </div>
-  );
-};
+  )
+}

@@ -8,7 +8,7 @@ const ProductDetailImage = ({ imageURL }: { imageURL: string }) => {
         border: "1px solid #ccc",
       }}
     />
-  );
-};
+  )
+}
 
-export default ProductDetailImage;
+export default ProductDetailImage
