@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Category, getCategories } from "../../apis/category"
 import { GREY_COLOR } from "../../constants/colors"
+import "./index.scss"
 
 interface Props {
   selectCategoryHandler: (categoryId: string | null) => void
@@ -25,10 +26,8 @@ export const Sidebar: React.FC<Props> = ({
 
   return (
     <aside
+      className="sidebar"
       style={{
-        flexBasis: "18%",
-        border: "1px solid #ccc",
-        padding: "0px 0 20px 0px",
         backgroundColor: GREY_COLOR,
         minHeight: window.innerHeight,
       }}

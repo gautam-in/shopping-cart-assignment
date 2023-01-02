@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 // import { Category } from "../../apis/category"
 import { getProducts, Product } from "../../apis/product"
 import { ProductCard } from "../../components/product-card"
+import { GREY_COLOR } from "../../constants/colors"
 import { CartContext } from "../../context/cart"
 import { Sidebar } from "../../layout/sidebar"
 import "./index.scss"
@@ -38,25 +39,19 @@ const Products: React.FC<Props> = () => {
   }, [selectedCategory, products])
 
   return (
-    <main className="container">
-      <Sidebar
-        selectCategoryHandler={setSelectedCategory}
-        selectedCategory={selectedCategory}
-      />
-      <ul
-        style={{
-          width: "100%",
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-          paddingLeft: "30px",
-        }}
-      >
-        {filteredProducts.map((product) => (
-          <ProductCard product={product} key={product.id} />
-        ))}
-      </ul>
-    </main>
+    <div style={{ backgroundColor: GREY_COLOR }}>
+      <main className="products-container">
+        <Sidebar
+          selectCategoryHandler={setSelectedCategory}
+          selectedCategory={selectedCategory}
+        />
+        <ul className="product-list">
+          {filteredProducts.map((product) => (
+            <ProductCard product={product} key={product.id} />
+          ))}
+        </ul>
+      </main>
+    </div>
   )
 }
 

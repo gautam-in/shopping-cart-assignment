@@ -44,18 +44,7 @@ export const ProductCard: React.FC<Props> = ({ product, charLimit = 25 }) => {
         description={product.description}
         imageURL={product.imageURL}
       />
-      <div
-        style={{
-          width: "100%",
-          padding: "20px 30px",
-          border: "1px solid #ccc",
-          borderTop: "none",
-
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+      <div className="product-details">
         <div style={{ textAlign: "center" }}>MRP Rs. {product.price}</div>
         <div
           style={{

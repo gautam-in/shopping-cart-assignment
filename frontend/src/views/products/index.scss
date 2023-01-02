@@ -1,5 +1,12 @@
-.container {
+.products-container {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  .product-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0px 15px;
+  }
 }
