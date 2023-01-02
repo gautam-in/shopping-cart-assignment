@@ -8,6 +8,9 @@
   align-items: center;
   background-color: white;
   z-index: 100;
+  @media screen and (max-width: 1180px) {
+    height: 7%;
+  }
   .header-content {
     width: 90%;
     margin: auto;
