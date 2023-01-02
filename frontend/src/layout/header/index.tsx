@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect, useState } from "react"
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro"
-import "./header.scss"
 import { useNavigate } from "react-router"
-import { CART_PAGE, PRODUCT_PAGE } from "../constants/routes"
+import { CART_PAGE, HOME_PAGE } from "../../constants/routes"
+import { THEME_COLOR } from "../../constants/colors"
+import "./index.scss"
 
 type Props = {}
 
@@ -24,7 +25,7 @@ export const Header = (props: Props) => {
           className="logo"
           src={imgSrc}
           alt=""
-          onClick={(_) => navigate(PRODUCT_PAGE)}
+          onClick={(_) => navigate(HOME_PAGE)}
         />
         <button
           className="cart"
@@ -32,7 +33,11 @@ export const Header = (props: Props) => {
             navigate(CART_PAGE)
           }}
         >
-          <FontAwesomeIcon icon={solid("shopping-cart")} size="2xl" />
+          <FontAwesomeIcon
+            color={THEME_COLOR}
+            icon={solid("shopping-cart")}
+            size="2xl"
+          />
         </button>
       </div>
     </header>

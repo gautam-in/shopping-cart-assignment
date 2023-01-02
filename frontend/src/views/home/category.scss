@@ -1,0 +1,36 @@
+.category-list-item {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 400px;
+  width: 80%;
+  margin: auto;
+  .category-img {
+    height: 350px;
+  }
+  .category-details {
+    flex-basis: 50%;
+    text-align: center;
+    .category-name {
+      margin-bottom: 20px;
+    }
+    .category-description {
+      margin-bottom: 20px;
+    }
+    .category-button {
+      cursor: pointer;
+      color: white;
+      padding: 20px;
+      border-color: transparent;
+    }
+  }
+}
+.horizontal-rule {
+  margin-top: 10px;
+  width: 80%;
+  margin: auto;
+  border: 1px solid #ccc;
+  transform: scale(0.9);
+  box-shadow: 0px 4px 8px 2px #ccc;
+}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { Banner, getBanners } from "../apis/banner"
-import "./banner.scss"
+import { Banner, getBanners } from "../../apis/banner"
+import "./index.scss"
 
 export const Banners: React.FC = () => {
   const [banners, setBanners] = useState<Banner[]>([])

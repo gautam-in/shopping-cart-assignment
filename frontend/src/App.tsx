@@ -6,19 +6,16 @@ import {
   BrowserRouter as Router,
   Navigate,
 } from "react-router-dom"
-import {
-  CART_PAGE,
-  PRODUCT_DETAIL_PAGE,
-  PRODUCT_PAGE,
-} from "./constants/routes"
+import { CART_PAGE, HOME_PAGE, PRODUCTS_PAGE } from "./constants/routes"
 import { CartContextItem, CartProvider } from "./context/cart"
 import { Suspense, useState } from "react"
 import { Product } from "./apis/product"
 import { Loader } from "./components/Loader"
+import PrivateRoute from "./HOC/PrivateRoute"
 
+const LazyHome = React.lazy(() => import("./views/home"))
 const LazyProducts = React.lazy(() => import("./views/products"))
 const LazyCart = React.lazy(() => import("./views/cart"))
-const LazyProductDetail = React.lazy(() => import("./views/product-detail"))
 
 Axios.defaults.baseURL = process.env.REACT_APP_API
 
@@ -69,10 +66,19 @@ function App() {
         <Suspense fallback={null}>
           {loading && <Loader />}
           <Routes>
-            <Route path={PRODUCT_PAGE} element={<LazyProducts />} />
+            <Route
+              path={HOME_PAGE}
+              element={<PrivateRoute Component={LazyHome} />}
+            />
+            <Route
+              path={PRODUCTS_PAGE}
+              element={<PrivateRoute Component={LazyProducts} />}
+            />
             <Route path={CART_PAGE} element={<LazyCart />} />
-            <Route path={PRODUCT_DETAIL_PAGE} element={<LazyProductDetail />} />
-            <Route path="*" element={<Navigate to={PRODUCT_PAGE}></Navigate>} />
+            <Route
+              path="*"
+              element={<Navigate to={PRODUCTS_PAGE}></Navigate>}
+            />
           </Routes>
         </Suspense>
       </Router>

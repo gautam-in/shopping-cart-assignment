@@ -1,12 +1,11 @@
-import { Header } from "../layout/header"
-import { PRODUCT_PAGE } from "../constants/routes"
+import { Header } from "../../layout/header"
+import { PRODUCTS_PAGE } from "../../constants/routes"
 import { useNavigate } from "react-router-dom"
-import "./cart.scss"
 import { useContext } from "react"
-import { CartContext } from "../context/cart"
-import { Product } from "../apis/product"
-import { addToCart } from "../apis/add-to-cart"
-import { PRODUCT_DETAIL_PAGE } from "../constants/routes"
+import { CartContext } from "../../context/cart"
+import { Product } from "../../apis/product"
+import { addToCart } from "../../apis/add-to-cart"
+import "./index.scss"
 
 type Props = {}
 
@@ -58,7 +57,7 @@ const Cart = (props: Props) => {
                   cursor: "pointer",
                   color: "white",
                 }}
-                onClick={(_) => navigate(PRODUCT_PAGE)}
+                onClick={(_) => navigate(PRODUCTS_PAGE)}
               >
                 Continue Shopping
               </button>
@@ -83,10 +82,7 @@ const Cart = (props: Props) => {
                     <img
                       src={product.imageURL}
                       alt=""
-                      style={{ marginRight: "20px", cursor: "pointer" }}
-                      onClick={(_) =>
-                        navigate(`${PRODUCT_DETAIL_PAGE}?id=${product.id}`)
-                      }
+                      style={{ marginRight: "20px" }}
                     />
                     <div style={{ paddingLeft: "40px" }}>
                       <h3 style={{ marginBottom: "10px", marginTop: "50px" }}>
@@ -166,7 +162,7 @@ const Cart = (props: Props) => {
                   cursor: "pointer",
                   color: "black",
                 }}
-                onClick={(_) => navigate(PRODUCT_PAGE)}
+                onClick={(_) => navigate(PRODUCTS_PAGE)}
               >
                 Continue Shopping
               </button>

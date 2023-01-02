@@ -1,3 +1,3 @@
-export const PRODUCT_PAGE = "/"
+export const HOME_PAGE = "/"
+export const PRODUCTS_PAGE = "/products"
 export const CART_PAGE = "/cart"
-export const PRODUCT_DETAIL_PAGE = "/product"
