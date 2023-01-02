@@ -6,13 +6,16 @@ import {
   BrowserRouter as Router,
   Navigate,
 } from "react-router-dom"
-import { HOME_PAGE, PRODUCTS_PAGE } from "./constants/routes"
+import { HOME_PAGE, LOGIN_PAGE, PRODUCTS_PAGE } from "./constants/routes"
 import { CartContextItem, CartProvider } from "./context/cart"
 import { Suspense, useState } from "react"
 import { Product } from "./apis/product"
 import { Loader } from "./components/Loader"
 import PrivateRoute from "./HOC/PrivateRoute"
 import Cart from "./views/cart"
+import { AuthProvider } from "./context/auth"
+import { Login } from "./views/auth/login"
+import LoggedOutRoute from "./HOC/LoggedOutRoute"
 
 const LazyHome = React.lazy(() => import("./views/home"))
 const LazyProducts = React.lazy(() => import("./views/products"))
@@ -32,6 +35,7 @@ function App() {
   )
   const [loading, setLoading] = useState<boolean>(false)
   const [isCartDisplayed, setIsCartDisplayed] = useState<boolean>(false)
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState<boolean>(false)
 
   const addCartItem = (product: Product, quantityToBeAdded: number) => {
     let foundIndex = -1
@@ -55,37 +59,43 @@ function App() {
   }
 
   return (
-    <CartProvider
-      value={{
-        cartItems,
-        addCartItem,
-        loading,
-        setLoading,
-        isCartDisplayed,
-        setIsCartDisplayed,
-      }}
-    >
-      <Router>
-        <Suspense fallback={null}>
-          {loading && <Loader />}
-          {isCartDisplayed ? <Cart /> : null}
-          <Routes>
-            <Route
-              path={HOME_PAGE}
-              element={<PrivateRoute Component={LazyHome} />}
-            />
-            <Route
-              path={PRODUCTS_PAGE}
-              element={<PrivateRoute Component={LazyProducts} />}
-            />
-            <Route
-              path="*"
-              element={<Navigate to={PRODUCTS_PAGE}></Navigate>}
-            />
-          </Routes>
-        </Suspense>
-      </Router>
-    </CartProvider>
+    <AuthProvider value={{ setIsUserLoggedIn, isUserLoggedIn }}>
+      <CartProvider
+        value={{
+          cartItems,
+          addCartItem,
+          loading,
+          setLoading,
+          isCartDisplayed,
+          setIsCartDisplayed,
+        }}
+      >
+        <Router>
+          <Suspense fallback={null}>
+            {loading && <Loader />}
+            {isCartDisplayed ? <Cart /> : null}
+            <Routes>
+              <Route
+                path={HOME_PAGE}
+                element={<PrivateRoute Component={LazyHome} />}
+              />
+              <Route
+                path={PRODUCTS_PAGE}
+                element={<PrivateRoute Component={LazyProducts} />}
+              />
+              <Route
+                path={LOGIN_PAGE}
+                element={<LoggedOutRoute Component={Login} />}
+              />
+              <Route
+                path="*"
+                element={<Navigate to={PRODUCTS_PAGE}></Navigate>}
+              />
+            </Routes>
+          </Suspense>
+        </Router>
+      </CartProvider>
+    </AuthProvider>
   )
 }
 
