@@ -10,7 +10,7 @@ import { PRODUCT_DETAIL_PAGE } from "../constants/routes";
 
 type Props = {};
 
-export const Cart = (props: Props) => {
+const Cart = (props: Props) => {
   const { cartItems, addCartItem, setLoading } = useContext(CartContext);
   const navigate = useNavigate();
 
@@ -22,7 +22,7 @@ export const Cart = (props: Props) => {
     } catch (error) {
       console.log(error);
     } finally {
-      setLoading(true);
+      setLoading(false);
     }
   };
 
@@ -191,3 +191,5 @@ export const Cart = (props: Props) => {
     </>
   );
 };
+
+export default Cart;

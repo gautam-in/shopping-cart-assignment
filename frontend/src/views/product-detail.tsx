@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { addToCart } from "../apis/add-to-cart";
@@ -10,7 +11,7 @@ import "./product-detail.scss";
 
 type Props = {};
 
-export const ProductDetail: React.FC<Props> = () => {
+const ProductDetail: React.FC<Props> = () => {
   const { cartItems, addCartItem, setLoading } = useContext(CartContext);
   const [productsOfSameCategory, setProductsOfSameCategory] = useState<
     Product[]
@@ -23,7 +24,6 @@ export const ProductDetail: React.FC<Props> = () => {
   useEffect(() => {
     const callAPI = async () => {
       try {
-        setLoading(true);
         const data = await getProducts();
         data.reduce((acc, currProduct) => {
           acc[currProduct.category] = currProduct;
@@ -45,11 +45,15 @@ export const ProductDetail: React.FC<Props> = () => {
         } else navigate(PRODUCT_PAGE);
       } catch (error) {
       } finally {
-        setLoading(false);
+        // setLoading(false);
       }
     };
     callAPI();
   }, [setLoading, cartItems, id, navigate]);
+
+  useEffect(() => {
+    setLoading(!product);
+  }, [product, setLoading]);
 
   const addItem = async (product: Product, quantity: number) => {
     try {
@@ -62,6 +66,10 @@ export const ProductDetail: React.FC<Props> = () => {
       setLoading(false);
     }
   };
+
+  const LazyProductDetailImage = React.lazy(
+    () => import("../components/product-detail-image")
+  );
 
   return (
     product && (
@@ -84,11 +92,9 @@ export const ProductDetail: React.FC<Props> = () => {
                   marginTop: "20px",
                 }}
               >
-                <img
-                  src={product.imageURL}
-                  alt=""
-                  style={{ marginRight: "40px", border: "1px solid #ccc" }}
-                />
+                <Suspense fallback={null}>
+                  <LazyProductDetailImage imageURL={product.imageURL} />
+                </Suspense>
                 <div>
                   <h3>{product.name}</h3>
                   <p style={{ margin: "20px 0" }}>{product.description}</p>
@@ -181,3 +187,5 @@ export const ProductDetail: React.FC<Props> = () => {
     )
   );
 };
+
+export default ProductDetail;

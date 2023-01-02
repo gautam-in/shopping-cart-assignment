@@ -10,7 +10,7 @@ import "./products.scss";
 
 type Props = {};
 
-export const Products: React.FC<Props> = () => {
+const Products: React.FC<Props> = () => {
   const { setLoading } = useContext(CartContext);
   const [products, setProducts] = useState<{ [key: string]: Product[] }>({});
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
@@ -109,3 +109,5 @@ export const Products: React.FC<Props> = () => {
     </>
   );
 };
+
+export default Products;

@@ -1,3 +1,4 @@
+import React from "react";
 import Axios from "axios";
 import {
   Route,
@@ -5,17 +6,19 @@ import {
   BrowserRouter as Router,
   Navigate,
 } from "react-router-dom";
-import { Products } from "./views/products";
-import { Cart } from "./views/cart";
 import {
   CART_PAGE,
   PRODUCT_DETAIL_PAGE,
   PRODUCT_PAGE,
 } from "./constants/routes";
 import { CartContextItem, CartProvider } from "./context/cart";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { Product } from "./apis/product";
-import { ProductDetail } from "./views/product-detail";
+import { Loader } from "./components/Loader";
+
+const LazyProducts = React.lazy(() => import("./views/products"));
+const LazyCart = React.lazy(() => import("./views/cart"));
+const LazyProductDetail = React.lazy(() => import("./views/product-detail"));
 
 Axios.defaults.baseURL = process.env.REACT_APP_API;
 
@@ -62,29 +65,16 @@ function App() {
         setLoading,
       }}
     >
-      {loading && (
-        <div
-          style={{
-            height: "100%",
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            position: "fixed",
-            backgroundColor: "rgba(0,0,0,.2)",
-            zIndex: 200,
-          }}
-        >
-          <h2>Loading......</h2>
-        </div>
-      )}
       <Router>
-        <Routes>
-          <Route path={PRODUCT_PAGE} element={<Products />} />
-          <Route path={CART_PAGE} element={<Cart />} />
-          <Route path={PRODUCT_DETAIL_PAGE} element={<ProductDetail />} />
-          <Route path="*" element={<Navigate to={PRODUCT_PAGE}></Navigate>} />
-        </Routes>
+        <Suspense fallback={null}>
+          {loading && <Loader />}
+          <Routes>
+            <Route path={PRODUCT_PAGE} element={<LazyProducts />} />
+            <Route path={CART_PAGE} element={<LazyCart />} />
+            <Route path={PRODUCT_DETAIL_PAGE} element={<LazyProductDetail />} />
+            <Route path="*" element={<Navigate to={PRODUCT_PAGE}></Navigate>} />
+          </Routes>
+        </Suspense>
       </Router>
     </CartProvider>
   );

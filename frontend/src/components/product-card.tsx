@@ -11,6 +11,10 @@ type Props = {
   charLimit?: number;
 };
 
+const LazySimilarProductImage = React.lazy(
+  () => import("../components/similar-product-image")
+);
+
 export const ProductCard: React.FC<Props> = ({ product, charLimit = 25 }) => {
   const navigate = useNavigate();
   const { addCartItem, cartItems, setLoading } = useContext(CartContext);
@@ -40,10 +44,9 @@ export const ProductCard: React.FC<Props> = ({ product, charLimit = 25 }) => {
       className="product-card-item"
       onClick={(_) => navigate(`${PRODUCT_DETAIL_PAGE}?id=${product.id}`)}
     >
-      <img
-        alt={product.description}
-        src={product.imageURL}
-        className="product-image"
+      <LazySimilarProductImage
+        description={product.description}
+        imageURL={product.imageURL}
       />
       <div
         style={{
