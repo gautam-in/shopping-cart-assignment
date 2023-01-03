@@ -39,7 +39,7 @@ export const ProductCard: React.FC<Props> = ({ product, charLimit = 25 }) => {
 
   return (
     <li className="product-card-item">
-      <h2 style={{ padding: "5px", width: "100%" }}>{product.name}</h2>
+      <h2 style={{ padding: "5px 0px", width: "100%" }}>{product.name}</h2>
       <LazySimilarProductImage
         description={product.description}
         imageURL={product.imageURL}

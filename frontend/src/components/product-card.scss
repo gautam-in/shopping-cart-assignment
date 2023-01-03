@@ -1,20 +1,22 @@
 .product-card-item {
-  flex: 0 0 24%;
-  @media screen and (max-width: 1180px) {
-    flex: 0 0 48%;
-  }
-  @media screen and (max-width: 800px) {
-    flex: 0 0 100%;
-  }
+  flex: 0 0 25%;
   list-style: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 420px;
+  box-sizing: border-box;
   padding: 0 10px 30px 10px;
-  background-color: white;
-  margin: 5px;
+  margin: 0 5px 5px 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+  @media screen and (min-width: 799px) and (max-width: 819px) {
+    flex-basis: 35%;
+  }
+  @media screen and (max-width: 800px) {
+    flex: 0 0 100%;
+  }
   .product-image {
     border: 1px solid #ccc;
     text-align: center;
