@@ -3,7 +3,7 @@
   border: 1px solid #ccc;
   padding: 0px 0 20px 0px;
   @media screen and (max-width: 1180px) {
-    flex: 0 0 30%;
+    flex-basis: 30%;
   }
   @media screen and (max-width: 800px) {
     display: none;

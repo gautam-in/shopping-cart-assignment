@@ -1,0 +1,16 @@
+.private-route-container {
+  position: relative;
+  background-color: white;
+  .main-container {
+    width: 90%;
+    margin: 0px auto;
+    padding-top: 100px;
+    @media screen and (max-width: 1180px) {
+      width: 100%;
+      padding-top: 70px;
+    }
+    @media screen and (max-width: 800px) {
+      width: 100%;
+    }
+  }
+}

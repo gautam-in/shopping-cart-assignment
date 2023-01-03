@@ -4,6 +4,7 @@ import { LOGIN_PAGE } from "../constants/routes"
 import { AuthContext } from "../context/auth"
 import { Footer } from "../layout/footer"
 import { Header } from "../layout/header"
+import "./private-route.scss"
 
 interface Props {
   Component: React.FC
@@ -19,15 +20,9 @@ const PrivateRoute: React.FC<Props> = ({ Component }) => {
     }
   }, [isUserLoggedIn, navigate])
   return isUserLoggedIn ? (
-    <div style={{ position: "relative" }}>
+    <div className="private-route-container">
       <Header />
-      <div
-        style={{
-          width: "90%",
-          margin: "0px auto",
-          paddingTop: "100px",
-        }}
-      >
+      <div className="main-container">
         <main>
           <Component />
         </main>

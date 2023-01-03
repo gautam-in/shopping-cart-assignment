@@ -11,11 +11,11 @@ import { CartContextItem, CartProvider } from "./context/cart"
 import { Suspense, useState } from "react"
 import { Product } from "./apis/product"
 import { Loader } from "./components/Loader"
-import PrivateRoute from "./HOC/PrivateRoute"
+import PrivateRoute from "./HOC/private-route"
 import Cart from "./views/cart"
 import { AuthProvider } from "./context/auth"
 import { Login } from "./views/auth/login"
-import LoggedOutRoute from "./HOC/LoggedOutRoute"
+import LoggedOutRoute from "./HOC/logged-out-route"
 
 const LazyHome = React.lazy(() => import("./views/home"))
 const LazyProducts = React.lazy(() => import("./views/products"))
