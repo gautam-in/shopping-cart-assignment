@@ -1,0 +1,102 @@
+@import "../../../common_mixin.scss";
+
+.headerComponent {
+    padding: 0 5%;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    width: 90%;
+    z-index: 10;
+    background: white;
+    .link {
+        text-decoration: none;
+        color: #000;
+
+        &.active {
+            color: #e80a79;
+        }
+
+        &:hover {
+            color: #e80a79;
+        }
+    }
+    .leftSection {
+        display: flex;
+
+        justify-content: space-between;
+        @include tablet {
+            width: 50%;
+        }
+        @include desktop {
+            width: 35%;
+        }
+        .logo {
+            height: 100%;
+            width: 70px;
+        }
+        .logo img {
+            @include phone {
+                height: 100%;
+                width: 100px;
+                object-fit: contain;
+            }
+        }
+        .items {
+            padding-bottom: 20px;
+            display: flex;
+            width: 40%;
+            justify-content: space-around;
+            align-items: flex-end;
+            .nav-link {
+                text-decoration: none;
+                color: #000;
+
+                &.active {
+                    color: #e80a79;
+                }
+
+                &:hover {
+                    color: #e80a79;
+                }
+            }
+        }
+    }
+    .rightSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .cartLogo {
+            height: 40px;
+            // background: gray;
+            // justify-content: space-around;
+            display: flex;
+            // align-items: center;
+            padding: 0 20px 0 20px;
+            @include phone {
+                // padding:5px;
+            }
+            link {
+                text-decoration: none;
+            }
+        }
+        .loginSec {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            width: 160px;
+            @include phone {
+                padding: 10px 0 10p 0;
+                width: 122px;
+            }
+        }
+    }
+}
+.bodyContainer {
+    height: 90%;
+    position: absolute;
+    width: 100%;
+    top: 90px;
+}

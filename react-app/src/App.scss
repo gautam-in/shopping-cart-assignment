@@ -1,0 +1,26 @@
+@import "./common_mixin.scss";
+
+body {
+    font-family: "Dosis";
+}
+.itemDescription {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: pre-wrap;
+}
+
+.btn-cls {
+    background-color: #e80a79;
+    color: white;
+    font-size: 14px;
+    padding: 8px 10px;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    @include phone {
+        font-size: 11px;
+        padding: 5px;
+    }
+}

@@ -1,0 +1,44 @@
+@import '../../../common_mixin.scss';
+
+.headerComponent{
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    justify-content: space-between;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    .leftSection{
+        display: flex;
+        width: 35%;
+        justify-content: space-between;
+        .items{
+            padding-bottom: 20px;
+            display: flex;
+            width: 40%;
+            justify-content: space-around;
+            align-items: flex-end;
+        }
+    }
+    .rightSection{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .cartLogo{
+            height: 40px;
+            background: gray;
+            justify-content: space-around;
+            display: flex;
+            align-items: center;
+            padding: 0 40px 0 50px;
+        }
+        .loginSec{
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+    }
+
+    
+}

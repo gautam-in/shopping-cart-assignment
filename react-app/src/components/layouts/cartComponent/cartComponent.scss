@@ -1,0 +1,145 @@
+@import "../../../common_mixin.scss";
+
+.cartContainer {
+    // height: 100vh;
+    width: 90%;
+    margin: auto;
+    .heading {
+        font-size: 22px;
+        font-weight: 600;
+        margin-top: 30px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 10px;
+    }
+    .itemsContainer {
+        width: 100%;
+        .eachItem {
+            display: flex;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            margin-top: 20px;
+            padding: 10px;
+            .bannerImage {
+                width: 120px;
+                height: 50px;
+                margin-right: 20px;
+                @include phone {
+                    width: 100%;
+                    height: 70px;
+                }
+            }
+            .bannerImage img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                @include phone {
+                    padding-right: 40px;
+                }
+            }
+            .rightSec {
+                width: 100%;
+
+                @include phone {
+                    width: unset;
+                }
+                .desc {
+                }
+                .addRemove {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .addRemoveLeftSec {
+                        display: flex;
+                        align-items: center;
+                    }
+                    .xbtn {
+                        padding: 10px;
+                    }
+                    .totalPrice {
+                        padding-right: 40px;
+                    }
+                }
+                .addcartbtn {
+                    display: flex;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+            }
+            .parts {
+                border-radius: 20%;
+                width: 30px;
+                border: none;
+                background-color: #d00156;
+                color: white;
+                font-size: 20px;
+
+                @include phone {
+                    width: 20px;
+                    font-size: 14px;
+                    margin: 0 3px;
+                }
+
+                cursor: pointer;
+
+                &.disable {
+                    pointer-events: none;
+                    opacity: 0.5;
+                }
+            }
+            .countTxt {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    }
+    .bottomSec {
+        padding: 20px;
+        text-align: center;
+        box-shadow: rgb(14 30 37 / 12%) 0px 2px 4px 0px, rgb(14 30 37 / 32%) 0px 2px 16px 0px;
+        margin-bottom: 20px;
+        margin-top: 30px;
+        @include phone {
+            margin-top: 30px;
+        }
+        .butn {
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            background-color: #e80a79;
+            color: white;
+            font-size: 14px;
+            padding: 8px 10px;
+            border: none;
+            cursor: pointer;
+            @include phone {
+                font-size: 11px;
+                padding: 5px;
+            }
+            .proceedText {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .checkout-btn-sec {
+        width: 90%;
+        margin: auto;
+        margin-top: 20px;
+        &.shopping-btn {
+            margin-top: 50%;
+        }
+
+        .promo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 5px;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .btn-cls {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
