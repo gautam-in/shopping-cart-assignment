@@ -29,8 +29,6 @@ const Products: React.FC<Props> = () => {
     callAPI()
   }, [setLoading])
 
-  console.log({ categories })
-
   return (
     <>
       <Banners />

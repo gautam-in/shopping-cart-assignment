@@ -4,7 +4,7 @@ import { AuthContext } from "../../context/auth"
 
 type Props = {}
 
-const Login = (props: Props) => {
+const Signup = (props: Props) => {
   const { setIsUserLoggedIn } = useContext(AuthContext)
   return (
     <div
@@ -27,9 +27,9 @@ const Login = (props: Props) => {
         }}
       >
         <div>
-          <h1>Login</h1>
+          <h1>Signup</h1>
           <p style={{ paddingTop: "25px" }}>
-            Get access to your Orders, Wishlist and Recommendations
+            We do not share personal details with anyone.
           </p>
         </div>
       </div>
@@ -49,9 +49,9 @@ const Login = (props: Props) => {
               marginBottom: 10,
             }}
           >
-            <label htmlFor="login-email">Email</label>
+            <label htmlFor="signup-first-name">First Name</label>
             <input
-              id="login-email"
+              id="signup-first-name"
               style={{
                 width: "60%",
                 border: "none",
@@ -67,9 +67,9 @@ const Login = (props: Props) => {
               marginBottom: 10,
             }}
           >
-            <label htmlFor="login-password">Password</label>
+            <label htmlFor="signup-last-name">Last Name</label>
             <input
-              id="login-password"
+              id="signup-last-name"
               style={{
                 width: "60%",
                 border: "none",
@@ -77,7 +77,60 @@ const Login = (props: Props) => {
               }}
             />
           </div>
-
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              rowGap: 5,
+              marginBottom: 10,
+            }}
+          >
+            <label htmlFor="signup-email">Email</label>
+            <input
+              id="signup-email"
+              style={{
+                width: "60%",
+                border: "none",
+                borderBottom: "1px solid #ddd",
+              }}
+            />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              rowGap: 5,
+              marginBottom: 10,
+            }}
+          >
+            <label htmlFor="signup-password">Password</label>
+            <input
+              id="signup-password"
+              style={{
+                width: "60%",
+                border: "none",
+                borderBottom: "1px solid #ddd",
+              }}
+            />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              rowGap: 5,
+              marginBottom: 10,
+            }}
+          >
+            <label htmlFor="signup-confirm-password">Confirm Password</label>
+            <input
+              id="signup-confirm-password"
+              style={{
+                width: "60%",
+                border: "none",
+                borderBottom: "1px solid #ddd",
+              }}
+            />
+          </div>
           <div
             role="button"
             style={{
@@ -85,7 +138,7 @@ const Login = (props: Props) => {
               color: "white",
               backgroundColor: THEME_COLOR,
               marginTop: "20px",
-              padding: "10px",
+              padding: "10px 0",
               cursor: "pointer",
               display: "flex",
               justifyContent: "center",
@@ -93,7 +146,7 @@ const Login = (props: Props) => {
             }}
             onClick={(_) => setIsUserLoggedIn(true)}
           >
-            Login
+            Signup
           </div>
         </form>
       </div>
@@ -101,4 +154,4 @@ const Login = (props: Props) => {
   )
 }
 
-export default Login
+export default Signup

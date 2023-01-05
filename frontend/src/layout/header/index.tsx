@@ -2,11 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useContext, useEffect, useState } from "react"
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro"
 import { useNavigate } from "react-router"
-import { HOME_PAGE } from "../../constants/routes"
+import { HOME_PAGE, LOGIN_PAGE, REGISTER_PAGE } from "../../constants/routes"
 import { THEME_COLOR } from "../../constants/colors"
 import "./index.scss"
 import { CartContext } from "../../context/cart"
 import { AuthContext } from "../../context/auth"
+import { useLocation } from "react-router"
 
 type Props = {}
 
@@ -15,6 +16,8 @@ export const Header = (props: Props) => {
   const navigate = useNavigate()
   const { setIsCartDisplayed } = useContext(CartContext)
   const { isUserLoggedIn, setIsUserLoggedIn } = useContext(AuthContext)
+  const location = useLocation()
+
   useEffect(() => {
     if (window.innerWidth < 701) setImgSrc("/static/images/logo.png")
     else setImgSrc("/static/images/logo_2x.png")
@@ -56,7 +59,23 @@ export const Header = (props: Props) => {
             >
               Logout
             </div>
-          ) : null}
+          ) : (
+            <div
+              role="button"
+              style={{
+                color: THEME_COLOR,
+                margin: "0 20px",
+                cursor: "pointer",
+              }}
+              onClick={(_) =>
+                navigate(
+                  location.pathname === LOGIN_PAGE ? REGISTER_PAGE : LOGIN_PAGE,
+                )
+              }
+            >
+              {location.pathname === LOGIN_PAGE ? "Register" : "Login"}
+            </div>
+          )}
         </div>
       </div>
     </header>

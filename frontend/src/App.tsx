@@ -6,7 +6,12 @@ import {
   BrowserRouter as Router,
   Navigate,
 } from "react-router-dom"
-import { HOME_PAGE, LOGIN_PAGE, PRODUCTS_PAGE } from "./constants/routes"
+import {
+  HOME_PAGE,
+  LOGIN_PAGE,
+  PRODUCTS_PAGE,
+  REGISTER_PAGE,
+} from "./constants/routes"
 import { CartContextItem, CartProvider } from "./context/cart"
 import { Suspense, useState } from "react"
 import { Product } from "./apis/product"
@@ -14,11 +19,12 @@ import { Loader } from "./components/Loader"
 import PrivateRoute from "./HOC/private-route"
 import Cart from "./views/cart"
 import { AuthProvider } from "./context/auth"
-import { Login } from "./views/auth/login"
 import LoggedOutRoute from "./HOC/logged-out-route"
 
 const LazyHome = React.lazy(() => import("./views/home"))
 const LazyProducts = React.lazy(() => import("./views/products"))
+const LazyLogin = React.lazy(() => import("./views/auth/login"))
+const LazyRegister = React.lazy(() => import("./views/auth/signup"))
 
 Axios.defaults.baseURL = process.env.REACT_APP_API
 
@@ -85,7 +91,11 @@ function App() {
               />
               <Route
                 path={LOGIN_PAGE}
-                element={<LoggedOutRoute Component={Login} />}
+                element={<LoggedOutRoute Component={LazyLogin} />}
+              />
+              <Route
+                path={REGISTER_PAGE}
+                element={<LoggedOutRoute Component={LazyRegister} />}
               />
               <Route
                 path="*"
