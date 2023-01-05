@@ -41,7 +41,7 @@ function App() {
   )
   const [loading, setLoading] = useState<boolean>(false)
   const [isCartDisplayed, setIsCartDisplayed] = useState<boolean>(false)
-  const [isUserLoggedIn, setIsUserLoggedIn] = useState<boolean>(true)
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState<boolean>(false)
 
   const addCartItem = (product: Product, quantityToBeAdded: number) => {
     let foundIndex = -1
