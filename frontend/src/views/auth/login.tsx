@@ -82,8 +82,7 @@ const Login = (props: Props) => {
             />
           </div>
 
-          <div
-            role="button"
+          <button
             style={{
               width: "60%",
               color: "white",
@@ -95,10 +94,11 @@ const Login = (props: Props) => {
               justifyContent: "center",
               alignItems: "center",
             }}
+            tabIndex={0}
             onClick={(_) => setIsUserLoggedIn(true)}
           >
             Login
-          </div>
+          </button>
         </form>
       </div>
     </div>

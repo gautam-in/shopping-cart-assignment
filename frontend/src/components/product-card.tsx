@@ -10,9 +10,7 @@ type Props = {
   charLimit?: number
 }
 
-const LazyProductImage = React.lazy(
-  () => import("../components/similar-product-image"),
-)
+const LazyProductImage = React.lazy(() => import("./product-image"))
 
 export const ProductCard: React.FC<Props> = ({ product, charLimit = 25 }) => {
   const { addCartItem, cartItems, setLoading } = useContext(CartContext)
@@ -88,33 +86,49 @@ export const ProductCard: React.FC<Props> = ({ product, charLimit = 25 }) => {
               <div
                 style={{
                   display: "flex",
-
                   backgroundColor: THEME_COLOR,
                   color: "white",
                   width: "100%",
-                  padding: "10px 10px",
+                  height: "30px",
                   borderColor: "transparent",
+                  justifyContent: "space-between",
+                  alignItems: "center",
                 }}
               >
-                <div
+                <button
+                  style={{
+                    padding: "5px",
+                    margin: 0,
+                    backgroundColor: "transparent",
+                    border: 0,
+                    color: "white",
+                    cursor: "pointer",
+                  }}
                   onClick={(_) => {
                     _.stopPropagation()
                     addItem(product, -1)
                   }}
                 >
                   -
-                </div>
-                <div style={{ padding: "0 5px" }}>{quantity}</div>
-
+                </button>
+                <div style={{ margin: "0 5px" }}>{quantity}</div>
                 {product.stock > quantity && (
-                  <div
+                  <button
+                    style={{
+                      padding: "5px",
+                      margin: 0,
+                      backgroundColor: "transparent",
+                      border: 0,
+                      color: "white",
+                      cursor: "pointer",
+                    }}
                     onClick={(_) => {
                       _.stopPropagation()
                       addItem(product, 1)
                     }}
                   >
                     +
-                  </div>
+                  </button>
                 )}
               </div>
             )}

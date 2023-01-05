@@ -8,6 +8,7 @@ import "./index.scss"
 import { CartContext } from "../../context/cart"
 import { AuthContext } from "../../context/auth"
 import { useLocation } from "react-router"
+import { Link } from "react-router-dom"
 
 type Props = {}
 
@@ -26,14 +27,19 @@ export const Header = (props: Props) => {
   return (
     <header className="header">
       <div className="header-content">
-        <img
-          role={"button"}
-          tabIndex={0}
-          className="logo"
-          src={imgSrc}
-          alt=""
-          onClick={(_) => navigate(HOME_PAGE)}
-        />
+        <h1 id="sabka-bazaar-logo" style={{ display: "none" }}>
+          Sabka Bazaar
+        </h1>
+        <Link to={HOME_PAGE}>
+          <img
+            role="button"
+            tabIndex={0}
+            className="logo"
+            src={imgSrc}
+            aria-labelledby="sabka-bazaar-logo"
+            alt=""
+          />
+        </Link>
         <div style={{ display: "flex", alignItems: "center" }}>
           <button
             className="cart"
@@ -48,25 +54,29 @@ export const Header = (props: Props) => {
             />
           </button>
           {isUserLoggedIn ? (
-            <div
-              role="button"
+            <button
               style={{
                 color: THEME_COLOR,
                 margin: "0 20px",
+                backgroundColor: "transparent",
+                border: "0",
                 cursor: "pointer",
               }}
+              tabIndex={0}
               onClick={(_) => setIsUserLoggedIn(!isUserLoggedIn)}
             >
               Logout
-            </div>
+            </button>
           ) : (
-            <div
-              role="button"
+            <button
               style={{
                 color: THEME_COLOR,
+                backgroundColor: "transparent",
+                border: "0",
                 margin: "0 20px",
                 cursor: "pointer",
               }}
+              tabIndex={0}
               onClick={(_) =>
                 navigate(
                   location.pathname === LOGIN_PAGE ? REGISTER_PAGE : LOGIN_PAGE,
@@ -74,7 +84,7 @@ export const Header = (props: Props) => {
               }
             >
               {location.pathname === LOGIN_PAGE ? "Register" : "Login"}
-            </div>
+            </button>
           )}
         </div>
       </div>

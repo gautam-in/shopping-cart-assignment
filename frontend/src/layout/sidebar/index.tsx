@@ -37,21 +37,23 @@ export const Sidebar: React.FC<Props> = ({
           .filter((category) => category.enabled === true)
           .map((category) => (
             <li
+              className="sidebar-list-item"
               style={{
                 backgroundColor:
                   category.id === selectedCategory ? "white" : "transparent",
-                listStyle: "none",
-                padding: "10px 0 10px 10px",
-                borderBottom: "1px solid #ccc",
-                cursor: "pointer",
               }}
-              onClick={(_) => {
-                selectCategoryHandler(
-                  category.id === selectedCategory ? null : category.id,
-                )
-              }}
+              onClick={(_) => _.stopPropagation()}
             >
-              {category.name}
+              <button
+                tabIndex={0}
+                onClick={(_) => {
+                  selectCategoryHandler(
+                    category.id === selectedCategory ? null : category.id,
+                  )
+                }}
+              >
+                {category.name}
+              </button>
             </li>
           ))}
       </ul>

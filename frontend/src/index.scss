@@ -4,3 +4,6 @@
   box-sizing: border-box;
   user-select: none;
 }
+*:focus {
+  outline: 4px solid lime;
+}

@@ -25,17 +25,6 @@ export const Banners: React.FC = () => {
           <button
             className="banner-navigation-buttons"
             style={{
-              right: "30px",
-            }}
-            onClick={(_) =>
-              setCurrent((current) => (current + 1) % banners.length)
-            }
-          >
-            {">"}
-          </button>
-          <button
-            className="banner-navigation-buttons"
-            style={{
               left: "30px",
             }}
             onClick={(_) =>
@@ -43,6 +32,17 @@ export const Banners: React.FC = () => {
             }
           >
             {"<"}
+          </button>
+          <button
+            className="banner-navigation-buttons"
+            style={{
+              right: "30px",
+            }}
+            onClick={(_) =>
+              setCurrent((current) => (current + 1) % banners.length)
+            }
+          >
+            {">"}
           </button>
         </div>
       )}
