@@ -1,11 +1,6 @@
 import React from "react"
 import Axios from "axios"
-import {
-  Route,
-  Routes,
-  BrowserRouter as Router,
-  Navigate,
-} from "react-router-dom"
+import { Route, Routes, HashRouter as Router, Navigate } from "react-router-dom"
 import {
   HOME_PAGE,
   LOGIN_PAGE,
