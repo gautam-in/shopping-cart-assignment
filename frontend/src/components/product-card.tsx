@@ -10,7 +10,7 @@ type Props = {
   charLimit?: number
 }
 
-const LazySimilarProductImage = React.lazy(
+const LazyProductImage = React.lazy(
   () => import("../components/similar-product-image"),
 )
 
@@ -43,13 +43,16 @@ export const ProductCard: React.FC<Props> = ({ product, charLimit = 25 }) => {
         0,
         30,
       )}${product.name.length > 30 ? "..." : ""}`}</h3>
-      <LazySimilarProductImage
+      <LazyProductImage
         description={product.description}
         imageURL={product.imageURL}
+        alt={product.name}
       />
       <div className="product-details">
         <div
+          id={product.id + product.description}
           className="product-description"
+          title={product.description}
           style={{ backgroundColor: GREY_COLOR }}
         >
           {`${product.description.slice(0, 80)}${

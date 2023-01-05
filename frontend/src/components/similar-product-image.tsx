@@ -1,11 +1,20 @@
-const SimilarProductImage = ({
+const ProductImage = ({
   description,
   imageURL,
+  alt,
 }: {
   imageURL: string
   description: string
+  alt: string
 }) => {
-  return <img alt={description} src={imageURL} className="product-image" />
+  return (
+    <img
+      alt={alt}
+      title={description}
+      src={imageURL}
+      className="product-image"
+    />
+  )
 }
 
-export default SimilarProductImage
+export default ProductImage

@@ -49,7 +49,9 @@ const Login = (props: Props) => {
               marginBottom: 10,
             }}
           >
-            <label htmlFor="login-email">Email</label>
+            <label aria-label="Email" htmlFor="login-email">
+              Email
+            </label>
             <input
               id="login-email"
               style={{
@@ -67,7 +69,9 @@ const Login = (props: Props) => {
               marginBottom: 10,
             }}
           >
-            <label htmlFor="login-password">Password</label>
+            <label aria-label="Password" htmlFor="login-password">
+              Password
+            </label>
             <input
               id="login-password"
               style={{

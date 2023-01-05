@@ -49,7 +49,9 @@ const Signup = (props: Props) => {
               marginBottom: 10,
             }}
           >
-            <label htmlFor="signup-first-name">First Name</label>
+            <label htmlFor="signup-first-name" aria-label="First Name">
+              First Name
+            </label>
             <input
               id="signup-first-name"
               style={{
@@ -67,7 +69,9 @@ const Signup = (props: Props) => {
               marginBottom: 10,
             }}
           >
-            <label htmlFor="signup-last-name">Last Name</label>
+            <label htmlFor="signup-last-name" aria-label="Last Name">
+              Last Name
+            </label>
             <input
               id="signup-last-name"
               style={{
@@ -85,7 +89,9 @@ const Signup = (props: Props) => {
               marginBottom: 10,
             }}
           >
-            <label htmlFor="signup-email">Email</label>
+            <label htmlFor="signup-email" aria-label="Email">
+              Email
+            </label>
             <input
               id="signup-email"
               style={{
@@ -103,7 +109,9 @@ const Signup = (props: Props) => {
               marginBottom: 10,
             }}
           >
-            <label htmlFor="signup-password">Password</label>
+            <label htmlFor="signup-password" aria-label="Password">
+              Password
+            </label>
             <input
               id="signup-password"
               style={{
@@ -121,7 +129,12 @@ const Signup = (props: Props) => {
               marginBottom: 10,
             }}
           >
-            <label htmlFor="signup-confirm-password">Confirm Password</label>
+            <label
+              htmlFor="signup-confirm-password"
+              aria-label="Confirm Password"
+            >
+              Confirm Password
+            </label>
             <input
               id="signup-confirm-password"
               style={{
