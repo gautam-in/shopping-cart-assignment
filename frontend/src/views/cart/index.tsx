@@ -40,7 +40,7 @@ const Cart = (props: Props) => {
             <div>
               My Cart {cartItems.length ? `(${cartItems.length} item(s))` : ""}
             </div>
-            <div
+            <button
               className="close-cart-button"
               onClick={(_) => {
                 _.stopPropagation()
@@ -49,7 +49,7 @@ const Cart = (props: Props) => {
               }}
             >
               X
-            </div>
+            </button>
           </div>
           <div className="cart-items-container">
             {!cartItems.length ? (
@@ -68,7 +68,7 @@ const Cart = (props: Props) => {
                     <h5 className="product-name">{product.name}</h5>
                     <p className="product-description">
                       <div className="product-quantity-container">
-                        <div
+                        <button
                           onClick={(_) => {
                             _.stopPropagation()
                             addItem(product, -1)
@@ -79,12 +79,12 @@ const Cart = (props: Props) => {
                           }}
                         >
                           -
-                        </div>
+                        </button>
                         <div className="product-quantity">
                           {product.quantity}
                         </div>
 
-                        <div
+                        <button
                           onClick={(_) => {
                             _.stopPropagation()
                             if (product.stock > product.quantity)
@@ -96,16 +96,15 @@ const Cart = (props: Props) => {
                           }}
                         >
                           +
-                        </div>
-                        <div
-                          role="button"
+                        </button>
+                        <button
                           className="item-delete-button"
                           onClick={() => {
                             addItem(product, -product.quantity)
                           }}
                         >
                           X
-                        </div>
+                        </button>
                         <div>Rs. {product.price}</div>
                       </div>
                       <div>Rs. {product.quantity * product.price}</div>
@@ -126,7 +125,7 @@ const Cart = (props: Props) => {
                     backgroundColor: THEME_COLOR,
                   }}
                 >
-                  <div>Proceed to checkout</div>
+                  <button>Proceed to checkout</button>
                   <div>
                     Rs.{" "}
                     {cartItems.reduce((acc, currValue) => {
@@ -143,13 +142,12 @@ const Cart = (props: Props) => {
               role="button"
               onClick={(_) => setIsCartDisplayed(false)}
             >
-              <div
+              <button
                 className="keep-shopping-button"
                 style={{ backgroundColor: THEME_COLOR }}
-                role="button"
               >
                 <div>Keep Shopping</div>
-              </div>
+              </button>
             </div>
           )}
         </div>

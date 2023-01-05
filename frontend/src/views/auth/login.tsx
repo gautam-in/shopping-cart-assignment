@@ -93,6 +93,7 @@ const Login = (props: Props) => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              border: 0,
             }}
             tabIndex={0}
             onClick={(_) => setIsUserLoggedIn(true)}

@@ -40,12 +40,14 @@
         padding: 0 20px;
         color: white;
         background-color: black;
-        @media screen and (max-width: 1180px) {
-          background-color: white;
-          color: black;
-        }
         .close-cart-button {
           cursor: pointer;
+          color: white;
+          border: 0;
+          background-color: transparent;
+          @media screen and (max-width: 1180px) {
+            color: black;
+          }
         }
       }
       .cart-items-container {
@@ -95,6 +97,8 @@
                 background-color: white;
                 cursor: pointer;
                 .product-quantity-button {
+                  cursor: pointer;
+                  border: 0;
                   color: white;
                   padding: 5px 11px;
                   border-radius: 50px;
@@ -104,6 +108,8 @@
                   margin: 0 5px;
                 }
                 .item-delete-button {
+                  border: 0;
+                  background-color: transparent;
                   margin: 0 10px 0 30px;
                 }
               }
@@ -126,6 +132,7 @@
           width: 100%;
           text-align: center;
           .checkout-button {
+            cursor: pointer;
             display: flex;
             color: white;
             justify-content: space-between;
@@ -134,6 +141,11 @@
             height: 35px;
             padding: 0 15px;
             border-radius: 3px;
+            > button {
+              background-color: transparent;
+              border: 0;
+              color: white;
+            }
           }
         }
       }
@@ -157,6 +169,7 @@
           padding: 0 15px;
           border-radius: 3px;
           cursor: pointer;
+          border: 0;
         }
       }
     }
