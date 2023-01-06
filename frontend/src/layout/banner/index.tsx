@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react"
+import { lazy, ReactNode, useEffect, useState } from "react"
 import { Banner, getBanners } from "../../apis/banner"
 import "./index.scss"
 
-export const Banners: React.FC = () => {
+const LazyBannerImage = lazy(() => import("./banner-image"))
+
+const Banners: React.FC = () => {
   const [banners, setBanners] = useState<Banner[]>([])
   const [current, setCurrent] = useState<number>(0)
+  const [Component, setComponent] = useState<ReactNode | null>(null)
+
   useEffect(() => {
     getBanners()
       .then((banners) => setBanners(banners))
@@ -13,15 +17,22 @@ export const Banners: React.FC = () => {
 
   const banner = banners && banners[current]
 
+  useEffect(() => {
+    if (banner) {
+      setComponent(
+        <LazyBannerImage
+          bannerImageUrl={banner.bannerImageUrl}
+          bannerImageAlt={banner.bannerImageAlt}
+        />,
+      )
+    }
+  }, [banner])
+
   return (
     <>
       {banner && (
         <div className="banner-container" style={{ position: "relative" }}>
-          <img
-            src={banner.bannerImageUrl}
-            alt={banner.bannerImageAlt}
-            className="banner-img"
-          />
+          {Component}
           <button
             className="banner-navigation-buttons"
             style={{
@@ -49,3 +60,5 @@ export const Banners: React.FC = () => {
     </>
   )
 }
+
+export default Banners
