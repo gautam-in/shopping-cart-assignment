@@ -1,0 +1,16 @@
+//Generic or Root CSS
+@import "./variables";
+@import "./mixins";
+@import "./common";
+
+//Layout CSS
+@import "./footer";
+@import "./header";
+@import "./mainContent";
+
+//Basic Components CSS
+@import "./slider";
+
+//Pages CSS
+@import "./sign_In";
+@import "./home";

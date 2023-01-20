@@ -1,0 +1,31 @@
+.user-signin {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  gap: 12.5rem;
+  margin: 10rem auto;
+
+  &__text {
+    margin-top: 3rem;
+  }
+
+  &__form {
+    width: 35%;
+  }
+
+  @include respond(vertical-tab) {
+    flex-direction: column;
+    gap: 1rem;
+
+    &__text {
+      margin-top: 3rem;
+      padding: 2rem;
+    }
+
+    &__form {
+      padding: 2rem;
+      width: 100%;
+    }
+  }
+}
