@@ -1,0 +1,19 @@
+.footer-container {
+  background-color: #ddd;
+  height: 60px;
+  width: 100%;
+  margin-top: 10px;
+  @media screen and (max-width: 1180px) {
+    margin-top: 0px;
+  }
+  .footer-text {
+    width: 90%;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 1180px) {
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.products-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  .product-list {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: flex-start;
+    box-sizing: border-box;
+    padding: 15px;
+    padding-top: 0px;
+    min-height: 100vh;
+  }
+}

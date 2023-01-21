@@ -5,11 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "start": "canned --cors=true --headers 'Access-Control-Allow-Headers, *' -p 5000 ./server",
+    "start:delay": "canned --response_delay=300 --cors=true --headers 'Access-Control-Allow-Headers, *' -p 5000 ./server",
+    "prepare": "husky install"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "canned": "^0.3.12"
+  },
+  "devDependencies": {
+    "eslint": "^8.31.0",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.1"
   }
 }
