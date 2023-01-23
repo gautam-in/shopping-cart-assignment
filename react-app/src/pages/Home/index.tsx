@@ -1,10 +1,27 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
+import { MyGlobalContext } from "../../App";
 import { Slider } from "../../components/basic";
+import { BannersData } from "../../components/basic/Slider";
+import { useFirstRender } from "../../hooks";
+
+export type ICategoriesData = {
+  name: string;
+  key: string;
+  description: string;
+  enabled: boolean;
+  order: number;
+  imageUrl: string;
+  id: string;
+};
 
 const Home: React.FC = () => {
-  const [categories, setCategories] = React.useState([]);
-  const [bannersData, setBannersData] = React.useState([]);
+  const { categoriesData, setCategoriesData } =
+    React.useContext(MyGlobalContext);
+  const [bannersData, setBannersData] = React.useState([] as BannersData[]);
+
+  const navigate = useNavigate();
 
   const getAllCategories = async () => {
     await fetch(`http://localhost:5000/categories`)
@@ -13,7 +30,7 @@ const Home: React.FC = () => {
         categoriesData = categoriesData.sort(
           (a: { order: number }, b: { order: number }) => a.order - b.order
         );
-        setCategories(categoriesData);
+        setCategoriesData(categoriesData);
       })
       .catch((error) => {
         throw error;
@@ -34,7 +51,7 @@ const Home: React.FC = () => {
       });
   };
 
-  React.useEffect(() => {
+  useFirstRender(() => {
     getAllCategories();
     getAllBanners();
   }, []);
@@ -42,15 +59,15 @@ const Home: React.FC = () => {
   return (
     <div className="home__wrapper">
       <Slider data={bannersData} />
-      {categories.length > 0 &&
-        categories.map((item: any) => {
-          let imagePath =
-            item.imageUrl !== undefined && item.imageUrl.split("/");
+      {categoriesData.length > 0 &&
+        categoriesData.map((item: ICategoriesData) => {
+          let imagePath: string[] =
+            item.imageUrl !== undefined ? item.imageUrl.split("/") : [];
           let imageName = imagePath[imagePath?.length - 1];
 
           if (item.imageUrl === undefined) return "";
           return (
-            <div className="home__container" key={item?.id}>
+            <div className="home__container" key={item?.key}>
               <img
                 src={
                   imagePath
@@ -63,7 +80,10 @@ const Home: React.FC = () => {
               <div className="home__container__details">
                 <h3 className="heading-3">{item?.name}</h3>
                 <p className="paragraph paragraph--p1">{item?.description}</p>
-                <button className="btn btn--explore">
+                <button
+                  className="btn btn--explore"
+                  onClick={() => navigate(`/products?id=${item?.id}`)}
+                >
                   Explore {item?.name}
                 </button>
               </div>

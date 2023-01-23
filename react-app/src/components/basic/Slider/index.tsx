@@ -1,13 +1,14 @@
 import React from "react";
 
+export type BannersData = {
+  bannerImageUrl: string;
+  bannerImageAlt: string;
+  isActive: boolean;
+  order: number;
+  id: string;
+};
 export interface ISliderProps {
-  data: {
-    bannerImageUrl: string;
-    bannerImageAlt: string;
-    isActive: boolean;
-    order: number;
-    id: string;
-  }[];
+  data: BannersData[];
 }
 
 const Slider: React.FC<ISliderProps> = ({ data }) => {
@@ -38,16 +39,16 @@ const Slider: React.FC<ISliderProps> = ({ data }) => {
   };
 
   const renderSlides = () =>
-    data.map((item: any, index) => {
-      let imagePath =
-        item.bannerImageUrl !== undefined && item.bannerImageUrl.split("/");
+    data.map((item: BannersData, index) => {
+      let imagePath: string[] =
+        item.bannerImageUrl !== undefined ? item.bannerImageUrl.split("/") : [];
       let imageName = imagePath[imagePath?.length - 1];
 
       return (
         <div className="slider__wrapper__eachSlide" key={index}>
           <img
             src={require(`../../../static/images/offers/${imageName}`)}
-            alt={item?.name}
+            alt={item?.bannerImageAlt}
             className="slider__wrapper__eachSlide__img"
           />
         </div>
