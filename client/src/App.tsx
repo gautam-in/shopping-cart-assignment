@@ -1,8 +1,10 @@
+import { Layout } from "components";
+
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <Layout>
+      <h1>Home page</h1>
+    </Layout>
   );
 }
 
