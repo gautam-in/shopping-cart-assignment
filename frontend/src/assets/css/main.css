@@ -576,6 +576,12 @@ main .products-listing .product button:hover, main .products-listing .product bu
   max-height: 150px;
   border-radius: 0.5rem;
 }
+@media screen and (max-width: 768px) {
+  .offcanvas.offcanvas-end .offcanvas-body .cart-item .prod-image img {
+    width: 120px;
+    height: 120px;
+  }
+}
 @media screen and (max-width: 575px) {
   .offcanvas.offcanvas-end .offcanvas-body .cart-item .prod-image img {
     width: 100px;
@@ -593,9 +599,9 @@ main .products-listing .product button:hover, main .products-listing .product bu
   color: #ffffff;
   margin: 0 0.5rem;
   border-radius: 90%;
-  height: 35px;
-  width: 35px;
-  line-height: 16px;
+  height: 32px;
+  width: 32px;
+  line-height: 12px;
   display: inline-block;
 }
 .offcanvas.offcanvas-end .offcanvas-body .cart-item .quantity-btn button:hover, .offcanvas.offcanvas-end .offcanvas-body .cart-item .quantity-btn button:focus {

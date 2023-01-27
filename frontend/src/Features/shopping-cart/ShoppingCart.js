@@ -74,7 +74,7 @@ function ShoppingCart() {
             </div>
             <div className="checkout-section d-flex flex-column flex-md-row">
               <div className="discount mb-3 mb-md-0 ">
-                <form action="">
+                <form action="" onSubmit={(e) => e.preventDefault()}>
                   <input
                     type="text"
                     name="discount"

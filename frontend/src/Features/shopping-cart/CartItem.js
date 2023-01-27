@@ -18,7 +18,7 @@ function CartItem({ product }) {
           <h1 className="text-start">{product.name}</h1>
         </div>
         <div className="quantity-btn text-center item">
-          <div className="quantity-btn-container d-flex justify-content-center align-items-center">
+          <div className="quantity-btn-container d-flex justify-content-center align-items-center flex-column flex-sm-row">
             <button
               aria-label="Decrement quantity"
               onClick={() => dispatch(decrementQuantity(product.id))}

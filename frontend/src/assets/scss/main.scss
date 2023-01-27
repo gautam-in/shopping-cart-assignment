@@ -641,6 +641,11 @@ main {
           max-height: 150px;
           border-radius: 0.5rem;
 
+          @include mq(768) {
+            width: 120px;
+            height: 120px;
+          }
+
           @include mq(575) {
             width: 100px;
             height: 100px;
@@ -663,9 +668,9 @@ main {
           color: #ffffff;
           margin: 0 0.5rem;
           border-radius: 90%;
-          height: 35px;
-          width: 35px;
-          line-height: 16px;
+          height: 32px;
+          width: 32px;
+          line-height: 12px;
           display: inline-block;
           &:hover,
           &:focus {
