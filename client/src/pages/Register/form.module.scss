@@ -1,0 +1,62 @@
+@use "styles/colors" as colors;
+
+.reg_container {
+  margin-top: 5vh;
+  display: grid;
+  grid-template-columns: 50% 30%;
+  @media screen and (max-width: 500px) {
+    display: block;
+    h1, p {
+      text-align: center;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+.form {
+  padding: 20px;
+  label {
+    display: block;
+    font-size: 14px;
+    color: gray;
+    margin-top: 20px;
+
+    &:focus {
+      color: #008cdd;
+    }
+  }
+  span {
+    font-size: 12px;
+  }
+  input {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 8px 0;
+    border: none;
+    border-bottom: 1px solid gray;
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid #008cdd;
+    }
+  }
+
+  button {
+    background-color: colors.$secondary;
+    border: none;
+    padding: 10px;
+    color: colors.$light;
+    border: none;
+    margin-top: 30px;
+    width: 100%;
+
+    &:focus {
+      transform: scale(1.02);
+      border: 1px solid #008cdd;
+    }
+  }
+
+}

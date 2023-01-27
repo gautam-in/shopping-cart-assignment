@@ -1,3 +1,4 @@
+import { useMarket } from 'context';
 import React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -12,6 +13,8 @@ const Logo = React.memo(() => {
 });
 
 export const Header = () => {
+  const { isAuth } = useMarket();
+  console.log({ isAuth })
   return (
     <div className={styles.header_container}>
       <header className={styles.header}>
@@ -24,10 +27,12 @@ export const Header = () => {
 
         <div>
           <div className={styles.right_nav}>
-            <nav className={styles.nav_links_auth}>
-              <Link to="/signin">SignIn</Link>
-              <Link to="/register">Register</Link>
-            </nav>
+            {!isAuth && (
+              <nav className={styles.nav_links_auth}>
+                <Link to="/signin">SignIn</Link>
+                <Link to="/register">Register</Link>
+              </nav>
+            )}
 
             <button>
               <img src={"/static/images/cart.svg"} alt="" />
