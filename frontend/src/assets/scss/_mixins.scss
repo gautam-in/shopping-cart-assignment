@@ -1,0 +1,14 @@
+
+
+@mixin mq($width){
+    @media screen and (max-width:#{$width}px){
+        @content;
+    }
+}
+
+@mixin flex-uti($justify-content:flex-start,$align-items:stretch){
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+
+}
