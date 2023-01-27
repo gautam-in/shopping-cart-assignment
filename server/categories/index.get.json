@@ -36,11 +36,13 @@
     "id": "5b6899683d1a866534f516e0"
   },
   {
-    "name": "Seafood",
-    "key": "seafood",
-    "description": "Great place to buy fresh seafood.",
+    "name": "Sea Food",
+    "key": "sea Food",
+    "description": "Great place to buy fresh and hyginic seafoods from ocean.",
     "enabled": false,
     "order": -1,
+    "imageUrl": "/static/images/category/seefood.jpg",
+
     "id": "5b68997d3d1a866534f516e1"
   },
   {
