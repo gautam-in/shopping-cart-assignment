@@ -1,0 +1,52 @@
+@use "styles/colors" as colors;
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 10px;
+  box-shadow: 0 8px 6px -6px lightgray;
+  width: 100%;
+
+  .image_container {
+    width: 40%;
+    img {
+      width: 100%;
+      transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+      box-sizing: border-box;
+    }
+  }
+
+  .category_details {
+    text-align: center;
+    width: 60%;
+
+  }
+  
+  button {
+    background-color: colors.$secondary;
+    border: none;
+    padding: 10px;
+    color: colors.$light;
+  }
+  @media screen and (max-width: 767px) {
+    h2 {
+      font-size: 1em;
+    }
+    p {
+      font-size: 12px;
+    }
+    button {
+      font-size: 12px;
+    }
+  }
+}
+
+.card_reverse {
+  @extend .card;
+
+  flex-direction: row-reverse;
+}

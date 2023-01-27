@@ -1,17 +1,16 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import style from "./layout.module.scss";
 
-interface ILyaoutProps {
-  children: React.ReactNode;
-}
-
-export const Layout: React.FC<ILyaoutProps> = ({ children }) => {
+export const Layout: React.FC = () => {
   return (
     <>
       <Header />
-      <section className={style.body}>{children}</section>
+      <section className={style.body}>
+        <Outlet />
+      </section>
       <Footer />
     </>
   );

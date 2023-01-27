@@ -1,0 +1,39 @@
+@use "styles/colors" as colors;
+
+.product_card {
+  padding: 10px;
+  margin: 10px;
+  border-bottom: 1px dotted #c2c2c2;
+  img {
+    width: 100%;
+  }
+  h3 {
+    margin: 10px 0;
+    height: 85px;
+  }
+  .description {
+    font-size: 14px;
+    background-color: #eaeaea;
+    padding: 4px;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+  }
+
+  .card_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+
+    button {
+      background-color: colors.$secondary;
+      border: none;
+      padding: 10px;
+      color: colors.$light;
+    }
+  }
+}

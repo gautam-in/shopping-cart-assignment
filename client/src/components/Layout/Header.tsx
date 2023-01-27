@@ -1,30 +1,36 @@
-import styles from './layout.module.scss'
-import LogoImage from "../../static/images/logo.png"
-import CartImage from "../../static/images/cart.svg"
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Logo = () => {
+import styles from './layout.module.scss'
+
+const Logo = React.memo(() => {
   return (
-    <img src={LogoImage} alt="Logo of Sabka Bazaar" />
-  )
-}
+    <Link to="/" className={styles.logo_link}>
+      <img src={"/static/images/logo.png"} alt="Homepage" />
+    </Link>
+  );
+});
+
 export const Header = () => {
   return (
     <div className={styles.header_container}>
       <header className={styles.header}>
         <Logo />
+
         <nav className={styles.nav_links}>
-          <a href="#">Home</a>
-          <a href="#">Products</a>
+          <Link to="/">Home</Link>
+          <Link to="/products">Products</Link>
         </nav>
+
         <div>
           <div className={styles.right_nav}>
             <nav className={styles.nav_links_auth}>
-              <a href="#">SignIn</a>
-              <a href="#">Register</a>
+              <Link to="/signin">SignIn</Link>
+              <Link to="/register">Register</Link>
             </nav>
 
             <button>
-              <img src={CartImage} alt="" />
+              <img src={"/static/images/cart.svg"} alt="" />
               <span>0 items</span>
             </button>
           </div>
