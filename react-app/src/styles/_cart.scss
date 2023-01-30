@@ -40,6 +40,39 @@
       font-weight: 800;
       color: $color-black;
     }
+
+    &__out-of-stock {
+      color: $color-primary;
+    }
+  }
+
+  &__offer__tag {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 20px;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: $color-black;
+    border-radius: 4px;
+    background-color: $color-white;
+  }
+
+  &__no-items__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-white;
+    color: $color-black;
+    height: 100%;
+
+    & span {
+      font-size: 1.5rem;
+    }
   }
 
   &__quantity-container {
@@ -76,6 +109,7 @@
     font-size: 1rem;
     font-weight: 800;
     cursor: pointer;
+    padding: 0px !important;
   }
 
   &__footer {
@@ -113,6 +147,11 @@
       color: $color-white;
       box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
       cursor: pointer;
+
+      &__text-center {
+        width: 100%;
+        text-align: center;
+      }
     }
   }
 }

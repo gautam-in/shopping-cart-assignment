@@ -2,6 +2,7 @@
   background-color: $color-grey-light-1;
   grid-column: nav-start / nav-end;
   min-height: 85vh;
+  position: fixed;
 
   & select {
     display: none;
@@ -11,6 +12,7 @@
     grid-column: pr-start 1 / -1;
     background-color: $color-primary;
     min-height: 0;
+    width: 100%;
 
     & select {
       display: block;

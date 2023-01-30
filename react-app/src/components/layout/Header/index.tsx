@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 import { routes } from "../../../config/routes.config";
 import logo from "../../../static/images/logo_2x.png";
@@ -8,6 +8,8 @@ import { MyGlobalContext } from "../../../context/myGLobalContext";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const { isAddToCartOpen, setIsAddToCartOpen, cartData } =
     React.useContext(MyGlobalContext);
 
@@ -33,7 +35,7 @@ const Header: React.FC = () => {
                       to={path}
                       key={path}
                       className={({ isActive }: any) =>
-                        `list__item--${i}` + (isActive ? "is-active" : "")
+                        `list__item--` + (isActive ? "is-active" : "")
                       }
                     >
                       <span>{name}</span>
@@ -47,13 +49,17 @@ const Header: React.FC = () => {
         <div className="header__user">
           <div className="user__authentication">
             <button
-              className="btn btn__user"
+              className={`${
+                location?.pathname === "/sign-in" && "header__user--is-active"
+              } btn btn__user`}
               onClick={() => navigate("/sign-in")}
             >
               SignIn
             </button>
             <button
-              className="btn btn__user"
+              className={`${
+                location?.pathname === "/register" && "header__user--is-active"
+              } btn btn__user`}
               onClick={() => navigate("/register")}
             >
               Register

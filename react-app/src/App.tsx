@@ -1,4 +1,5 @@
 import { useLocation, Route, Routes } from "react-router-dom";
+import ScrollToTopButton from "./components/basic/ScrollToTopButton";
 
 import Layout from "./components/layout";
 import { routes } from "./config/routes.config";
@@ -19,6 +20,7 @@ function App() {
           ))}
         </Routes>
       </Layout>
+      <ScrollToTopButton />
     </GlobalContextProvider>
   );
 }

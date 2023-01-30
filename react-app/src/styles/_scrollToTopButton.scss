@@ -1,0 +1,44 @@
+@keyframes bounceEffect {
+  0% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-30px);
+  }
+
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.container {
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  z-index: 10;
+}
+
+.button {
+  width: 50px;
+  height: 50px;
+  background-color: $color-primary;
+  color: $color-white;
+  font-weight: 700;
+  border-radius: 100%;
+  cursor: pointer;
+  border: none;
+  -moz-animation: bounceEffect;
+  -webkit-animation: bounceEffect;
+  animation: bounceEffect 2s infinite;
+
+  @include respond(mobile) {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.upArrow {
+  font-size: 2.5rem;
+  transform: rotate(268deg);
+}

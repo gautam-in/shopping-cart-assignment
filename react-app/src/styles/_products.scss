@@ -15,18 +15,22 @@
 
 .products {
   grid-column: pr-start 1 / -1;
-  margin: 1rem;
-
+  margin: 1rem 6rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-template-rows: max-content;
   justify-items: center;
+  width: 100%;
 
   @include respond(mobile) {
     grid-template-columns: repeat(auto-fit, 100%);
+    margin: 1rem;
+    width: auto;
   }
   @include respond(vertical-tab) {
     grid-template-columns: repeat(auto-fit, 100%);
+    margin: 1rem;
+    width: auto;
   }
 }
 
