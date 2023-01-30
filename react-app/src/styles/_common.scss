@@ -187,3 +187,9 @@ body {
     transform: translateY(-4rem);
   }
 }
+
+//Hide Scrollbar
+.hide-scroll {
+  height: 83vh;
+  overflow: hidden;
+}

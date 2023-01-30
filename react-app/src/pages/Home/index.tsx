@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import { MyGlobalContext } from "../../App";
 import { Slider } from "../../components/basic";
 import { BannersData } from "../../components/basic/Slider";
+import { MyGlobalContext } from "../../context/myGLobalContext";
 import { useFirstRender } from "../../hooks";
 
 export type ICategoriesData = {

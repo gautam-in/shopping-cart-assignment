@@ -4,9 +4,13 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { routes } from "../../../config/routes.config";
 import logo from "../../../static/images/logo_2x.png";
 import cart from "../../../static/images/cart.svg";
+import { MyGlobalContext } from "../../../context/myGLobalContext";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
+  const { isAddToCartOpen, setIsAddToCartOpen, cartData } =
+    React.useContext(MyGlobalContext);
+
   return (
     <header className="header">
       <div className="header__container">
@@ -55,9 +59,12 @@ const Header: React.FC = () => {
               Register
             </button>
           </div>
-          <div className="user__cart">
+          <div
+            className="user__cart"
+            onClick={() => setIsAddToCartOpen(!isAddToCartOpen)}
+          >
             <img src={cart} alt="User cart icon" className="user__cart__icon" />
-            <span className="user__cart__text">0 items</span>
+            <span className="user__cart__text">{cartData?.length} items</span>
           </div>
         </div>
       </div>
