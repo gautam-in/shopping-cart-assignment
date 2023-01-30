@@ -43,14 +43,16 @@ function Login() {
     }
 
     if (user.email && user.password) {
-      if (
-        user.email === regiUser.email &&
-        user.password === regiUser.password
-      ) {
-        formIsValid = true;
-      } else {
-        errors["password"] = "Invalid email or password";
-        formIsValid = false;
+      if (regiUser !== null) {
+        if (
+          user.email === regiUser.email &&
+          user.password === regiUser.password
+        ) {
+          formIsValid = true;
+        } else {
+          errors["password"] = "Invalid email or password";
+          formIsValid = false;
+        }
       }
     }
 
