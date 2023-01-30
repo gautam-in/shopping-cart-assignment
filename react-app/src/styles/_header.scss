@@ -1,0 +1,126 @@
+.header {
+  background-color: $color-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+  padding: 0px 5.8rem;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    max-width: 1900px;
+  }
+
+  @include respond(mobile) {
+    padding: 0px 2.5rem;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5.75em;
+
+    @include respond(mobile) {
+      gap: 1.5rem;
+    }
+  }
+
+  &__logocontainer {
+    display: flex;
+  }
+
+  &__logo {
+    height: 6.5rem;
+    cursor: pointer;
+
+    @include respond(mobile) {
+      height: 4.5rem;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.56rem;
+  }
+
+  &__user {
+    align-self: flex-start;
+    height: 100%;
+    justify-self: end;
+    align-items: center;
+
+    &--is-active {
+      color: $color-primary !important;
+    }
+  }
+
+  .list {
+    display: flex;
+    list-style: none;
+    font-size: 1.2rem;
+
+    &__item {
+      font-size: 1.5rem;
+      font-weight: 400;
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+
+      & a:visited,
+      & a:link {
+        text-decoration: none;
+        color: $color-grey-dark;
+        border-bottom: 1px solid transparent;
+      }
+
+      & a:hover,
+      & :active {
+        color: $color-primary;
+      }
+
+      &--is-active {
+        color: $color-primary !important;
+      }
+    }
+  }
+
+  .user {
+    &__authentication {
+      display: flex;
+      justify-content: right;
+    }
+
+    &__cart {
+      display: flex;
+      background: $color-grey-light-1;
+      justify-self: center;
+      align-self: end;
+      padding: 1.5rem 2rem;
+      cursor: pointer;
+
+      &__icon {
+        height: 2.5rem;
+        width: 2.5rem;
+        display: block;
+        margin-right: 0.5rem;
+      }
+
+      &__text {
+        font-size: 1rem;
+        text-transform: lowercase;
+        display: block;
+        align-self: center;
+      }
+    }
+  }
+}

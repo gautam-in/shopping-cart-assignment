@@ -1,0 +1,14 @@
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-white;
+  width: calc(100vw - 12.75rem);
+  position: relative;
+  max-width: 1900px;
+  margin-bottom: 4rem;
+
+  @include respond(mobile) {
+    width: 100vw;
+  }
+}
