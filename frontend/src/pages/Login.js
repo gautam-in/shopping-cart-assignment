@@ -53,6 +53,9 @@ function Login() {
           errors["password"] = "Invalid email or password";
           formIsValid = false;
         }
+      } else {
+        errors["password"] = "No such user exists.";
+        formIsValid = false;
       }
     }
 

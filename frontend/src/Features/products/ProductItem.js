@@ -15,7 +15,7 @@ function ProductItem({ product }) {
           <img src={product.imageURL} alt={product.name} />
         </div>
         <div className=" col-6 col-md-6 col-lg-12 ">
-          <p className="description">{product.description.substring(0, 86)}</p>
+          <p className="description">{product.description.substring(0, 120)}</p>
           <button
             onClick={() => dispatch(addItemToCart(product))}
             className="buy-btn w-100 mt-md-2 d-md-none w-100"
