@@ -8,6 +8,10 @@ const Context = createContext<any>(initialState);
 export const Provider = ({ children }: { children: React.ReactNode }) => {
   const [selectedCategory, setSelectedCategory] = useState("")
   const [isAuth, setIsAuth] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false)
+
+  // cart
+  const [cart, setCart] = useState([])
 
   useEffect(() => {
     const user = localStorage.getItem("user_in")
@@ -23,6 +27,10 @@ export const Provider = ({ children }: { children: React.ReactNode }) => {
         setSelectedCategory,
         isAuth,
         setIsAuth,
+        isCartOpen,
+        setIsCartOpen,
+        cart,
+        setCart,
       }}
     >
       {children}

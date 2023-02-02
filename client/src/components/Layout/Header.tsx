@@ -1,5 +1,5 @@
+import React, { useMemo } from 'react'
 import { useMarket } from 'context';
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 import styles from './layout.module.scss'
@@ -13,8 +13,12 @@ const Logo = React.memo(() => {
 });
 
 export const Header = () => {
-  const { isAuth } = useMarket();
-  console.log({ isAuth })
+  const { cart, isAuth, setIsCartOpen } = useMarket();
+
+  const cartlength = useMemo(() => {
+    return new Set([...cart]).size
+  }, [cart])
+
   return (
     <div className={styles.header_container}>
       <header className={styles.header}>
@@ -34,9 +38,9 @@ export const Header = () => {
               </nav>
             )}
 
-            <button>
+            <button onClick={(() => setIsCartOpen(true))}>
               <img src={"/static/images/cart.svg"} alt="" />
-              <span>0 items</span>
+              <span>{cartlength} items</span>
             </button>
           </div>
         </div>

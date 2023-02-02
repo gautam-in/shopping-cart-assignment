@@ -35,5 +35,9 @@
       padding: 10px;
       color: colors.$light;
     }
+
+    button:disabled {
+      background-color: colors.$dark-1;
+    }
   }
 }

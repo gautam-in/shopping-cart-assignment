@@ -1,12 +1,5 @@
 @use 'styles/colors' as colors;
 
-$max-width: 1200px;
-
-@mixin layout {
-  max-width: $max-width;
-  margin: auto;
-}
-
 @mixin link {
   text-decoration: none;
   margin: 0 5px;
@@ -31,8 +24,6 @@ $max-width: 1200px;
   padding: 10px;
   display: flex;
   justify-content: space-between;
-
-  @include layout();
 
   @media screen and (max-width: 500px) {
     font-size: 14px;
@@ -75,6 +66,10 @@ $max-width: 1200px;
   }
 }
 
+.cross_btn {
+  display: none;
+}
+
 
 // Footer styles 
 
@@ -91,7 +86,14 @@ $max-width: 1200px;
 
 .body {
   min-height: calc(100vh - 120px);
-  max-width: $max-width;
+}
 
-  @include layout();
+// Menu
+
+.menu {
+  width: 500px !important;
+
+  @media screen and (max-width: 500px){
+    width: 100% !important;
+  }
 }
