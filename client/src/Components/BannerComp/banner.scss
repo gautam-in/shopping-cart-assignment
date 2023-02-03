@@ -1,0 +1,60 @@
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+.slideshow__container{
+    padding:0 15rem;
+    margin:1rem 0;
+}
+
+.mySwiper{
+    box-shadow: 0px 14px 8px -15px #333;
+}
+
+ @media only screen and (max-width: 600px) {
+  .slideshow__container{
+    padding:0 1rem;
+    margin:1rem 0;
+  }
+ }
+ @media only screen and (min-width: 600px) {
+  .slideshow__container{
+    padding:0 2rem;
+    margin:1rem 0;
+  }
+ }
+ @media only screen and (min-width: 768px) {
+
+  .slideshow__container{
+    padding:0 6rem;
+    margin:1rem 0;
+  }
+ }
+ @media only screen and (min-width: 992px) {
+  
+  .slideshow__container{
+    padding:0 10rem;
+    margin:1rem 0;
+  }
+ }
