@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  cursor: pointer;
+}
+
+// drawer styles
+
+.bm-burger-button {
+  display: none;
+}
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-menu-wrap {
+  top: 80px;
+  position: fixed;
+  height: calc(100vh - 80px);
+}
+
+.bm-menu {
+  background: #fff;
+}
+
+.bm-overlay {
+  background: rgb(0 0 0 / 70%) !important;
+}
