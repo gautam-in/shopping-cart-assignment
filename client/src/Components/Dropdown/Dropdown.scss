@@ -1,0 +1,18 @@
+
+.dropdownWrapper{
+    width: 100%;
+    display:none;
+    @media only screen and (max-width: 600px) {
+        display:block;
+    }
+    &_select{
+        width: 100%;
+        background: rgba(191,41,87,255);
+        color: #fff;
+        border: none;
+        outline: none;
+        padding: 0.7rem 1rem;
+        font-family: inherit;
+        font-size: 1rem;
+    }
+}

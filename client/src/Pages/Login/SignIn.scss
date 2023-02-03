@@ -1,0 +1,59 @@
+
+
+.signInContainer {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    margin: 4rem 0;
+    &_Body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &_Header{
+    font-size:2rem;
+    font-weight:700;
+    margin-bottom: 1rem;
+    }
+    &_SubHeader{
+    font-size:1rem;
+    font-weight:500; 
+    }
+
+    .signInFormContainer{
+        flex-basis: 24%;
+     }
+     .signInForm {
+         display: flex;
+         flex-direction: column;
+         button{
+            height: 40px;
+            background-color: rgba(191,41,87,255);
+            color: white;
+            border: 0;
+         }
+     
+         & button:last-child{
+             margin-top:1rem;
+         }
+       
+     }
+     
+     .signInError{
+         color:red;
+         margin-top: 1rem;
+     }
+}
+@media only screen and (max-width: 600px){
+    .signInContainer {
+        display: block;
+        margin: 4rem 4rem; 
+    }  
+}
+@media only screen and (min-width:600px ) and ( max-width: 786px){
+    .signInContainer {
+        display: flex;
+        margin: 4rem 2rem; 
+        gap: 2rem;
+    }  
+}

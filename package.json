@@ -1,15 +1,24 @@
 {
-  "name": "code-exercise",
+  "name": "shoppingcart-project",
   "version": "1.0.0",
-  "description": "This is a shopping cart coding exercise",
+  "description": "an eccomerce shoppingcart project ",
   "main": "index.js",
   "scripts": {
+    "client": "cd client && npm start",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "start": "canned -p 5000 ./server",
+    "dev": "concurrently --kill-others-on-fail \"npm run start\" \"npm run client\""
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "bootstrap": "^5.2.3",
+    "canned": "^0.3.12",
+    "g": "^2.0.1",
+    "scss": "^0.2.4"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.0",
+    "nodemon": "^2.0.16"
   }
 }

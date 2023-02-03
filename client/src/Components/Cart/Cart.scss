@@ -1,0 +1,187 @@
+.cartContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: 30%;
+    background: rgba(0, 0, 0, 0.46);
+    overflow: hidden;
+
+
+    @media only screen and (max-width: 600px) {
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.46) !important;
+    }
+    @media only screen and (min-width: 600px) and (max-width: 768px) {
+        width: 50%;
+        background: rgba(0, 0, 0, 0.46);
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        width: 40%;
+        background: rgba(0, 0, 0, 0.46);
+    }
+
+    &_Wrapper {
+        width: 28rem;
+        background: #fff;
+        height: 48rem;
+        position: relative;
+        top: 6.5rem;
+        right: 10.3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @media only screen and (max-width: 600px) {
+            width: 100%;
+            height: calc(100% - 3.45rem);
+            position: fixed;
+            top: 3.4rem;
+            right: 0;
+        }
+
+        &_Header {
+            background: #1d2124;
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+
+            @media only screen and (max-width: 600px) {
+                background: #e9e9e9;
+                color: #111;
+            }
+
+            &__Title {
+                display: flex;
+                gap: 0.5rem;
+                align-items: baseline;
+
+                .titleData {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+
+                    @media only screen and (max-width: 600px) {
+                        font-size: 1.4rem;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            &_CloseBtn {
+                font-size: 1.4rem;
+            }
+        }
+
+        &_Body {
+            flex-basis: 80%;
+            background: #efefef;
+            overflow-y: scroll;
+            height: 80vh;
+
+            &_PlaceHolder {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                background: #fffd;
+                margin: 1rem;
+                padding: 0.5rem;
+                border-radius: 5px;
+
+                .ImgContainer {
+                    width: auto;
+
+                    @media only screen and (max-width: 600px) {
+                        width: 9rem;
+                    }
+
+                    img {
+                        max-width: 100%;
+                    }
+                }
+
+                .ImgText {
+                    font-size: 1rem;
+                    font-weight: 500;
+
+                    @media only screen and (max-width: 600px) {
+                        font-size: .9rem;
+                    }
+                }
+            }
+
+            &_Empty {
+                display: flex;
+                place-items: center;
+                height: 100%;
+                justify-content: center;
+
+                .emptyPlaceHolder {
+                    text-align: center;
+
+                    &_Title {
+                        font-size: 1.3rem;
+                        font-weight: 600;
+
+                        @media only screen and (max-width: 600px) {
+                            font-size: 1rem;
+                        }
+                    }
+
+                    &_Para {
+                        font-weight: 500;
+
+                        @media only screen and (max-width: 600px) {
+                            font-size: .9rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        &_Checkout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.7rem;
+            position: absolute;
+            width: 100%;
+
+            &_Title {
+                padding-bottom: 0.5rem;
+                font-size: 1rem;
+                font-weight: 500;
+                background: #efefef;
+
+                @media only screen and (max-width: 600px) {
+                    font-size: .8rem;
+                }
+            }
+
+            .checkoutPara {
+                display: flex;
+                gap: 1rem;
+            }
+
+            &_Button {
+                border-radius: 5px;
+                display: flex;
+                padding: 1rem;
+                font-family: inherit;
+                font-size: 1.1rem;
+                background-color: rgba(191, 41, 87, 255);
+                color: white;
+                border: 0;
+                width: 100%;
+                justify-content: space-between;
+
+                @media only screen and (max-width: 600px) {
+                    font-size: .9rem;
+                }
+            }
+        }
+    }
+}
+
+
