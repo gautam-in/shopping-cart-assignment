@@ -23,7 +23,7 @@ start the server
 
 # Screen shots
 
-![image of sabka bazaar product page]('./public/products.png')
+<img src="./public/products.png" alt="products page" width="100%"/>
 
 
 
