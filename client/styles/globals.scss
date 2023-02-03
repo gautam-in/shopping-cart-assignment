@@ -1,0 +1,19 @@
+$color-red: #d10057;
+$color-white: #ffffff;
+
+* {
+  box-sizing: border-box;
+  --color-red: #{$color-red};
+  --color-white: #{$color-white};
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
