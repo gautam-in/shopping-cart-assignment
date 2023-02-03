@@ -1,2 +1,2 @@
 export * from "./Layout"
-export { CategoryCard } from "./CategoryCard"
+export { CategoryCard } from "../pages/Home/CategoryCard"

@@ -22,7 +22,9 @@ export const Layout: React.FC = () => {
       >
         <Cart />
       </Menu>
-      <div style={{ position: isCartOpen ? "fixed" : "inherit" }}>
+      <div
+        style={{ position: isCartOpen ? "fixed" : "inherit", width: "100%" }}
+      >
         <Header />
         <section className={classes.body}>
           <Outlet />

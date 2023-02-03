@@ -1,14 +1,16 @@
-import { ProductCard } from "components/ProductCard";
+import { ProductCard } from "pages/Products/ProductCard";
 import { useMarket } from "context";
 import { useMemo } from "react";
 import { useQuery } from "utils/fetchData";
 import { Filters } from "./Filters";
 import styles from "./product.module.scss";
+import { useNavigate } from "react-router-dom";
 
 export const Products = () => {
   const { data: products } = useQuery("/products");
   const { data: categories } = useQuery("/categories");
-  const { selectedCategory, cart, setCart } = useMarket();
+  const { isAuth, selectedCategory, cart, setCart } = useMarket();
+  const navigate = useNavigate()
 
   const productsFilter = useMemo(() => {
     if (!selectedCategory) return products;
@@ -20,7 +22,11 @@ export const Products = () => {
   }, [products, selectedCategory]);
 
   const addToCart = (item: Product, _e: any) => {
-    setCart((cart: Product[]) => [...cart, item]);
+    if (isAuth) {
+      setCart((cart: Product[]) => [...cart, item]);
+    } else {
+      navigate("/register")
+    }
   };
 
   return (
