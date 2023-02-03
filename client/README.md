@@ -23,8 +23,13 @@ start the server
 
 # Screen shots
 
+Products and Cart Page
+
 <img src="./public/products.png" alt="products page" width="100%"/>
 
+Lighthouse results
+
+<img src="./public/lighthouse.png" alt="products page" width="100%"/>
 
 
 
