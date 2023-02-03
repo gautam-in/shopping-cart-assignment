@@ -1,0 +1,142 @@
+@use "styles/colors" as colors;
+
+.cart {
+  background-color: colors.$light-1;
+  .footer_btn {
+    background-color: colors.$secondary;
+    border: none;
+    padding: 10px;
+    color: colors.$light;
+    width: calc(100% - 40px);
+    border-radius: 5px;
+    margin: 10px 20px;
+  }
+
+  .cart_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    padding: 5px 20px;
+    color: colors.$light;
+    background-color: black;
+
+    p {
+      font-weight: bold;
+    }
+
+    img {
+      width: 15px;
+      height: 15px;
+    }
+    button {
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  .cart_content {
+    height: calc(100vh - 120px - 140px);
+    overflow: scroll;
+
+    .cart_no_item {
+      height: 100%;
+      text-align: center;
+      display: grid;
+      place-content: center;
+      color: colors.$dark-1;
+      h1 {
+        font-size: 1.25em;
+        margin: 5px 0;
+      }
+
+      p {
+        margin: 5px 0;
+      }
+    }
+  }
+  .lowest_price_banner {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+    background-color: colors.$light;
+
+    img {
+      width: 100px;
+      height: auto;
+    }
+
+    p {
+      font-size: 0.85em;
+      margin-left: 10px;
+    }
+  }
+
+  .cart_footer {
+    p {
+      font-size: 1em;
+      text-align: center;
+    }
+
+    .footer_btn_checkout {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      font-size: 1em;
+      background-color: colors.$secondary;
+      border: none;
+      color: colors.$light;
+      width: calc(100% - 40px);
+      border-radius: 5px;
+      margin: 10px 20px;
+    }
+  }
+}
+
+// Cart Item
+
+.cart_item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: colors.$light;
+
+  .details {
+    h1 {
+      margin: 8px 0;
+      font-size: 1em;
+    }
+
+    .button_container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+          margin: 0 10px;
+        }
+      }
+
+      button {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: colors.$secondary;
+        border: none;
+        color: colors.$light;
+        margin: 0 10px;
+      }
+    }
+
+    button {
+      display: flex;
+    }
+  }
+}
