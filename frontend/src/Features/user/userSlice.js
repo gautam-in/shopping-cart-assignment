@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getItemFromLocalstorage } from "../../utilities/localstorageUser";
 
-const initialState = {
+export const initialState = {
   user: getItemFromLocalstorage(),
   isLoggedIn: false,
 };

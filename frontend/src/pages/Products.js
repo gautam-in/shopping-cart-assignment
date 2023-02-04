@@ -3,9 +3,9 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategoriesData } from "../Features/categories/categoriesSlice";
-import ProductItem from "../Features/products/ProductItem";
+import ProductItem from "../components/ProductItem";
 import { fetchProductsData } from "../Features/products/productsSlice";
-import Sidenav from "../layout/Sidenav";
+import Sidenav from "../components/layout/Sidenav";
 
 function Products() {
   const categories = useSelector((state) => state.categories.categories.data);

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Loader from "../../layout/Loader";
-import { fetchCategoriesData } from "./categoriesSlice";
+import Loader from "./layout/Loader";
+import { fetchCategoriesData } from "../Features/categories/categoriesSlice";
 import CategoryItem from "./CategoryItem";
 
 function Categories() {

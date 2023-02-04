@@ -1,7 +1,10 @@
 import React from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { decrementQuantity, incrementQuantity } from "./cartSlice";
+import {
+  decrementQuantity,
+  incrementQuantity,
+} from "../Features/shopping-cart/cartSlice";
 function CartItem({ product }) {
   const dispatch = useDispatch();
 

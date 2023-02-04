@@ -35,11 +35,13 @@ header .container-lg .logo {
   }
 }
 header .container-lg .logo img {
-  max-width: 150px;
+  width: 150px;
+  height: 83px;
 }
 @media screen and (max-width: 576px) {
   header .container-lg .logo img {
-    max-width: 120px;
+    width: 120px;
+    height: 54px;
   }
 }
 header .container-lg nav ul {
@@ -135,80 +137,6 @@ footer p {
   font-size: 0.85rem;
 }
 
-.carausel {
-  margin-top: 130px;
-}
-@media screen and (max-width: 576px) {
-  .carausel {
-    margin-top: 100px;
-  }
-}
-.carausel .slide-container {
-  position: relative;
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 25px -25px;
-}
-.carausel .slide-container .slide {
-  text-align: center;
-  opacity: 0;
-  transition: opacity ease-in-out 0.4s;
-}
-.carausel .slide-container .slide img {
-  max-width: 100%;
-}
-.carausel .slide-container .slide.active {
-  opacity: 1;
-}
-.carausel .slide-container .slide-navigation-next {
-  position: absolute;
-  right: 0%;
-  top: 45%;
-}
-@media screen and (max-width: 576px) {
-  .carausel .slide-container .slide-navigation-next {
-    display: none;
-  }
-}
-.carausel .slide-container button {
-  background: none;
-  border: none;
-}
-.carausel .slide-container button svg {
-  font-size: 2rem;
-  color: rgba(0, 0, 0, 0.5);
-}
-.carausel .slide-container button svg:hover, .carausel .slide-container button svg:focus {
-  color: rgba(0, 0, 0, 0.9);
-}
-.carausel .slide-container .slide-navigation-prev {
-  position: absolute;
-  left: 0%;
-  top: 45%;
-}
-@media screen and (max-width: 576px) {
-  .carausel .slide-container .slide-navigation-prev {
-    display: none;
-  }
-}
-.carausel .dot-navigation {
-  position: absolute;
-  left: 50%;
-  bottom: 5%;
-  transform: translate(-50%, 0);
-  display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
-}
-.carausel .dot-navigation .dot {
-  height: 0.5rem;
-  width: 0.5rem;
-  border-radius: 90%;
-  margin: 0 0.25rem;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-.carausel .dot-navigation .dot.active {
-  background-color: black;
-}
-
 .carausel2 {
   margin-top: 130px;
 }
@@ -253,7 +181,8 @@ footer p {
   top: 0;
 }
 .carausel2 .slide-container .slide img {
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
 }
 .carausel2 .slide-container .slide.next-slide {
   transform: translateX(100%);
@@ -263,6 +192,7 @@ footer p {
 }
 .carausel2 .slide-container .slide.current-slide {
   transform: translateX(0%);
+  height: 300px;
 }
 .carausel2 .slide-container .slide-navigation-next {
   position: absolute;
@@ -336,10 +266,12 @@ footer p {
 }
 .categories article img {
   width: 250px;
+  height: 167px;
 }
 @media screen and (max-width: 576px) {
   .categories article img {
     width: 200px;
+    height: 133px;
   }
 }
 .categories article h1 {
@@ -478,19 +410,20 @@ main .products-listing .product .heading h1 {
   padding: 0.5rem;
 }
 main .products-listing .product img {
-  max-width: 150px;
+  width: 150px;
   height: 150px;
 }
 @media screen and (max-width: 991px) {
   main .products-listing .product img {
-    max-width: 130px;
+    width: 130px;
     height: 130px;
     margin-top: 1.25rem;
   }
 }
 @media screen and (max-width: 768px) {
   main .products-listing .product img {
-    max-width: 80%;
+    width: 80%;
+    height: 80%;
   }
 }
 main .products-listing .product .description {
@@ -668,4 +601,49 @@ main .products-listing .product button:hover, main .products-listing .product bu
 .offcanvas.offcanvas-end .offcanvas-body .checkout-section button:hover, .offcanvas.offcanvas-end .offcanvas-body .checkout-section button:focus {
   background-color: #e58e3e;
   border: 1px solid #e58e3e;
+}
+
+.model-container {
+  position: relative;
+}
+.model-container .modalbox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 50px;
+  z-index: 1000;
+}
+.model-container .modalbox button {
+  background-color: #c02857;
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+  padding: 0.5rem;
+  border: 1px solid #c02857;
+  width: 100px;
+}
+@media screen and (max-width: 767px) {
+  .model-container .modalbox button {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .model-container .modalbox button {
+    width: 50%;
+  }
+}
+.model-container .modalbox button:hover, .model-container .modalbox button:focus {
+  background-color: #e58e3e;
+  border: 1px solid #e58e3e;
+}
+.model-container .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
 }/*# sourceMappingURL=main.css.map */

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import FormControl from "../layout/FormControl";
+import FormControl from "../components/layout/FormControl";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToLocalstorage } from "../utilities/localstorageUser";
 import { toggleLogin } from "../Features/user/userSlice";
+import Modal from "../components/layout/Modal";
 
 function Login() {
   const [user, setUser] = useState({
@@ -12,6 +13,12 @@ function Login() {
     errors: {},
   });
   const regiUser = useSelector((state) => state.user.user);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const onClose = () => {
+    setIsOpen(false);
+    navigate("/");
+  };
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -69,51 +76,54 @@ function Login() {
     if (validateForm()) {
       addItemToLocalstorage("user", JSON.stringify(regiUser));
       dispatch(toggleLogin());
-      alert("Login successful");
-      navigate("/");
+      // alert("Login successful");
+      setIsOpen(true);
     }
   };
 
   return (
-    <section className="register">
-      <div className="row justify-content-center">
-        <div className="col-sm-6 col-md-5">
-          <h1 aria-label="Login" tabIndex="0">
-            Login
-          </h1>
-          <p tabIndex="0">
-            Get access to your wishlists, orders and recomendations.
-          </p>
-          <small tabIndex="0">
-            (<span style={{ color: "red" }}>*</span>) marked all fields are
-            mandatory.{" "}
-          </small>
-        </div>
-        <div className="col-sm-6 col-md-5">
-          <form action="" onSubmit={handleSubmit}>
-            <FormControl
-              label="email"
-              type="email"
-              name="email"
-              handleChange={handleChange}
-              value={user.email}
-              errorMsg={user.errors.email}
-            />
+    <>
+      <section className="register">
+        <div className="row justify-content-center">
+          <div className="col-sm-6 col-md-5">
+            <h1 aria-label="Login" tabIndex="0">
+              Login
+            </h1>
+            <p tabIndex="0">
+              Get access to your wishlists, orders and recomendations.
+            </p>
+            <small tabIndex="0">
+              (<span style={{ color: "red" }}>*</span>) marked all fields are
+              mandatory.{" "}
+            </small>
+          </div>
+          <div className="col-sm-6 col-md-5">
+            <form action="" onSubmit={handleSubmit}>
+              <FormControl
+                label="email"
+                type="email"
+                name="email"
+                handleChange={handleChange}
+                value={user.email}
+                errorMsg={user.errors.email}
+              />
 
-            <FormControl
-              label="password"
-              type="password"
-              name="password"
-              handleChange={handleChange}
-              value={user.password}
-              errorMsg={user.errors.password}
-            />
+              <FormControl
+                label="password"
+                type="password"
+                name="password"
+                handleChange={handleChange}
+                value={user.password}
+                errorMsg={user.errors.password}
+              />
 
-            <input type="submit" value="Login" />
-          </form>
+              <input type="submit" value="Login" />
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <Modal isOpen={isOpen} onClose={onClose} message={"Login successful"} />
+    </>
   );
 }
 

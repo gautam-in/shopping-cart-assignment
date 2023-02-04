@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { ImMenu } from "react-icons/im";
 import { useDispatch, useSelector } from "react-redux";
 import CartItem from "./CartItem";
-import { calculateTotal } from "./cartSlice";
+import { calculateTotal } from "../Features/shopping-cart/cartSlice";
 function ShoppingCart() {
   const { products } = useSelector((state) => state.cart);
   const { totalItems, totalAmount } = useSelector((state) => state.cart);

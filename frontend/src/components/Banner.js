@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
-import Carausel2 from "../../layout/Carausel2";
-import { fetchBannerData } from "./bannerSlice";
+import Carausel2 from "./layout/Carausel2";
+import { fetchBannerData } from "../Features/banner/bannerSlice";
 
 function Banner() {
   const { isLoading, error, data } = useSelector(

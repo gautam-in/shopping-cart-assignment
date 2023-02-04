@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { register } from "../Features/user/userSlice";
-import FormControl from "../layout/FormControl";
+import FormControl from "../components/layout/FormControl";
+import Modal from "../components/layout/Modal";
 
 function Register() {
   const [user, setUser] = useState({
@@ -13,10 +14,16 @@ function Register() {
     confirmPassword: "",
     errors: {},
   });
+  const [isOpen, setIsOpen] = useState(false);
 
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
+
+  const onClose = () => {
+    setIsOpen(false);
+    navigate("/");
+  };
 
   useEffect(() => {
     if (Object.keys(user.errors).length > 0) {
@@ -97,7 +104,12 @@ function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      alert("Registration successful");
+      // alert("Registration successful");
+      setIsOpen(true);
+      if (isOpen) {
+        const focusEle = document.getElementById("alert-message");
+        focusEle.focus();
+      }
       dispatch(
         register({
           firstName: user.firstName,
@@ -106,76 +118,82 @@ function Register() {
           password: user.password,
         })
       );
-      navigate("/");
     }
   };
 
   return (
-    <section className="register">
-      <div className="row justify-content-center">
-        <div className="col-sm-6 col-md-5">
-          <h1 aria-label="Sign Up" tabIndex="0">
-            Sign Up
-          </h1>
-          <p tabIndex="0">
-            We do not share your personals details with anyone.
-          </p>
-          <small tabIndex="0">
-            (<span style={{ color: "red" }}>*</span>) marked all fields are
-            mandatory.{" "}
-          </small>
+    <>
+      <section className="register">
+        <div className="row justify-content-center">
+          <div className="col-sm-6 col-md-5">
+            <h1 aria-label="Sign Up" tabIndex="0">
+              Sign Up
+            </h1>
+            <p tabIndex="0">
+              We do not share your personals details with anyone.
+            </p>
+            <small tabIndex="0">
+              (<span style={{ color: "red" }}>*</span>) marked all fields are
+              mandatory.{" "}
+            </small>
+          </div>
+          <div className="col-sm-6 col-md-5">
+            <form action="" onSubmit={handleSubmit}>
+              <FormControl
+                label="first name"
+                type="text"
+                name="firstName"
+                handleChange={handleChange}
+                value={user.firstName}
+                errorMsg={user.errors.firstName}
+              />
+              <FormControl
+                label="last name"
+                type="text"
+                name="lastName"
+                handleChange={handleChange}
+                value={user.lastName}
+                errorMsg={user.errors.lastName}
+              />
+
+              <FormControl
+                label="email"
+                type="email"
+                name="email"
+                handleChange={handleChange}
+                value={user.email}
+                errorMsg={user.errors.email}
+              />
+
+              <FormControl
+                label="password"
+                type="password"
+                name="password"
+                handleChange={handleChange}
+                value={user.password}
+                errorMsg={user.errors.password}
+              />
+
+              <FormControl
+                label="confirm password"
+                type="password"
+                name="confirmPassword"
+                handleChange={handleChange}
+                value={user.confirmPassword}
+                errorMsg={user.errors.confirmPassword}
+              />
+
+              <input type="submit" value="Register" />
+            </form>
+          </div>
         </div>
-        <div className="col-sm-6 col-md-5">
-          <form action="" onSubmit={handleSubmit}>
-            <FormControl
-              label="first name"
-              type="text"
-              name="firstName"
-              handleChange={handleChange}
-              value={user.firstName}
-              errorMsg={user.errors.firstName}
-            />
-            <FormControl
-              label="last name"
-              type="text"
-              name="lastName"
-              handleChange={handleChange}
-              value={user.lastName}
-              errorMsg={user.errors.lastName}
-            />
-
-            <FormControl
-              label="email"
-              type="email"
-              name="email"
-              handleChange={handleChange}
-              value={user.email}
-              errorMsg={user.errors.email}
-            />
-
-            <FormControl
-              label="password"
-              type="password"
-              name="password"
-              handleChange={handleChange}
-              value={user.password}
-              errorMsg={user.errors.password}
-            />
-
-            <FormControl
-              label="confirm password"
-              type="password"
-              name="confirmPassword"
-              handleChange={handleChange}
-              value={user.confirmPassword}
-              errorMsg={user.errors.confirmPassword}
-            />
-
-            <input type="submit" value="Register" />
-          </form>
-        </div>
-      </div>
-    </section>
+      </section>
+      <Modal
+        isOpen={isOpen}
+        onClose={onClose}
+        message={"Registration successful"}
+      />
+    </>
   );
 }
 

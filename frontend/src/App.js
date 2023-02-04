@@ -1,9 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import Banner from "./Features/banner/Banner";
-import Categories from "./Features/categories/Categories";
-import Footer from "./layout/Footer";
-import Header from "./layout/Header";
-import MainContent from "./layout/MainContent";
+import Footer from "./components/layout/Footer";
+import Header from "./components/layout/Header";
+import MainContent from "./components/layout/MainContent";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";

@@ -35,9 +35,12 @@ header {
       }
 
       img {
-        max-width: 150px;
+        width: 150px;
+        height: 83px;
+
         @include mq(576) {
-          max-width: 120px;
+          width: 120px;
+          height: 54px;
         }
       }
     }
@@ -153,86 +156,7 @@ footer {
   }
 }
 
-// carousel fade
-
-.carausel {
-  margin-top: 130px;
-
-  @include mq(576) {
-    margin-top: 100px;
-  }
-  .slide-container {
-    position: relative;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 25px -25px;
-
-    .slide {
-      text-align: center;
-      opacity: 0;
-      transition: opacity ease-in-out 0.4s;
-      img {
-        max-width: 100%;
-      }
-      &.active {
-        opacity: 1;
-      }
-    }
-
-    .slide-navigation-next {
-      position: absolute;
-      right: 0%;
-      top: 45%;
-      @include mq(576) {
-        display: none;
-      }
-    }
-
-    button {
-      background: none;
-      border: none;
-
-      svg {
-        font-size: 2rem;
-        color: rgba($color: #000000, $alpha: 0.5);
-
-        &:hover,
-        &:focus {
-          color: rgba($color: #000000, $alpha: 0.9);
-        }
-      }
-    }
-
-    .slide-navigation-prev {
-      position: absolute;
-      left: 0%;
-      top: 45%;
-      @include mq(576) {
-        display: none;
-      }
-    }
-  }
-
-  .dot-navigation {
-    position: absolute;
-    left: 50%;
-    bottom: 5%;
-    transform: translate(-50%, 0);
-    @include flex-uti();
-
-    .dot {
-      height: 0.5rem;
-      width: 0.5rem;
-      border-radius: 90%;
-      margin: 0 0.25rem;
-      background-color: rgba($color: #000000, $alpha: 0.4);
-
-      &.active {
-        background-color: rgba($color: #000000, $alpha: 1);
-      }
-    }
-  }
-}
-
-// carousel-2 -slide
+// carousel
 
 .carausel2 {
   margin-top: 130px;
@@ -271,7 +195,8 @@ footer {
       left: 0;
       top: 0;
       img {
-        max-width: 100%;
+        width: 100%;
+        height: 100%;
       }
 
       &.next-slide {
@@ -283,6 +208,7 @@ footer {
 
       &.current-slide {
         transform: translateX(0%);
+        height: 300px;
       }
     }
 
@@ -365,9 +291,11 @@ footer {
 
     img {
       width: 250px;
+      height: 167px;
 
       @include mq(576) {
         width: 200px;
+        height: 133px;
       }
     }
 
@@ -537,17 +465,18 @@ main {
       }
 
       img {
-        max-width: 150px;
+        width: 150px;
         height: 150px;
 
         @include mq(991) {
-          max-width: 130px;
+          width: 130px;
           height: 130px;
           margin-top: 1.25rem;
         }
 
         @include mq(768) {
-          max-width: 80%;
+          width: 80%;
+          height: 80%;
         }
       }
       .description {
@@ -743,5 +672,50 @@ main {
         }
       }
     }
+  }
+}
+
+.model-container {
+  position: relative;
+
+  .modalbox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 50px;
+    z-index: 1000;
+    button {
+      background-color: $primary-color;
+      color: $button-color;
+      border: $button-border;
+      border-radius: $button-border-radius;
+      padding: $button-padding;
+      border: 1px solid $primary-color;
+      width: 100px;
+      @include mq(767) {
+        width: 30%;
+      }
+      @include mq(576) {
+        width: 50%;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $button-hover-background;
+        border: 1px solid $button-hover-background;
+      }
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
   }
 }
