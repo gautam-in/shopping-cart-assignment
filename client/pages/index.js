@@ -23,10 +23,10 @@ export default function Home() {
       <Head>
         <title>Sabka Bazaar | Home</title>
       </Head>
-      <main>
+      <>
         <Banners />
         <Categories />
-      </main>
+      </>
     </>
   );
 }

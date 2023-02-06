@@ -3,18 +3,19 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
-  box-shadow: 0 8px 6px -6px lightgray;
+  box-shadow: #c2c2c2 0px 25px 20px -20px;
   width: 100%;
 
   .cardImg {
     position: relative;
     height: 30vh;
-    width: 30vw;
+    width: 40vw;
   }
 
   .cardDetails {
     text-align: center;
     width: 60vw;
+    font-size: 1rem;
   }
 
   .cardButton {
@@ -26,7 +27,22 @@
 }
 
 .cardWrapperOdd {
-    @extend .cardWrapperEven;
+  @extend .cardWrapperEven;
 
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .cardWrapperEven {
+    padding-bottom: 30px;
+
+    .cardImg {
+      height: 20vh;
+    }
+
+    .cardDetails {
+      font-size: 0.85rem;
+    }
+  }
 }
