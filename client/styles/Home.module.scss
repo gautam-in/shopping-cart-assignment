@@ -6,11 +6,9 @@
     grid-area: pg-content;
     margin: 0 5em;
   }
-}
 
-/* Mobile, Tablet and Smaller Desktop */
-@media (max-width: 1120px) {
-  .container {
+  /* Mobile, Tablet and Smaller Desktop */
+  @media (max-width: 1120px) {
     .mainContent {
       margin: 0;
     }
