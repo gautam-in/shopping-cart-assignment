@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "@/styles/globals.scss";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
-import Layout from "@/src/components/layout";
 
 export default function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient());
@@ -9,9 +8,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </Hydrate>
     </QueryClientProvider>
   );

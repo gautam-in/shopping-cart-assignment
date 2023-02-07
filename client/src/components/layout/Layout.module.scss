@@ -1,12 +1,9 @@
-.layout {
-  margin: 0 6em;
-}
-
 .headerWrapper {
+  grid-area: pg-header;
+  margin: 0 4em;
   box-shadow: 0 5px 10px -1px var(--color-gray);
   display: flex;
   justify-content: space-between;
-  margin: 0 5em;
   font-size: 1.25rem;
 
   a {
@@ -64,6 +61,7 @@
 }
 
 .footer {
+  grid-area: pg-footer;
   padding: 10px 0;
   text-align: center;
   font-size: 1rem;
@@ -73,18 +71,18 @@
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
   .headerWrapper {
-    margin: 0px;
+    margin: 0;
   }
 
   .layout {
-    margin: 0px;
+    margin: 0;
   }
 }
 
 /* Mobile */
 @media (max-width: 700px) {
   .headerWrapper {
-    margin: 0px;
+    margin: 0;
 
     .leftContainer {
       img {
