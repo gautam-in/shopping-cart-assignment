@@ -1,7 +1,7 @@
-import styles from "../styles/home.module.scss";
 import { useEffect } from "react";
+import RootLayout from "../layouts/Layout";
 
-function HomePage() {
+export default function HomePage() {
   const fetchData = async () => {
     const res = await fetch("../server/banners/index.get.json");
     return await res.json();
@@ -10,7 +10,9 @@ function HomePage() {
   useEffect(() => {
     fetchData().then((res) => console.log(res));
   }, []);
-  return <div className={styles.app}>Welcome to Next.js!</div>;
+  return (
+    <RootLayout>
+      <div className={"bg-slate-500"}>Welcome to Next.js!</div>
+    </RootLayout>
+  );
 }
-
-export default HomePage;

@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/layouts/Layout.tsx"  ],
   "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
