@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header className="w-full shadow">
       <div className="max-w-5xl mx-auto flex items-end">
-        <Link href="/home" className="cursor-pointer ">
+        <Link href="/" className="cursor-pointer ">
           <Image
             src={"/static/images/logo_2x.png"}
             alt="home"
@@ -17,8 +17,12 @@ export default function Header() {
         </Link>
         <div className="flex-1">
           <ul className="sm:flex gap-4 ml-20 hidden">
-            <li>Home</li>
-            <li>Products</li>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/products">Products</Link>
+            </li>
           </ul>
         </div>
 
@@ -26,7 +30,7 @@ export default function Header() {
           <div className="justify-end sm:flex mb-2 hidden ">
             <ul className="flex gap-2 text-sm">
               <li>
-                <Link href="/login">signIn</Link>
+                <Link href="/signin">signIn</Link>
               </li>
               <li>
                 <Link href="/register">register</Link>

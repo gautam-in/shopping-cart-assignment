@@ -8,7 +8,10 @@
     "order": number,
   }
 
+const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+
+
 export async function getCategories():Promise<TCategory[]> {
-    const res = await fetch("../server/categories/index.get.json");
+    const res = await fetch(baseUrl+"/categories/index.get.json");
     return await res.json();
 }

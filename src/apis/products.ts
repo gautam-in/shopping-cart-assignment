@@ -8,3 +8,5 @@ export type TProduct = {
     "sku":string,
     "stock": number,
   };
+
+  

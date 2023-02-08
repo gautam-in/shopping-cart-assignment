@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+*:focus {
+    outline: 4px solid #81D5DD;
+}

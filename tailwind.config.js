@@ -8,6 +8,7 @@ module.exports = {
       offWhite: "#EEEEEE",
       white: "#FFF",
       black: "#000",
+      teal: "#81D5DD",
     },
   },
   plugins: [],
