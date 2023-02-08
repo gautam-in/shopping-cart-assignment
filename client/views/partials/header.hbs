@@ -1,0 +1,53 @@
+<header class='is-flex-grow-0'>
+    <div
+        role='navigation'
+        arial-label='top-navigation-register-login'
+        class='is-flex is-justify-content-end is-hidden-mobile'
+    >
+        <a href='/signup' class='is-link mr-2 has-text-black is-size-7'>Sign Up</a>
+        <a href='/login' class='is-link mr-2 has-text-black is-size-7'>Login</a>
+    </div>
+    <nav class='navbar is-flex is-align-items-center' role='navigation' aria-label='main navigation'>
+        <div class='navbar-brand is-flex-direction-row-reverse is-flex-grow-1-mobile'>
+            <a class='navbar-item header-logo is-flex-grow-1-mobile' href='/'>
+                <img src='/assets/images/logo.png' alt='homepage' />
+            </a>
+            <a
+                role='button'
+                class='navbar-burger'
+                aria-label='menu'
+                aria-expanded='false'
+                data-target='navbarBasicExample'
+            >
+                <span aria-hidden='true'></span>
+                <span aria-hidden='true'></span>
+                <span aria-hidden='true'></span>
+            </a>
+        </div>
+
+        <div id='navbarBasicExample' class='navbar-menu is-flex-grow-1'>
+            <div class='navbar-start is-flex'>
+                <a
+                    class='link has-text-centered navbar-link is-arrowless {{#eq seoInfo.page 'home'}}is-active{{/eq}}'
+                    href='/'
+                >
+                    Home
+                </a>
+
+                <a class='link has-text-centered navbar-link is-arrowless {{#eq seoInfo.page 'products'}}is-active{{/eq}}' href='/products'>
+                    Products
+                </a>
+            </div>
+        </div>
+        <div class='is-flex-end'>
+            <div class='navbar-item'>
+                <div class='buttons'>
+                    <button class='button cart-button'>
+                        {{{icons.cartIcon}}}
+                        Items
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

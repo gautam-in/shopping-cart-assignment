@@ -1,0 +1,15 @@
+
+    <div class='columns is-mobile is-centered-desktop is-vcentered mx-0 py-5  py-3 mb-3 {{#if isRTL}}is-flex-direction-row-reverse{{/if}}'>
+        <div class='column is-5 is-4-mobile is-justify-content-center'>
+            <img src={{imgSrc}} alt="{{desc}}" />
+        </div>
+        <div class='column is-7 is-8-mobile is-justify-content-center has-text-centered'>
+            <div class="is-size-6-mobile is-size-4 mb-1"><b>{{title}}</b></div>
+            <p class="is-size-7-mobile mb-4">
+                {{desc}}
+            </p>
+            <div>
+                {{> button type="standard"  }}
+            </div>
+        </div>
+    </div>

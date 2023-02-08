@@ -1,0 +1,50 @@
+{{> header}}
+<main class="py-2">
+    <div class='container is-fullhd'>
+        <div class="banner-serction">
+            {{> banner}}
+        </div>
+    </div>
+    <section class="container">
+        {{> homeSection
+            imgSrc="/assets/images/category/fruits.png"
+            title="Fruits and Vegetables"
+            desc="A variety of fruits and vegetables" 
+            buttonTitle="Explore fruit-and-veg"
+        }}
+        {{> homeSection
+            imgSrc="/assets/images/category/bakery.png"
+            title="Bakery Cakes and Dairy"
+            desc="The best cupcakes,cookies,cakes,pies,cheesecakes,fres bread,biscotti,muffins,bagels,fresh coffee,milk and more" 
+            buttonTitle="Explore bakery-cakes-dairy"
+            isRTL= true
+        }}
+        {{> homeSection
+            imgSrc="/assets/images/category/beverages.png"
+            title="Beverages"
+            desc="Our beverage department will ensure your friedge always fully stocked.Shop for soda,juice,beer and more" 
+            buttonTitle="Explore beverages"
+        }}
+        {{> homeSection
+            imgSrc="/assets/images/category/beauty.png"
+            title="Beauty and Hygiene"
+            desc="Buy Beauty and personal care products online in india at best prices." 
+            buttonTitle="Explore beauty-hygiene"
+            isRTL= true
+        }}
+          {{> homeSection
+            imgSrc="/assets/images/category/baby.png"
+            title="Baby Care"
+            desc="Shop online for baby care Products, Diapers, Skin Care Products etc." 
+            buttonTitle="Explore baby"
+        }}
+        </section>
+    </div>
+</main>
+{{> footer}}
+{{#renderSection 'styles'}}
+    <!--webpack_style_placeholder-->
+{{/renderSection}}
+{{#renderSection 'scripts'}}
+    <!--webpack_script_placeholder-->
+{{/renderSection}}

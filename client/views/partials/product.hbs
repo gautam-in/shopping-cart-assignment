@@ -1,0 +1,35 @@
+<div class='product is-flex is-flex-direction-column'>
+    <h5 class='product-title title is-5'>{{name}}</h5>
+    <div
+        class='is-flex is-flex-grow-1 is-flex-direction-column is-justify-content-space-between'
+    >
+        <div class='is-flex-grow-0'>
+            <figure class='image-container'>
+                <img src={{imageURL}} alt='' aria-labelledby={{id}} />
+            </figure>
+
+        </div>
+        <div class='is-flex is-flex-grow-1 is-justify-content-start'>
+            <div
+                class='is-flex is-flex-direction-column is-justify-content-space-between'
+            >
+                <p
+                    id={{id}}
+                    class='product-desc content is-small my-2 has-text-weight-medium'
+                >
+                    {{description}}
+                </p>
+
+                <div
+                    class='is-flex is-align-items-center is-justify-content-space-between'
+                >
+                    <span role='text' class='content is-small mb-0'>MRP
+                        {{price}}</span>
+                    <button class='button is-primary is-small'>
+                        Buy Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

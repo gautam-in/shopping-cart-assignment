@@ -1,0 +1,14 @@
+@import '../../css/style.scss';
+@import '~@splidejs/splide/dist/css/splide.min.css';
+.splide__list.banner-container {
+    margin: 30px 0 !important;
+    max-height: 50%;
+}
+.splide__pagination__page {
+    &.home-page-banner {
+        background-color: grey;
+        &.is-active {
+            background-color: $primary;
+        }
+    }
+}

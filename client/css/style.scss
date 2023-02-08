@@ -1,0 +1,53 @@
+// Reset Variables
+$primary: #d00256;
+$link: $primary;
+
+@import '~bulma/bulma';
+html {
+    overflow-y: auto;
+}
+body {
+    min-height: 100vh;
+}
+.header-logo {
+    margin-right: 4em;
+    img {
+        width: 10em;
+        max-height: inherit;
+    }
+}
+a.link {
+    transition: all 0.33 ease;
+    margin: 0 5px;
+    &.is-active {
+        color: $primary;
+    }
+    &.is-active,
+    &:hover,
+    &:focus {
+        font-weight: 600;
+        border-bottom: 2px solid;
+    }
+}
+.is-flex-grow-1-mobile {
+    @extend .is-flex-grow-1;
+    @media screen and (min-width: $tablet) {
+        flex-grow: initial !important;
+    }
+}
+.cart-button {
+    svg {
+        color: $primary;
+    }
+}
+.button {
+    border-radius: 0 !important;
+}
+@media screen and (min-width: $tablet) {
+    .navbar-burger {
+        display: none;
+    }
+    .navbar-menu {
+        display: flex;
+    }
+}

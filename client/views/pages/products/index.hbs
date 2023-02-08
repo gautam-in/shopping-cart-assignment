@@ -1,0 +1,37 @@
+{{> header}}
+<main class='p-3'>
+    <section class='container is-fullhd'>
+        <div class='columns is-mobile m-0'>
+            <div class='column is-2-mobile is-hidden-mobile'>
+                <aside aria-label="category filter menu" class='menu'>
+                    <p class='menu-label'>
+                        Category
+                    </p>
+                    <ul class='menu-list'>
+                        <li ><a class="is-active">All</a></li>
+                        <li><a>Fruits and Vegetables</a></li>
+                        <li><a>Bakery Cakes and Dairy</a></li>
+                        <li><a>Beverages</a></li>
+                        <li><a>Beauty and Hygiene</a></li>
+                        <li><a>Baby Care</a></li>
+                    </ul>
+                </aside>
+            </div>
+            <div class='column is-12-mobile is-10-tablet'>
+                <div class="columns is-multiline">
+                    {{#each productList.products}}
+                        <div class="column is-12-mobile is-6-tablet is-3-desktop is-flex">
+                            {{> product}}
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{{#renderSection 'styles'}}
+    <!--webpack_style_placeholder-->
+{{/renderSection}}
+{{#renderSection 'scripts'}}
+    <!--webpack_script_placeholder-->
+{{/renderSection}}
