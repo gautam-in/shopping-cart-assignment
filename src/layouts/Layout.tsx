@@ -1,10 +1,11 @@
 import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
     <div className="flex flex-col min-h-screen">
-      <header>hello header</header>
-      <main className="flex-1">{children}</main>
+      <Header />
+      <main className="flex-1 max-w-5xl mx-auto w-full">{children}</main>
       <Footer />
     </div>
   );

@@ -1,18 +1,33 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { getCategories, TCategory } from "../apis/categories";
+import Category from "../components/Category/Category";
 import RootLayout from "../layouts/Layout";
 
 export default function HomePage() {
-  const fetchData = async () => {
-    const res = await fetch("../server/banners/index.get.json");
-    return await res.json();
-  };
+  const [categories, setCategories] = useState<TCategory[]>([]);
 
   useEffect(() => {
-    fetchData().then((res) => console.log(res));
+    getCategories().then((res) =>
+      setCategories(
+        res.sort((a, b) => a.order - b.order).filter((cat) => cat.enabled)
+      )
+    );
   }, []);
+
   return (
     <RootLayout>
-      <div className={"bg-slate-500"}>Welcome to Next.js!</div>
+      <section className="divide-dashed">
+        {categories.map((catogory, index) => (
+          <Category
+            key={catogory.id}
+            description={catogory.description}
+            imageUrl={catogory.imageUrl}
+            name={catogory.name}
+            slug={catogory.key}
+            rtl={index % 2 === 0}
+          />
+        ))}
+      </section>
     </RootLayout>
   );
 }
