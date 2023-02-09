@@ -1,17 +1,8 @@
-import { useEffect, useState } from "react";
-import { getCategories, TCategory } from "../../apis/categories";
+import { useCategories } from "../../hooks";
 import Category from "../Category/Category";
 
 export default function Categories() {
-  const [categories, setCategories] = useState<TCategory[]>([]);
-
-  useEffect(() => {
-    getCategories().then((res) =>
-      setCategories(
-        res.sort((a, b) => a.order - b.order).filter((cat) => cat.enabled)
-      )
-    );
-  }, []);
+  const { categories } = useCategories();
 
   return (
     <section className="divide-dashed divide-y">

@@ -25,7 +25,7 @@ export default function Category({
           <h2 className="font-bold">{name}</h2>
           <p>{description}</p>
           <Link
-            href={`/products/${slug}`}
+            href={`/products?category=${slug}`}
             className="bg-primary p-3 text-white w-fit"
           >
             Explore {slug}
