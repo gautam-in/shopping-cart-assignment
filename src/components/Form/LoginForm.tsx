@@ -57,7 +57,7 @@ export default function LoginForm() {
         type="submit"
         className="bg-primary text-white text-center py-2 w-full mt-10 cursor-pointer"
       >
-        Submit
+        Login
       </button>
     </form>
   );
