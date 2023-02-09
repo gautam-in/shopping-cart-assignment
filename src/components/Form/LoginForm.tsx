@@ -9,9 +9,12 @@ export default function LoginForm() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log(values);
   };
+
   return (
     <form className="mt-12 w-full max-w-sm" onSubmit={handleSubmit}>
       <div className="relative">
@@ -22,6 +25,7 @@ export default function LoginForm() {
           className="peer h-10 w-full border-b-2 placeholder:opacity-0 focus:border-b-teal focus:outline-none"
           placeholder="placeholder"
           onChange={handleChange}
+          required
         />
         <label
           htmlFor="email"
@@ -34,10 +38,12 @@ export default function LoginForm() {
         <input
           id="password"
           name="password"
-          type="text"
+          type="password"
           className="peer h-10 w-full border-b-2 placeholder:opacity-0 focus:border-b-teal focus:outline-none"
           placeholder="placeholder"
           onChange={handleChange}
+          required
+          minLength={8}
         />
         <label
           htmlFor="password"
