@@ -5,7 +5,7 @@ import { CartIcon } from "../Icons/Icons";
 export default function Header() {
   return (
     <header className="w-full shadow z-40">
-      <div className="max-w-5xl mx-auto flex items-end">
+      <div className="max-w-6xl mx-auto flex items-end">
         <Link href="/" className="cursor-pointer ">
           <Image
             src={"/static/images/logo_2x.png"}
