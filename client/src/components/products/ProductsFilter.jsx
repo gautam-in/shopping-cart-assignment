@@ -3,7 +3,10 @@ import { useState } from "react";
 import { useQuery } from "react-query";
 import styles from "./ProductsFilter.module.scss";
 
-export default function ProductsFilter() {
+export default function ProductsFilter({
+  selectedFilterCategory,
+  setSelectedFilterCategory,
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(
     "Please Choose Category..."
@@ -22,16 +25,32 @@ export default function ProductsFilter() {
     setIsOpen(!isOpen);
   };
 
-  const handleOptionClick = (e) => {
-    setSelectedOption(e.target.id);
+  const handleFilterClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const option = e.target.dataset.category;
+    setSelectedOption(option);
+    setSelectedFilterCategory(e.target.dataset.id);
+  };
+
+  const handleSelectFilterClick = (e) => {
+    handleFilterClick(e);
     setIsOpen(!isOpen);
   };
 
   return (
     <>
-      <div className={styles.sideFilter}>
+      <div className={styles.sideFilter} onClick={handleFilterClick}>
         {validCategories.map((item) => (
-          <a key={item.id} href={`#${item.name}`}>
+          <a
+            key={item.id}
+            data-id={item.id}
+            data-category={item.name}
+            href={`#${item.name}`}
+            className={
+              item.id === selectedFilterCategory ? styles.activeFilterItem : styles.filterItem
+            }
+          >
             {item.name}
           </a>
         ))}
@@ -46,7 +65,7 @@ export default function ProductsFilter() {
           )}
         </button>
         <div
-          onClick={handleOptionClick}
+          onClick={handleSelectFilterClick}
           className={
             isOpen ? styles.filterContentShow : styles.filterContentHide
           }
@@ -54,7 +73,8 @@ export default function ProductsFilter() {
           {validCategories.map((item) => (
             <a
               key={item.id}
-              id={item.name}
+              data-id={item.id}
+              data-category={item.name}
               href={`#${item.name}`}
               className={styles.contentItem}
             >

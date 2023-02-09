@@ -6,6 +6,7 @@ import { dehydrate, QueryClient } from "react-query";
 import styles from "@/styles/Products.module.scss";
 import Header from "@/src/components/layout/Header";
 import Footer from "@/src/components/layout/Footer";
+import { useState } from "react";
 
 export async function getServerSideProps() {
   const queryClient = new QueryClient();
@@ -21,6 +22,8 @@ export async function getServerSideProps() {
 }
 
 export default function Products() {
+  const [selectedFilterCategory, setSelectedFilterCategory] = useState(null);
+
   return (
     <>
       <Head>
@@ -30,10 +33,13 @@ export default function Products() {
       <div className={styles.container}>
         <Header />
         <nav className={styles.filter}>
-          <ProductsFilter />
+          <ProductsFilter
+            selectedFilterCategory={selectedFilterCategory}
+            setSelectedFilterCategory={setSelectedFilterCategory}
+          />
         </nav>
         <main className={styles.mainContent}>
-          <ProductsList />
+          <ProductsList selectedFilterCategory={selectedFilterCategory} />
         </main>
         <Footer />
       </div>

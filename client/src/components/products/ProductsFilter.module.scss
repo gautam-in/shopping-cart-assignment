@@ -1,6 +1,20 @@
 .sideFilter {
   display: flex;
   flex-direction: column;
+
+  .filterItem {
+    text-decoration: none;
+    color: var(--color-black);
+    padding: 1em;
+    border-bottom: 1px solid var(--color-black);
+  }
+
+  .activeFilterItem {
+    @extend .filterItem;
+
+    background-color: var(--color-red);
+    color: var(--color-white);
+  }
 }
 
 .selectFilter {
