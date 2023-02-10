@@ -1,11 +1,11 @@
 import React from 'react'
-import { ProductBuyButton, ProductContent, ProductDescription, ProductHeadContent, ProductHeading, ProductImage, ProductListItemContainer, ProductPrice } from './ProductListItem.styled';
+import { ProductBuyButton, ProductContent, ProductDescription, ProductHeading, ProductImage, ProductListItemContainer } from './ProductListItem.styled';
 import { useDispatch } from 'react-redux';
 import { handleAddToCart } from '../../store/cart/cartSlice';
 import makeRequest from '../../services/api/index';
 import appDefaults from '../../constants/index';
 
-const ProductListItem = ({ product }) => {
+const ProductListItem = ({ product, showToast }) => {
   const dispatch = useDispatch();
 
   const handleBuyProduct = async () => {
@@ -20,22 +20,25 @@ const ProductListItem = ({ product }) => {
       const response = await makeRequest(appDefaults.api.addToCart, 'POST', {"id":product.id});
       if(response.data.response === "Success"){
         dispatch(handleAddToCart(obj));
+        showToast()
       }
+      
     } catch (error) {
       console.log(error);
     }
   }
 
   return (
+    <>
     <ProductListItemContainer >
       <ProductHeading>{product.name}</ProductHeading>
-      <ProductImage src={product.imageURL} alt={product.id} />
+      <ProductImage src={product.imageURL} alt={product.name} />
       <ProductContent>
         <ProductDescription>{product.description}</ProductDescription>
-        {/* <ProductPrice>{product.price}</ProductPrice> */}
         <ProductBuyButton onClick={handleBuyProduct}>Buy Now @ Rs.{product.price}</ProductBuyButton>
       </ProductContent>
     </ProductListItemContainer>
+    </>
   )
 }
 

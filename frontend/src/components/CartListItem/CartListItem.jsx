@@ -14,19 +14,19 @@ const CartListItem = ({ id, name, imageURL, price, quantity }) => {
     return (
         <CartListItemWrapper>
             <ItemInfoWrapper>
-                <ItemImage src={imageURL} alt={imageURL} />
+                <ItemImage src={imageURL} alt={name} />
                 <ItemInfo>
                     <ItemName><strong>{name}</strong></ItemName>
                     <ItemQuantityWrapper>
-                        <ItemCalcButton onClick={() => handleItemCalculation('remove-one')}>−</ItemCalcButton>
+                        <ItemCalcButton aria-label={`Item Quantity Decrease`} onClick={() => handleItemCalculation('remove-one')}>−</ItemCalcButton>
                         <span>{quantity}</span>
-                        <ItemCalcButton onClick={() => handleItemCalculation('add-one')}>+</ItemCalcButton>
+                        <ItemCalcButton aria-label={`Item Quantity Increase`} onClick={() => handleItemCalculation('add-one')}>+</ItemCalcButton>
                         <span>X</span>
                         <span>{price}</span>
                     </ItemQuantityWrapper>
                 </ItemInfo>
             </ItemInfoWrapper>
-            <ItemTotalPrice>Rs.{price * quantity}</ItemTotalPrice>
+            <ItemTotalPrice aria-label={`Total Item Price`}>Rs.{price * quantity}</ItemTotalPrice>
         </CartListItemWrapper>
     )
 }

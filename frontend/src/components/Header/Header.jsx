@@ -39,10 +39,10 @@ const Header = () => {
             <NavLink to='/login'>Login</NavLink>
             <NavLink to='/signup'>Register</NavLink>
           </AuthContainer>
-          <CartModalButton onClick={()=>setShowModal(true)}>
-            <FaShoppingCart style={{fontSize: '1rem', color:'#ab4747'}}/>{totalCartQuantity} items
+          <CartModalButton aria-label={`Cart Modal Button`} onClick={()=>setShowModal(true)}>
+            <FaShoppingCart aria-hidden="true" style={{fontSize: '1rem', color:'#ab4747'}}/>{totalCartQuantity} items
           </CartModalButton>
-          {showModal && <CartModal onClose={handleModalClose}/>}
+          {showModal && <CartModal onClose={handleModalClose} />}
         </HeaderRightSection>
       </HeaderContainerWrapper>
     </HeaderContainer>

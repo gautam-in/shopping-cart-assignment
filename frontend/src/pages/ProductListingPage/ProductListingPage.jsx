@@ -6,7 +6,8 @@ import ProductCategoryFilterDropdown from '../../components/ProductCategoryFilte
 import appDefaults from '../../constants/index';
 import makeRequest from '../../services/api/index';
 import { useSelector } from 'react-redux';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const ProductListingPage = () => {
@@ -41,6 +42,19 @@ const ProductListingPage = () => {
     fetchData();
   }, []);
 
+  const showToast = () => {
+    toast.success('Item added to the cart', {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
+
 
   if (isLoading) {
     return <p>Loading...</p>
@@ -60,13 +74,14 @@ const ProductListingPage = () => {
 
   return (
     <ProductListingPageContainer>
+      <ToastContainer />
       {categories && <ProductCategoryFilterList categories={categories} />}
       {categories && <ProductCategoryFilterDropdown
         options={categories?.map(item => item)}
         value={currentProductCategory}
       />}
       <ProductList>
-        {currentProductCategory.length > 0 ? products?.filter(item => item.category === currentProductCategory).map((item, ind) => <ProductListItem key={item.id} product={item} />) : products?.map((item, ind) => <ProductListItem key={item.id} product={item} />)}
+        {currentProductCategory.length > 0 ? products?.filter(item => item.category === currentProductCategory).map((item, ind) => <ProductListItem showToast={showToast} key={item.id} product={item} />) : products?.map((item, ind) => <ProductListItem showToast={showToast} key={item.id} product={item} />)}
       </ProductList>
     </ProductListingPageContainer>
   )

@@ -1,24 +1,46 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import ReactDom from 'react-dom'
 import CartListItem from '../CartListItem';
 import { CartModalContainer, CartModalWrapper, CartModalOverlay, CartModalHeader, CartModalCloseButton, CartModalHeading, CartModalBody, CartModalFooter, CheckoutButton, LowestPriceMessage, EmptyCartMessage } from './CartModal.styled';
 import { useSelector } from 'react-redux';
 
-const CartModal = ({ onClose }) => {
+const CartModal = ({ onClose, showModal }) => {
   const [totalCheckoutPrice, setCheckoutPrice] = useState(null)
+  const [cartQuantity, setCartQuantity] = useState(null)
+  const modalRef = useRef(null);
+  const checkoutButtonRef = useRef(null);
+
+
   const cartList = useSelector(store => store.cart.cartList);
 
   useEffect(() => {
     document.body.style.overflow = "hidden"
+    modalRef.current.focus();
     return () => {
       document.body.style.overflow = "visible"
     };
   }, []);
 
   useEffect(() => {
+    const totalCartQty = cartList.reduce((acc, obj) => acc + obj.quantity, 0);
     const sum = cartList.reduce((acc, obj) => acc + (obj.quantity * obj.price), 0);
+    setCartQuantity(totalCartQty)
     setCheckoutPrice(sum)
   }, [cartList]);
+
+  const handleTab = (event) => {
+    if (event.key === 'Tab') {
+      const elements = Array.from(modalRef.current.querySelectorAll('*'));
+      const first = elements[0];
+      if (event.shiftKey && (document.activeElement === first || document.activeElement.role==='dialog')) {
+        checkoutButtonRef.current.focus();
+        event.preventDefault();
+      } else if (!event.shiftKey && document.activeElement === checkoutButtonRef.current) {
+        first.focus();
+        event.preventDefault();
+      }
+    }
+  };
 
   const handleCheckout = () => {
     onClose()
@@ -34,32 +56,32 @@ const CartModal = ({ onClose }) => {
   return ReactDom.createPortal(
     <CartModalContainer>
       <CartModalOverlay onClick={onClose}></CartModalOverlay>
-      <CartModalWrapper>
-        <CartModalHeader>
+      <CartModalWrapper ref={modalRef} role='dialog' aria-modal={true} tabIndex={0} onKeyDown={handleTab}>
+        <CartModalHeader tabIndex={0}>
           <CartModalHeading>
             <span><strong>My Cart</strong></span>
-            <span className='cart-item-count'>(1 item)</span>
+            <span className='cart-item-count'>({cartQuantity} item)</span>
           </CartModalHeading>
-          <CartModalCloseButton onClick={onClose}>X</CartModalCloseButton>
+          <CartModalCloseButton aria-label={`Modal Close`} onClick={onClose}>X</CartModalCloseButton>
         </CartModalHeader>
         <CartModalBody>
           {
             cartBody
           }
           <LowestPriceMessage>
-            <img src="static/images/lowest-price.png" alt="static/images/lowest-price.png" />
+            <img src="static/images/lowest-price.png" alt="You won't find it cheaper anywhere" />
             <div>You won't find it cheaper anywhere</div>
           </LowestPriceMessage>
         </CartModalBody>
         <CartModalFooter>
           <div className='promo-message'>Promo code can be applied on payment page</div>
-          <CheckoutButton onClick={handleCheckout} centerChild={cartList.length > 0 ? true : false}>
+          <CheckoutButton ref={checkoutButtonRef} onClick={handleCheckout} centerChild={cartList.length > 0 ? true : false}>
             <span>{cartList.length > 0 ? 'Proceed to Checkout' : 'Start Shopping'}</span>
             {cartList.length > 0 && <span className='total-amount'>
-              Rs.{totalCheckoutPrice} {'>'}
+              Rs.{totalCheckoutPrice} <span aria-hidden={true}>{'>'}</span>
             </span>}
           </CheckoutButton>
-        </CartModalFooter>
+        </CartModalFooter >
       </CartModalWrapper>
     </CartModalContainer>,
     document.querySelector('.modal-container')

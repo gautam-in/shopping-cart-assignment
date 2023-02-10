@@ -45,6 +45,8 @@ export const ItemCalcButton = styled.button`
     border-radius: 50%;
     cursor: pointer;
     transition: all 100ms ease-in-out;
+    align-items: flex-start;
+    justify-content: center;
 
     :hover{
         transform: scale(1.02);

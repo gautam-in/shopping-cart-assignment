@@ -15,14 +15,14 @@ const CategoryListItem = ({ id, name, order, desc, imageUrl }) => {
   }
   return (
     <CategoryListItemWrapper order={order}>
-      <ImageWrapper order={order}>
-        <CategoryImage src={imageUrl} alt={desc} />
-      </ImageWrapper>
-      <CategoryInfo>
+    <CategoryInfo>
         <h2>{name}</h2>
         <p>{desc}</p>
         <CategoryExploreButton onClick={handleCategoryClick}>Explore {name}</CategoryExploreButton>
       </CategoryInfo>
+      <ImageWrapper order={order}>
+        <CategoryImage src={imageUrl} alt={desc} />
+      </ImageWrapper>
     </CategoryListItemWrapper>
   )
 }

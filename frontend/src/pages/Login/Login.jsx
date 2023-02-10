@@ -1,30 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Form, FormHeader, InputContainer, LoginContainer, LoginButton } from './Login.styled';
 
-const Login = () => {
+const Login = ({showToast}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
 
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     let isValid = true;
-    if (!email) {
-      isValid = false;
-      setEmailError("Email is required");
-    }else if (!/\S+@\S+\.\S+/.test(email)) {
-      isValid = false;
-      setEmailError("Email is invalid");
-    }
     if (!password) {
       isValid = false;
       setPasswordError("Password is required");
-    }else if (
+      passwordRef.current.focus();
+    } else if (
       password.length < 6 ||
       !/\d/.test(password) ||
       !/[a-zA-Z]/.test(password) ||
@@ -32,9 +27,19 @@ const Login = () => {
     ) {
       isValid = false;
       setPasswordError("Password must be at least 6 characters long and contain a number, alphabet, and cannot have spaces");
+      passwordRef.current.focus();
+    }
+    if (!email) {
+      isValid = false;
+      setEmailError("Email is required");
+      emailRef.current.focus();
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      isValid = false;
+      setEmailError("Email is invalid");
+      emailRef.current.focus();
     }
     if (isValid) {
-      alert("form submitted successfully")
+      showToast()
       navigate('/');
     }
   };
@@ -49,6 +54,7 @@ const Login = () => {
         <InputContainer>
           <label htmlFor="email">Email<span aria-hidden="true" >*</span></label>
           <input
+            ref={emailRef}
             aria-label="email"
             aria-required={true}
             aria-describedby="emailError"
@@ -69,6 +75,7 @@ const Login = () => {
         <InputContainer>
           <label htmlFor="password">Password:<span aria-hidden="true" >*</span></label>
           <input
+            ref={passwordRef}
             aria-label="password"
             aria-required={true}
             type="password"
@@ -77,11 +84,11 @@ const Login = () => {
             onChange={(event) => setPassword(event.target.value)}
             onBlur={() =>
               !password ? setPasswordError("Password is required") : (
-      (password.length < 6 ||
-      !/\d/.test(password) ||
-      !/[a-zA-Z]/.test(password) ||
-      /\s/.test(password) ? setPasswordError("Password must be at least 6 characters long and contain a number, alphabet, and cannot have spaces") : setPasswordError(''))
-    ) 
+                (password.length < 6 ||
+                  !/\d/.test(password) ||
+                  !/[a-zA-Z]/.test(password) ||
+                  /\s/.test(password) ? setPasswordError("Password must be at least 6 characters long and contain a number, alphabet, and cannot have spaces") : setPasswordError(''))
+              )
             }
           />
           {passwordError && (

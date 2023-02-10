@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, FormHeader, InputContainer, SignupButton, SignupContainer } from './Signup.styled';
 
-const Signup = () => {
+const Signup = ({showToast}) => {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
@@ -14,29 +14,31 @@ const Signup = () => {
   const [passwordError, setPasswordError] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
 
+  const firstnameRef = useRef(null);
+  const lastnameRef = useRef(null);
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+  const confirmPasswordRef = useRef(null);
+
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     let isValid = true;
-    if (!firstname) {
+    if (!confirmPassword) {
       isValid = false;
-      setFirstnameError("First Name is required");
-    }
-    if (!lastname) {
+      setConfirmPasswordError("Confirm password is required");
+      confirmPasswordRef.current.focus();
+    }else if (password !== confirmPassword) {
       isValid = false;
-      setLastnameError("Last Name is required");
-    }
-    if (!email) {
-      isValid = false;
-      setEmailError("Email is required");
-    }else if (!/\S+@\S+\.\S+/.test(email)) {
-      isValid = false;
-      setEmailError("Email is invalid");
+      setPasswordError("Passwords do not match");
+      setConfirmPasswordError("Passwords do not match");
+      confirmPasswordRef.current.focus();
     }
     if (!password) {
       isValid = false;
       setPasswordError("Password is required");
+      passwordRef.current.focus();
     }else if (
       password.length < 6 ||
       !/\d/.test(password) ||
@@ -45,17 +47,29 @@ const Signup = () => {
     ) {
       isValid = false;
       setPasswordError("Password must be at least 6 characters long and contain a number, alphabet, and cannot have spaces");
+      passwordRef.current.focus();
     }
-    if (!confirmPassword) {
+    if (!email) {
       isValid = false;
-      setConfirmPasswordError("Confirm password is required");
-    }else if (password !== confirmPassword) {
+      setEmailError("Email is required");
+      emailRef.current.focus();
+    }else if (!/\S+@\S+\.\S+/.test(email)) {
       isValid = false;
-      setPasswordError("Passwords do not match");
-      setConfirmPasswordError("Passwords do not match");
+      setEmailError("Email is invalid");
+      emailRef.current.focus();
+    }
+    if (!lastname) {
+      isValid = false;
+      setLastnameError("Last Name is required");
+      lastnameRef.current.focus();
+    }
+    if (!firstname) {
+      isValid = false;
+      setFirstnameError("First Name is required");
+      firstnameRef.current.focus();
     }
     if (isValid) {
-      alert("form submitted successfully")
+      showToast()
       navigate('/');
     }
   };
@@ -71,6 +85,7 @@ const Signup = () => {
         <InputContainer>
           <label className='.label' htmlFor="firstname">First Name<span aria-hidden="true" >*</span></label>
           <input
+            ref={firstnameRef}
             aria-label="firstname"
             aria-required={true}
             aria-describedby="firstnameError"
@@ -92,6 +107,7 @@ const Signup = () => {
         <InputContainer>
           <label htmlFor="lastname">Last Name<span aria-hidden="true" >*</span></label>
           <input
+            ref={lastnameRef}
             aria-label="lastname"
             aria-required={true}
             aria-describedby="lastnameError"
@@ -113,6 +129,7 @@ const Signup = () => {
         <InputContainer>
           <label htmlFor="email">Email<span aria-hidden="true" >*</span></label>
           <input
+            ref={emailRef}
             aria-label="email"
             aria-required={true}
             aria-describedby="emailError"
@@ -134,6 +151,7 @@ const Signup = () => {
         <InputContainer>
           <label htmlFor="password">Password:<span aria-hidden="true" >*</span></label>
           <input
+            ref={passwordRef}
             aria-label="password"
             aria-required={true}
             type="password"
@@ -159,6 +177,7 @@ const Signup = () => {
         <InputContainer>
           <label htmlFor="confirmPassword">Confirm Password:<span aria-hidden="true" >*</span></label>
           <input
+            ref={confirmPasswordRef}
             aria-label="confirmPassword"
             aria-required={true}
             type="password"

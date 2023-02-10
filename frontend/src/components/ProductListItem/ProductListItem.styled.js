@@ -49,10 +49,9 @@ export const ProductDescription = styled.p`
     text-align: left;
 `
 
-export const ProductPrice = styled.div`
-`
 
 export const ProductBuyButton = styled.button`
+/* font-family: 'Dosis', sans-serif; */
     margin-bottom: 0.5rem;
     padding: 0.8rem 1.2rem;
     color: white;
