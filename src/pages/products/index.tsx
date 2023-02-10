@@ -10,8 +10,8 @@ export default function ProductsPage() {
 
   return (
     <RootLayout>
-      <div className="grid grid-cols-12 min-h-[calc(100vh_-_108px)]">
-        <aside className="bg-offWhite col-span-3">
+      <div className="flex min-h-[calc(100vh_-_108px)]">
+        <div className="bg-offWhite flex">
           <ul className="">
             {categories.map((category) => (
               <li
@@ -24,8 +24,8 @@ export default function ProductsPage() {
               </li>
             ))}
           </ul>
-        </aside>
-        <section className="col-span-9 grid grid-cols-4 gap-y-8 gap-x-4 pl-4 py-4">
+        </div>
+        <section className="flex-1 grid grid-cols-4 gap-y-8 gap-x-4 pl-4 py-4">
           <Products />
         </section>
       </div>
