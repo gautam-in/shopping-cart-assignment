@@ -1,0 +1,10 @@
+.container {
+  display: grid;
+  grid-template-areas: "pg-header" "pg-content";
+  grid-template-rows: auto 1fr;
+
+  .mainContent {
+    grid-area: pg-content;
+    height: calc(100vh - 10vh);
+  }
+}

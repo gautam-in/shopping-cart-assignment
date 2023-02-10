@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "@/styles/globals.scss";
 import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
+import CartContextProvider from "@/src/context/CartContext";
 
 export default function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient());
@@ -8,7 +9,9 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
-        <Component {...pageProps} />
+        <CartContextProvider>
+          <Component {...pageProps} />
+        </CartContextProvider>
       </Hydrate>
     </QueryClientProvider>
   );

@@ -1,7 +1,18 @@
+import { useCartState } from "@/src/hooks/useCartContext";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "./Layout.module.scss";
 
 export default function Header() {
+  const router = useRouter();
+  const cartState = useCartState();
+
+  const handleCartClick = () => {
+    router.push("/cart");
+  }
+
+  const cartText = `${cartState.totalItems} ${cartState.totalItems > 1 ? "items" : "item"}`;
+
   return (
     <header className={styles.headerWrapper}>
       <div className={styles.leftContainer}>
@@ -20,9 +31,9 @@ export default function Header() {
           <Link href="/login">SignIn</Link>
           <Link href="/signUp">Register</Link>
         </div>
-        <button className={styles.cartButton}>
+        <button className={styles.cartButton} onClick={handleCartClick}>
           <img src="/static/images/cart.svg" alt="cart" />
-          <span>0 items</span>
+          <span>{cartText}</span>
         </button>
       </div>
     </header>

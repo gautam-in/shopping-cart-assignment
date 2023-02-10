@@ -18,6 +18,17 @@
     margin-right: 5em;
   }
 
+  /* Mobile */
+  @media (max-width: 700px) {
+    grid-template-areas: "pg-header" "pg-nav" "pg-content" "pg-footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr 10fr auto;
+
+    .filter {
+      background-color: white;
+    }
+  }
+
   /* Mobile, Tablet and Smaller Desktop */
   @media (max-width: 1120px) {
     .filter {
@@ -25,19 +36,6 @@
     }
     .mainContent {
       margin-right: 0;
-    }
-  }
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-  .container {
-    grid-template-areas: "pg-header" "pg-nav" "pg-content" "pg-footer";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr 10fr auto;
-
-    .filter {
-      background-color: white;
     }
   }
 }
