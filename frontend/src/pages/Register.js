@@ -50,7 +50,7 @@ function Register() {
       errors["lastName"] = "Please enter your Last Name";
     }
 
-    if (!user.email) {
+    if (user.email === "") {
       formIsValid = false;
       errors["email"] = "Please enter your email address";
     }
@@ -93,6 +93,8 @@ function Register() {
     if (user.password && user.confirmPassword) {
       if (user.password != user.confirmPassword) {
         errors["confirmPassword"] = "Password did not match";
+      } else {
+        errors["confirmPassword"] = "";
       }
     }
 
@@ -196,5 +198,4 @@ function Register() {
     </>
   );
 }
-
 export default Register;

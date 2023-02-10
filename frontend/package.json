@@ -6,7 +6,7 @@
     "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/user-event": "^14.4.3",
     "axios": "^1.2.2",
     "bootstrap": "^5.2.2",
     "focus-trap-react": "^10.0.2",
@@ -48,5 +48,8 @@
     "moduleNameMapper": {
       "^axios$": "axios/dist/axios.js"
     }
+  },
+  "devDependencies": {
+    "msw": "^1.0.1"
   }
 }

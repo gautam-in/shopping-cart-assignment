@@ -13,7 +13,9 @@ export default function Modal({ isOpen, message, onClose }) {
       >
         <div className="overlay" />
         <div className="modalbox text-center">
-          <p id="alert-message">{message}</p>
+          <p data-testid="modal" id="alert-message">
+            {message}
+          </p>
           <button onClick={onClose}>ok</button>
         </div>
       </div>

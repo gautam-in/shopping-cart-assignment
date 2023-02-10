@@ -103,6 +103,7 @@ function Login() {
                 label="email"
                 type="email"
                 name="email"
+                placeholder="email"
                 handleChange={handleChange}
                 value={user.email}
                 errorMsg={user.errors.email}

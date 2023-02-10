@@ -2,7 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCategoriesData } from "../Features/categories/categoriesSlice";
+import {
+  fetchCategoriesData,
+  setCurrentCategory,
+} from "../Features/categories/categoriesSlice";
 import ProductItem from "../components/ProductItem";
 import { fetchProductsData } from "../Features/products/productsSlice";
 import Sidenav from "../components/layout/Sidenav";
@@ -10,8 +13,9 @@ import Sidenav from "../components/layout/Sidenav";
 function Products() {
   const categories = useSelector((state) => state.categories.categories.data);
   const products = useSelector((state) => state.products.products.data);
-
-  const [category, setCategory] = useState("");
+  const currentCategory = useSelector(
+    (state) => state.categories.currentCategory
+  );
 
   const dispatch = useDispatch();
 
@@ -21,12 +25,16 @@ function Products() {
   }, []);
 
   const handleChange = (e) => {
-    setCategory(e.target.value);
+    if (currentCategory === e.target.value) {
+      dispatch(setCurrentCategory(""));
+    } else {
+      dispatch(setCurrentCategory(e.target.value));
+    }
   };
 
   const filteredData = products.filter((prod) => {
-    if (category) {
-      return prod.category == category;
+    if (currentCategory) {
+      return prod.category == currentCategory;
     }
 
     return products;
@@ -36,7 +44,7 @@ function Products() {
     <section className="products-listing">
       <div className="row justify-content-between">
         <div className="d-none d-md-block col-md-3">
-          <Sidenav categories={categories} setCategory={setCategory} />
+          <Sidenav categories={categories} />
         </div>
         <div className="col-12 col-md-9">
           <form action="" className="d-md-none">
@@ -46,6 +54,7 @@ function Products() {
                 name="categories"
                 id="categories"
                 aria-label="select product category"
+                value={currentCategory}
               >
                 {categories.map((cat) => {
                   return (

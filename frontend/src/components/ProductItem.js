@@ -12,7 +12,13 @@ function ProductItem({ product }) {
       </div>
       <div className="row justify-content-center">
         <div className="product-image text-center col-6 col-md-6 col-lg-12">
-          <img src={product.imageURL} alt={product.name} />
+          <img
+            width="300"
+            height="300"
+            src={product.imageURL}
+            alt={product.name}
+            loading="lazy"
+          />
         </div>
         <div className=" col-6 col-md-6 col-lg-12 ">
           <p className="description">{product.description.substring(0, 120)}</p>

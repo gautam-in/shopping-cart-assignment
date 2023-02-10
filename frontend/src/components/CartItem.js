@@ -15,7 +15,12 @@ function CartItem({ product }) {
       </div>
       <div className="d-flex flex-grow-1 justify-content-between align-items-center">
         <div className="prod-image item">
-          <img src={product.imageURL} alt={product.name} />
+          <img
+            width="300"
+            height="300"
+            src={product.imageURL}
+            alt={product.name}
+          />
         </div>
         <div className="prod-name d-none  d-sm-inline-block item text-center">
           <h1 className="text-start">{product.name}</h1>

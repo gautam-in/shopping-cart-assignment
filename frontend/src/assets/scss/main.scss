@@ -196,6 +196,7 @@ footer {
       top: 0;
       img {
         width: 100%;
+        height: auto;
       }
 
       &.next-slide {
@@ -434,8 +435,11 @@ main {
             padding: 0.5rem;
             text-align: left;
             width: 100%;
-            &:hover,
-            &:focus {
+            &:hover {
+              color: $primary-color;
+              border-bottom: 1px solid $primary-color;
+            }
+            &.active {
               color: $primary-color;
               border-bottom: 1px solid $primary-color;
             }

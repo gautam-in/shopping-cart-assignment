@@ -2,12 +2,13 @@ import React from "react";
 import { render } from "@testing-library/react";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-// As a basic setup, import your same slice reducers
+//import your slice reducers
 import bannerReducer from "../Features/banner/bannerSlice";
 import categoriesReducer from "../Features/categories/categoriesSlice";
 import userReducer from "../Features/user/userSlice";
 import productsReducer from "../Features/products/productsSlice";
 import cartReducer from "../Features/shopping-cart/cartSlice";
+import { BrowserRouter } from "react-router-dom";
 
 export function renderWithProviders(
   ui,
@@ -28,7 +29,11 @@ export function renderWithProviders(
   } = {}
 ) {
   function Wrapper({ children }) {
-    return <Provider store={store}>{children}</Provider>;
+    return (
+      <BrowserRouter>
+        <Provider store={store}>{children}</Provider>
+      </BrowserRouter>
+    );
   }
 
   // Return an object with the store and all of RTL's query functions

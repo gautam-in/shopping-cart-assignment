@@ -182,6 +182,7 @@ footer p {
 }
 .carausel2 .slide-container .slide img {
   width: 100%;
+  height: auto;
 }
 .carausel2 .slide-container .slide.next-slide {
   transform: translateX(100%);
@@ -386,7 +387,11 @@ main .products-listing .side-nav ul li button {
   text-align: left;
   width: 100%;
 }
-main .products-listing .side-nav ul li button:hover, main .products-listing .side-nav ul li button:focus {
+main .products-listing .side-nav ul li button:hover {
+  color: #c02857;
+  border-bottom: 1px solid #c02857;
+}
+main .products-listing .side-nav ul li button.active {
   color: #c02857;
   border-bottom: 1px solid #c02857;
 }

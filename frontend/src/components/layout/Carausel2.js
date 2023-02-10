@@ -57,7 +57,13 @@ function Carausel2({ data }) {
 
           return (
             <div key={img.id} className={`slide ${pos}`}>
-              <img src={img.bannerImageUrl} alt={img.bannerImageAlt} />
+              <img
+                loading="lazy"
+                width="1200"
+                height="800"
+                src={img.bannerImageUrl}
+                alt={img.bannerImageAlt}
+              />
             </div>
           );
         })}

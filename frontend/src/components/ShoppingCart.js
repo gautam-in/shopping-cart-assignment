@@ -7,6 +7,7 @@ import { calculateTotal } from "../Features/shopping-cart/cartSlice";
 function ShoppingCart() {
   const { products } = useSelector((state) => state.cart);
   const { totalItems, totalAmount } = useSelector((state) => state.cart);
+
   const delivery = 100;
 
   const dispatch = useDispatch();
@@ -27,7 +28,12 @@ function ShoppingCart() {
       id="cart-container"
     >
       <div className="offcanvas-header">
-        <h1 className="offcanvas-title">Shopping Cart</h1>
+        <h1 className="offcanvas-title">
+          Shopping Cart{" "}
+          <span style={{ fontWeight: "normal" }}>
+            ({totalItems > 0 ? `${totalItems} items` : "0 item"})
+          </span>
+        </h1>
         <button
           id="close-btn"
           type="button"

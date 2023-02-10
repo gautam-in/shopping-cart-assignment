@@ -57,7 +57,13 @@ function Header() {
           <div className="logo">
             <Link role="link" tabIndex="0" to="/">
               {" "}
-              <img className="logo" alt="Sabka Bazzar-Homepage" src={logo} />
+              <img
+                width="190"
+                height="125"
+                className="logo"
+                alt="Sabka Bazzar-Homepage"
+                src={logo}
+              />
             </Link>
           </div>
           <nav aria-label="main navigation">
