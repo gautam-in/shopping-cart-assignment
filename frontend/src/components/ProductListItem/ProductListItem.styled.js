@@ -24,7 +24,7 @@ export const ProductListItemContainer = styled.li`
     }
 
 `
-export const ProductHeading = styled.h3`
+export const ProductHeading = styled.h4`
     height: 3rem;
 `
 

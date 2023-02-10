@@ -45,7 +45,7 @@ const ProductListingPage = () => {
   const showToast = () => {
     toast.success('Item added to the cart', {
       position: "top-center",
-      autoClose: 5000,
+      autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
