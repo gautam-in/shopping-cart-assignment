@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, FormHeader, InputContainer, SignupButton, SignupContainer } from './Signup.styled';
 
-const Signup = ({showToast}) => {
+const Signup = ({ showToast }) => {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
@@ -29,9 +29,8 @@ const Signup = ({showToast}) => {
       isValid = false;
       setConfirmPasswordError("Confirm password is required");
       confirmPasswordRef.current.focus();
-    }else if (password !== confirmPassword) {
+    } else if (password !== confirmPassword) {
       isValid = false;
-      setPasswordError("Passwords do not match");
       setConfirmPasswordError("Passwords do not match");
       confirmPasswordRef.current.focus();
     }
@@ -39,7 +38,7 @@ const Signup = ({showToast}) => {
       isValid = false;
       setPasswordError("Password is required");
       passwordRef.current.focus();
-    }else if (
+    } else if (
       password.length < 6 ||
       !/\d/.test(password) ||
       !/[a-zA-Z]/.test(password) ||
@@ -48,12 +47,12 @@ const Signup = ({showToast}) => {
       isValid = false;
       setPasswordError("Password must be at least 6 characters long and contain a number, alphabet, and cannot have spaces");
       passwordRef.current.focus();
-    }
+    } 
     if (!email) {
       isValid = false;
       setEmailError("Email is required");
       emailRef.current.focus();
-    }else if (!/\S+@\S+\.\S+/.test(email)) {
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
       isValid = false;
       setEmailError("Email is invalid");
       emailRef.current.focus();
@@ -93,8 +92,9 @@ const Signup = ({showToast}) => {
             id="firstname"
             value={firstname}
             onChange={(event) => setFirstname(event.target.value)}
-            onBlur={() =>
+            onBlur={() => setTimeout(() => {
               !(firstname.trim()) ? setFirstnameError("Firstname is required") : setFirstnameError("")
+            }, 100)
             }
           />
           {firstnameError && (
@@ -115,8 +115,9 @@ const Signup = ({showToast}) => {
             id="lastname"
             value={lastname}
             onChange={(event) => setLastname(event.target.value)}
-            onBlur={() =>
+            onBlur={() => setTimeout(() => {
               !(lastname.trim()) ? setLastnameError("Username is required") : setLastnameError("")
+            }, 100)
             }
           />
           {lastnameError && (
@@ -137,8 +138,9 @@ const Signup = ({showToast}) => {
             id="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            onBlur={() =>
+            onBlur={() => setTimeout(() => {
               !email ? setEmailError("Email is required") : ((!/\S+@\S+\.\S+/.test(email)) ? setEmailError("Email is invalid") : setEmailError(""))
+            }, 100)
             }
           />
           {emailError && (
@@ -158,13 +160,14 @@ const Signup = ({showToast}) => {
             id="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
-            onBlur={() =>
+            onBlur={() => setTimeout(() => {
               !password ? setPasswordError("Password is required") : (
-      (password.length < 6 ||
-      !/\d/.test(password) ||
-      !/[a-zA-Z]/.test(password) ||
-      /\s/.test(password) ? setPasswordError("Password must be at least 6 characters long and contain a number, alphabet, and cannot have spaces") : setPasswordError(''))
-    ) 
+                (password.length < 6 ||
+                  !/\d/.test(password) ||
+                  !/[a-zA-Z]/.test(password) ||
+                  /\s/.test(password) ? setPasswordError("Password must be at least 6 characters long and contain a number, alphabet, and cannot have spaces") : setPasswordError(''))
+              )
+            }, 100)
             }
           />
           {passwordError && (
@@ -184,8 +187,9 @@ const Signup = ({showToast}) => {
             id="confirmPassword"
             value={confirmPassword}
             onChange={(event) => setConfirmPassword(event.target.value)}
-            onBlur={() =>
-              !confirmPassword ? setConfirmPasswordError("Confirm password is required") : setConfirmPasswordError("")
+            onBlur={() => setTimeout(() => {
+              !confirmPassword ? setConfirmPasswordError("Confirm password is required") : (password !== confirmPassword ? setConfirmPasswordError("passwords do not match") : setConfirmPasswordError(""))
+            }, 100)
             }
           />
           {confirmPasswordError && (

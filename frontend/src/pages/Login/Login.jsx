@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Form, FormHeader, InputContainer, LoginContainer, LoginButton } from './Login.styled';
 
-const Login = ({showToast}) => {
+const Login = ({ showToast }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -62,8 +62,9 @@ const Login = ({showToast}) => {
             id="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            onBlur={() =>
+            onBlur={() => setTimeout(() => {
               !email ? setEmailError("Email is required") : ((!/\S+@\S+\.\S+/.test(email)) ? setEmailError("Email is invalid") : setEmailError(""))
+            }, 100)
             }
           />
           {emailError && (
@@ -83,12 +84,17 @@ const Login = ({showToast}) => {
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             onBlur={() =>
-              !password ? setPasswordError("Password is required") : (
-                (password.length < 6 ||
-                  !/\d/.test(password) ||
-                  !/[a-zA-Z]/.test(password) ||
-                  /\s/.test(password) ? setPasswordError("Password must be at least 6 characters long and contain a number, alphabet, and cannot have spaces") : setPasswordError(''))
-              )
+              setTimeout(
+                () => {
+                  !password ? setPasswordError("Password is required") : (
+                    (password.length < 6 ||
+                      !/\d/.test(password) ||
+                      !/[a-zA-Z]/.test(password) ||
+                      /\s/.test(password) ? setPasswordError("Password must be at least 6 characters long and contain a number, alphabet, and cannot have spaces") : setPasswordError(''))
+                  )
+                },
+                100)
+
             }
           />
           {passwordError && (
