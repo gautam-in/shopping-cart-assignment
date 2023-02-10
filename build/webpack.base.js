@@ -10,6 +10,7 @@ const htmlWebpackPlugins = require('./multi-html-webpack-plugin')
 
 const publicPath = config.build.publicPath
 const isLocal = process.env.NODE_ENV === 'local'
+const staticPath = isLocal ? 'dist' : 'dist-prod'
 const projectRootPath = path.resolve(__dirname, '..')
 
 module.exports = {
@@ -23,7 +24,7 @@ module.exports = {
         filename: isLocal
             ? 'js/[name]-[chunkhash:8].js'
             : 'js/[name]-[contenthash:8].js',
-        path: path.resolve(__dirname, '../dist'),
+        path: path.resolve(__dirname, '../' + staticPath),
         publicPath: publicPath,
     },
     optimization: {
@@ -65,32 +66,18 @@ module.exports = {
                         projectRootPath,
                         'client',
                         'views',
-                        'layouts'
-                    ),
-                    to: path.resolve(
-                        projectRootPath,
-                        'dist',
-                        'views',
-                        'layouts'
-                    ),
-                },
-                {
-                    from: path.resolve(
-                        projectRootPath,
-                        'client',
-                        'views',
                         'partials'
                     ),
                     to: path.resolve(
                         projectRootPath,
-                        'dist',
+                        staticPath,
                         'views',
                         'partials'
                     ),
                 },
                 {
                     from: path.resolve(projectRootPath, 'client', 'assets'),
-                    to: path.resolve(projectRootPath, 'dist', 'assets'),
+                    to: path.resolve(projectRootPath, staticPath, 'assets'),
                 },
                 // {
                 //   from: path.resolve(projectRootPath, "client", "font"),

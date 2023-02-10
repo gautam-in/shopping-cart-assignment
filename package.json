@@ -8,7 +8,7 @@
         "start": "cross-env NODE_ENV=local supervisor -w routes,utils,build,server.js,server.common.js -e js -i client -- --inspect=9396 --max-old-space-size=3072 ./server.js",
         "build": "webpack --config ./build",
         "build:production": "cross-env NODE_ENV=production --max-old-space-size=2048 webpack --config ./build",
-        "server": "node ./server.js",
+        "server": "cross-env NODE_ENV=production node ./server.js",
         "production": "npm run build:production && cross-env NODE_ENV=production node ./server.js"
     },
     "author": "",

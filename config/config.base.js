@@ -1,10 +1,10 @@
-const path = require('path');
+const path = require('path')
 
-const appPort = 9386;
-const webHost = `http://localhost:${appPort}/`;
-const projectRootPath = path.resolve(__dirname, '..');
-const viewsOutputPath = path.join(projectRootPath, 'dist', 'views');
-const viewsSourcePath = path.join(projectRootPath, 'client', 'views');
+const appPort = 9386
+const webHost = `http://localhost:${appPort}/`
+const projectRootPath = path.resolve(__dirname, '..')
+const viewsOutputPath = path.join(projectRootPath, 'dist-prod', 'views')
+const viewsSourcePath = path.join(projectRootPath, 'client', 'views')
 
 module.exports = {
     appName: 'node-express-server',
@@ -13,11 +13,11 @@ module.exports = {
     build: {
         publicPath: '/',
         viewsOutputPath: viewsOutputPath,
-        viewsSourcePath: viewsSourcePath
+        viewsSourcePath: viewsSourcePath,
     },
     urls: {
         remoteServiceBaseUrl: 'http://api.jaylan.net/',
-        appBaseUrl: webHost
+        appBaseUrl: webHost,
     },
     log: {
         host: '127.0.0.1',
@@ -31,5 +31,5 @@ module.exports = {
         // enableQueue: true,
         // limit: 1000,
         // intervalTime: 60
-    }
+    },
 }
