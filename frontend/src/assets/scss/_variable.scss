@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap");
+
+// colors
+
+$primary-color: #c02857;
+$secondary-color: #000000;
+$link-color: #70676a;
+
+$background-light: #eeeeee;
+
+// typography
+
+$primary-fonts: 400 16px "Dosis", sans-serif;
+$primary-fonts-semibold: 600 1rem "Dosis", sans-serif;
+$primary-fonts-bold: 700 1rem "Dosis", sans-serif;
+
+// input elements
+
+$button-background: $primary-color;
+$button-hover-background: #e58e3e;
+$button-color: #ffffff;
+$button-hover-color: #ffffff;
+$button-height: 2.5rem;
+$button-border: none;
+$button-border-radius: 0;
+$button-padding: 0.5rem;
+
+$input-border-color: #d7c8cd;
+$input-border: 2px solid #d7c8cd;
+$input-focus-border: 2px solid #4fd9e1;
+
+$side-nav-background: #eeeeee;
+$side-nav-color: #716b6b;
