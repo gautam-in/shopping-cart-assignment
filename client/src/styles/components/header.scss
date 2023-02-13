@@ -1,0 +1,71 @@
+.header {
+  height: 90px;
+  background-color: $white;
+  z-index: 100;
+  padding: 0 10rem;
+  @include responsiveMobile() {
+    padding: 0 2rem;
+  }
+  @include responsiveTablet() {
+    padding: 0 2rem;
+  }
+  @include flexVertical;
+  justify-content: space-between;
+  .logo {
+    height: 60px;
+    object-fit: contain;
+    padding: 10px;
+  }
+  a {
+    color: $black;
+    text-decoration: none;
+    margin-right: 1rem;
+  }
+
+  .nav {
+    @include hiddenMobile;
+  }
+  .right {
+    display: flex;
+    align-items: center;
+    .auth {
+      margin-right: 1rem;
+      display: flex;
+      @include hiddenMobile;
+    }
+    .logout {
+      @include primaryButton;
+      margin-right: 1rem;
+    }
+    a {
+      position: relative;
+      background-color: transparent;
+      border: none;
+      @include flexCenter;
+      img {
+        fill: $primary;
+        height: 30px;
+      }
+      .cart-count {
+        @include flexCenter;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background-color: $primary;
+        color: $white;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+.fixed-header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  border-bottom: 1px solid #eeeeee;
+  background-color: $white;
+}
