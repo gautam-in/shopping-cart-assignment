@@ -1,21 +1,31 @@
-import { useCartState } from "@/src/hooks/useCartContext";
+import { useCartDispatch, useCartState } from "@/src/hooks/useCartContext";
+import useMediaQuery from "@/src/hooks/useMediaQuery";
 import { useRouter } from "next/router";
 import styles from "./Cart.module.scss";
 import CartBanner from "./CartBanner";
 import CartItem from "./CartItem";
 
-export default function Cart() {
+export default function Cart({ onClose }) {
   const router = useRouter();
   const cartState = useCartState();
+  const cartDispatch = useCartDispatch();
+  const matches = useMediaQuery("(min-width: 1121px)");
 
   const handleCartFooterBtnClick = (e) => {
     const id = e.target.id || e.target.parentNode.id;
     if (id === "continue") router.push("/products");
   };
 
+  const handleBtnCloseClick = (e) => {
+    cartDispatch({
+      type: "SHOW_CART_SIDEBAR",
+      payload: false,
+    });
+  };
+
   const renderCartItems = () => {
     return cartState.totalItems ? (
-      <div>
+      <div className={styles.cartContent}>
         {Object.values(cartState.items).map((item) => (
           <CartItem item={item} />
         ))}
@@ -40,7 +50,9 @@ export default function Cart() {
 
     return (
       <>
-        <span className={styles.promoText}>Promo code can be applied on payment page</span>
+        <span className={styles.promoText}>
+          Promo code can be applied on payment page
+        </span>
         <button id="checkout" className={styles.cartCheckoutBtn}>
           <span>Proceed to Checkout</span>
           <span>
@@ -64,6 +76,7 @@ export default function Cart() {
         }
       >
         <h3>{cartState.totalItems === 0 ? "My Cart" : cartTitleText}</h3>
+        {matches && <button onClick={handleBtnCloseClick}>X</button>}
       </div>
       {renderCartItems()}
       <div className={styles.cartFooter} onClick={handleCartFooterBtnClick}>

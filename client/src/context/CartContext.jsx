@@ -8,6 +8,7 @@ const initialCartState = {
   items: {},
   totalCartPrice: 0,
   totalItems: 0,
+  showCartSideBar: false,
 };
 
 export default function CartContextProvider({ children }) {

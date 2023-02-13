@@ -20,6 +20,7 @@ export default function cartReducer(state, action) {
       const itemId = action.payload.id;
 
       const obj = {
+        ...state,
         items: {
           ...state.items,
         },
@@ -36,10 +37,11 @@ export default function cartReducer(state, action) {
 
       return obj;
     }
-    case "DECREMENT_ITEM":
+    case "DECREMENT_ITEM": {
       const itemId = action.payload.id;
 
       const obj = {
+        ...state,
         items: {
           ...state.items,
         },
@@ -59,5 +61,11 @@ export default function cartReducer(state, action) {
       }
 
       return obj;
+    }
+    case "SHOW_CART_SIDEBAR":
+      return {
+        ...state,
+        showCartSideBar: action.payload,
+      };
   }
 }
