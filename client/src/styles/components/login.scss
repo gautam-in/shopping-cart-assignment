@@ -1,0 +1,22 @@
+.login {
+  display: flex;
+  padding: 5rem 5rem;
+  @include responsiveMobile() {
+    padding: 5rem 2rem;
+    display: block;
+  }
+  * {
+    flex: 1;
+  }
+  h2 {
+    margin-bottom: 1rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    button {
+      @include primaryButton;
+      margin-top: 1rem;
+    }
+  }
+}

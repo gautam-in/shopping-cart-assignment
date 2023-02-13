@@ -1,0 +1,156 @@
+.products {
+  margin-top: 90px;
+  display: flex;
+  .sidebar {
+    margin-top: 90px;
+    background: $gray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    transition: all 0.5s ease;
+    @include responsiveTablet() {
+      width: 200px;
+    }
+    .sidebar-item {
+      padding: 1rem 2rem;
+      border: none;
+      border-bottom: 1px solid $darkGray;
+      font-size: 14px;
+      width: 100%;
+      text-align: left;
+      color: gray;
+      cursor: pointer;
+      &:hover {
+        background: $darkGray;
+        color: $white;
+      }
+    }
+    .sidebar-item-active {
+      @extend .sidebar-item;
+      background: $darkGray;
+      color: $white;
+    }
+    @include hiddenMobile;
+  }
+  .filled-space {
+    width: 260px;
+  }
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 3rem;
+    grid-column-gap: 2rem;
+    width: 100%;
+    padding: 2rem 10rem 0rem 20rem;
+    @include responsiveMobile() {
+      padding: 0 2rem;
+      grid-template-columns: repeat(1, 1fr);
+      grid-row-gap: 3rem;
+      grid-column-gap: 2rem;
+    }
+    @include responsiveTablet() {
+      padding: 2rem 2rem 0rem 14rem;
+      grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: 3rem;
+      grid-column-gap: 2rem;
+    }
+    .product-item {
+      background: $white;
+      border-bottom: 2px dotted $gray;
+      padding-bottom: 1rem;
+      .product-content-wrapper {
+        .product-description {
+          font-size: 14px;
+          background-color: $gray;
+          padding: 1rem;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          display: -webkit-box !important;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+          white-space: normal;
+          margin-bottom: 1rem;
+          max-height: 7.5rem;
+          min-height: 7.5rem;
+        }
+        .product-image {
+          height: 300px;
+          margin-bottom: 1rem;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+          }
+        }
+        @include responsiveMobile() {
+          display: flex;
+          * {
+            flex: 1;
+          }
+          .product-image {
+            height: 7.5rem;
+            margin-bottom: 1rem;
+          }
+          .product-description {
+            padding: 0.5rem;
+          }
+        }
+      }
+      .product-name {
+        font-size: 1rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        height: 60px;
+        @include responsiveMobile() {
+          height: 2rem;
+        }
+      }
+
+      .product-actions {
+        @include flexCenter;
+        justify-content: space-between;
+        padding: 0 2rem;
+        @include responsiveMobile() {
+          padding: 0 0rem;
+          width: 100%;
+        }
+        @include responsiveTablet() {
+          padding: 0 0rem;
+          width: 100%;
+        }
+        .product-price {
+          @include responsiveMobile() {
+            display: none;
+          }
+          @include responsiveTablet() {
+            display: none;
+          }
+        }
+        .desktop-button {
+          display: block;
+          @include primaryButton;
+          @include responsiveMobile() {
+            display: none;
+          }
+          @include responsiveTablet() {
+            display: none;
+          }
+        }
+        .responsive-button {
+          display: none;
+          @include primaryButton;
+          @include responsiveMobile() {
+            display: block;
+            width: 100%;
+          }
+          @include responsiveTablet() {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

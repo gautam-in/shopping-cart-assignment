@@ -1,0 +1,14 @@
+@import 'base/_base.scss';
+
+// import abstracts
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// import components
+@import 'components/global';
+@import 'components/header';
+@import 'components/home';
+@import 'components/products';
+@import 'components/cart';
+@import 'components/login';
+@import 'components/register';
