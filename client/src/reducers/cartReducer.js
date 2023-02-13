@@ -20,7 +20,9 @@ export default function cartReducer(state, action) {
       const itemId = action.payload.id;
 
       const obj = {
-        ...state,
+        items: {
+          ...state.items,
+        },
         totalCartPrice: state.totalCartPrice + action.payload.price,
         totalItems: state.totalItems + 1,
       };
@@ -38,7 +40,9 @@ export default function cartReducer(state, action) {
       const itemId = action.payload.id;
 
       const obj = {
-        ...state,
+        items: {
+          ...state.items,
+        },
         totalCartPrice: state.totalCartPrice - action.payload.price,
         totalItems: state.totalItems - 1,
       };
