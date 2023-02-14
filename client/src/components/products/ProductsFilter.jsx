@@ -1,9 +1,11 @@
 import queryData from "@/src/utils/queryData";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import styles from "./ProductsFilter.module.scss";
 
 export default function ProductsFilter({
+  selectedCategory,
   selectedFilterCategory,
   setSelectedFilterCategory,
 }) {
@@ -12,6 +14,7 @@ export default function ProductsFilter({
     "Please Choose Category..."
   );
 
+  const router = useRouter();
   const { data: categories } = useQuery({
     queryKey: ["categories"],
     queryFn: queryData,
@@ -28,15 +31,42 @@ export default function ProductsFilter({
   const handleFilterClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    const option = e.target.dataset.category;
-    setSelectedOption(option);
+    setSelectedOption(e.target.dataset.name);
     setSelectedFilterCategory(e.target.dataset.id);
+    router.push(`/products?category=${e.target.dataset.key}`, undefined, {
+      shallow: true,
+    });
   };
 
   const handleSelectFilterClick = (e) => {
     handleFilterClick(e);
     setIsOpen(!isOpen);
   };
+
+  const presetFilter = (preSelectedCategory) => {
+    if (preSelectedCategory) {
+      const item = validCategories.find(
+        (item) => item.key === preSelectedCategory
+      );
+
+      if (item) {
+        setSelectedFilterCategory(item.id);
+        setSelectedOption(item.name);
+      }
+    }
+  };
+
+  useEffect(() => {
+    presetFilter(selectedCategory);
+  }, []);
+
+  useEffect(() => {
+    router.beforePopState(({ url }) => {
+      const categoryKey = url?.split("?")[1]?.split("=")[1];
+      if(categoryKey) presetFilter(categoryKey);
+      return true;
+    });
+  }, []);
 
   return (
     <>
@@ -45,10 +75,13 @@ export default function ProductsFilter({
           <a
             key={item.id}
             data-id={item.id}
-            data-category={item.name}
+            data-name={item.name}
+            data-key={item.key}
             href={`#${item.name}`}
             className={
-              item.id === selectedFilterCategory ? styles.activeFilterItem : styles.filterItem
+              item.id === selectedFilterCategory
+                ? styles.activeFilterItem
+                : styles.filterItem
             }
           >
             {item.name}
@@ -74,9 +107,10 @@ export default function ProductsFilter({
             <a
               key={item.id}
               data-id={item.id}
-              data-category={item.name}
+              data-name={item.name}
+              data-key={item.key}
               href={`#${item.name}`}
-              className={styles.contentItem}
+              className={item.id === selectedFilterCategory ? styles.contentItemHide : styles.contentItem}
             >
               {item.name}
             </a>

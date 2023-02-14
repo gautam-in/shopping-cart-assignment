@@ -8,7 +8,7 @@ import Header from "@/src/components/layout/Header";
 import Footer from "@/src/components/layout/Footer";
 import { useState } from "react";
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ query }) {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery(["products"], queryData);
@@ -17,11 +17,12 @@ export async function getServerSideProps() {
   return {
     props: {
       dehydratedState: dehydrate(queryClient),
+      selectedCategory: query.category || null,
     },
   };
 }
 
-export default function Products() {
+export default function Products({ selectedCategory }) {
   const [selectedFilterCategory, setSelectedFilterCategory] = useState(null);
 
   return (
@@ -34,6 +35,7 @@ export default function Products() {
         <Header />
         <nav className={styles.filter}>
           <ProductsFilter
+            selectedCategory={selectedCategory}
             selectedFilterCategory={selectedFilterCategory}
             setSelectedFilterCategory={setSelectedFilterCategory}
           />

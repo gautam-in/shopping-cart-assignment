@@ -11,7 +11,7 @@ export default function Card({ item, index }) {
       <div className={styles.cardDetails}>
         <h2>{item.name}</h2>
         <p>{item.description}</p>
-        <Link href="/products">
+        <Link href={`/products?category=${item.key}`}>
           <button className={styles.cardButton}>Explore {item.key}</button>
         </Link>
       </div>

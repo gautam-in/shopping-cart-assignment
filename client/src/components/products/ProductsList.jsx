@@ -21,12 +21,12 @@ export default function ProductsList({ selectedFilterCategory }) {
   useEffect(() => {
     if (selectedFilterCategory) {
       setIsFiltered(true);
-    }
-    const filteredCategoryProducts = allProducts.filter(
-      (product) => product.category === selectedFilterCategory
-    );
+      const filteredCategoryProducts = allProducts.filter(
+        (product) => product.category === selectedFilterCategory
+      );
 
-    queryClient.setQueryData(["filtered-products"], filteredCategoryProducts);
+      queryClient.setQueryData(["filtered-products"], filteredCategoryProducts);
+    }
   }, [selectedFilterCategory]);
 
   const renderList = () => {
