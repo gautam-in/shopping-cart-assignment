@@ -1,6 +1,10 @@
-import Cart from "@/src/components/cart/Cart";
 import Header from "@/src/components/layout/Header";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+
+const Cart = dynamic(() => import("@/src/components/cart/Cart"), {
+  ssr: false,
+});
 
 export default function CartPage() {
   return (

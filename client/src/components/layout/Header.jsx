@@ -1,10 +1,16 @@
 import { useCartDispatch, useCartState } from "@/src/hooks/useCartContext";
 import useMediaQuery from "@/src/hooks/useMediaQuery";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Cart from "../cart/Cart";
 import styles from "./Layout.module.scss";
-import SideNav from "./SideNav";
+
+const SideNav = dynamic(() => import("./SideNav"), {
+  ssr: false,
+});
+const Cart = dynamic(() => import("@/src/components/cart/Cart"), {
+  ssr: false,
+});
 
 export default function Header() {
   const router = useRouter();

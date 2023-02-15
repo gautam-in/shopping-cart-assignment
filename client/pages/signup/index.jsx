@@ -1,7 +1,11 @@
-import AuthForm from "@/src/components/auth/AuthForm";
 import Footer from "@/src/components/layout/Footer";
 import Header from "@/src/components/layout/Header";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+
+const AuthForm = dynamic(() => import("@/src/components/auth/AuthForm"), {
+  ssr: false,
+});
 
 export default function SignUp() {
   return (
