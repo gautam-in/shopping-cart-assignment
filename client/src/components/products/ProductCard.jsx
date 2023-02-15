@@ -1,11 +1,11 @@
 import { useCartDispatch, useCartState } from "@/src/hooks/useCartContext";
 import useMediaQuery from "@/src/hooks/useMediaQuery";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import FillImage from "../image/FillImage";
 import styles from "./ProductCard.module.scss";
 
-export default function ProductCard({ item }) {
+export default function ProductCard({ item, index }) {
   const router = useRouter();
   const cartState = useCartState();
   const cartDispatch = useCartDispatch();
@@ -44,7 +44,7 @@ export default function ProductCard({ item }) {
     <div className={styles.container}>
       <div className={styles.title}>{item.name}</div>
       <div className={styles.photo}>
-        <Image src={item.imageURL} alt={item.name} fill />
+        <FillImage priority={index < 3} src={item.imageURL} alt={item.name} />
       </div>
       <div className={styles.description}>{item.description}</div>
       <div></div>

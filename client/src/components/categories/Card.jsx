@@ -1,12 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
+import FillImage from "../image/FillImage";
 import styles from "./Card.module.scss";
 
 export default function Card({ item, index }) {
   return (
     <div className={index & 1 ? styles.cardWrapperOdd : styles.cardWrapperEven}>
       <div className={styles.cardImg}>
-        <Image src={item.imageUrl} alt={item.description} fill />
+        <FillImage src={item.imageUrl} alt={item.description} />
       </div>
       <div className={styles.cardDetails}>
         <h2>{item.name}</h2>

@@ -1,8 +1,8 @@
 import queryData from "@/src/utils/queryData";
-import Image from "next/image";
 import Link from "next/link";
 import Carousel from "nuka-carousel/lib/carousel";
 import { useQuery } from "react-query";
+import FillImage from "../image/FillImage";
 import styles from "./Banners.module.scss";
 
 export default function Banners() {
@@ -14,12 +14,12 @@ export default function Banners() {
   const renderBanners = () => (
     <Link href="/products">
       <Carousel autoplay wrapAround adaptiveHeight>
-        {banners?.map((banner) => (
+        {banners?.map((banner, index) => (
           <div className={styles.imgwrapper} key={banner.id}>
-            <Image
+            <FillImage
+              priority={index === 0}
               src={banner.bannerImageUrl}
               alt={banner.bannerImageAlt}
-              fill
             />
           </div>
         ))}

@@ -37,7 +37,7 @@ export default function ProductsList({ selectedFilterCategory }) {
       list = allProducts;
     }
 
-    return list.map((item) => <ProductCard key={item.id} item={item} />);
+    return list.map((item, index) => <ProductCard key={item.id} item={item} index={index}/>);
   };
 
   return <section className={styles.listContainer}>{renderList()}</section>;
