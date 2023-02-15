@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useCategories } from "../../hooks";
 import RootLayout from "../../layouts/Layout";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { getProducts, TProduct } from "../../apis/products";
 
 export default function ProductsPage() {
@@ -40,13 +40,27 @@ export function Products() {
     query: { category },
   } = router;
 
+  const { categories } = useCategories();
+
+  const keyId = categories.reduce((prev, current) => {
+    return { ...prev, [current.key]: current.id };
+  }, {});
+
   useEffect(() => {
     getProducts().then((res) => setProducts(res));
   }, []);
 
+  const filterProducts = useMemo(() => {
+    if (category)
+      return products.filter(
+        (prod) => prod.category === keyId[category as keyof typeof keyId]
+      );
+    return products;
+  }, [categories, category]);
+
   return (
     <>
-      {products.map((product) => (
+      {filterProducts.map((product) => (
         <Product {...product} key={product.id} />
       ))}
     </>
@@ -57,7 +71,7 @@ interface IProduct extends TProduct {}
 
 export function Product(props: IProduct) {
   return (
-    <article className="p-2 flex flex-col border-b-2 border-b-black/25 border-dashed">
+    <article className="p-2 flex flex-col border-b-2 border-b-black/25 border-dashed max-h-[30rem]">
       <h2 className="font-bold flex-1">{props.name}</h2>
       <div className="border-r-2 mr-[-8px] pr-2 border-black/5">
         <img
