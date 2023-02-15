@@ -29,6 +29,10 @@ export default function Products({ selectedCategory }) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="description"
+          content="Check out our selection of independence day sale items and discounts! at Sabka Bazaar"
+        />
         <title>Sabka Bazaar | Products</title>
       </Head>
       <div className={styles.container}>

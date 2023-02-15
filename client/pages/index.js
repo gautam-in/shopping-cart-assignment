@@ -25,6 +25,10 @@ export default function Home() {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="description"
+          content="Find discounts on every day items at sabka bazaar! Clothes, beauty products, home goods and more are all discounted each day."
+        />
         <title>Sabka Bazaar | Home</title>
       </Head>
       <div className={styles.container}>
