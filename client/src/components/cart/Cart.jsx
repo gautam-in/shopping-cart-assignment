@@ -27,7 +27,7 @@ export default function Cart({ onClose }) {
     return cartState.totalItems ? (
       <div className={styles.cartContent}>
         {Object.values(cartState.items).map((item) => (
-          <CartItem item={item} />
+          <CartItem key={item.id} item={item} />
         ))}
         <CartBanner />
       </div>

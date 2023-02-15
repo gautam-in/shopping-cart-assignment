@@ -45,7 +45,7 @@ export default function Header() {
       <div className={styles.rightContainer}>
         <div className={styles.navLinks}>
           <Link href="/login">SignIn</Link>
-          <Link href="/signUp">Register</Link>
+          <Link href="/signup">Register</Link>
         </div>
         <button className={styles.cartButton} onClick={handleCartClick}>
           <img src="/static/images/cart.svg" alt="cart" />
