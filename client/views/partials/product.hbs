@@ -24,14 +24,49 @@
                     class='is-flex is-align-items-center is-justify-content-space-between'
                 >
                     <span role='text' class='content is-small mb-0'>MRP
-                        {{price}}</span>
+                        {{price}}
+                    </span>
+                
                     <button
                         type='button'
-                        class='button is-primary is-small'
-                        onclick='ups'
+                        data-id={{id}}
+                        class='button is-primary is-small buy-button {{#eq qty '0'}}{{else}}is-hidden{{/eq}}'
+                        aria-hidden="{{#eq qty '0'}}false{{else}}true{{/eq}}"
+                        tabindex="{{#eq qty '0'}}0{{else}}-1{{/eq}}"
+                        onclick="productMethods.onQtyBtnClick(event)"
                     >
                         Buy Now
                     </button>
+                    <div class="{{#eq qty '0'}}is-hidden{{/eq}}" aria-hidden='{{#eq qty '0'}}true{{else}}false{{/eq}}'>
+                        <form
+                            data-id={{id}}
+                            class='mb-0 is-flex is-align-items-center'
+                            onsubmit='return false;'
+                        >
+                            <button
+                                data-id={{id}}
+                                class='qtyminus button is-primary is-small mr-1'
+                                aria-hidden='true'
+                                onclick="productMethods.onQtyBtnClick(event)"
+                            >&minus;</button>
+                            <input
+                                type='number'
+                                name='{{id}}qty'
+                                class='input is-primary is-small'
+                                min='0'
+                                max='10'
+                                step='1'
+                                value={{qty}}
+                                onkeydown="productMethods.onQtyKeyDown(event)"
+                            />
+                            <button
+                                data-id={{id}}
+                                class='qtyplus button is-primary is-small ml-1'
+                                aria-hidden='true'
+                                onclick="productMethods.onQtyBtnClick(event)"
+                            >&plus;</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

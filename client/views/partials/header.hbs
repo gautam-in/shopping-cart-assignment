@@ -1,4 +1,4 @@
-<header class='container is-flex-grow-0'>
+<header class='container is-fullhd px-3'>
     <div
         role='navigation'
         arial-label='top-navigation-register-login'
@@ -44,8 +44,34 @@
                 <div class='buttons'>
                     <button class='button cart-button'>
                         {{{icons.cartIcon}}}
-                        Items
+                        {{miniCart.length}} Items
                     </button>
+                    <div aria-expanded="false" tabindex="-1" aria-label="min-cart" class="mini-cart">
+                        <div class="mini-cart__backdrop"></div>
+                        <div class="mini-cart__wrapper">
+                            <div class="mini-cart__header">
+                                <h3 class="mb-0">Mini Cart</h3>
+                                <button class="button">X</button>
+                            </div>
+                            <div class="mini-cart__body">
+                                <div class="is-flex-shrink-1">
+                                    <figure class="is-flex-grow-0 is-flex-shrink-0">
+                                        <img src="/assets/images/lowest-price.png" alt="Lowest price ever to any product" />
+                                    </figure>
+                                </div>
+                                <figure class="is-flex-grow-0 is-flex-shrink-0">
+                                    <img src="/assets/images/lowest-price.png" alt="Lowest price ever to any product" />
+                                </figure>
+                            </div>
+                            <div class="mini-cart__footer">
+                                <p class="has-text-centered is-size-7 mb-2">Promo Code can be applied on payment page</p>
+                                 <button class="button is-primary mb-0 is-flex is-justify-content-space-between">
+                                    <span>Proceed To Checkout</span>
+                                    <span> Rs 187 > </span>  
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

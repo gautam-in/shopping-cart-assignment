@@ -25,7 +25,7 @@ function initExpressApp(config) {
     // etag
     app.disable('etag')
     app.locals.settings['x-powered-by'] = false
-
+    app.use(express.json())
     app.use(compression())
 
     let projectRootPath = appConfig.projectRootPath

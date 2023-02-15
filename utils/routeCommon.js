@@ -19,5 +19,10 @@ module.exports = {
     },
     productList: function (options) {
         this.vm.productList = options
+        return this
+    },
+    miniCart: function (options) {
+        this.vm.miniCart = options
+        return this
     },
 }

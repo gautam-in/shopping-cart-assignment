@@ -47,9 +47,9 @@ module.exports = {
         chunkIds: 'named',
     },
     plugins: [
-        // new webpack.DefinePlugin({
-        //   "process.env.NODE_ENV": process.env.NODE_ENV,
-        // }),
+        new webpack.DefinePlugin({
+            URL: JSON.stringify(config.urls.appBaseUrl),
+        }),
         ...htmlWebpackPlugins,
         new HtmlWebpackCustomInjectPlugin(),
         new MiniCssExtractPlugin({
