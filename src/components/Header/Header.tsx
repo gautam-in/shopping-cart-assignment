@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useCartContext } from "../../context/cartContext";
 import { CartIcon } from "../Icons/Icons";
 
 export default function Header() {
@@ -38,13 +39,20 @@ export default function Header() {
             </ul>
           </div>
           <div className="flex justify-between">
-            <button className="flex gap-1 bg-offWhite p-3 px-4">
-              <CartIcon className="fill-primary h-6 w-6" />
-              <span>0</span>items
-            </button>
+            <CartButton />
           </div>
         </div>
       </div>
     </header>
+  );
+}
+
+function CartButton() {
+  const { state } = useCartContext();
+  return (
+    <button className="flex gap-1 bg-offWhite p-3 px-4">
+      <CartIcon className="fill-primary h-6 w-6" />
+      <span>{state.cart.length}</span>items
+    </button>
   );
 }

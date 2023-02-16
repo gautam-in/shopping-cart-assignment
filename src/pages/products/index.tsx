@@ -4,6 +4,7 @@ import RootLayout from "../../layouts/Layout";
 import { useRouter } from "next/router";
 import { useEffect, useMemo, useState } from "react";
 import { getProducts, TProduct } from "../../apis/products";
+import { useCartContext } from "../../context/cartContext";
 
 export default function ProductsPage() {
   const { categories } = useCategories();
@@ -70,6 +71,7 @@ export function Products() {
 interface IProduct extends TProduct {}
 
 export function Product(props: IProduct) {
+  const { dispatch } = useCartContext();
   return (
     <article className="p-2 flex flex-col border-b-2 border-b-black/25 border-dashed max-h-[30rem]">
       <h2 className="font-bold flex-1">{props.name}</h2>
@@ -87,8 +89,12 @@ export function Product(props: IProduct) {
       </div>
       <div className="flex justify-between my-2 items-center">
         <div className="text-sm">MRP RS.{props.price}</div>
-        <button className="bg-primary text-white px-4 py-2">Buy Now</button>
-        <div></div>
+        <button
+          className="bg-primary text-white px-4 py-2"
+          onClick={() => dispatch({ type: "ADD_TO_CART", payload: props })}
+        >
+          Buy Now
+        </button>
       </div>
     </article>
   );
