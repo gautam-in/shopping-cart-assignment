@@ -53,6 +53,9 @@ export default function ProductsFilter({
         setSelectedFilterCategory(item.id);
         setSelectedOption(item.name);
       }
+    } else {
+      setSelectedFilterCategory(null);
+      setSelectedOption("Please Choose Category...");
     }
   };
 
@@ -63,7 +66,7 @@ export default function ProductsFilter({
   useEffect(() => {
     router.beforePopState(({ url }) => {
       const categoryKey = url?.split("?")[1]?.split("=")[1];
-      if(categoryKey) presetFilter(categoryKey);
+      presetFilter(categoryKey);
       return true;
     });
   }, []);
@@ -110,7 +113,11 @@ export default function ProductsFilter({
               data-name={item.name}
               data-key={item.key}
               href={`#${item.name}`}
-              className={item.id === selectedFilterCategory ? styles.contentItemHide : styles.contentItem}
+              className={
+                item.id === selectedFilterCategory
+                  ? styles.contentItemHide
+                  : styles.contentItem
+              }
             >
               {item.name}
             </a>

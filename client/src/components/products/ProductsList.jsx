@@ -26,6 +26,11 @@ export default function ProductsList({ selectedFilterCategory }) {
       );
 
       queryClient.setQueryData(["filtered-products"], filteredCategoryProducts);
+    } else {
+      queryClient.removeQueries({
+        queryKey: ["filtered-products"],
+        exact: true,
+      });
     }
   }, [selectedFilterCategory]);
 
@@ -37,7 +42,9 @@ export default function ProductsList({ selectedFilterCategory }) {
       list = allProducts;
     }
 
-    return list.map((item, index) => <ProductCard key={item.id} item={item} index={index}/>);
+    return list.map((item, index) => (
+      <ProductCard key={item.id} item={item} index={index} />
+    ));
   };
 
   return <section className={styles.listContainer}>{renderList()}</section>;

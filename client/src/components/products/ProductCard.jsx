@@ -36,7 +36,7 @@ export default function ProductCard({ item, index }) {
     } else {
       setInCart(false);
     }
-  }, [cartState.items[item.id]]);
+  }, [cartState.items, item.id]);
 
   const cartBtnText = inCart ? "Go to Cart" : `Buy Now @ Rs.${item.price}`;
 
