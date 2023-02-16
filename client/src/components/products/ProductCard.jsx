@@ -44,7 +44,7 @@ export default function ProductCard({ item, index }) {
     <div className={styles.container}>
       <div className={styles.title}>{item.name}</div>
       <div className={styles.photo}>
-        <FillImage priority={index < 3} src={item.imageURL} alt={item.name} />
+        <FillImage priority={index < 2} src={item.imageURL} alt={item.name} />
       </div>
       <div className={styles.description}>{item.description}</div>
       <div></div>
