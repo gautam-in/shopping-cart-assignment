@@ -32,7 +32,8 @@ function addToCart(state:TCart,product:TProduct) {
     const updatedItem = {
       ...updatedCart[updatedItemIndex]
     };
-    updatedItem.quantity++;
+    
+    if(product.stock > updatedItem.quantity) updatedItem.quantity++;
     updatedCart[updatedItemIndex] = updatedItem;
   }
 

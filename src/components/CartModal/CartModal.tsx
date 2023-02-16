@@ -83,6 +83,7 @@ export default function CartModal({ onClose }: ICartModal) {
                                       payload: prod,
                                     })
                                   }
+                                  disabled={prod.quantity >= prod.stock}
                                 >
                                   +
                                 </button>
