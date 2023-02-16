@@ -11,7 +11,7 @@ export default function CartBanner() {
         width={100}
       />
       <div className={styles.bannerText}>
-        You won't find it cheaper anywhere.
+        You won&apos;t find it cheaper anywhere.
       </div>
     </div>
   );
