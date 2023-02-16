@@ -1,10 +1,10 @@
 .card{
-    width:300px;
+    width:250px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .img-height{
-    height:15rem;
+    height:12rem;
 }
 
 .desc-height{
@@ -13,4 +13,26 @@
 
 .name-height{
     height: 5vh
+}
+
+.h-35{
+    height:35vh
+}
+
+@media screen and (max-width:500px) {
+    .card{
+        width:100%
+    }
+    .img-height{
+        height:12rem;
+    }
+}
+
+@media screen and (max-width:900px) and (min-width: 500px){
+    .card{
+        width: 320px;
+    }
+    .img-height{
+        height:10rem;
+    }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import "./InputText.css";
 
-function InputText({ placeholder, onChange, value }) {
+function InputText({ label, onChange, value }) {
   return (
     <div className="box">
       <div>
@@ -9,8 +9,9 @@ function InputText({ placeholder, onChange, value }) {
           type="text"
           onChange={(e) => onChange(e.target.value)}
           value={value}
+          id={label}
         />
-        <label>{placeholder}</label>
+        <label for={label}>{label}</label>
       </div>
     </div>
   );

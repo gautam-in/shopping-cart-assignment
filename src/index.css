@@ -33,4 +33,7 @@ code {
 .card-box-shadow{
   box-shadow: 0 10px 10px -10px #000000;
 }
+.align-self-center{
+  align-self: center;
+}
 

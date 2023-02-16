@@ -4,6 +4,15 @@
     border-bottom-color: #ffffff;
 }
 
-.sidebar-width{
-    width: 350px;
-}
+
+    @media only screen and (min-width: 400px) and (max-width:900px){
+        .sidebar-width{
+            width: 200px;
+        }
+        
+    }
+    @media only screen and (min-width: 900px){
+        .sidebar-width{
+            width: 300px;
+        }
+    }
