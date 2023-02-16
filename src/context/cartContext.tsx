@@ -29,7 +29,6 @@ export const CartContext = createContext<ICartProvider | null>(null);
 export function CartContextProvider({ children }: PropsWithChildren) {
   const [state, dispatch] = useReducer(cartReducer, initialState);
   const [isOpen, setIsOpen] = useState(false);
-  console.log({ state });
   return (
     <CartContext.Provider value={{ state, dispatch, isOpen, setIsOpen }}>
       {children}
