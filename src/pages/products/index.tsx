@@ -11,9 +11,9 @@ export default function ProductsPage() {
 
   return (
     <RootLayout>
-      <div className="flex min-h-[calc(100vh_-_108px)] relative">
+      <div className="flex sm:flex-row flex-col min-h-[calc(100vh_-_108px)] relative">
         <div className="bg-offWhite flex">
-          <ul className="">
+          <ul className="w-full">
             {categories.map((category) => (
               <li
                 className="px-6 py-2 border-b-2 border-black/5 text-black/75"
@@ -26,7 +26,7 @@ export default function ProductsPage() {
             ))}
           </ul>
         </div>
-        <section className="flex-1 grid grid-cols-4 gap-y-8 gap-x-4 pl-4 py-4">
+        <section className="flex-1 grid sm:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4 pl-4 py-4">
           <Products />
         </section>
       </div>
