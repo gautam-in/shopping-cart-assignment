@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { createPortal } from "react-dom";
 import { useCartContext } from "../../context/cartContext";
+import CartModal from "../CartModal/CartModal";
 import { CartIcon } from "../Icons/Icons";
 
 export default function Header() {
@@ -48,11 +50,22 @@ export default function Header() {
 }
 
 function CartButton() {
-  const { state } = useCartContext();
+  const { state, isOpen, setIsOpen } = useCartContext();
+
   return (
-    <button className="flex gap-1 bg-offWhite p-3 px-4">
-      <CartIcon className="fill-primary h-6 w-6" />
-      <span>{state.cart.length}</span>items
-    </button>
+    <>
+      <button
+        className="flex gap-1 bg-offWhite p-3 px-4"
+        onClick={() => setIsOpen((prev) => !prev)}
+      >
+        <CartIcon className="fill-primary h-6 w-6" />
+        <span>{state.cart.length}</span>items
+      </button>
+      {isOpen &&
+        createPortal(
+          <CartModal onClose={() => setIsOpen(false)} />,
+          document.body
+        )}
+    </>
   );
 }

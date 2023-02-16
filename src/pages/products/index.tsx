@@ -11,7 +11,7 @@ export default function ProductsPage() {
 
   return (
     <RootLayout>
-      <div className="flex min-h-[calc(100vh_-_108px)]">
+      <div className="flex min-h-[calc(100vh_-_108px)] relative">
         <div className="bg-offWhite flex">
           <ul className="">
             {categories.map((category) => (
@@ -68,9 +68,7 @@ export function Products() {
   );
 }
 
-interface IProduct extends TProduct {}
-
-export function Product(props: IProduct) {
+export function Product(props: TProduct) {
   const { dispatch } = useCartContext();
   return (
     <article className="p-2 flex flex-col border-b-2 border-b-black/25 border-dashed max-h-[30rem]">

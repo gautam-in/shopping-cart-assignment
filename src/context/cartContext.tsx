@@ -2,31 +2,36 @@ import {
   createContext,
   Dispatch,
   PropsWithChildren,
+  SetStateAction,
   useContext,
-  useEffect,
   useReducer,
+  useState,
 } from "react";
 
 import { TProduct } from "../apis/products";
+import { cartReducer, TAction } from "../reducers/cartReducer";
 
 const initialState = {
-  cart: [] as (TProduct & { qty: number })[],
+  cart: [] as (TProduct & { quantity: number })[],
 };
 
-type TCart = typeof initialState;
-
-export const CartContext = createContext<ICartProvider | null>(null);
+export type TCart = typeof initialState;
 
 interface ICartProvider {
   state: TCart;
-  dispatch: Dispatch<any>;
+  dispatch: Dispatch<TAction>;
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
+
+export const CartContext = createContext<ICartProvider | null>(null);
+
 export function CartContextProvider({ children }: PropsWithChildren) {
   const [state, dispatch] = useReducer(cartReducer, initialState);
+  const [isOpen, setIsOpen] = useState(false);
   console.log({ state });
-
   return (
-    <CartContext.Provider value={{ state, dispatch }}>
+    <CartContext.Provider value={{ state, dispatch, isOpen, setIsOpen }}>
       {children}
     </CartContext.Provider>
   );
@@ -34,18 +39,4 @@ export function CartContextProvider({ children }: PropsWithChildren) {
 
 export function useCartContext() {
   return useContext(CartContext) as ICartProvider;
-}
-
-function cartReducer(state: any, action: any) {
-  switch (action.type) {
-    case "ADD_TO_CART":
-      return { ...state, cart: [...state.cart, { ...action.payload, qty: 1 }] };
-    case "REMOVE_FROM_CART":
-      return {
-        ...state,
-        cart: state.cart.filter((c: any) => c.id !== action.payload.id),
-      };
-    default:
-      return state;
-  }
 }
