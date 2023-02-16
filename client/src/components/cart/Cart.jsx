@@ -34,7 +34,7 @@ export default function Cart({ onClose }) {
     ) : (
       <div className={styles.emptyCartContainer}>
         <p>No Items in your cart</p>
-        <p>Your favorite items are just</p>
+        <p>Your favorite items are just a click away</p>
       </div>
     );
   };

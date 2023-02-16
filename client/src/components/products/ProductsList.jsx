@@ -1,21 +1,16 @@
 import queryData from "@/src/utils/queryData";
 import { useEffect, useState } from "react";
-import { useQuery, useQueryClient } from "react-query";
+import { useQuery } from "react-query";
 import ProductCard from "./ProductCard";
 import styles from "./ProductstList.module.scss";
 
 export default function ProductsList({ selectedFilterCategory }) {
-  const queryClient = useQueryClient();
   const [isFiltered, setIsFiltered] = useState(false);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   const { data: allProducts } = useQuery({
     queryKey: ["products"],
     queryFn: queryData,
-  });
-
-  const { data: filteredProducts } = useQuery({
-    queryKey: ["filtered-products"],
-    queryFn: () => {},
   });
 
   useEffect(() => {
@@ -25,12 +20,9 @@ export default function ProductsList({ selectedFilterCategory }) {
         (product) => product.category === selectedFilterCategory
       );
 
-      queryClient.setQueryData(["filtered-products"], filteredCategoryProducts);
+      setFilteredProducts(filteredCategoryProducts);
     } else {
-      queryClient.removeQueries({
-        queryKey: ["filtered-products"],
-        exact: true,
-      });
+      setFilteredProducts([]);
     }
   }, [selectedFilterCategory]);
 

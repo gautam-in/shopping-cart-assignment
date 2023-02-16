@@ -1,6 +1,6 @@
 import queryData from "@/src/utils/queryData";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useQuery } from "react-query";
 import styles from "./ProductsFilter.module.scss";
 
@@ -20,9 +20,13 @@ export default function ProductsFilter({
     queryFn: queryData,
   });
 
-  const validCategories = categories
-    .sort((a, b) => a.order - b.order)
-    .filter((item) => item.order > 0);
+  const validCategories = useMemo(
+    () =>
+      categories
+        .sort((a, b) => a.order - b.order)
+        .filter((item) => item.enabled),
+    [categories]
+  );
 
   const handleBtnClick = () => {
     setIsOpen(!isOpen);

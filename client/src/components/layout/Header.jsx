@@ -57,7 +57,7 @@ export default function Header() {
           <img src="/static/images/cart.svg" alt="cart" />
           <span>{cartText}</span>
         </button>
-        {matches && (
+        {cartState.showCartSideBar && (
           <SideNav>
             <Cart />
           </SideNav>
