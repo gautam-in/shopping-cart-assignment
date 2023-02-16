@@ -1,0 +1,100 @@
+.container {
+  display: grid;
+  grid-template-areas: "title" "photo" "description" "purchasePrice";
+  margin: 1em 0 0 1em;
+  box-shadow: 10px 5px 15px 0px var(--color-gray);
+  border-bottom: 1px dotted var(--color-black);
+
+  .title {
+    grid-area: title;
+    font-size: 1.25rem;
+    font-weight: bold;
+    height: 125px;
+  }
+
+  .photo {
+    grid-area: photo;
+    position: relative;
+    height: 30vh;
+    width: 15vw;
+  }
+
+  .description {
+    grid-area: description;
+    background-color: var(--color-gray);
+    padding: 0.5em;
+    height: 300px;
+  }
+
+  .purchasePrice {
+    grid-area: purchasePrice;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em 0 1em 1em;
+
+    .price {
+      font-weight: bold;
+    }
+
+    .purchaseBtn {
+      padding: 1em;
+      flex-basis: 50%;
+      background-color: var(--color-red);
+      color: var(--color-white);
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  .priceBtn {
+    display: none;
+  }
+
+  @media screen and (max-width: 1120px) {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1em 1em 0 1em;
+
+    .title {
+      font-size: 1rem;
+    }
+
+    .description {
+      font-size: 0.875rem;
+      height: 25vh;
+    }
+
+    .purchasePrice {
+      display: none;
+    }
+
+    .priceBtn {
+      display: block;
+      grid-area: priceBtn;
+      background-color: var(--color-red);
+      color: var(--color-white);
+      padding: 0.5em;
+      border: none;
+      margin: 1em 0;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    grid-template-areas: "title title" "photo description" "photo priceBtn";
+    box-shadow: none;
+
+    .photo {
+      width: 45vw;
+    }
+  }
+
+  @media screen and (min-width: 701px) and (max-width: 1120px) {
+    grid-template-areas: "title title" "photo description" "priceBtn priceBtn";
+    grid-template-columns: repeat(2, 1fr);
+
+    .photo {
+      height: 15vh;
+      width: 15vw;
+    }
+  }
+}

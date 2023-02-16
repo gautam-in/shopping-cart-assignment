@@ -1,0 +1,22 @@
+$color-red: #d10057;
+$color-white: #ffffff;
+$color-gray: #eaeaea;
+$color-black: #000000;
+$color-sky-blue: rgb(135, 217, 235);
+$color-dark-gray: #b8b8b8;
+
+* {
+  box-sizing: border-box;
+  --color-red: #{$color-red};
+  --color-white: #{$color-white};
+  --color-gray: #{$color-gray};
+  --color-black: #{$color-black};
+  --color-sky-blue: #{$color-sky-blue};
+  --color-dark-gray: #{$color-dark-gray};
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
