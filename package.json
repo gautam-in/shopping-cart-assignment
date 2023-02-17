@@ -20,6 +20,7 @@
         "cors": "^2.8.5",
         "cross-env": "^7.0.3",
         "express": "^4.18.2",
+        "express-csp-header": "^5.1.0",
         "express-handlebars": "^6.0.7",
         "handlebars-helpers": "^0.10.0",
         "html-webpack-harddisk-plugin": "^2.0.0",

@@ -16,7 +16,7 @@ module.exports = {
         viewsSourcePath: viewsSourcePath,
     },
     urls: {
-        remoteServiceBaseUrl: 'http://api.jaylan.net/',
+        remoteServiceBaseUrl: '',
         appBaseUrl: webHost,
     },
     log: {

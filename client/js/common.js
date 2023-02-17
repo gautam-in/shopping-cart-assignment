@@ -74,7 +74,6 @@ const updateCartCalculation = (id, qty, isNew = false) => {
     const productTotalEle = document.querySelector(
         "[data-cart-total='" + id + "']"
     )
-    console.log(productTotalEle)
     if (productTotalEle) {
         const price = productTotalEle.getAttribute('data-price')
         grandTotalEle.innerHTML = updateCartTotal(
@@ -150,11 +149,17 @@ const toggleMiniCart = (visible) => {
         cartEle.setAttribute('tabindex', '0')
         cartEle.setAttribute('aria-expanded', 'true')
         document.getElementsByTagName('html')[0].style.overflow = 'hidden'
+        document.querySelector("main").setAttribute('aria-hidden', true);
+        const allEle = document.querySelectorAll("main button, main input");
+        allEle.forEach(ele => ele.setAttribute("tabindex", -1))
     } else {
         cartEle.classList.add('is-hidden')
         cartEle.setAttribute('tab-index', '-`')
         cartEle.setAttribute('aria-expanded', 'false')
         document.getElementsByTagName('html')[0].style.overflow = 'auto'
+        const allEle = document.querySelectorAll("main button, main input");
+        allEle.forEach(ele => ele.removeAttribute("tabindex"))
+        document.querySelector("main").setAttribute('aria-hidden', false);
     }
 }
 

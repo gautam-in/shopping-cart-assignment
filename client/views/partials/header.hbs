@@ -10,7 +10,7 @@
     <nav class='navbar is-flex is-align-items-center' role='navigation' aria-label='main navigation'>
         <div class='navbar-brand is-flex-direction-row-reverse is-flex-grow-1-mobile'>
             <a class='navbar-item header-logo is-flex-grow-1-mobile' href='/'>
-                <img src='/assets/images/logo.png' alt='homepage' />
+                <img src='/assets/images/logo.png' width="150" height="150" alt='homepage' />
             </a>
             <a
                 role='button'
@@ -129,6 +129,12 @@
                         <a class='link has-text-centered navbar-link is-arrowless {{#eq seoInfo.page 'products'}}is-active{{/eq}}' href='/products'>
                             Products
                         </a>
+                    </li>
+                    <li>
+                        <a href='/signup' class='link has-text-centered navbar-link is-arrowless {{#eq seoInfo.page 'signup'}}is-active{{/eq}}'>Sign Up</a>
+                    </li>
+                    <li>
+                        <a href='/login' class='link has-text-centered navbar-link is-arrowless {{#eq seoInfo.page 'login'}}is-active{{/eq}}'>Login</a>
                     </li>
                 </ul>
             </aside>

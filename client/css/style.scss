@@ -30,6 +30,8 @@ body {
         margin-right: 30px;
         img {
             width: 10em;
+            object-fit: contain;
+            object-position: center;
         }
     }
 }
@@ -195,7 +197,7 @@ a.link {
         }
         button {
             border-radius: 100% !important;
-            width: 30px;
+            width: 30px!important;
             height: 30px;
         }
     }
@@ -214,7 +216,7 @@ a.link {
 }
 .cat-dropdown {
     &,
-    * {
+    button,div {
         @extend .w-100;
     }
 }

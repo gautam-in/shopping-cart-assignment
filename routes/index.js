@@ -63,7 +63,6 @@ home.post('/add-to-cart', (req, res, next) => {
     const { id, qty } = req.body
     const cartItems = require('../mockData/cartItems/index.get.json')
     const isNewProduct = cartItems[id] ? false : true;
-    console.log(isNewProduct);
     const fileName = './mockData/cartItems/index.get.json'
     const file = require('../mockData/cartItems/index.get.json')
     if (qty === '0') {
@@ -116,6 +115,16 @@ home.post('/add-to-cart', (req, res, next) => {
         }
     })
 })
+
+home.get('/robots.txt', function (req, res, next) {
+    res.type('text/plain')
+    res.send(`
+        User-agent: *
+        Disallow: /js
+        Disallow: /css
+        Disallow: /assets
+    `);
+  });
 
 //Redirection 
 home.get('*', function(req, res){

@@ -46,26 +46,26 @@
                             <button
                                 data-id={{id}}
                                 class='qtyminus button is-primary is-small mr-1'
-                                aria-hidden='true'
                                 onclick="productMethods.onQtyBtnClick(event)"
                             >&minus;</button>
                             <input
                                 type='number'
                                 name={{id}}
                                 data-id={{id}}
+                                aria-label="Enter Product Quantity"
                                 class='qty-input input is-primary is-small'
                                 min='0'
                                 max='10'
                                 step='1'
                                 data-qty={{qty}}
                                 value={{qty}}
+                                tabindex="-1"
                                 onkeydown="productMethods.onQtyKeyDown(event)"
                                 onblur="productMethods.onQtyInputBlur(event)"
                             />
                             <button
                                 data-id={{id}}
-                                class='qtyplus button is-primary is-small ml-1'
-                                aria-hidden='true'
+                                class='qtyplus button is-primary is-small ml-1' 
                                 onclick="productMethods.onQtyBtnClick(event)"
                             >&plus;</button>
                         </form>

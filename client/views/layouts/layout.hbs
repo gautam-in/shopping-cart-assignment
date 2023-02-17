@@ -1,16 +1,25 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset='utf-8' />
         <title>{{seoInfo.title}} - Ecommerce</title>
         <meta name='renderer' content='webkit|ie-stand' />
-        <meta
-            http-equiv='Content-Security-Policy'
-            content="default-src 'self' https://bulma.io ws: 'unsafe-eval' 'unsafe-inline';"
-        />
         <meta name='Keywords' content='{{seoInfo.keywords}}' />
         <meta name='Description' content='{{seoInfo.description}}' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <link rel="stylesheet" href="https://bulma.io/vendor/fontawesome-free-5.15.2-web/css/all.min.css">
+        <meta name="theme-color" content="#d00256"/>
+        <link
+            rel='preload'
+            href='https://bulma.io/vendor/fontawesome-free-5.15.2-web/css/all.min.css'
+            as='style'
+            onload="this.onload=null;this.rel='stylesheet'"
+        />
+        <noscript>
+            <link
+                rel='stylesheet'
+                href='https://bulma.io/vendor/fontawesome-free-5.15.2-web/css/all.min.css'
+            />
+        </noscript>
         {{{renderSections.styles}}}
     </head>
     <body>

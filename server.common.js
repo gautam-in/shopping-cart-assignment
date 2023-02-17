@@ -21,6 +21,19 @@ function initExpressApp(config) {
     global.appName = appConfig.appName
 
     let app = express()
+    const { expressCspHeader, INLINE, NONE, SELF } = require('express-csp-header');
+    //XSS attack configuration Using CSP policy 
+    app.use(expressCspHeader({
+        directives: {
+            'default-src': [SELF, "ws:", "'unsafe-eval'"],
+            'script-src': [SELF, INLINE, "'unsafe-eval'"],
+            'style-src': [SELF,INLINE, 'https://bulma.io'],
+            'font-src': [SELF,INLINE, 'https://bulma.io'],
+            'worker-src': [NONE],
+            'block-all-mixed-content': true
+        }
+    }));
+    //API CORS configuration
     const cors = require('cors');
     app.use(cors({
         origin: appConfig.appBaseUrl
