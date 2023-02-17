@@ -28,12 +28,14 @@ export default function CartModal({ onClose }: ICartModal) {
     <div
       className="z-50 block fixed left-0 top-0 h-full w-full bg-black/40"
       role="dialog"
+      aria-labelledby="cart"
+      aria-modal="true"
     >
       <div className="relative h-screen w-screen max-w-6xl mx-auto ">
         <div className="absolute top-0 pt-20 right-0 w-full lg:w-1/2 h-full">
           <div className="flex flex-col h-full">
             <div className="bg-black p-4 text-white flex justify-between">
-              <div className="">
+              <div id="cart">
                 My Cart
                 {state.cart.length > 0 && (
                   <span className="text-xs">({state.cart.length} items)</span>
