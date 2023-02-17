@@ -44,7 +44,7 @@ export const offerSlice = createSlice({
   name: "offer",
   initialState,
   reducers: {
-    setOffers: (state) => {
+    setOffers: (state, action) => {
       state.offers = action.payload;
     },
   },

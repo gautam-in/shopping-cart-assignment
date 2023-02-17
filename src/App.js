@@ -7,6 +7,7 @@ import Login from "./routes/Login/Login";
 import Home from "./routes/Home/Home";
 import Register from "./routes/Register/Register";
 import Products from "./routes/Products/Products";
+import Cart from "./routes/Cart/Cart";
 import { useDispatch } from "react-redux";
 import { setWindowSize } from "./redux/userSlice";
 
@@ -18,6 +19,7 @@ function App() {
       <Route exact path="/login" element={<Login />} />
       <Route exact path='/register' element={<Register />} />
       <Route exact path='/products' element={  <Products />}/>
+      <Route exact path='/cart' element={  <Cart />}/>
     </Routes>
   );
   useLayoutEffect(() => {

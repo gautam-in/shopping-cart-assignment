@@ -29,7 +29,7 @@
     pointer-events: none;
   }
   
-  .box input:focus~label {
+  .box input:focus~label, .box input:valid~label{
     top: -12px;
     left: 0;
     color: #50dbe3;;

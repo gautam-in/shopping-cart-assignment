@@ -27,6 +27,9 @@ code {
 .font-12{
   font-size: 12px;
 }
+.font-16{
+  font-size: 16px;
+}
 .card-shadow{
   box-shadow: rgba(0, 0, 0, 0.5) 1.95px 1.95px 2.6px;
 }
@@ -37,3 +40,9 @@ code {
   align-self: center;
 }
 
+.w-98{
+  width: 98%;
+}
+.column{
+  flex-direction: column;
+}

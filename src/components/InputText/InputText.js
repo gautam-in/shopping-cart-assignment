@@ -1,17 +1,16 @@
 import React from "react";
 import "./InputText.css";
 
-function InputText({ label, onChange, value }) {
+function InputText({ label, type="text", name }) {
   return (
     <div className="box">
       <div>
         <input
-          type="text"
-          onChange={(e) => onChange(e.target.value)}
-          value={value}
-          id={label}
+          type={type}
+          name={name}
+          required
         />
-        <label for={label}>{label}</label>
+        <label >{label}</label>
       </div>
     </div>
   );

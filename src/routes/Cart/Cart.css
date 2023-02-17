@@ -1,0 +1,24 @@
+.align-self-center{
+    align-self: center;
+}
+
+.cart-list-container{
+    overflow:hidden;
+    overflow-y: auto;
+}
+
+@media screen and (min-width:900px) {
+    .cart-list-container{
+        height: 60vh
+    }
+}
+
+@media screen and (max-width:900px) {
+    .cart-list-container{
+        height: 60vh
+    }
+}
+
+.h-50{
+    height:50vh
+}
