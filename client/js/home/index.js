@@ -1,4 +1,5 @@
 require('../../views/pages/home/index.hbs')
+require('../common');
 const Splide = require('@splidejs/splide/dist/js/splide.min')
 require('./index.scss')
 

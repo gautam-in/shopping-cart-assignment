@@ -15,6 +15,14 @@
     <body>
         {{{body}}}
     </body>
+    <script id='mytemplate' type='text/x-handlebars-template'>
+        {{#each sites}}
+            <ul> <li>{{siteName}}</li> <li>{{domainName}}</li> <li>{{uppercase
+                description
+            }}</li> </ul>
+        {{/each}}
+    </script>
+
     {{{renderSections.scripts}}}
     {{#eq settings.env 'local'}}
         <script src='/reload/reload.js'></script>

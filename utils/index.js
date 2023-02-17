@@ -3,7 +3,8 @@ let handlebarsHelpers = require('handlebars-helpers')([
     'string',
     'comparison',
 ])
-
-handlebarsHelpers.renderSection = require('./hbs.helpers/renderSection')
-
+const extraHelpers = require('./hbs.helpers/renderSection')
+Object.keys(extraHelpers).forEach((key) => {
+    handlebarsHelpers[key] = extraHelpers[key]
+})
 module.exports = handlebarsHelpers

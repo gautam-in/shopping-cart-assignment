@@ -1,6 +1,7 @@
 // Reset Variables
 $primary: #d00256;
 $link: $primary;
+$fullhd: 1550px;
 
 @import '~bulma/bulma';
 html {
@@ -10,7 +11,10 @@ body {
     min-height: 100vh;
 }
 .header-logo {
-    margin-right: 4em;
+    margin-right: 30px;
+    @media  screen and (min-width: 1025px) {
+        margin-right: 4em;
+    }
     img {
         width: 10em;
         max-height: inherit;
@@ -49,6 +53,7 @@ a.link {
     }
     .navbar-menu {
         display: flex;
+        box-shadow: none;
     }
 }
 
@@ -82,10 +87,16 @@ a.link {
             font-weight: 600;
         }
     }
-    &__body {
+    &__items-container {
         @extend .is-flex-grow-1;
-        height: 100px;
-        overflow: auto;
+        height: 88%;
+    }
+    &__body {
+        @extend .py-1;
+        & > div {
+            max-height: calc(100% - 60px);
+            overflow: auto;
+        }
     }
     &__footer {
         @extend .p-1, .is-flex-grow-0, .is-flex-shrink-0;
@@ -95,12 +106,40 @@ a.link {
     }
     &__wrapper {
         position: fixed;
-        right: 30px;
-        width: 400px;
-        height: 80%;
+        width: 100%;
+        right: 0;
+        height: 100%;
         background: white;
         display: flex;
         flex-direction: column;
         bottom: 0;
+        @media screen and (min-width: $tablet) {
+            right: 30px;
+            width: 400px;
+            height: 80%;
+        }
+    }
+
+    &__item {
+        @extend .p-1;
+        width: 100%;
+        figure {
+            width: 70px;
+            height: 70px;
+            img {
+                object-fit: contain;
+                max-height: fit-content;
+            }
+        }
+        &-title {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+    }
+    &__button {
+        border-radius: 100% !important;
+        width: 25px;
+        height: 25px;
+        margin: 0;
     }
 }

@@ -37,7 +37,7 @@
                     >
                         Buy Now
                     </button>
-                    <div class="{{#eq qty '0'}}is-hidden{{/eq}}" aria-hidden='{{#eq qty '0'}}true{{else}}false{{/eq}}'>
+                    <div class="cart-item {{#eq qty '0'}}is-hidden{{/eq}}" aria-hidden='{{#eq qty '0'}}true{{else}}false{{/eq}}'>
                         <form
                             data-id={{id}}
                             class='mb-0 is-flex is-align-items-center'
@@ -51,13 +51,16 @@
                             >&minus;</button>
                             <input
                                 type='number'
-                                name='{{id}}qty'
-                                class='input is-primary is-small'
+                                name={{id}}
+                                data-id={{id}}
+                                class='qty-input input is-primary is-small'
                                 min='0'
                                 max='10'
                                 step='1'
+                                data-qty={{qty}}
                                 value={{qty}}
                                 onkeydown="productMethods.onQtyKeyDown(event)"
+                                onblur="productMethods.onQtyInputBlur(event)"
                             />
                             <button
                                 data-id={{id}}

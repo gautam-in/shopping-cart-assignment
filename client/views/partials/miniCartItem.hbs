@@ -1,16 +1,23 @@
-<div class='mini-cart__item is-flex is-align-items-center'>
-    <figure class='is-flex-grow-0'>
-        <img src='{{imgSrc}}' />
+<div data-id={{id}} class='mini-cart__item cart-item is-flex'>
+    <figure class='is-flex-grow-0 is-flex-shrink-0'>
+        <img src={{imageURL}} />
     </figure>
-    <div class='is-flex'>
-        <h4 class='mini-cart__item-title'>
-            Title
+    <div class='is-flex is-flex-grow-1 is-flex-direction-column ml-1 is-justify-content-center'>
+        <h3 class='mini-cart__item-title mb-0'>
+            {{name}}
         </h4>
-        <div class=''>
-            <button class='button is-rounded is-primary'>-</button>
-            <label class='mx-2'>1</label>
-            <button class='button is-rounded is-primary'>+</button>
+        <div class='is-flex mt-2 is-justify-content-space-between'>
+            <div>
+                <button data-id={{id}}  class='mini-cart__button button is-primary is-small m-0 qtyminus' onclick="miniCart.updateMiniCart(event)">-</button>
+                <label data-id={{id}} class='qty-input mx-2'>{{qty}}</label>
+                <button data-id={{id}} class='mini-cart__button button is-primary is-small m-0 qtyplus' onclick="miniCart.updateMiniCart(event)">+</button>
+                <span class="ml-2">
+                    X {{price}}
+                </span>
+            </div>
+            <span  class="is-flex item-price">
+                Rs. <span data-cart-total={{id}} data-price={{price}}> {{productTotal qty price}}</span>
+            </span>
         </div>
-
     </div>
 </div>
