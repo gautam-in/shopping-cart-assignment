@@ -1,6 +1,5 @@
 import { useEffect, useMemo } from "react";
 import { useCartContext } from "../../context/cartContext";
-import { Product } from "../../pages/products";
 
 interface ICartModal {
   onClose: () => void;

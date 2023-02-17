@@ -1,9 +1,11 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { createPortal } from "react-dom";
 import { useCartContext } from "../../context/cartContext";
-import CartModal from "../CartModal/CartModal";
 import { CartIcon } from "../Icons/Icons";
+
+const DynamicCartModal = dynamic(() => import("../CartModal/CartModal"));
 
 export default function Header() {
   return (
@@ -63,7 +65,7 @@ function CartButton() {
       </button>
       {isOpen &&
         createPortal(
-          <CartModal onClose={() => setIsOpen(false)} />,
+          <DynamicCartModal onClose={() => setIsOpen(false)} />,
           document.body
         )}
     </>

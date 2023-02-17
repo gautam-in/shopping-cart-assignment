@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import { getBanners, TBanner } from "../../apis/banners";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
 
 export default function Carousel() {
   const [banners, setBanner] = useState<TBanner[]>([]);
@@ -28,7 +29,13 @@ export default function Carousel() {
     <Slider {...settings}>
       {filteredBanners?.map((banner) => (
         <div key={banner.id}>
-          <img src={banner.bannerImageUrl} alt={banner.bannerImageAlt} />
+          <Image
+            src={banner.bannerImageUrl}
+            alt={banner.bannerImageAlt}
+            height={300}
+            width={1200}
+            loading="lazy"
+          />
         </div>
       ))}
     </Slider>
@@ -40,7 +47,7 @@ function NextArrow(props: ArrowProps) {
   const { onClick } = props;
   return (
     <button
-      className="absolute top-1/2 bg-black/25 p-2 text-white z-10 right-0"
+      className="absolute top-1/2 bg-black/40 p-2 text-white z-10 right-0"
       onClick={onClick}
     >
       NEXT
@@ -52,7 +59,7 @@ function PrevArrow(props: ArrowProps) {
   const { onClick } = props;
   return (
     <button
-      className="absolute top-1/2  bg-black/25 p-2 text-white z-10"
+      className="absolute top-1/2  bg-black/40 p-2 text-white z-10"
       onClick={onClick}
     >
       PREV
