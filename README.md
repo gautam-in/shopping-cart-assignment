@@ -13,3 +13,9 @@ npm run start
 yarn install
 yarn start
 ```
+
+## light house
+
+| Performance | Accessibily | Best Practice | SEO |
+| ----------- | ----------- | ------------- | --- |
+| 92          | 100         | 100           | 100 |
