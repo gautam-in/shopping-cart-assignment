@@ -1,0 +1,53 @@
+{{> header}}
+<main class='py-2'>
+    <section class='container p-3'>
+        <div class='columns m-0 is-justify-content-center'>
+            <div class='column is-5'>
+                <h1 class="title is-size-2">
+                    Login
+                </h1>
+                <h4 class="is-size-6">
+                   Get access to yout Orders. Wishlist and Recommendations
+                </h4>
+            </div>
+            <div class='column is-5'>
+                <form aria-label="login form">
+                    <div class='field'>
+                        <label class='label'>Email</label>
+                        <div class='control'>
+                            <input
+                                class='input'
+                                type='email'
+                                name="email"
+                                placeholder='Email'
+                            />
+                        </div>
+                    </div>
+                     <div class='field'>
+                        <label class='label'>Password</label>
+                        <div class='control'>
+                            <input
+                                class='input'
+                                type='password'
+                                name="password"
+                                placeholder='Password'
+                            />
+                        </div>
+                    </div>
+                    <div class='field'>
+                        <div class='control'>
+                            <button class='button is-primary'>Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+{{> footer}}
+{{#renderSection 'styles'}}
+    <!--webpack_style_placeholder-->
+{{/renderSection}}
+{{#renderSection 'scripts'}}
+    <!--webpack_script_placeholder-->
+{{/renderSection}}

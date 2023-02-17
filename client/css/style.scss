@@ -4,20 +4,33 @@ $link: $primary;
 $fullhd: 1550px;
 
 @import '~bulma/bulma';
+button:focus,
+button:active{
+    outline: 2px solid black!important;
+}
 html {
     overflow-y: auto;
 }
 body {
     min-height: 100vh;
 }
+.w-100{
+    width: 100%!important;
+}
+.h-100{
+    height: 100%;
+}
 .header-logo {
-    margin-right: 30px;
-    @media  screen and (min-width: 1025px) {
-        margin-right: 4em;
-    }
     img {
-        width: 10em;
+        width: 6em;
         max-height: inherit;
+    }
+    @media screen and (min-width: 1025px) {
+        margin-right: 4em;
+        margin-right: 30px;
+        img {
+            width: 10em;
+        }
     }
 }
 a.link {
@@ -47,6 +60,7 @@ a.link {
 .button {
     border-radius: 0 !important;
 }
+
 @media screen and (min-width: $tablet) {
     .navbar-burger {
         display: none;
@@ -55,14 +69,30 @@ a.link {
         display: flex;
         box-shadow: none;
     }
+    .is-flex-direction-column-tablet {
+        flex-direction: column !important;
+    }
+    .is-justify-content-space-between-tablet {
+        justify-content: space-between !important;
+    }
+    .is-justify-content-start-tablet {
+        justify-content: flex-start !important;
+    }
 }
 
 .mini-cart {
     position: fixed;
     inset: 0;
     z-index: 999;
+    .close-cart-button{
+        border: 1px solid transparent;
+        &:hover{
+            color: $white;
+            border: 1px solid $white;
+        }
+    }
     &__backdrop {
-        width: 100%;
+        @extend .w-100;
         height: 100%;
         background: rgba(0, 0, 0, 0.2);
     }
@@ -101,12 +131,12 @@ a.link {
     &__footer {
         @extend .p-1, .is-flex-grow-0, .is-flex-shrink-0;
         button {
-            width: 100%;
+            @extend .w-100;
         }
     }
     &__wrapper {
         position: fixed;
-        width: 100%;
+        @extend .w-100;
         right: 0;
         height: 100%;
         background: white;
@@ -115,14 +145,14 @@ a.link {
         bottom: 0;
         @media screen and (min-width: $tablet) {
             right: 30px;
-            width: 400px;
+            width: 400px!important;
             height: 80%;
         }
     }
 
     &__item {
         @extend .p-1;
-        width: 100%;
+        @extend .w-100;
         figure {
             width: 70px;
             height: 70px;
@@ -141,5 +171,50 @@ a.link {
         width: 25px;
         height: 25px;
         margin: 0;
+    }
+}
+.mobile-menu {
+    position: fixed;
+    inset: 0;
+    .menu-backdrop {
+        display: flex;
+        @extend .w-100;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    .menu-header {
+        @extend .is-flex,
+            .is-justify-content-space-between,
+            .is-align-items-center,
+            .mb-4,
+            .mt-2,
+            .p-1;
+        img {
+            width: 80px;
+            margin-left: 10px;
+        }
+        button {
+            border-radius: 100% !important;
+            width: 30px;
+            height: 30px;
+        }
+    }
+    .menu {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 200px;
+        left: 0px;
+        background-color: white;
+        .is-active {
+            color: white;
+            font-weight: 600;
+        }
+    }
+}
+.cat-dropdown {
+    &,
+    * {
+        @extend .w-100;
     }
 }

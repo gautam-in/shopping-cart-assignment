@@ -1,7 +1,7 @@
-<div class='product is-flex is-flex-direction-column'>
+<div class='product is-flex is-flex-direction-column is-flex-grow-1'>
     <h5 class='product-title title is-5'>{{name}}</h5>
     <div
-        class='is-flex is-flex-grow-1 is-flex-direction-column is-justify-content-space-between'
+        class='is-flex is-flex-grow-1 is-flex-direction-column-tablet is-justify-content-space-between-tablet'
     >
         <div class='is-flex-grow-0'>
             <figure class='image-container'>
@@ -9,9 +9,9 @@
             </figure>
 
         </div>
-        <div class='is-flex is-flex-grow-1 is-justify-content-start'>
+        <div class='is-flex is-flex-grow-1 is-justify-content-start-tablet is-align-items-center'>
             <div
-                class='is-flex is-flex-direction-column is-justify-content-space-between'
+                class='is-flex h-100 is-flex-direction-column is-justify-content-center is-justify-content-space-between-tablet is-flex-grow-1'
             >
                 <p
                     id={{id}}
@@ -24,7 +24,7 @@
                     class='is-flex is-align-items-center is-justify-content-space-between'
                 >
                     <span role='text' class='content is-small mb-0'>MRP
-                        {{price}}
+                       Rs. {{price}}
                     </span>
                 
                     <button

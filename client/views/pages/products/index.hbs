@@ -1,19 +1,50 @@
 {{> header}}
 <main class='p-3'>
     <section class='container is-fullhd'>
+        <div class="column is-12 is-hidden-tablet">
+            <div class="dropdown cat-dropdown is-active">
+                <div class="dropdown-trigger">
+                    <button class="button dropdown-btn is-primary" aria-haspopup="true" aria-controls="dropdown-menu" onclick="toggleDropdown(event)">
+                        <span>All </span>
+                        <span class="icon is-small">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="dropdown-menu menu-list is-hidden" id="dropdown-menu" role="menu" onclick="dropdownItemClk(event)">
+                    <div class="dropdown-content">
+                        <a role="button" class="dropdown-item is-active cat-item">
+                            All
+                        </a>
+                        <a role="button" class="dropdown-item cat-item">
+                            Fruits and Vegetables
+                        </a>
+                        <a role="button" class="dropdown-item cat-item">
+                            Bakery Cakes and Dairy
+                        </a>
+                        <a role="button" class="dropdown-item cat-item">
+                            Beverages
+                        </a>
+                        <a role="button" class="dropdown-item cat-item">
+                            Beauty and Hygiene
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class='columns is-mobile m-0'>
             <div class='column is-3-tablet is-2-desktop is-hidden-mobile'>
                 <aside aria-label="category filter menu" class='menu'>
                     <p class='menu-label'>
                         Category
                     </p>
-                    <ul class='menu-list'>
-                        <li ><a class="is-active">All</a></li>
-                        <li><a>Fruits and Vegetables</a></li>
-                        <li><a>Bakery Cakes and Dairy</a></li>
-                        <li><a>Beverages</a></li>
-                        <li><a>Beauty and Hygiene</a></li>
-                        <li><a>Baby Care</a></li>
+                    <ul class='menu-list' onclick="dropdownItemClk(event)">
+                        <li><a class="is-active cat-item">All</a></li>
+                        <li><a class="cat-item">Fruits and Vegetables</a></li>
+                        <li><a class="cat-item">Bakery Cakes and Dairy</a></li>
+                        <li><a class="cat-item">Beverages</a></li>
+                        <li><a class="cat-item">Beauty and Hygiene</a></li>
+                        <li><a class="cat-item">Baby Care</a></li>
                     </ul>
                 </aside>
             </div>

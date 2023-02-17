@@ -4,8 +4,8 @@
         arial-label='top-navigation-register-login'
         class='is-flex is-justify-content-end is-hidden-mobile'
     >
-        <a href='/signup' class='is-link mr-2 has-text-black is-size-7'>Sign Up</a>
-        <a href='/login' class='is-link mr-2 has-text-black is-size-7'>Login</a>
+        <a href='/signup' class='is-link mr-2 is-size-7 {{#eq seoInfo.page 'signup'}}is-underlined has-text-weight-bold{{else}}has-text-black {{/eq}}'>Sign Up</a>
+        <a href='/login' class='is-link mr-2 is-size-7 {{#eq seoInfo.page 'login'}}is-underlined has-text-weight-bold{{else}}has-text-black{{/eq}}'>Login</a>
     </div>
     <nav class='navbar is-flex is-align-items-center' role='navigation' aria-label='main navigation'>
         <div class='navbar-brand is-flex-direction-row-reverse is-flex-grow-1-mobile'>
@@ -17,7 +17,9 @@
                 class='navbar-burger'
                 aria-label='menu'
                 aria-expanded='false'
+                aria-controls="mobile-menu"
                 data-target='navbarBasicExample'
+                onclick="toggleMobileMenu(true,event)"
             >
                 <span aria-hidden='true'></span>
                 <span aria-hidden='true'></span>
@@ -39,52 +41,97 @@
                 </a>
             </div>
         </div>
-        <div class='is-flex-end'>
-            <div class='navbar-item'>
-                <div class='buttons'>
-                    <button aria-label="mini cart toggle button" class='button cart-button' onclick="miniCart.toggleMiniCart(true)">
-                        {{{icons.cartIcon}}}
-                        <span id="total-cart-items">{{miniCart.length}}</span> &nbsp;Items
-                    </button>
-                    <div id="mini-cart" aria-expanded="false" tabindex="-1" aria-label="min-cart" class="mini-cart is-hidden">
-                        <div class="mini-cart__backdrop" onclick="miniCart.toggleMiniCart(false)"></div>
-                        <div class="mini-cart__wrapper">
-                            <div>
-                                <div class="mini-cart__header">
-                                    <h3 class="mb-0">Mini Cart</h3>
-                                    <button class="button" onclick="miniCart.toggleMiniCart(false)">X</button>
-                                </div>
-                            </div>
-                            <div id="no-items-cart-msg" class="{{#eq miniCart.length 0}}{{else}}is-hidden{{/eq}} is-flex is-flex-grow-1 is-align-items-center has-text-centered is-justify-content-center">
-                                <h4>No Items In Cart</h4>
-                            </div>
-                            <div class="{{#eq miniCart.length 0}}is-hidden{{else}}{{/eq}} is-flex-grow-1">
-                                <div class="mini-cart__items-container">
-                                    <div class="mini-cart__body">
-                                        <div class="is-flex-shrink-1 px-2 cart-items-list">
-                                            {{#each miniCart.items}}
-                                                {{> miniCartItem}}
-                                            {{/each}}
+        {{#eq seoInfo.page 'signup'}}{{else}}
+            {{#eq seoInfo.page 'login'}}{{else}}
+                <div class='is-flex-end'>
+                    <div class='navbar-item'>
+                        <div class='buttons'>
+                            <button aria-label="mini cart toggle button" class='button cart-button' onclick="miniCart.toggleMiniCart(true)">
+                                {{{icons.cartIcon}}}
+                                <span id="total-cart-items">{{miniCart.length}}</span> &nbsp;Items
+                            </button>
+                            <div id="mini-cart" aria-expanded="false" tabindex="-1" aria-label="min-cart" class="mini-cart is-hidden">
+                                <div class="mini-cart__backdrop" onclick="miniCart.toggleMiniCart(false)"></div>
+                                <div class="mini-cart__wrapper">
+                                    <div>
+                                        <div class="mini-cart__header">
+                                            <h3 class="mb-0">Mini Cart</h3>
+                                            <button class="button close-cart-button" onclick="miniCart.toggleMiniCart(false)"><i class="fa fa-times" aria-hidden="true"></i></button>
                                         </div>
-                                        <figure class="is-flex-grow-0 is-flex-shrink-0 m-2">
-                                            <img src="/assets/images/lowest-price.png" alt="Lowest price ever to any product" />
-                                        </figure>
                                     </div>
-                                </div>
-                                <div>
-                                    <div class="mini-cart__footer">
-                                        <p class="has-text-centered is-size-7 mb-2">Promo Code can be applied on payment page</p>
-                                        <button class="button is-primary mb-0 is-flex is-justify-content-space-between">
-                                            <span>Proceed To Checkout</span>
-                                            <span>Rs. <span id="cart-grand-total">{{getCartTotal miniCart.items}} </span> ></span>  
+                                    <div id="no-items-cart-msg" class="{{#eq miniCart.length 0}}{{else}}is-hidden{{/eq}} is-flex is-flex-direction-column is-flex-grow-1 is-align-items-center has-text-centered is-justify-content-center px-2">
+                                        <div class="is-flex is-flex-direction-column is-flex-grow-1 is-align-items-center has-text-centered is-justify-content-center">
+                                            <h4 class="is-size-5 has-text-weight-bold">No items in your Cart</h4>
+                                            <h7 class="is-size-7">Your favourite items are just a click away</h7>
+                                        </div>
+                                        <button class="button is-primary w-100">
+                                            Start Shopping
                                         </button>
+                                    </div>
+                                    <div class="{{#eq miniCart.length 0}}is-hidden{{else}}{{/eq}} is-flex-grow-1">
+                                        <div class="mini-cart__items-container">
+                                            <div class="mini-cart__body">
+                                                <div class="is-flex-shrink-1 px-2 cart-items-list">
+                                                    {{#each miniCart.items}}
+                                                        {{> miniCartItem}}
+                                                    {{/each}}
+                                                </div>
+                                                <figure class="is-flex is-align-items-center is-flex-grow-0 is-flex-shrink-0 m-2">
+                                                    <img src="/assets/images/lowest-price.png" alt="Lowest price ever to any product" />
+                                                    <p class="ml-1 is-size-7">You won't find it cheaper anywhere</p>
+                                                </figure>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="mini-cart__footer">
+                                                <p class="has-text-centered is-size-7 mb-2">Promo Code can be applied on payment page</p>
+                                                <button class="button is-primary mb-0 is-flex is-justify-content-space-between">
+                                                    <span>Proceed To Checkout</span>
+                                                    <span>Rs. <span id="cart-grand-total">{{getCartTotal miniCart.items}} </span> <i class="fa fa-solid fa-chevron-right is-size-7 ml-1"></i></span>  
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            {{/eq}}
+        {{/eq}}
+        <div id="mobile-menu" role="navigation" aria-hidden="true" class='mobile-menu is-hidden'>
+            <div class="menu-backdrop" 
+                aria-expanded='true'
+                aria-controls="mobile-menu"
+                onclick="toggleMobileMenu(false,event)"
+            ></div>
+            <aside aria-label="category filter menu" class='menu'>
+                <div class="menu-header">
+                    <img src='/assets/images/logo.png' alt='homepage' />
+                    <button class="button is-primary is-light" aria-label='menu'
+                        aria-expanded='true'
+                        aria-controls="mobile-menu"
+                        onclick="toggleMobileMenu(false,event)"
+                    > 
+                        X
+                    </button>
+                </div>
+                <ul class='menu-list'>
+                    <li>
+                        <a
+                            class='link has-text-centered navbar-link is-arrowless {{#eq seoInfo.page 'home'}}is-active{{/eq}}'
+                            href='/'
+                        >
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a class='link has-text-centered navbar-link is-arrowless {{#eq seoInfo.page 'products'}}is-active{{/eq}}' href='/products'>
+                            Products
+                        </a>
+                    </li>
+                </ul>
+            </aside>
         </div>
     </nav>
 </header>

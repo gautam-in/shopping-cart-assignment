@@ -13,9 +13,8 @@ export const callCartApi = async (id, qty) => {
         })
         if (res?.template) {
             console.log(res)
-            document.querySelector('.cart-items-list').innerHTML += res.template;
+            document.querySelector('.cart-items-list').innerHTML += res.template
             updateCartCalculation(id, 1, true)
-
         }
     } catch (err) {
         throw new Error(err)
@@ -51,12 +50,12 @@ export const onRemoveItemFromCart = (ele, prodId) => {
             ".mini-cart__item[data-id='" + prodId + "']"
         )
         miniCartItem.remove()
-    }else{
+    } else {
         const buyBtn = document.querySelector(
             ".buy-button[data-id='" + prodId + "']"
         )
-        buyBtn.classList.remove("is-hidden");
-        buyBtn.nextElementSibling.classList.add("is-hidden");
+        buyBtn.classList.remove('is-hidden')
+        buyBtn.nextElementSibling.classList.add('is-hidden')
     }
 }
 export const updateCount = (val, ope) =>
@@ -69,19 +68,19 @@ export const updateButtonStatus = (btn, disable = true) => {
     }
 }
 
-const updateCartCalculation = (id, qty, isNew=false) => {
+const updateCartCalculation = (id, qty, isNew = false) => {
     const grandTotalEle = document.getElementById('cart-grand-total')
     const grandTotal = grandTotalEle.textContent
     const productTotalEle = document.querySelector(
         "[data-cart-total='" + id + "']"
     )
-    console.log(productTotalEle);
+    console.log(productTotalEle)
     if (productTotalEle) {
         const price = productTotalEle.getAttribute('data-price')
         grandTotalEle.innerHTML = updateCartTotal(
             qty,
             price,
-            isNew ? 0 :productTotalEle.textContent,
+            isNew ? 0 : productTotalEle.textContent,
             grandTotal
         )
         productTotalEle.innerHTML = productTotal(qty, price)
@@ -158,6 +157,42 @@ const toggleMiniCart = (visible) => {
         document.getElementsByTagName('html')[0].style.overflow = 'auto'
     }
 }
+
+window.toggleMobileMenu = (isVisible, e) => {
+    const menu = document.getElementById('mobile-menu')
+    if (isVisible) {
+        menu.classList.remove('is-hidden')
+        menu.setAttribute('aria-hidden', false)
+        e.target.setAttribute('aria-expanded', true)
+    } else {
+        menu.classList.add('is-hidden')
+        menu.setAttribute('aria-hidden', true)
+        document
+            .querySelector('.navbar-burger')
+            .setAttribute('aria-expanded', true)
+    }
+}
+window.toggleDropdown = (e) => {
+    const dropdownMenu =
+        e.target.closest('.dropdown-trigger').nextElementSibling
+    dropdownMenu && dropdownMenu.classList.contains('is-hidden')
+        ? dropdownMenu.classList.remove('is-hidden')
+        : dropdownMenu.classList.add('is-hidden')
+}
+window.dropdownItemClk = (e) => {
+    if (e.target.closest('a').classList.contains('cat-item')) {
+        const dropdownMenu = e.target.closest('.menu-list')
+        dropdownMenu.querySelector('a.is-active').classList.remove('is-active')
+        e.target.classList.add('is-active');
+        if (dropdownMenu.classList.contains('dropdown-menu')) {
+            dropdownMenu.classList.add('is-hidden')
+            dropdownMenu.previousElementSibling.querySelector(
+                'button span:first-child'
+            ).textContent = e.target.textContent
+        }
+    }
+}
+
 window.miniCart = {
     updateMiniCart,
     toggleMiniCart,

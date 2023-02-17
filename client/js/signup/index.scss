@@ -1,0 +1,26 @@
+@import '../../css/style.scss';
+
+body{
+    @extend .is-flex,.is-flex-direction-column;
+    header{
+        @extend .w-100;
+    }
+    main{
+        @extend .is-flex-grow-1;
+    }
+}
+.field:focus-within{
+    label{
+        color: rgba($primary,.8);
+    }
+}
+.input{
+    border-left-width: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    box-shadow: none!important;
+    border-radius: 0px!important;
+}
+button{
+    @extend .w-100,.mt-3;
+}

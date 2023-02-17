@@ -21,6 +21,10 @@ function initExpressApp(config) {
     global.appName = appConfig.appName
 
     let app = express()
+    const cors = require('cors');
+    app.use(cors({
+        origin: appConfig.appBaseUrl
+    }));
 
     // etag
     app.disable('etag')

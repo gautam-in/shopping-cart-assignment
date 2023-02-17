@@ -17,6 +17,9 @@ module.exports = {
     entry: {
         'pages.home.index': ['./client/js/home/index.js'],
         'pages.products.index': ['./client/js/products/index.js'],
+        'pages.signup.index': ['./client/js/signup/index.js'],
+        'pages.login.index': ['./client/js/login/index.js'],
+
         // "shared.404": ["./client/js/shared/404.js"],
         // "shared.500": ["./client/js/shared/500.js"],
     },

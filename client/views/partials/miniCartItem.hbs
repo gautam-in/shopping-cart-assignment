@@ -11,8 +11,8 @@
                 <button data-id={{id}}  class='mini-cart__button button is-primary is-small m-0 qtyminus' onclick="miniCart.updateMiniCart(event)">-</button>
                 <label data-id={{id}} class='qty-input mx-2'>{{qty}}</label>
                 <button data-id={{id}} class='mini-cart__button button is-primary is-small m-0 qtyplus' onclick="miniCart.updateMiniCart(event)">+</button>
-                <span class="ml-2">
-                    X {{price}}
+                <span class="ml-1">
+                    <i class="fa fa-times mr-1" aria-hidden="true"></i> {{price}}
                 </span>
             </div>
             <span  class="is-flex item-price">
