@@ -7,28 +7,11 @@ import { getProducts, TProduct } from "../../apis/products";
 import { useCartContext } from "../../context/cartContext";
 
 export default function ProductsPage() {
-  const { categories } = useCategories();
-
   return (
     <RootLayout>
       <div className="flex sm:flex-row flex-col min-h-[calc(100vh_-_108px)] relative">
-        <div className="bg-offWhite flex">
-          <ul className="w-full">
-            {categories.map((category) => (
-              <li
-                className="px-6 py-2 border-b-2 border-black/5 text-black/75"
-                key={category.id}
-              >
-                <Link href={`/products?category=${category.key}`}>
-                  {category.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <section className="flex-1 grid sm:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4 pl-4 py-4">
-          <Products />
-        </section>
+        <SideBar />
+        <Products />
       </div>
     </RootLayout>
   );
@@ -60,15 +43,15 @@ export function Products() {
   }, [categories, category]);
 
   return (
-    <>
+    <section className="flex-1 grid sm:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4 pl-4 py-4">
       {filterProducts.map((product) => (
-        <Product {...product} key={product.id} />
+        <ProductCard {...product} key={product.id} />
       ))}
-    </>
+    </section>
   );
 }
 
-export function Product(props: TProduct) {
+export function ProductCard(props: TProduct) {
   const { dispatch } = useCartContext();
   return (
     <article className="p-2 flex flex-col border-b-2 border-b-black/25 border-dashed max-h-[30rem]">
@@ -95,5 +78,40 @@ export function Product(props: TProduct) {
         </button>
       </div>
     </article>
+  );
+}
+
+export function SideBar() {
+  const [show, setShow] = useState(false);
+  const { categories } = useCategories();
+  const router = useRouter();
+  const {
+    query: { category },
+  } = router;
+
+  return (
+    <aside className="bg-offWhite flex flex-col">
+      <button
+        className="bg-primary text-white p-4 flex justify-between sm:hidden"
+        onClick={() => setShow((prev) => !prev)}
+      >
+        {category || "Select Category"}
+        <span className={"transition-all " + (show ? "rotate-180" : "")}>
+          &#x2304;
+        </span>
+      </button>
+      <ul className={"w-full " + (show ? "block" : "hidden sm:block")}>
+        {categories.map((category) => (
+          <li
+            className="px-6 py-2 border-b-2 border-black/5 text-black/75"
+            key={category.id}
+          >
+            <Link href={`/products?category=${category.key}`}>
+              {category.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </aside>
   );
 }
