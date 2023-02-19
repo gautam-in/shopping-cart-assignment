@@ -12,8 +12,8 @@ function Sidebar({}) {
   return (
     <div className="sidebar-width font-semibold h-screen">
       {categories.map(({ name, id }) => (
-        <>
           <div
+          key={id}
             className={`p-2 border-bottom ${
               currentCategory === id
                 ? "bg-white text-gray-800"
@@ -23,7 +23,6 @@ function Sidebar({}) {
           >
             {name}
           </div>
-        </>
       ))}
     </div>
   );

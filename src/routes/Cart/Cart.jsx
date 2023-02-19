@@ -33,9 +33,9 @@ function Cart() {
         {Object.keys(cartList).map((cartId) => {
           const { imageURL, name, count, price, id, stock } = cartList[cartId];
           return (
-            <>
+            <div key={id}>
               <hr />
-              <div className="p-2 flex " key={id}>
+              <div className="p-2 flex ">
                 <img src={imageURL} alt={name} className="h-20 w-20" />
                 <div className="flex justify-between w-full px-2">
                   <div>
@@ -62,7 +62,7 @@ function Cart() {
                 </div>
               </div>
               <hr />
-            </>
+            </div>
           );
         })}
         {Object.keys(cartList).length ? (

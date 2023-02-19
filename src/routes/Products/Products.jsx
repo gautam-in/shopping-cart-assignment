@@ -43,8 +43,8 @@ function Products({}) {
         } bg-white flex flex-wrap p-2 product-window-height overflow-auto`}
       >
         {filteredProductArr.map((product) => (
-          <div className="m-1">
-            <ProductCard product={product} key={product.id} />
+          <div className="m-1" key={product.id}>
+            <ProductCard product={product}  />
           </div>
         ))}
       </div>
