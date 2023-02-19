@@ -72,7 +72,7 @@ function Register({}) {
           <InputText label="Password" name="password" type='password'/>
           <InputText label="Confirm Password" name="confirmPassword" type='password'/>
           {error?<p className="font-12 text-red-500 text-center mb-2">{error}</p>:null}
-          <button className="w-full text-center bg-primary text-white font-semibold p-2">
+          <button className="w-full text-center bg-primary text-white font-semibold p-2 pointer">
             Signup
           </button>
         </form>

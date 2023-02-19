@@ -73,7 +73,7 @@ function Login({}) {
           <InputText label={"Password"} name="password" type="password" />
           <p className="text-red-500 text-center font-12">{error}</p>
           <button
-            className="px-4 py-2 my-2 text-white bg-primary w-full mb-4"
+            className="px-4 py-2 my-2 text-white bg-primary w-full mb-4 pointer"
             type="submit"
           >
             Login

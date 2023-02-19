@@ -13,6 +13,8 @@ function Cart() {
     (sum, key) => sum + cartList[key].price * cartList[key].count,
     0
   );
+
+ 
   return (
     <div className={`${windowSize < 900 ? "p-2" : "relative"} `}>
       <div
@@ -29,7 +31,7 @@ function Cart() {
       </div>
       <div className={`my-2 bg-white cart-list-container`}>
         {Object.keys(cartList).map((cartId) => {
-          const { imageURL, name, count, price, id } = cartList[cartId];
+          const { imageURL, name, count, price, id, stock } = cartList[cartId];
           return (
             <>
               <hr />
@@ -40,15 +42,16 @@ function Cart() {
                     <div className="font-bold p-2">{name}</div>
                     <div>
                       <button
-                        className="bg-primary p-2 text-white font-bold mx-2"
+                        className="bg-primary p-2 text-white font-bold mx-2 pointer"
                         onClick={() => dispatch(decreaseCount({ id }))}
                       >
                         -
                       </button>
                       <span className="p-2">{count}</span>
                       <button
-                        className="bg-primary p-2 text-white font-bold mx-2"
-                        onClick={() => dispatch(increaseCount({ id }))}
+                        className={`bg-primary p-2 text-white font-bold mx-2 ${count===stock?'opacity-10':' ponter'}`}
+                        disabled={count===stock}
+                        onClick={() => dispatch(increaseCount({id}))}
                       >
                         +
                       </button>

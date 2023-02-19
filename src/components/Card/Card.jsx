@@ -24,7 +24,7 @@ function Card({ cardObj, i }) {
           <div className="text-center">
             <div className="font-semibold text-xl">{name}</div>
             <p className="font-12 my-2">{description}</p>
-            <button className="bg-primary text-white px-4 py-2" onClick={handleCategorySelection}>{`Explore ${key}`}</button>
+            <button className="bg-primary text-white px-4 py-2 pointer" onClick={handleCategorySelection}>{`Explore ${key}`}</button>
           </div>
         </>
       ) : (
@@ -32,7 +32,7 @@ function Card({ cardObj, i }) {
           <div className="text-center">
             <div className="font-semibold text-xl">{name}</div>
             <p className="font-12 my-2">{description}</p>
-            <button className="bg-primary text-white px-4 py-2" onClick={handleCategorySelection}>{`Explore ${key}`}</button>
+            <button className="bg-primary text-white px-4 py-2 pointer" onClick={handleCategorySelection}>{`Explore ${key}`}</button>
           </div>
           <div className="p-2">
             <img src={imageUrl} alt={name} className={`${windowSize>400?'card-height':'h-20'}`}  />
