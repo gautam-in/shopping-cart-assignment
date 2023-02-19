@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import './Caraousel.css';
 
-function Caraousel({ imageArr }) {
+function Caraousel({ banners }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   useEffect(() => {
       const interval = setInterval(() => {
-      setCurrentSlide(currentSlide=>(currentSlide + 1) % imageArr.length);
+      setCurrentSlide(currentSlide=>(currentSlide + 1) % banners.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
@@ -13,7 +13,7 @@ function Caraousel({ imageArr }) {
   return (
     <div className="card-box-shadow">
       <div className="relative ">
-              {imageArr.map( ({bannerImageUrl, bannerImageAlt, id},i) => (
+              {banners.map( ({bannerImageUrl, bannerImageAlt, id},i) => (
           <div
             className={`${currentSlide === i ? 'block' : "mySlides"} fade`}
             key={id}
@@ -23,7 +23,7 @@ function Caraousel({ imageArr }) {
         ))}
       </div>
       <div className="text-center">
-              {imageArr.map((_,i) => (
+              {banners.map((_,i) => (
           <span
             className={`dot ${currentSlide === i ? "active" : ""}`}
             onClick={() => setCurrentSlide(i)}

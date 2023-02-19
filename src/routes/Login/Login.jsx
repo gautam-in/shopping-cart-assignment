@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import InputText from "../../components/InputText/InputText";
 import { useSelector, useDispatch } from "react-redux";
 import { storeLoginData } from "../../redux/userSlice";
+import { getUserListAPI } from "./api";
+import { useNavigate } from "react-router-dom";
 
 function Login({}) {
   const [error, setError] = useState("");
   const dispatch = useDispatch();
   const windowSize = useSelector((state) => state.user.windowSize);
+  const [userList, setUserList]=useState([]);
+  const navigate=useNavigate();
+
   const emailValidation = (emailText) => {
     const regex =
       /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -27,15 +32,31 @@ function Login({}) {
     event.preventDefault();
     const { email, password } = event.target;
     if (emailValidation(email.value) && passwordValidation(password.value)) {
-      const formData = {
-        email: email.value,
-        password: password.value,
-      };
+      const userObj=userList.find(user=>user.email===email.value)
+      if(Object.keys(userObj).length){
+        if(userObj.password===password.value){
+          dispatch(storeLoginData({userId:userObj.id, userName:userObj.name, email:userObj.email}));
+          navigate('/')
+        }else{
+          setError("Email or password is incorrect!")
+        }
+      }else{
+        setError("User not found!")
+      }
       dispatch(
         storeLoginData({ userId: 1, userName: "john", email: email.value })
       );
     }
   };
+
+  const fetchUserList=async()=>{
+    const userListRes=await getUserListAPI();
+    setUserList(userListRes);
+  }
+
+  useEffect(() => {
+    fetchUserList()
+  }, []);
   return (
     <div
       className={`${

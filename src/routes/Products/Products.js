@@ -1,24 +1,38 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import ProductCard from "../../components/ProductCard/ProductCard";
+import { setProducts } from "../../redux/productSlice";
+import { getProductsAPI } from "./api";
 import "./Products.css";
 
 function Products({}) {
   const productArr = useSelector((state) => state.products.products);
   const windowSize = useSelector((state) => state.user.windowSize);
+  const dispatch = useDispatch();
   const currentCategory = useSelector(
     (state) => state.products.currentCategory
   );
-  const [filteredProductArr, setFilteredProductArr] = useState(productArr);
+  const [filteredProductArr, setFilteredProductArr] = useState([]);
+
+  const fetchProducts=async()=>{
+    const products=await getProductsAPI();
+    dispatch(setProducts(products));
+  }
+
+  useEffect(() => {
+    fetchProducts()
+  },[])
 
   useEffect(() => {
     if (currentCategory) {
       setFilteredProductArr(
         productArr.filter((product) => product.category === currentCategory)
       );
+    }else{
+      setFilteredProductArr(productArr);
     }
-  }, [currentCategory]);
+  }, [currentCategory,productArr]);
 
   return (
     <div className="flex product-window-height overflow-hidden">

@@ -9,6 +9,7 @@ import Cart from "../../routes/Cart/Cart";
 function Header({}) {
   const windowSize = useSelector((state) => state.user.windowSize);
   const cartList = useSelector((state) => state.cart.cartList);
+  const userId = useSelector((state) => state.user.userId);
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
@@ -60,9 +61,11 @@ function Header({}) {
       <div>
         {windowSize > 400 ? (
           <nav className="flex text-gray-800 font-12 justify-end pb-2">
-            <Link to={"/login"} className="mx-1">
-              SignIn
-            </Link>
+            {!userId ? (
+              <Link to={"/login"} className="mx-1">
+                SignIn
+              </Link>
+            ) : null}
             <Link to={"/register"} className="mx-1">
               Register
             </Link>
@@ -78,7 +81,7 @@ function Header({}) {
         </div>
         {/* </Link> */}
       </div>
-      {showModal ? (
+      {showModal && userId ? (
         <Modal setShowModal={setShowModal}>
           <Cart />
         </Modal>
