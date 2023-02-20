@@ -23,13 +23,16 @@ header {
     position: relative;
   }
 
-  .logo a img {
-    width: 30%;
-    cursor: pointer;
+  .logo {
+    width: 25%;
+    a img {
+      width: 60%;
+      cursor: pointer;
+    }
   }
 
   nav {
-    width: 70%;
+    width: 75%;
     display: flex;
     justify-content: space-between;
     ul {
