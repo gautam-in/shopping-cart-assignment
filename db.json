@@ -19,8 +19,7 @@
       "id": 3
     }
   ],
-  
-  "productList":[
+  "productList": [
     {
       "name": "Fresho Kiwi - Green, 3 pcs",
       "imageURL": "/static/images/products/fruit-n-veg/kiwi-green.jpg",
@@ -272,7 +271,7 @@
       "id": "5b6c761801a7c3842953089b"
     }
   ],
-  "offerList":[
+  "offerList": [
     {
       "bannerImageUrl": "/static/images/offers/offer1.jpg",
       "bannerImageAlt": "Independence Day Deal - 25% off on shampoo",
@@ -309,8 +308,7 @@
       "id": "5b6c386b6cb7d770b7010cd0"
     }
   ],
-  "categoryList":[
-
+  "categoryList": [
     {
       "name": "Fruits & Vegetables",
       "key": "fruit-and-veg",
@@ -338,7 +336,6 @@
       "imageUrl": "/static/images/category/beverages.png",
       "id": "5b675e5e5936635728f9fc30"
     },
-  
     {
       "name": "Beauty and Hygiene",
       "key": "beauty-hygiene",
@@ -357,6 +354,5 @@
       "imageUrl": "/static/images/category/baby.png",
       "id": "5b6899683d1a866534f516e0"
     }
-  
   ]
 }

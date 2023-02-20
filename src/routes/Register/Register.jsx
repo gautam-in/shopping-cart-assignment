@@ -1,10 +1,15 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import InputText from "../../components/InputText/InputText";
+import { addUserAPI } from "./api";
+import {storeLoginData} from '../../redux/userSlice'
+import { useNavigate } from "react-router-dom";
 
 function Register({}) {
   const windowSize = useSelector((state) => state.user.windowSize);
   const [error, setError] = useState("");
+  const dipatch=useDispatch();
+  const navigate = useNavigate();
 
   const emailValidation = (emailText) => {
     const regex =
@@ -31,7 +36,7 @@ function Register({}) {
     return true;
   };
 
-  const handleSignup = (event) => {
+  const handleSignup = async(event) => {
     event.preventDefault();
     const { firstName, lastName, email, password, confirmPassword } =
       event.target;
@@ -41,13 +46,15 @@ function Register({}) {
         passwordValidation(password.value, confirmPassword.value)
       ) {
         const formData = {
-          firstName: firstName.value,
-          lastName: lastName.value,
+          name: `${firstName.value} ${lastName.value}`,
           email: email.value,
           password: password.value,
-          confirmPassword: confirmPassword.value,
         };
-        console.log(formData);
+        const response = await addUserAPI(formData);
+        if(response.id){
+          dipatch(storeLoginData({userId:response.id, userName: response.name, userEmail: response.email}))
+          navigate("/");
+        }
       }
     }
   };
