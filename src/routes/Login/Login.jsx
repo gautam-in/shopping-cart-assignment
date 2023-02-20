@@ -33,7 +33,7 @@ function Login({}) {
     const { email, password } = event.target;
     if (emailValidation(email.value) && passwordValidation(password.value)) {
       const userObj=userList.find(user=>user.email===email.value)
-      if(Object.keys(userObj).length){
+      if(userObj && Object.keys(userObj)?.length){
         if(userObj.password===password.value){
           dispatch(storeLoginData({userId:userObj.id, userName:userObj.name, email:userObj.email}));
           navigate('/')
