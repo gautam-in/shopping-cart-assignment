@@ -23,9 +23,9 @@
   color: black;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 25px -25px;
   background-color: #fff;
-  padding-left: 20%;
-  /* position: fixed; */
-  width: 100%;
+  padding: 0 12%;
+  position: relative;
+  width: auto;
   z-index: 1;
 }
 
@@ -46,6 +46,7 @@
 .app-container{
   min-height:89vh;
   display: flex;
+  padding: 0 12%;
 }
 
 .App-link {

@@ -1,6 +1,6 @@
-import logo from '../../assets/logo.png'
+import logo from '../../../assets/logo.png'
 import Button from '../button';
-import { textButton } from '../../common/style';
+import { textButton } from '../../../common/style';
 
 export const logoContainer = {
     display: 'flex',
