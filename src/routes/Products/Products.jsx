@@ -39,11 +39,11 @@ function Products({}) {
       {windowSize > 500 ? <Sidebar /> : null}
       <div
         className={`${
-          windowSize > 500 ? "w-5/6" : "w-full"
-        } bg-white flex flex-wrap p-2 product-window-height overflow-auto`}
+          windowSize > 500 ? "" : "w-full"
+        } bg-white product-list-screen flex-wrap p-2 product-window-height overflow-auto`}
       >
         {filteredProductArr.map((product) => (
-          <div className="m-1" key={product.id}>
+          <div key={product.id}>
             <ProductCard product={product}  />
           </div>
         ))}

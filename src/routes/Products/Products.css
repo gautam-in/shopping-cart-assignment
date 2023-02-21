@@ -1,3 +1,30 @@
 .product-window-height{
     height: 80vh
 }
+
+.product-list-screen{
+    display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
+    
+} 
+
+@media screen and (min-width:900px) {
+    .product-list-screen{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width:500px) and (max-width:900px){
+    .product-list-screen{
+        grid-template-columns: 1fr 1fr;     
+    }
+}
+
+@media screen and (max-width:500px){
+    #product-list-screen{
+        grid-template-columns: 1fr;
+    }
+}
+
+

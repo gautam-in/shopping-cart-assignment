@@ -9,14 +9,14 @@ function ProductCard({ product }) {
   const cartList=useSelector((state)=>state.cart.cartList);
   const dispatch = useDispatch();
   return (
-    <div className="card p-2">
+    <div className="card p-2 h-full">
       <header className="font-bold name-height">{name}</header>
       {windowSize > 900 ? (
         <>
           <div className="my-2 flex justify-center">
             <img src={imageURL} alt={name} className="img-height" />
           </div>
-          <div className="bg-gray-200 p-1 font-12 desc-height overflow-hidden">
+          <div className="bg-gray-200 p-1 font-12 overflow-hidden desc-height">
             {description}
           </div>
           <div className=" flex justify-between p-2 items-center">

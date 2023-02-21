@@ -1,6 +1,7 @@
 .card{
-    width:250px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
 }
 
 .img-height{
@@ -8,7 +9,7 @@
 }
 
 .desc-height{
-    height:10vh
+    flex:2
 }
 
 .name-height{
@@ -19,20 +20,16 @@
     height:35vh
 }
 
+
 @media screen and (max-width:500px) {
-    .card{
-        width:100%
-    }
     .img-height{
-        height:12rem;
+        width:50%
     }
 }
 
 @media screen and (max-width:900px) and (min-width: 500px){
-    .card{
-        width: 320px;
-    }
     .img-height{
-        height:10rem;
-    }
+        width:50%
+     }
+    
 }
