@@ -36,6 +36,7 @@ const activeLink = ({ isActive }) => (isActive ? `${styles.active}` : "");
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [displayName, setDisplayName] = useState("");
+  const [scrollPage, setScrollPage] = useState(false);
 
   const navigate = useNavigate();
 
@@ -59,6 +60,14 @@ const Header = () => {
         toast.error(error.message);
       });
   };
+  const fixNavbar = () => {
+    if (window.scrollY > 0) {
+      setScrollPage(true);
+    } else {
+      setScrollPage(false);
+    }
+  };
+  // window.addEventListener("scroll", fixNavbar);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -85,7 +94,7 @@ const Header = () => {
   }, [dispatch, displayName]);
 
   return (
-    <header>
+    <header className={scrollPage ? `${styles.fixed}` : ""}>
       <div className={styles.header}>
         {logo}
         <nav
@@ -112,8 +121,8 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/contact" className={activeLink}>
-                Contact us
+              <NavLink to="/products" className={activeLink}>
+                Products
               </NavLink>
             </li>
           </ul>
