@@ -62,11 +62,11 @@ const Header = () => {
 
   const cart = (
     <span className={styles.cart}>
-      <Link to="/cart">
+      <NavLink to="/cart" className={activeLink}>
         Cart
         <FaShoppingCart size={20} />
         <p>{cartTotalQuantity}</p>
-      </Link>
+      </NavLink>
     </span>
   );
   const fixNavbar = () => {
