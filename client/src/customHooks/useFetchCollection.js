@@ -15,7 +15,6 @@ const useFetchCollection = (collectionName) => {
         return res.json().then((json) => Promise.reject(json));
       })
       .then((data) => {
-        console.log(data);
         setData(data);
         setIsLoading(false);
       })
