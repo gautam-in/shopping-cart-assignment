@@ -22,7 +22,7 @@ const ProductList = ({ products }) => {
 
           <FaListAlt size={24} color="#0066d4" onClick={() => setGrid(false)} />
           <p>
-            <b>{products.length}</b> Products found.
+            <b>{filteredProducts.length}</b> Products found.
           </p>
         </div>
       </div>

@@ -5,7 +5,7 @@ import { FILTER_BY_CATEGORY } from "../../../redux/slice/filterSlice";
 import { selectProducts } from "../../../redux/slice/productSlice";
 import styles from "./ProductFilter.module.scss";
 const ProductFilter = () => {
-  const { data, isLoading } = useFetchCollection("categories");
+  const { data } = useFetchCollection("categories");
   const [category, setCategory] = useState("All");
 
   const dispatch = useDispatch();

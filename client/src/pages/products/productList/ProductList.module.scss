@@ -16,21 +16,6 @@
         cursor: pointer;
       }
     }
-
-    .sort {
-      label {
-        font-size: 1.4rem;
-        font-weight: 500;
-        margin: 0 5px;
-      }
-      select {
-        font-size: 1.6rem;
-        font-weight: 300;
-        border: none;
-        // border-bottom: 1px solid #777;
-        outline: none;
-      }
-    }
   }
 
   @media screen and (max-width: 800px) {
@@ -39,12 +24,18 @@
       align-items: start;
       padding-bottom: 5px;
     }
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }
 
 .grid {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  background-color: #fffdf7;
+  // display: flex;
+  // justify-content: space-around;
+  // flex-wrap: wrap;
+  // background-color: #fffdf7;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }

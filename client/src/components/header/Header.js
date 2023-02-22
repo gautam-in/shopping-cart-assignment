@@ -1,34 +1,28 @@
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { FaShoppingCart, FaTimes, FaUserCircle } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import logoImg from "../../assets/images/logo_2x.png";
-import styles from "./Header.module.scss";
-import { signOut, onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../firebase/config";
 import { toast } from "react-toastify";
-import { useDispatch } from "react-redux";
+import logoImg from "../../assets/images/logo_2x.png";
+import { auth } from "../../firebase/config";
 import {
   REMOVE_ACTIVE_USER,
   SET_ACTIVE_USER,
 } from "../../redux/slice/authSlice";
+import {
+  CALCULATE_TOTAL_QUANTITY,
+  selectCartTotalQuantity,
+} from "../../redux/slice/cartSlice";
 import ShowOnLogin, { ShowOnLogout } from "../hiddenLink/hiddenLink";
+import styles from "./Header.module.scss";
 const logo = (
   <div className={styles.logo}>
     <Link to="/" aria-label="sabka bazar">
       <img src={logoImg} alt="" />
     </Link>
   </div>
-);
-
-const cart = (
-  <span className={styles.cart}>
-    <Link to="/cart">
-      Cart
-      <FaShoppingCart size={20} />
-      <p>0</p>
-    </Link>
-  </span>
 );
 
 const activeLink = ({ isActive }) => (isActive ? `${styles.active}` : "");
@@ -38,6 +32,11 @@ const Header = () => {
   const [displayName, setDisplayName] = useState("");
   const [scrollPage, setScrollPage] = useState(false);
 
+  const cartTotalQuantity = useSelector(selectCartTotalQuantity);
+
+  useEffect(() => {
+    dispatch(CALCULATE_TOTAL_QUANTITY());
+  }, []);
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -60,6 +59,16 @@ const Header = () => {
         toast.error(error.message);
       });
   };
+
+  const cart = (
+    <span className={styles.cart}>
+      <Link to="/cart">
+        Cart
+        <FaShoppingCart size={20} />
+        <p>{cartTotalQuantity}</p>
+      </Link>
+    </span>
+  );
   const fixNavbar = () => {
     if (window.scrollY > 0) {
       setScrollPage(true);
