@@ -1,7 +1,7 @@
 .product {
   display: flex;
   position: relative;
-
+  min-height: 80vh;
   .filter {
     width: 20%;
     // border: 2px solid var(--dark-blue);

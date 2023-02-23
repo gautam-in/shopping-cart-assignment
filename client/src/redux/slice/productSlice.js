@@ -2,8 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   products: [],
-  minPrice: null,
-  maxPrice: null,
 };
 
 const productSlice = createSlice({
@@ -16,7 +14,7 @@ const productSlice = createSlice({
   },
 });
 
-export const { STORE_PRODUCTS, GET_PRICE_RANGE } = productSlice.actions;
+export const { STORE_PRODUCTS } = productSlice.actions;
 
 export const selectProducts = (state) => state.product.products;
 

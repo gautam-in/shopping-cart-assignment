@@ -70,13 +70,13 @@ const Header = () => {
     </span>
   );
   const fixNavbar = () => {
-    if (window.scrollY > 0) {
+    if (window.scrollY > 50) {
       setScrollPage(true);
     } else {
       setScrollPage(false);
     }
   };
-  // window.addEventListener("scroll", fixNavbar);
+  window.addEventListener("scroll", fixNavbar);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {

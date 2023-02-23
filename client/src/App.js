@@ -2,7 +2,16 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Footer, Header } from "./components";
-import { Cart, Contact, Home, Login, Products, Register, Reset } from "./pages";
+import {
+  Cart,
+  Contact,
+  Home,
+  Login,
+  NotFound,
+  Products,
+  Register,
+  Reset,
+} from "./pages";
 import ProductDetails from "./pages/products/productDetails/ProductDetails";
 
 function App() {
@@ -22,6 +31,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/product-details/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </BrowserRouter>
