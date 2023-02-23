@@ -1,5 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap");
+
 .App {
   text-align: center;
+  font-family: 'Dosis', sans-serif;
+}
+
+input{
+  font-family: 'Dosis', sans-serif;
 }
 
 .App-logo {
@@ -13,8 +20,13 @@
   }
 }
 
+/* body {
+  font-family: 'Dosis', sans-serif;
+} */
+
 .App-header {
   min-height: 80px;
+  /* font-family: 'Dosis', sans-serif; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -31,6 +43,7 @@
 
 .App-footer{
   min-height: 30px;
+  font-family: 'Dosis', sans-serif;
   display: flex;
   flex-direction: row;
   align-items: center;
