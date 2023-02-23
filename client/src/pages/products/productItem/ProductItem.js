@@ -49,7 +49,7 @@ const ProductItem = ({
         )}
 
         <button
-          className="--btn --btn-danger"
+          className="--btn --btn-primary"
           onClick={() => addToCart(product)}
         >
           Add To Cart

@@ -1,11 +1,11 @@
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
-import { Card, Loader } from "../../components";
-import registerImg from "../../assets/images/register.png";
-import styles from "./auth.module.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import registerImg from "../../assets/images/register.png";
+import { Card, Loader } from "../../components";
 import { auth } from "../../firebase/config";
+import styles from "./auth.module.scss";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -18,6 +18,7 @@ const Register = () => {
     e.preventDefault();
     if (password !== cPassword) {
       toast.error("Passwords do not match.");
+      return;
     }
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
@@ -44,33 +45,36 @@ const Register = () => {
             <form onSubmit={registerUser}>
               <div className={styles.txt_field}>
                 <input
-                  type="text"
+                  type="email"
+                  id="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <span></span>
-                <label>Email</label>
+                <label htmlFor="email">Email</label>
               </div>
               <div className={styles.txt_field}>
                 <input
                   type="password"
+                  id="password"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <span></span>
-                <label>Password</label>
+                <label htmlFor="password">Password</label>
               </div>
               <div className={styles.txt_field}>
                 <input
                   type="password"
+                  id="confirm_password"
                   required
                   value={cPassword}
                   onChange={(e) => setCPassword(e.target.value)}
                 />
                 <span></span>
-                <label>Confirm Password</label>
+                <label htmlFor="confirm_password">Confirm Password</label>
               </div>
 
               <button type="submit" className="--btn --btn-primary --btn-block">

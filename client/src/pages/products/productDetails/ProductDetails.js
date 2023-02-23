@@ -77,7 +77,7 @@ const ProductDetails = () => {
                 )}
               </div>
               <button
-                className="--btn --btn-danger"
+                className="--btn --btn-primary"
                 onClick={() => addToCart(product)}
               >
                 ADD TO CART

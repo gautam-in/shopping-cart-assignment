@@ -134,12 +134,17 @@ const Header = () => {
                 Products
               </NavLink>
             </li>
+            <li>
+              <NavLink to="/contact" className={activeLink}>
+                Contact Us
+              </NavLink>
+            </li>
           </ul>
           <div className={styles["header-right"]} onClick={hideMenu}>
             <span className={styles.links}>
               <ShowOnLogout>
                 <NavLink to="/login" className={activeLink}>
-                  Sign in
+                  Sign In
                 </NavLink>
 
                 <NavLink to="/register" className={activeLink}>
@@ -152,9 +157,6 @@ const Header = () => {
                   <FaUserCircle size={16} />
                   Hi, {displayName}
                 </a>
-                <NavLink to="/order-history" className={activeLink}>
-                  My Orders
-                </NavLink>
                 <NavLink
                   to="/logout"
                   className={activeLink}

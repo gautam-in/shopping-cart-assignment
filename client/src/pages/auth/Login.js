@@ -1,15 +1,18 @@
+import {
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
 import React, { useState } from "react";
 import { FaGoogle } from "react-icons/fa";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import loginImg from "../../assets/images/login.png";
 import { Card, Loader } from "../../components";
-import styles from "./auth.module.scss";
-import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase/config";
-import { toast } from "react-toastify";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { useSelector } from "react-redux";
 import { selectPreviousURL } from "../../redux/slice/cartSlice";
+import styles from "./auth.module.scss";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -87,23 +90,25 @@ const Login = () => {
             <form onSubmit={loginUser}>
               <div className={styles.txt_field}>
                 <input
-                  type="text"
+                  type="email"
+                  id="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <span></span>
-                <label>Email</label>
+                <label htmlFor="email">Email</label>
               </div>
               <div className={styles.txt_field}>
                 <input
                   type="password"
+                  id="password"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <span></span>
-                <label>Password</label>
+                <label htmlFor="password">Password</label>
               </div>
 
               <button type="submit" className="--btn --btn-primary --btn-block">

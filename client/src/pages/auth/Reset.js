@@ -1,12 +1,12 @@
-import styles from "./auth.module.scss";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import resetImg from "../../assets/images/forgot.png";
 import Card from "../../components/card/Card";
-import { useState } from "react";
-import { toast } from "react-toastify";
-import { auth } from "../../firebase/config";
-import { sendPasswordResetEmail } from "firebase/auth";
 import Loader from "../../components/loader/Loader";
+import { auth } from "../../firebase/config";
+import styles from "./auth.module.scss";
 
 const Reset = () => {
   const [email, setEmail] = useState("");
@@ -42,13 +42,14 @@ const Reset = () => {
             <form onSubmit={resetPassword}>
               <div className={styles.txt_field}>
                 <input
-                  type="text"
+                  type="email"
+                  id="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <span></span>
-                <label>Email</label>
+                <label htmlFor="email">Email</label>
               </div>
 
               <button type="submit" className="--btn --btn-primary --btn-block">
