@@ -10,9 +10,9 @@ import Cart from './screens/cart';
 
 
 function App() {
-  const { isLoggedIn } = useLocalStorage();
-  // const isLoggedInn = true
-  console.log("isLoggedIn", isLoggedIn)
+  const [userDetails] = useLocalStorage('userDetails');
+  const { isLoggedIn } = userDetails || {};
+
   return (
     <div className="App">
       <header className='App-header'><Header /></header>
@@ -32,6 +32,7 @@ function App() {
           <Route path='*' element={<Home />} />
           <Route path='/home' element={<Home />} />
           <Route path='/products' element={<Products />} />
+          <Route path='/products/:id' element={<Products />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
           <Route path='/cart' element={<Cart />} />

@@ -37,3 +37,11 @@
 	font-size:12px;
     color:#b2b2b2;	
 }
+
+.input-error-message{
+    color: red;
+    text-align: left;
+    font-size: 15px;
+    padding: 5px;
+    display: flex;
+}

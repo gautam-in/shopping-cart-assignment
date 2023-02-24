@@ -1,12 +1,12 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 // import logo from '../assets/logo.png'
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import { homeContainer, exploreButton, categoryContainer, categoryImgContainer } from './style';
 import Button from '../../ui/elements/button';
 
-const Home = (props) => {
+const Home = () => {
     const [imgUrls, setImgUrls] = useState([]);
     const [categoryData, setCategoryData] = useState([]);
 
@@ -57,7 +57,7 @@ const Home = (props) => {
                 <div style={categoryImgContainer}>
                     <h1>{item.name}</h1>
                     <span>{item.description}</span>
-                    <Button style={exploreButton} value={`Explore ${item.key}`} />
+                    <Link to={`/products/${item.id}`}><Button style={exploreButton} value={`Explore ${item.key}`} /></Link>
                 </div >
             </div >)
             }

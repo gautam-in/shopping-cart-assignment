@@ -3,6 +3,11 @@ export const textButton = {
     outline: 0,
     border: 0,
     margin: 0,
+    cursor: 'pointer'
+}
+
+export const disabled = {
+    opacity: 0.3
 }
 
 export const exploreButton = {
@@ -11,7 +16,8 @@ export const exploreButton = {
     color: '#ffffff',
     width: 'auto',
     padding: 4,
-    height: '50px'
+    height: '50px',
+
 }
 
 //     .input - container{

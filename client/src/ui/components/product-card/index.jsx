@@ -1,7 +1,16 @@
+import { useLocalStorage } from '../../../hooks/useLocalStorage';
 import Button from '../../elements/button';
 import { priceCTAConatiner, productCTA, productCardDescription, productPrice, productcardContainer } from './style';
 
 const ProductCard = ({ products }) => {
+    const [cart, setCart] = useLocalStorage('cart');
+
+    const handleBuyProduct = (product) => {
+
+        let y = [...cart, { ...product }];
+        setCart(y);
+
+    }
     return (products?.map(item =>
         <div style={productcardContainer}>
             <h4>{item.name}</h4>
@@ -14,7 +23,7 @@ const ProductCard = ({ products }) => {
             <div style={priceCTAConatiner}>
                 <div style={
                     productPrice}>{`MRP Rs. ${item.price}`}</div>
-                <Button style={productCTA} value='Buy Now' />
+                <Button style={productCTA} value='Buy Now' onClick={() => handleBuyProduct(item)} />
             </div>
         </div>))
 }
