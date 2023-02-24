@@ -2,17 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Footer, Header } from "./components";
-import {
-  Cart,
-  Contact,
-  Home,
-  Login,
-  NotFound,
-  Products,
-  Register,
-  Reset,
-} from "./pages";
-import ProductDetails from "./pages/products/productDetails/ProductDetails";
+import ProductDetails from "./components/products/productDetails/ProductDetails";
+import { Cart, Contact, Home, Login, NotFound, Register, Reset } from "./pages";
 
 function App() {
   return (
@@ -28,7 +19,6 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/reset" element={<Reset />} />
 
-          <Route path="/products" element={<Products />} />
           <Route path="/product-details/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<NotFound />} />

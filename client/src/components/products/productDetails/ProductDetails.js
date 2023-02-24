@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import spinnerImg from "../../../assets/images/spinner.jpg";
 import useFetchCollection from "../../../customHooks/useFetchCollection";
 import {
@@ -40,6 +40,9 @@ const ProductDetails = () => {
   return (
     <section className={`container ${styles.product}`}>
       <h2>Product Details</h2>
+      <div>
+        <Link to="/#products">&larr; Back To Products</Link>
+      </div>
       {product === null ? (
         <img src={spinnerImg} alt="Loading.." style={{ width: "50px" }} />
       ) : (

@@ -33,6 +33,17 @@
       background-color: #eee;
     }
   }
+  .banner {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    span {
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+  }
   .summary {
     margin-top: 2rem;
     display: flex;

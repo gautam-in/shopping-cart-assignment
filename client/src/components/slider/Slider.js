@@ -7,7 +7,6 @@ const Slider = () => {
   const [sliderData, setSliderData] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideLength = sliderData.length;
-  //   console.log(slideLength);
 
   const autoScroll = true;
   let slideInterval;
@@ -30,20 +29,14 @@ const Slider = () => {
         return res.json().then((json) => Promise.reject(json));
       })
       .then((data) => {
-        console.log(data);
         setSliderData(data);
         setCurrentSlide(0);
       })
       .catch((error) => {
         setSliderData([]);
         setCurrentSlide(0);
-        // toast.error("Something went wrong!!!");
       });
   }, []);
-
-  //   const auto = () => {
-  //     slideInterval = setInterval(nextSlide, intervalTime);
-  //   };
 
   useEffect(() => {
     if (autoScroll) {
@@ -76,7 +69,7 @@ const Slider = () => {
                       {/* <h2>{heading}</h2> */}
                       <p>{bannerImageAlt}</p>
                       <hr />
-                      <a href="#product" className="--btn --btn-primary">
+                      <a href="#products" className="--btn --btn-primary">
                         Shop Now
                       </a>
                     </div>

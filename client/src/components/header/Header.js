@@ -70,7 +70,7 @@ const Header = () => {
     </span>
   );
   const fixNavbar = () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 80) {
       setScrollPage(true);
     } else {
       setScrollPage(false);
@@ -127,11 +127,6 @@ const Header = () => {
             <li>
               <NavLink to="/" className={activeLink}>
                 Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/products" className={activeLink}>
-                Products
               </NavLink>
             </li>
             <li>

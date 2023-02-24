@@ -3,13 +3,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  gap: 10px;
   .img {
     animation: slide-down 0.5s ease;
   }
 
   .form {
-    max-width: 35rem;
+    width: 35rem;
     padding: 1.5rem;
     animation: slide-up 0.5s ease;
     h2 {
@@ -17,20 +17,6 @@
       text-align: center;
     }
     form {
-      // input[type="text"],
-      // input[type="email"],
-      // input[type="password"] {
-      //   display: block;
-      //   font-size: 1.6rem;
-      //   font-weight: 300;
-      //   padding: 1rem;
-      //   margin: 1rem auto;
-      //   width: 100%;
-      //   border: 1px solid #777;
-      //   border-radius: 3px;
-      //   outline: none;
-      // }
-
       .txt_field {
         position: relative;
         border-bottom: 2px solid #adadad;
@@ -55,9 +41,6 @@
           }
         }
 
-        // .signup_link {
-        //   margin: 30px 0;
-        // }
         label {
           position: absolute;
           top: 50%;
@@ -120,12 +103,3 @@
     display: none;
   }
 }
-
-// .pass {
-//   margin: -5px 0 20px 5px;
-//   color: #a6a6a6;
-//   cursor: pointer;
-//   &:hover {
-//     text-decoration: underline;
-//   }
-// }

@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import useFetchCollection from "../../../customHooks/useFetchCollection";
+import { selectCategories } from "../../../redux/slice/categorySlice";
 import { FILTER_BY_CATEGORY } from "../../../redux/slice/filterSlice";
 import { selectProducts } from "../../../redux/slice/productSlice";
 import styles from "./ProductFilter.module.scss";
 const ProductFilter = () => {
-  const { data } = useFetchCollection("categories");
+  // const { data } = useFetchCollection("categories");
   const [category, setCategory] = useState("All");
 
   const dispatch = useDispatch();
 
+  const products = useSelector(selectProducts);
+  const categories = useSelector(selectCategories);
+
   const allCategories = [
     { name: "All", id: "All" },
-    ...data.map((category) => {
+    ...categories.map((category) => {
       return {
         id: category.id,
         name: category.name,
@@ -20,16 +23,10 @@ const ProductFilter = () => {
     }),
   ];
 
-  const products = useSelector(selectProducts);
-
   const filterProducts = (categoryId) => {
     setCategory(categoryId);
-    // dispatch(FILTER_BY_CATEGORY({ products, category: categoryId }));
+    dispatch(FILTER_BY_CATEGORY({ products, category: categoryId }));
   };
-
-  useEffect(() => {
-    dispatch(FILTER_BY_CATEGORY({ products, category }));
-  }, [dispatch, products, category]);
 
   return (
     <div className={styles.filter}>

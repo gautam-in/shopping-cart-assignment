@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import priceBannerImg from "../../assets/images/lowest-price.png";
 import Card from "../../components/card/Card";
 import { selectIsLoggedIn } from "../../redux/slice/authSlice";
 import {
@@ -65,7 +66,7 @@ const Cart = () => {
           <>
             <p>Your cart is currently empty.</p>
             <div>
-              <Link to="/products">&larr; Continue shopping</Link>
+              <Link to="/#products">&larr; Continue shopping</Link>
             </div>
           </>
         ) : (
@@ -130,13 +131,17 @@ const Cart = () => {
                 })}
               </tbody>
             </table>
+            <div className={styles.banner}>
+              <img src={priceBannerImg} alt="" />
+              <span>You won't find it cheaper anyway</span>
+            </div>
             <div className={styles.summary}>
               <button className="--btn --btn-danger" onClick={clearCart}>
                 Clear Cart
               </button>
               <div className={styles.checkout}>
                 <div>
-                  <Link to="/products">&larr; Continue shopping</Link>
+                  <Link to="/#products">&larr; Continue shopping</Link>
                 </div>
                 <Card cardClass={styles.card}>
                   <p>

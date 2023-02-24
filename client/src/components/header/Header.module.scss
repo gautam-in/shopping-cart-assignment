@@ -78,7 +78,7 @@ header {
     }
 
     span {
-      margin: 0 5px;
+      margin: 0 10px;
 
       p {
         color: #fff;
@@ -140,6 +140,16 @@ header {
           > * {
             cursor: pointer;
           }
+        }
+        li:first-child {
+          height: 7rem;
+        }
+        .logo {
+          width: 50%;
+          // a img {
+          //   width: 60%;
+          //   cursor: pointer;
+          // }
         }
         li {
           padding: 5px 0;
