@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap");
+
+.App {
+  text-align: center;
+  font-family: 'Dosis', sans-serif;
+}
+
+input{
+  font-family: 'Dosis', sans-serif;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* body {
+  font-family: 'Dosis', sans-serif;
+} */
+
+.App-header {
+  min-height: 80px;
+  /* font-family: 'Dosis', sans-serif; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 0.85rem;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 25px -25px;
+  background-color: #fff;
+  padding: 0 12%;
+  position: relative;
+  width: auto;
+  z-index: 1;
+}
+
+.App-footer{
+  min-height: 30px;
+  font-family: 'Dosis', sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 20%;
+  font-size:  0.85rem;
+  color: black;
+  border-radius: 0px;
+  background: #eeeeee;
+  box-shadow: 23px 23px 46px #bcbcbc,
+    -23px -23px 46px #ffffff;
+}
+
+.app-container{
+  min-height:89vh;
+  display: flex;
+  padding: 0 12%;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.gg-shopping-cart {
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+  transform: scale(var(--ggs,1));
+  width: 20px;
+  height: 21px;
+  background:
+  linear-gradient(
+  to left,#bf2957 12px,
+  #bf2957 0)
+  no-repeat -1px 6px/18px 2px,
+  linear-gradient(
+  to left,#bf2957 12px,
+  #bf2957 0)
+  no-repeat 6px 14px/11px 2px,
+  linear-gradient(
+  to left,#bf2957 12px,
+  #bf2957 0)
+  no-repeat 0 2px/4px 2px,
+  radial-gradient(
+  circle,#bf2957 60%,
+  #bf2957 40%)
+  no-repeat 12px 17px/4px 4px,
+  radial-gradient(
+  circle,#bf2957 60%,
+  #bf2957 40%)
+  no-repeat 6px 17px/4px 4px
+ }
+ 
+ .gg-shopping-cart::after,
+ .gg-shopping-cart::before {
+  content: "";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  width: 2px;
+  height: 14px;
+  background: #bf2957;
+  top: 2px;
+  left: 4px;
+  transform: skew(12deg)
+ }
+ 
+ .gg-shopping-cart::after {
+  height: 10px;
+  top: 6px;
+  left: 16px;
+  transform: skew(-12deg)
+ } 

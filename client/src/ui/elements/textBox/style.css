@@ -1,0 +1,47 @@
+.input-container{
+	position:relative;
+	margin-bottom:25px;
+}
+.input-container label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:#b2b2b2;	
+    pointer-event:none;
+	transition: all 0.5s ease-in-out;
+}
+.input-container input{ 
+  border:0;
+  border-bottom:1px solid #b2b2b2;  
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:'black'
+}
+.input-container input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:2px solid #4ec1cb;	
+}
+.input-container input:focus ~ label{
+	top:-12px;
+	font-size:15px;
+    font-weight: 600;
+    color:#4ec1cb;
+}
+
+.input-container input:valid ~ label{
+	top:-12px;
+	font-size:12px;
+    color:#b2b2b2;	
+}
+
+.input-error-message{
+    color: red;
+    text-align: left;
+    font-size: 15px;
+    padding: 5px;
+    display: flex;
+}
