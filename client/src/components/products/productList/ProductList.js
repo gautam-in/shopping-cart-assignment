@@ -25,12 +25,11 @@ const ProductList = ({ products }) => {
   }, [dispatch, products, sort]);
 
   useEffect(() => {
-    console.log(products);
     dispatch(FILTER_BY_SEARCH({ products, search }));
   }, [dispatch, products, search]);
 
   return (
-    <div className={styles["product-list"]} id="products">
+    <div className={styles["product-list"]}>
       <div className={styles.top}>
         <div className={styles.icons}>
           <BsFillGridFill

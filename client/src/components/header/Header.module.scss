@@ -26,7 +26,7 @@ header {
   .logo {
     width: 25%;
     a img {
-      width: 60%;
+      width: 50%;
       cursor: pointer;
     }
   }
@@ -137,20 +137,15 @@ header {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          height: 7rem;
           > * {
             cursor: pointer;
           }
+          .logo {
+            width: 80%;
+          }
         }
-        li:first-child {
-          height: 7rem;
-        }
-        .logo {
-          width: 50%;
-          // a img {
-          //   width: 60%;
-          //   cursor: pointer;
-          // }
-        }
+
         li {
           padding: 5px 0;
           border-bottom: 1px solid #333;

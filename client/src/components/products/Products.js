@@ -29,8 +29,8 @@ const Products = () => {
 
   return (
     <>
-      <section>
-        <div className={`container ${styles.product}`}>
+      <section id="products">
+        <div className={`${styles.product}`}>
           <aside
             className={
               showFilter

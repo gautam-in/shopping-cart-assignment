@@ -30,13 +30,11 @@
           background: none;
           outline: none;
 
-          &:focus ~ label,
-          &:valid ~ label {
+          &:focus ~ label {
             top: -5px;
             color: #2691d9;
           }
-          &:focus ~ span::before,
-          &:valid ~ span::before {
+          &:focus ~ span::before {
             width: 100%;
           }
         }

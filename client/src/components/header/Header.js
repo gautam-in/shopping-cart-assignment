@@ -30,7 +30,7 @@ const activeLink = ({ isActive }) => (isActive ? `${styles.active}` : "");
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [displayName, setDisplayName] = useState("");
-  const [scrollPage, setScrollPage] = useState(false);
+  // const [scrollPage, setScrollPage] = useState(false);
 
   const cartTotalQuantity = useSelector(selectCartTotalQuantity);
 
@@ -69,14 +69,14 @@ const Header = () => {
       </NavLink>
     </span>
   );
-  const fixNavbar = () => {
-    if (window.scrollY > 80) {
-      setScrollPage(true);
-    } else {
-      setScrollPage(false);
-    }
-  };
-  window.addEventListener("scroll", fixNavbar);
+  // const fixNavbar = () => {
+  //   if (window.scrollY > 80) {
+  //     setScrollPage(true);
+  //   } else {
+  //     setScrollPage(false);
+  //   }
+  // };
+  // window.addEventListener("scroll", fixNavbar);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -103,7 +103,7 @@ const Header = () => {
   }, [dispatch, displayName]);
 
   return (
-    <header className={scrollPage ? `${styles.fixed}` : ""}>
+    <header className={styles.fixed}>
       <div className={styles.header}>
         {logo}
         <nav
@@ -149,7 +149,7 @@ const Header = () => {
 
               <ShowOnLogin>
                 <a href="#" style={{ color: "#ff7722" }}>
-                  <FaUserCircle size={16} />
+                  <FaUserCircle size={16} style={{ marginRight: "5px" }} />
                   Hi, {displayName}
                 </a>
                 <NavLink

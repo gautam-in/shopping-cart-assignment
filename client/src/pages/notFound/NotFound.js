@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./NotFound.module.scss";
 const NotFound = () => {
   return (
-    <div className={styles["not-found"]}>
+    <div className={`container ${styles["not-found"]}`}>
       <div>
         <h2>404</h2>
         <p>Ooops, page not found.</p>

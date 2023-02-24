@@ -21,7 +21,7 @@ const Home = () => {
   }, [url]);
 
   return (
-    <div>
+    <div className="container">
       <Slider />
       <Categories />
       <Products />
