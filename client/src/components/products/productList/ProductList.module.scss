@@ -41,23 +41,26 @@
     gap: 10px;
   }
 
-  @media screen and (max-width: 900px) {
-    // .top {
-    //   flex-direction: column;
-    //   align-items: start;
-    //   padding-bottom: 5px;
-    // }
+  @media screen and (max-width: 800px) {
+    .top {
+      flex-direction: column;
+      align-items: start;
+      padding-bottom: 5px;
+    }
+    .search {
+      width: 100%;
+    }
     .grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
   @media screen and (max-width: 600px) {
-    .top {
-      flex-direction: column;
-      align-items: start;
-      padding-bottom: 5px;
-    }
+    // .top {
+    //   flex-direction: column;
+    //   align-items: start;
+    //   padding-bottom: 5px;
+    // }
     .grid {
       grid-template-columns: repeat(1, 1fr);
     }

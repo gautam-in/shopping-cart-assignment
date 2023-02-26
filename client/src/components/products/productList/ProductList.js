@@ -8,6 +8,7 @@ import {
   selectFilteredProducts,
   SORT_PRODUCTS,
 } from "../../../redux/slice/filterSlice";
+import Pagination from "../../pagination/Pagination";
 import ProductItem from "../productItem/ProductItem";
 import styles from "./ProductList.module.scss";
 
@@ -17,6 +18,18 @@ const ProductList = ({ products }) => {
   const [sort, setSort] = useState("latest");
 
   const filteredProducts = useSelector(selectFilteredProducts);
+
+  // Pagination states
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage] = useState(9);
+
+  // Get Current Products
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = filteredProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
 
   const dispatch = useDispatch();
 
@@ -56,8 +69,12 @@ const ProductList = ({ products }) => {
 
         {/* Sort Products */}
         <div className={styles.sort}>
-          <label>Sort by:</label>
-          <select value={sort} onChange={(e) => setSort(e.target.value)}>
+          <label htmlFor="sortBy">Sort by:</label>
+          <select
+            value={sort}
+            id="sortBy"
+            onChange={(e) => setSort(e.target.value)}
+          >
             <option value="latest">Latest</option>
             <option value="lowest-price">Lowest Price</option>
             <option value="highest-price">Highest Price</option>
@@ -66,13 +83,21 @@ const ProductList = ({ products }) => {
           </select>
         </div>
       </div>
+      {products.length !== 0 && (
+        <Pagination
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          productsPerPage={productsPerPage}
+          totalProducts={filteredProducts.length}
+        />
+      )}
 
       <div className={grid ? `${styles.grid}` : `${styles.list}`}>
-        {filteredProducts.length === 0 ? (
+        {products.length === 0 ? (
           <p>No product found.</p>
         ) : (
           <>
-            {filteredProducts.map((product) => {
+            {currentProducts.map((product) => {
               return (
                 <div key={product.id}>
                   <ProductItem {...product} grid={grid} product={product} />
