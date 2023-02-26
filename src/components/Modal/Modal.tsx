@@ -1,7 +1,7 @@
 import React from "react";
 import './Modal.css'
 
-function Modal({children, setShowModal}){
+const Modal: React.FC<{children:any, setShowModal:Function}>=({children, setShowModal})=>{
     return(
         <div className="modal">
             <div className="modal-content bg-gray-200">

@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { UserReducerInterface, ActionInterface } from "./interface"
 
-const initialState = {
+const initialState:UserReducerInterface = {
   userId: null,
   userName: null,
   email: null,
@@ -11,19 +12,19 @@ export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    storeLoginData: (state, action) => {
+    storeLoginData: (state:UserReducerInterface, action:ActionInterface) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
       (state.userId = action.payload.userId),
         (state.userName = action.payload.userName),
-        (state.userEmail = action.payload.userEmail);
+        (state.email = action.payload.userEmail);
     },
-    storeLogoutData: (state) => {
-      (state.userId = ""), (state.userName = ""), (state.userEmail = "");
+    storeLogoutData: (state:UserReducerInterface) => {
+      (state.userId = null), (state.userName = ""), (state.email = "");
     },
-    setWindowSize: (state, action) => {
+    setWindowSize: (state:UserReducerInterface, action:ActionInterface) => {
       state.windowSize = action.payload;
     },
   },

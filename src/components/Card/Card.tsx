@@ -2,13 +2,15 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setCurrentCategory } from "../../redux/productSlice";
+import { Category, GlobalReducerInterface } from "../../redux/interface";
 import "./Card.css";
 
-function Card({ cardObj, i }) {
+const Card:React.FC<{cardObj:Category,i:number}>=({ cardObj, i }) =>{
+  
     const { imageUrl, name, description, key, id } = cardObj;
     const navigate=useNavigate();
     const dispatch=useDispatch();
-    const windowSize=useSelector(state=>state.user.windowSize);
+    const windowSize=useSelector((state:GlobalReducerInterface)=>state.user.windowSize);
 
     const handleCategorySelection=()=>{
       dispatch(setCurrentCategory(id));
@@ -19,7 +21,7 @@ function Card({ cardObj, i }) {
       {i % 2 == 0 ? (
         <>
           <div className="p-2">
-                      <img src={imageUrl} alt={name} className={`${windowSize>400?'card-height':'h-16'}`} />
+                      <img src={imageUrl} alt={name} className={`${windowSize && windowSize>400?'card-height':'h-16'}`} />
           </div>
           <div className="text-center">
             <div className="font-semibold text-xl">{name}</div>
@@ -35,7 +37,7 @@ function Card({ cardObj, i }) {
             <button className="bg-primary text-white px-4 py-2 pointer" onClick={handleCategorySelection}>{`Explore ${key}`}</button>
           </div>
           <div className="p-2">
-            <img src={imageUrl} alt={name} className={`${windowSize>400?'card-height':'h-20'}`}  />
+            <img src={imageUrl} alt={name} className={`${windowSize && windowSize>400?'card-height':'h-20'}`}  />
           </div>
         </>
       )}

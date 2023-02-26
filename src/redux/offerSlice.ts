@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { ActionInterface, OfferReducerInterface } from "./interface";
 
-const initialState = {
+const initialState: OfferReducerInterface = {
   offers: []
 };
 
@@ -8,7 +9,7 @@ export const offerSlice = createSlice({
   name: "offer",
   initialState,
   reducers: {
-    setOffers: (state, action) => {
+    setOffers: (state:OfferReducerInterface, action:ActionInterface) => {
       state.offers = action.payload;
     },
   },

@@ -46,3 +46,15 @@ code {
 .column{
   flex-direction: column;
 }
+
+.layout-screen{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 1fr 50px;
+  row-gap: 10px;
+  background-color: #dddddd;
+}
+
+.gap-20{
+  gap:20px
+}

@@ -1,14 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState={
+import { CartReducerInterface, ActionInterface, Product } from "./interface";
+
+const initialState:CartReducerInterface={
     cartList:{}
+}
+
+interface CartActionInterface{
+    type: string;
+    payload:Product
 }
 export const cartSlice=createSlice({
     name:"cart",
     initialState,
     reducers:{
-        addToCartList:(state,action)=>{
+        addToCartList:(state:CartReducerInterface, action:CartActionInterface)=>{
             // action.payload.count=1;
-            const product={...action.payload, count:1}
+            const product:Product={...action.payload, count:1}
             state.cartList[action.payload.id]=product
         },
         deleteFromCartList:(state, action)=>{

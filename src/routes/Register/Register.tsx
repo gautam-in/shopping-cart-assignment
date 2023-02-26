@@ -4,14 +4,15 @@ import InputText from "../../components/InputText/InputText";
 import { addUserAPI } from "./api";
 import {storeLoginData} from '../../redux/userSlice'
 import { useNavigate } from "react-router-dom";
+import { GlobalReducerInterface } from "../../redux/interface";
 
-function Register({}) {
-  const windowSize = useSelector((state) => state.user.windowSize);
+const Register:React.FC<{}>=({})=> {
+  const windowSize = useSelector((state:GlobalReducerInterface) => state.user.windowSize);
   const [error, setError] = useState("");
   const dipatch=useDispatch();
   const navigate = useNavigate();
 
-  const emailValidation = (emailText) => {
+  const emailValidation = (emailText:string):boolean => {
     const regex =
       /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     if (!emailText || regex.test(emailText) === false) {
@@ -20,7 +21,7 @@ function Register({}) {
     }
     return true;
   };
-  const passwordValidation = (passwordText, confirmPasswordText) => {
+  const passwordValidation = (passwordText:string, confirmPasswordText:string):boolean => {
     if (!passwordText || passwordText.length < 6) {
       setError("Password must be at least 6 characters long");
       return false;
@@ -36,7 +37,7 @@ function Register({}) {
     return true;
   };
 
-  const handleSignup = async(event) => {
+  const handleSignup = async(event:{[key:string]:any}) => {
     event.preventDefault();
     const { firstName, lastName, email, password, confirmPassword } =
       event.target;
@@ -62,16 +63,16 @@ function Register({}) {
   return (
     <div
       className={`bg-white p-4 ${
-        windowSize > 600 ? "flex justify-center" : "text-center"
+        windowSize && windowSize > 600 ? "flex justify-center" : "text-center"
       }`}
     >
-      <div className={`${windowSize > 600 ? "w-1/3" : ""} text-center mr-4`}>
+      <div className={`${windowSize && windowSize > 600 ? "w-1/3" : ""} text-center mr-4`}>
         <header className="text-xl font-bold my-4">Signup</header>
         <p className="font-semibold">
           We do not share your personal details with anyone
         </p>
       </div>
-      <div className={`${windowSize > 600 ? "w-1/3" : " mt-4 text-center"}`}>
+      <div className={`${windowSize && windowSize > 600 ? "w-1/3" : " mt-4 text-center"}`}>
         <form onSubmit={handleSignup}>
           <InputText label="First Name" name="firstName" />
           <InputText label="Last Name" name="lastName" />

@@ -1,8 +1,8 @@
 import React from "react";
 
-function Footer({}) {
+const Footer:React.FC<{}>=({})=> {
     return (
-        <div className="bg-gray-200 text-center font-12 p-2">
+        <div className="font-12">
             Copyright &#169; 2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd.
         </div>
     )

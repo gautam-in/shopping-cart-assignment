@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { ProductReducerInterface } from "./interface";
 
-const initialState = {
+const initialState:ProductReducerInterface = {
   products: [],
   categories: [],
   currentCategory: null,
 };
 
-export const productSlice = createSlice({
+export const productSlice= createSlice({
   name: "products",
   initialState,
   reducers: {

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Offers } from "../../redux/interface";
 import './Caraousel.css';
 
-function Caraousel({ banners }) {
+const Caraousel:React.FC<{banners:Offers[]}>=({ banners }) =>{
   const [currentSlide, setCurrentSlide] = useState(0);
   useEffect(() => {
       const interval = setInterval(() => {
