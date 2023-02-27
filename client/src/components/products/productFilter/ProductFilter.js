@@ -30,7 +30,7 @@ const ProductFilter = () => {
   const filterProducts = (event) => {
     const categoryId = event.target.getAttribute("data-item-id");
     dispatch(SET_ACTIVE_CATEGORY({ category: categoryId }));
-    dispatch(FILTER_BY_CATEGORY({ products, category: categoryId }));
+    dispatch(FILTER_BY_CATEGORY({ products, category }));
   };
 
   useEffect(() => {

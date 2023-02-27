@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { lazy, useEffect, useState } from "react";
 import { FaCogs } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import spinnerImg from "../../assets/images/spinner.jpg";
 import useFetchCollection from "../../customHooks/useFetchCollection";
 import { selectProducts, STORE_PRODUCTS } from "../../redux/slice/productSlice";
-import ProductFilter from "./productFilter/ProductFilter";
-import ProductList from "./productList/ProductList";
+
 import styles from "./Products.module.scss";
+
+const ProductFilter = lazy(() => import("./productFilter/ProductFilter"));
+const ProductList = lazy(() => import("./productList/ProductList"));
+
 const Products = () => {
   const { data, isLoading } = useFetchCollection("products");
   const [showFilter, setShowFilter] = useState(false);
@@ -42,13 +44,26 @@ const Products = () => {
           </aside>
           <div className={styles.content}>
             {isLoading ? (
-              <img
-                src={spinnerImg}
-                alt="Loading.."
-                style={{ width: "50px" }}
-                className="--center-all"
-              />
+              <picture>
+                <source
+                  srcset="/static/images/spinner.webp"
+                  type="image/webp"
+                ></source>
+                <img
+                  src="/static/images/spinner.jpg"
+                  alt="Loading.."
+                  style={{ width: "50px" }}
+                  className="--center-all"
+                />
+              </picture>
             ) : (
+              // <img
+              //   src={spinnerImg}
+              //   alt="Loading.."
+              //   style={{ width: "50px" }}
+              //   className="--center-all"
+              //   loading="lazy"
+              // />
               <ProductList products={products} />
             )}
             <div className={styles.icon} onClick={toggleFilter}>

@@ -80,7 +80,7 @@ const Login = () => {
       </form> */}
       <section className={`container ${styles.auth}`}>
         <div className={styles.img}>
-          <img src={loginImg} alt="Login" width="400" />
+          <img src={loginImg} alt="Login" width="400" loading="lazy" />
         </div>
 
         <Card>

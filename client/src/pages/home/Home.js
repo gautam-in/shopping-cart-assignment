@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
-import { Categories, Products, Slider } from "../../components";
+import React, { lazy, useEffect } from "react";
 
+const Categories = lazy(() => import("../../components/categories/Categories"));
+const Products = lazy(() => import("../../components/products/Products"));
+const Slider = lazy(() => import("../../components/slider/Slider"));
 const Home = () => {
   const url = window.location.href;
 

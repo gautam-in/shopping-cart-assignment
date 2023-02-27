@@ -64,15 +64,30 @@ const Slider = () => {
               >
                 {index === currentSlide && (
                   <>
-                    <img src={bannerImageUrl} alt="bannerImageAlt" />
-                    <div className="content">
-                      {/* <h2>{heading}</h2> */}
+                    <picture>
+                      <source
+                        srcset={`${bannerImageUrl}.webp`}
+                        width="100%"
+                        height="100%"
+                        type="image/webp"
+                      ></source>
+                      <img
+                        src={`${bannerImageUrl}.jpg`}
+                        alt={bannerImageAlt}
+                        width="100%"
+                        height="100%"
+                      />
+                    </picture>
+
+                    {/* <img src={bannerImageUrl} alt={bannerImageAlt} /> */}
+
+                    {/* <div className="content">
                       <p>{bannerImageAlt}</p>
                       <hr />
                       <a href="#products" className="--btn --btn-primary">
                         Shop Now
                       </a>
-                    </div>
+                    </div> */}
                   </>
                 )}
               </div>

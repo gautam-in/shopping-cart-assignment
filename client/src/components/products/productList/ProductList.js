@@ -62,7 +62,6 @@ const ProductList = ({ products }) => {
             value={search}
             onChange={(e) => {
               setSearch(e.target.value);
-              dispatch(FILTER_BY_SEARCH({ products, search: e.target.value }));
             }}
           />
         </div>

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import spinnerImg from "../../../assets/images/spinner.jpg";
 import useFetchCollection from "../../../customHooks/useFetchCollection";
 import {
   ADD_TO_CART,
@@ -44,12 +43,28 @@ const ProductDetails = () => {
         <Link to="/#products">&larr; Back To Products</Link>
       </div>
       {product === null ? (
-        <img src={spinnerImg} alt="Loading.." style={{ width: "50px" }} />
+        <picture>
+          <source
+            srcset="/static/images/spinner.webp"
+            type="image/webp"
+          ></source>
+          <img
+            src="/static/images/spinner.jpg"
+            alt="Loading.."
+            style={{ width: "50px" }}
+          />
+        </picture>
       ) : (
         <>
           <div className={styles.details}>
             <div className={styles.img}>
-              <img src={product.imageURL} alt={product.name} />
+              <img
+                src={product.imageURL}
+                alt={product.name}
+                width="100%"
+                height="100%"
+                loading="lazy"
+              />
             </div>
             <div className={styles.content}>
               <h3>{product.name}</h3>

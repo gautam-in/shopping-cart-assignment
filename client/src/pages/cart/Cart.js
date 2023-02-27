@@ -96,6 +96,7 @@ const Cart = () => {
                           src={imageURL}
                           alt={name}
                           style={{ width: "100px" }}
+                          loading="lazy"
                         />
                       </td>
                       <td>{price}</td>
@@ -132,7 +133,7 @@ const Cart = () => {
               </tbody>
             </table>
             <div className={styles.banner}>
-              <img src={priceBannerImg} alt="" />
+              <img src={priceBannerImg} alt={priceBannerImg} loading="lazy" />
               <span>You won't find it cheaper anyway</span>
             </div>
             <div className={styles.summary}>

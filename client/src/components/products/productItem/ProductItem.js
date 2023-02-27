@@ -36,7 +36,13 @@ const ProductItem = ({
     <Card cardClass={grid ? `${styles.grid}` : `${styles.list}`}>
       <Link to={`/product-details/${id}`}>
         <div className={styles.img}>
-          <img src={imageURL} alt={name} />
+          <img
+            src={imageURL}
+            alt={name}
+            width="100%"
+            height="100%"
+            loading="lazy"
+          />
         </div>
       </Link>
       <div className={styles.content}>

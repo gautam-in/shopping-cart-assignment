@@ -32,7 +32,7 @@ const Reset = () => {
       {isLoading && <Loader />}
       <section className={`container ${styles.auth}`}>
         <div className={styles.img}>
-          <img src={resetImg} alt="Reset Password" width="400" />
+          <img src={resetImg} alt="Reset Password" width="400" loading="lazy" />
         </div>
 
         <Card>

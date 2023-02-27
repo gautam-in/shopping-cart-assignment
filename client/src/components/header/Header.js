@@ -5,7 +5,6 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import logoImg from "../../assets/images/logo_2x.png";
 import { auth } from "../../firebase/config";
 import {
   REMOVE_ACTIVE_USER,
@@ -20,7 +19,20 @@ import styles from "./Header.module.scss";
 const logo = (
   <div className={styles.logo}>
     <Link to="/" aria-label="sabka bazar">
-      <img src={logoImg} alt="" />
+      <picture>
+        <source
+          srcset="/static/images/logo_2x.png"
+          type="image/webp"
+          width="100%"
+          height="100%"
+        ></source>
+        <img
+          src="/static/images/logo_2x.png"
+          alt="Logo"
+          width="100%"
+          height="100%"
+        />
+      </picture>
     </Link>
   </div>
 );

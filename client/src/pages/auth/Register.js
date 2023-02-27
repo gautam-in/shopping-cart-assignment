@@ -89,7 +89,7 @@ const Register = () => {
           </div>
         </Card>
         <div className={styles.img}>
-          <img src={registerImg} alt="Register" width="400" />
+          <img src={registerImg} alt="Register" width="400" loading="lazy" />
         </div>
       </section>
     </>
