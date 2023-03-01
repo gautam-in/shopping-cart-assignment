@@ -8,8 +8,22 @@ Clone this repo and run following command for starting the mock server:
 
 ```
 npm install
-npm run start
+npm run dev
 # or
 yarn install
-yarn start
+yarn run dev
 ```
+
+Shopping Cart - sabka bazaar
+
+## Following functionality completed with responsive
+
+- Home page which contains slider for offers, categories, and products component
+- filtering by category, search and sorting in products and pagination
+- contacts page
+- Sign In/ Register/ Reset
+- authentication is done with firebase email & password and Google sign in
+- cart data is being stored in local storage
+- handled categories to products on the button click
+- product item page
+- handled nav list options in header according to user authentication status

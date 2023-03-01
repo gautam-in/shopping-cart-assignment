@@ -1,0 +1,43 @@
+.filter {
+  h4 {
+    margin-top: 1rem;
+  }
+  .category button {
+    display: block;
+    text-align: left;
+    width: 90%;
+    height: 3rem;
+    font-size: 1.5rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-bottom: 1px solid #777;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .filter {
+    .category button {
+      width: 100%;
+    }
+  }
+}
+
+.active {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2px;
+  height: 100%;
+  background-color: var(--color-danger);
+}
