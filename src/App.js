@@ -3,18 +3,24 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import CssBaseline from "@mui/material/CssBaseline";
 import Home from "components/home/Home";
 import PageNotFound from "components/PageNotFound";
-import Product from "components/products/Product";
+// import Product from "components/products/ProductItem";
 import Products from "components/products/Products";
 import Navbar from "components/navbar/Navbar";
 import { Container, createTheme, ThemeProvider } from "@mui/material";
-import SignIn from "components/signIn/SignIn";
-import Register from "components/register/Register";
+import SignIn from "components/signinRegister/SignIn";
+import Register from "components/signinRegister/Register";
 import Footer from "components/footer/Footer";
+import Notification from "components/notification/Notification";
+import { blue } from "@mui/material/colors";
+import { isAuthenticated } from "utils/support";
 
 const theme = createTheme({
   palette: {
     primary: {
       main: "#ab003c",
+    },
+    secondary: {
+      main: blue[600],
     },
   },
 });
@@ -29,28 +35,36 @@ const queryClient = new QueryClient({
   },
 });
 
+const authRoutes = () => {
+  if (isAuthenticated) {
+    return (
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    );
+  } else {
+    return (
+      <Routes>
+        <Route path="/" element={<SignIn />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    );
+  }
+};
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <QueryClientProvider client={queryClient}>
-        <div className="App">
+        <div style={{ background: "#f8f8f8" }}>
           <Navbar />
-          <Container>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/products">
-                <Route index element={<Products />} />
-                <Route path=":id" element={<Product />} />
-              </Route>
-              <Route path="/sign-in" element={<SignIn />} />
-              <Route path="/register" element={<Register />} />
-
-              <Route path="*" element={<PageNotFound />} />
-            </Routes>
-          </Container>
-
+          <Container maxWidth="xl">{authRoutes()}</Container>
           <Footer />
+          <Notification />
         </div>
       </QueryClientProvider>
     </ThemeProvider>

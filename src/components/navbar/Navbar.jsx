@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useAtom } from "jotai";
+import {isEmpty} from 'lodash'
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -11,20 +13,14 @@ import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Logo from "assets/images/logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { grey } from "@mui/material/colors";
 import { styled, useTheme } from "@mui/material";
-
-const leftNavPages = [
-  { name: "Home", path: "/" },
-  { name: "Products", path: "/products" },
-];
-
-const rightNavPages = [
-  { name: "Sign In", path: "/sign-in" },
-  { name: "Register", path: "/register" },
-];
+import { isAuthenticated, leftNavPages, rightNavPages } from "utils/support";
+import { isCartDialogOpenAtom, productsInCartAtom } from "utils/atoms";
+import CartDialog from "components/cart/CartDialog";
 
 const TypographyStyled = styled(Typography)(() => ({
   margin: "0.2rem 1rem",
@@ -32,11 +28,18 @@ const TypographyStyled = styled(Typography)(() => ({
   display: "block",
   textTransform: "capitalize",
   fontSize: "1.2rem",
+  ':hover': {
+    cursor: 'pointer'
+  }
 }));
 
 function Navbar() {
-//   const navigate = useNavigate();
   const theme = useTheme();
+  const navigate = useNavigate();
+
+  const [isCartDialogOpen, setIsCartDialogOpen] = useAtom(isCartDialogOpenAtom);
+
+  const [cartItems] = useAtom(productsInCartAtom);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -58,6 +61,12 @@ function Navbar() {
     setAnchorElNav(null);
   };
 
+  const onLogoutHandler = () => {
+    localStorage.removeItem("isAuthenticated");
+    navigate("/");
+    window.location.reload();
+  };
+
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu
@@ -75,19 +84,28 @@ function Navbar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      {rightNavPages.map((page) => (
-        <MenuItem key={page.name}>
-          <NavLink
-            to={page.path}
-            style={({ isActive }) => ({
-              color: isActive ? theme.palette.primary.main : "none",
-              textDecoration: isActive ? "underline" : "none",
-            })}
-          >
-            <TypographyStyled sx={{ my: 0 }}>{page.name}</TypographyStyled>
-          </NavLink>
+      {isAuthenticated ? (
+        <MenuItem>
+          <TypographyStyled onClick={onLogoutHandler} sx={{ my: 0 }}>
+            Logout
+          </TypographyStyled>
         </MenuItem>
-      ))}
+      ) : (
+        rightNavPages.map((page) => (
+          <MenuItem key={page.name}>
+            <NavLink
+              to={page.path}
+              style={({ isActive }) => ({
+                color: isActive ? theme.palette.primary.main : "none",
+                textDecoration: isActive ? "underline" : "none",
+                fontWeight: 600,
+              })}
+            >
+              <TypographyStyled sx={{ my: 0 }}>{page.name}</TypographyStyled>
+            </NavLink>
+          </MenuItem>
+        ))
+      )}
     </Menu>
   );
 
@@ -95,7 +113,7 @@ function Navbar() {
     <Box>
       <AppBar
         position="static"
-        sx={{ backgroundColor: "#fff", color: grey[800], marginBottom: '2rem' }}
+        sx={{ backgroundColor: "#fff", color: grey[800], marginBottom: "2rem" }}
       >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
@@ -139,6 +157,7 @@ function Navbar() {
                     style={({ isActive }) => ({
                       color: isActive ? theme.palette.primary.main : "none",
                       textDecoration: isActive ? "underline" : "none",
+                      fontWeight: 600,
                     })}
                   >
                     <MenuItem key={page.name} onClick={handleCloseNavMenu}>
@@ -162,6 +181,7 @@ function Navbar() {
                   style={({ isActive }) => ({
                     color: isActive ? theme.palette.primary.main : "none",
                     textDecoration: isActive ? "underline" : "none",
+                    fontWeight: 600,
                   })}
                 >
                   <TypographyStyled
@@ -178,26 +198,40 @@ function Navbar() {
               size="large"
               aria-label="show 4 new mails"
               color="inherit"
+              onClick={() => setIsCartDialogOpen(true)}
             >
-              <Badge badgeContent={4} color="error">
-                <ShoppingCartIcon />
-              </Badge>
+              {!isEmpty(cartItems) ? (
+                <Badge badgeContent={cartItems?.length} color="error">
+                  <ShoppingCartIcon />
+                </Badge>
+              ) : (
+                <Badge badgeContent={0} color="error">
+                  <AddShoppingCartIcon />
+                </Badge>
+              )}
             </IconButton>
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
-              {rightNavPages.map((page) => (
-                <NavLink
-                  key={page.name}
-                  to={page.path}
-                  style={({ isActive }) => ({
-                    color: isActive ? theme.palette.primary.main : "none",
-                    textDecoration: isActive ? "underline" : "none",
-                  })}
-                >
-                  <TypographyStyled key={page.name}>
-                    {page.name}
-                  </TypographyStyled>
-                </NavLink>
-              ))}
+              {isAuthenticated ? (
+                <TypographyStyled onClick={onLogoutHandler} sx={{ my: 0 }}>
+                  Logout
+                </TypographyStyled>
+              ) : (
+                rightNavPages.map((page) => (
+                  <NavLink
+                    key={page.name}
+                    to={page.path}
+                    style={({ isActive }) => ({
+                      color: isActive ? theme.palette.primary.main : "none",
+                      textDecoration: isActive ? "underline" : "none",
+                      fontWeight: 600,
+                    })}
+                  >
+                    <TypographyStyled key={page.name}>
+                      {page.name}
+                    </TypographyStyled>
+                  </NavLink>
+                ))
+              )}
             </Box>
 
             <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -216,6 +250,7 @@ function Navbar() {
         </Container>
       </AppBar>
       {renderMobileMenu}
+      {isCartDialogOpen && <CartDialog />}
     </Box>
   );
 }
