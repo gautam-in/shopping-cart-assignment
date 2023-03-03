@@ -1,0 +1,22 @@
+.border-bottom{
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #ffffff;
+}
+
+.sidebar-width{
+    min-width:20%
+}
+
+
+    /* @media only screen and (min-width: 400px) and (max-width:900px){
+        .sidebar-width{
+            width: 200px;
+        }
+        
+    }
+    @media only screen and (min-width: 900px){
+        .sidebar-width{
+            width: 300px;
+        }
+    } */
