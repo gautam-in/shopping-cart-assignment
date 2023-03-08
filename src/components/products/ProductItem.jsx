@@ -70,8 +70,9 @@ const ProductItem = ({ productsState }) => {
                   alt={product?.name}
                   style={{
                     width: "100%",
-                    height: "100%",
+                    height: "90%",
                   }}
+                  loading='lazy'
                 />
               </Box>
               <Box sx={{ flex: 1 }}>

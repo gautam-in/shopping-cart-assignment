@@ -16,6 +16,7 @@ const Layout = ({ name, description, children }) => {
           <Box sx={{ textAlign: "left" }}>
             <Typography
               variant="h4"
+              aria-label={name}
               my={2}
               sx={{ fontWeight: 600, letterSpacing: "1px" }}
             >

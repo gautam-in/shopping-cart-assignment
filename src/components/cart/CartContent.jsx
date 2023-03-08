@@ -7,6 +7,7 @@ import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import { productsInCartAtom, togglerAtom } from "utils/atoms";
 import { useEffect } from "react";
 import { updateCartState } from "utils/support";
+import { Link } from "react-router-dom";
 
 const CartContent = () => {
   const theme = useTheme();
@@ -53,26 +54,38 @@ const CartContent = () => {
               }}
             >
               <img src={item?.imageURL} alt={item?.name} height="120" />
-              <Box>
+              <Box sx={{ flex: 1 }}>
                 <Typography sx={{ my: 2, fontWeight: 600 }}>
                   {item?.name}
                 </Typography>
                 <Box sx={{ display: "inline-flex", gap: "1.5rem" }}>
-                  <RemoveCircleIcon
+                  <Link
+                    aria-label={`reduce quantity of ${item?.name} by one`}
                     onClick={() => onRemoveQuantity(item)}
-                    sx={{
-                      color: theme.palette.primary.main,
-                      cursor: "pointer",
-                    }}
-                  />
-                  <Typography>{item.quantity}</Typography>
-                  <AddCircleIcon
+                  >
+                    <RemoveCircleIcon
+                      sx={{
+                        color: theme.palette.primary.main,
+                        cursor: "pointer",
+                      }}
+                    />
+                  </Link>
+
+                  <Typography aria-describedby={`${item.quantity} quantity`}>
+                    {item.quantity}
+                  </Typography>
+                  <Link
+                    aria-label={`increase quantity of ${item?.name} by one`}
                     onClick={() => onAddQuntity(item)}
-                    sx={{
-                      color: theme.palette.primary.main,
-                      cursor: "pointer",
-                    }}
-                  />
+                  >
+                    <AddCircleIcon
+                      sx={{
+                        color: theme.palette.primary.main,
+                        cursor: "pointer",
+                      }}
+                    />
+                  </Link>
+
                   <CloseIcon />
                   <Typography sx={{ fontWeight: 500 }}>
                     Rs. {item.price}
@@ -80,7 +93,10 @@ const CartContent = () => {
                 </Box>
               </Box>
 
-              <Typography sx={{ fontWeight: 600 }}>
+              <Typography
+                sx={{ fontWeight: 600 }}
+                aria-label={item?.quantity * item?.price}
+              >
                 Rs. {item?.quantity * item?.price}
               </Typography>
             </Box>

@@ -5,17 +5,22 @@ import { Box, Button, Container, Paper, Typography } from "@mui/material";
 import Carousel from "components/carousel/Carousel";
 import { getCategoriesAPI } from "utils/services";
 import Spinner from "components/spinner/Spinner";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   const categories = useQuery("get-categories", getCategoriesAPI);
+
+  const onExploreClick = (categoryId) => {
+    navigate("/products", { state: { data: categoryId } });
+  };
 
   if (categories?.isLoading) return <Spinner />;
 
   return (
-      <Box sx={{ marginBottom: "5rem" }}>
-        <Carousel />
-          <Container maxWidth='lg'>
+    <Box sx={{ marginBottom: "5rem" }}>
+      <Carousel />
+      <Container maxWidth="lg">
         {orderBy(categories?.data?.data, ["order"], ["asc"])
           .filter((item) => item?.enabled)
           .map((category) => (
@@ -45,6 +50,7 @@ const Home = () => {
                     height: "auto",
                   }}
                   alt={category?.name}
+                  loading="lazy"
                 />
               </Box>
               <Box sx={{ flex: 1.85 }}>
@@ -58,7 +64,6 @@ const Home = () => {
                 <Typography sx={{ margin: "2rem 0" }} variant="body1">
                   {category?.description}
                 </Typography>
-                <Link to='/products' style={{textDecoration: 'none'}} state={{data: category?.id}}>
                 <Button
                   variant="contained"
                   sx={{
@@ -66,17 +71,16 @@ const Home = () => {
                     letterSpacing: "0.6px",
                     fontWeight: "500",
                   }}
+                  onClick={() => onExploreClick(category?.id)}
                   size="large"
                 >
                   Explore {category?.key}
                 </Button>
-                </Link>
-
               </Box>
             </Paper>
           ))}
-    </Container>
-      </Box>
+      </Container>
+    </Box>
   );
 };
 

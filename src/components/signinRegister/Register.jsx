@@ -9,7 +9,7 @@ import {
 import Visibility from "@mui/icons-material/Visibility";
 import Alert from "@mui/material/Alert";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { errorHandler, registerInputFields } from "utils/support";
 import Layout from "./Layout";
@@ -77,7 +77,7 @@ const Register = () => {
       <Box sx={{ display: "block" }}>
         <form onSubmit={onSubmitHandler}>
           {registerInputFields.map((item) => (
-            <div key={item.id}>
+            <Fragment key={item.id}>
               <TextField
                 sx={{ my: "1rem" }}
                 fullWidth
@@ -102,7 +102,7 @@ const Register = () => {
                     item.type === "password" ? (
                       <InputAdornment position="end">
                         <IconButton
-                          aria-label="toggle password visibility"
+                          aria-label={`toggle ${item.label} visibility`}
                           onClick={() => handleClickShowPassword(item.id)}
                         >
                           {showPassword && item.id === onToggleId ? (
@@ -117,7 +117,7 @@ const Register = () => {
                     ),
                 }}
               />
-            </div>
+            </Fragment>
           ))}
           <Box sx={{ minHeight: "55px" }}>
             {errorState.isError && (

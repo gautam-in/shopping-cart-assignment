@@ -40,6 +40,7 @@ const Carousel = () => {
               src={banner?.bannerImageUrl}
               alt={banner?.bannerImageAlt}
               style={{ marginBottom: "3rem" }}
+              loading='lazy'
             />
           </SwiperSlide>
         ))}

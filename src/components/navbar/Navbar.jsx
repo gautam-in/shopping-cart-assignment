@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useAtom } from "jotai";
-import {isEmpty} from 'lodash'
+import { isEmpty } from "lodash";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -15,7 +15,7 @@ import MoreIcon from "@mui/icons-material/MoreVert";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import Logo from "assets/images/logo.png";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { grey } from "@mui/material/colors";
 import { styled, useTheme } from "@mui/material";
 import { isAuthenticated, leftNavPages, rightNavPages } from "utils/support";
@@ -28,9 +28,9 @@ const TypographyStyled = styled(Typography)(() => ({
   display: "block",
   textTransform: "capitalize",
   fontSize: "1.2rem",
-  ':hover': {
-    cursor: 'pointer'
-  }
+  ":hover": {
+    cursor: "pointer",
+  },
 }));
 
 function Navbar() {
@@ -86,9 +86,9 @@ function Navbar() {
     >
       {isAuthenticated ? (
         <MenuItem>
-          <TypographyStyled onClick={onLogoutHandler} sx={{ my: 0 }}>
-            Logout
-          </TypographyStyled>
+          <Link style={{ textDecoration: "none" }} onClick={onLogoutHandler}>
+            <TypographyStyled sx={{ my: 0 }}>Logout</TypographyStyled>
+          </Link>
         </MenuItem>
       ) : (
         rightNavPages.map((page) => (
@@ -174,29 +174,30 @@ function Navbar() {
               <img src={Logo} alt="Logo" height={50} />
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {isAuthenticated && leftNavPages.map((page) => (
-                <NavLink
-                  key={page.name}
-                  to={page.path}
-                  style={({ isActive }) => ({
-                    color: isActive ? theme.palette.primary.main : "none",
-                    textDecoration: isActive ? "underline" : "none",
-                    fontWeight: 600,
-                  })}
-                >
-                  <TypographyStyled
+              {isAuthenticated &&
+                leftNavPages.map((page) => (
+                  <NavLink
                     key={page.name}
-                    onClick={handleCloseNavMenu}
+                    to={page.path}
+                    style={({ isActive }) => ({
+                      color: isActive ? theme.palette.primary.main : "none",
+                      textDecoration: isActive ? "underline" : "none",
+                      fontWeight: 600,
+                    })}
                   >
-                    {page.name}
-                  </TypographyStyled>
-                </NavLink>
-              ))}
+                    <TypographyStyled
+                      key={page.name}
+                      onClick={handleCloseNavMenu}
+                    >
+                      {page.name}
+                    </TypographyStyled>
+                  </NavLink>
+                ))}
             </Box>
 
             <IconButton
               size="large"
-              aria-label="show 4 new mails"
+              aria-label={`${cartItems?.length ?? 0} items in cart`}
               color="inherit"
               onClick={() => setIsCartDialogOpen(true)}
             >
@@ -212,9 +213,12 @@ function Navbar() {
             </IconButton>
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
               {isAuthenticated ? (
-                <TypographyStyled onClick={onLogoutHandler} sx={{ my: 0 }}>
-                  Logout
-                </TypographyStyled>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  onClick={onLogoutHandler}
+                >
+                  <TypographyStyled sx={{ my: 0 }}>Logout</TypographyStyled>
+                </Link>
               ) : (
                 rightNavPages.map((page) => (
                   <NavLink

@@ -49,7 +49,7 @@ function BootstrapDialogTitle(props) {
       {children}
       {onClose ? (
         <IconButton
-          aria-label="close"
+          aria-label="close cart dialog"
           onClick={onClose}
           sx={{
             position: "absolute",
@@ -90,23 +90,27 @@ export default function CartDialog() {
     }
     if (!isEmpty(cartItems) && cartItems?.length > 1) {
       const total = cartItems?.reduce((acc, curr) => {
-        return acc?.quantity * acc?.price + curr?.quantity * curr?.price;
+        if (typeof acc !== "number") {
+          return acc?.quantity * acc?.price + curr?.quantity * curr?.price;
+        } else {
+          return acc + curr?.quantity * curr?.price;
+        }
       });
       setTotalPrice(total);
     }
-    if(isEmpty(cartItems)) setTotalPrice(0)
+    if (isEmpty(cartItems)) setTotalPrice(0);
   }, [toggler]);
 
   return (
     <BootstrapDialog
       onClose={handleClose}
-      aria-labelledby="customized-dialog-title"
+      aria-labelledby="cart-dialog"
       open={open}
       sx={{ minHeight: "60vh" }}
       maxWidth="md"
       fullWidth
     >
-      <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
+      <BootstrapDialogTitle id="cart-dialog" onClose={handleClose}>
         My Cart ({cartItems ? cartItems?.length : 0} item)
       </BootstrapDialogTitle>
       <DialogContent dividers sx={{ minHeight: "70vh", background: "#f8f8f8" }}>
@@ -132,6 +136,7 @@ export default function CartDialog() {
           }}
           autoFocus
           onClick={handleClose}
+          disabled={!cartItems?.length}
         >
           Proceed to Checkout
           <span style={{ display: "flex", alignItems: "center" }}>
