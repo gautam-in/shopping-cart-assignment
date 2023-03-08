@@ -44,7 +44,7 @@ const Home = () => {
                 <img
                   src={category?.imageUrl}
                   style={{
-                    maxWidth: "300px",
+                    maxWidth: "275px",
                     maxHeight: "250px",
                     width: "auto",
                     height: "auto",

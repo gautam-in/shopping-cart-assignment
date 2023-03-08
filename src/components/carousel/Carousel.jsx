@@ -28,8 +28,6 @@ const Carousel = () => {
       keyboard={true}
       modules={[Navigation, Pagination, Mousewheel, Keyboard]}
       className="mySwiper"
-      // onSlideChange={() => console.log("slide change")}
-      // onSwiper={(swiper) => console.log(swiper)}
       pagination={{ clickable: true }}
     >
       {orderBy(banners?.data?.data, ["order"], ["asc"])
@@ -40,7 +38,6 @@ const Carousel = () => {
               src={banner?.bannerImageUrl}
               alt={banner?.bannerImageAlt}
               style={{ marginBottom: "3rem" }}
-              loading='lazy'
             />
           </SwiperSlide>
         ))}
