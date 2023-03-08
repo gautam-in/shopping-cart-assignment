@@ -77,7 +77,7 @@ const Products = () => {
         <FormControl
           sx={{
             width: "100%",
-            display: { xs: "block", md: "none" },
+            display: { xs: "block", md: "none", zIndex: 1 },
             // position: "-webkit-sticky",
             position: "sticky",
             top: "0",

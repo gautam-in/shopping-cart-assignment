@@ -170,11 +170,11 @@ function Navbar() {
               </Menu>
             </Box>
 
-            <Box sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}>
+            <Box sx={{ display: { xs: "flex", md: "none" }, mr: 4 }}>
               <img src={Logo} alt="Logo" height={50} />
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {leftNavPages.map((page) => (
+              {isAuthenticated && leftNavPages.map((page) => (
                 <NavLink
                   key={page.name}
                   to={page.path}

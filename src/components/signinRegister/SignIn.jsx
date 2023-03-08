@@ -76,6 +76,7 @@ const SignIn = () => {
               <TextField
                 sx={{ my: "1rem" }}
                 fullWidth
+                color="secondary"
                 name={item.name}
                 onChange={formChangeHandler}
                 value={formState[item.name]}
