@@ -3,7 +3,6 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import CssBaseline from "@mui/material/CssBaseline";
 import Home from "components/home/Home";
 import PageNotFound from "components/PageNotFound";
-// import Product from "components/products/ProductItem";
 import Products from "components/products/Products";
 import Navbar from "components/navbar/Navbar";
 import { Container, createTheme, ThemeProvider } from "@mui/material";

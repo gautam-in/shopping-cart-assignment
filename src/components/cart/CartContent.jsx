@@ -115,7 +115,6 @@ const CartContent = () => {
         width: "100%",
         gap: "1rem",
         marginTop: "5rem",
-        // width: { xs: "320px", sm: "360px", md: "450px" },
       }}
     >
       <Typography variant="h5">No items in your cart</Typography>

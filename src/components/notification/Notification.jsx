@@ -28,7 +28,6 @@ export default function Notification() {
         autoHideDuration={6000}
         onClose={handleClose}
         key="bottom center"
-        // action={action}
       >
         <Alert
           onClose={handleClose}

@@ -36,10 +36,9 @@ const Register = () => {
     e.preventDefault();
     const errorObj = errorHandler(formState, true);
     setErrorState(errorObj);
-    // TODO: Pasword encryption
+    // TODO: User authentication-JWT setup, Pasword encryption
     if (!errorObj.isError) {
       localStorage.setItem("isAuthenticated", "true");
-      // console.log("user registered", formState);
       window.location.href = "/";
     }
   };

@@ -47,10 +47,9 @@ const SignIn = () => {
     e.preventDefault();
     const errorObj = errorHandler(formState);
     setErrorState(errorObj);
-    // TODO: Pasword encryption
+    // TODO: User auth-JWT, Pasword encryption
     if (!errorObj.isError) {
       localStorage.setItem("isAuthenticated", "true");
-      // console.log("user login", formState);
       window.location.href = "/";
     }
   };
