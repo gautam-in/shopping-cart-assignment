@@ -2,9 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Steps to start the app, Available Scripts:
 
 In the project directory, you can run:
+
+1. In the api directory, server will be up on 4000 port
+2. navigate to api directory run cmd : npm install -> npm run start
+3. In root directory create .env and add : REACT_APP_API_URL=http://localhost:4000
+4. Navigate to root directory, Run command npm install  ->  npm start
 
 ### `npm start`
 
