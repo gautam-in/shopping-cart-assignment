@@ -1,0 +1,60 @@
+@use 'variables';
+.lr-container{
+	margin-top: 45px;
+	padding: 0 12%;
+	display: flex;
+	@media screen and (max-width: variables.$medium) {
+		padding: 0;
+	}
+	@media screen and (max-width: variables.$small) {
+		flex-direction: column;
+	}
+	.lr__form__text{
+		margin-left:100px;
+		margin-right: 55px;
+	}
+	.lr__form{
+		@media screen and (max-width: variables.$medium) {
+			margin:0 20px;
+		}
+		form{
+			display: grid;
+			.form__group{
+				position: relative;
+				label{
+					opacity: 0.5;
+					position: absolute;
+					pointer-events: none;
+					transition: 0.2s ease all;
+					left: 15px;
+					top: 15px;
+				}
+				input{
+					width: 400px;
+					height: 40px;
+					border: 0;
+					border-bottom: 1px solid variables.$color-grey;
+					&:focus, &:valid {
+						border-bottom: 2px solid cyan !important;
+						outline: none;
+						+ label{
+							color:cyan;
+							top:-10px;
+							font-size: 85%;
+							opacity: 1;
+						}
+					}
+					margin-bottom:30px;
+					@media screen and (max-width: variables.$small) {
+						width: 100%;
+					}
+				}
+			}
+			button{
+				height: 40px;
+				margin-bottom: 15px;
+			}
+			
+		}
+	}
+}

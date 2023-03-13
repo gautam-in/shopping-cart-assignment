@@ -1,0 +1,203 @@
+@use "variables";
+.products__container {
+  padding: 0 12%;
+  display: flex;
+  @media screen and (max-width: variables.$small) {
+    padding: 0;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: variables.$medium) {
+    padding: 0;
+  }
+
+  .products__menu {
+    width: 25%;
+    background-color: variables.$color-grey;
+    .dropdownButton {
+      display: none;
+    }
+    @media screen and (max-width: variables.$small) {
+      width: 100%;
+      background-color: variables.$button-color;
+      .dropdownButton {
+        justify-content: space-between;
+        align-items: flex-end;
+        display: flex;
+        padding: 5px;
+        width: 100%;
+        height: 40px;
+      }
+
+      .menu-open {
+        display: block !important;
+      }
+    }
+    .product__links {
+      li {
+        height: 40px;
+        border-bottom: 1px dotted gray;
+        list-style: none;
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+      @media screen and (max-width: variables.$small) {
+        li {
+          display: none;
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .products__listing {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(200px, 1fr)
+    ); //repeat(4, 1fr);
+    grid-auto-rows: 430px;
+    width: 75%;
+
+    @media screen and (max-width: variables.$medium) {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-auto-rows: 310px;
+      width: 100%;
+	  grid-row-gap: 30px;
+    }
+    @media screen and (max-width: variables.$small) {
+      grid-template-columns: 1fr;
+      grid-auto-rows: 235px;
+      width: 100%;
+    }
+    .product__item {
+      margin: 10px;
+      width: 100%;
+      box-shadow: 9px 0px 6px -6px #f1efef;
+      @media screen and (max-width: variables.$medium) {
+        width: 96%;
+      }
+      @media screen and (max-width: variables.$small) {
+        width: 100%;
+      }
+      .product__item__sub {
+        width: 90%;
+        margin-left: 10px;
+        border-bottom: 1px dotted gray;
+        .product__data {
+          @media screen and (max-width: variables.$medium) {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+          }
+        }
+        .product__title {
+          height: 80px;
+          font-weight: bold;
+          @media screen and (max-width: variables.$small) {
+            height: 50px;
+          }
+          h3 {
+            margin-block-start: 0;
+            margin-block-end: 0;
+          }
+        }
+        .image__group {
+          height: 190px;
+          @media screen and (max-width: variables.$medium) {
+            height: 160px;
+            width: 170px;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .product__description_group {
+          @media screen and (max-width: variables.$medium) {
+            width: 50%;
+            height: 100%;
+          }
+        }
+        .product__description {
+          height: 80px;
+          padding: 9px 10px;
+          background-color: variables.$color-grey;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: smaller;
+          @media screen and (max-width: variables.$medium) {
+            height: 160px;
+          }
+          @media screen and (max-width: variables.$small) {
+            height: 95px;
+          }
+        }
+        .product__amount {
+          display: flex;
+          align-self: center;
+          margin: 10px 0;
+          justify-content: space-between;
+          @media screen and (max-width: variables.$medium) {
+            display: none;
+            small {
+              display: none;
+            }
+            button {
+              width: 100% !important;
+            }
+          }
+
+          @media screen and (max-width: variables.$small) {
+            margin: 20px 0;
+            display: block;
+            button {
+              width: 100% !important;
+            }
+          }
+
+          small {
+            align-self: center;
+          }
+          button {
+            background-color: variables.$button-color;
+            color: white;
+            height: 35px;
+            width: 95px;
+
+            border: 0;
+          }
+        }
+        .tablet__button {
+          display: none;
+          @media screen and (max-width: variables.$medium) {
+            display: block;
+            button {
+              width: 100% !important;
+              background-color: variables.$button-color;
+              color: white;
+              height: 35px;
+              width: 95px;
+              margin-bottom: 10px;
+              border: 0;
+            }
+          }
+          @media screen and (max-width: variables.$small) {
+            display: none;
+          }
+        }
+        .product__tablet_view {
+          @media screen and (max-width: variables.$medium) {
+            display: flex;
+          }
+          @media screen and (max-width: variables.$small) {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
