@@ -6,8 +6,8 @@ import CartProvider from "./store/CartProvider";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const LazyHomeComponent = React.lazy(() => import("./pages/home"));
 const LazyProductComponent = React.lazy(() => import("./pages/Products"));
-const LazyLoginComponent = React.lazy(() => import("./components/Login"));
-const LazyRegisterComponent = React.lazy(() => import("./components/Register"));
+const LazyLoginComponent = React.lazy(() => import("./pages/Login"));
+const LazyRegisterComponent = React.lazy(() => import("./pages/Register"));
 const LazyCartComponent = React.lazy(() => import("./components/Cart"));
 
 

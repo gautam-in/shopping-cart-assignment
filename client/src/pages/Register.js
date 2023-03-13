@@ -1,8 +1,8 @@
 import React,{useRef, useState} from 'react'
 import '../styles/loginregister.scss'
-import InputField from './UiComponents/InputField'
+import InputField from '../components/UiComponents/InputField'
 import Constants from '../utils.js/Constants'
-import ButtonComponent from './UiComponents/ButtonComponent'
+import ButtonComponent from '../components/UiComponents/ButtonComponent'
 const Register = () => {
 	document.title = "Register"
 	const [userCreated, setUserCreated] = useState(false);
