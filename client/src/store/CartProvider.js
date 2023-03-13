@@ -83,11 +83,11 @@ const CartProvider = (props) => {
 	);
 	const addItemToCartHandler = (item) => {
 		cartActionDispatch({ type: "ADD", item: item });
-		console.log(cartContext);
+		
 	};
 
 	const removeItemsToCartHandler = (id) => {
-		console.log("removed!!");
+		
 		cartActionDispatch({ type: "REMOVE", id: id });
 	};
 

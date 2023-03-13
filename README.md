@@ -13,3 +13,6 @@ npm run start
 yarn install
 yarn start
 ```
+
+run json server by below command:
+json-server --watch db.json

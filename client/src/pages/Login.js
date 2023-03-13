@@ -10,7 +10,7 @@ const Login = () => {
   const navigate = useNavigate();
   const emailRef = useRef();
   const passwordRef = useRef();
-  console.log(emailRef)
+
   const formSubmitHandler = (e) => {
     e.preventDefault();
     const email = emailRef.current.value;
@@ -53,6 +53,7 @@ const Login = () => {
             name="password"
             label="Password"
             ref={passwordRef}
+			title='jjjjajaja'
           />
           <ButtonComponent
             buttonText="Login"
