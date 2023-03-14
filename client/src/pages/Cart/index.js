@@ -12,7 +12,6 @@ export const Cart = () => {
     return cart?.reduce((acc, item) => acc + (item.price * item.count), 0);
   }, [cart]);
 
-  console.log('cart', cart);
 
   return (
     <div className={`${classes.cart} cart_preview ${isCartOpen ? 'active' : ''}`}>
