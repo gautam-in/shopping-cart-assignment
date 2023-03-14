@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ProductCard } from '../../components';
 import { useShopContext } from '../../store';
 import { useFetchAPI } from '../../hooks/useFetchAPI';
-import { Filters } from './Filters';
+import { Filters } from '../../components/Filters';
 import styles from './products.module.scss';
 
 export const Products = () => {
@@ -29,7 +29,7 @@ export const Products = () => {
    */
   const addToCart = (item) => {
     if (isAuth) {
-      setCart((cart) => [...cart, {...item, count: 1}]);
+      setCart((cart) => [...cart, { ...item, count: 1 }]);
     } else {
       navigate('/signup');
     }

@@ -1,3 +1,5 @@
 export * from "./Layout"
 export * from "./ProductsCategories"
 export * from "./Product"
+export * from "./Carousel"
+export * from "./Filters"

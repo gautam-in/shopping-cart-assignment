@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import styles from '../Signup/signup.module.scss';
+import { useShopContext } from '../../store';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -11,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
  */
 export const Signin = () => {
   const navigate = useNavigate();
+  const { setIsAuth } = useShopContext();
 
   const {
     register,
@@ -28,7 +30,8 @@ export const Signin = () => {
         return;
       }
       localStorage.setItem('activeUser', JSON.stringify(data));
-      navigate('/account');
+      setIsAuth(true);
+      navigate('/products');
     } catch (error) {
       console.log(error);
       toast.error('User not found!', { position: 'bottom-right' });

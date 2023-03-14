@@ -1,5 +1,3 @@
-@use '../../styles/colors' as colors;
-
 .container {
   display: grid;
   grid-template-columns: 250px 1fr;
@@ -16,20 +14,5 @@
 
   @media screen and (max-width: 500px) {
     display: block;
-  }
-}
-
-.filterList {
-  padding: 0;
-  li {
-    list-style: none;
-    font-size: 14px;
-    border-bottom: 1px solid #c2c2cc;
-    padding: 15px;
-    cursor: pointer;
-  }
-  .active {
-    color: white;
-    background-color: colors.$secondary;
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useShopContext } from '../../store';
-import styles from './products.module.scss';
+import styles from './filters.module.scss';
 
 /**
  * It renders a list of categories, and when a category is clicked, it sets the selected category in

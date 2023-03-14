@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel from 'nuka-carousel';
-import styles from './home.module.scss';
+import styles from './carousel.module.scss';
 
 /**
  * It takes in an array of data and returns a carousel of images

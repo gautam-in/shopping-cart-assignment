@@ -1,0 +1,16 @@
+@use '../../styles/colors' as colors;
+
+.filterList {
+  padding: 0;
+  li {
+    list-style: none;
+    font-size: 14px;
+    border-bottom: 1px solid #c2c2cc;
+    padding: 15px;
+    cursor: pointer;
+  }
+  .active {
+    color: white;
+    background-color: colors.$secondary;
+  }
+}

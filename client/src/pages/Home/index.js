@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { Banners } from './Banners';
+import { Banners } from '../../components/Carousel';
 import { useFetchAPI } from '../../hooks/useFetchAPI';
 import { CategoryCard } from '../../components';
 
