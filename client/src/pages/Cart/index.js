@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useShopContext } from '../../context';
+import { useShopContext } from '../../store';
 import classes from './cart.module.scss';
 import './cartPopup.scss';
 import { CartItem } from './CartItem';

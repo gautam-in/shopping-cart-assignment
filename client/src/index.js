@@ -5,7 +5,7 @@ import './index.scss';
 import { routes } from './routes';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Provider } from './context';
+import { Provider } from './store';
 
 const routers = createBrowserRouter(routes);
 

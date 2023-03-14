@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ProductCard } from '../../components';
-import { useShopContext } from '../../context';
+import { useShopContext } from '../../store';
 import { useFetchAPI } from '../../hooks/useFetchAPI';
 import { Filters } from './Filters';
 import styles from './products.module.scss';

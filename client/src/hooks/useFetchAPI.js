@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { axios } from '../utils/axios';
+import { axios } from '../services/axios';
 
 /**
  * It fetches data from a given URL and returns an object with the data, an error state, and a loading

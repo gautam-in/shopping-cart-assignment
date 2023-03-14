@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useShopContext } from '../../context';
+import { useShopContext } from '../../store';
 import { Link } from 'react-router-dom';
 import styles from './layout.module.scss';
 
