@@ -1,0 +1,40 @@
+.cartItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 0 20px;
+    margin: 20px 0;
+
+    .productDetails {
+        display: flex;
+        flex-direction: row;
+        padding: 15px 0;
+
+        .productImage {
+            width:100px;
+            height:auto;
+            padding: 5px;
+        }
+
+        .quantityButton {
+            background-color: #bf2856;
+            color: #fff;
+            margin: 0 5px;
+        }
+
+        .productPrice {
+            font-weight: 500;
+        }
+    }
+
+    .productPrice {
+        font-weight: 500;
+    }
+
+}
+
+.netPrice {
+    min-width: 60px;
+}

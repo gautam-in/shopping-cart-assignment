@@ -1,0 +1,90 @@
+.section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    box-shadow: 0px 15px 10px -15px #111;
+
+    .categoryDescriptionContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // flex-basis: 0;
+
+        .categoryTitle {
+            padding: 0;
+            margin: 0;
+        }
+
+        .categoryDescription {
+            text-align: center;
+            padding: 20px 0;
+        }   
+    }
+
+    .categoryImageContainer {
+        display: flex;
+        // flex-basis: 0;
+
+        .categoryImage {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+
+    .navbar {
+
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+
+        .menuList {
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+
+            li {
+                padding: 0 10px;
+
+                .activeMenu {
+                    color: blue;
+                }
+            }
+        }
+        .rightMenuList {
+            .registerMenu {
+                display: flex;
+                flex-direction: row;
+                font-size: 10px;
+                list-style-type: none;
+                padding: 0;
+
+                li {
+                    padding: 0 5px;
+                }
+            }
+
+            .cartBox {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                background-color: lightgray;
+                width: 100px;
+                min-height: 40px;
+                justify-content: center;
+
+                .cartIcon {
+                    width: 20px;
+                }
+            }
+        }
+    }
+}

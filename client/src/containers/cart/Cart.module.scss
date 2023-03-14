@@ -1,0 +1,63 @@
+
+
+.titleSection {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+    padding: 0;
+    margin: 20px 0;
+
+    .title {
+        padding: 0 5px 0 20px;
+    }
+}
+
+.cartLowestPriceSection {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    // justify-content: center;
+    align-items: center;
+    // padding: 0;
+    margin: 0 20px
+}
+
+.cartFooter {
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .promoText {
+        padding: 5px 0;
+    }
+    
+
+
+    .checkoutBtn {
+        width: 100%;
+        background-color: #be2857;
+        color: #fff;
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .checkoutText {
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        .totalPrice {
+            padding: 0 5px;
+        }
+    }
+}
+

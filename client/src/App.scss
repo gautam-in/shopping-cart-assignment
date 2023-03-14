@@ -1,0 +1,105 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+section {
+  padding: 20px 0;
+  // margin: 20px 0;
+}
+
+// body {
+//   background-color: lightgray;
+// }
+
+input {
+  width: 250px;
+  height: 40px;
+  margin: 5px;
+  border: none;
+  outline: none;
+  border-bottom: 1px red solid;
+}
+
+input :focus :focus-visible {
+  border: none;
+  outline: none;
+  border-bottom: 1px red solid;
+}
+
+.cartTheme {
+  background-color: lightgray;
+}
+
+.pageSection {
+  margin-top: 100px;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.pageNotFound {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 64px;
+  }
+
+  p {
+    font-size: 44px;
+  }
+}
+
+// 320px — 480px: Mobile devices
+// 481px — 768px: iPads, Tablets
+// 769px — 1024px: Small screens, laptops
+// 1025px — 1200px: Desktops, large screens
+// 1201px and more —  Extra large screens, TV
