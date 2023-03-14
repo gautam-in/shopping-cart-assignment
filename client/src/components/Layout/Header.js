@@ -38,7 +38,6 @@ export const Header = () => {
               </nav>
             ) : (
               <nav className={styles.nav_links_auth}>
-                <Link to="/signup">Checkout</Link>
                 <Link onClick={logout}>Logout</Link>
               </nav>
             )}
