@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react';
 import { axios } from '../utils/axios';
 
+/**
+ * It fetches data from a given URL and returns an object with the data, an error state, and a loading
+ * state
+ * @param url - The URL to fetch data from.
+ * @returns { ...state }
+ */
 export const useFetchAPI = (url) => {
   const [state, setState] = useState({
     data: [],
@@ -17,7 +23,7 @@ export const useFetchAPI = (url) => {
         setState({ data, isError: false, isLoading: false });
       } catch {
         setState((state) => ({ ...state, isError: true }));
-      } finally { 
+      } finally {
         setState((state) => ({ ...state, isLoading: false }));
       }
     };
