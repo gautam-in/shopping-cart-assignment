@@ -1,0 +1,21 @@
+.main-nav {
+	.nav-links {
+		@media (min-width: 1024px) {
+			margin-left: auto;
+		}
+
+		.nav-menu {
+			align-items: center;
+
+			.nav-item + .nav-item {
+				margin-left: 1rem;
+			}
+		}
+	}
+}
+
+.footer {
+	h5 {
+		margin-bottom: 0;
+	}
+}
