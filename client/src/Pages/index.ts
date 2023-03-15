@@ -1,6 +1,7 @@
 export * from './Home'
 
+export * as AuthPages from './Auth'
+
 export * from './ProductListing'
-export * from './ProductDetails'
 
 export * from './NotFound'
