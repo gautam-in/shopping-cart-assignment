@@ -47,7 +47,7 @@ const CartModal = ({ onClose }) => {
             cartBody
           }
           <LowestPriceMessage>
-            <img src="static/images/lowest-price.png" alt="static/images/lowest-price.png" />
+            <img src="images/lowest-price.png" alt="images/lowest-price.png" />
             <div>You won't find it cheaper anywhere</div>
           </LowestPriceMessage>
         </CartModalBody>
