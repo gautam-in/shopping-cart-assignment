@@ -10,7 +10,7 @@ export const Header = () => {
         <div className="nav-container">
           <Link to="/">
             <img
-              src="/assets/images/logo.png"
+              src="/static/images/logo.png"
               alt="Sabka Bazar logo"
               className="logo"
             />

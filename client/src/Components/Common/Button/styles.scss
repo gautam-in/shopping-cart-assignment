@@ -12,6 +12,11 @@
     background-color: var(--color-primary);
   }
 
+  &.dark {
+    color: var(--color-white);
+    background-color: var(--color-dark);
+  }
+
   &:disabled {
     opacity: 0.4;
     cursor: not-allowed;

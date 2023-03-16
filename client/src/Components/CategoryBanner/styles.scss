@@ -1,0 +1,28 @@
+.category-banner {
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--category-shadow);
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  img {
+    max-width: 200px;
+
+    @media (max-width: 767px) {
+      max-width: 100px;
+    }
+  }
+
+  .name,
+  .description {
+    margin-bottom: 2rem;
+  }
+
+  .name {
+    font-size: 1.2rem;
+  }
+}

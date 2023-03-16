@@ -1,25 +1,21 @@
-import { BrowserRouter as Router } from 'react-router-dom'
+import { AppRoutes } from "./Routes"
 
-import { AppRoutes } from './Routes'
+import { Header, Footer } from "./Components"
 
-import { Header, Footer } from './Components'
-
-import './App.scss'
+import "./App.scss"
 
 const App = () => {
-	return (
-		<div className="App">
-			<Router>
-				<Header />
+  return (
+    <div className="App">
+      <Header />
 
-				<main>
-					<AppRoutes />
-				</main>
+      <main>
+        <AppRoutes />
+      </main>
 
-				<Footer />
-			</Router>
-		</div>
-	)
+      <Footer />
+    </div>
+  )
 }
 
 export default App
