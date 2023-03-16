@@ -1,0 +1,24 @@
+.login {
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 3rem auto 0;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  .description {
+    margin-top: 2rem;
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+  }
+
+  button {
+    margin-top: 2rem;
+    width: 100%;
+  }
+}
