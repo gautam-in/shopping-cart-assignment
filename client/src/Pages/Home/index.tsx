@@ -1,7 +1,12 @@
 import { useQuery } from "react-query"
 import { Carousel } from "react-responsive-carousel"
 
-import { Button, CategoryBanner, Loader } from "../../Components"
+import {
+  Button,
+  CategoryBanner,
+  Loader,
+  CarouselIndicator,
+} from "../../Components"
 
 import { BannerType } from "./models"
 import { CategoryType } from "../../models"
@@ -53,26 +58,20 @@ export const HomePage = () => {
             showThumbs={false}
             renderArrowPrev={(clickHandler, hasPrev) =>
               hasPrev && (
-                <Button
-                  variant="dark"
-                  type="button"
-                  classes="prev-btn"
-                  handleClick={clickHandler}
-                >
-                  Prev
-                </Button>
+                <CarouselIndicator
+                  label="Prev"
+                  direction="prev"
+                  clickHandler={clickHandler}
+                />
               )
             }
             renderArrowNext={(clickHandler, hasNext, labelNext) =>
               hasNext && (
-                <Button
-                  variant="dark"
-                  type="button"
-                  classes="next-btn"
-                  handleClick={clickHandler}
-                >
-                  Next
-                </Button>
+                <CarouselIndicator
+                  label="Next"
+                  direction="next"
+                  clickHandler={clickHandler}
+                />
               )
             }
           >

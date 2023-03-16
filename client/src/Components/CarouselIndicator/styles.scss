@@ -1,0 +1,17 @@
+.carousel-indicator {
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    opacity: 0.4;
+
+    &.next-btn {
+      right: 0;
+    }
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+}
