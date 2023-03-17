@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: column;
   margin-right: 1.5rem;
-  color: var(--dark-blue);
   background-color: var(--color-grey);
   list-style: none;
   padding-left: 1rem;
+  min-width: 250px;
   height: 100%;
 
   @media (max-width: 480px) {
@@ -15,5 +15,10 @@
   .category-item {
     padding: 1rem;
     border-bottom: 1px solid var(--dark-blue);
+
+    a {
+      color: var(--dark-blue);
+      text-decoration: none;
+    }
   }
 }

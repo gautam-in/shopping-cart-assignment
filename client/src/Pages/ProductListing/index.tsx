@@ -1,3 +1,5 @@
+import React from "react"
+import { useNavigate, useSearchParams } from "react-router-dom"
 import { useQuery } from "react-query"
 
 import {
@@ -12,6 +14,14 @@ import { CategoryType, ProductType } from "../../models"
 import "./styles.scss"
 
 export const ProductListingPage = () => {
+  const [selectedCategory, setSelectedCategory] = React.useState("")
+  const [searchParams] = useSearchParams()
+  const navigate = useNavigate()
+
+  React.useEffect(() => {
+    setSelectedCategory(searchParams.get("category") || "")
+  }, [searchParams])
+
   const {
     isLoading: categoriesLoading,
     error: categoriesError,
@@ -39,6 +49,13 @@ export const ProductListingPage = () => {
         .sort((a, b) => a.order - b.order)) ||
     []
 
+  const filteredProducts =
+    products && searchParams.get("category")
+      ? [...products].filter(
+          (product) => product.category === searchParams.get("category")
+        )
+      : products || []
+
   return (
     <section id="products-listing" className="products-listing container flex">
       <div>
@@ -55,10 +72,19 @@ export const ProductListingPage = () => {
         <Dropdown
           label="Select a Category"
           showLabel={false}
-          options={categoriesToDisplay.map(({ name }) => ({
+          options={categoriesToDisplay.map(({ name, id }) => ({
             label: name,
-            value: name,
+            value: id,
           }))}
+          handleClick={(id) => {
+            navigate(
+              `${
+                searchParams.get("category") === id
+                  ? "/products"
+                  : `/products?category=${id}`
+              }`
+            )
+          }}
         />
       </div>
 
@@ -71,7 +97,7 @@ export const ProductListingPage = () => {
           )}
         </>
 
-        {products && <ProductList products={products} />}
+        {products && <ProductList products={filteredProducts} />}
       </div>
     </section>
   )
