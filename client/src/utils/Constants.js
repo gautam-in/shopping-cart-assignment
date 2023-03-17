@@ -5,3 +5,5 @@
  export const validPassword = new RegExp(
     "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)" + "(?=.*[-+_!@#$%^&*., ?]).+$"
  );
+
+ export const domain = process.env.REACT_APP_DOMAIN;

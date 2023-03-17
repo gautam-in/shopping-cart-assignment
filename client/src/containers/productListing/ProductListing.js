@@ -2,6 +2,7 @@ import React, { lazy, useEffect, useState } from "react";
 import useFetch from '../../utils/hooks/useFetch';
 import styles from "./ProductListing.module.scss";
 import {NavLink,useParams, useNavigate} from "react-router-dom";
+import {domain} from '../../utils/Constants';
 
 
 
@@ -12,8 +13,8 @@ const Header = lazy(() => import("../../components/header/Header"));
 const ProductListing = () => {
   const{ categoryId } = useParams();  
   const [openModal, setOpenModal] = useState(false);
-  const {data:products, loading:bannersLoading, error:bannersError} = useFetch('http://localhost:8080/products');
-  const {data:categories, loading:categoriesLoading, error:categoriesError} = useFetch('http://localhost:8080/categories');
+  const {data:products, loading:bannersLoading, error:bannersError} = useFetch(`${domain}/products`);
+  const {data:categories, loading:categoriesLoading, error:categoriesError} = useFetch(`${domain}/categories`);
 
   const navigate = useNavigate();
   
