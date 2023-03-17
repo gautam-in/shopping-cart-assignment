@@ -1,0 +1,39 @@
+.section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    box-shadow: 0px 15px 10px -15px #111;
+
+    .categoryDescriptionContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .categoryTitle {
+            padding: 0;
+            margin: 0;
+        }
+
+        .categoryDescription {
+            padding: 20px 0;
+        }   
+
+        a {
+            background-color: #d10057;
+            color: #fff;
+            padding: 5px;
+        }
+    }
+
+    .categoryImageContainer {
+        display: flex;
+
+        .categoryImage {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+    }
+}

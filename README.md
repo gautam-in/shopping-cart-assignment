@@ -13,3 +13,9 @@ npm run start
 yarn install
 yarn start
 ```
+
+## Getting started with client
+
+create a .env file and copy it from the .env.example
+
+and then go to client directory in the terminal and npm run start
