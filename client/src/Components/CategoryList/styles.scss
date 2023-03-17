@@ -1,0 +1,19 @@
+.category-listing {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1.5rem;
+  color: var(--dark-blue);
+  background-color: var(--color-grey);
+  list-style: none;
+  padding-left: 1rem;
+  height: 100%;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+
+  .category-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--dark-blue);
+  }
+}
