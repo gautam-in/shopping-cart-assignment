@@ -1,11 +1,12 @@
-.categories-dropdown {
+.dropdown-container {
   position: relative;
   margin-bottom: 1rem;
+
   @media (min-width: 481px) {
     display: none;
   }
 
-  .categories-dropdown-button {
+  .dropdown-button {
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -21,14 +22,14 @@
     }
   }
 
-  .categories-dropdown-list {
+  .dropdown-list {
     position: absolute;
     width: 100%;
     color: var(--color-primary);
     background-color: var(--color-white);
     z-index: 1;
 
-    .category-item {
+    .dropdown-item {
       padding: 0.5rem;
       border-bottom: 1px solid var(--color-primary);
     }

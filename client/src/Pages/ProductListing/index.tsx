@@ -1,7 +1,7 @@
 import { useQuery } from "react-query"
 
 import {
-  CategoryDropdown,
+  Dropdown,
   CategoryListing,
   Loader,
   ProductList,
@@ -52,7 +52,14 @@ export const ProductListingPage = () => {
 
         <CategoryListing categories={categoriesToDisplay} />
 
-        <CategoryDropdown categories={categoriesToDisplay} />
+        <Dropdown
+          label="Select a Category"
+          showLabel={false}
+          options={categoriesToDisplay.map(({ name }) => ({
+            label: name,
+            value: name,
+          }))}
+        />
       </div>
 
       <div>
