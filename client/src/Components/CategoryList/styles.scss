@@ -1,12 +1,15 @@
 .category-listing {
   display: flex;
   flex-direction: column;
-  margin-right: 1.5rem;
   background-color: var(--color-grey);
   list-style: none;
   padding-left: 1rem;
   min-width: 250px;
   height: 100%;
+
+  @media (max-width: 768px) {
+    min-width: 200px;
+  }
 
   @media (max-width: 480px) {
     display: none;
