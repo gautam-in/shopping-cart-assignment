@@ -1,12 +1,15 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
-import { BsCart3 } from "react-icons/bs"
+import { HiShoppingCart } from "react-icons/hi"
+
+import { Cart } from "../Cart"
 
 import { CartContext } from "../../context"
 
 import "./styles.scss"
 
 export const Header = () => {
+  const [showCart, setShowCart] = useState(false)
   const { state } = useContext(CartContext)
 
   return (
@@ -43,12 +46,18 @@ export const Header = () => {
             </li>
           </ul>
 
-          <div className="minicart flex">
-            <BsCart3 className="cart-icon" />
+          <div
+            className="minicart flex"
+            role="button"
+            onClick={() => setShowCart(true)}
+          >
+            <HiShoppingCart className="cart-icon" />
             {state.items.length} items
           </div>
         </div>
       </div>
+
+      {showCart && <Cart setShowCart={setShowCart} />}
     </header>
   )
 }

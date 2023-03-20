@@ -1,31 +1,29 @@
 import React, { useReducer } from "react"
 
-import { CartItem, CartState, CartAction, CartActionTypes } from "./models"
+import { CartState, CartAction, CartActionTypes } from "./models"
 
-const initialState: any = { items: [], total: 0 } //CartState
+const initialState: any = { items: [], total: 0 }
 
 export const CartContext = React.createContext(initialState)
 
 function cartReducer(state: CartState, action: CartAction) {
   switch (action.type) {
     case CartActionTypes.ADD_ITEM:
-      const updatedItems = [...state.items]
-      const updatedItemIndex = updatedItems.findIndex(
-        (item) => item.id === action.payload.id
-      )
-
-      if (updatedItemIndex < 0) {
-        updatedItems.push({ ...action.payload, quantity: 1 })
-      } else {
-        const updatedItem = {
-          ...updatedItems[updatedItemIndex],
+      if (state.items.some((cartItem) => cartItem.id === action.payload.id)) {
+        return {
+          ...state,
+          items: state.items.map((item) =>
+            item.id === action.payload.id
+              ? { ...item, quantity: item.quantity++ }
+              : item
+          ),
+          total: state.total + action.payload.price,
         }
-        updatedItem.quantity++
-        updatedItems[updatedItemIndex] = updatedItem
       }
+
       return {
         ...state,
-        items: [...updatedItems],
+        items: [...state.items, { ...action.payload, quantity: 1 }],
         total: state.total + action.payload.price,
       }
 

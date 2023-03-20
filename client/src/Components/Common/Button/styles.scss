@@ -17,6 +17,11 @@
     background-color: var(--color-dark);
   }
 
+  &.transparent {
+    color: var(--color-white);
+    background-color: transparent;
+  }
+
   &:disabled {
     opacity: 0.4;
     cursor: not-allowed;
