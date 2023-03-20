@@ -1,0 +1,22 @@
+
+.product__container{
+    display: flex;
+    max-width: 1024px;
+    margin: 0 auto;
+   
+
+    & ul>li{
+        list-style: none;
+    }
+}
+.productItem__container{
+   
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:15px;
+    justify-content: center ;
+    flex: 1;
+    padding: 10px;
+   
+}
+
