@@ -1,9 +1,14 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { BsCart3 } from "react-icons/bs"
+
+import { CartContext } from "../../context"
 
 import "./styles.scss"
 
 export const Header = () => {
+  const { state } = useContext(CartContext)
+
   return (
     <header>
       <div className="container header-container flex">
@@ -39,7 +44,8 @@ export const Header = () => {
           </ul>
 
           <div className="minicart flex">
-            <BsCart3 className="cart-icon" />0 items
+            <BsCart3 className="cart-icon" />
+            {state.items.length} items
           </div>
         </div>
       </div>
