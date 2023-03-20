@@ -1,0 +1,42 @@
+.register-container{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.register-container__article{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex:4;
+    & P{
+        margin-top: 14px;
+        font-size: 14px;
+    }
+}
+
+.register-container__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex:5; 
+
+    & button{
+        width: 60%;
+        display: block;
+        border-radius: 3px;
+        text-align: center;
+        text-decoration: none;
+        font-size: .9rem;
+        padding: 0.5rem;
+        border: 1px solid #eee;
+        background-color: #d42559;
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+    }
+}
