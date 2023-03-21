@@ -28,16 +28,28 @@ function cartReducer(state: CartState, action: CartAction) {
       }
 
     case CartActionTypes.CHANGE_QUANTITY:
-      return {
-        ...state,
-        items: state.items.map((item) =>
-          item.id === action.payload.product.id
-            ? { ...item, quantity: item.quantity + action.payload.delta }
-            : item
-        ),
-        total:
-          state.total + action.payload.product.price * action.payload.delta,
-      }
+      const foundItem = state.items.find(
+        (item) => item.id === action.payload.product.id
+      )
+
+      return foundItem?.quantity === 1 && action.payload.delta === -1
+        ? {
+            ...state,
+            items: state.items.filter(
+              (item) => item.id !== action.payload.product.id
+            ),
+            total: state.total - action.payload.product.price,
+          }
+        : {
+            ...state,
+            items: state.items.map((item) =>
+              item.id === action.payload.product.id
+                ? { ...item, quantity: item.quantity + action.payload.delta }
+                : item
+            ),
+            total:
+              state.total + action.payload.product.price * action.payload.delta,
+          }
 
     case CartActionTypes.REMOVE_ITEM:
       return {

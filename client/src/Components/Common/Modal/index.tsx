@@ -8,7 +8,7 @@ import { ModalProps } from "./models"
 
 import "./styles.scss"
 
-const Modal = ({
+export const Modal = ({
   title,
   children,
   footerText,
@@ -51,5 +51,3 @@ const Modal = ({
     document.getElementById("modal-portal")!
   )
 }
-
-export default Modal
