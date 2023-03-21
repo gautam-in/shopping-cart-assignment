@@ -9,6 +9,7 @@ import { ModalProps } from "./models"
 import "./styles.scss"
 
 export const Modal = ({
+  show,
   title,
   children,
   footerText,
@@ -16,11 +17,13 @@ export const Modal = ({
   classes,
   onClose,
 }: ModalProps) => {
-  const closeOnEscapeKeyDown = (e: KeyboardEvent) => {
-    if (e.key === "Escape") {
-      onClose()
+  useEffect(() => {
+    if (show) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "unset"
     }
-  }
+  }, [show])
 
   useEffect(() => {
     document.body.addEventListener("keydown", closeOnEscapeKeyDown)
@@ -29,6 +32,12 @@ export const Modal = ({
       document.body.removeEventListener("keydown", closeOnEscapeKeyDown)
     }
   }, [])
+
+  const closeOnEscapeKeyDown = (e: KeyboardEvent) => {
+    if (e.key === "Escape") {
+      onClose()
+    }
+  }
 
   return ReactDOM.createPortal(
     <div className={`modal ${classes}`} onClick={onClose}>

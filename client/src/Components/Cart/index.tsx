@@ -9,8 +9,10 @@ import { CartContext, CartItem, CartActionTypes } from "../../context"
 import "./styles.scss"
 
 export const Cart = ({
+  show,
   setShowCart,
 }: {
+  show: boolean
   setShowCart: (status: boolean) => void
 }) => {
   const { state, dispatch } = useContext(CartContext)
@@ -38,6 +40,7 @@ export const Cart = ({
 
   return (
     <Modal
+      show={show}
       title={modalTitleText}
       footerText={`${
         state.items.length ? "Promocode can be applied on payment page" : ""

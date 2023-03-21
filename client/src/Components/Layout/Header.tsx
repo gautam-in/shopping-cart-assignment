@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { HiShoppingCart } from "react-icons/hi"
 
@@ -11,14 +11,6 @@ import "./styles.scss"
 export const Header = () => {
   const [showCart, setShowCart] = useState(false)
   const { state } = useContext(CartContext)
-
-  useEffect(() => {
-    if (showCart) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = "unset"
-    }
-  }, [showCart])
 
   return (
     <header>
@@ -65,7 +57,7 @@ export const Header = () => {
         </div>
       </div>
 
-      {showCart && <Cart setShowCart={setShowCart} />}
+      {showCart && <Cart show={showCart} setShowCart={setShowCart} />}
     </header>
   )
 }
