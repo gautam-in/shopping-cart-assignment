@@ -1,6 +1,8 @@
-import { AppRoutes } from "./Routes"
+import { Suspense } from "react"
 
-import { Header, Footer } from "./Components"
+import { Header, Footer, Loader } from "./Components"
+
+import { AppRoutes } from "./Routes"
 
 const App = () => {
   return (
@@ -8,7 +10,9 @@ const App = () => {
       <Header />
 
       <main>
-        <AppRoutes />
+        <Suspense fallback={<Loader />}>
+          <AppRoutes />
+        </Suspense>
       </main>
 
       <Footer />
