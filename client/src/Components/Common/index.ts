@@ -5,3 +5,5 @@ export * from "./Dropdown"
 export * from "./Button"
 
 export * from "./Modal"
+
+export * from "./DataLoader"
