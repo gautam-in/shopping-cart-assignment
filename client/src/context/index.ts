@@ -1,2 +1,2 @@
-export * from "./cart-context"
+export * from "./cartContext"
 export * from "./models"
