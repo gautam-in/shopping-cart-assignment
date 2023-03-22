@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <CartContextProvider>
       <QueryClientProvider client={queryClient}>
-        <Router>
+        <Router basename="/">
           <App />
         </Router>
       </QueryClientProvider>

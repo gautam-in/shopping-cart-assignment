@@ -4,6 +4,7 @@ import { HiShoppingCart } from "react-icons/hi"
 
 import { Cart } from "../Cart"
 
+import { pluralize } from "../../utils"
 import { CartContext } from "../../context"
 
 import "./styles.scss"
@@ -52,7 +53,7 @@ export const Header = () => {
             onClick={() => setShowCart(true)}
           >
             <HiShoppingCart className="cart-icon" />
-            {state.itemCount} items
+            {state.itemCount} {pluralize("item", "s", state.itemCount)}
           </div>
         </div>
       </div>

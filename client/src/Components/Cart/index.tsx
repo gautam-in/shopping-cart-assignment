@@ -3,6 +3,7 @@ import { BsChevronRight } from "react-icons/bs"
 
 import { EmptyCart } from "./EmptyCart"
 import { Button, Modal } from "../Common"
+import { pluralize } from "../../utils"
 
 import { CartContext, CartItem, CartActionTypes } from "../../context"
 
@@ -17,19 +18,24 @@ export const Cart = ({
 }) => {
   const { state, dispatch } = useContext(CartContext)
 
+  const { itemCount, total, items } = state
+
   const modalTitleText = (
     <div className="cart-title">
-      My Cart <span>({state.itemCount} items)</span>
+      My Cart&nbsp;
+      <span>
+        ({itemCount} {pluralize("item", "s", itemCount)})
+      </span>
     </div>
   )
 
-  const checkoutButtonText = (itemCount: number) => (
+  const checkoutButtonText = () => (
     <div className="cart-button-text">
       {itemCount > 0 ? (
         <>
           <span>Proceed to Checkout</span>
           <span>
-            Rs. {state.total} <BsChevronRight />
+            Rs. {total} <BsChevronRight />
           </span>
         </>
       ) : (
@@ -43,17 +49,17 @@ export const Cart = ({
       show={show}
       title={modalTitleText}
       footerText={`${
-        state.items.length ? "Promocode can be applied on payment page" : ""
+        items.length ? "Promocode can be applied on payment page" : ""
       }`}
-      actionText={checkoutButtonText(state.items.length)}
+      actionText={checkoutButtonText()}
       classes="cart-modal"
       onClose={() => setShowCart(false)}
     >
       <>
-        {state.items.length ? (
+        {items.length ? (
           <>
             <div className="cart-item-list">
-              {state.items.map((item: CartItem) => (
+              {items.map((item: CartItem) => (
                 <div className="cart-item grid" key={item.id}>
                   <img
                     src={item.imageURL}
