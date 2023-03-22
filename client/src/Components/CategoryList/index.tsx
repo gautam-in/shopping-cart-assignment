@@ -17,6 +17,7 @@ export const CategoryListing = ({ categories }: CategoryListProps) => {
                 ? "/products"
                 : `/products?category=${id}`
             }`}
+            className={searchParams.get("category") === id ? "active" : ""}
           >
             {name}
           </Link>

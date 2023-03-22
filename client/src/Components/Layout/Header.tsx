@@ -52,7 +52,7 @@ export const Header = () => {
             onClick={() => setShowCart(true)}
           >
             <HiShoppingCart className="cart-icon" />
-            {state.items.length} items
+            {state.itemCount} items
           </div>
         </div>
       </div>

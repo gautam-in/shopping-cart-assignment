@@ -1,6 +1,7 @@
 export interface CartState {
   items: CartItem[]
   total: number
+  itemCount: number
 }
 
 export interface CartItem {

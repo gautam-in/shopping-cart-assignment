@@ -1,10 +1,13 @@
-import React, { useReducer } from "react"
+import { createContext, useReducer, Dispatch } from "react"
 
 import { CartState, CartAction, CartActionTypes } from "./models"
 
-const initialState: any = { items: [], total: 0 }
+const initialState: CartState = { items: [], total: 0, itemCount: 0 }
 
-export const CartContext = React.createContext(initialState)
+export const CartContext = createContext<{
+  state: CartState
+  dispatch: Dispatch<any>
+}>({ state: initialState, dispatch: () => null })
 
 function cartReducer(state: CartState, action: CartAction) {
   switch (action.type) {
@@ -18,6 +21,7 @@ function cartReducer(state: CartState, action: CartAction) {
               : item
           ),
           total: state.total + action.payload.price,
+          itemCount: state.itemCount++,
         }
       }
 
@@ -25,6 +29,7 @@ function cartReducer(state: CartState, action: CartAction) {
         ...state,
         items: [...state.items, { ...action.payload, quantity: 1 }],
         total: state.total + action.payload.price,
+        itemCount: state.itemCount++,
       }
 
     case CartActionTypes.CHANGE_QUANTITY:
@@ -39,6 +44,7 @@ function cartReducer(state: CartState, action: CartAction) {
               (item) => item.id !== action.payload.product.id
             ),
             total: state.total - action.payload.product.price,
+            itemCount: state.itemCount--,
           }
         : {
             ...state,
@@ -49,6 +55,7 @@ function cartReducer(state: CartState, action: CartAction) {
             ),
             total:
               state.total + action.payload.product.price * action.payload.delta,
+            itemCount: state.itemCount + action.payload.delta,
           }
 
     case CartActionTypes.REMOVE_ITEM:
@@ -56,6 +63,7 @@ function cartReducer(state: CartState, action: CartAction) {
         ...state,
         items: [...state.items.filter((item) => item.id !== action.payload.id)],
         total: state.total - action.payload.price,
+        itemCount: state.itemCount--,
       }
     default:
       return state

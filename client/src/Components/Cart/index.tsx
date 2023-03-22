@@ -19,7 +19,7 @@ export const Cart = ({
 
   const modalTitleText = (
     <div className="cart-title">
-      My Cart <span>({state.items.length} items)</span>
+      My Cart <span>({state.itemCount} items)</span>
     </div>
   )
 
