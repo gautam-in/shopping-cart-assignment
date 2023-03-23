@@ -6,7 +6,7 @@
     font-weight: 600;
     min-height: 100px;
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       min-height: auto;
       margin-bottom: 1rem;
     }

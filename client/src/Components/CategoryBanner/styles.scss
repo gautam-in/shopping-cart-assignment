@@ -9,7 +9,7 @@
     flex-direction: row-reverse;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     flex-direction: column;
 
     &:nth-child(even) {
@@ -20,7 +20,7 @@
   img {
     max-width: 400px;
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       max-width: 200px;
     }
   }
