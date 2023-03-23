@@ -10,6 +10,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "firebase": "^9.18.0",
     "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

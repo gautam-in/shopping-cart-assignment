@@ -1,15 +1,19 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
 import { useFormik } from "formik"
-import * as Yup from "yup"
 
 import { Button, TextInput } from "../../../Components"
+
+import { useAuth } from "../../../context"
+import { loginSchema } from "../../../utils"
 
 import "./styles.scss"
 
 export const Login = () => {
   const [submitting, setSubmitting] = React.useState(false)
   const navigate = useNavigate()
+
+  const { login } = useAuth()
 
   const {
     values,
@@ -25,20 +29,17 @@ export const Login = () => {
       password: "",
     },
 
-    validationSchema: Yup.object({
-      email: Yup.string()
-        .required("Email is required")
-        .email("Please enter valid email id"),
-      password: Yup.string()
-        .required("Password is required")
-        .min(6, "Password must be at least 6 characters long"),
-    }),
+    validationSchema: loginSchema,
 
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       setSubmitting(true)
-      setTimeout(() => {
+      try {
+        await login(values.email, values.password)
         navigate("/")
-      }, 1000)
+      } catch (error) {
+        console.log(error)
+        setSubmitting(false)
+      }
     },
   })
 

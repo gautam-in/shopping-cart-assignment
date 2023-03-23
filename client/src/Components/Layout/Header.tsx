@@ -2,16 +2,19 @@ import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import { HiShoppingCart } from "react-icons/hi"
 
+import { LoggedInLinks, LogoutLink } from "./AuthLinks"
 import { Cart } from "../Cart"
 
 import { pluralize } from "../../utils"
-import { CartContext } from "../../context"
+import { AuthContext, CartContext } from "../../context"
 
 import "./styles.scss"
 
 export const Header = () => {
   const [showCart, setShowCart] = useState(false)
+
   const { state } = useContext(CartContext)
+  const { user, logout } = useContext(AuthContext)
 
   return (
     <header>
@@ -39,12 +42,7 @@ export const Header = () => {
 
         <div className="auth-links-cart flex">
           <ul className="auth-links flex">
-            <li>
-              <Link to="/login">SignIn</Link>
-            </li>
-            <li>
-              <Link to="/register">Register</Link>
-            </li>
+            {user ? <LogoutLink signOut={logout} /> : <LoggedInLinks />}
           </ul>
 
           <div
