@@ -2,7 +2,7 @@ import React from "react"
 import { useNavigate } from "react-router-dom"
 import { useFormik } from "formik"
 
-import { Button, TextInput } from "../../../Components"
+import { Alert, Button, TextInput } from "../../../Components"
 
 import { useAuth } from "../../../context"
 import { registerSchema } from "../../../utils"
@@ -11,6 +11,7 @@ import "./styles.scss"
 
 export const Register = () => {
   const [submitting, setSubmitting] = React.useState(false)
+  const [formError, setFormError] = React.useState("")
   const navigate = useNavigate()
 
   const { register } = useAuth()
@@ -20,6 +21,7 @@ export const Register = () => {
     errors,
     touched,
     isValid,
+    dirty,
     handleSubmit,
     handleChange,
     handleBlur,
@@ -36,15 +38,17 @@ export const Register = () => {
 
     onSubmit: async (values) => {
       setSubmitting(true)
+      setFormError("")
       try {
         await register(values.email, values.password)
-        try {
-          navigate("/")
-        } catch (error) {
-          console.log(error)
-        }
-      } catch (error) {
+        navigate("/")
+      } catch (error: any) {
         console.log(error)
+        setFormError(
+          error.message.includes("auth")
+            ? "Email already exists"
+            : "Something went wrong"
+        )
         setSubmitting(false)
       }
     },
@@ -59,6 +63,8 @@ export const Register = () => {
 
       <div className="login-form">
         <form onSubmit={handleSubmit}>
+          {formError && <Alert type="danger">{formError}</Alert>}
+
           <TextInput
             type="text"
             label="First Name"
@@ -117,7 +123,7 @@ export const Register = () => {
           <Button
             type="submit"
             variant="primary"
-            disabled={submitting || !isValid}
+            disabled={submitting || !(isValid && dirty)}
             aria-label="submit login form"
           >
             Login

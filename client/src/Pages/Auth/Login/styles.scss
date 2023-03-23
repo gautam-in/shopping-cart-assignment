@@ -2,7 +2,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   max-width: 800px;
-  margin: 3rem auto 0;
+  margin: 3rem auto 2rem;
 
   @media (max-width: 768px) {
     padding: 0 1rem;
@@ -21,6 +21,4 @@
     margin-top: 2rem;
     width: 100%;
   }
-
-  margin-bottom: 2rem;
 }

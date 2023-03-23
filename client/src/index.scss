@@ -12,12 +12,11 @@
   --color-grey: #eee;
   --modal-backdrop-bg: rgba(0, 0, 0, 0.5);
 
-  --color-purple: #9d0191;
-  --color-orange: #ff7722;
-
   --color-primary: #bf2857;
-  --color-success: #28a745;
-  --color-danger: orangered;
+  --color-success: hsl(134, 61%, 41%);
+  --color-success-bg: hsl(135, 87%, 85%);
+  --color-danger: hsl(16, 100%, 50%);
+  --color-danger-bg: hsl(17, 87%, 85%);
 
   --header-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --category-shadow: 0px 15px 25px -10px rgba(0, 0, 0, 0.5);

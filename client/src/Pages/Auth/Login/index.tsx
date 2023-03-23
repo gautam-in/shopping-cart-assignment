@@ -2,7 +2,7 @@ import React from "react"
 import { useNavigate } from "react-router-dom"
 import { useFormik } from "formik"
 
-import { Button, TextInput } from "../../../Components"
+import { Alert, Button, TextInput } from "../../../Components"
 
 import { useAuth } from "../../../context"
 import { loginSchema } from "../../../utils"
@@ -11,6 +11,7 @@ import "./styles.scss"
 
 export const Login = () => {
   const [submitting, setSubmitting] = React.useState(false)
+  const [formError, setFormError] = React.useState("")
   const navigate = useNavigate()
 
   const { login } = useAuth()
@@ -20,6 +21,7 @@ export const Login = () => {
     errors,
     touched,
     isValid,
+    dirty,
     handleSubmit,
     handleChange,
     handleBlur,
@@ -33,11 +35,17 @@ export const Login = () => {
 
     onSubmit: async (values) => {
       setSubmitting(true)
+      setFormError("")
       try {
         await login(values.email, values.password)
         navigate("/")
-      } catch (error) {
+      } catch (error: any) {
         console.log(error)
+        setFormError(
+          error.message.includes("auth")
+            ? "Invalid credentials"
+            : "something went wrong"
+        )
         setSubmitting(false)
       }
     },
@@ -52,6 +60,8 @@ export const Login = () => {
 
       <div className="login-form">
         <form onSubmit={handleSubmit}>
+          {formError && <Alert type="danger">{formError}</Alert>}
+
           <TextInput
             type="email"
             label="Email"
@@ -77,7 +87,7 @@ export const Login = () => {
           <Button
             type="submit"
             variant="primary"
-            disabled={submitting || !isValid}
+            disabled={submitting || !(isValid && dirty)}
             aria-label="submit login form"
           >
             Login
