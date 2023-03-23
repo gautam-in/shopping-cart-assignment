@@ -13,65 +13,72 @@
   }
 
   .details {
-    @media (max-width: 1024px) {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 0.5rem;
-    }
-
-    @media (max-width: 480px) {
-      grid-template-columns: 1.5fr 1fr;
-    }
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 1fr auto auto;
+    gap: 1rem 0;
+    align-items: center;
 
     .image {
-      width: 100%;
-      margin-bottom: 1rem;
+      grid-column: 1/-1;
+      max-width: 100%;
     }
 
     .description {
+      grid-column: 1/-1;
       background-color: var(--color-grey);
       padding: 0.5rem;
       min-height: 150px;
-      margin-bottom: 1rem;
-
-      @media (max-width: 1024px) {
-        min-height: 180px;
-      }
-
-      @media (max-width: 480px) {
-        min-height: auto;
-        font-size: 0.875rem;
-      }
     }
+  }
 
-    .action-btn-phone {
-      width: 100%;
-      font-size: 0.875rem;
-      line-height: 1.5;
+  @media (max-width: 1024px) {
+    .details {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 2fr auto;
 
-      @media (min-width: 481px) {
+      .image {
+        grid-column: 1/2;
+      }
+
+      .description {
+        grid-column: 2/3;
+        min-height: 200px;
+      }
+
+      .price {
         display: none;
+      }
+
+      .action-btn {
+        grid-column: 1/-1;
       }
     }
   }
 
-  .actions {
-    justify-content: space-between;
-    align-items: center;
+  @media (max-width: 768px) {
+    .details {
+      grid-template-rows: 1fr auto;
+      gap: 0 0.5rem;
+      align-items: start;
 
-    .action-btn-desktop,
-    .price {
-      @media (max-width: 1024px) {
-        display: none;
+      .image {
+        grid-column: 1/2;
+        grid-row: 1/-1;
       }
-    }
 
-    .action-btn-tab {
-      display: none;
+      .description {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        margin-bottom: 1rem;
+        min-height: auto;
+      }
 
-      @media (min-width: 481px) and (max-width: 1024px) {
-        display: block;
-        width: 100%;
+      .action-btn {
+        grid-column: 2/3;
+        font-size: 0.825rem;
+        line-height: 1.5;
+        padding: 0.8rem 0.5rem;
       }
     }
   }

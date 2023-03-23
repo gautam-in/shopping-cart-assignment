@@ -30,7 +30,7 @@ export const Login = () => {
         .required("Email is required")
         .email("Please enter valid email id"),
       password: Yup.string()
-        .required("Password is requuired")
+        .required("Password is required")
         .min(6, "Password must be at least 6 characters long"),
     }),
 

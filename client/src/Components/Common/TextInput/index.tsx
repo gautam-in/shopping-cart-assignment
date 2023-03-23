@@ -12,6 +12,8 @@ export const TextInput = ({
   handleChange,
   handleBlur,
 }: TextInputProps) => {
+  const isInvalid = touched && errors
+
   return (
     <div className={`input-group ${touched && errors ? "error" : ""}`}>
       <input
@@ -21,6 +23,8 @@ export const TextInput = ({
         name={name}
         placeholder=" "
         aria-label={name}
+        aria-required={true}
+        aria-invalid={!!isInvalid}
         value={value}
         onChange={handleChange}
         onBlur={handleBlur}
@@ -30,8 +34,8 @@ export const TextInput = ({
         {label}
       </label>
 
-      {touched && errors ? (
-        <div className="input-error" data-testid={`${name}-error`}>
+      {isInvalid ? (
+        <div className="input-error" aria-describedby={name} aria-live="polite">
           {errors}
         </div>
       ) : null}
