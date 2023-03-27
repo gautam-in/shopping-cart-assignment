@@ -31,8 +31,15 @@ const ProductCard = ({
         className={styles["product-card--img"]}
         src={productImg as string}
         alt={title}
+        width="300"
+        height="300"
       />
-      <p className={styles["product-card--description"]}>{description}</p>
+      <p
+        className={styles["product-card--description"]}
+        aria-label={description}
+      >
+        {description?.slice(0, 140)}
+      </p>
       <footer className={styles["product-card--footer"]}>
         <p className={styles["product-card--footer--price"]}>MRP Rs.{price}</p>
         <Button className={styles["product-card--footer--buy-now"]}>

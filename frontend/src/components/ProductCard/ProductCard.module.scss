@@ -15,6 +15,7 @@
 
   &--header {
     grid-column: 1 / -1;
+    min-height: 90px;
     h4 {
       font-size: 24px;
       font-weight: 700;
@@ -41,6 +42,8 @@
     background-color: $color-grey;
     padding: 8px;
     border-radius: 2px;
+    min-height: 96px;
+    font-size: 16px;
     @include gt-sm {
       grid-column: initial;
     }
@@ -48,7 +51,6 @@
 
   &--footer {
     grid-column: 2 / -1;
-    place-items: end;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -63,6 +65,11 @@
       width: 100%;
       @include gt-sm {
         width: initial;
+      }
+      span {
+        @include gt-sm {
+          display: none;
+        }
       }
     }
     @include gt-xs {
