@@ -1,4 +1,4 @@
-@import '@/styles/settings';
+@import "../styles/settings.scss";
 
 .form-input-filed {
   background-color: transparent;
@@ -6,6 +6,7 @@
   padding-top: 24px;
   display: block;
   margin: 16px;
+  color: red;
 
   &--text-label {
     padding: 0;

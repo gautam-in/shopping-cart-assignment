@@ -1,5 +1,5 @@
-import React, { forwardRef, InputHTMLAttributes } from 'react';
-import styles from './InputField.module.scss';
+import React, { forwardRef, InputHTMLAttributes } from "react";
+import styles from "./InputField.module.scss";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   labelText: string;
@@ -9,17 +9,17 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 const InputField = forwardRef<HTMLInputElement, InputProps>(
   ({ labelText, errorMsg, ...rest }, ref) => {
     return (
-      <label className={styles['form-input-filed']}>
+      <label className={styles["form-input-filed"]}>
         {labelText && (
-          <p className={styles['form-input-filed--text-label']}>{labelText}</p>
+          <p className={styles["form-input-filed--text-label"]}>{labelText}</p>
         )}
         <input ref={ref} aria-label={labelText} {...rest} />
-        {errorMsg && errorMsg !== '' && <p>{errorMsg}</p>}
+        {errorMsg && errorMsg !== "" && <p>{errorMsg}</p>}
       </label>
     );
   }
 );
 
-InputField.displayName = 'InputField';
+InputField.displayName = "InputField";
 
 export default InputField;
