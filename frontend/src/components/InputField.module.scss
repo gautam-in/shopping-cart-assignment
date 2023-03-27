@@ -1,0 +1,34 @@
+@import '@/styles/settings';
+
+.form-input-filed {
+  background-color: transparent;
+  position: relative;
+  padding-top: 24px;
+  display: block;
+  margin: 16px;
+
+  &--text-label {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    color: #acacac;
+    transition: all 0.2s;
+  }
+  input {
+    border-bottom: 2px solid #acacac;
+    width: 100%;
+    &:focus {
+      border-bottom: 2px solid #5db6c2;
+    }
+  }
+  &:focus-within & {
+    &--text-label {
+      color: #5db6c2;
+      transform: translateY(-20px);
+    }
+  }
+}
