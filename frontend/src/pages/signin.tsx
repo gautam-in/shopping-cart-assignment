@@ -1,4 +1,4 @@
-import InputField from "@/components/InputField/InputField";
+import InputField from "@/components/InputField";
 
 const Signin = () => {
   return (

@@ -1,0 +1,19 @@
+@import "@/styles/settings.scss";
+
+.btn {
+  outline: none;
+  border: none;
+  margin: 0;
+  padding: 8px;
+  height: auto;
+  border-radius: 4px;
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+  &--secondary {
+    background-color: $color-secondary;
+    color: $color-white;
+  }
+}

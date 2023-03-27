@@ -7,7 +7,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const InputField = forwardRef<HTMLInputElement, InputProps>(
-  ({ labelText, errorMsg, ...rest }, ref) => {
+  ({ labelText, errorMsg, className, ...rest }, ref) => {
     return (
       <label className={styles["form-input-filed"]}>
         {labelText && (

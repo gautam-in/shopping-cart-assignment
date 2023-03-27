@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import React from "react";
 
-import InputField from "./InputField";
+import InputField from ".";
 
 export default {
   title: "Components/InputField",
@@ -13,7 +13,7 @@ const Template: ComponentStory<typeof InputField> = (args) => (
   <InputField {...args} />
 );
 
-export const Story = Template.bind({});
-Story.args = {
+export const Input = Template.bind({});
+Input.args = {
   labelText: "Email",
 };

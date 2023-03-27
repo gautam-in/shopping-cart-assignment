@@ -1,0 +1,76 @@
+@import "@/styles/settings.scss";
+
+.product-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  color: #272727;
+  width: 100%;
+  overflow: hidden;
+  column-gap: 8px;
+  row-gap: 8px;
+
+  @include gt-sm {
+    grid-template-columns: 1fr;
+  }
+
+  &--header {
+    grid-column: 1 / -1;
+    h4 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+  }
+
+  &--img {
+    place-self: center;
+    grid-column: 1 / 2;
+    grid-row: span 2;
+    width: 100%;
+    @include gt-xs {
+      grid-row: initial;
+    }
+    @include gt-sm {
+      grid-column: initial;
+      grid-row: initial;
+      width: initial;
+    }
+  }
+  &--description {
+    margin: 0;
+    grid-column: 2 / -1;
+    background-color: $color-grey;
+    padding: 8px;
+    border-radius: 2px;
+    @include gt-sm {
+      grid-column: initial;
+    }
+  }
+
+  &--footer {
+    grid-column: 2 / -1;
+    place-items: end;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    &--price {
+      font-size: 14px;
+      display: none;
+      @include gt-sm {
+        display: block;
+      }
+    }
+    &--buy-now {
+      width: 100%;
+      @include gt-sm {
+        width: initial;
+      }
+    }
+    @include gt-xs {
+      grid-column: 1 / -1;
+    }
+
+    @include gt-sm {
+      align-items: center;
+    }
+  }
+}
