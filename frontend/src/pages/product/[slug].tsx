@@ -40,9 +40,9 @@ export const getServerSideProps: GetServerSideProps<{
   categoriesData: Category[];
   productsData: Product[];
 }> = async (context) => {
-  const resProductsPromise = fetch("http://localhost:3000/api/product").then(
-    (res) => res.json()
-  );
+  const resProductsPromise = fetch(
+    `http://localhost:3000/api/product?id=${context?.params?.slug}`
+  ).then((res) => res.json());
   const resCategoriesPromise = fetch(
     "http://localhost:3000/api/categories"
   ).then((res) => res.json());

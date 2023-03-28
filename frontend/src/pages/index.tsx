@@ -5,6 +5,7 @@ import { Category } from "./api/categories";
 import styles from "@/styles/pages/Home.module.scss";
 import OfferCarousel from "@/components/OfferCarousel";
 import { Offer } from "./api/offers";
+import { useRouter } from "next/router";
 
 const HomePage = ({
   categoriesData,
@@ -13,6 +14,8 @@ const HomePage = ({
   categoriesData: Category[];
   offerListData: Offer[];
 }) => {
+  const { push } = useRouter();
+  const handleRouter = (id: string) => push(`/product/${id}`);
   return (
     <section className={styles["home-section"]}>
       <OfferCarousel data={offerListData} />
@@ -26,6 +29,7 @@ const HomePage = ({
                 order={order}
                 imgSrc={imageUrl ?? ""}
                 btnText={key}
+                onClick={() => handleRouter(id)}
               />
             </li>
           )

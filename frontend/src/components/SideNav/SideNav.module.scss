@@ -1,0 +1,25 @@
+@import "@/styles/settings.scss";
+
+.sidenav-container {
+  background-color: #ddd;
+  width: 200px;
+  margin-top: -12px;
+  margin-bottom: -12px;
+
+  ul {
+    list-style: none;
+    li {
+      border-bottom: 1px solid rgba($color: #000000, $alpha: 0.2);
+      padding: 10px;
+    }
+  }
+  &--link-btn {
+    font-size: 14px;
+    color: $color-dark;
+    outline: none;
+    cursor: pointer;
+    &--active {
+      color: $color-primary;
+    }
+  }
+}

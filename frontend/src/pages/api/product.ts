@@ -17,5 +17,12 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Product[]>
 ) {
-  res.status(200).json(productData);
+  if (req.query && req.query?.id) {
+    const filterData = productData?.filter(
+      ({ category }) => category === req.query?.id
+    );
+    res.status(200).json(filterData);
+  } else {
+    res.status(200).json(productData);
+  }
 }

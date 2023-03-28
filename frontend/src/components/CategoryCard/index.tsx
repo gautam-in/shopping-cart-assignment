@@ -15,7 +15,7 @@ export interface CateGoryCardProps {
   description: string;
   btnText: string;
   order: number;
-  onClick?: () => null;
+  onClick?: () => void;
 }
 
 const CateGoryCard = ({

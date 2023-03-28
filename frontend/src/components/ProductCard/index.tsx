@@ -25,14 +25,14 @@ const ProductCard = ({
   return (
     <article className={styles["product-card"]}>
       <header className={styles["product-card--header"]}>
-        <h4>{title}</h4>
+        <h4>{title?.slice(0, 72)}</h4>
       </header>
       <img
         className={styles["product-card--img"]}
         src={productImg as string}
         alt={title}
-        width="300"
-        height="300"
+        width="200"
+        height="200"
       />
       <p
         className={styles["product-card--description"]}
