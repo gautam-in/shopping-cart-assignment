@@ -1,0 +1,29 @@
+@import "@/styles/settings.scss";
+
+.login-section {
+  @include container;
+  display: grid;
+  grid-template-columns: 4fr 3fr 2fr;
+  column-gap: 16px;
+
+  header {
+    place-self: center;
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+    }
+    P {
+      margin-top: 14px;
+      font-size: 14px;
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 24px 0;
+    button {
+      width: 100%;
+    }
+  }
+}

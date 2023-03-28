@@ -1,4 +1,4 @@
-import React, { forwardRef, InputHTMLAttributes } from "react";
+import React, { forwardRef, InputHTMLAttributes, useEffect } from "react";
 import styles from "./InputField.module.scss";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -7,15 +7,24 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const InputField = forwardRef<HTMLInputElement, InputProps>(
-  ({ labelText, errorMsg, className, ...rest }, ref) => {
+  ({ labelText, name, errorMsg, className, ...rest }, ref) => {
     return (
-      <label className={styles["form-input-filed"]}>
-        {labelText && (
-          <p className={styles["form-input-filed--text-label"]}>{labelText}</p>
-        )}
-        <input ref={ref} aria-label={labelText} {...rest} />
+      <div className={styles["form-input-filed"]}>
+        <input
+          id={name}
+          ref={ref}
+          aria-label={labelText}
+          {...rest}
+          placeholder=" "
+        />
+        <label
+          htmlFor={name}
+          className={styles["form-input-filed--text-label"]}
+        >
+          {labelText}
+        </label>
         {errorMsg && errorMsg !== "" && <p>{errorMsg}</p>}
-      </label>
+      </div>
     );
   }
 );

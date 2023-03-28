@@ -1,11 +1,11 @@
 @import "@/styles/settings.scss";
 
 .form-input-filed {
+  $self: &;
   background-color: transparent;
   position: relative;
   padding-top: 24px;
   display: block;
-  margin: 16px;
 
   &--text-label {
     padding: 0;
@@ -15,20 +15,26 @@
     left: 0;
     bottom: 0;
     z-index: 2;
-    color: #acacac;
+    color: #5db6c2;
     transition: all 0.2s;
+    transform: translateY(-20px);
   }
   input {
-    border-bottom: 2px solid #acacac;
-    width: 100%;
-    &:focus {
-      border-bottom: 2px solid #5db6c2;
+    &:placeholder-shown + label {
+      transform: translateY(0);
+      color: #acacac;
     }
-  }
-  &:focus-within & {
-    &--text-label {
+    &:focus + label {
       color: #5db6c2;
       transform: translateY(-20px);
+    }
+    border-bottom: 2px solid #acacac;
+    width: 100%;
+    &:not(:placeholder-shown) {
+      border-bottom: 2px solid #5db6c2;
+    }
+    &:focus {
+      border-bottom: 2px solid #5db6c2;
     }
   }
 }
