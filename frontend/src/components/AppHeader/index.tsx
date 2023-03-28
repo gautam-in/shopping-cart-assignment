@@ -9,7 +9,14 @@ const AppHeader = () => {
   return (
     <header className={styles["head-section"]}>
       <div className={styles["app-header"]}>
-        <Image src={appLogo} alt="Sabka Bazaar logo" width={190} height={86} />
+        <Link href="/">
+          <Image
+            src={appLogo}
+            alt="Sabka Bazaar logo"
+            width={190}
+            height={86}
+          />
+        </Link>
         <nav
           aria-labelledby="main-nav"
           className={styles["app-header--home-page-nav"]}
