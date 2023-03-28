@@ -1,0 +1,13 @@
+@import "@/styles/settings.scss";
+
+.footer {
+  display: grid;
+  @include container;
+  padding: 0;
+  margin-top: -12px;
+  p {
+    padding: 10px;
+    font-size: 14px;
+    background-color: $color-grey;
+  }
+}

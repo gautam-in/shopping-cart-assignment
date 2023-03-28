@@ -1,3 +1,4 @@
+import AppFooter from "@/components/AppFooter";
 import AppHeader from "@/components/AppHeader";
 import Head from "next/head";
 import React from "react";
@@ -15,7 +16,7 @@ const AppLayout: React.FunctionComponent<{ children: React.ReactNode }> = ({
       </Head>
       <AppHeader />
       <main style={{ marginTop: "110px" }}>{children}</main>
-      <footer></footer>
+      <AppFooter />
     </>
   );
 };
