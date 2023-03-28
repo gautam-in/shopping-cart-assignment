@@ -2,7 +2,7 @@ import ProductCard from "@/components/ProductCard";
 import { GetServerSideProps } from "next";
 import React from "react";
 import { Product } from "../api/product";
-import styles from "./product.module.scss";
+import styles from "@/styles/pages/Product.module.scss";
 
 const ProductPage = ({ data }: { data: Product[] }) => {
   return (
