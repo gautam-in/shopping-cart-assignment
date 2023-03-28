@@ -1,3 +1,4 @@
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "@/styles/global.scss";
 
 import AppLayout from "@/layout/appLayout";
