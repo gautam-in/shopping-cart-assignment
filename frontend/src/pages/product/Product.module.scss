@@ -1,9 +1,7 @@
 @import "@/styles/settings.scss";
 
 .product-section {
-  padding: 32px;
-  display: block;
-
+  @include container;
   &--list {
     list-style: none;
     display: grid;

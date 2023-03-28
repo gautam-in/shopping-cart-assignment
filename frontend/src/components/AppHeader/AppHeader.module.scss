@@ -1,0 +1,40 @@
+@import "@/styles/settings.scss";
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  color: #272727;
+  background-color: $color-white;
+  @include container;
+  &--home-page-nav {
+    flex: 1;
+    padding-left: 80px;
+    padding-right: 80px;
+    align-self: flex-end;
+    padding-bottom: 16px;
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+    }
+  }
+  &--secondary-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+    }
+    &--cart-btn {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      svg {
+        fill: $color-primary;
+        width: 32px;
+      }
+    }
+  }
+}
