@@ -14,7 +14,7 @@ const AppLayout: React.FunctionComponent<{ children: React.ReactNode }> = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AppHeader />
-      <main>{children}</main>
+      <main style={{ marginTop: "110px" }}>{children}</main>
       <footer></footer>
     </>
   );
