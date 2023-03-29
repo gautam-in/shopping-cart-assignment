@@ -2,10 +2,13 @@
 
 .product-section {
   @include container;
+  padding-bottom: 0;
+  padding-top: 0;
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 16px;
   &--list {
+    padding: 16px;
     list-style: none;
     display: grid;
     grid-template-columns: 1fr;

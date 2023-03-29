@@ -13,29 +13,31 @@ export interface SideNavProps {
 const SideNav = ({ data }: SideNavProps) => {
   const router = useRouter();
   return (
-    <aside className={styles["sidenav-container"]}>
-      <nav>
-        <ul>
-          {data?.map(({ id, name }) => {
-            const isActive = router.asPath === `/product/${id}`;
-            return (
-              <li key={id}>
-                <Link
-                  href={`/product/${id}`}
-                  className={`${styles["sidenav-container--link-btn"]} ${
-                    isActive
-                      ? styles["sidenav-container--link-btn--active"]
-                      : ""
-                  }`}
-                >
-                  {name}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-    </aside>
+    <div className={styles["sidenav-wrapper"]}>
+      <aside className={styles["sidenav-container"]}>
+        <nav>
+          <ul>
+            {data?.map(({ id, name }) => {
+              const isActive = router.asPath === `/product/${id}`;
+              return (
+                <li key={id}>
+                  <Link
+                    href={`/product/${id}`}
+                    className={`${styles["sidenav-container--link-btn"]} ${
+                      isActive
+                        ? styles["sidenav-container--link-btn--active"]
+                        : ""
+                    }`}
+                  >
+                    {name}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </aside>
+    </div>
   );
 };
 

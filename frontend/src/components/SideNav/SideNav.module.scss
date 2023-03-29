@@ -1,10 +1,15 @@
 @import "@/styles/settings.scss";
 
-.sidenav-container {
+.sidenav-wrapper {
   background-color: $color-grey;
+}
+
+.sidenav-container {
   width: 200px;
   margin-top: -12px;
   margin-bottom: -12px;
+  position: sticky;
+  top: 112px;
 
   ul {
     list-style: none;
