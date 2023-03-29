@@ -10,12 +10,13 @@ const CartItem = ({
   price,
   quantity,
   updateQuantity,
+  productImg,
 }: CartProduct & {
   updateQuantity: (productId: string, action: "increase" | "decrease") => void;
 }) => {
   return (
     <div className={styles["cart-item"]}>
-      <img src="/images/products/fruit-n-veg/apple.jpg" alt="Cart item" />
+      <img src={productImg as string} alt={title} />
 
       <div className={styles["cart-item--content"]}>
         <strong>{title}</strong>
