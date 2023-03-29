@@ -16,7 +16,10 @@ const AppHeader = () => {
     if (router.asPath === "/cart") {
       return;
     }
-    if (window !== undefined && window.innerWidth > 960) setShowCart(true);
+    if (window !== undefined && window.innerWidth > 960) {
+      setShowCart(true);
+      return;
+    }
     router.push("/cart");
   };
 
