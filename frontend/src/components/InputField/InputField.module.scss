@@ -37,4 +37,8 @@
       border-bottom: 2px solid #5db6c2;
     }
   }
+  &--error {
+    padding: 8px 0;
+    color: $color-danger;
+  }
 }

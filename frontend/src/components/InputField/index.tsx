@@ -23,7 +23,9 @@ const InputField = forwardRef<HTMLInputElement, InputProps>(
         >
           {labelText}
         </label>
-        {errorMsg && errorMsg !== "" && <p>{errorMsg}</p>}
+        {errorMsg && errorMsg !== "" && (
+          <p className={styles["form-input-filed--error"]}>{errorMsg}</p>
+        )}
       </div>
     );
   }
