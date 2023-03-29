@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes, forwardRef } from "react";
 import styles from "./Button.module.scss";
 
 export interface InputProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "danger" | "success";
+  variant?: "primary" | "secondary" | "transparent";
 }
 
 const Button = forwardRef<HTMLButtonElement, InputProps>(

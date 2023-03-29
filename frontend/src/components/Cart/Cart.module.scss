@@ -1,0 +1,101 @@
+@import "@/styles/settings.scss";
+
+.cart-item {
+  display: flex;
+  gap: 8px;
+  background-color: $color-white;
+  padding: 12px;
+  img {
+    width: 80px;
+  }
+  strong {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  &--content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+  &--actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+    &--btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      button {
+        padding: 2px 8px;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        display: flex;
+      }
+    }
+  }
+}
+
+.cart-banner {
+  background-color: $color-white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px;
+  padding: 8px;
+  border-radius: 6px;
+  img {
+    width: 80px;
+  }
+  p {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+.cart-body {
+  @include container;
+  background-color: $color-grey;
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cart-footer {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  background-color: $color-white;
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  &--promocode {
+    font-size: 14px;
+  }
+  button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+
+    p {
+      display: flex;
+      align-items: center;
+    }
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  &--start-shopping {
+    margin: 0 auto;
+  }
+}

@@ -7,6 +7,7 @@
   padding: 8px;
   height: auto;
   border-radius: 4px;
+  transition: all 0.3s ease-in-out;
 
   &--primary {
     background-color: $color-primary;
@@ -15,5 +16,18 @@
   &--secondary {
     background-color: $color-secondary;
     color: $color-white;
+  }
+  &--transparent {
+    background-color: transparent;
+    color: $color-white;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  &:hover {
+    opacity: 0.8;
   }
 }

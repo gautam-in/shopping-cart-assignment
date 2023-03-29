@@ -17,12 +17,14 @@
     background-color: $color-white;
 
     @include container;
+    padding-bottom: 0;
+    padding-top: 8px;
     &--home-page-nav {
       flex: 1;
       padding-left: 80px;
       padding-right: 80px;
       align-self: flex-end;
-      padding-bottom: 12px;
+      margin-bottom: 24px;
       ul {
         list-style: none;
         display: flex;
@@ -42,6 +44,10 @@
         display: flex;
         gap: 4px;
         align-items: center;
+        color: #272727;
+        background-color: $color-grey;
+        border-radius: 0;
+        padding: 18px;
         svg {
           fill: $color-primary;
           width: 32px;
