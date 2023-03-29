@@ -1,3 +1,5 @@
+import useSignOut from "@/hooks/useSignOut";
+import useAuthStore from "@/store/authStore";
 import useCartStore from "@/store/cartStore";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -14,7 +16,9 @@ const CartCount = dynamic(() => import("../Cart/CartCount"), { ssr: false });
 const AppHeader = () => {
   const router = useRouter();
   const { showCart, toggleCart } = useCartStore();
-  const isAuthenticated = true;
+  const { isAuth } = useAuthStore();
+  const { signOut } = useSignOut();
+  const isAuthenticated = isAuth();
 
   const handleCart = () => {
     if (router.asPath === "/cart") {
@@ -67,7 +71,11 @@ const AppHeader = () => {
                     </li>
                   </>
                 ) : (
-                  <li>Sign out</li>
+                  <li>
+                    <Button variant="transparent" onClick={signOut}>
+                      Sign out
+                    </Button>
+                  </li>
                 )}
               </ul>
               <Button

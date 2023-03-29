@@ -26,6 +26,7 @@ export interface CartStore {
   showCart: boolean;
   toggleCart: () => void;
   getTotalCartValue: () => number;
+  clearCart: () => void;
 }
 
 const useCartStore = create<CartStore>()(
@@ -82,6 +83,9 @@ const useCartStore = create<CartStore>()(
             (acc, cItem) => acc + cItem.price * cItem.quantity!,
             0
           );
+        },
+        clearCart: () => {
+          set({ cart: [] });
         },
       }),
       { name: "cart" }

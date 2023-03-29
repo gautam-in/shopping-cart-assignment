@@ -19,7 +19,8 @@
   }
   &--transparent {
     background-color: transparent;
-    color: $color-white;
+    color: $color-dark;
+    padding: 0;
   }
 
   &:disabled {
