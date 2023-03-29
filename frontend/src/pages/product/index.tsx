@@ -24,6 +24,7 @@ const ProductPage = ({
         {productsData?.map(({ name, description, price, id, imageURL }) => (
           <li key={id}>
             <ProductCard
+              id={id}
               title={name}
               description={description}
               productImg={imageURL}

@@ -1,3 +1,5 @@
+import useCartStore from "@/store/cartStore";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -5,11 +7,13 @@ import React, { useState } from "react";
 import appLogo from "../../../public/images/logo.png";
 import Button from "../Button";
 import { Cart } from "../Cart";
+
 import styles from "./AppHeader.module.scss";
+const CartCount = dynamic(() => import("../Cart/CartCount"), { ssr: false });
 
 const AppHeader = () => {
   const router = useRouter();
-  const [showCart, setShowCart] = useState(false);
+  const { showCart, toggleCart } = useCartStore();
   const isAuthenticated = true;
 
   const handleCart = () => {
@@ -17,7 +21,7 @@ const AppHeader = () => {
       return;
     }
     if (window !== undefined && window.innerWidth > 960) {
-      setShowCart(true);
+      toggleCart();
       return;
     }
     router.push("/cart");
@@ -82,13 +86,13 @@ const AppHeader = () => {
                 >
                   <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z" />
                 </svg>
-                <p>2 items</p>
+                <CartCount />
               </Button>
             </div>
           </nav>
         </div>
       </header>
-      <Cart show={showCart} setShowCart={setShowCart} />
+      <Cart show={showCart} setShowCart={toggleCart} />
     </>
   );
 };

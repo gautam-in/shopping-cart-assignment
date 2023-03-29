@@ -2,7 +2,14 @@ import { useRouter } from "next/router";
 import React from "react";
 import Button from "../Button";
 import styles from "./Cart.module.scss";
-const CartFooter = ({ isCartEmpty = false }: { isCartEmpty?: boolean }) => {
+
+const CartFooter = ({
+  isCartEmpty = false,
+  total,
+}: {
+  isCartEmpty?: boolean;
+  total: number;
+}) => {
   const { push } = useRouter();
   const handleButtonClick = () => {
     if (isCartEmpty) {
@@ -24,7 +31,7 @@ const CartFooter = ({ isCartEmpty = false }: { isCartEmpty?: boolean }) => {
           <>
             <p>Proceed to Checkout</p>
             <p>
-              Rs. 187{" "}
+              Rs. {total}{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -33,8 +40,8 @@ const CartFooter = ({ isCartEmpty = false }: { isCartEmpty?: boolean }) => {
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M8.25 4.5l7.5 7.5-7.5 7.5"
                 />
               </svg>

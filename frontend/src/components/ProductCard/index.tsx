@@ -1,15 +1,10 @@
-import { ImageProps } from "next/image";
+import useCartStore, { StaticImageData } from "@/store/cartStore";
 import React from "react";
 import Button from "../Button";
 import styles from "./ProductCard.module.scss";
-type StaticImageData = {
-  src: string;
-  height: number;
-  width: number;
-  placeholder?: string;
-};
 
 export interface ProductCardProps {
+  id: string;
   title: string;
   productImg: string | StaticImageData;
   description: string;
@@ -17,11 +12,18 @@ export interface ProductCardProps {
 }
 
 const ProductCard = ({
+  id,
   title,
   productImg,
   description,
   price,
 }: ProductCardProps) => {
+  const { addToCart } = useCartStore();
+
+  const handleAddToCart = () => {
+    addToCart({ id, title, productImg, price });
+  };
+
   return (
     <article className={styles["product-card"]}>
       <header className={styles["product-card--header"]}>
@@ -42,7 +44,10 @@ const ProductCard = ({
       </p>
       <footer className={styles["product-card--footer"]}>
         <p className={styles["product-card--footer--price"]}>MRP Rs.{price}</p>
-        <Button className={styles["product-card--footer--buy-now"]}>
+        <Button
+          onClick={handleAddToCart}
+          className={styles["product-card--footer--buy-now"]}
+        >
           Buy Now<span> @ Rs.{price}</span>
         </Button>
       </footer>
