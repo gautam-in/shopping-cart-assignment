@@ -7,7 +7,6 @@
   overflow: hidden;
   align-items: center;
   box-shadow: 1px -18px 12px -16px rgba(0, 0, 0, 0.3);
-
   &--img {
     width: 400px;
   }
@@ -17,6 +16,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 8px;
     h4 {
       font-size: 24px;
       font-weight: 700;
