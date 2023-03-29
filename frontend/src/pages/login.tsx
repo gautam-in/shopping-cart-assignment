@@ -26,7 +26,7 @@ const LoginPage = () => {
   const {
     handleSubmit,
     control,
-    formState: { errors },
+    formState: { isValid },
   } = useForm<ValidationSchema>({
     resolver: zodResolver(schema),
     defaultValues: {
@@ -84,7 +84,9 @@ const LoginPage = () => {
           )}
         />
 
-        <Button type="submit">Login</Button>
+        <Button type="submit" disabled={!isValid}>
+          Login
+        </Button>
       </form>
     </section>
   );

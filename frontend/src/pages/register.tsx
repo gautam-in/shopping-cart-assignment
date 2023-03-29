@@ -23,7 +23,7 @@ const schema = z
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Password doesn't match",
-    path: ["confirmpassword"],
+    path: ["confirmPassword"],
   });
 
 type ValidationSchema = z.infer<typeof schema>;
@@ -34,8 +34,9 @@ const RegisterPage = () => {
   const {
     control,
     handleSubmit,
-    formState: { errors },
+    formState: { isValid },
   } = useForm<ValidationSchema>({
+    mode: "onChange",
     resolver: zodResolver(schema),
     defaultValues: {
       firstName: "",
@@ -74,47 +75,70 @@ const RegisterPage = () => {
         <Controller
           name="firstName"
           control={control}
-          render={({ field }) => (
-            <InputField labelText="First Name" type="text" {...field} />
+          render={({ field, fieldState }) => (
+            <InputField
+              labelText="First Name"
+              type="text"
+              errorMsg={fieldState?.error?.message}
+              {...field}
+            />
           )}
         />
 
         <Controller
           name="lastName"
           control={control}
-          render={({ field }) => (
-            <InputField labelText="Last Name" type="text" {...field} />
+          render={({ field, fieldState }) => (
+            <InputField
+              labelText="Last Name"
+              type="text"
+              errorMsg={fieldState?.error?.message}
+              {...field}
+            />
           )}
         />
         <Controller
           name="email"
           control={control}
-          render={({ field }) => (
-            <InputField labelText="Email" type="email" {...field} />
+          render={({ field, fieldState }) => (
+            <InputField
+              labelText="Email"
+              type="email"
+              errorMsg={fieldState?.error?.message}
+              {...field}
+            />
           )}
         />
 
         <Controller
           name="password"
           control={control}
-          render={({ field }) => (
-            <InputField labelText="Password" type="password" {...field} />
+          render={({ field, fieldState }) => (
+            <InputField
+              labelText="Password"
+              type="password"
+              errorMsg={fieldState?.error?.message}
+              {...field}
+            />
           )}
         />
 
         <Controller
           name="confirmPassword"
           control={control}
-          render={({ field }) => (
+          render={({ field, fieldState }) => (
             <InputField
               labelText="Confirm Password"
               type="password"
+              errorMsg={fieldState?.error?.message}
               {...field}
             />
           )}
         />
 
-        <Button type="submit">Signup</Button>
+        <Button type="submit" disabled={!isValid}>
+          Signup
+        </Button>
       </form>
     </section>
   );
