@@ -25,5 +25,8 @@
       overflow-y: auto;
       max-height: 74vh;
     }
+    &--close-btn {
+      color: $color-white;
+    }
   }
 }
