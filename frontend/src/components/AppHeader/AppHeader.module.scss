@@ -7,7 +7,10 @@
   top: 0;
   bottom: 0;
   right: 0;
-  height: 110px;
+  height: $appHeaderHeight;
+  @include xs {
+    height: $appHeaderHeightmobile;
+  }
   z-index: 2;
 
   .app-header {
@@ -19,12 +22,22 @@
     @include container;
     padding-bottom: 0;
     padding-top: 8px;
+
+    img {
+      @include xs {
+        width: 140px;
+        height: 70px;
+      }
+    }
     &--home-page-nav {
       flex: 1;
       padding-left: 80px;
       padding-right: 80px;
       align-self: flex-end;
       margin-bottom: 24px;
+      @include xs {
+        display: none;
+      }
       ul {
         list-style: none;
         display: flex;
@@ -39,6 +52,9 @@
         list-style: none;
         display: flex;
         gap: 8px;
+        @include xs {
+          display: none;
+        }
       }
       &--cart-btn {
         display: flex;
@@ -51,6 +67,9 @@
         svg {
           fill: $color-primary;
           width: 32px;
+          @include xs {
+            width: 24px;
+          }
         }
       }
     }

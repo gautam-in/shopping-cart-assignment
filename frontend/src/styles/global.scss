@@ -1,4 +1,5 @@
 @import "reset";
+@import "settings";
 
 body {
   margin: 0;
@@ -7,4 +8,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.app-main {
+  margin-top: $appHeaderHeight;
+  @include xs {
+    margin-top: $appHeaderHeightmobile;
+  }
 }
