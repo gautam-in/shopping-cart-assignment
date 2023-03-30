@@ -1,6 +1,6 @@
 import { Suspense } from "react"
 
-import { Header, Footer, Loader } from "./Components"
+import { Header, Footer, Loader, ScrollToTop } from "./Components"
 
 import { AppRoutes } from "./Routes"
 
@@ -9,12 +9,13 @@ const App = () => {
     <div className="App">
       <Header />
 
-      <main>
+      <main id="main">
         <Suspense fallback={<Loader />}>
           <AppRoutes />
         </Suspense>
       </main>
 
+      <ScrollToTop />
       <Footer />
     </div>
   )

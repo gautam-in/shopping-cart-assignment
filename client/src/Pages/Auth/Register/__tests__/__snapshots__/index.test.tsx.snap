@@ -27,7 +27,9 @@ exports[`should match Homepage snapshot 1`] = `
               class="input-group "
             >
               <input
+                aria-invalid="false"
                 aria-label="fname"
+                aria-required="true"
                 class="input-control"
                 id="fname"
                 name="fname"
@@ -46,7 +48,9 @@ exports[`should match Homepage snapshot 1`] = `
               class="input-group "
             >
               <input
+                aria-invalid="false"
                 aria-label="lname"
+                aria-required="true"
                 class="input-control"
                 id="lname"
                 name="lname"
@@ -65,7 +69,9 @@ exports[`should match Homepage snapshot 1`] = `
               class="input-group "
             >
               <input
+                aria-invalid="false"
                 aria-label="email"
+                aria-required="true"
                 class="input-control"
                 id="email"
                 name="email"
@@ -84,7 +90,9 @@ exports[`should match Homepage snapshot 1`] = `
               class="input-group "
             >
               <input
+                aria-invalid="false"
                 aria-label="password"
+                aria-required="true"
                 class="input-control"
                 id="password"
                 name="password"
@@ -103,7 +111,9 @@ exports[`should match Homepage snapshot 1`] = `
               class="input-group "
             >
               <input
+                aria-invalid="false"
                 aria-label="confirmPassword"
+                aria-required="true"
                 class="input-control"
                 id="confirmPassword"
                 name="confirmPassword"
@@ -120,6 +130,7 @@ exports[`should match Homepage snapshot 1`] = `
             </div>
             <button
               class="btn primary "
+              disabled=""
               type="submit"
             >
               Login
@@ -152,7 +163,9 @@ exports[`should match Homepage snapshot 1`] = `
             class="input-group "
           >
             <input
+              aria-invalid="false"
               aria-label="fname"
+              aria-required="true"
               class="input-control"
               id="fname"
               name="fname"
@@ -171,7 +184,9 @@ exports[`should match Homepage snapshot 1`] = `
             class="input-group "
           >
             <input
+              aria-invalid="false"
               aria-label="lname"
+              aria-required="true"
               class="input-control"
               id="lname"
               name="lname"
@@ -190,7 +205,9 @@ exports[`should match Homepage snapshot 1`] = `
             class="input-group "
           >
             <input
+              aria-invalid="false"
               aria-label="email"
+              aria-required="true"
               class="input-control"
               id="email"
               name="email"
@@ -209,7 +226,9 @@ exports[`should match Homepage snapshot 1`] = `
             class="input-group "
           >
             <input
+              aria-invalid="false"
               aria-label="password"
+              aria-required="true"
               class="input-control"
               id="password"
               name="password"
@@ -228,7 +247,9 @@ exports[`should match Homepage snapshot 1`] = `
             class="input-group "
           >
             <input
+              aria-invalid="false"
               aria-label="confirmPassword"
+              aria-required="true"
               class="input-control"
               id="confirmPassword"
               name="confirmPassword"
@@ -245,6 +266,7 @@ exports[`should match Homepage snapshot 1`] = `
           </div>
           <button
             class="btn primary "
+            disabled=""
             type="submit"
           >
             Login

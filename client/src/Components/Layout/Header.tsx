@@ -4,6 +4,7 @@ import { HiShoppingCart } from "react-icons/hi"
 
 import { LoggedInLinks, LogoutLink } from "./AuthLinks"
 import { Cart } from "../Cart"
+import { Button } from "../Common"
 
 import { pluralize } from "../../utils"
 import { AuthContext, CartContext } from "../../context"
@@ -27,6 +28,10 @@ export const Header = () => {
               className="logo"
             />
           </Link>
+
+          <a href="#main" className="skip-to-main-content-link">
+            Skip to main content
+          </a>
 
           <nav className="flex">
             <ul className="flex">

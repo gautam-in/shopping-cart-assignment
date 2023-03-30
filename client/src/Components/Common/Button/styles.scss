@@ -1,5 +1,7 @@
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   font-size: 18px;
   font-weight: 500;
@@ -10,11 +12,21 @@
   &.primary {
     color: var(--color-white);
     background-color: var(--color-primary);
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
   }
 
   &.dark {
     color: var(--color-white);
     background-color: var(--color-dark);
+
+    &:focus-visible {
+      outline: 2px solid var(--color-dark);
+      outline-offset: 2px;
+    }
   }
 
   &.transparent {

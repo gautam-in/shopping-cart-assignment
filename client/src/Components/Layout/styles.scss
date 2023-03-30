@@ -71,7 +71,34 @@ header {
         }
       }
     }
+
+    .skip-to-main-content-link {
+      position: absolute;
+      top: -500px;
+      left: 50%;
+      background-color: var(--color-dark);
+      color: var(--color-white);
+      padding: 0.5rem;
+      z-index: 999;
+      transition: all 0.25s ease-in;
+
+      &:focus-visible {
+        outline: 2px solid var(--color-dark);
+        outline-offset: 2px;
+      }
+    }
+    .skip-to-main-content-link:focus {
+      top: 30px;
+      transform: translateY(-50%);
+    }
   }
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  opacity: 0.5;
 }
 
 footer {

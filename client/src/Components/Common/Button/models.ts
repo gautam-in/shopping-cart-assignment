@@ -1,7 +1,7 @@
 import { MouseEventHandler, ReactNode } from "react"
 
 export interface ButtonProps {
-  variant: string
+  variant: "primary" | "dark" | "transparent"
   type: "button" | "submit" | "reset"
   classes?: string
   disabled?: boolean
