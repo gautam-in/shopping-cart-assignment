@@ -13,4 +13,9 @@ describe("Register", () => {
     });
     expect(heading).toBeInTheDocument();
   });
+  it("should match RegisterPage snapshot", () => {
+    const wrapper = render(<RegisterPage />);
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });

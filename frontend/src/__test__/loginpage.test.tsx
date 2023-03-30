@@ -13,4 +13,9 @@ describe("Login", () => {
     });
     expect(heading).toBeInTheDocument();
   });
+  it("should match LoginPage snapshot", () => {
+    const wrapper = render(<LoginPage />);
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });
