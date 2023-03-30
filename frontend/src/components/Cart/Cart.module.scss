@@ -59,7 +59,10 @@
   @include container;
   background-color: $color-grey;
   padding: 0;
-  padding-top: 0.8rem;
+  @include xs {
+    padding-top: 2.4rem;
+  }
+  padding-top: 1.2rem;
   display: flex;
   flex-direction: column;
   position: relative;

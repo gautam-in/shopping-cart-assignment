@@ -5,6 +5,10 @@
   display: grid;
   grid-template-columns: 4fr 3fr 2fr;
   column-gap: 1.6rem;
+  @include xs {
+    padding-top: 2.4rem;
+    grid-template-columns: 1fr;
+  }
 
   header {
     place-self: center;
