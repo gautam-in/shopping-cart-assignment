@@ -4,10 +4,11 @@
   outline: none;
   border: none;
   margin: 0;
-  padding: 8px;
+  padding: 0.8rem;
   height: auto;
-  border-radius: 4px;
+  border-radius: 0.4rem;
   transition: all 0.3s ease-in-out;
+  font-size: 1.6rem;
 
   &--primary {
     background-color: $color-primary;

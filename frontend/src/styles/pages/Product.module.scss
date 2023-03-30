@@ -6,17 +6,17 @@
   padding-top: 0;
   display: grid;
   grid-template-columns: auto 1fr;
-  column-gap: 16px;
+  column-gap: 1.6rem;
   @include xs {
     grid-template-columns: 1fr;
   }
   &--list {
-    padding: 16px;
+    padding: 1.6rem;
     list-style: none;
     display: grid;
     grid-template-columns: 1fr;
-    column-gap: 16px;
-    row-gap: 8px;
+    column-gap: 1.6rem;
+    row-gap: 0.8rem;
     @include xs {
       grid-template-columns: 1fr;
     }

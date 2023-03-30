@@ -4,24 +4,24 @@
   @include container;
   display: grid;
   grid-template-columns: 4fr 3fr 2fr;
-  column-gap: 16px;
+  column-gap: 1.6rem;
 
   header {
     place-self: center;
     h2 {
-      font-size: 32px;
+      font-size: 3.2rem;
       font-weight: 700;
     }
     P {
-      margin-top: 14px;
-      font-size: 14px;
+      margin-top: 1.4rem;
+      font-size: 1.4rem;
     }
   }
   form {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    margin: 24px 0;
+    gap: 2.4rem;
+    margin: 2.4rem 0;
     button {
       width: 100%;
     }

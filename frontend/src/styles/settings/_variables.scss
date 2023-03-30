@@ -1,19 +1,2 @@
-$spacer: 1rem !default;
-$spacers: (
-  0: 0,
-  1: $spacer * 0.25,
-  2: $spacer * 0.5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
-) !default;
-
-$zindexDropdown: 1000;
-$zindexPopover: 1010;
-$zindexTooltip: 1030;
-$zindexFixedNavbar: 1030;
-$zindexModalBackdrop: 1040;
-$zindexModal: 1050;
-
 $appHeaderHeight: 110px;
 $appHeaderHeightmobile: 80px;

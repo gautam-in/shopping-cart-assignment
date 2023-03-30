@@ -18,10 +18,11 @@
     justify-content: space-between;
     color: #272727;
     background-color: $color-white;
+    font-size: 1.6rem;
 
     @include container;
     padding-bottom: 0;
-    padding-top: 8px;
+    padding-top: 0.8rem;
 
     img {
       @include xs {
@@ -34,41 +35,41 @@
       padding-left: 80px;
       padding-right: 80px;
       align-self: flex-end;
-      margin-bottom: 24px;
+      margin-bottom: 2.4rem;
       @include xs {
         display: none;
       }
       ul {
         list-style: none;
         display: flex;
-        gap: 8px;
+        gap: 0.8rem;
       }
     }
     &--secondary-nav {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 1.6rem;
       ul {
         list-style: none;
         display: flex;
-        gap: 8px;
+        gap: 0.8rem;
         @include xs {
           display: none;
         }
       }
       &--cart-btn {
         display: flex;
-        gap: 4px;
+        gap: 0.4rem;
         align-items: center;
         color: #272727;
         background-color: $color-grey;
         border-radius: 0;
-        padding: 18px;
+        padding: 1.8rem;
         svg {
           fill: $color-primary;
-          width: 32px;
+          width: 3.2rem;
           @include xs {
-            width: 24px;
+            width: 2.4rem;
           }
         }
       }

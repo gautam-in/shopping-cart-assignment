@@ -2,36 +2,36 @@
 
 .cart-item {
   display: flex;
-  gap: 8px;
+  gap: 0.8rem;
   background-color: $color-white;
-  padding: 12px;
+  padding: 1.2rem;
   img {
     width: 80px;
   }
   strong {
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 700;
   }
   &--content {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.8rem;
     flex: 1;
   }
   &--actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 48px;
+    gap: 4.8rem;
     &--btn {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 0.8rem;
       button {
-        padding: 2px 8px;
+        padding: 0.2rem 0.8rem;
         border-radius: 50%;
-        width: 24px;
-        height: 24px;
+        width: 2.4rem;
+        height: 2.4rem;
         display: flex;
       }
     }
@@ -42,15 +42,15 @@
   background-color: $color-white;
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin: 12px;
-  padding: 8px;
+  gap: 0.8rem;
+  margin: 1.2rem;
+  padding: 0.8rem;
   border-radius: 6px;
   img {
     width: 80px;
   }
   p {
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 400;
   }
 }
@@ -59,7 +59,7 @@
   @include container;
   background-color: $color-grey;
   padding: 0;
-  padding-top: 8px;
+  padding-top: 0.8rem;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -73,30 +73,30 @@
   bottom: 0;
   left: 0;
   background-color: $color-white;
-  padding-top: 12px;
+  padding-top: 1.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 16px;
+  gap: 0.8rem;
+  padding: 1.6rem;
   &--promocode {
-    font-size: 14px;
+    font-size: 1.4rem;
   }
   button {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px;
+    padding: 1.2rem;
 
     p {
       display: flex;
       align-items: center;
     }
     svg {
-      width: 24px;
-      height: 24px;
+      width: 2.4rem;
+      height: 2.4rem;
     }
   }
   &--start-shopping {
@@ -110,13 +110,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 48px;
+  padding: 4.8rem;
   h4 {
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 500;
   }
   p {
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 400;
   }
 }

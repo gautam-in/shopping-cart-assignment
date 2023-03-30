@@ -4,7 +4,7 @@
   $self: &;
   background-color: transparent;
   position: relative;
-  padding-top: 24px;
+  padding-top: 2.4rem;
   display: block;
 
   &--text-label {
@@ -38,7 +38,7 @@
     }
   }
   &--error {
-    padding: 8px 0;
+    padding: 0.8rem 0;
     color: $color-danger;
   }
 }

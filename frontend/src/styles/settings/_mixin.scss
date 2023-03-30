@@ -107,8 +107,8 @@ $screen-xl-max: 5000px;
 @mixin container {
   max-width: 1360px;
   margin: 0 auto;
-  padding: 10px 0px;
+  padding: 1rem 0;
   @include lt-lg {
-    padding: 10px 24px;
+    padding: 1rem 2.4rem;
   }
 }

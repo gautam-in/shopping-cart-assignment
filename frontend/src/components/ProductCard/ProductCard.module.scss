@@ -6,8 +6,8 @@
   color: #272727;
   width: 100%;
   overflow: hidden;
-  column-gap: 8px;
-  row-gap: 8px;
+  column-gap: 0.8rem;
+  row-gap: 0.8rem;
 
   @include gt-sm {
     grid-template-columns: 1fr;
@@ -17,7 +17,7 @@
     grid-column: 1 / -1;
     min-height: 110px;
     h4 {
-      font-size: 24px;
+      font-size: 2.4rem;
       font-weight: 700;
     }
   }
@@ -40,10 +40,10 @@
     margin: 0;
     grid-column: 2 / -1;
     background-color: $color-grey;
-    padding: 8px;
-    border-radius: 2px;
+    padding: 0.8rem;
+    border-radius: 0.2rem;
     min-height: 110px;
-    font-size: 16px;
+    font-size: 1.6rem;
     @include gt-sm {
       grid-column: initial;
     }
@@ -55,7 +55,7 @@
     justify-content: space-between;
     align-items: flex-end;
     &--price {
-      font-size: 14px;
+      font-size: 1.4rem;
       display: none;
       @include gt-sm {
         display: block;
