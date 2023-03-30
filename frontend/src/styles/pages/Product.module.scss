@@ -1,0 +1,30 @@
+@import "@/styles/settings.scss";
+
+.product-section {
+  @include container;
+  padding-bottom: 0;
+  padding-top: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1.6rem;
+  @include xs {
+    grid-template-columns: 1fr;
+  }
+  &--list {
+    padding: 1.6rem;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 1.6rem;
+    row-gap: 0.8rem;
+    @include xs {
+      grid-template-columns: 1fr;
+    }
+    @include gt-xs {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include gt-sm {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

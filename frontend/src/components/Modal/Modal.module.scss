@@ -1,0 +1,32 @@
+@import "@/styles/settings.scss";
+
+.modal-container {
+  @include container;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 100;
+  .modal {
+    &--header {
+      padding: 1.2rem;
+      background-color: $color-white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $color-dark;
+      color: $color-white;
+
+      &--title {
+        margin: 0;
+      }
+    }
+
+    &--content {
+      flex: 1;
+      max-height: calc(100vh - 148px);
+      overflow-y: auto;
+    }
+    &--close-btn {
+      color: $color-white;
+    }
+  }
+}

@@ -1,0 +1,125 @@
+@import "@/styles/settings.scss";
+
+.cart-item {
+  display: flex;
+  gap: 0.8rem;
+  background-color: $color-white;
+  padding: 1.2rem;
+  img {
+    width: 80px;
+  }
+  strong {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  &--content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    flex: 1;
+  }
+  &--actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4.8rem;
+    &--btn {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      button {
+        padding: 0.2rem 0.8rem;
+        border-radius: 50%;
+        width: 2.4rem;
+        height: 2.4rem;
+        display: flex;
+      }
+    }
+  }
+}
+
+.cart-banner {
+  background-color: $color-white;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1.2rem;
+  padding: 0.8rem;
+  border-radius: 6px;
+  img {
+    width: 80px;
+  }
+  p {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+}
+
+.cart-body {
+  @include container;
+  background-color: $color-grey;
+  padding: 0;
+  @include xs {
+    padding-top: 2.4rem;
+  }
+  padding-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 400px;
+  min-width: 520px;
+}
+
+.cart-footer {
+  margin: auto 0 0 0;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  background-color: $color-white;
+  padding-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.6rem;
+  &--promocode {
+    font-size: 1.4rem;
+  }
+  button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem;
+
+    p {
+      display: flex;
+      align-items: center;
+    }
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+  &--start-shopping {
+    margin: 0 auto;
+  }
+}
+
+.empty-cart {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4.8rem;
+  h4 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  p {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+}

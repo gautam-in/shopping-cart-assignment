@@ -1,0 +1,82 @@
+/*******
+  root
+ ******/
+
+* {
+  font: inherit;
+  font-size: 1.6rem;
+  font-family: inherit;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+::before,
+::after {
+  text-decoration: inherit;
+  vertical-align: inherit;
+}
+
+/***********
+  margins
+  paddings
+ **********/
+
+body,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+nav,
+select,
+textarea,
+ul,
+ol,
+dl,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/*********
+  hovers
+ ********/
+
+a,
+button,
+input[type="submit"] {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+/**************
+  decorations
+ *************/
+
+a,
+button,
+input,
+select,
+textarea {
+  background: none;
+  color: inherit;
+  border: none;
+  text-transform: none;
+  text-decoration: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+ul {
+  list-style: none;
+}

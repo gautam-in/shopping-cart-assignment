@@ -1,0 +1,23 @@
+@import "reset";
+@import "settings";
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,500, 600,700");
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-main {
+  margin-top: $appHeaderHeight;
+  @include xs {
+    margin-top: $appHeaderHeightmobile;
+  }
+}

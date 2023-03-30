@@ -1,0 +1,78 @@
+@import "@/styles/settings.scss";
+
+.head-section {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: $appHeaderHeight;
+  @include xs {
+    height: $appHeaderHeightmobile;
+  }
+  z-index: 2;
+
+  .app-header {
+    display: flex;
+    justify-content: space-between;
+    color: #272727;
+    background-color: $color-white;
+    font-size: 1.6rem;
+
+    @include container;
+    padding-bottom: 0;
+    padding-top: 0.8rem;
+
+    img {
+      @include xs {
+        width: 140px;
+        height: 70px;
+      }
+    }
+    &--home-page-nav {
+      flex: 1;
+      padding-left: 80px;
+      padding-right: 80px;
+      align-self: flex-end;
+      margin-bottom: 2.4rem;
+      @include xs {
+        display: none;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 0.8rem;
+      }
+    }
+    &--secondary-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 0.8rem;
+        @include xs {
+          display: none;
+        }
+      }
+      &--cart-btn {
+        display: flex;
+        gap: 0.4rem;
+        align-items: center;
+        color: #272727;
+        background-color: $color-grey;
+        border-radius: 0;
+        padding: 1.8rem;
+        svg {
+          fill: $color-primary;
+          width: 3.2rem;
+          @include xs {
+            width: 2.4rem;
+          }
+        }
+      }
+    }
+  }
+}

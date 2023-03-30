@@ -1,0 +1,13 @@
+@import "@/styles/settings.scss";
+
+.home-section {
+  @include container;
+  overflow-x: hidden;
+  &--catergory-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 1.6rem;
+    row-gap: 0.8rem;
+  }
+}
