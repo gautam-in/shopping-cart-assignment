@@ -1,7 +1,19 @@
 @import "@/styles/settings.scss";
 
+.sidenav-mobile-menu {
+  @include container;
+  width: 100%;
+  display: none;
+  @include xs {
+    display: block;
+  }
+}
+
 .sidenav-wrapper {
   background-color: $color-grey;
+  @include xs {
+    display: none;
+  }
 }
 
 .sidenav-container {

@@ -7,6 +7,9 @@
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 16px;
+  @include xs {
+    grid-template-columns: 1fr;
+  }
   &--list {
     padding: 16px;
     list-style: none;
@@ -14,6 +17,9 @@
     grid-template-columns: 1fr;
     column-gap: 16px;
     row-gap: 8px;
+    @include xs {
+      grid-template-columns: 1fr;
+    }
     @include gt-xs {
       grid-template-columns: repeat(2, 1fr);
     }

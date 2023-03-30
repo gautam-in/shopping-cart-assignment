@@ -1,0 +1,32 @@
+@import "@/styles/settings.scss";
+
+.dropdown-container {
+  position: relative;
+  margin-bottom: 1rem;
+  &--btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  &--icon {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    width: 24px;
+    height: 24px;
+  }
+  &--list {
+    position: absolute;
+    width: 100%;
+    color: $color-primary;
+    background-color: $color-white;
+    z-index: 1;
+  }
+
+  &--list-item {
+    color: $color-dark;
+    padding: 12px;
+    border-bottom: 2px solid $color-grey;
+    cursor: pointer;
+  }
+}
