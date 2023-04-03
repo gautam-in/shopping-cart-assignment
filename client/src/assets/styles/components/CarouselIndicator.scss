@@ -1,0 +1,20 @@
+.carousel-indicator {
+  top: 50%;
+  border: 0;
+  z-index: 1;
+  cursor: pointer;
+  padding: 0.625rem;
+  position: absolute;
+  color: $c-grey-000;
+  text-transform: uppercase;
+  transform: translateY(-50%);
+  background-color: $c-overlay;
+
+  &:hover {
+    background-color: $c-overlay-hover;
+  }
+
+  &.next {
+    right: 0;
+  }
+}

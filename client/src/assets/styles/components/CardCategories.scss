@@ -1,0 +1,70 @@
+@import "../drop-shadow.scss";
+
+.card-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 0 2rem 0;
+  background-color: $c-grey-000;
+
+  .wrapper-image {
+    img {
+      max-height: 240px;
+      margin: 0 auto;
+    }
+  }
+
+  .wrapper-details {
+    text-align: center;
+    flex: auto;
+    padding: 0 0.625rem;
+
+    h2 {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 2rem 0;
+    }
+
+    .btn-cta {
+      text-decoration: none;
+      color: $c-grey-000;
+      background: $c-primary-700;
+      font-size: 0.875em;
+      padding: 1rem;
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .card-categories {
+    flex-direction: row;
+
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .wrapper-image {
+      min-width: 400px;
+    }
+
+    .wrapper-details {
+      h2 {
+        margin-top: 3.125rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-categories {
+    .wrapper-details {
+      padding: 0;
+    }
+  }
+}

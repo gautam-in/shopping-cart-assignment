@@ -1,0 +1,33 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    color: $c-grey-400;
+  }
+
+  input {
+    padding: 1rem 0 0.3125rem 0;
+    border: 0;
+    border-bottom: 2px solid $c-grey-300;
+
+    &:focus-visible {
+      outline: 0;
+      border-bottom: 2px solid $c-cyan;
+    }
+  }
+
+  .required {
+    font-size: 0.75em;
+    color: $c-required;
+  }
+}
+
+.btn-submit {
+  color: $c-grey-000;
+  background-color: $c-primary-800;
+  border: 0;
+  font-size: 0.875em;
+  padding: 1rem;
+  cursor: pointer;
+}

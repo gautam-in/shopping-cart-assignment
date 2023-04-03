@@ -1,0 +1,91 @@
+.card-products {
+  margin: 1rem 1rem 2rem 1rem;
+  border-bottom: 2px dotted $c-grey-200;
+  padding-bottom: 0.625rem;
+  display: grid;
+  align-content: space-between;
+
+  .wrapper-product {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 1rem;
+    grid-template-rows: auto;
+    gap: 10px;
+    grid-template-areas:
+      "image description"
+      "image buy-now";
+
+    .product-image {
+      grid-area: image;
+      margin: auto;
+    }
+
+    .product-description {
+      grid-area: description;
+
+      p {
+        background: $c-grey-200;
+        padding: 0.625rem;
+        font-size: 0.875em;
+      }
+    }
+
+    .product-price {
+      display: none;
+      grid-area: price;
+      margin: auto 0;
+      font-size: 0.875em;
+    }
+
+    .product-buy-now {
+      grid-area: buy-now;
+
+      button {
+        color: $c-grey-000;
+        background-color: $c-primary-800;
+        border: 0;
+        font-size: 0.875em;
+        padding: 1rem;
+        cursor: pointer;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .card-products {
+    .wrapper-product {
+      grid-template-areas:
+        "image description"
+        "buy-now buy-now";
+
+      .product-description {
+        p {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .card-products {
+    .wrapper-product {
+      grid-template-areas:
+        "image image"
+        "description description"
+        "price buy-now";
+
+      .product-price {
+        display: block;
+      }
+
+      .product-buy-now {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}
