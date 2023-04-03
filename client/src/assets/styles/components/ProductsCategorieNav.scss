@@ -1,0 +1,30 @@
+.products-categorie-nav {
+  .category-list-item {
+    span {
+      padding: 1rem;
+      font-size: 0.875em;
+      color: $c-grey-800;
+      border-bottom: 1px solid $c-grey-300;
+      margin-left: 0.375rem;
+      cursor: pointer;
+      display: block;
+    }
+
+    &.selected {
+      span {
+        font-weight: bold;
+      }
+      // background: $c-grey-300;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .products-categorie-nav {
+    .category-list-item {
+      span {
+        padding-left: 2rem;
+      }
+    }
+  }
+}

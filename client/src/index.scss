@@ -1,0 +1,19 @@
+@import "./assets/styles/reset.scss";
+@import "./assets/styles/variables.scss";
+
+body {
+  font-family: "Dosis", sans-serif;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2.1094em;
+}
+
+h2 {
+  font-size: 1.4063em;
+}
+
+h3 {
+  font-size: 0.9375em;
+}

@@ -1,0 +1,12 @@
+@import "../drop-shadow.scss";
+
+.page-home {
+  margin-top: 1rem;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto 2rem auto;
+    display: grid;
+    gap: 32px;
+  }
+}

@@ -1,0 +1,50 @@
+.app-dropdown {
+  position: relative;
+
+  .dropdown-trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: $c-primary-700;
+    color: $c-grey-000;
+    padding: 0.75rem;
+    border: 0;
+    cursor: pointer;
+
+    .chevron {
+      transition: all 0.5s ease;
+    }
+
+    &[aria-pressed="true"] .chevron {
+      transform: rotate(180deg);
+    }
+  }
+
+  .dropdown-items {
+    display: none;
+    background-color: $c-primary-700;
+    color: $c-grey-000;
+    margin-top: 0.3125rem;
+    position: absolute;
+    width: 100%;
+  }
+
+  .dropdown-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown-list-item {
+    padding: 0.625rem;
+    cursor: pointer;
+
+    &.selected,
+    &:hover {
+      background-color: $c-primary-700-hover;
+    }
+  }
+
+  .dropdown-trigger[aria-pressed="true"] ~ .dropdown-items {
+    display: block;
+  }
+}

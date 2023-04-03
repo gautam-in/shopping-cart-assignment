@@ -1,0 +1,17 @@
+.drop-shadow {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    -webkit-box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
+    top: 50%;
+    bottom: 0;
+    left: 17px;
+    right: 17px;
+    border-radius: 100%/70px;
+    z-index: -1;
+  }
+}
