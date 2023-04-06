@@ -1,0 +1,30 @@
+.login-container {
+  display: flex;
+  flex-direction: row;
+  padding: 5em 0 0 25em;
+}
+
+.login-container .text {
+  margin-right: 5em;
+}
+
+.login-container .btn {
+  background: #bf2957;
+  width: 100%;
+}
+
+.login-container .form {
+  width: 30%;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Styles for smartphones go here */
+  .login-container {
+    flex-direction: column;
+    padding: 2em 10px 0 10px;
+  }
+  .login-container .form {
+    width: 100%;
+    margin-top: 1em;
+  }
+}

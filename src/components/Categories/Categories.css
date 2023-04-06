@@ -1,0 +1,69 @@
+.row-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 1em 4em 1em 4em;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.button-text {
+  background: #bf2957;
+  border: none;
+  padding: 12px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.title-desc {
+  width: 50%;
+  text-align: end;
+}
+
+.title-desc *:not(:first-child) {
+  margin-top: 10px;
+}
+
+/* Smartphones (Portrait) */
+@media only screen and (max-width: 600px) {
+  /* Styles for smartphones go here */
+  .button-text {
+    font-size: 14px;
+  }
+  .title-desc {
+    width: 100%;
+  }
+  .shadow {
+    padding: 1em;
+  }
+}
+
+/* Tablets (Portrait) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  /* Styles for tablets in portrait orientation go here */
+}
+
+/* Desktops and Laptops */
+@media only screen and (min-width: 1200px) {
+  /* Styles for desktops and laptops go here */
+}
+
+/* Large Screens */
+@media only screen and (min-width: 1600px) {
+  /* Styles for large screens go here */
+}
