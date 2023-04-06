@@ -1,0 +1,34 @@
+header {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  margin-bottom: 5px;
+
+  position: sticky;
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+}
+
+.row-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cart {
+  background: #eeeeee;
+  border: none;
+  padding: 12px;
+  margin-right: 10px;
+}
+
+header .btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}

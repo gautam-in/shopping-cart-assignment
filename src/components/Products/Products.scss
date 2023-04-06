@@ -1,0 +1,74 @@
+$small-screen: 768px;
+$medium-screen: 992px;
+$large-screen: 1200px;
+
+.category-container {
+  height: 94vh;
+  background: #eeee;
+  // max-width: 20em;
+  // width: 100%; // Default width for all device widths
+  @media (min-width: $small-screen) {
+    width: 20%; // Adjust width for small devices
+  }
+  @media (min-width: $medium-screen) {
+    width: 25%; // Adjust width for medium devices
+  }
+  @media (min-width: $large-screen) {
+    width: 30%; // Adjust width for large devices
+  }
+}
+
+// .category-container {
+//   height: 94vh;
+//   background: #eeee;
+//   max-width: 20em;
+// }
+
+.category {
+  border-bottom: 1px solid #cfc6c6ee;
+  padding: 1em;
+}
+
+.product-container {
+  display: flex;
+}
+.highlight {
+  background: #bf2957;
+  color: white;
+}
+.regular {
+  background: none;
+}
+
+.right-panel {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: -webkit-fill-available;
+  margin-right: 10px;
+  //   margin-bottom: 3em;
+  padding-left: 20px;
+  height: 94vh;
+  overflow: scroll;
+}
+
+.items {
+  display: flex;
+  // flex-direction: row;
+  flex-wrap: wrap;
+}
+.accordion {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Styles for smartphones go here */
+  .accordion {
+    display: block;
+  }
+  .product-container {
+    display: none;
+  }
+
+  .accordion {
+    display: block;
+  }
+}
