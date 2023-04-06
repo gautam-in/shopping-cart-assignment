@@ -11,6 +11,12 @@
   height: 7em;
 }
 
+.cart-modal-body {
+  padding: 0;
+  overflow-y: scroll;
+  max-height: 30em;
+}
+
 .cart-footer .btn {
   background: #bf2957;
   width: 100%;
@@ -19,7 +25,7 @@
 }
 
 .no-items-cart-footer {
-  padding: 0 25em;
+  padding: 0 20em;
   .btn {
     background: #bf2957;
     width: 100%;
@@ -83,4 +89,12 @@
 .cart-title {
   padding: 10px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.modal-footer {
+  justify-content: center;
+  .btn {
+    width: 100%;
+    background-color: #bf2957;
+  }
 }
