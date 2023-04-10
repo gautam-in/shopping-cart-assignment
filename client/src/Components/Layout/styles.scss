@@ -58,7 +58,13 @@ header {
         align-items: center;
         padding: 1.5rem;
         background-color: var(--color-grey);
+        border: none;
         cursor: pointer;
+
+        &:focus-visible {
+          outline: 2px solid var(--color-dark);
+          outline-offset: 2px;
+        }
 
         @media (max-width: 480px) {
           height: 100%;

@@ -20,6 +20,10 @@ export const Header = () => {
   return (
     <header>
       <div className="container header-container flex">
+        <a href="#main" className="skip-to-main-content-link">
+          Skip to main content
+        </a>
+
         <div className="nav-container">
           <Link to="/">
             <img
@@ -28,10 +32,6 @@ export const Header = () => {
               className="logo"
             />
           </Link>
-
-          <a href="#main" className="skip-to-main-content-link">
-            Skip to main content
-          </a>
 
           <nav className="flex">
             <ul className="flex">
@@ -50,14 +50,10 @@ export const Header = () => {
             {user ? <LogoutLink signOut={logout} /> : <LoggedInLinks />}
           </ul>
 
-          <div
-            className="minicart flex"
-            role="button"
-            onClick={() => setShowCart(true)}
-          >
+          <button className="minicart flex" onClick={() => setShowCart(true)}>
             <HiShoppingCart className="cart-icon" />
             {state.itemCount} {pluralize("item", "s", state.itemCount)}
-          </div>
+          </button>
         </div>
       </div>
 
