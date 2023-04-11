@@ -25,6 +25,7 @@ export const TextInput = ({
         aria-label={name}
         aria-required={true}
         aria-invalid={!!isInvalid}
+        aria-describedby={`error-${name}`}
         value={value}
         onChange={handleChange}
         onBlur={handleBlur}
@@ -35,7 +36,7 @@ export const TextInput = ({
       </label>
 
       {isInvalid ? (
-        <div className="input-error" aria-describedby={name} aria-live="polite">
+        <div className="input-error" id={`error-${name}`} aria-live="polite">
           {errors}
         </div>
       ) : null}
