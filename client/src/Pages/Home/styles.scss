@@ -1,0 +1,12 @@
+.hero-banner {
+  margin: 2rem 0 5rem;
+
+  .home-carousel {
+    box-shadow: var(--category-shadow);
+
+    .dot:focus {
+      outline: 2px solid var(--color-dark);
+      outline-offset: 2px;
+    }
+  }
+}

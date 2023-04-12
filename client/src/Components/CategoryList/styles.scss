@@ -1,0 +1,31 @@
+.category-listing {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-grey);
+  list-style: none;
+  padding-left: 1rem;
+  min-width: 250px;
+  height: 100%;
+
+  @media (max-width: 768px) {
+    min-width: 200px;
+  }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+
+  .category-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--dark-blue);
+
+    a {
+      color: var(--dark-blue);
+      text-decoration: none;
+
+      &.active {
+        font-weight: 700;
+      }
+    }
+  }
+}

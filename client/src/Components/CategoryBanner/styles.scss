@@ -1,0 +1,36 @@
+.category-banner {
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--category-shadow);
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    &:nth-child(even) {
+      flex-direction: column;
+    }
+  }
+
+  img {
+    max-width: 400px;
+
+    @media (max-width: 768px) {
+      max-width: 200px;
+    }
+  }
+
+  .name,
+  .description {
+    margin-bottom: 2rem;
+  }
+
+  .name {
+    font-size: 1.2rem;
+  }
+}

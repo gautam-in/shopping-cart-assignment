@@ -1,0 +1,58 @@
+.input-group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+
+  .input-control {
+    font-family: inherit;
+    background: transparent;
+    width: 100%;
+    padding: 7px 0;
+    border: 0;
+    border-bottom: 1px solid var(--dark-blue);
+    outline: 0;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:placeholder-shown ~ .input-label {
+      font-size: 1rem;
+      cursor: text;
+      top: 20px;
+    }
+
+    &:focus ~ .input-label {
+      color: var(--light-blue);
+    }
+
+    &:focus {
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--light-blue);
+    }
+  }
+
+  label,
+  .input-control:focus ~ .input-label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 0.8rem;
+  }
+
+  &.error .input-label,
+  .input-error {
+    color: var(--color-danger);
+  }
+
+  &.error .input-control {
+    border-color: var(--color-danger);
+  }
+
+  .input-error {
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+  }
+}

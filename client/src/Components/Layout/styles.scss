@@ -1,0 +1,113 @@
+header {
+  margin-top: 0.5rem;
+  box-shadow: var(--header-shadow);
+
+  .header-container {
+    justify-content: space-between;
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      color: var(--dark-blue);
+      text-decoration: none;
+    }
+
+    .nav-container {
+      display: flex;
+      gap: 10rem;
+
+      nav {
+        margin-bottom: 1rem;
+        align-items: flex-end;
+
+        @media (max-width: 480px) {
+          display: none;
+        }
+
+        li + li {
+          margin-left: 2rem;
+        }
+      }
+    }
+
+    .auth-links-cart {
+      flex-direction: column;
+      justify-content: space-between;
+
+      li + li {
+        margin-left: 1rem;
+      }
+
+      .auth-links {
+        font-size: 0.8rem;
+        align-self: flex-end;
+        margin-bottom: 1rem;
+
+        @media (max-width: 1023px) {
+          margin-right: 0.5rem;
+        }
+
+        @media (max-width: 480px) {
+          display: none;
+        }
+      }
+
+      .minicart {
+        align-items: center;
+        padding: 1.5rem;
+        background-color: var(--color-grey);
+        border: none;
+        cursor: pointer;
+
+        &:focus-visible {
+          outline: 2px solid var(--color-dark);
+          outline-offset: 2px;
+        }
+
+        @media (max-width: 480px) {
+          height: 100%;
+        }
+
+        .cart-icon {
+          color: var(--color-primary);
+          font-size: 1.8rem;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    .skip-to-main-content-link {
+      position: absolute;
+      top: -500px;
+      left: 50%;
+      background-color: var(--color-dark);
+      color: var(--color-white);
+      padding: 0.5rem;
+      z-index: 999;
+      transition: all 0.25s ease-in;
+
+      &:focus-visible {
+        outline: 2px solid var(--color-dark);
+        outline-offset: 2px;
+      }
+    }
+    .skip-to-main-content-link:focus {
+      top: 30px;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  opacity: 0.5;
+}
+
+footer {
+  background-color: var(--color-grey);
+  padding: 1rem 0;
+}

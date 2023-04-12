@@ -1,0 +1,122 @@
+.cart-modal {
+  .empty-cart {
+    flex-direction: column;
+    justify-content: center;
+    min-height: 50vh;
+    background-color: var(--color-white);
+    margin: -0.5rem;
+
+    h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .cart-title {
+    span {
+      font-weight: 500;
+      font-size: 0.825rem;
+    }
+  }
+
+  .cart-item-list {
+    background-color: var(--color-white);
+    padding: 1rem;
+    margin: 0 -0.5rem;
+
+    .cart-item {
+      grid-template-columns: 1fr 3fr;
+      align-items: center;
+      margin-bottom: 0.5rem;
+
+      .cart-item-image {
+        max-width: 80px;
+      }
+
+      .cart-item-actions {
+        align-items: center;
+        gap: 1rem;
+        margin-top: 0.5rem;
+
+        .cart-item-button {
+          width: 30px;
+          height: 30px;
+          padding: 0.25rem 0.5rem;
+          border-radius: 50%;
+        }
+
+        .cart-item-total {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+
+  .cart-banner {
+    background-color: var(--color-white);
+    align-items: center;
+    padding: 0.5rem;
+    margin-top: 1rem;
+
+    img {
+      max-width: 100px;
+      margin-right: 2rem;
+    }
+  }
+  .modal-footer {
+    text-align: center;
+
+    button {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    background-color: transparent;
+    top: 135px;
+
+    .modal-content {
+      width: 100%;
+      height: 100%;
+
+      .modal-header {
+        background-color: var(--color-white);
+        color: var(--color-daek);
+      }
+
+      .modal-body {
+        max-height: none;
+      }
+
+      .cart-item {
+        grid-template-columns: 0.5fr 3fr;
+
+        .cart-item-actions {
+          .cart-item-button {
+            border-radius: 5px;
+          }
+        }
+      }
+
+      .modal-footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    top: 95px;
+
+    .modal-content {
+      .modal-body {
+        max-height: 80%;
+      }
+      .cart-item {
+        grid-template-columns: 1.25fr 3fr;
+      }
+    }
+  }
+}
