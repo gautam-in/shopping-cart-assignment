@@ -1,0 +1,49 @@
+@import "../../styles/variables";
+
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #ddd;
+    position: relative;
+    @media screen and (max-width: $breakpoint-mobile) {
+        margin-top: 20px;
+        
+      }
+  }
+  
+  .topnav>div> button {
+    color: #4d4d4d;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: none;
+  }
+  .topnav>div.expand> button {
+   
+    display: block ;
+    width: 100%;
+  }
+  
+ 
+  .topnav> div.active {
+    background-color: #d42559;
+    color: white;
+    padding: 10px 16px;
+    font-size: 17px;
+  }
+  
+  .topnav>div.active> button.arrow {
+    float: right;
+    border: solid white;
+    border-width: 0 5px 5px 0;
+    display: block;
+    padding: 6px;
+    transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  background-color: #d42559;
+  }
+  .topnav{
+    @media screen and (min-width: "481px") {
+        display: none;
+      }
+  }

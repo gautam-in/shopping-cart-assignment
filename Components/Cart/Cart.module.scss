@@ -1,0 +1,73 @@
+@import "/styles/variables";
+
+.cart-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $secondary-color;
+  padding: 0 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+
+  &__image {
+    width: 40px;
+  }
+
+  &__text {
+    color: black;
+    font-size: $text-font-size;
+    margin-right: 5px;
+  }
+}
+
+.modal {
+  display: block; 
+  position: fixed; 
+  z-index: 999; 
+  padding-top: 11%; 
+  left: 0;
+  top: 0;
+  width: 100vw; 
+  height: 100vh; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4); 
+  @media screen and (min-width: $breakpoint-smallLaptop) {
+   
+    padding-top: 5%; 
+  }
+}
+
+.modal-content {
+  background-color: #ddd;
+  margin: auto;
+  border: 1px solid #888;
+  width: 100%;
+  height:90%;
+  position: absolute;
+  overflow: auto;
+  display: flex;
+    flex-direction: column;
+  @media screen and (min-width: $breakpoint-smallLaptop) {
+    width: 30%;
+    right: 20%;
+
+  }
+
+}
+
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

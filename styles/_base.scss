@@ -1,0 +1,87 @@
+@import "./mixin";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Dosis, sans-serif;
+  background-color: #fff;
+  @include scrollbars(0.7rem, #888, #fff);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #212121;
+}
+
+p {
+  color: #212121;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #505050;
+}
+.button-wrapper {
+  display: block;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  font-size: $text-font-size;
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  background-color: $button-color;
+  color: $button-text-color;
+  cursor: pointer;
+  position: relative;
+
+  &:active {
+    top: 0.6px;
+    left: 0.6px;
+  }
+
+  &:disabled {
+    background-color: $secondary-color;
+    cursor: not-allowed;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    font-size: $small-font-size;
+    padding: 0.4rem;
+  }
+}
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+  max-width: 200px;
+  max-height: 150px;
+  object-fit: contain;
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    max-width: 160px;
+    max-height: 120px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    max-width: 120px;
+    max-height: 90px;
+  }
+}
+.sr-only{
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

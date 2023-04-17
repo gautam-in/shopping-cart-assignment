@@ -5,11 +5,25 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned -p 5000 ./server"
+    "build": "next build",
+    "lint": "next lint",
+    "start": "concurrently \"npm run start:server\" \"npm run start:prodUi\"",
+    "start:server": "canned -p 5000 ./server",
+    "start:devUi": "next dev",
+    "start:prodUi": "npm run build && next start",
+    "dev": "concurrently \"npm run start:server\" \"npm run start:devUi\""
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "canned": "^0.3.3",
+    "concurrently": "^8.0.1",
+    "next": "^13.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sharp": "^0.32.0"
+  },
+  "devDependencies": {
+    "sass": "^1.62.0"
   }
 }
