@@ -1,0 +1,16 @@
+.accordion {
+    .MuiAccordionSummary-root {
+        @apply bg-primary text-white;
+    }
+    .MuiAccordionSummary-expandIconWrapper {
+        @apply text-white;
+    }
+}
+
+.MuiFormControl-root {
+    &.text_field {
+        .MuiFormLabel-root {
+            font-family: dosis;
+        }
+    }
+}

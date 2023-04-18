@@ -1,0 +1,5 @@
+.MuiDrawer-root.cart {
+    .MuiPaper-root {
+        @apply h-[calc(100vh-82px)] absolute w-full lg:w-[600px] -top-0 right-0 bg-grey;
+    }
+}
