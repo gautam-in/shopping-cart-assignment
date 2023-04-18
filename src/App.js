@@ -1,16 +1,16 @@
 import React, { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Layout } from "./components/Layout";
-import { Loading } from "./components/Loading";
-import NotFound from "./components/NotFound";
+import { Layout } from "@components/Layout";
+import { Loading } from "@components/Loading";
+import NotFound from "@components/NotFound";
 import { BrowserRouter } from 'react-router-dom';
 import "./global.scss";
 
-const Home = lazy(() => import("./pages/home"));
-const Products = lazy(() => import("./pages/products"));
-const Login = lazy(() => import("./pages/login"));
-const Register = lazy(() => import("./pages/register"));
-
+const Home = lazy(() => import("@pages/home"));
+const Products = lazy(() => import("@pages/products"));
+const Login = lazy(() => import("@pages/login"));
+const Register = lazy(() => import("@pages/register"));
+const ProductListing = lazy(() => import("@pages/products/ProductListing"));
 
 const App = () => {
     return (
@@ -19,7 +19,10 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route path="/" element={<Loading> <Home /> </Loading>} />
-                        <Route path="/products" element={<Loading> <Products /> </Loading>} />
+                        <Route path="/products" element={<Loading> <Products /> </Loading>}>
+                            <Route index element={<Loading> <ProductListing /> </Loading>} />
+                            <Route path=":productId" element={<Loading> <ProductListing /> </Loading>} />
+                        </Route>
                         <Route path="/login" element={<Loading> <Login /> </Loading>} />
                         <Route path="/register" element={<Loading> <Register /> </Loading>} />
                     </Route>

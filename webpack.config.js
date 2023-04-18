@@ -10,7 +10,8 @@ module.exports = {
     entry: path.join(__dirname, "src", "index.js"),
     devtool: "source-map",
     output: {
-        path: path.join(__dirname, "/build")
+        path: path.join(__dirname, "/build/"),
+        publicPath : '/'
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -61,6 +62,12 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ["*", ".js", ".jsx"],    // <-- added `.jsx` here
+        extensions: ["*", ".js", ".jsx"],
+        alias: {
+            "@components": path.resolve(__dirname, "src/components"),
+            "@hooks": path.resolve(__dirname, "src/hooks"),
+            "@pages": path.resolve(__dirname, "src/pages"),
+            "@api": path.resolve(__dirname, "src/api"),
+        }
     },
 };

@@ -4,7 +4,7 @@ export function Loading(props) {
     return (
         <>
             <Suspense fallback={
-                <div>
+                <div className="loading-wrapper">
                     Loading...
                 </div>
             }>

@@ -2,6 +2,17 @@
 
 .appHeader {
     box-shadow: 0 13px 21px -9px rgba(0,0,0,.2);
+    height: 58px;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 999;
+
+    @media (min-width:641px) {
+        height: 83px;
+    }
 
     .container {
         display: flex;
@@ -16,7 +27,7 @@
             margin: 5px 0;
 
             @media (min-width:641px) {
-                margin: 10px 0;
+                margin: 13px 0;
             }
 
             img {
@@ -60,9 +71,10 @@
                 display: block;
                 text-align: right;
                 margin-bottom: 5px;
+                margin-top: 5px;
 
                 a {
-                    margin-left: 10px;
+                    margin-right: 10px;
                 }
             }
         }
@@ -77,6 +89,7 @@
             align-items: center;
             justify-content: center;
             width: 110px;
+            cursor: pointer;
 
             .icon {
                 display: inline-block;
