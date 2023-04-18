@@ -1,0 +1,70 @@
+@import "./variables.scss";
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0 auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    // width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    
+    @media (min-width: 768px) {
+        max-width: 720px
+    }
+    
+    @media (min-width: 992px) {
+        max-width: 960px
+    }
+    
+    @media (min-width: 1200px) {
+        max-width: 1200px
+    }
+    
+    @media (min-width: 1500px) {
+        max-width: 1400px
+    }
+}
+
+.skip-main {
+    height: 1px;
+    left: -999px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+
+    &:focus {
+        height: auto;
+        left: 0;
+        overflow: auto;
+        top: 0;
+        width: auto;
+    }
+}
+
+*:focus {
+    outline: 1px solid $primary-color;
+}
+
+// main {
+//     margin-top: 130px;
+// }
+
+// @media (max-width: 768px) {
+//     main {
+//         margin-top: 90px !important;
+//     }
+// }
