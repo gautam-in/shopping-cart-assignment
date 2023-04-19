@@ -18,5 +18,13 @@ export const ProductsAPI = {
         const formattedCategories = response.data.sort((a, b) => a.order - b.order).filter(item => item.order !== -1);
 
         return formattedCategories;
-    }
+    },
+    getProducts: async function () {
+        const response = await api.request({
+            url: `/products`,
+            method: "GET",
+        });
+
+        return response.data;
+    },
 }

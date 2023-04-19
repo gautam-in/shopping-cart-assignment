@@ -26,14 +26,13 @@ export function Home() {
         try {
             const categoryList = await ProductsAPI.getCategories();
             setCategories(categoryList);
-            console.log(categoryList);
         } catch {
             setCategories([]);
         }
     };
 
     const loadProducts = (id) => {
-        navigate("/products");
+        navigate("/products/" + id);
     };
 
     useEffect(() => {
@@ -61,7 +60,7 @@ export function Home() {
                                 <div className={styles.categoryDetails}>
                                     <h2 className={styles.categoryName}>{category.name}</h2>
                                     <p className={styles.categoryDescription}>{category.description}</p>
-                                    <Button onClick={loadProducts}>Explore {category.key}</Button>
+                                    <Button onClick={() => loadProducts(category.id)}>Explore {category.key}</Button>
                                 </div>
                                 {
                                     idx % 2 == 1 ? <img src={category.imageUrl} loading="lazy" alt={category.description} /> : null

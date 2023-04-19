@@ -3,10 +3,10 @@ import styles from "./Button.module.scss";
 
 export function Button(props) {
 
-    const { children, ...rest } = props;
+    const { children, className, ...rest } = props;
 
     return (
-        <button className={styles.button} {...rest}>
+        <button className={styles.button + " " + (className || "")} {...rest}>
             {children}
         </button>
     );
