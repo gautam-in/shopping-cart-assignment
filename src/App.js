@@ -11,6 +11,7 @@ const Products = lazy(() => import("@pages/products"));
 const Login = lazy(() => import("@pages/login"));
 const Register = lazy(() => import("@pages/register"));
 const ProductListing = lazy(() => import("@pages/products/ProductListing"));
+const CartPage = lazy(() => import("@pages/cart"));
 
 const App = () => {
     return (
@@ -25,6 +26,7 @@ const App = () => {
                         </Route>
                         <Route path="/login" element={<Loading> <Login /> </Loading>} />
                         <Route path="/register" element={<Loading> <Register /> </Loading>} />
+                        <Route path="/cart" element={<Loading> <CartPage /> </Loading>} />
                     </Route>
                     <Route
                         path="*"

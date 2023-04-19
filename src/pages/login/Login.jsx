@@ -44,7 +44,7 @@ export function Login() {
                     name="password"
                     type="text"
                     rules={{ required: "Password is required" }}
-                    aria-invalid={errors.email ? "true" : "false"}
+                    aria-invalid={errors.password ? "true" : "false"}
                 />
                 <div className={styles.buttonWrapper}>
                     <Button>Login</Button>

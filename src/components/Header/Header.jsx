@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Header.module.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import CartModal from "@components/Cart";
+import { useDispatch, useSelector } from "react-redux";
+import { add, remove } from "../../store/cartReducer";
 
 export function Header() {
     const cartItemsSelected = 0;
+    const [isCartOpen, setCartOpen] = useState(false);
+    const cartData = useSelector((state) => state.cart);
+    const dispatch = useDispatch();
+    const navigation = useNavigate();
+
+    const toggleCart = () => {
+        if (window.innerWidth > 769) {
+            setCartOpen(!isCartOpen);
+        } else {
+            navigation("/cart");
+        }
+    };
+
+    const onCartClose = () => {
+        setCartOpen(false);
+    };
+
+    const onAdd = (product) => {
+        dispatch(add(product))
+    };
+
+    const onRemove = (product) => {
+        dispatch(remove(product))
+    };
 
     return (
         <header className={styles.appHeader}>
@@ -36,17 +63,26 @@ export function Header() {
                         <Link to={"/login"}>Sign In</Link>
                         <Link to={"/register"}>Register</Link>
                     </div>
-                    <button className={styles.cartDisplay} aria-label={`${cartItemsSelected} items`}>
+                    <button className={styles.cartDisplay} aria-label={`${cartItemsSelected} items`} onClick={toggleCart}>
                         <span className={styles.icon} aria-hidden="true">
                             <img loading="lazy"
                                 src="/static/images/cart.svg"
                                 alt="Sabka Bazaar"
                             />
                         </span>
-                        0 items
+                        {cartData.totalItems} items
                     </button>
                 </div>
             </div>
+            <CartModal
+                items={cartData.items}
+                totalPrice={cartData.totalPrice}
+                totalItems={cartData.totalItems}
+                isOpen={isCartOpen}
+                onAdd={onAdd}
+                onRemove={onRemove}
+                onClose={onCartClose}
+            />
         </header>
     )
 }
