@@ -28,7 +28,7 @@ export default function ProductListing() {
         <>
             {
                 products.filter(prod => !params.categoryId || prod.category === params.categoryId).map((product) => (
-                    <div className={styles.productsCard} key={product.id}>
+                    <div className={styles.productsCard} key={product.id} data-testid="product-item">
                         <h2>{product.name}</h2>
                         <div className={styles.productDetailWrapper}>
                             <div className={styles.productImage}>
@@ -42,7 +42,7 @@ export default function ProductListing() {
                         <div className={styles.buttonWrapper}>
                             <Button className={styles.buyNowTab} onClick={() => dispatch(add(product))}>Buy Now @ MRP {product.price}</Button>
                             <p className={styles.buyNowDesk}>MRP Rs.{product.price}</p>
-                            <Button className={styles.buyNowDesk} onClick={() => dispatch(add(product))}>Buy Now</Button>
+                            <Button className={styles.buyNowDesk} data-testid="buy-now" onClick={() => dispatch(add(product))}>Buy Now</Button>
                         </div>
                     </div>
                 ))

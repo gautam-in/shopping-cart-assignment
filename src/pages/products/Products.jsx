@@ -48,7 +48,7 @@ export function Products() {
             <aside className={styles.filters} tabIndex="0" aria-label="">
                 {
                     categories.map((category) => (
-                        <button className={styles.filterButton} onClick={() => loadProducts(category)} key={category.id}>
+                        <button className={styles.filterButton} onClick={() => loadProducts(category)} key={category.id} data-testid="categories-filter">
                             {category.name}
                         </button>
                     ))

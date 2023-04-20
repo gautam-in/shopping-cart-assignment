@@ -22,23 +22,22 @@ export function Register() {
     });
     useDocumentTitle("User Registration | Sabka Bazaar");
 
-    const onSubmit = (data) => {
-        console.log(data);
-    };
+    const onSubmit = (data) => {};
 
     return (
         <div className={styles.registerWrapper}>
             <div className={styles.registerDescription}>
-                <h2 className={styles.heading}>Signup</h2>
-                <p className={styles.description}>We do not share your personal details with anyone.</p>
+                <h2 className={styles.heading} data-testid="register-title">Signup</h2>
+                <p className={styles.description} data-testid="register-description">We do not share your personal details with anyone.</p>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} data-testid="register-form">
                 <Input
                     control={control}
                     label="First Name"
                     name="firstName"
                     type="text"
                     rules={{ required: "First Name is required" }}
+                    aria-label="firstName"
                     aria-invalid={errors.firstName ? "true" : "false"}
                 />
                 <Input
@@ -47,6 +46,7 @@ export function Register() {
                     name="lastName"
                     type="text"
                     rules={{ required: "Last Name is required" }}
+                    aria-label="lastName"
                     aria-invalid={errors.lastName ? "true" : "false"}
                 />
                 <Input
@@ -55,6 +55,7 @@ export function Register() {
                     name="email"
                     type="text"
                     rules={{ required: "Email Address is required" }}
+                    aria-label="email"
                     aria-invalid={errors.email ? "true" : "false"}
                 />
                 <Input
@@ -63,6 +64,7 @@ export function Register() {
                     name="password"
                     type="text"
                     rules={{ required: "Password is required" }}
+                    aria-label="password"
                     aria-invalid={errors.password ? "true" : "false"}
                 />
                 <Input
@@ -71,10 +73,11 @@ export function Register() {
                     name="confirmPassword"
                     type="text"
                     rules={{ required: "Confirm Password is required" }}
+                    aria-label="confirmPassword"
                     aria-invalid={errors.confirmPassword ? "true" : "false"}
                 />
                 <div className={styles.buttonWrapper}>
-                    <Button>Sign Up</Button>
+                    <Button data-testid="register-submit">Sign Up</Button>
                 </div>
             </form>
         </div>

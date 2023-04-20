@@ -12,11 +12,13 @@ const Login = lazy(() => import("@pages/login"));
 const Register = lazy(() => import("@pages/register"));
 const ProductListing = lazy(() => import("@pages/products/ProductListing"));
 const CartPage = lazy(() => import("@pages/cart"));
+import store from './store/store';
+import { Provider } from 'react-redux';
 
 const App = () => {
     return (
         <div className="App">
-            <BrowserRouter>
+            <Provider store={store}>
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route path="/" element={<Loading> <Home /> </Loading>} />
@@ -33,7 +35,7 @@ const App = () => {
                         element={<Loading> <NotFound /> </Loading>}
                     />
                 </Routes>
-            </BrowserRouter>
+            </Provider>
         </div>
     );
 };

@@ -3,12 +3,13 @@ import styles from "./Cart.module.scss";
 import { createPortal } from "react-dom";
 import Button from "@components/Button";
 
-const modalRootEl = document.getElementById("modal-root");
 
 class Modal extends React.Component {
     constructor(props) {
         super(props);
         this.el = document.createElement("div");
+        this.modalRootEl = document.createElement("div");
+        document.body.appendChild(this.modalRootEl);
     }
 
     componentDidUpdate() {
@@ -20,11 +21,11 @@ class Modal extends React.Component {
     }
 
     componentDidMount() {
-        modalRootEl.appendChild(this.el);
+        this.modalRootEl.appendChild(this.el);
     }
 
     componentWillUnmount() {
-        modalRootEl.removeChild(this.el);
+        this.modalRootEl.removeChild(this.el);
     }
 
     render() {
@@ -46,15 +47,15 @@ export function Cart(props) {
     return (
         <div className={styles.cartWrapper}>
             <div className={styles.cartHead}>
-                <h1 className={styles.cartTitle}>My Cart ({totalItems} items)</h1>
-                <button className={styles.close} onClick={onClose}>✕</button>
+                <h1 className={styles.cartTitle} data-testid="cart-title">My Cart ({totalItems} items)</h1>
+                <button className={styles.close} onClick={onClose} data-testid="cart-close">✕</button>
             </div>
             {
                 !items.length ? <>
-                    <div className={styles.cartBody}>
+                    <div className={styles.cartBody} data-testid="cart-empty">
                         <section className={styles.emptyCart}>
                             <div className={styles.emptyCartMessage}>
-                                <h2 className={styles.emptyCartTitle}>No items in your cart</h2>
+                                <h2 className={styles.emptyCartTitle} data-testid="cart-empty-title">No items in your cart</h2>
                                 <p className={styles.emptyCartDescription}>Your favourite items are just a click away</p>
                             </div>
                             <div className={styles.startShopping}>
@@ -70,15 +71,19 @@ export function Cart(props) {
                         <div className={styles.cartItems}>
                             {
                                 items.map((cartItem) => (
-                                    <div className={styles.cartItem} key={cartItem.id}>
+                                    <div className={styles.cartItem} key={cartItem.id} data-testid="cart-item">
                                         <img src={cartItem.imageURL} className={styles.productImage} alt={cartItem.name} />
                                         <div className={styles.productWrapper}>
-                                            <h2 className={styles.productsName}>{cartItem.name}</h2>
+                                            <h2 className={styles.productsName} data-testid="product-name">{cartItem.name}</h2>
                                             <div className={styles.productCounterWrapper}>
                                                 <div className={styles.productCounter}>
-                                                    <button className={styles.productCounterButton} onClick={() => onRemove(cartItem)}>-</button>
+                                                    <button className={styles.productCounterButton}
+                                                        onClick={() => onRemove(cartItem)} data-testid="product-remove">-</button>
                                                     <p className={styles.productPrice}>{cartItem.count}</p>
-                                                    <button className={styles.productCounterButton} onClick={() => onAdd(cartItem)}>+</button>
+                                                    <button className={styles.productCounterButton}
+                                                        onClick={() => onAdd(cartItem)} data-testid="product-add"
+                                                        disabled={cartItem.count === cartItem.stock}
+                                                    >+</button>
                                                     <p className={styles.multiply}>✕</p>
                                                     <p className={styles.productPrice}>{cartItem.price}</p>
                                                 </div>

@@ -67,6 +67,7 @@ function Carousel({ items, loop }) {
                     <li
                         key={item.id}
                         className={`${styles.carouselItem} ${page == idx ? " " + styles.selected : ""}`}
+                        data-testid="carousel-element"
                     >
                         {
                             page == idx ?

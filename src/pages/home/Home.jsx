@@ -51,7 +51,7 @@ export function Home() {
             </section>
             {
                 categories.map((category, idx) => (
-                    <section className={styles.category + " bs-bottom"} key={category.id}>
+                    <section className={styles.category + " bs-bottom"} key={category.id} data-testid="categories-element">
                         {
                             category.imageUrl ? <>
                                 {

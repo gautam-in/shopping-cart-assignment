@@ -21,7 +21,7 @@ function Input(props) {
                 <label>{label}</label>
             </div>
             {
-                fieldState.invalid ? <div className={styles.error}>{fieldState?.error?.message}</div> : null
+                fieldState.invalid ? <div className={styles.error} data-testid="input-error">{fieldState?.error?.message}</div> : null
             }
         </div>
     )

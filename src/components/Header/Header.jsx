@@ -34,7 +34,7 @@ export function Header() {
 
     return (
         <header className={styles.appHeader}>
-            <a link-identifier="Generic Name" href="#mainContent" className="skip-main">
+            <a link-identifier="Generic Name" href="#mainContent" className="skip-main" data-testid="skip-to-main">
                 Skip to Main Content
             </a>
             <div className={"container " + styles.container}>
@@ -45,25 +45,26 @@ export function Header() {
                             srcSet="/static/images/logo.png 1x, /static/images/logo_2x.png 2x"
                             src="/static/images/logo.png"
                             alt="Sabka Bazaar"
+                            data-testid="app-logo"
                         />
                     </a>
                     <nav aria-label="Main Navigation" tabIndex="0">
                         <ul>
                             <li>
-                                <Link to={"/"}>Home</Link>
+                                <Link to={"/"} data-testid="home-link" >Home</Link>
                             </li>
                             <li>
-                                <Link to={"/products"}>Products</Link>
+                                <Link to={"/products"} data-testid="products-link">Products</Link>
                             </li>
                         </ul>
                     </nav>
                 </div>
                 <div className={styles.auth}>
                     <div className={styles.authTop}>
-                        <Link to={"/login"}>Sign In</Link>
-                        <Link to={"/register"}>Register</Link>
+                        <Link data-testid="sign-in-link" to={"/login"}>Sign In</Link>
+                        <Link data-testid="register-link" to={"/register"}>Register</Link>
                     </div>
-                    <button className={styles.cartDisplay} aria-label={`${cartItemsSelected} items`} onClick={toggleCart}>
+                    <button className={styles.cartDisplay} aria-label={`${cartItemsSelected} items`} onClick={toggleCart} data-testid="cart-button">
                         <span className={styles.icon} aria-hidden="true">
                             <img loading="lazy"
                                 src="/static/images/cart.svg"

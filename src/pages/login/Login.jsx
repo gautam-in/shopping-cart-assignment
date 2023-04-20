@@ -19,23 +19,22 @@ export function Login() {
     });
     useDocumentTitle("User Login | Sabka Bazaar");
 
-    const onSubmit = (data) => {
-        console.log(data);
-    };
+    const onSubmit = (data) => {};
 
     return (
         <div className={styles.loginWrapper}>
             <div className={styles.loginDescription}>
-                <h2 className={styles.heading}>Login</h2>
-                <p className={styles.description}>Get Access to your Orders, Wishlist and Recommendations</p>
+                <h2 className={styles.heading} data-testid="login-title">Login</h2>
+                <p className={styles.description} data-testid="login-description">Get Access to your Orders, Wishlist and Recommendations</p>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} data-testid="login-form">
                 <Input
                     control={control}
                     label="Email"
                     name="email"
                     type="text"
                     rules={{ required: "Email Address is required" }}
+                    aria-label="email"
                     aria-invalid={errors.email ? "true" : "false"}
                 />
                 <Input
@@ -43,11 +42,12 @@ export function Login() {
                     label="Password"
                     name="password"
                     type="text"
+                    aria-label="password"
                     rules={{ required: "Password is required" }}
                     aria-invalid={errors.password ? "true" : "false"}
                 />
                 <div className={styles.buttonWrapper}>
-                    <Button>Login</Button>
+                    <Button data-testid="login-submit">Login</Button>
                 </div>
             </form>
         </div>
