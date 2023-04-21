@@ -33,7 +33,13 @@ export function Login() {
                     label="Email"
                     name="email"
                     type="text"
-                    rules={{ required: "Email Address is required" }}
+                    rules={{
+                        required: "Email Address is required",
+                        pattern: {
+                            value: /\S+@\S+\.\S+/,
+                            message: "Entered value does not match email format"
+                        }
+                    }}
                     aria-label="email"
                     aria-invalid={errors.email ? "true" : "false"}
                 />

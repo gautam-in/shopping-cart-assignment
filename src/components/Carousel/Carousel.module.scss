@@ -11,13 +11,18 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
+        margin-left: 1.8rem;
 
         @media (min-width: 481px) {
             height: 15rem;
         }
 
         @media (min-width: 769px) {
-            height: 20rem;
+            height: 18.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            height: 24.5rem;
         }
     
         .carouselItem {
@@ -26,10 +31,19 @@
             display: block;
             opacity: 0;
 
+            @media (min-width: 769px) {
+                margin-top: 1.4rem;
+            }
+    
+            @media (min-width: 1024px) {
+                margin-top: 1.4rem;
+            }
+
             &.selected {
                 opacity: 1;
                 transition: 1300ms;
                 transform: scale(1);
+                width: 100%;
             }
     
             img {
@@ -81,7 +95,7 @@
     
     .pagination {
         position: absolute;
-        bottom: 10px;
+        bottom: 20px;
         left: 0;
         right: 0;
         display: flex;
@@ -92,11 +106,12 @@
             border: none;
             background-color: $color-gray;
             opacity: 0.6;
-            height: 0.8rem;
-            width: 0.8rem;
+            height: 0.5rem;
+            width: 0.5rem;
             border-radius: 50%;
             cursor: pointer;
             margin: 0 1rem;
+            padding: 0;
 
             &.selected {
                 opacity: 0.9;

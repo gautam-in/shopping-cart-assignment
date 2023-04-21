@@ -14,7 +14,7 @@ const FORM_DATA = {
 };
 
 export function Register() {
-    const { formState: { errors }, control, handleSubmit } = useForm({
+    const { formState: { errors }, control, handleSubmit, watch } = useForm({
         defaultValues: {
             ...FORM_DATA
         },
@@ -54,7 +54,13 @@ export function Register() {
                     label="Email"
                     name="email"
                     type="text"
-                    rules={{ required: "Email Address is required" }}
+                    rules={{
+                        required: "Email Address is required",
+                        pattern: {
+                            value: /\S+@\S+\.\S+/,
+                            message: "Entered value does not match email format"
+                        }
+                    }}
                     aria-label="email"
                     aria-invalid={errors.email ? "true" : "false"}
                 />
@@ -63,7 +69,13 @@ export function Register() {
                     label="Password"
                     name="password"
                     type="text"
-                    rules={{ required: "Password is required" }}
+                    rules={{
+                        required: "Password is required",
+                        minLength: {
+                          value: 5,
+                          message: "Password minimum length is 5"
+                        }
+                    }}
                     aria-label="password"
                     aria-invalid={errors.password ? "true" : "false"}
                 />
@@ -72,7 +84,18 @@ export function Register() {
                     label="Confirm Password"
                     name="confirmPassword"
                     type="text"
-                    rules={{ required: "Confirm Password is required" }}
+                    rules={{
+                        required: "Confirm Password is required",
+                        minLength: {
+                          value: 5,
+                          message: "Password minimum is 5"
+                        },
+                        validate: (val) => {
+                            if (watch('password') != val) {
+                                return "Your passwords do no match";
+                            }
+                        },
+                    }}
                     aria-label="confirmPassword"
                     aria-invalid={errors.confirmPassword ? "true" : "false"}
                 />

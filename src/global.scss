@@ -1,7 +1,7 @@
 @import "./variables.scss";
 
 html {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Dosis', sans-serif;
     font-size: 14px;
 }
 
@@ -16,7 +16,7 @@ a {
 }
 
 .container {
-    max-width: 1024px;
+    max-width: 1340px;
     margin: 0 auto;
 }
 
@@ -46,7 +46,7 @@ main {
     margin-top: 64px !important;
 
     @media (min-width:641px) {
-        margin-top: 84px !important;
+        margin-top: 110px !important;
     }
 }
 

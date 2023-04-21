@@ -22,6 +22,7 @@ export function Header() {
 
     const onCartClose = () => {
         setCartOpen(false);
+        document.querySelector("#cart-display")?.focus();
     };
 
     const onAdd = (product) => {
@@ -61,17 +62,19 @@ export function Header() {
                 </div>
                 <div className={styles.auth}>
                     <div className={styles.authTop}>
-                        <Link data-testid="sign-in-link" to={"/login"}>Sign In</Link>
+                        <Link data-testid="sign-in-link" to={"/login"}>SignIn</Link>
                         <Link data-testid="register-link" to={"/register"}>Register</Link>
                     </div>
-                    <button className={styles.cartDisplay} aria-label={`${cartItemsSelected} items`} onClick={toggleCart} data-testid="cart-button">
+                    <button className={styles.cartDisplay} aria-label={`${cartItemsSelected} items`} onClick={toggleCart} id="cart-display" data-testid="cart-button">
                         <span className={styles.icon} aria-hidden="true">
                             <img loading="lazy"
                                 src="/static/images/cart.svg"
                                 alt="Sabka Bazaar"
                             />
                         </span>
-                        {cartData.totalItems} items
+                        <span className={styles.cartText}>
+                            {cartData.totalItems} items
+                        </span>
                     </button>
                 </div>
             </div>

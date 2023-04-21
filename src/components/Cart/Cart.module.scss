@@ -80,6 +80,10 @@
             cursor: pointer;
             color: $white;
 
+            &:focus {
+                outline: 2px dotted #b0920d;
+            }
+
             @media (max-width: 769px) {
                 display: none;
             }
@@ -136,7 +140,7 @@
             overflow: auto;
 
             @media (max-width: 769px) {
-                height: 67vh;
+                height: 69vh;
             }
 
             .cartItem {

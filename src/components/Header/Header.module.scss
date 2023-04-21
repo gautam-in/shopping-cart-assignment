@@ -11,7 +11,7 @@
     z-index: 999;
 
     @media (min-width:641px) {
-        height: 83px;
+        height: 110px;
     }
 
     .container {
@@ -27,15 +27,16 @@
             margin: 5px 0;
 
             @media (min-width:641px) {
-                margin: 13px 0;
+                margin: 8px 0;
+                margin-left: 1.8rem;
             }
 
             img {
-                width: auto;
                 height: 40px;
 
                 @media (min-width:641px) {
-                    height: 52px;
+                    width: 205px;
+                    height: 92px;
                 }
             }
         }
@@ -46,13 +47,14 @@
             @media (min-width:641px) {
                 display: flex;
                 align-items: center;
-                margin-left: 10px;
 
                 ul {
                     margin: 0;
                     padding: 0;
                     list-style: none;
                     display: flex;
+                    font-size: 1.3rem;
+                    font-weight: bold;
     
                     li {
                         padding: 5px 15px;
@@ -60,6 +62,15 @@
                 }
             }
 
+            @media (min-width: 481px) {
+                margin-left: 3.3rem;
+                margin-top: 2.3rem;
+            }
+    
+            @media (min-width: 991px) {
+                margin-left: 9.3rem;
+                margin-top: 2.3rem;
+            }
         }
     }
 
@@ -70,38 +81,47 @@
             @media (min-width:641px) {
                 display: block;
                 text-align: right;
-                margin-bottom: 5px;
-                margin-top: 5px;
+                margin-bottom: 1.3rem;
+                margin-top: 3px;
 
                 a {
-                    margin-right: 10px;
+                    margin-right: 0px;
+
+                    &:first-child {
+                        margin-right: 1.3rem;
+                    }
                 }
             }
         }
 
         .cartDisplay {
             background-color: $background-gray;
-            padding: 10px;
+            padding: 15px;
             border: none;
             height: 58px;
             margin-right: 0px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            width: 110px;
+            width: 140px;
             cursor: pointer;
+            font-size: 0.9rem;
+            font-family: "Dosis", sans-serif;
 
             .icon {
                 display: inline-block;
-                width: 20px;
-                height: 20px;
-                margin-right: 5px;
+                width: 35px;
+                height: 32px;
+                margin-right: 10px;
+            }
+
+            .cartText {
+                font-size: 1.3rem;
             }
 
             @media (min-width:641px) {
                 width: 150px;
-                margin-right: 0;
-                height: 52px;
+                margin-right: 0px;
+                height: 71px;
             }
         }
     }
