@@ -78,7 +78,6 @@ function Carousel({ items, loop }) {
                                 <img
                                     alt={item.bannerImageAlt}
                                     src={item.bannerImageUrl}
-                                    loading="lazy"
                                 />
                             </a> : null
                         }

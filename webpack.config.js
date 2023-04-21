@@ -3,6 +3,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// const ImageminPlugin = require('imagemin-webpack-plugin');
+// const imageminMozjpeg = require('imagemin-mozjpeg');
+// const CompressionPlugin = require("compression-webpack-plugin");
 
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -11,23 +14,8 @@ module.exports = {
     devtool: "source-map",
     output: {
         path: path.join(__dirname, "/build/"),
-        publicPath : '/'
+        publicPath: '/'
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: "public/index.html",
-            favicon: "public/favicon.ico"
-        }),
-        new CopyWebpackPlugin({
-            patterns: [
-              { from: path.join(__dirname, "/src/static"), to: path.join(__dirname, "/build/static") },
-            ],
-        }),
-        new MiniCssExtractPlugin({
-            filename: devMode ? '[name].css' : '[name].[contenthash].css',
-            chunkFilename: devMode ? '[id].css' : '[id].[contenthash].css',
-        })
-    ],
     devServer: {
         static: {
             directory: path.join(__dirname, "build"),
@@ -47,7 +35,7 @@ module.exports = {
             {
                 test: /\.(sa|sc|c)ss$/, // styles files
                 use: [
-                    devMode ? 'style-loader' : MiniCssExtractPlugin.loader,"css-loader", "sass-loader"
+                    devMode ? 'style-loader' : MiniCssExtractPlugin.loader, "css-loader", "sass-loader"
                 ],
             },
             {
@@ -70,4 +58,19 @@ module.exports = {
             "@api": path.resolve(__dirname, "src/api"),
         }
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "public/index.html",
+            favicon: "public/favicon.ico"
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: path.join(__dirname, "/src/static"), to: path.join(__dirname, "/build/static") },
+            ],
+        }),
+        new MiniCssExtractPlugin({
+            filename: devMode ? '[name].css' : '[name].[contenthash].css',
+            chunkFilename: devMode ? '[id].css' : '[id].[contenthash].css',
+        })
+    ],
 };
