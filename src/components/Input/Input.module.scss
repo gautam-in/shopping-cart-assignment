@@ -6,6 +6,15 @@
     &.invalid {
         .error {
             color: $danger-color;
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 15px;
+                height: 15px;
+                margin-right: 5px;
+                display: inline-block;
+            }
         }
 
         input {

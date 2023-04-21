@@ -42,6 +42,7 @@ export function Login() {
                     }}
                     aria-label="email"
                     aria-invalid={errors.email ? "true" : "false"}
+                    aria-required="true"
                 />
                 <Input
                     control={control}
@@ -51,6 +52,7 @@ export function Login() {
                     aria-label="password"
                     rules={{ required: "Password is required" }}
                     aria-invalid={errors.password ? "true" : "false"}
+                    aria-required="true"
                 />
                 <div className={styles.buttonWrapper}>
                     <Button data-testid="login-submit">Login</Button>

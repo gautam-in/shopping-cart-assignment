@@ -117,6 +117,10 @@
                 opacity: 0.9;
             }
 
+            &:focus {
+                outline-color: #0012c7;
+            }
+
         }
     }
 }

@@ -39,6 +39,7 @@ export function Register() {
                     rules={{ required: "First Name is required" }}
                     aria-label="firstName"
                     aria-invalid={errors.firstName ? "true" : "false"}
+                    aria-required="true"
                 />
                 <Input
                     control={control}
@@ -48,6 +49,7 @@ export function Register() {
                     rules={{ required: "Last Name is required" }}
                     aria-label="lastName"
                     aria-invalid={errors.lastName ? "true" : "false"}
+                    aria-required="true"
                 />
                 <Input
                     control={control}
@@ -63,6 +65,7 @@ export function Register() {
                     }}
                     aria-label="email"
                     aria-invalid={errors.email ? "true" : "false"}
+                    aria-required="true"
                 />
                 <Input
                     control={control}
@@ -78,6 +81,7 @@ export function Register() {
                     }}
                     aria-label="password"
                     aria-invalid={errors.password ? "true" : "false"}
+                    aria-required="true"
                 />
                 <Input
                     control={control}
@@ -98,6 +102,7 @@ export function Register() {
                     }}
                     aria-label="confirmPassword"
                     aria-invalid={errors.confirmPassword ? "true" : "false"}
+                    aria-required="true"
                 />
                 <div className={styles.buttonWrapper}>
                     <Button data-testid="register-submit">Sign Up</Button>

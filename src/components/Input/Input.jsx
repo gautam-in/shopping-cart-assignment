@@ -17,11 +17,20 @@ function Input(props) {
     return (
         <div className={`${styles.input} ${fieldState.invalid ? styles.invalid : ""}`}>
             <div className={styles.inputWrapper}>
-                <input type={type} name={name} placeholder="no-label" {...field} {...rest} />
-                <label>{label}</label>
+                <input
+                    type={type} name={name} placeholder="no-label" id={name}
+                    aria-describedby={name+"-error"}
+                    {...field} {...rest} />
+                <label htmlFor={name}>{label}</label>
             </div>
             {
-                fieldState.invalid ? <div className={styles.error} data-testid="input-error">{fieldState?.error?.message}</div> : null
+                fieldState.invalid ? <div
+                    className={styles.error} data-testid="input-error"
+                    id={name+"-error"} role="alert" 
+                >
+                    <img aria-hidden="true" src="/static/images/error_icon.svg" />
+                    <span>{fieldState?.error?.message}</span>
+                </div> : null
             }
         </div>
     )

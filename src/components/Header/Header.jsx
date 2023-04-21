@@ -69,7 +69,7 @@ export function Header() {
                         <span className={styles.icon} aria-hidden="true">
                             <img loading="lazy"
                                 src="/static/images/cart.svg"
-                                alt="Sabka Bazaar"
+                                alt=""
                             />
                         </span>
                         <span className={styles.cartText}>
