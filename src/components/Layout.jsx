@@ -1,11 +1,15 @@
-import React from "react";
+import React, { lazy } from "react";
 import { Outlet } from "react-router-dom";
-import { Header } from "./Header/Header";
+import { Loading } from "./Loading";
+const Header = lazy(() => import("@components/Header"));
+import styles from "./Header/Header.module.scss";
 
 export function Layout() {
     return (
         <>
-            <Header />
+            <Loading fallback={<div className={styles.appHeader}></div>}>
+                <Header />
+            </Loading>
             <main className="container" id="mainContent">
                 <Outlet />
             </main>

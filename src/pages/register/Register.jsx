@@ -4,6 +4,9 @@ import { Input } from "@components/Input/Input";
 import Button from "@components/Button";
 import styles from "./Register.module.scss";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { showMessage } from "@store/toastReducer";
 
 const FORM_DATA = {
     firstName: "",
@@ -20,9 +23,17 @@ export function Register() {
         },
         mode: "onChange"
     });
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     useDocumentTitle("User Registration | Sabka Bazaar");
 
-    const onSubmit = (data) => {};
+    const onSubmit = (data) => {
+        dispatch(showMessage({
+            type: "success",
+            message: "Successfully Registered. Please login!"
+        }));
+        navigate("/login");
+    };
 
     return (
         <div className={styles.registerWrapper}>

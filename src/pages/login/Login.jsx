@@ -4,11 +4,15 @@ import { Input } from "@components/Input/Input";
 import Button from "@components/Button";
 import styles from "./Login.module.scss";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { login } from "@store/authReducer";
+import { useNavigate } from "react-router-dom";
+import { showMessage } from "@store/toastReducer";
 
 const FORM_DATA = {
     email: "",
     password: ""
-}
+};
 
 export function Login() {
     const { formState: { errors }, control, handleSubmit } = useForm({
@@ -17,9 +21,27 @@ export function Login() {
         },
         mode: "onChange"
     });
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     useDocumentTitle("User Login | Sabka Bazaar");
 
-    const onSubmit = (data) => {};
+    const onSubmit = (data) => {
+        dispatch(login(data))
+            .unwrap()
+            .then(() => {
+                dispatch(showMessage({
+                    type: "success",
+                    message: "Successfully logged in!"
+                }));
+                navigate("/");
+            })
+            .catch(() => {
+                dispatch(showMessage({
+                    type: "danger",
+                    message: "Could not login. Please try again."
+                }));
+            });
+    };
 
     return (
         <div className={styles.loginWrapper}>

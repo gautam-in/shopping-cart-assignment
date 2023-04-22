@@ -4,6 +4,7 @@ export function Loading(props) {
     return (
         <>
             <Suspense fallback={
+                props.fallback ? props.fallback :
                 <div className="loading-wrapper">
                     Loading...
                 </div>

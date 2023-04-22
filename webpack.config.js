@@ -1,17 +1,12 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// const ImageminPlugin = require('imagemin-webpack-plugin');
-// const imageminMozjpeg = require('imagemin-mozjpeg');
-// const CompressionPlugin = require("compression-webpack-plugin");
 
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
     entry: path.join(__dirname, "src", "index.js"),
-    devtool: "source-map",
     output: {
         path: path.join(__dirname, "/build/"),
         publicPath: '/'
@@ -35,7 +30,7 @@ module.exports = {
             {
                 test: /\.(sa|sc|c)ss$/, // styles files
                 use: [
-                    devMode ? 'style-loader' : MiniCssExtractPlugin.loader, "css-loader", "sass-loader"
+                    MiniCssExtractPlugin.loader, "css-loader", "sass-loader"
                 ],
             },
             {
@@ -56,6 +51,7 @@ module.exports = {
             "@hooks": path.resolve(__dirname, "src/hooks"),
             "@pages": path.resolve(__dirname, "src/pages"),
             "@api": path.resolve(__dirname, "src/api"),
+            "@store": path.resolve(__dirname, "src/store"),
         }
     },
     plugins: [

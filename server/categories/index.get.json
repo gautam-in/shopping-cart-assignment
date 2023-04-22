@@ -32,7 +32,7 @@
     "description": "Shop online for Baby Products, Diapers, Skin Care Products,etc.",
     "enabled": true,
     "order": 5,
-    "imageUrl": "/static/images/category/baby.png",
+    "imageUrl": "/static/images/category/baby.jpg",
     "id": "5b6899683d1a866534f516e0"
   },
   {

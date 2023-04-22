@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "canned -p 5000 ./server",
-    "serve": "webpack serve --mode development",
+    "serve": "webpack serve --config ./webpack.dev.config.js --mode development",
     "build": "webpack --config ./webpack.prod.config.js --mode production",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

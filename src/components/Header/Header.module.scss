@@ -28,7 +28,6 @@
 
             @media (min-width:641px) {
                 margin: 8px 0;
-                margin-left: 1.8rem;
             }
 
             img {
@@ -75,6 +74,17 @@
     }
 
     .auth {
+
+        .userName {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 85px;
+            text-align: center;
+            padding-top: 0.3rem;
+            margin-right: 3px;
+        }
+
         .authTop {
             display: none;
 
@@ -84,6 +94,13 @@
                 margin-bottom: 1.3rem;
                 margin-top: 3px;
 
+                &.loggedIn {
+                    margin-bottom: 0.5rem;
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-right: 2px;
+                }
+
                 a {
                     margin-right: 0px;
 
@@ -92,6 +109,7 @@
                     }
                 }
             }
+
         }
 
         .cartDisplay {

@@ -6,6 +6,7 @@ module.exports = {
         '^@hooks/(.*)$': '<rootDir>/src/hooks/$1',
         '^@pages/(.*)$': '<rootDir>/src/pages/$1',
         '^@api/(.*)$': '<rootDir>/src/api/$1',
+        '^@store/(.*)$': '<rootDir>/src/store/$1',
         '\\.(css|less|scss)$': '<rootDir>/src/jest/__mocks__/styleMock.js',
     }
 };
