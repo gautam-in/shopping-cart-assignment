@@ -9,7 +9,8 @@
     "build": "webpack --config ./webpack.prod.config.js --mode production",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "jest"
+    "test": "jest",
+    "prettify": "prettier --write ./src/"
   },
   "author": "",
   "license": "MIT",
