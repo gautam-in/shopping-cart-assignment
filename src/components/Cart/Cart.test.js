@@ -2,7 +2,6 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import { act } from "react-dom/test-utils";
-import userEvent from "@testing-library/user-event";
 import { Cart } from "./Cart";
 
 const cartItems = [{

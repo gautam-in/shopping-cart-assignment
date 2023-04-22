@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import { Layout } from "@components/Layout";
 import { Loading } from "@components/Loading";
 import NotFound from "@components/NotFound";
-import { BrowserRouter } from 'react-router-dom';
 import "./global.scss";
 
 const Home = lazy(() => import("@pages/home"));
