@@ -14,7 +14,7 @@
     "description": "The best cupcakes, cookies, cakes, pies, cheesecakes, fresh bread, biscotti, muffins, bagels, fresh coffee, milk and more.",
     "enabled": true,
     "order": 2,
-    "imageUrl": "/static/images/category/bakery.png",
+    "imageUrl": "/static/images/category/bakery.jpg",
     "id": "5b6899123d1a866534f516de"
   },
   {
