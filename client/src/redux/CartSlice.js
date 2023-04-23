@@ -7,36 +7,27 @@ export const CartSlice = createSlice({
   },
   reducers: {
     increment: (state, action) => {
-        return state.products.map((product) => {
-            if(product.id === action.payload.id)
-            {
-               product.quantity += 1;
-            }
-            return product;
-        });
+        let selectedItem = state.products.find((product) => product.id === action.payload.id);
+        if(selectedItem){
+            selectedItem.quantity += 1;
+        }
     },
     decrement: (state,action) => {
-        return state.products.map((product) => {
-            if(product.id === action.payload.id)
-            {
-               product.quantity -= 1;
+        let selectedItem = state.products.find((product) => product.id === action.payload.id);
+        if(selectedItem){
+            selectedItem.quantity -= 1;
+            if(selectedItem.quantity <= 0){
+              state.products = state.products.filter((product) => product.id !== action.payload.id);
             }
-            return product;
-        });
+        }
     },
     add: (state, action) => {
-        let stateFilter = false;
-         state.products.map((product) => {
-            if(product.id === action.payload.id)
-            {
-               stateFilter = true;
-               product.quantity += 1;
-            }
-        });
-        if(!stateFilter)
-        {
-            state.products.push(action.payload);
+        let selectedItem = state.products.find((product) => product.id === action.payload.id);
+        if(selectedItem){
+            selectedItem.quantity += 1;
+            return;
         }
+        state.products = [...state.products,action.payload];
         
       },
   },

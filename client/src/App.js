@@ -6,10 +6,10 @@ import "react-toastify/dist/ReactToastify.css";
 import './App.scss';
 
 const Home = lazy(() => import("./Containers/Home/Home"));
-// const ProductListing = lazy(() => import("./containers/productListing/ProductListing"));
+const Products = lazy(() => import("./Containers/Products/Products"));
 const Login = lazy(() => import("./Containers/Login/Login"));
 const Register = lazy(() => import("./Containers/Register/Register"));
-// const Cart = lazy(() => import("./containers/cart/Cart"));
+const Cart = lazy(() => import("./Containers/Cart/Cart"));
 
 function App() {
   return (
@@ -18,10 +18,10 @@ function App() {
         <Suspense fallback={<p>loading...</p>}>
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/products/:categoryId" element={<ProductListing />} /> */}
+            <Route path="/products/:categoryId" element={<Products />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            {/* <Route path="/cart" element={<Cart />} /> */}
+            <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

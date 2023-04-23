@@ -15,17 +15,18 @@ const Header = () => {
     signOut();
     window.location.reload();
   };
-  const cartProducts = useSelector((state) => state.cart.products);
+  const cartProducts = useSelector((state) => state.cart.products || []);
   return (
     <header className={styles.header}>
       <div className={styles.desktopMenu}>
         <div className={styles.logoContainer}>
-        <NavLink aria-label="Home"
-                to="/"
-              >
-                <img src={"/static/images/logo.png"} alt="website logo" />
-              </NavLink>
-          
+          <NavLink aria-label="Home" to="/">
+            <img
+              src={"/static/images/logo.png"}
+              alt="website logo"
+              className={styles.logo}
+            />
+          </NavLink>
         </div>
         <nav className={styles.navbar}>
           <ul className={styles.menuList}>
@@ -42,7 +43,9 @@ const Header = () => {
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  isActive ? styles.activeMenu : ""
+                  isActive || location.pathname.startsWith("/products/")
+                    ? styles.activeMenu
+                    : ""
                 }
                 to="/products/all"
               >
@@ -106,7 +109,11 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              className={({ isActive }) => (isActive ? styles.activeMenu : "")}
+              className={({ isActive }) =>
+                isActive || location.pathname.startsWith("/products/")
+                  ? styles.activeMenu
+                  : ""
+              }
               to="/products/all"
             >
               Products
