@@ -1,0 +1,91 @@
+@import "../../variables.scss";
+
+.input {
+    width: 100%;
+
+    &.invalid {
+        .error {
+            color: $danger-color;
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 15px;
+                height: 15px;
+                margin-right: 5px;
+                display: inline-block;
+            }
+        }
+
+        input {
+            border-color: $danger-color;
+        }
+    }
+}
+
+.inputWrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1rem;
+    height: 3rem;
+
+    input {
+        border-width: 0;
+        border-bottom: 2px solid $color-gray;
+        padding: 0.4rem 0rem;
+        padding-top: 1.2rem;
+        height: 2rem;
+        width: 100%;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: transparent;
+
+        &:focus {
+            border-color: $secondary-color;
+            outline: none;
+        }
+
+        &:focus+label,
+        &:not(:placeholder-shown)+label,
+        &:-webkit-autofill+label {
+            transform: translateY(-5%) translateX(0%) scale(1);
+            color: $secondary-color;
+        }
+
+        &::-webkit-input-placeholder {
+            /* WebKit browsers */
+             color: transparent;
+        }
+
+        &:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+             color: transparent;
+        }
+
+        &::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+             color: transparent;
+        }
+
+        &:-ms-input-placeholder {
+            /* Internet Explorer 10+ */
+             color: transparent;
+        }
+
+        &::placeholder {
+             color: transparent;
+        }
+        
+    }
+
+    label {
+        position: absolute;
+        left: 0;
+        transition: transform 0.25s, opacity 0.25s ease-in-out;
+        transform: translateY(120%) scale(1);
+    }
+}

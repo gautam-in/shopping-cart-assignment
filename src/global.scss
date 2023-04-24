@@ -1,0 +1,75 @@
+@import "./variables.scss";
+
+html {
+    font-family: 'Dosis', sans-serif;
+    font-size: 14px;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0 auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1340px;
+    margin: 0 auto;
+}
+
+.skip-main {
+    height: 1px;
+    left: -999px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+
+    &:focus {
+        height: auto;
+        left: 0;
+        overflow: auto;
+        top: 0;
+        width: auto;
+    }
+}
+
+*:focus {
+    outline: 2px dotted #0012c7;
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+main {
+    margin-top: 64px !important;
+
+    @media (min-width:641px) {
+        margin-top: 110px !important;
+    }
+}
+
+.bs-bottom {
+    box-shadow: rgba(29, 28, 28, 0.58) 0px 20px 25px -30px;
+}
+
+.footer {
+    background-color: $background-gray;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .copyright {
+        font-size: 0.9rem;
+
+        @media (max-width: 480px) {
+            font-size: 0.7rem;
+        }
+    }
+}
+
+.loading-wrapper {
+    height: 90vh;
+}

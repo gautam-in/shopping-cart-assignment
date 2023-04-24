@@ -1,0 +1,146 @@
+@import "../../variables.scss";
+
+.appHeader {
+    box-shadow: 0 13px 21px -9px rgba(0,0,0,.2);
+    height: 58px;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 999;
+
+    @media (min-width:641px) {
+        height: 110px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navigation {
+        display: flex;
+
+        .logo {
+            display: block;
+            margin: 5px 0;
+
+            @media (min-width:641px) {
+                margin: 8px 0;
+            }
+
+            img {
+                height: 40px;
+
+                @media (min-width:641px) {
+                    width: 205px;
+                    height: 92px;
+                }
+            }
+        }
+
+        nav {
+            display: none;
+
+            @media (min-width:641px) {
+                display: flex;
+                align-items: center;
+
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    display: flex;
+                    font-size: 1.3rem;
+                    font-weight: bold;
+    
+                    li {
+                        padding: 5px 15px;
+                    }
+                }
+            }
+
+            @media (min-width: 481px) {
+                margin-left: 3.3rem;
+                margin-top: 2.3rem;
+            }
+    
+            @media (min-width: 991px) {
+                margin-left: 9.3rem;
+                margin-top: 2.3rem;
+            }
+        }
+    }
+
+    .auth {
+
+        .userName {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 85px;
+            text-align: center;
+            padding-top: 0.3rem;
+            margin-right: 3px;
+        }
+
+        .authTop {
+            display: none;
+
+            @media (min-width:641px) {
+                display: block;
+                text-align: right;
+                margin-bottom: 1.3rem;
+                margin-top: 3px;
+
+                &.loggedIn {
+                    margin-bottom: 0.5rem;
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-right: 2px;
+                }
+
+                a {
+                    margin-right: 0px;
+
+                    &:first-child {
+                        margin-right: 1.3rem;
+                    }
+                }
+            }
+
+        }
+
+        .cartDisplay {
+            background-color: $background-gray;
+            padding: 15px;
+            border: none;
+            height: 58px;
+            margin-right: 0px;
+            display: flex;
+            align-items: center;
+            width: 140px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-family: "Dosis", sans-serif;
+
+            .icon {
+                display: inline-block;
+                width: 35px;
+                height: 32px;
+                margin-right: 10px;
+            }
+
+            .cartText {
+                font-size: 1.3rem;
+            }
+
+            @media (min-width:641px) {
+                width: 150px;
+                margin-right: 0px;
+                height: 71px;
+            }
+        }
+    }
+}

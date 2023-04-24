@@ -8,8 +8,9 @@ Clone this repo and run following command for starting the mock server:
 
 ```
 npm install
-npm run start
-# or
-yarn install
-yarn start
+Server: npm run start
+UI: npm run serve
+Production Build: npm run build
+Linting: npm run lint
+Unit Testing: npm run test
 ```

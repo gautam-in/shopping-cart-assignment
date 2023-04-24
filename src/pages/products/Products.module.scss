@@ -1,0 +1,184 @@
+@import "../../variables.scss";
+
+.products {
+    display: flex;
+
+    .filters {
+        background-color: $background-gray;
+        display: none;
+
+        @media (min-width: 481px) {
+            display: block;
+        }
+
+        .filterButton {
+            display: block;
+            border-bottom: 1px solid #acacac;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            padding: 1.3rem;
+            width: 100%;
+            background-color: transparent;
+            text-align: left;
+            color: $color-gray;
+            cursor: pointer;
+        }
+    }
+
+    .productListWrapper {
+        flex: 1;
+        display: grid;
+        grid-gap: 1rem;
+        padding: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+
+        .dropdown {
+            display: flex;
+            flex-direction: column;
+            background-color: $primary-color;
+            width: 100%;
+            position: relative;
+
+            @media (min-width: 481px) {
+                display: none;
+            }
+
+            .dropdownTrigger {
+                display: flex;
+                justify-content: space-between;
+                border: none;
+                color: #fff;
+                cursor: pointer;
+                background-color: $primary-color;
+                padding: 10px;
+                font-size: .9rem;
+                text-align: center;
+                text-decoration: none;
+                position: absolute;
+                left: -15px;
+                right: -14px;
+                top: -18px;
+            }
+
+            .dropdownMenu {
+                display: none;
+
+                &.open {
+                    position: absolute;
+                    left: -15px;
+                    right: -14px;
+                    top: 16px;
+                    display: block;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                li {
+                    cursor: pointer;
+                    padding: 5px;
+                    font-size: .9rem;
+                    color: $white;
+                    background-color: $primary-color;
+                    border-bottom: 1px solid $white;
+
+                    button {
+                        background: transparent;
+                        color: $white;
+                        border: none;
+                        width: 100%;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.productsCard {
+    padding: 1rem 0rem;
+    border-bottom: 1px dashed $color-gray;
+
+    h2 {
+        min-height: 4rem;
+        font-size: 1.2rem;
+    }
+
+    .productDetailWrapper {
+        display: flex;
+
+        .productImage {
+            text-align: center;
+        }
+
+        @media (min-width: 769px) {
+            flex-direction: column;
+        }
+
+        img {
+            max-width: 150px;
+            max-height: 120px;
+            object-fit: contain;
+        }
+
+        .textWrapper {
+            margin-left: 0.6rem;
+
+            .description {
+                background-color: #ddd;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                font-size: .9rem;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 4;
+                margin: 1rem 0;
+                padding: 5px 5px;
+                height: 4.8rem;
+            }
+
+            .buyNowMob {
+                margin-top: 0.9rem;
+                width: 100%;
+
+                @media (min-width: 481px) {
+                    display: none;
+                }
+        
+                @media (min-width: 769px) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .buttonWrapper {
+        display: none;
+
+        @media (min-width: 481px) {
+            display: block;
+
+            .buyNowDesk {
+                display: none;
+            }
+
+            .buyNowTab {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 769px) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .buyNowTab {
+                display: none;
+            }
+
+            .buyNowDesk {
+                display: block;
+            }
+        }
+    }
+}
