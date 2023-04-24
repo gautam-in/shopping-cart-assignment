@@ -4,22 +4,19 @@ import React from "react";
 import { act } from "react-dom/test-utils";
 import userEvent from "@testing-library/user-event";
 import { Register } from "./Register";
-
-function setup(jsx) {
-    return {
-        user: userEvent.setup(),
-        ...render(jsx),
-    };
-}
+import { renderWithProviders } from "../../jest/renderWithProviders";
 
 test("should validate register form fields", async () => {
     let userForm = null;
     const mockSave = jest.fn();
-    await act(() => userForm = setup(
-        <BrowserRouter>
-            <Register />
-        </BrowserRouter>
-    ));
+    await act(() => userForm = {
+        user: userEvent.setup(),
+        ...renderWithProviders(
+            <BrowserRouter>
+                <Register />
+            </BrowserRouter>
+        )
+    });
     const form = await screen.getByTestId("register-form");
     form.onsubmit = mockSave;
     expect(screen.getByTestId("register-title")).toHaveTextContent("Signup");
@@ -37,11 +34,14 @@ test("should validate register form fields", async () => {
 test("should submit correct form data", async () => {
     let userForm = null;
     const mockSave = jest.fn();
-    await act(() => userForm = setup(
-        <BrowserRouter>
-            <Register />
-        </BrowserRouter>
-    ));
+    await act(() => userForm = {
+        user: userEvent.setup(),
+        ...renderWithProviders(
+            <BrowserRouter>
+                <Register />
+            </BrowserRouter>
+        )
+    });
     const form = await screen.getByTestId("register-form");
     form.onsubmit = mockSave;
 

@@ -1,4 +1,4 @@
-const loginSimulator = (authData) => new Promise((resolve, reject) => {
+const loginSimulator = (authData) => new Promise((resolve) => {
     setTimeout(() => {
         resolve({
             name: "Test User",

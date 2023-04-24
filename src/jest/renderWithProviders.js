@@ -15,7 +15,11 @@ export function renderWithProviders(
         return <Provider store={store}>{children}</Provider>
     }
 
-    store.dispatch = jest.fn();
+    store.dispatch = jest.fn(() => {
+        return {
+            unwrap: jest.fn(() => Promise.resolve({}))
+        }
+    });
 
     return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) }
 }
