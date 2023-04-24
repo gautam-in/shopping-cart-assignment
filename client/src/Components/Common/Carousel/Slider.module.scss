@@ -1,0 +1,42 @@
+:global {
+    .carousel {
+        .control-dots {
+            @media (max-width:400px){
+                bottom: -12px;
+            }
+        }
+        .carousel-status {
+            display: none;
+        }
+        .control-next {
+            &.control-arrow{
+                opacity: 1;
+                &::before {
+                    border-left: 8px solid #4c4c4c;
+                }
+            }
+        }
+        .control-prev {
+            &.control-arrow{
+                opacity: 1;
+                &::before {
+                    border-right: 8px solid #4c4c4c;
+                }
+            }
+        }
+    }
+}
+
+.sliderConatiner {
+    box-shadow:0px 15px 10px -16px rgba(0,0,0,0.2);
+}
+
+.indicators{
+    background: rgba(0,0,0,0.4);
+    width: 8px;
+    height: 8px;
+    border-radius:50%;
+    display: inline-block;
+    margin: 0 8px;
+    cursor:pointer
+}

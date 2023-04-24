@@ -1,0 +1,83 @@
+.titleSection {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  padding: 0;
+  margin-bottom: 20px;
+
+  .title {
+    padding: 0 5px 0 20px;
+  }
+}
+
+.noItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.cartLowestPriceSection {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  align-items: center;
+  gap: 12px;
+  padding-left: 6px;
+  margin: 0 20px 100px 20px;
+}
+
+.cartFooter {
+  padding: 16px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  .promoText {
+    padding: 0;
+  }
+
+  .checkoutBtn {
+    width: 98%;
+    background-color: #be2857;
+    color: #fff;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 0 24px;
+
+    @media (max-width: 420px) {
+      width: 96%;
+    }
+
+    &.alignCenter {
+      justify-content: center;
+    }
+
+    .totalPrice {
+      padding: 0 5px;
+    }
+  }
+}
