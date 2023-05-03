@@ -1,0 +1,10 @@
+.footer-section{
+    width:100%;
+    background-color:rgb(234, 229, 229);
+    & .footer{
+    width:1024px;
+    margin: 0 auto;
+    font-size:12px;
+    padding:10px
+}
+}

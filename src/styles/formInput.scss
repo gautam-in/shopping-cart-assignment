@@ -1,0 +1,71 @@
+
+$back_color: #eaeaea;
+$primary_color: #d00155;
+$secondary-color: #50dae2;
+$white_color: #fff;
+$black_color: #000;
+$grey-color: grey;
+
+$font-size-normal: 1rem;
+$font-size-small: 0.8rem;
+
+@mixin shrinkLabel {
+  top: -12px;
+  font-size: 14px;
+  color:#50dae2;
+}
+
+.group {
+    position: relative;
+    padding-bottom: 15px;
+    width: 100%;
+  
+    p{
+      color:red;
+      padding:2px 0px;
+    }
+    .text-input {
+      background: none;
+      background-color: white;
+      color: grey;
+      font-size: $font-size-normal;
+      padding: 10px 10px 10px 5px;
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 0;
+      box-sizing: border-box;
+      border-bottom: 2px solid #50dae2;;
+      &:not(:focus) {
+        border-bottom: 2px solid #ddd;
+      }
+      &:focus {
+        outline: none;
+      }
+      &:focus ~ .text-input-label {
+        @include shrinkLabel();
+      }
+    }
+  
+    input[type="password"] {
+      letter-spacing: 0.3em;
+    }
+  
+    .text-input-label {
+      color: grey;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 5px;
+      top: 10px;
+      transition: 300ms ease all;
+  
+      &.shrink {
+        @include shrinkLabel();
+      }
+    }
+  }
+  
+  .text-change{
+    background-color: #d00155;
+  }

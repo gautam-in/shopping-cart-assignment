@@ -1,0 +1,46 @@
+// .shadow-drop {
+
+.category-container{
+   display:flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   margin-top:20px;
+   box-shadow:0 8px 6px -6px lightgray;
+   width:100%;
+   .category-image{
+    width:40%;
+    & img{
+        height:250px;
+        width:76%;
+        padding: 2rem;
+        transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        box-sizing: border-box;
+
+    }
+   }
+    
+}
+
+.category-content{
+    width:60%;
+    text-align: center;
+   & p{
+    font-size: 12px;
+   }
+    & h2,p{
+        margin-bottom: 20px;
+    }
+    & .explore-btn{
+    background-color: #ce2334;
+    color: white;
+   padding:10px
+    }
+}
+
+.reverse-category-container{
+    @extend .category-container;
+    flex-direction: row-reverse;
+}

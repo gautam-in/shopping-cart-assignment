@@ -1,0 +1,110 @@
+// .products-container{
+//     display: grid;
+//     grid-template-columns: repeat(4, 1fr);
+//     // gap:10px;
+//     // justify-content: center ;
+//     // flex: 1;
+//     // padding: 10px;
+//    & .product-card{
+//     display:grid;
+//    padding:10px;
+//   margin:20px;
+//     border-bottom: 1px dashed black;
+//     width:150px;
+//     & h3{
+//        height:60px;
+//        width:120px;
+//     }
+//     & img{
+//         height:150px;
+//         width:100px;
+        
+        
+//     }
+//     & .product-description{
+//        height:70px;
+//         width:200px;
+//         background-color: #ddd;
+//         overflow: hidden;
+//         width: auto;
+//         text-overflow: ellipsis;
+//         margin-top: 10px;
+//         padding: 5px;
+//         background-color: rgb(234, 229, 229);
+//     }
+//    }
+    
+// }
+
+// .price-details{
+// display: flex;
+// flex-direction: row;
+// margin:10px 0px 0px 0px;
+// justify-content: s;
+// & p{
+//   font-weight: 600;
+// }
+//  & button{
+//     display: block;
+//     border-radius: 3px;
+//     text-align: center;
+//     text-decoration: none;
+//     font-size: .9rem;
+//     padding: 0.5rem;
+//     border: 1px solid #eee;
+//     background-color: #d42559;
+//     color: #fff;
+//     cursor: pointer;
+//  }
+// }
+
+
+.cart__container{
+   display: grid;
+   border-bottom: 1px dashed black;
+   padding: 10px;
+   & img{
+       height: 200px;
+       width: 250px;
+       object-fit: contain; 
+       justify-self: center;
+   }
+   & h2{
+       font-size: 15px;
+       min-height: 60px;
+   }
+
+   .product__description{
+       height:70px;
+       width:200px;
+       background-color: #ddd;
+       overflow: hidden;
+       width: auto;
+       text-overflow: ellipsis;
+       margin-top: 10px;
+       padding: 5px;
+   }
+}
+
+.price__container{
+   margin-top: 15px;
+   display: flex;
+   justify-content: space-between;
+
+   & P{
+       font-weight: 600;
+   };
+
+   & button{
+       display: block;
+       border-radius: 3px;
+       text-align: center;
+       text-decoration: none;
+       font-size: .9rem;
+       padding: 0.5rem;
+       border: 1px solid #eee;
+       background-color: #d42559;
+       color: #fff;
+       cursor: pointer;
+   }
+}
