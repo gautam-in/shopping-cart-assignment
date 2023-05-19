@@ -1,0 +1,64 @@
+.header {
+  background-color: var(--color-white);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+  &__logo {
+    width: 200px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__primary-navigation {
+    flex-grow: 1;
+    align-self: self-end;
+    margin-bottom: 1rem;
+    margin-left: 6rem;
+  }
+
+  &__secondary-navigation {
+    .header__navigation-cart {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: self-end;
+
+      background-color: var(--color-grey);
+      padding: 0.25rem;
+
+      width: 135px;
+      height: 65px;
+
+      svg {
+        font-size: 24px;
+        fill: var(--color-red);
+      }
+    }
+  }
+
+  &__primary-navigation,
+  &__secondary-navigation {
+    ul {
+      width: min-content;
+      margin: 0;
+      padding: 0.25rem;
+      display: flex;
+
+      gap: 2rem;
+      list-style-type: none;
+
+      a {
+        text-transform: capitalize;
+        text-decoration: none;
+        color: var(--color-black);
+
+        &:hover {
+          text-decoration: underline;
+          color: var(--color-red);
+        }
+      }
+    }
+  }
+}

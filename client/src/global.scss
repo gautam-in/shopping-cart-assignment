@@ -1,0 +1,52 @@
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+
+  --color-grey: #eeeeee;
+  --color-red: #c02958;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skip-to-content {
+  background-color: var(--color-white);
+
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 10px;
+  background-color: #f2f2f2;
+  color: var(--color-black);
+
+  &:focus {
+    top: 0;
+  }
+}
+
+.hidden\@mobile {
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+.hidden\@tablet {
+  @media (min-width: 768px) and (max-width: 1200px) {
+    display: none !important;
+  }
+}
+
+.hidden\@desktop {
+  @media (min-width: 1200px) {
+    display: none !important;
+  }
+}
