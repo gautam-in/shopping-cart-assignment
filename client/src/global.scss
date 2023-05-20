@@ -1,9 +1,25 @@
+@import "normalize.css";
+
 :root {
   --color-white: #fff;
   --color-black: #000;
 
   --color-grey: #eeeeee;
+  --color-grey-dark: #aaa9a7;
+
   --color-red: #c02958;
+
+  --color-primary: #c02958;
+  --color-primary-dark: #8e1c40;
+
+  --color-secondary: #2fb9c6;
+}
+
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 *,
@@ -31,6 +47,24 @@
   &:focus {
     top: 0;
   }
+}
+
+/* Layout Utilities */
+.no-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.no-padding\@x {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.no-padding\@y {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .hidden\@mobile {

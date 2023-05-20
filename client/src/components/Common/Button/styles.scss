@@ -1,0 +1,25 @@
+.button {
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: 500;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &--primary {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-primary-dark);
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}

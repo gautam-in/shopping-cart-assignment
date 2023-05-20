@@ -1,0 +1,16 @@
+.register {
+  max-width: 800px;
+
+  &__wrapper {
+    display: grid;
+    grid-auto-flow: column;
+  }
+
+  &__info {
+  }
+
+  &__form {
+    display: grid;
+    gap: 1rem;
+  }
+}

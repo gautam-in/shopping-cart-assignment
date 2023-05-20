@@ -1,17 +1,28 @@
 import { MdShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-import locale from "../../assets/locale.json";
-
 import "./styles.scss";
+import { FunctionComponent } from "react";
 
-const Header = () => {
-  const headerLocale = locale.default.application.header;
+type HeaderProps = {
+  skipToMainContent: string;
+  home: string;
+  products: string;
+  signin: string;
+  register: string;
+};
 
+const Header: FunctionComponent<HeaderProps> = ({
+  skipToMainContent,
+  home,
+  products,
+  signin,
+  register,
+}) => {
   return (
     <header className="header">
       <a href="#main" className="skip-to-content">
-        {headerLocale.skipToMainContent}
+        {skipToMainContent}
       </a>
       <div className="container header__wrapper">
         <Link to="/" className="header__logo">
@@ -25,10 +36,10 @@ const Header = () => {
         <nav className="header__primary-navigation hidden@mobile">
           <ul>
             <li>
-              <Link to="/">{headerLocale.home}</Link>
+              <Link to="/">{home}</Link>
             </li>
             <li>
-              <Link to="/products">{headerLocale.products}</Link>
+              <Link to="/products">{products}</Link>
             </li>
           </ul>
         </nav>
@@ -36,10 +47,10 @@ const Header = () => {
         <nav className="header__secondary-navigation">
           <ul className="hidden@mobile">
             <li>
-              <Link to="/auth/signin">{headerLocale.signin}</Link>
+              <Link to="/auth/signin">{signin}</Link>
             </li>
             <li>
-              <Link to="/auth/register">{headerLocale.register}</Link>
+              <Link to="/auth/register">{register}</Link>
             </li>
           </ul>
           <div className="header__navigation-cart">

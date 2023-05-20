@@ -1,15 +1,16 @@
 import { FunctionComponent } from "react";
-import locale from "../../assets/locale.json";
 
 import Section from "../Section";
 import "./styles.scss";
 
-const Footer: FunctionComponent = () => {
-  const footerLabels = locale.default.application.footer;
+type FooterProps = {
+  copyright: string;
+};
 
+const Footer: FunctionComponent<FooterProps> = ({ copyright }) => {
   return (
     <footer className="footer">
-      <Section>{footerLabels.copyright}</Section>
+      <Section className="no-padding">{copyright}</Section>
     </footer>
   );
 };

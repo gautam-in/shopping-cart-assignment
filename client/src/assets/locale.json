@@ -10,6 +10,16 @@
       },
       "footer": {
         "copyright": "Copyright &copy; 2011-2018 Sabka Bazar Grocery Supplies Pvt Ltd"
+      },
+      "forms": {
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Confirm password",
+        "signin": "Sing In",
+        "signinCopy": "Get access to your Orders, Wishlist and Recommendations",
+        "register": "Sign Up"
       }
     }
   }

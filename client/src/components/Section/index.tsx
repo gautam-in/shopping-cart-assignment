@@ -1,6 +1,8 @@
 import { FunctionComponent, ReactNode } from "react";
 import cn from "classnames";
 
+import "./styles.scss";
+
 type SectionProps = {
   children: ReactNode;
   className?: string;
@@ -11,7 +13,7 @@ const Section: FunctionComponent<SectionProps> = ({
   className = "",
 }) => {
   return (
-    <section className={cn(className)}>
+    <section className={cn("section", className)}>
       <div className="container">{children}</div>
     </section>
   );

@@ -1,0 +1,104 @@
+.input-container {
+  position: relative;
+  width: 300px;
+
+  &__label {
+    position: absolute;
+    text-transform: capitalize;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 1.6rem 0rem;
+    pointer-events: none;
+    border: 1px solid transparent;
+    color: var(--color-grey-dark);
+    transform-origin: 0 0;
+    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &__label {
+      transition: none;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: calc(3.5rem + 2px);
+    border: none;
+    border-bottom: 2px solid var(--color-grey-dark);
+    line-height: 1.25;
+
+    &:focus,
+    &:not(:placeholder-shown),
+    &:-webkit-autofill {
+      padding-top: 1.625rem;
+      outline: none;
+      border-color: var(--color-secondary);
+      padding-bottom: 0.225rem;
+    }
+
+    :not(:-moz-placeholder-shown) ~ label {
+      color: var(--color-secondary);
+      opacity: 0.65;
+      transform: scale(0.85) translateY(-1rem) translateX(0rem);
+    }
+
+    &:focus ~ label,
+    &:not(:placeholder-shown) ~ label {
+      color: var(--color-secondary);
+      opacity: 0.65;
+      transform: scale(0.85) translateY(-1rem) translateX(0rem);
+    }
+
+    &:-webkit-autofill ~ label {
+      color: var(--color-secondary);
+      opacity: 0.65;
+      transform: scale(0.85) translateY(-1rem) translateX(0rem);
+    }
+
+    &::-moz-placeholder {
+      color: transparent;
+    }
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:not(:-moz-placeholder-shown) {
+      padding-top: 1.625rem;
+      padding-bottom: 0.625rem;
+    }
+
+    &[data-error="true"] {
+      border-color: var(--color-red);
+
+      & ~ label {
+        font-weight: bold;
+        color: var(--color-red);
+      }
+    }
+  }
+
+  .input-container--error {
+    align-items: flex-start;
+
+    font-size: 0.825rem;
+    font-weight: bold;
+    color: var(--color-red);
+
+    svg {
+      width: 1.125rem;
+      height: 1.125rem;
+      vertical-align: middle;
+    }
+
+    span {
+      display: inline-block;
+      margin-left: 0.225rem;
+      vertical-align: middle;
+    }
+
+    margin-top: 0.225rem;
+  }
+}
