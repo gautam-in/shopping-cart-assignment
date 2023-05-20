@@ -52,7 +52,11 @@ const Login: React.FunctionComponent = () => {
             errors={errors["password"]}
             {...register("password")}
           />
-          <Button type="submit" variant="primary">
+          <Button
+            type="submit"
+            variant="primary"
+            classNames="login__form__submit"
+          >
             {formsLabels.signin}
           </Button>
         </form>

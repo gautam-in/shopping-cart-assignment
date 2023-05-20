@@ -51,36 +51,40 @@ const Register: React.FunctionComponent = () => {
         >
           <Input
             type="text"
-            label="first name"
+            label={formsLabels.firstName}
             errors={errors["firstName"]}
             {...register("firstName")}
           />
           <Input
             type="text"
-            label="last name"
+            label={formsLabels.lastName}
             errors={errors["lastName"]}
             {...register("lastName")}
           />
           <Input
             type="email"
-            label="email"
+            label={formsLabels.email}
             errors={errors["email"]}
             {...register("email")}
           />
           <Input
             type="password"
-            label="password"
+            label={formsLabels.password}
             errors={errors["password"]}
             {...register("password")}
           />
           <Input
             type="password"
-            label="confirm password"
+            label={formsLabels.confirmPassword}
             errors={errors["confirmPassword"]}
             {...register("confirmPassword")}
           />
-          <Button type="submit" variant="primary">
-            Signup
+          <Button
+            type="submit"
+            variant="primary"
+            classNames="register__form__submit"
+          >
+            {formsLabels.register}
           </Button>
         </form>
       </div>

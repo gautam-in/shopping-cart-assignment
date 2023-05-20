@@ -1,16 +1,34 @@
 .register {
-  max-width: 800px;
+  @media (min-width: 768px) {
+    max-width: 800px;
+  }
 
   &__wrapper {
-    display: grid;
-    grid-auto-flow: column;
+    @media (min-width: 768px) {
+      display: flex;
+      gap: 2rem;
+    }
   }
 
   &__info {
+    text-align: center;
+
+    @media (min-width: 768px) {
+      flex-basis: 50%;
+      text-align: left;
+    }
   }
 
   &__form {
     display: grid;
     gap: 1rem;
+
+    @media (min-width: 768px) {
+      flex-basis: 50%;
+    }
+
+    &__submit {
+      margin-top: 1rem;
+    }
   }
 }
