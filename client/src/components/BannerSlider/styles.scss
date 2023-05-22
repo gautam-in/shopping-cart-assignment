@@ -1,0 +1,64 @@
+.slider {
+  position: relative;
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    width: 100%;
+
+    &-prev,
+    &-next {
+      border: none;
+      cursor: pointer;
+
+      font-weight: bold;
+      padding: 1rem 1.5rem;
+      text-transform: uppercase;
+
+      color: var(--color-white);
+      background-color: var(--color-black);
+
+      &:disabled {
+        cursor: not-allowed;
+        color: var(--color-black);
+        background-color: var(--color-grey);
+      }
+    }
+  }
+  &__pagination {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0%;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      bottom: 20%;
+    }
+
+    &-dot {
+      border: none;
+      width: 0.4rem;
+      height: 0.4rem;
+      background: #c5c5c5;
+      border-radius: 50%;
+      margin: 0 8px;
+      padding: 3px;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+
+      &.active {
+        background: #000;
+      }
+    }
+  }
+}

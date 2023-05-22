@@ -75,6 +75,10 @@ body {
   padding-bottom: 0;
 }
 
+.shadow--sm {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 20px 15px -24px;
+}
+
 .hidden\@mobile {
   @media (max-width: 767px) {
     display: none !important;
@@ -90,5 +94,11 @@ body {
 .hidden\@desktop {
   @media (min-width: 1200px) {
     display: none !important;
+  }
+}
+
+picture {
+  img {
+    width: 100%;
   }
 }

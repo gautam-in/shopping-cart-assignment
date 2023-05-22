@@ -1,0 +1,56 @@
+.category-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @media (min-width: 768px) {
+    gap: 2rem;
+  }
+
+  &--left {
+    flex-direction: row;
+  }
+
+  &--right {
+    flex-direction: row-reverse;
+  }
+
+  &__picture-wrapper {
+    flex-basis: 30%;
+
+    picture {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__info {
+    flex-basis: 70%;
+    text-align: center;
+
+    &-title {
+      font-size: 1.25rem;
+
+      @media (min-width: 768px) {
+        font-size: 2rem;
+      }
+
+      font-weight: bold;
+    }
+
+    &-description {
+      @media (min-width: 768px) {
+        font-size: 1.25rem;
+      }
+    }
+
+    & * {
+      margin-bottom: 1rem;
+
+      @media (min-width: 768px) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
