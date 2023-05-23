@@ -10,6 +10,7 @@ import { Login, Register } from "./pages/Auth";
 import Footer from "./components/Footer";
 
 import "./global.scss";
+import ScrollToTop from "./components/Common/ScrollToTop";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -31,6 +32,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <Header {...headerLabels} />
         <main id="main">
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />

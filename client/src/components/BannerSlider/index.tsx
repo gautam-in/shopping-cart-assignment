@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, SyntheticEvent, useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
@@ -39,13 +39,17 @@ const BannerSlider: FunctionComponent<BannerSliderProps> = ({ slides }) => {
         </div>
         {loaded && instanceRef.current && (
           <div className="slider__actions hidden@mobile hidden@tablet">
+            <span className="sr-only" id="slide-label">
+              Slide
+            </span>
             <button
               className="slider__actions-prev"
-              onClick={(e: any) => {
+              onClick={(e: SyntheticEvent) => {
                 e.stopPropagation();
                 setCurrentSlide(currentSlide - 1);
                 instanceRef.current?.prev();
               }}
+              aria-labelledby="slide-label"
               disabled={currentSlide === 0}
             >
               Prev
@@ -53,11 +57,12 @@ const BannerSlider: FunctionComponent<BannerSliderProps> = ({ slides }) => {
 
             <button
               className="slider__actions-next"
-              onClick={(e: any) => {
+              onClick={(e: SyntheticEvent) => {
                 e.stopPropagation();
                 instanceRef.current?.next();
                 setCurrentSlide(currentSlide + 1);
               }}
+              aria-labelledby="slide-label"
               disabled={currentSlide === slides.length - 1}
             >
               Next

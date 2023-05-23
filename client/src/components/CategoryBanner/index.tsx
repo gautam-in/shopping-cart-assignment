@@ -5,7 +5,7 @@ import Button from "../Common/Button";
 import Section from "../Section";
 import "./styles.scss";
 
-export const CategoryBanner = ({
+const CategoryBanner = ({
   name,
   description,
   imageUrl,
@@ -13,7 +13,6 @@ export const CategoryBanner = ({
   slug,
   variant,
 }: any) => {
-  console.log(variant);
   const navigate = useNavigate();
 
   return (
@@ -49,3 +48,5 @@ export const CategoryBanner = ({
     </Section>
   );
 };
+
+export default CategoryBanner;

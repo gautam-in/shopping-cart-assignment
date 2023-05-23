@@ -1,11 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 
 import BannerSlider from "../../components/BannerSlider";
-import { CategoryType, BannerType } from "../../types";
+import CategoryBanner from "../../components/CategoryBanner";
+
 import { fetchCategories } from "../../services/fetchCategories";
-import { CategoryBanner } from "../../components/CategoryBanner";
-import "./styles.scss";
 import { fetchBanners } from "../../services/fetchBanners";
+
+import { CategoryType, BannerType } from "../../types";
+import "./styles.scss";
 
 const Home = () => {
   const { data: categories, isLoading: isCategoriesLoading } = useQuery({
@@ -22,16 +24,19 @@ const Home = () => {
     return null;
   }
 
-  console.log("Banners", banners);
+  const sortedBanners =
+    (banners &&
+      banners
+        .filter((banner: BannerType) => banner.isActive)
+        .sort((a: BannerType, b: BannerType) => a.order - b.order)) ||
+    [];
 
-  const sortedBanners = banners
-    .filter((banner: BannerType) => banner.isActive)
-    .sort((a: BannerType, b: BannerType) => a.order - b.order);
-  console.log("🚀 ~ file: index.tsx:30 ~ Home ~ sortedBanners:", sortedBanners);
-
-  const sortedCategories: CategoryType[] = categories.sort(
-    (a: CategoryType, b: CategoryType) => a.order - b.order
-  );
+  const sortedCategories: CategoryType[] =
+    (categories &&
+      categories.sort(
+        (a: CategoryType, b: CategoryType) => a.order - b.order
+      )) ||
+    [];
 
   return (
     <div className="homepage">

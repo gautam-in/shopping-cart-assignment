@@ -3,14 +3,21 @@ import cn from "classnames";
 
 import "./styles.scss";
 
-type ButtonProps = {
+type ButtonProps = React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>;
+
+type ButtonComponentProps = {
   variant: string;
   type: "button" | "submit" | "reset";
   classNames?: string;
   children: ReactNode;
 };
 
-const Button: FunctionComponent<ButtonProps> = ({
+type CombinedButtonProps = ButtonComponentProps & ButtonProps;
+
+const Button: FunctionComponent<CombinedButtonProps> = ({
   variant,
   type,
   classNames,

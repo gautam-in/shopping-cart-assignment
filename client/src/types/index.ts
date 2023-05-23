@@ -14,3 +14,14 @@ export type BannerType = {
   bannerImageAlt: string;
   bannerImageUrl: string;
 };
+
+export type ProductType = {
+  category: string;
+  description: string;
+  id: string;
+  imageURL: string;
+  name: string;
+  price: number;
+  sku: string;
+  stock: number;
+};

@@ -3,7 +3,7 @@
   align-items: center;
   gap: 1rem;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1025px) {
     gap: 2rem;
   }
 
@@ -32,7 +32,7 @@
     &-title {
       font-size: 1.25rem;
 
-      @media (min-width: 768px) {
+      @media (min-width: 1025px) {
         font-size: 2rem;
       }
 
@@ -40,7 +40,7 @@
     }
 
     &-description {
-      @media (min-width: 768px) {
+      @media (min-width: 1025px) {
         font-size: 1.25rem;
       }
     }
@@ -48,7 +48,7 @@
     & * {
       margin-bottom: 1rem;
 
-      @media (min-width: 768px) {
+      @media (min-width: 1025px) {
         margin-bottom: 2rem;
       }
     }
