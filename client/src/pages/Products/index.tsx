@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
+import { HeadProvider, Title, Link, Meta } from "react-head";
+
 import { fetchCategories } from "../../services/fetchCategories";
 
 import { fetchProducts } from "../../services/fetchProducts";
@@ -43,6 +45,14 @@ const Products = () => {
   return (
     <Section className="no-padding">
       <h1 className="sr-only">Products</h1>
+      <HeadProvider>
+        <Title>Products - Sabka Bazaar</Title>
+        <Meta
+          name="description"
+          content="Product collections of sabka bazaar"
+        />
+        <Link rel="canonical" href="http://localhost:3000/products" />
+      </HeadProvider>
       <div className="product-page">
         <aside className="product-page__aside">
           <div className="hidden@tablet hidden@desktop">

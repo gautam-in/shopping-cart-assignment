@@ -44,20 +44,21 @@
 
     &-dot {
       border: none;
-      width: 0.4rem;
-      height: 0.4rem;
-      background: #c5c5c5;
-      border-radius: 50%;
+      background: transparent;
       margin: 0 8px;
-      padding: 3px;
+      padding: 8px;
       cursor: pointer;
 
-      &:focus {
-        outline: none;
+      svg {
+        fill: var(--color-grey);
+        width: 10px;
+        height: 10px;
       }
 
       &.active {
-        background: #000;
+        svg {
+          fill: var(--color-black);
+        }
       }
     }
   }

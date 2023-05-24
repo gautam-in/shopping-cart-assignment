@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { HeadProvider, Title, Link, Meta } from "react-head";
 
 import BannerSlider from "../../components/BannerSlider";
 import CategoryBanner from "../../components/CategoryBanner";
@@ -40,6 +41,23 @@ const Home = () => {
 
   return (
     <div className="homepage">
+      <HeadProvider>
+        <Title>Home - Sabka Bazaar</Title>
+        <Meta
+          name="description"
+          content="Home page | Latest offers and explore all categories"
+        />
+        <Link
+          rel="preload"
+          href={(sortedBanners.length && sortedBanners[0].bannerImageUrl) || ""}
+          as="image"
+        />
+        <Link
+          rel="preload"
+          href={(sortedCategories.length && sortedCategories[0].imageUrl) || ""}
+          as="image"
+        />
+      </HeadProvider>
       <BannerSlider
         slides={sortedBanners.map((banner: BannerType) => ({
           imageUrl: banner.bannerImageUrl,

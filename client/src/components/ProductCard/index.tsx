@@ -1,7 +1,9 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useContext } from "react";
 
 import Button from "../Common/Button";
 import "./styles.scss";
+import { CartContext } from "../../context/CartContext";
+import { CartActionTypes } from "../../types";
 
 type ProductCardProps = {
   id: string;
@@ -11,13 +13,11 @@ type ProductCardProps = {
   price: number;
 };
 
-const ProductCard: FunctionComponent<ProductCardProps> = ({
-  id,
-  name,
-  imageUrl,
-  description,
-  price,
-}) => {
+const ProductCard: FunctionComponent<ProductCardProps> = (product) => {
+  const { id, name, imageUrl, description, price } = product;
+
+  const { dispatch } = useContext(CartContext);
+
   return (
     <div className="product-card">
       <h3 className="product-card__title" id={`product-title-${id}`}>
@@ -45,6 +45,12 @@ const ProductCard: FunctionComponent<ProductCardProps> = ({
             type="button"
             variant="primary"
             aria-labelledby={`product-title-${id}`}
+            onClick={() =>
+              dispatch({
+                type: CartActionTypes.ADD_ITEM,
+                payload: product,
+              })
+            }
           >
             <span className="hidden@desktop">Buy Now @ Rs.{price}</span>
             <span className="hidden@mobile hidden@tablet">Buy Now</span>

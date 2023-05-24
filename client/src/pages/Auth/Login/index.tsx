@@ -1,5 +1,6 @@
 import { useForm, UseFormReturn } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { HeadProvider, Meta, Title } from "react-head";
 
 import locale from "../../../assets/locale.json";
 import Button from "../../../components/Common/Button";
@@ -34,6 +35,13 @@ const Login: React.FunctionComponent = () => {
 
   return (
     <Section>
+      <HeadProvider>
+        <Title>Login - Sabka Bazaar</Title>
+        <Meta
+          name="description"
+          content="Login page for the already register customer"
+        />
+      </HeadProvider>
       <div className="login login__wrapper">
         <div className="login__info">
           <h1>{formsLabels.signin}</h1>

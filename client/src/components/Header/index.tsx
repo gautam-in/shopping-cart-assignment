@@ -2,7 +2,9 @@ import { MdShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 import "./styles.scss";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useContext, useState } from "react";
+import { CartContext } from "../../context/CartContext";
+import { Cart } from "../Cart";
 
 type HeaderProps = {
   skipToMainContent: string;
@@ -19,6 +21,9 @@ const Header: FunctionComponent<HeaderProps> = ({
   signin,
   register,
 }) => {
+  const { state } = useContext(CartContext);
+  const [isCartVisible, setIsCartVisible] = useState(false);
+
   return (
     <header className="header">
       <a href="#main" className="skip-to-content">
@@ -34,7 +39,7 @@ const Header: FunctionComponent<HeaderProps> = ({
         </Link>
 
         <nav className="header__primary-navigation hidden@mobile">
-          <ul>
+          <ul className="header__primary-navigation__list">
             <li>
               <Link to="/">{home}</Link>
             </li>
@@ -45,7 +50,7 @@ const Header: FunctionComponent<HeaderProps> = ({
         </nav>
 
         <nav className="header__secondary-navigation">
-          <ul className="hidden@mobile">
+          <ul className="header__secondary-navigation__list hidden@mobile">
             <li>
               <Link to="/auth/signin">{signin}</Link>
             </li>
@@ -54,10 +59,20 @@ const Header: FunctionComponent<HeaderProps> = ({
             </li>
           </ul>
           <div className="header__navigation-cart">
-            <MdShoppingCart /> <span>0 items</span>
+            <button onClick={() => setIsCartVisible(!isCartVisible)}>
+              <MdShoppingCart aria-hidden="true" />{" "}
+              <span>
+                {state.itemCount === 1
+                  ? `${state.itemCount} item`
+                  : `${state.itemCount} items`}
+              </span>
+            </button>
           </div>
         </nav>
       </div>
+      {isCartVisible && (
+        <Cart show={isCartVisible} setShowCart={setIsCartVisible} />
+      )}
     </header>
   );
 };

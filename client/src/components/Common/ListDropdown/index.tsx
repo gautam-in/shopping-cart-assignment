@@ -68,7 +68,7 @@ const ListDropdown: FunctionComponent<ListDropdownProps> = ({
         onClick={handleToggle}
       >
         <span>
-          {selectedOption ? selectedOption.label : "Filter a category"}
+          {selectedOption ? selectedOption.label : "Filter by category"}
         </span>
         <MdKeyboardArrowDown />
       </button>

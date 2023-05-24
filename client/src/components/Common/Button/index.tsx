@@ -1,12 +1,9 @@
-import { FunctionComponent, ReactNode } from "react";
+import { ButtonHTMLAttributes, ReactNode, FunctionComponent } from "react";
 import cn from "classnames";
 
 import "./styles.scss";
 
-type ButtonProps = React.DetailedHTMLProps<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
->;
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
 type ButtonComponentProps = {
   variant: string;
@@ -23,7 +20,7 @@ const Button: FunctionComponent<CombinedButtonProps> = ({
   classNames,
   children,
   ...rest
-}: ButtonProps) => (
+}: CombinedButtonProps) => (
   <button
     type={type}
     className={cn("button", `button--${variant}`, classNames)}

@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
+
 import cn from "classnames";
 
 import Button from "../Common/Button";
@@ -14,10 +16,12 @@ const CategoryBanner = ({
   variant,
 }: any) => {
   const navigate = useNavigate();
+  const { ref, inView } = useInView({});
 
   return (
     <Section>
       <div
+        ref={ref}
         className={cn(
           "category-banner",
           `category-banner--${variant}`,
@@ -25,20 +29,25 @@ const CategoryBanner = ({
         )}
       >
         <div className="category-banner__picture-wrapper">
-          <picture>
-            <img src={imageUrl} alt={name} />
-          </picture>
+          {inView && (
+            <picture>
+              <img src={imageUrl} alt={name} />
+            </picture>
+          )}
         </div>
 
         <div className="category-banner__info">
-          <h2 className="category-banner__info-title" id="category-title">
+          <h2
+            className="category-banner__info-title"
+            id={`category-title-${name}`}
+          >
             {name}
           </h2>
           <p className="category-banner__info-description">{description}</p>
           <Button
             type="submit"
             variant="primary"
-            aria-describedby="category-title"
+            aria-describedby={`category-title-${name}`}
             onClick={() => navigate(`/products?category=${id}`)}
           >
             Explore {slug}

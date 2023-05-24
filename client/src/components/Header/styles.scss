@@ -4,6 +4,17 @@
 
   &__logo {
     width: 200px;
+    margin: 0;
+
+    img {
+      width: 135px;
+    }
+
+    @media (min-width: 601px) {
+      img {
+        width: 100%;
+      }
+    }
   }
 
   &__wrapper {
@@ -19,6 +30,8 @@
   }
 
   &__secondary-navigation {
+    margin-right: 0;
+
     .header__navigation-cart {
       display: flex;
       justify-content: center;
@@ -31,6 +44,13 @@
       width: 135px;
       height: 65px;
 
+      button {
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+
       svg {
         font-size: 24px;
         fill: var(--color-primary);
@@ -38,26 +58,24 @@
     }
   }
 
-  &__primary-navigation,
-  &__secondary-navigation {
-    ul {
-      width: min-content;
-      margin: 0;
-      padding: 0.25rem;
-      display: flex;
+  &__primary-navigation__list,
+  &__secondary-navigation__list {
+    width: min-content;
+    margin: 0;
+    padding: 0.25rem;
+    display: flex;
 
-      gap: 2rem;
-      list-style-type: none;
+    gap: 2rem;
+    list-style-type: none;
 
-      a {
-        text-transform: capitalize;
-        text-decoration: none;
-        color: var(--color-black);
+    a {
+      text-transform: capitalize;
+      text-decoration: none;
+      color: var(--color-black);
 
-        &:hover {
-          text-decoration: underline;
-          color: var(--color-primary);
-        }
+      &:hover {
+        text-decoration: underline;
+        color: var(--color-primary);
       }
     }
   }

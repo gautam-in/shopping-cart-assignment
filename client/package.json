@@ -18,8 +18,10 @@
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-head": "^3.4.2",
     "react-hook-form": "^7.43.9",
     "react-icons": "^4.8.0",
+    "react-intersection-observer": "^9.4.3",
     "react-router-dom": "^6.11.2",
     "zod": "^3.21.4"
   },

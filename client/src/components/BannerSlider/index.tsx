@@ -1,9 +1,12 @@
 import React, { FunctionComponent, SyntheticEvent, useState } from "react";
+import { useInView } from "react-intersection-observer";
+
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
 import Section from "../Section";
 import "./styles.scss";
+import { MdCircle } from "react-icons/md";
 
 type BannerSliderProps = {
   slides: {
@@ -28,13 +31,12 @@ const BannerSlider: FunctionComponent<BannerSliderProps> = ({ slides }) => {
       <div className="slider">
         <div ref={sliderRef} className="keen-slider">
           {slides.map((slide) => (
-            <Section className="keen-slider__slide" key={slide.id}>
-              <div className="shadow--sm">
-                <picture>
-                  <img src={slide.imageUrl} alt={slide.imageAlt} />
-                </picture>
-              </div>
-            </Section>
+            <Slide
+              key={slide.id}
+              id={slide.id}
+              imageAlt={slide.imageAlt}
+              imageUrl={slide.imageUrl}
+            />
           ))}
         </div>
         {loaded && instanceRef.current && (
@@ -75,20 +77,44 @@ const BannerSlider: FunctionComponent<BannerSliderProps> = ({ slides }) => {
               return (
                 <button
                   key={idx}
+                  aria-label={`Slide ${idx}`}
                   onClick={() => {
+                    setCurrentSlide(idx);
                     instanceRef.current?.moveToIdx(idx);
                   }}
                   className={
                     "slider__pagination-dot" +
                     (currentSlide === idx ? " active" : "")
                   }
-                ></button>
+                >
+                  <MdCircle />
+                </button>
               );
             })}
           </div>
         )}
       </div>
     </>
+  );
+};
+
+const Slide: FunctionComponent<{
+  id: string;
+  imageUrl: string;
+  imageAlt: string;
+}> = ({ id, imageAlt, imageUrl }) => {
+  const { ref, inView } = useInView({});
+
+  return (
+    <Section className="keen-slider__slide" key={id}>
+      <div className="shadow--sm" ref={ref}>
+        {inView && (
+          <picture>
+            <img src={imageUrl} alt={imageAlt} />
+          </picture>
+        )}
+      </div>
+    </Section>
   );
 };
 

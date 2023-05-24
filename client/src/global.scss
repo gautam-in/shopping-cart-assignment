@@ -75,19 +75,19 @@ body {
 
 .hidden\@mobile {
   @media (max-width: 600px) {
-    display: none;
+    display: none !important;
   }
 }
 
 .hidden\@tablet {
   @media (min-width: 601px) and (max-width: 1024px) {
-    display: none;
+    display: none !important;
   }
 }
 
 .hidden\@desktop {
   @media (min-width: 1025px) {
-    display: none;
+    display: none !important;
   }
 }
 
