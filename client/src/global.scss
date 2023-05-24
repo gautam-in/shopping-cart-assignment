@@ -1,0 +1,107 @@
+@import "normalize.css";
+
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+
+  --color-grey: #eeeeee;
+  --color-grey-dark: #aaa9a7;
+
+  --color-red: #c02958;
+
+  --color-primary: #c02958;
+  --color-primary-dark: #8e1c40;
+
+  --color-secondary: #2fb9c6;
+}
+
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.container {
+  @media (min-width: 1025px) {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.skip-to-content {
+  background-color: var(--color-white);
+
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 10px;
+  background-color: #f2f2f2;
+  color: var(--color-black);
+
+  &:focus {
+    top: 0;
+  }
+}
+
+/* Layout Utilities */
+.no-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.no-padding\@x {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.no-padding\@y {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.shadow--sm {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 20px 15px -24px;
+}
+
+.hidden\@mobile {
+  @media (max-width: 600px) {
+    display: none !important;
+  }
+}
+
+.hidden\@tablet {
+  @media (min-width: 601px) and (max-width: 1024px) {
+    display: none !important;
+  }
+}
+
+.hidden\@desktop {
+  @media (min-width: 1025px) {
+    display: none !important;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+picture {
+  img {
+    width: 100%;
+  }
+}

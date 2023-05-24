@@ -1,0 +1,34 @@
+.login {
+  @media (min-width: 1025px) {
+    max-width: 800px;
+  }
+
+  &__wrapper {
+    @media (min-width: 1025px) {
+      display: flex;
+      gap: 2rem;
+    }
+  }
+
+  &__info {
+    text-align: center;
+
+    @media (min-width: 1025px) {
+      flex-basis: 50%;
+      text-align: left;
+    }
+  }
+
+  &__form {
+    display: grid;
+    gap: 1rem;
+
+    @media (min-width: 1025px) {
+      flex-basis: 50%;
+    }
+
+    &__submit {
+      margin-top: 1rem;
+    }
+  }
+}

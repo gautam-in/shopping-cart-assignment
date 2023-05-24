@@ -1,0 +1,111 @@
+.product-card {
+  border-bottom: 1px dashed var(--color-grey-dark);
+  margin-bottom: 3rem;
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: bold;
+
+    text-align: center;
+    min-height: 50px;
+
+    margin-bottom: 1rem;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    -webkit-line-clamp: 2;
+    min-height: 2.4em;
+    max-height: 2.4em;
+
+    @media (min-width: 1025px) {
+      margin-bottom: 2rem;
+
+      -webkit-line-clamp: 3;
+      min-height: 3.6em;
+      max-height: 3.6em;
+    }
+  }
+
+  &__wrapper {
+    * ~ * {
+      margin-bottom: 0.5rem;
+    }
+
+    display: grid;
+    gap: 1rem;
+    align-items: flex-start;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+
+    @media (min-width: 601px) and (max-width: 1024px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 2fr 1fr;
+      grid-auto-flow: row;
+
+      align-items: flex-start;
+    }
+
+    @media (min-width: 1025px) {
+      grid-template-columns: none;
+      grid-template-rows: none;
+    }
+
+    &-picture {
+      grid-row: span 2;
+    }
+
+    &-description {
+      background-color: var(--color-grey);
+      padding: 0.8rem 0.5rem;
+
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.75rem;
+
+      @media (min-width: 601px) and (max-width: 1024px) {
+        grid-row: span 2;
+      }
+
+      @media (min-width: 1025px) {
+        font-size: 1rem;
+        -webkit-line-clamp: 6;
+        min-height: 9.6em;
+        max-height: 9.6em;
+      }
+    }
+
+    &-price {
+      display: block;
+      margin-left: 0.5rem;
+    }
+
+    &-actions {
+      width: 100%;
+
+      button {
+        width: 100%;
+      }
+
+      @media (min-width: 601px) and (max-width: 1024px) {
+        grid-column: span 2;
+      }
+
+      @media (min-width: 1025px) {
+        display: flex;
+        align-items: center;
+
+        button {
+          width: auto;
+        }
+      }
+    }
+  }
+}
