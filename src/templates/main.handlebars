@@ -1,0 +1,17 @@
+{{> partials/header}}
+<main class="container main">
+  {{content}}
+  <ul class="categories">
+    {{#each categories}}
+      <div>
+        <div>{{name}}</div>
+        {{description}}
+      </div>
+      <hr>
+    {{/each}}
+    <pre>
+    {{[../helpers/json] categories}}
+  </pre>
+  </ul>
+</main>
+{{> partials/footer}}
