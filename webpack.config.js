@@ -69,6 +69,10 @@ module.exports = ({ mode } = { mode: "production" }) => {
           directory: path.resolve(__dirname, "./static"),
           publicPath: "/static",
         },
+        compress: true,
+        headers: {
+          "Cache-Control": "max-age=31536000",
+        },
       },
     },
     modeConfig(mode)

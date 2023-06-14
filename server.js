@@ -34,6 +34,5 @@ app.get("/api/products", function (req, res) {
 });
 
 app.listen(PORT, (req, res) => {
-  console.log(req);
   console.log("Nodejs App Started");
 });
