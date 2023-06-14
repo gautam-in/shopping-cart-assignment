@@ -213,14 +213,14 @@ header {
   }
 
   &__products {
-    display: none;
+    // display: none;
 
     .category-products.active & {
       display: block;
     }
 
     @media screen and (min-width: $sb-mobile-breakpoint) {
-      display: block;
+      display: flex;
     }
 
     li {
@@ -229,7 +229,6 @@ header {
       justify-content: space-between;
 
       > div {
-        flex-basis: 20%;
         padding: 1em;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -261,7 +260,7 @@ header {
             grid-row: 2 / 3;
           }
         }
-        p {
+        p.description {
           grid-column: 2/2;
           grid-row: 2 / 3;
           background-color: $sb-gray;
@@ -269,7 +268,16 @@ header {
           font-size: 0.9em;
 
           @media screen and (min-width: $sb-tablet-breakpoint) {
+            grid-column: 1 / span 2;
             grid-row: 3 / 4;
+          }
+        }
+        div.price {
+          display: flex;
+          align-items: center;
+
+          @media screen and (max-width: $sb-tablet-breakpoint) {
+            display: none;
           }
         }
         button {
@@ -277,6 +285,23 @@ header {
           grid-column: 2/2;
           grid-row: 4 / 5;
           position: relative;
+        }
+
+        button.mobile {
+          @media screen and (min-width: $sb-mobile-breakpoint) {
+            display: none;
+          }
+        }
+        button.tablet {
+          display: none;
+          @media screen and (max-width: $sb-tablet-breakpoint) and (min-width: $sb-mobile-breakpoint) {
+            display: block;
+          }
+        }
+        button.desktop {
+          @media screen and (max-width: $sb-tablet-breakpoint) {
+            display: none;
+          }
         }
       }
     }

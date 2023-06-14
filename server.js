@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const PORT = 8080;
+const path = require("path");
+const http = require("http");
 
 app.use(
   cors({
@@ -9,9 +11,12 @@ app.use(
   })
 );
 
+app.use(express.static(__dirname + "/static"));
+
 app.get("/api/health", function (req, res) {
   res.send("Health OK!");
 });
+
 app.post("/api/addToCart", function (req, res) {
   res.send(require("./api/addToCart/index.post.json"));
 });
@@ -28,6 +33,7 @@ app.get("/api/products", function (req, res) {
   res.send(require("./api/products/index.get.json"));
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, (req, res) => {
+  console.log(req);
   console.log("Nodejs App Started");
 });

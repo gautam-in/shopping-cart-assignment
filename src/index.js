@@ -1,13 +1,14 @@
 const template = require("./templates/main.handlebars");
-import styles from "./styles";
+import logo from "../static/images/logo.png";
 
 document.addEventListener("DOMContentLoaded", async function () {
   const div = document.createElement("div");
   const categories = await getCategories();
   div.innerHTML = template({
-    content: "testingss",
+    logo: logo,
     categories: categories,
   });
+
   document.body.appendChild(div);
 });
 

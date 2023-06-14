@@ -1,0 +1,44 @@
+{{> partials/header}}
+<main class="container main main--products">
+    <aside>
+      <ul class="categories-listing">
+        {{#each categoryProducts}}
+        <li>
+          {{#category}}
+            {{name}}
+          {{/category}}
+        </li>
+        {{/each}}
+      </ul>
+    </aside>
+    <ul class="category-products-listing">
+      {{#each categoryProducts}}
+        <li class="category-products">
+          <div class="category-products__heading">
+            <button onclick="">
+              {{#category}}
+                {{name}}
+              {{/category}}
+              <span><i class="fas fa-chevron-up"></i></span>
+            </button>
+          </div>
+          <ul class="category-products__products">
+            {{#products}}
+              <li>
+                <div>
+                  <h3>{{name}}</h3>
+                  <img src="{{imageURL}}" alt="{{name}}" class="img-responsive" />
+                  <p class="description">{{[../helpers/strTrim] description}}...</p>
+                  <div class="price">MRP Rs.{{price}}</div>
+                  <button class="buynow mobile">Buy Now @ MRP Rs.{{price}}</button>
+                  <button class="buynow tablet">Buy Now @ Rs.{{price}}</button>
+                  <button class="buynow desktop">Buy Now</button>
+                </div>
+              </li>
+            {{/products}}
+          </ul>
+        </li>
+      {{/each}}
+    </ul>
+</main>
+{{> partials/footer}}
