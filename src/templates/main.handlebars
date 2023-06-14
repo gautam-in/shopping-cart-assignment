@@ -1,0 +1,18 @@
+{{> partials/header}}
+<main class="container main">
+  <ul class="categories">
+    {{#each categories}}
+      <li>
+        <div class="category__image">          
+          <img src="{{imageUrl}}" alt="{{name}}" width="200" height="200" class="img-responsive">
+        </div>
+        <div class="category__info">
+          <h2>{{name}}</h2>
+          <p>{{description}}</p>
+          <a href="/products.html">Explore {{key}}</a>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</main>
+{{> partials/footer}}
