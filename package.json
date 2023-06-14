@@ -1,11 +1,10 @@
 {
   "name": "code-exercise",
   "version": "2.0.0",
-  "description": "This is a shopping cart coding exercise",
+  "description": "This is a shopping cart coding exercise using handlebars",
   "main": "index.js",
   "scripts": {
     "webpack-dev-server": "webpack-dev-server",
-    "prod": "npm run webpack -- --env mode=production",
     "build": "webpack --watch --env mode=development",
     "build:prod": "webpack --watch --env mode=production",
     "dev-server": "nodemon ./server.js localhost 8080",

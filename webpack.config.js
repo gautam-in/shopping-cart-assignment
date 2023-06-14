@@ -14,12 +14,20 @@ module.exports = ({ mode } = { mode: "production" }) => {
         index: "./src/index.js",
         products: "./src/products.js",
         styles: "./src/styles.js",
+        signin: "./src/signin.js",
+        register: "./src/register.js",
       },
       module: {
         rules: [
           {
             test: /\.handlebars$/,
             loader: "handlebars-loader",
+            options: {
+              runtime: path.resolve(
+                __dirname,
+                "node_modules/handlebars/runtime"
+              ),
+            },
           },
           {
             test: /\.(png|jpe?g|gif)$/i,
@@ -44,6 +52,16 @@ module.exports = ({ mode } = { mode: "production" }) => {
           title: "Shopping Cart :: Products Page",
           filename: "products.html",
           chunks: ["products", "styles"],
+        }),
+        new HtmlWebpackPlugin({
+          title: "Shopping Cart :: Login Page",
+          filename: "signin.html",
+          chunks: ["signin", "styles"],
+        }),
+        new HtmlWebpackPlugin({
+          title: "Shopping Cart :: Register Page",
+          filename: "register.html",
+          chunks: ["register", "styles"],
         }),
       ],
       devServer: {

@@ -2,10 +2,25 @@ const template = require("./templates/products.handlebars");
 import { getCategories } from ".";
 import logo from "../static/images/logo.png";
 
+function toggleCategory(e) {
+  const button = e.currentTarget;
+  const parentLi = button.parentNode.parentNode;
+  const arrowIcon = button.querySelector("span");
+  if (parentLi.classList.contains("active")) {
+    parentLi.classList.remove("active");
+    button.setAttribute("aria-expanded", "false");
+    arrowIcon.innerHTML = '<i class="fas fa-chevron-down"></i>';
+  } else {
+    parentLi.classList.add("active");
+    button.setAttribute("aria-expanded", "true");
+    arrowIcon.innerHTML = '<i class="fas fa-chevron-up"></i>';
+  }
+}
+
 document.addEventListener("DOMContentLoaded", async function () {
   const div = document.createElement("div");
-  //  const categories = await getCategories();
   const categoryProducts = await allCategoriesProducts();
+
   div.innerHTML = template({
     logo: logo,
     categoryProducts: categoryProducts,
@@ -13,6 +28,15 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   document.body.innerHTML = "";
   document.body.appendChild(div);
+
+  for (const categoryHeading of document.querySelectorAll(
+    ".category-products__heading"
+  )) {
+    categoryHeading.firstChild?.nextSibling.addEventListener(
+      "click",
+      toggleCategory
+    );
+  }
 });
 
 export async function getProducts() {

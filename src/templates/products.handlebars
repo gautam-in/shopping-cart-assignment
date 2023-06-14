@@ -5,7 +5,7 @@
         {{#each categoryProducts}}
         <li>
           {{#category}}
-            {{name}}
+            <a href="/products.html">{{name}}</a>
           {{/category}}
         </li>
         {{/each}}
@@ -13,9 +13,9 @@
     </aside>
     <ul class="category-products-listing">
       {{#each categoryProducts}}
-        <li class="category-products">
+        <li class="category-products {{[../helpers/getActiveClass] @index}}">
           <div class="category-products__heading">
-            <button onclick="">
+            <button>
               {{#category}}
                 {{name}}
               {{/category}}
@@ -30,9 +30,11 @@
                   <img src="{{imageURL}}" alt="{{name}}" class="img-responsive" />
                   <p class="description">{{[../helpers/strTrim] description}}...</p>
                   <div class="price">MRP Rs.{{price}}</div>
-                  <button class="buynow mobile">Buy Now @ MRP Rs.{{price}}</button>
-                  <button class="buynow tablet">Buy Now @ Rs.{{price}}</button>
-                  <button class="buynow desktop">Buy Now</button>
+                  <div class="buynow">  
+                    <button class="buynow__mobile">Buy Now @ MRP Rs.{{price}}</button>
+                    <button class="buynow__tablet">Buy Now @ Rs.{{price}}</button>
+                    <button class="buynow__desktop">Buy Now</button>
+                  </div>
                 </div>
               </li>
             {{/products}}
