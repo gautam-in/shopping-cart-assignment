@@ -62,3 +62,4 @@ typings/
 
 # webpack default dist folder
 dist/
+build/

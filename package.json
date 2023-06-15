@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "webpack-dev-server": "webpack-dev-server",
-    "build": "webpack --watch --env mode=development",
-    "build:prod": "webpack --watch --env mode=production",
+    "build:dev": "webpack --watch --env mode=development",
+    "build": "webpack --watch --env mode=production",
     "dev-server": "nodemon ./server.js localhost 8080",
-    "dev-client": "npm run webpack-dev-server -- --env mode=development --hot --port 3000"
+    "dev-client": "npm run webpack-dev-server -- --env mode=production --hot --port 3000"
   },
   "author": "",
   "license": "MIT",

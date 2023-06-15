@@ -1,8 +1,11 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path");
 
 module.exports = () => ({
   output: {
     filename: "[name].[contenthash].bundle.js",
+    clean: true, // Clean the output directory before emit.
+    path: path.join(__dirname, "../build"),
   },
   module: {
     rules: [
