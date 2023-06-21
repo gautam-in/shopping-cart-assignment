@@ -6,7 +6,7 @@
   "scripts": {
     "webpack-dev-server": "webpack-dev-server",
     "build:dev": "webpack --watch --env mode=development",
-    "build": "webpack --watch --env mode=production",
+    "build": "webpack --env mode=production",
     "start": "nodemon ./server.js localhost 8080",
     "dev-client": "npm run webpack-dev-server -- --env mode=production --hot --port 3000"
   },

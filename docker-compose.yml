@@ -1,0 +1,16 @@
+version: '3'
+services: 
+  frontend:
+    build: 
+      context: .
+      dockerfile: Dockerfile.client
+    ports: 
+      - '3000:3000'
+    volumes:
+      - /app/node_modules
+      - .:/app
+  backend:
+    build: .
+    ports:
+      - '8080:8080'
+  
