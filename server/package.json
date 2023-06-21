@@ -1,0 +1,11 @@
+{
+  "name": "code-exercise",
+  "version": "1.0.0",
+  "description": "This is a shopping cart coding exercise",
+  "main": "index.js",
+  "scripts": {
+   "start": "node index.js"
+  },
+  "author": "",
+  "license": "MIT"
+}
