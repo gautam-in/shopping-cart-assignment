@@ -1,14 +1,20 @@
 @import "../../media-queries.scss";
 .header {
-  background-color: var(--color-black);
-  color: var(--color-white);
-  padding: 2rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--color-white);
+  color: var(--color-grey-100);
+  padding: 1rem;
 
   p {
     font-weight: 700;
+  }
+
+  @include respond-to("desktop") {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 2rem 1rem;
   }
 }
 

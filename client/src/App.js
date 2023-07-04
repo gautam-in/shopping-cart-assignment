@@ -8,8 +8,10 @@ import Footer from "./components/Footer";
 import Register from "./pages/Register";
 import Products from "./pages/Products";
 import CartModal from "./components/CartModal";
+import { useCart } from "./context/cart";
 
 function App() {
+  const { isCartOpen } = useCart();
   return (
     <>
       <Header />
@@ -22,7 +24,7 @@ function App() {
           <Route path="/products/:category" element={<Products />} />
         </Routes>
       </main>
-      <CartModal />
+      {isCartOpen ? <CartModal /> : null}
 
       <Footer />
     </>
