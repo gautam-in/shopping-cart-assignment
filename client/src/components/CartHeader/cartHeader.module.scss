@@ -1,0 +1,36 @@
+.header {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-weight: 700;
+  }
+}
+
+.subText {
+  font-size: 0.8em;
+}
+
+.close {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  width: 4rem;
+  height: 4rem;
+
+  span {
+    font-size: 4rem;
+    position: absolute;
+    top: -1rem;
+    display: block;
+    height: 0;
+  }
+}

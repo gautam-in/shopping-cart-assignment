@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Footer from "./components/Footer";
 import Register from "./pages/Register";
 import Products from "./pages/Products";
+import CartModal from "./components/CartModal";
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
           <Route path="/products/:category" element={<Products />} />
         </Routes>
       </main>
+      <CartModal />
+
       <Footer />
     </>
   );

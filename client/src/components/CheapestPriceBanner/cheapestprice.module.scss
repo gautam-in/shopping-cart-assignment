@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  gap: 3rem;
+  background-color: var(--color-white);
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  align-items: center;
+
+  img {
+    height: 4rem;
+  }
+}

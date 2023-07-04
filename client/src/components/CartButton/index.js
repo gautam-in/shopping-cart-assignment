@@ -3,9 +3,12 @@ import classes from "./cartButton.module.scss";
 import { useCart } from "../../context/cart";
 
 function CartButton() {
-  const { cartItems } = useCart();
+  const { cartItems, setIsCartOpen } = useCart();
   return (
-    <button className={classes.cartButton}>
+    <button
+      className={classes.cartButton}
+      onClick={() => setIsCartOpen((open) => !open)}
+    >
       <img
         loading="lazy"
         aria-hidden={"true"}

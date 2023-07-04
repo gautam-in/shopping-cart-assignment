@@ -1,0 +1,19 @@
+.action {
+  min-height: 8rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  flex-direction: column;
+  gap: 1rem;
+
+  p {
+    font-size: 0.9em;
+  }
+
+  button {
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
