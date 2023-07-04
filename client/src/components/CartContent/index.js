@@ -12,6 +12,8 @@ function CartContent({ onClose }) {
     (total, current) => total + current.price * current.count,
     0
   );
+
+  const handleCheckout = () => {};
   return (
     <div className={classes.container}>
       <CartHeader onClose={onClose} count={cartItems.length} />
@@ -21,7 +23,9 @@ function CartContent({ onClose }) {
         removeFromCart={removeFromCart}
       />
 
-      {cartItems.length > 0 ? <CartCheckoutButton price={totalPrice} /> : null}
+      {cartItems.length > 0 ? (
+        <CartCheckoutButton price={totalPrice} onCheckout={handleCheckout} />
+      ) : null}
     </div>
   );
 }

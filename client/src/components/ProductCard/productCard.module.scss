@@ -7,21 +7,35 @@
   gap: 2rem;
   padding: 1.5rem;
   border-bottom: 1px dashed var(--color-grey-200);
+
+  h2 {
+    height: 4rem;
+  }
 }
 
 .imgContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
+  gap: 1rem;
+
+  @include respond-to("phone") {
+    flex-direction: row;
+  }
 }
 
 .image {
-  width: 30rem;
+  width: 23rem;
 
   aspect-ratio: 1 / 1;
 
+  @include respond-to("tablet") {
+    width: 18rem;
+  }
+
   @include respond-to("phone") {
-    width: 23rem;
+    width: 15rem;
   }
 }
 
@@ -31,10 +45,19 @@
   justify-content: center;
   gap: 2rem;
   flex: 1;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  flex: 1;
 
   p {
     background-color: var(--color-grey-800);
     padding: 1rem;
+    flex: 1;
   }
 }
 
@@ -43,7 +66,24 @@
   justify-content: space-between;
   align-items: center;
 
+  > span {
+    display: none;
+
+    @include respond-to("desktop") {
+      display: inline;
+    }
+  }
+
   button {
     padding: 1rem 3rem;
+    width: 100%;
+
+    @include respond-to("desktop") {
+      width: auto;
+
+      .buyNowText {
+        display: none;
+      }
+    }
   }
 }

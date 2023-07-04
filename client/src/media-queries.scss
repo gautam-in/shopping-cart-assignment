@@ -1,18 +1,14 @@
-$breakpoint-phone: 57.6rem;
-$breakpoint-tablet: 76.8rem;
-$breakpoint-desktop: 102.4rem;
-
 @mixin respond-to($device) {
   @if $device == "phone" {
-    @media (max-width: $breakpoint-phone) {
+    @media only screen and (max-width: 576px) {
       @content;
     }
   } @else if $device == "tablet" {
-    @media (max-width: $breakpoint-tablet) {
+    @media only screen and (min-width: 576px) and (max-width: 1024px) {
       @content;
     }
   } @else if $device == "desktop" {
-    @media (min-width: $breakpoint-desktop) {
+    @media only screen and (min-width: 1025px) {
       @content;
     }
   }

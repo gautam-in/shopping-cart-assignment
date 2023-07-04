@@ -1,10 +1,14 @@
 import React, { createContext, useContext, useState } from "react";
 
+import { addProductToCart } from "../api/cart";
+import { useToast } from "./toast";
+
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const { showToast } = useToast();
 
   const addToCart = (product) => {
     setCartItems((prevCartItems) => {
@@ -16,6 +20,10 @@ export const CartProvider = ({ children }) => {
       } else {
         return [...prevCartItems, { ...product, count: 1 }];
       }
+    });
+
+    addProductToCart().then((response) => {
+      showToast(`${product.name} ${response.responseMessage}`);
     });
   };
 

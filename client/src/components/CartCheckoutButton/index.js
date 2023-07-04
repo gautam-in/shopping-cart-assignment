@@ -7,7 +7,7 @@ function CartCheckoutButton({ price, onCheckout }) {
     <div className={classes.action}>
       <p>Promo code can be applied on payment page</p>
       <Button>
-        Proceed to checkout{" "}
+        Proceed to checkout
         <span>
           Rs.{price} &nbsp;&nbsp;&nbsp;&nbsp;{">"}
         </span>

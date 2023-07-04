@@ -7,6 +7,10 @@
   min-width: 30rem;
   background-color: var(--color-grey-500);
   position: relative;
+
+  @include respond-to("tablet") {
+    min-width: 20rem;
+  }
 }
 
 ul {

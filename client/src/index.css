@@ -31,3 +31,13 @@ body {
   margin: 0;
   font-size: 1.6rem;
 }
+
+.toast {
+  position: fixed;
+  top: 3rem;
+  right: 3rem;
+  padding: 2rem 4rem;
+  background-color: var(--color-primary);
+  z-index: 5000;
+  color: var(--color-white);
+}

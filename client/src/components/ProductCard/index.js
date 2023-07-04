@@ -9,26 +9,28 @@ function ProductCard({ product }) {
   return (
     <div className={classes.product}>
       <h2 className={classes.name}>{name}</h2>
-      <div className={classes.details}>
-        <div className={classes.imgContainer}>
-          <img
-            className={classes.image}
-            src={imageURL}
-            alt={description}
-            loading="lazy"
-          />
+      <div className={classes.imgContainer}>
+        <img
+          className={classes.image}
+          src={imageURL}
+          alt={description}
+          loading="lazy"
+        />
+
+        <div className={classes.description}>
           <p>{description}</p>
-        </div>
-        <div className={classes.price}>
-          <span>MRP Rs.{price}</span>
-          <Button
-            aria-label={`${name} - Buy Now`}
-            onClick={() => {
-              addToCart(product);
-            }}
-          >
-            Buy Now
-          </Button>
+          <div className={classes.price}>
+            <span>MRP Rs.{price}</span>
+            <Button
+              aria-label={`${name} - Buy Now`}
+              onClick={() => {
+                addToCart(product);
+              }}
+            >
+              Buy Now
+              <span className={classes.buyNowText}> @ MRP Rs.{price}</span>
+            </Button>
+          </div>
         </div>
       </div>
     </div>
