@@ -1,0 +1,49 @@
+@import "../../media-queries.scss";
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.5rem;
+  border-bottom: 1px dashed var(--color-grey-200);
+}
+
+.imgContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image {
+  width: 30rem;
+
+  aspect-ratio: 1 / 1;
+
+  @include respond-to("phone") {
+    width: 23rem;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  flex: 1;
+
+  p {
+    background-color: var(--color-grey-800);
+    padding: 1rem;
+  }
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    padding: 1rem 3rem;
+  }
+}

@@ -1,0 +1,24 @@
+@import "../../media-queries.scss";
+
+.secondaryNav {
+  ul {
+    gap: 1rem;
+
+    li > a {
+      font-size: 1.4rem;
+      color: var(--color-black);
+      text-decoration: none;
+    }
+  }
+}
+
+.navlist {
+  height: fit-content;
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+
+  @include respond-to("phone") {
+    display: none;
+  }
+}

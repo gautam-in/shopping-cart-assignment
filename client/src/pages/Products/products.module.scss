@@ -1,0 +1,23 @@
+@import "../../media-queries.scss";
+
+.container {
+  display: flex;
+  gap: 2rem;
+  padding: 5rem 0;
+
+  @include respond-to("phone") {
+    padding: 1rem 0;
+    flex-direction: column;
+  }
+}
+
+.products {
+  display: grid;
+  padding: 2rem;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+
+  @include respond-to("phone") {
+    padding: 0;
+  }
+}

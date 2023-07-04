@@ -1,0 +1,31 @@
+@import "../../media-queries.scss";
+.primaryNav {
+  display: flex;
+  align-items: flex-end;
+  flex: 1;
+  padding-left: 10rem;
+}
+
+.primaryNav {
+  ul {
+    li {
+      margin-bottom: 2rem;
+    }
+    li > a {
+      color: var(--color-grey-100);
+      text-decoration: none;
+      font-weight: var(--font-weight-semibold);
+    }
+  }
+}
+
+.navlist {
+  height: fit-content;
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+
+  @include respond-to("phone") {
+    display: none;
+  }
+}

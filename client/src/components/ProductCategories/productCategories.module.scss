@@ -1,0 +1,59 @@
+@import "../../media-queries.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 30rem;
+  background-color: var(--color-grey-500);
+  position: relative;
+}
+
+ul {
+  padding: 0 1rem;
+}
+
+.accordion {
+  display: none;
+
+  @include respond-to("phone") {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.accordion[aria-expanded="true"] {
+  span:last-child {
+    transform: rotate(180deg);
+  }
+}
+
+.tile {
+  border-bottom: 1px solid var(--color-grey-400);
+  color: var(--color-grey-400);
+  list-style-type: none;
+
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    color: var(--color-grey-400);
+    text-decoration: none;
+  }
+}
+
+.hidden {
+  @include respond-to("phone") {
+    display: none;
+  }
+}
+
+.mobileNavList {
+  @include respond-to("phone") {
+    position: absolute;
+    background-color: var(--color-grey-500);
+    top: 4rem;
+    width: 100%;
+  }
+}

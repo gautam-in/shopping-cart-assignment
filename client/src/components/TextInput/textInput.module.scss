@@ -1,0 +1,35 @@
+.inputContainer {
+  display: flex;
+  position: relative;
+  height: 5rem;
+  flex-direction: column;
+}
+
+.label {
+  position: absolute;
+  color: var(--color-grey-100);
+  top: -20px;
+  z-index: 2;
+}
+
+.activeInputLabel {
+  color: var(--color-secondary);
+  top: -23px;
+  font-size: 12px;
+}
+
+.input {
+  position: relative;
+  border: none;
+  border-bottom: 2px solid var(--color-grey-200);
+}
+
+.input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+.error {
+  color: red;
+  margin-top: -5rem;
+}

@@ -1,0 +1,12 @@
+@import "../../media-queries.scss";
+
+.logo {
+  width: 19rem;
+  height: 8.6rem;
+  aspect-ratio: 16 / 9;
+
+  @include respond-to("phone") {
+    width: 15rem;
+    height: 8rem;
+  }
+}

@@ -1,0 +1,19 @@
+*:focus {
+  outline: 4px dashed limegreen;
+}
+
+.skip-to-main {
+  left: -9999px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+
+  &:focus {
+    height: auto;
+    overflow: auto;
+    width: auto;
+    left: 0;
+    top: 0;
+  }
+}

@@ -1,0 +1,45 @@
+@import "../../media-queries.scss";
+.card {
+  width: 100%;
+  box-shadow: var(--card-shadow);
+  justify-content: space-between;
+  display: flex;
+  padding: 2rem;
+  text-align: center;
+  gap: 2rem;
+  align-items: center;
+
+  .categoryImage {
+    object-fit: contain;
+    min-width: 10rem;
+    height: 25rem;
+    max-height: 25rem;
+    aspect-ratio: 16 / 10;
+
+    @include respond-to("phone") {
+      height: 12rem;
+      max-height: 12rem;
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .details {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &:nth-child(2n) .details {
+    order: -1;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+}

@@ -1,0 +1,22 @@
+@import "../../media-queries.scss";
+
+.header {
+  max-width: 135rem;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-evenly;
+
+  @include respond-to("phone") {
+    justify-content: space-between;
+  }
+}
+
+.secondaryNavContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

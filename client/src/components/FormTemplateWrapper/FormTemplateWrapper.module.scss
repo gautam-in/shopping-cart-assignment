@@ -1,0 +1,34 @@
+@import "../../media-queries.scss";
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+  padding: 5rem;
+
+  h1 {
+    font-size: 24px;
+  }
+
+  @include respond-to("phone") {
+    padding: 2rem;
+    gap: 1rem;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  @include respond-to("phone") {
+    width: 100%;
+  }
+}
