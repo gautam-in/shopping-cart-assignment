@@ -4,6 +4,9 @@
   align-items: flex-end;
   flex: 1;
   padding-left: 10rem;
+  @include respond-to("phone") {
+    display: none;
+  }
 }
 
 .primaryNav {

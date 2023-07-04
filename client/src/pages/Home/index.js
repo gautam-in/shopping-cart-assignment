@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Categories from "../../components/Categories";
+import Carousel from "../../components/Carousel";
 
 function Home() {
   useEffect(() => {
@@ -9,6 +10,7 @@ function Home() {
 
   return (
     <>
+      <Carousel />
       <Categories />
     </>
   );

@@ -10,7 +10,6 @@ function Logo() {
         src={"/static/images/logo.png"}
         srcSet="/static/images/logo.png 1x, /static/images/logo_2x.png 2x"
         alt="Sabka Bazaar"
-        loading="lazy"
       />
     </a>
   );

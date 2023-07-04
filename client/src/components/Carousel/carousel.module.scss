@@ -1,0 +1,70 @@
+@import "../../media-queries.scss";
+
+.container {
+  width: 100%;
+  height: 32rem;
+  position: relative;
+
+  @include respond-to("phone") {
+    height: 16rem;
+  }
+
+  @include respond-to("tablet") {
+    height: 24rem;
+  }
+}
+
+.carouselContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: var(--card-shadow);
+
+  img {
+    position: absolute;
+    width: 100%;
+    padding: 0 2rem;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+.dots {
+  display: flex;
+  list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(100% - 5rem);
+  z-index: 8;
+}
+
+.dot {
+  background: none;
+  border: none;
+}
+
+.selected {
+  transform: scale(2.3);
+  top: -2px;
+  position: relative;
+}
+
+.navButton {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  background-color: var(--color-grey-100);
+  border: none;
+  color: var(--color-white);
+  padding: 1rem 3rem;
+}
+
+.next {
+  right: 10px;
+  left: unset;
+}

@@ -5,6 +5,7 @@ import { useCart } from "../../context/cart";
 
 function CartModal() {
   const { isCartOpen, setIsCartOpen } = useCart();
+
   return createPortal(
     <dialog open={isCartOpen} className={classes.dialogContainer}>
       <div className={classes.dialog}>

@@ -5,6 +5,11 @@
   gap: 2rem;
   padding: 5rem 0;
 
+  h1 {
+    padding-left: 2rem;
+    font-size: 2.5rem;
+  }
+
   @include respond-to("phone") {
     padding: 1rem 0;
     flex-direction: column;

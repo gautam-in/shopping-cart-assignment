@@ -23,10 +23,13 @@ function Products() {
   return (
     <section className={classes.container}>
       <ProductCategories />
-      <section className={classes.products}>
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+      <section>
+        <h1>Products</h1>
+        <div className={classes.products}>
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
       </section>
     </section>
   );
