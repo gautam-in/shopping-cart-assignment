@@ -1,20 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { fetchCategories } from "../../api/products";
+import React from "react";
 import CategoryCard from "../CategoryCard";
 
-function Categories() {
-  const [categories, setCategories] = useState([]);
-
-  useEffect(() => {
-    const controller = new AbortController();
-
-    fetchCategories({ signal: controller.signal }).then((categories) => {
-      setCategories(categories);
-    });
-
-    return () => controller.abort();
-  }, []);
-
+function Categories({ categories }) {
   return (
     <>
       {categories.map(({ id, key, name, imageUrl, description }, index) => (

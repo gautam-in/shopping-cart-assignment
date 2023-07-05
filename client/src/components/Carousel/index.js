@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { fetchBanners } from "../../api/banners";
+import React, { useState } from "react";
 import classes from "./carousel.module.scss";
 
-function Carousel() {
-  const [banners, setBanners] = useState([]);
-
+function Carousel({ banners }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const onNext = () => {
@@ -18,10 +15,6 @@ function Carousel() {
       return index > 0 ? index - 1 : index;
     });
   };
-
-  useEffect(() => {
-    fetchBanners().then((banners = []) => setBanners(banners));
-  }, []);
 
   return (
     <section className={classes.container}>
@@ -57,6 +50,7 @@ function Carousel() {
           return (
             <li onClick={() => setCurrentIndex(index)} key={banner.id}>
               <button
+                aria-label={`Image number ${index + 1}`}
                 className={`${classes.dot} ${
                   currentIndex === index ? classes.selected : ""
                 }`}

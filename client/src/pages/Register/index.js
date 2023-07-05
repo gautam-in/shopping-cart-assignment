@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useReducer } from "react";
 import TextInput from "../../components/TextInput";
 import FormTemplateWrapper from "../../components/FormTemplateWrapper";
 import { useUser } from "../../context/auth";
@@ -66,10 +66,6 @@ function Login() {
     INPUT_FIELDS_INITIAL_STATE
   );
 
-  useEffect(() => {
-    document.title = "Create an account | Sabka Bazaar";
-  }, []);
-
   const handleLogin = () => {
     let isValid = true;
     Object.keys(credentials).forEach((key) => {
@@ -125,27 +121,29 @@ function Login() {
   };
 
   return (
-    <FormTemplateWrapper
-      title={"Signup"}
-      description={"We do not share your personal details with anyone"}
-      onSubmit={(e) => {
-        e.preventDefault();
-        handleLogin();
-      }}
-    >
-      {Object.values(credentials).map((input) => (
-        <React.Fragment key={input.label}>
-          <TextInput
-            id={`login-form-${input.label}`}
-            type={input.type}
-            label={input.label}
-            onChange={(e) => handleChange(input, e.target.value)}
-            error={input.error}
-          />
-        </React.Fragment>
-      ))}
-      <Button type="submit">Register</Button>
-    </FormTemplateWrapper>
+    <>
+      <FormTemplateWrapper
+        title={"Signup"}
+        description={"We do not share your personal details with anyone"}
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleLogin();
+        }}
+      >
+        {Object.values(credentials).map((input) => (
+          <React.Fragment key={input.label}>
+            <TextInput
+              id={`login-form-${input.label}`}
+              type={input.type}
+              label={input.label}
+              onChange={(e) => handleChange(input, e.target.value)}
+              error={input.error}
+            />
+          </React.Fragment>
+        ))}
+        <Button type="submit">Register</Button>
+      </FormTemplateWrapper>
+    </>
   );
 }
 

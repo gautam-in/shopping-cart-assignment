@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import TextInput from "../../components/TextInput";
 import FormTemplateWrapper from "../../components/FormTemplateWrapper";
 import { useUser } from "../../context/auth";
@@ -86,27 +86,29 @@ function Login() {
   };
 
   return (
-    <FormTemplateWrapper
-      title={"Login"}
-      description={"Get access to your Orders, Wishlist and Recommendations"}
-      onSubmit={(e) => {
-        e.preventDefault();
-        handleLogin();
-      }}
-    >
-      {Object.values(credentials).map((input) => (
-        <React.Fragment key={input.label}>
-          <TextInput
-            id={`login-form-${input.label}`}
-            type={input.type}
-            label={input.label}
-            onChange={(e) => handleChange(input, e.target.value)}
-            error={input.error}
-          />
-        </React.Fragment>
-      ))}
-      <Button type="submit">Login</Button>
-    </FormTemplateWrapper>
+    <>
+      <FormTemplateWrapper
+        title={"Login"}
+        description={"Get access to your Orders, Wishlist and Recommendations"}
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleLogin();
+        }}
+      >
+        {Object.values(credentials).map((input) => (
+          <React.Fragment key={input.label}>
+            <TextInput
+              id={`login-form-${input.label}`}
+              type={input.type}
+              label={input.label}
+              onChange={(e) => handleChange(input, e.target.value)}
+              error={input.error}
+            />
+          </React.Fragment>
+        ))}
+        <Button type="submit">Login</Button>
+      </FormTemplateWrapper>
+    </>
   );
 }
 
