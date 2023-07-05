@@ -6,7 +6,7 @@ function Button({ type = "button", children, ...otherProps }) {
     ...otherProps,
     className: `${classes.button} ${otherProps.className || ""}`,
   };
-  return type === "button" ? (
+  return type === "button" || type === "submit" ? (
     <button {...props}>{children}</button>
   ) : (
     <NavLink {...props}>{children}</NavLink>
