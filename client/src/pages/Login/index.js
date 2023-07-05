@@ -45,17 +45,40 @@ function Login() {
   }, []);
 
   const handleLogin = () => {
-    let isValid = true;
-    Object.keys(credentials).forEach((key) => {
-      if (!credentials[key].isValid || !credentials[key].value) {
-        isValid = false;
-      }
-    });
+    let isValid = validateFields();
 
     if (!isValid) return;
 
     login(credentials.email.value, credentials.password.value);
     navigate("/");
+  };
+
+  const validateFields = () => {
+    const email = validateEmail(credentials.email?.value || "");
+    let password = {
+      value: credentials.password?.value || "",
+      error: "",
+      isValid: true,
+    };
+    if (!credentials.password?.value) {
+      password = {
+        ...password,
+        error: "Password cannot be empty",
+        isValid: false,
+      };
+    }
+    dispatch({
+      type: "UPDATE_FIELD",
+      payload: { ...credentials.email, ...email },
+      key: "email",
+    });
+    dispatch({
+      type: "UPDATE_FIELD",
+      payload: { ...credentials.password, ...password },
+      key: "password",
+    });
+
+    return email.isValid && password.isValid;
   };
 
   const handleEmailChange = (value) => {

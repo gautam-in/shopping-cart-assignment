@@ -58,7 +58,7 @@ function reducer(state, action) {
   }
 }
 
-function Login() {
+function Register() {
   const { login } = useUser();
   const navigate = useNavigate();
   const [credentials, dispatch] = useReducer(
@@ -147,4 +147,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;
