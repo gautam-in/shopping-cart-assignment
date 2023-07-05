@@ -19,18 +19,18 @@ it("Tests that CategoryCard is rendered for each category in categories array", 
       description: "description2",
     },
   ];
-  const { getAllByRole } = render(
+  const { getAllByTestId } = render(
     <BrowserRouter>
       <Categories categories={categories} />
     </BrowserRouter>
   );
-  const categoryCards = getAllByRole("section");
+  const categoryCards = getAllByTestId("category-card");
   expect(categoryCards.length).toBe(categories.length);
 });
 
 it("Tests that Categories component renders correctly when categories array is empty", () => {
   const categories = [];
-  const { queryAllByRole } = render(<Categories categories={categories} />);
-  const categoryCards = queryAllByRole("section");
+  const { queryAllByTestId } = render(<Categories categories={categories} />);
+  const categoryCards = queryAllByTestId("category-card");
   expect(categoryCards.length).toBe(0);
 });
