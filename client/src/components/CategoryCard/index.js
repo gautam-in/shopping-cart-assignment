@@ -4,7 +4,7 @@ import Button from "../Button";
 
 function CategoryCard({ name, imageUrl, description, slug, id }) {
   return (
-    <section className={classes.card}>
+    <section role="section" className={classes.card}>
       <img
         loading={"lazy"}
         height={"25rem"}
