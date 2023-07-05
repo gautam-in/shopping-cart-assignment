@@ -1,0 +1,43 @@
+@import "../../media-queries.scss";
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-white);
+  color: var(--color-grey-100);
+  padding: 1rem;
+
+  p {
+    font-weight: 700;
+  }
+
+  @include respond-to("desktop") {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 2rem 1rem;
+  }
+}
+
+.subText {
+  font-size: 0.8em;
+}
+
+.close {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  width: 4rem;
+  height: 4rem;
+
+  span {
+    font-size: 4rem;
+    position: absolute;
+    top: -1rem;
+    display: block;
+    height: 0;
+  }
+}

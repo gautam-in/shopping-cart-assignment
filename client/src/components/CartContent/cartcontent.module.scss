@@ -1,0 +1,19 @@
+@import "../../media-queries.scss";
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @include respond-to("phone") {
+    padding: 10px;
+    gap: 1.5rem;
+    background-color: var(--color-grey-800);
+  }
+
+  @include respond-to("tablet") {
+    padding: 10px;
+    gap: 1.5rem;
+    background-color: var(--color-grey-800);
+  }
+}

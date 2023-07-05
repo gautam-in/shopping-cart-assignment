@@ -1,0 +1,15 @@
+.cartButton {
+  background: var(--color-grey-800);
+  border: none;
+  display: flex;
+  width: 100%;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  & > img {
+    filter: invert(23%) sepia(99%) saturate(1310%) hue-rotate(313deg)
+      brightness(93%) contrast(103%);
+  }
+}
