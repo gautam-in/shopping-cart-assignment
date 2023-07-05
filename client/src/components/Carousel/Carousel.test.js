@@ -38,7 +38,6 @@ it("Test Click dot", () => {
   render(<Carousel banners={banners} />);
   const firstDot = screen.getAllByRole("button")[0];
   fireEvent.click(firstDot);
-  console.log(firstDot.style.zIndex);
   const secondBanner = screen.getByAltText("Banner 1");
   expect(secondBanner).toHaveStyle({ zIndex: 4 });
 });

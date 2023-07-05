@@ -17,7 +17,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
+    "test": "react-app-rewired test --transformIgnorePatterns \"node_modules/(?!axios)/\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -41,6 +41,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "axios-mock-adapter": "^1.21.5",
     "copy-webpack-plugin": "^11.0.0",
     "image-minimizer-webpack-plugin": "^3.8.3",
     "imagemin": "^8.0.1",
@@ -48,6 +49,7 @@
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^10.0.1",
+    "msw": "^1.2.2",
     "node-sass": "^9.0.0",
     "react-app-rewired": "^2.2.1",
     "react-helmet": "^6.1.0"

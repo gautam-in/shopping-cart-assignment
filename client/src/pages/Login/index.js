@@ -25,12 +25,10 @@ const INPUT_FIELDS_INITIAL_STATE = {
 
 function reducer(state, action) {
   switch (action.type) {
-    case "UPDATE_EMAIL":
-      return { ...state, email: action.payload };
-    case "UPDATE_PASSWORD":
-      return { ...state, password: action.payload };
+    case "UPDATE_FIELD":
+      return { ...state, [action.key]: action.payload };
     default:
-      return state;
+      throw new Error(`Unhandled action type: ${action.type}`);
   }
 }
 
@@ -64,7 +62,7 @@ function Login() {
     const email = validateEmail(value);
 
     const updatedEmail = { ...credentials.email, ...email };
-    dispatch({ type: "UPDATE_EMAIL", payload: updatedEmail });
+    dispatch({ type: "UPDATE_FIELD", payload: updatedEmail, key: "email" });
   };
 
   const handlePasswordChange = (value) => {
@@ -77,7 +75,11 @@ function Login() {
       };
     }
     const updatedPassword = { ...credentials.password, ...password };
-    dispatch({ type: "UPDATE_PASSWORD", payload: updatedPassword });
+    dispatch({
+      type: "UPDATE_FIELD",
+      payload: updatedPassword,
+      key: "password",
+    });
   };
 
   const handleChange = (input, value) => {
