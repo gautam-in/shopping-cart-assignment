@@ -43,6 +43,11 @@ function readFile(filePath, response) {
 
 
 http.createServer(async (request, response) => {
+  // Set CORS headers
+  response.setHeader('Access-Control-Allow-Origin', '*');
+  response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
   const url = request.url;
   const method = request.method;
 
@@ -75,14 +80,14 @@ http.createServer(async (request, response) => {
 
   // Serve image assets
   const fileExtension = url.match(/\.[0-9a-z]+$/i)?.[0];
-   const contentType = imageContentTypes[fileExtension];
-   if (contentType) {
-     response.writeHead(200, { "Content-Type": contentType });
-     return readFile(`./${url}`, response);
-   } else {
+  const contentType = imageContentTypes[fileExtension];
+  if (contentType) {
+    response.writeHead(200, { "Content-Type": contentType });
+    return readFile(`./${url}`, response);
+  } else {
     // 404 handler
     return sendErrorResponse(response);
-   }
+  }
 
 }).listen(8000, () => {
   console.log("Server started on port 8000");
