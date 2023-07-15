@@ -3,3 +3,41 @@
 
 /** Import utility classes */
 @use "./utilities/spacings.scss";
+
+/** Utility color classes  */
+.color-white {
+  color: white;
+}
+
+.color-black {
+  color: black;
+}
+
+.color-primary {
+  color: var(--color-primary);
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+/** Utility classes for width and height */
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+}
