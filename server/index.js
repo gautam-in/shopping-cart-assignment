@@ -1,19 +1,31 @@
-const http = require("http");
-const fs = require("fs");
+import http from "http";
+import fs from "fs";
 
 // Import data
-const products = require("./data/products.json");
-const categories = require("./data/categories.json");
-const banners = require("./data/banners.json");
 
+import products from "./data/products.json" assert { type: "json" };
+import categories from "./data/categories.json" assert { type: "json" };
+import banners from "./data/banners.json" assert { type: "json" };
+
+const imageContentTypes = {
+  ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".svg": "image/svg+xml",
+};
+
+const stringify = (input) => JSON.stringify(input);
+
+// Handle 404 not found routes.
 function sendErrorResponse(response) {
-  response.writeHead(404, {
-    "Content-Type": "text/html",
-  });
-  response.write("<h1>File Not Found!</h1>");
-  response.end();
+  response.writeHead(404, { "Content-Type": "application/json" });
+  return response.end(stringify({
+    status: false,
+    statusCode: 404,
+    message: "Requested resource not found."
+  }));
 }
 
+// Read the data and image files for serving
 function readFile(filePath, response) {
   if (fs.existsSync(filePath)) {
     fs.readFile(filePath, (error, data) => {
@@ -29,84 +41,49 @@ function readFile(filePath, response) {
   }
 }
 
-function stringify(input) {
-  return JSON.stringify(input);
-}
 
-http
-  .createServer((request, response) => {
-    const url = request.url;
-    const method = request.method;
+http.createServer(async (request, response) => {
+  const url = request.url;
+  const method = request.method;
 
-    // handle apis
-    if (url === "/api/products" && method === "GET") {
-      response.writeHead(200, { "Content-Type": "application/json" });
+  // Handle API requests.
+  let responseData = null;
+  let statusCode = null;
 
-      return response.end(
-        stringify({
-          status: true,
-          statusCode: 200,
-          data: products,
-        })
-      );
-    }
+  if (url === "/api/products" && method === "GET") {
+    responseData = { status: true, statusCode: 200, data: products };
+    statusCode = 200;
+  } else if (url === "/api/banners" && method === "GET") {
+    responseData = { status: true, statusCode: 200, data: banners };
+    statusCode = 200;
+  } else if (url === "/api/categories" && method === "GET") {
+    responseData = { status: true, statusCode: 200, data: categories };
+    statusCode = 200;
+  } else if (url === "/api/add-to-cart" && method === "POST") {
+    responseData = {
+      status: true,
+      statusCode: 200,
+      data: "Product added to the cart successfully",
+    };
+    statusCode = 200;
+  }
 
-    if (url === "/api/banners" && method === "GET") {
-      response.writeHead(200, { "Content-Type": "application/json" });
+  if (responseData) {
+    response.writeHead(statusCode, { "Content-Type": "application/json" });
+    return response.end(stringify(responseData));
+  }
 
-      return response.end(
-        stringify({
-          status: true,
-          statusCode: 200,
-          data: banners,
-        })
-      );
-    }
+  // Serve image assets
+  const fileExtension = url.match(/\.[0-9a-z]+$/i)?.[0];
+   const contentType = imageContentTypes[fileExtension];
+   if (contentType) {
+     response.writeHead(200, { "Content-Type": contentType });
+     return readFile(`./${url}`, response);
+   } else {
+    // 404 handler
+    return sendErrorResponse(response);
+   }
 
-    if (url === "/api/categories" && method === "GET") {
-      response.writeHead(200, { "Content-Type": "application/json" });
-
-      return response.end(
-        stringify({
-          status: true,
-          statusCode: 200,
-          data: categories,
-        })
-      );
-    }
-
-    if (url === "/api/add-to-cart" && method === "POST") {
-      response.writeHead(200, { "Content-Type": "application/json" });
-
-      response.end(
-        stringify({
-          status: true,
-          statusCode: 200,
-          data: "Product added to the cart successfully",
-        })
-      );
-    }
-
-    // handle image assests
-    if (url.indexOf(".png") !== -1) {
-      response.writeHead(200, {
-        "Content-Type": "image/png",
-      });
-      return readFile(`./${url}`, response);
-    } else if (url.indexOf(".jpg") !== -1) {
-      response.writeHead(200, {
-        "Content-Type": "image/jpg",
-      });
-      return readFile(`./${url}`, response);
-    } else if (url.indexOf(".svg") !== -1) {
-      response.writeHead(200, {
-        "Content-Type": "image/svg",
-      });
-      return readFile(`./${url}`, response);
-    } else {
-      return sendErrorResponse(response);
-    }
-  })
-  .listen(8000, () => {
-    console.log("Server running on port 8000");
-  });
+}).listen(8000, () => {
+  console.log("Server started on port 8000");
+})
