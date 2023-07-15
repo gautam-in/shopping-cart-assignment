@@ -1,0 +1,75 @@
+@use "../variables/spacings";
+
+@use "sass:meta";
+
+@each $name, $value in meta.module-variables("spacings") {
+  /* from $space-xs -> xs */
+  $token: str-slice($name, 7);
+
+  /* padding classes */
+  .p-#{$token} {
+    padding: $value;
+  }
+
+  .px-#{$token} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+
+  .py-#{$token} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+
+  .pt-#{$token} {
+    padding-top: $value;
+  }
+
+  .pr-#{$token} {
+    padding-right: $value;
+  }
+
+  .pb-#{$token} {
+    padding-bottom: $value;
+  }
+
+  .pl-#{$token} {
+    padding-left: $value;
+  }
+
+  /* margin classes */
+  .m-#{$token} {
+    margin: $value;
+  }
+
+  .mx-#{$token} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+
+  .my-#{$token} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+
+  .mt-#{$token} {
+    margin-top: $value;
+  }
+
+  .mr-#{$token} {
+    margin-right: $value;
+  }
+
+  .mb-#{$token} {
+    margin-bottom: $value;
+  }
+
+  .ml-#{$token} {
+    margin-left: $value;
+  }
+
+  /* gap classes */
+  .gap-#{$token} {
+    gap: $value;
+  }
+}

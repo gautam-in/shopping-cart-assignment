@@ -1,0 +1,6 @@
+@use "./pink.scss";
+@use "./blue.scss";
+
+.root {
+  --color-primary: var(--color-main);
+}

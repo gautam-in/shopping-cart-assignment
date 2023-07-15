@@ -1,3 +1,10 @@
+import { Button } from "../components/atoms";
+
 export default function Home() {
-  return <div>Home Route</div>;
+  return (
+    <div>
+      <Button />
+      <Button />
+    </div>
+  );
 }
