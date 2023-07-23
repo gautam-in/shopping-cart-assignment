@@ -3,8 +3,8 @@
 @use "sass:meta";
 
 @each $name, $value in meta.module-variables("spacings") {
-  /* from $space-xs -> xs */
-  $token: str-slice($name, 7);
+  /* from $spacing-xs -> xs */
+  $token: str-slice($name, 9);
 
   /* padding classes */
   .p-#{$token} {

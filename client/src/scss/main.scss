@@ -1,32 +1,56 @@
-/** Import the theme */
-@use "./themes/main.scss";
-
 /** Import utility classes */
 @use "./utilities/spacings.scss";
 
-/** Utility color classes  */
+.root {
+  --color-primary: #d20055;
+  --color-secondary: #46c1ca;
+  --color-black: #000;
+  --color-white: #fff;
+
+  --color-primary-50: #{lighten(#d20055, 50%)};
+  --color-primary-100: #{lighten(#d20055, 40%)};
+  --color-primary-600: #{darken(#d20055, 5%)};
+  --color-primary-700: #{darken(#d20055, 10%)};
+
+  --color-secondary-50: #{lighten(#46c1ca, 50%)};
+  --color-secondary-100: #{lighten(#46c1ca, 40%)};
+  --color-secondary-600: #{darken(#46c1ca, 5%)};
+  --color-secondary-700: #{darken(#46c1ca, 10%)};
+}
+
+/** Utility classes for color  */
 .color-white {
-  color: white;
+  color: var(--color-white);
 }
 
 .color-black {
-  color: black;
+  color: var(--color-black);
 }
 
 .color-primary {
   color: var(--color-primary);
 }
 
+.color-secondary {
+  color: var(--color-secondary);
+}
+
+/* Utility classes for bg */
+
 .bg-white {
-  background-color: white;
+  background-color: var(--color-white);
 }
 
 .bg-black {
-  background-color: black;
+  background-color: var(--color-black);
 }
 
 .bg-primary {
   background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
 }
 
 /** Utility classes for width and height */

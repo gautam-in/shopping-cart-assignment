@@ -1,3 +1,109 @@
 .button {
-  background-color: var(--color-primary);
+  border: none;
+  outline: none;
+  font-family: inherit;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.25em 0.75em;
+  font-weight: $font-weight-semibold;
+
+  text-align: center;
+  line-height: 1.1;
+  transition: 220ms all ease-in-out;
+
+  &:focus {
+    box-shadow: outline;
+  }
+
+  &:hover,
+  &:hover:disabled {
+    background: initial;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  /* isFullWidth prop */
+  &.isFullWidth {
+    width: 100%;
+  }
+
+  /* isPill prop */
+  &.isPill {
+    border-radius: 9999px;
+  }
+
+  /* button size xs */
+  &.xs {
+    height: 1.5rem;
+    min-width: 1.5rem;
+    font-size: $font-size-xs;
+    padding-left: $spacing-xs;
+    padding-right: $spacing-xs;
+  }
+
+  /* button size sm */
+  &.sm {
+    height: 2rem;
+    min-width: 2rem;
+    font-size: $font-size-sm;
+    padding-left: $spacing-sm;
+    padding-right: $spacing-sm;
+  }
+
+  /* button size md */
+  &.md {
+    height: 2.5rem;
+    min-width: 2.5rem;
+    font-size: $font-size-md;
+    padding-left: $spacing-md;
+    padding-right: $spacing-md;
+  }
+
+  /* button size lg */
+  &.lg {
+    height: 3rem;
+    min-width: 3rem;
+    font-size: $font-size-lg;
+    padding-left: $spacing-lg;
+    padding-right: $spacing-lg;
+  }
+}
+
+.button.solid {
+  background: var(--color-primary);
+  color: var(--color-white);
+
+  &:hover {
+    background: var(--color-primary-600);
+  }
+
+  &:hover:disabled {
+    background: var(--color-primary);
+  }
+
+  &:active {
+    background: var(--color-primary-700);
+  }
+}
+
+.button.outline {
+  color: var(--color-primary);
+  background: transparent;
+  border: 1px solid currentColor;
+
+  &:hover {
+    background: var(--color-primary-50);
+  }
+
+  &:active {
+    background: var(--color-primary-100);
+  }
 }

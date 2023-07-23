@@ -31,6 +31,7 @@ export const Playground: StoryObj<FlexProps> = {
     direction: "row",
     justify: "start",
     align: "stretch",
+    gap: "sm",
   },
   argTypes: {
     direction: {
@@ -134,8 +135,9 @@ export const FlexSpacer = {
 
 export const Stack: StoryObj<FlexProps> = {
   args: {
-    direction: "row",
+    direction: "col",
     gap: "md",
+    align: "stretch",
   },
   argTypes: {
     direction: {
