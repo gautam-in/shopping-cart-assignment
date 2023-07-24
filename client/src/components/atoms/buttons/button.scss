@@ -107,3 +107,13 @@
     background: var(--color-primary-100);
   }
 }
+
+/* icon button styling */
+.icon-button {
+  padding: 0px !important;
+  border-radius: 0.375rem;
+
+  &.isPill {
+    border-radius: 9999px;
+  }
+}

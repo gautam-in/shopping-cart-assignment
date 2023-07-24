@@ -3,6 +3,8 @@ import { StoryObj } from "@storybook/react";
 import { spacingControls } from "../../../cva-utils/spacings";
 import { Flex } from "..";
 import { Button, ButtonProps } from "./button";
+import { IconButton } from "./icon-button";
+import { MinusIcon, PlusIcon } from "../icons";
 
 export default {
   title: "Atoms/Forms/Button",
@@ -138,6 +140,30 @@ export const Default: StoryObj<ButtonProps> = {
           <Button size={size} variant="outline">
             Button
           </Button>
+        </Flex>
+        <Flex gap="lg" align="center">
+          <IconButton
+            icon={<PlusIcon />}
+            size={size}
+            aria-label="Icon Button"
+          />
+          <IconButton
+            icon={<MinusIcon />}
+            size={size}
+            aria-label="Icon Button"
+          />
+          <IconButton
+            icon={<PlusIcon />}
+            size={size}
+            variant="outline"
+            aria-label="Icon Button"
+          />
+          <IconButton
+            icon={<MinusIcon />}
+            size={size}
+            variant="outline"
+            aria-label="Icon Button"
+          />
         </Flex>
       </Flex>
     );
