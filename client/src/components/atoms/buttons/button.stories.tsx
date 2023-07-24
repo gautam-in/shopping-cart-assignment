@@ -1,8 +1,8 @@
 import { StoryObj } from "@storybook/react";
 
-import { Button, ButtonProps } from "./button";
-import { Flex } from "..";
 import { spacingControls } from "../../../cva-utils/spacings";
+import { Flex } from "..";
+import { Button, ButtonProps } from "./button";
 
 export default {
   title: "Atoms/Forms/Button",
