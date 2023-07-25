@@ -165,6 +165,34 @@ export const Default: StoryObj<ButtonProps> = {
             aria-label="Icon Button"
           />
         </Flex>
+        <Flex gap="lg" align="center">
+          <IconButton
+            icon={<PlusIcon />}
+            size={size}
+            isPill
+            aria-label="Icon Button"
+          />
+          <IconButton
+            icon={<MinusIcon />}
+            size={size}
+            isPill
+            aria-label="Icon Button"
+          />
+          <IconButton
+            icon={<PlusIcon />}
+            size={size}
+            isPill
+            variant="outline"
+            aria-label="Icon Button"
+          />
+          <IconButton
+            icon={<MinusIcon />}
+            size={size}
+            isPill
+            variant="outline"
+            aria-label="Icon Button"
+          />
+        </Flex>
       </Flex>
     );
   },

@@ -1,0 +1,20 @@
+.text {
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+
+  &.p {
+    display: block;
+  }
+
+  &.span {
+    display: inline;
+  }
+
+  &.clamp {
+    display: -webkit-box;
+    line-clamp: var(--no-of-lines);
+    overflow: hidden;
+    -webkit-line-clamp: var(--no-of-lines);
+    -webkit-box-orient: vertical;
+  }
+}

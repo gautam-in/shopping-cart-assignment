@@ -20,7 +20,7 @@ const button = cva(["button"], {
       true: "isFullWidth",
     },
     isPill: {
-      true: "isPill",
+      true: "is-pill",
     },
   },
   defaultVariants: {
