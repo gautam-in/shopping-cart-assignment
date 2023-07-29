@@ -62,6 +62,44 @@
   height: 100%;
 }
 
+/** More utility classes */
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
+.none {
+  display: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
 body {
+  margin: 0;
+  padding: 0;
   font-family: Montserrat, sans-serif;
+}
+
+/* resets */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p,
+span {
+  margin: 0;
 }

@@ -23,11 +23,15 @@ export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
     pr,
     pb,
     pl,
+    py,
+    px,
     m,
     mt,
     mr,
     mb,
     ml,
+    my,
+    mx,
     className,
     children,
     ...delegated
@@ -37,8 +41,8 @@ export const Box = React.forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
    * Merge the utility classes
    */
   const boxClasses = cx(
-    padding({ p, pt, pr, pb, pl }),
-    margin({ m, mt, mr, mb, ml }),
+    padding({ p, pt, pr, pb, pl, py, px }),
+    margin({ m, mt, mr, mb, ml, my, mx }),
     box({ className })
   );
 

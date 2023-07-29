@@ -1,14 +1,17 @@
 import { forwardRef } from "react";
+import { Link, LinkProps } from "react-router-dom";
 import { cva, cx, VariantProps } from "class-variance-authority";
 
-import "./button.scss";
 import { margin, MarginVariants } from "../../../cva-utils/spacings";
+
+import "./button.scss";
 
 const button = cva(["button"], {
   variants: {
     variant: {
       solid: "solid",
       outline: "outline",
+      ghost: "ghost",
     },
     size: {
       xs: "xs",
@@ -70,3 +73,37 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     );
   }
 );
+
+export type ButtonLinkProps = MarginVariants &
+  VariantProps<typeof button> &
+  LinkProps;
+
+export const ButtonLink = (props: ButtonLinkProps) => {
+  const {
+    to,
+    m,
+    mt,
+    mr,
+    mb,
+    ml,
+    variant,
+    size,
+    isFullWidth,
+    isPill,
+    className,
+    ...delegated
+  } = props;
+
+  const buttonClasses = cx(
+    margin({ m, mt, mr, mb, ml }),
+    button({
+      variant,
+      size,
+      isFullWidth,
+      isPill,
+      className: className,
+    })
+  );
+
+  return <Link className={buttonClasses} to={to} {...delegated} />;
+};

@@ -1,0 +1,32 @@
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &__logo {
+    height: 100px;
+    width: 200px;
+  }
+
+  @include tablet {
+    justify-content: space-between;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__link,
+  &__action {
+    text-decoration: none;
+    color: #333;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.active {
+      color: var(--color-primary);
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}

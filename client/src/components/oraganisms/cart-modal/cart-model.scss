@@ -1,0 +1,28 @@
+.cart-model {
+  width: 500px;
+  height: 700px;
+  position: relative;
+
+  @include mobile {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  &__header {
+    background-color: #171923;
+  }
+
+  &__list {
+    max-height: 100%;
+    background-color: #eee;
+    overflow: auto;
+    padding-bottom: calc(#{$spacing-xl} * 2.25);
+  }
+
+  &__footer {
+    background: var(--color-white);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}

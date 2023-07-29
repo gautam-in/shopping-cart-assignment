@@ -2,7 +2,6 @@ import http from "http";
 import fs from "fs";
 
 // Import data
-
 import products from "./data/products.json" assert { type: "json" };
 import categories from "./data/categories.json" assert { type: "json" };
 import banners from "./data/banners.json" assert { type: "json" };
@@ -74,7 +73,10 @@ http.createServer(async (request, response) => {
   }
 
   if (responseData) {
-    response.writeHead(statusCode, { "Content-Type": "application/json" });
+    response.writeHead(statusCode, {
+      "Content-Type": "application/json",
+      "Cache-Control": "public, max-age=3600" // Cache for 1 hour
+    });
     return response.end(stringify(responseData));
   }
 

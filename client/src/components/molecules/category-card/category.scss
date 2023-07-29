@@ -1,0 +1,19 @@
+.category-card {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &__image-container {
+    height: 270px;
+  }
+
+  @include tablet {
+    &__image-container {
+      height: 170px;
+    }
+  }
+
+  @include mobile {
+    &__image-container {
+      height: 120px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.login-page {
+  &__container {
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__form {
+    width: 400px;
+
+    @include mobile {
+      width: 350px;
+    }
+  }
+}

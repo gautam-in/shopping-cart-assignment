@@ -56,4 +56,56 @@
     -webkit-line-clamp: var(--no-of-lines);
     -webkit-box-orient: vertical;
   }
+
+  @media screen and (max-width: 768px) {
+    &.h1 {
+      font-size: $font-size-2xl;
+    }
+
+    &.h2 {
+      font-size: $font-size-xl;
+    }
+
+    &.h3 {
+      font-size: $font-size-xl;
+    }
+
+    &.h4 {
+      font-size: $font-size-lg;
+    }
+
+    &.h5 {
+      font-size: $font-size-md;
+    }
+
+    &.h6 {
+      font-size: $font-size-base;
+    }
+  }
+
+  @media screen and (max-width: px) {
+    &.h1 {
+      font-size: $font-size-xl;
+    }
+
+    &.h2 {
+      font-size: $font-size-lg;
+    }
+
+    &.h3 {
+      font-size: $font-size-md;
+    }
+
+    &.h4 {
+      font-size: $font-size-base;
+    }
+
+    &.h5 {
+      font-size: $font-size-sm;
+    }
+
+    &.h6 {
+      font-size: $font-size-sm;
+    }
+  }
 }

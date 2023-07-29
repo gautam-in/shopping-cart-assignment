@@ -14,6 +14,11 @@ const text = cva(["text"], {
     clamp: {
       true: "clamp",
     },
+    align: {
+      left: "align-left",
+      center: "align-center",
+      right: "align-right",
+    },
   },
   defaultVariants: {
     variant: "p",
@@ -30,6 +35,7 @@ export type TextProps = MarginVariants &
 export const Text = forwardRef<HTMLParagraphElement, TextProps>(
   (props, ref) => {
     const {
+      align,
       m,
       mt,
       mr,
@@ -47,6 +53,7 @@ export const Text = forwardRef<HTMLParagraphElement, TextProps>(
     const textClasses = cx(
       margin({ m, mt, mr, mb, ml }),
       text({
+        align,
         variant,
         className,
         clamp: !!noOfLines,

@@ -1,0 +1,18 @@
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: $spacing-lg;
+  row-gap: 3rem;
+  grid-auto-rows: max-content;
+  flex: 1;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    margin: $spacing-lg;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    margin: $spacing-md;
+  }
+}

@@ -12,6 +12,7 @@
   font-weight: $font-weight-semibold;
 
   text-align: center;
+  text-decoration: none;
   line-height: 1.1;
   transition: 220ms all ease-in-out;
 
@@ -65,6 +66,11 @@
     font-size: $font-size-md;
     padding-left: $spacing-md;
     padding-right: $spacing-md;
+
+    /* Mobile (small-sized) screens */
+    @media screen and (max-width: 540px) {
+      font-size: $font-size-xs;
+    }
   }
 
   /* button size lg */
@@ -74,6 +80,10 @@
     font-size: $font-size-lg;
     padding-left: $spacing-lg;
     padding-right: $spacing-lg;
+
+    @media screen and (max-width: 540px) {
+      font-size: $font-size-sm;
+    }
   }
 }
 
@@ -105,6 +115,19 @@
 
   &:active {
     background: var(--color-primary-100);
+  }
+}
+
+.button.ghost {
+  color: var(--color-primary);
+  background: transparent;
+
+  &:hover {
+    background: #edf2f7;
+  }
+
+  &:active {
+    background: #e2e8f0;
   }
 }
 

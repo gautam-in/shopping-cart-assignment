@@ -1,29 +1,35 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import { Layout } from "./components/templates/layout";
 import Register from "./routes/register";
 import Login from "./routes/login";
-import Home from "./routes/home";
-import Products, { productsLoader } from "./routes/products";
+import { loadCategories } from "./routes/home/loader";
+import { loadProducts } from "./routes/products/loader";
 
 import "./scss/main.scss";
 
 const router = createBrowserRouter([
   {
-    element: (
-      <div className="root pink-theme">
-        <Outlet />
-      </div>
-    ),
+    element: <Layout />,
     children: [
       { path: "/register", element: <Register /> },
       { path: "/login", element: <Login /> },
-      { path: "/", element: <Home /> },
+      {
+        path: "/",
+        loader: () => loadCategories(),
+        lazy: () => import("./routes/home"),
+      },
       {
         path: "/products",
-        loader: productsLoader,
-        element: <Products />,
+        loader: ({ params }) => loadProducts({ params }),
+        lazy: () => import("./routes/products"),
+      },
+      {
+        path: "/products/:category",
+        loader: ({ params }) => loadProducts({ params }),
+        lazy: () => import("./routes/products"),
       },
     ],
   },

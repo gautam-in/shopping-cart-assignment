@@ -1,12 +1,13 @@
 .input-container {
   --error-color: #{darken($color: red, $amount: 10)};
+  --grey-color: #{darken($color: darkgrey, $amount: 10)};
 
   position: relative;
   margin-bottom: $spacing-sm;
 
   input {
     border: none;
-    border-bottom: 1px solid darkgrey;
+    border-bottom: 1px solid var(--grey-color);
     outline: none;
     background-color: transparent;
     width: 100%;
@@ -47,7 +48,7 @@
     top: 8px;
     left: 0;
     font-size: $font-size-md;
-    color: darkgray;
+    color: var(--grey-color);
     pointer-events: none;
     transition: 0.2s ease-out;
     transform-origin: left center;

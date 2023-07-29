@@ -49,12 +49,12 @@ export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
     if (variant === null) return;
 
     const headingClasses = cx(
-      margin({ m, mt, mr, mb, ml }),
       heading({
         variant,
         className,
         clamp: !!noOfLines,
-      })
+      }),
+      margin({ m, mt, mr, mb, ml })
     );
 
     const HeadingTag = variant;
