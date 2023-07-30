@@ -1,0 +1,41 @@
+.text {
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+
+  @media (max-width: 768px) {
+    font-size: $font-size-sm;
+  }
+
+  @media (max-width: 540px) {
+    font-size: $font-size-xs;
+  }
+
+  &.align-right {
+    text-align: right;
+  }
+
+  &.align-center {
+    text-align: center;
+  }
+
+  &.align-right {
+    text-align: right;
+  }
+
+  &.p {
+    display: block;
+  }
+
+  &.span {
+    display: inline;
+  }
+
+  &.clamp {
+    display: -webkit-box;
+    line-clamp: var(--no-of-lines);
+    overflow: hidden;
+    -webkit-line-clamp: var(--no-of-lines);
+    -webkit-box-orient: vertical;
+  }
+}

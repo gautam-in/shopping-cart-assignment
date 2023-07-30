@@ -1,0 +1,24 @@
+.cart-item {
+  background-color: white;
+
+  &__img-container {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+
+    @include mobile {
+      width: 100px;
+      height: 100px;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__item-description {
+    flex: 2;
+  }
+}

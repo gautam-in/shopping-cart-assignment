@@ -1,0 +1,20 @@
+.category-links {
+  width: 20%;
+  background: #eee;
+
+  @include mobile {
+    display: none;
+  }
+
+  &__link {
+    padding: $spacing-lg;
+    display: block;
+    text-decoration: none;
+    color: #7b7b7c;
+    border-bottom: 1px solid #ccc;
+
+    &.active {
+      color: var(--color-primary);
+    }
+  }
+}

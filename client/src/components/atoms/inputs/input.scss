@@ -1,0 +1,62 @@
+.input-container {
+  --error-color: #{darken($color: red, $amount: 10)};
+  --grey-color: #{darken($color: darkgrey, $amount: 10)};
+
+  position: relative;
+  margin-bottom: $spacing-sm;
+
+  input {
+    border: none;
+    border-bottom: 1px solid var(--grey-color);
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    padding: 10px 0;
+    font-weight: $font-weight-thin;
+    font-size: $font-size-md;
+    color: var(--color-black);
+
+    &:focus {
+      border-color: var(--color-secondary);
+    }
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &.error {
+      border-color: var(--error-color);
+
+      & + label,
+      &:focus + label {
+        color: var(--error-color);
+      }
+    }
+
+    /* Input has value */
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      /* Move the label above and scale it down */
+      transform: translateY(-100%) scale(0.75);
+      color: var(--color-secondary);
+      font-size: $font-size-sm;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    font-size: $font-size-md;
+    color: var(--grey-color);
+    pointer-events: none;
+    transition: 0.2s ease-out;
+    transform-origin: left center;
+  }
+
+  .error-text {
+    color: var(--error-color);
+    font-size: $font-size-xs;
+    margin-top: $spacing-xs;
+  }
+}
