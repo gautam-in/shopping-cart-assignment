@@ -86,7 +86,10 @@ http.createServer(async (request, response) => {
   const fileExtension = url.match(/\.[0-9a-z]+$/i)?.[0];
   const contentType = imageContentTypes[fileExtension];
   if (contentType) {
-    response.writeHead(200, { "Content-Type": contentType });
+    response.writeHead(200, {
+      "Content-Type": contentType,
+      "Cache-Control": "public, max-age=3600"
+    });
     return readFile(`./${url}`, response);
   } else {
     // 404 handler
