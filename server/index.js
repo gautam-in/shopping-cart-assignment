@@ -10,6 +10,8 @@ const imageContentTypes = {
   ".png": "image/png",
   ".jpg": "image/jpeg",
   ".svg": "image/svg+xml",
+  ".webp": "image/webp",
+  ".avif": "image/avif"
 };
 
 const stringify = (input) => JSON.stringify(input);

@@ -18,8 +18,8 @@ export function NavigationBar(props: NavigationBarProps) {
       <Flex align="center" gap="xl" className="navbar__links">
         <NavLink to="/" className="navbar__logo">
           <img
-            srcSet="/images/logo.png 1x, /images/logo_2x.png 2x"
-            src="/images/logo.png"
+            srcSet="/images/logo.avif 1x, /images/logo_2x.avif 2x"
+            src="/images/logo.avif"
             alt="Logo"
             className="w-full h-full"
           />

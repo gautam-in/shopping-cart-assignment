@@ -1,30 +1,40 @@
-export async function loadProducts({ params }) {
-  try {
-    const productsResponse = fetch("http://localhost:8000/api/products");
-    const categroiesResponse = fetch("http://localhost:8000/api/categories");
+import { type Category } from "../../components/molecules/category-card";
+import { type Product } from "../../components/molecules/product-card";
 
-    const [products, categories] = await Promise.all([
-      productsResponse,
-      categroiesResponse,
+export async function loadProducts({
+  params,
+}: {
+  params: { category?: string };
+}) {
+  try {
+    const fetchProducts = fetch("http://localhost:8000/api/products");
+    const fetchCategories = fetch("http://localhost:8000/api/categories");
+
+    const [productsResponse, categoriesResponse] = await Promise.all([
+      fetchProducts,
+      fetchCategories,
     ]);
 
-    if (!products.ok || !categories.ok) {
+    if (!productsResponse.ok || !categoriesResponse.ok) {
       throw new Error("Failed to fetch data");
     }
 
     const [{ data: productsData }, { data: categoriesData }] =
-      await Promise.all([products.json(), categories.json()]);
+      await Promise.all([
+        productsResponse.json() as Promise<{ data: Product[] }>,
+        categoriesResponse.json() as Promise<{ data: Category[] }>,
+      ]);
 
-    let productsList = [];
+    let productsList: Product[] = productsData;
+
     if (params.category) {
       const categoryId = categoriesData.find(
         ({ key }) => key === params.category
-      ).id;
+      )?.id;
+
       productsList = productsData.filter(
         ({ category }) => category === categoryId
       );
-    } else {
-      productsList = productsData;
     }
 
     return {

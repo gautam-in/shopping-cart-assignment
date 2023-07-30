@@ -3,8 +3,6 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { Layout } from "./components/templates/layout";
-import Register from "./routes/register";
-import Login from "./routes/login";
 import { loadCategories } from "./routes/home/loader";
 import { loadProducts } from "./routes/products/loader";
 
@@ -14,8 +12,8 @@ const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
-      { path: "/register", element: <Register /> },
-      { path: "/login", element: <Login /> },
+      { path: "/register", lazy: () => import("./routes/register") },
+      { path: "/login", lazy: () => import("./routes/login") },
       {
         path: "/",
         loader: () => loadCategories(),

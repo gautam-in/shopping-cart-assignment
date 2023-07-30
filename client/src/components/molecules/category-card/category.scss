@@ -3,6 +3,10 @@
 
   &__image-container {
     height: 270px;
+
+    img {
+      object-fit: cover;
+    }
   }
 
   @include tablet {

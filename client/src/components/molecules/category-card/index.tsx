@@ -46,6 +46,7 @@ export function CategoryCard(props: CategoryCardProps) {
           src={`http://localhost:8000/${category.imageUrl}`}
           alt={category.name}
           className="w-full h-full"
+          loading="lazy"
         />
       </Box>
     </Flex>

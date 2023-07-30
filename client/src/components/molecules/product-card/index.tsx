@@ -48,6 +48,7 @@ export function ProductCard(props: ProductCardProps) {
             src={`http://localhost:8000/${product.imageURL}`}
             alt={product.name}
             className="w-full h-full"
+            loading="lazy"
           />
         </Box>
         <Flex gap="md" className="flex-1" direction="col">

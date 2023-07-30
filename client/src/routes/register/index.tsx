@@ -5,7 +5,7 @@ import { Text } from "../../components/atoms/typography/text";
 
 import "./register.scss";
 
-export default function Register() {
+export function Component() {
   return (
     <Flex
       className="flex-1 register-page"
@@ -40,3 +40,5 @@ export default function Register() {
     </Flex>
   );
 }
+
+Component.displayName = "Register";

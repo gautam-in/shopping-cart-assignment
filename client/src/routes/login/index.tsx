@@ -5,7 +5,7 @@ import { Text } from "../../components/atoms/typography/text";
 
 import "./login.scss";
 
-export default function Login() {
+export function Component() {
   return (
     <Flex
       className="flex-1 login-page"
@@ -37,3 +37,5 @@ export default function Login() {
     </Flex>
   );
 }
+
+Component.displayName = "Login";

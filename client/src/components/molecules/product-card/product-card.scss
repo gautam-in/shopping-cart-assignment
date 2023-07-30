@@ -8,6 +8,10 @@
 
   &__img-container {
     height: 270px;
+
+    img {
+      object-fit: cover;
+    }
   }
 
   /* Tablet screens */

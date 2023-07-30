@@ -61,7 +61,7 @@ export function CartModal(props: CartModalProps) {
               style={{ background: "var(--color-white)" }}
               gap="md"
             >
-              <img src="/images/lowest-price.png" />
+              <img src="/images/lowest-price.avif" />
               <Text>You won't find it cheaper anywhere.</Text>
             </Flex>
           </>
