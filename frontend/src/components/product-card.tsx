@@ -7,12 +7,11 @@ import "./product-card.scss"
 
 type Props = {
   product: Product
-  charLimit?: number
 }
 
 const LazyProductImage = React.lazy(() => import("./product-image"))
 
-export const ProductCard: React.FC<Props> = ({ product, charLimit = 25 }) => {
+export const ProductCard: React.FC<Props> = ({ product }) => {
   const { addCartItem, cartItems, setLoading } = useContext(CartContext)
   let quantity: number = 0
   cartItems.every((item) => {

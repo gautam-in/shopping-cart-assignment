@@ -63,4 +63,5 @@ typings/
 
 /frontend/node_modules/
 /frontend/.env
+/frontend/.DS_Store
 /frontend/build/
