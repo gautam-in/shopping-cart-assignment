@@ -65,3 +65,4 @@ typings/
 /frontend/.env
 /frontend/.DS_Store
 /frontend/build/
+/frontend/dist/
