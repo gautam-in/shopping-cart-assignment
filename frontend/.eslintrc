@@ -10,7 +10,9 @@
     "react/prop-types": 0,
     "indent": ["error", 2],
     "linebreak-style": 1,
-    "quotes": ["error", "double"]
+    "quotes": ["error", "double"],
+    "react/react-in-jsx-scope": "off",
+    "import/no-unresolved": "off"
   },
   "parserOptions": {
     "ecmaVersion": 2021,
@@ -22,7 +24,8 @@
   "env": {
     "es6": true,
     "browser": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "settings": {
     "react": {
