@@ -21,7 +21,7 @@ const LazyProducts = React.lazy(() => import("./views/products"))
 const LazyLogin = React.lazy(() => import("./views/auth/login"))
 const LazyRegister = React.lazy(() => import("./views/auth/signup"))
 
-Axios.defaults.baseURL = "http://localhost:5000"
+Axios.defaults.baseURL = process.env.API_URL
 
 Axios.interceptors.request.use((config) => {
   return config
