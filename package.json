@@ -5,14 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "canned --cors=true --headers 'Access-Control-Allow-Headers, *' -p 5000 ./server",
+    "start": "node server/index.js",
     "start:delay": "canned --response_delay=300 --cors=true --headers 'Access-Control-Allow-Headers, *' -p 5000 ./server",
     "prepare": "husky install"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canned": "^0.3.12"
+    "canned": "^0.3.12",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
   },
   "devDependencies": {
     "eslint": "^8.31.0",
